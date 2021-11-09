@@ -1,0 +1,1521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2079130B-D65C-4D33-8254-B4180EF51B3E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PCRD_KR_ArenaSim</RootNamespace>
+    <AssemblyName>PCRD_KR_ArenaSim</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>게시\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <NoWarn>0649, 0414, 0169, 0219</NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <NoWarn>0649,0168</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon_item_91001.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp4.4.5.1.20210210\lib\net461\OpenCvSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp4.4.5.1.20210210\lib\net461\OpenCvSharp.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.5.0.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CaptureMask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaptureMask.Designer.cs">
+      <DependentUpon>CaptureMask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chara_set.xaml.cs">
+      <DependentUpon>Chara_set.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Combination.cs" />
+    <Compile Include="Sim.cs" />
+    <Compile Include="src\Character_SortByRange.cs" />
+    <Compile Include="src\Rank.cs" />
+    <Compile Include="src\Stat_variable.cs" />
+    <Compile Include="src\Unique_equipment.cs" />
+    <Compile Include="src\Unit_equip.cs" />
+    <Compile Include="YesNo.xaml.cs">
+      <DependentUpon>YesNo.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Chara_set.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\Battle_fomular.cs" />
+    <Compile Include="src\Battle_theorem.cs" />
+    <Compile Include="src\Battle_variable.cs" />
+    <Compile Include="src\Character_pattern.cs" />
+    <Compile Include="src\Character_range_and_cast.cs" />
+    <Compile Include="src\Character_select.cs" />
+    <Compile Include="src\Character_skill.cs" />
+    <Compile Include="src\Destiny.cs" />
+    <Compile Include="src\Equipment.cs" />
+    <Compile Include="src\Growth.cs" />
+    <Compile Include="src\Level_variable.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="YesNo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Resource Include="res\fonts\GG1000Title_Medium.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\icon_unit\000000.png" />
+    <Resource Include="res\icon_unit\000001.png" />
+    <Resource Include="res\icon_unit\100111.png" />
+    <Resource Include="res\icon_unit\100131.png" />
+    <Resource Include="res\icon_unit\100161.png" />
+    <Resource Include="res\icon_unit\100211.png" />
+    <Resource Include="res\icon_unit\100231.png" />
+    <Resource Include="res\icon_unit\100261.png" />
+    <Resource Include="res\icon_unit\100311.png" />
+    <Resource Include="res\icon_unit\100331.png" />
+    <Resource Include="res\icon_unit\100361.png" />
+    <Resource Include="res\icon_unit\100411.png" />
+    <Resource Include="res\icon_unit\100431.png" />
+    <Resource Include="res\icon_unit\100511.png" />
+    <Resource Include="res\icon_unit\100531.png" />
+    <Resource Include="res\icon_unit\100611.png" />
+    <Resource Include="res\icon_unit\100631.png" />
+    <Resource Include="res\icon_unit\100661.png" />
+    <Resource Include="res\icon_unit\100711.png" />
+    <Resource Include="res\icon_unit\100731.png" />
+    <Resource Include="res\icon_unit\100811.png" />
+    <Resource Include="res\icon_unit\100831.png" />
+    <Resource Include="res\icon_unit\100911.png" />
+    <Resource Include="res\icon_unit\100931.png" />
+    <Resource Include="res\icon_unit\101011.png" />
+    <Resource Include="res\icon_unit\101031.png" />
+    <Resource Include="res\icon_unit\101061.png" />
+    <Resource Include="res\icon_unit\101111.png" />
+    <Resource Include="res\icon_unit\101131.png" />
+    <Resource Include="res\icon_unit\101161.png" />
+    <Resource Include="res\icon_unit\101211.png" />
+    <Resource Include="res\icon_unit\101231.png" />
+    <Resource Include="res\icon_unit\101261.png" />
+    <Resource Include="res\icon_unit\101311.png" />
+    <Resource Include="res\icon_unit\101331.png" />
+    <Resource Include="res\icon_unit\101411.png" />
+    <Resource Include="res\icon_unit\101431.png" />
+    <Resource Include="res\icon_unit\101511.png" />
+    <Resource Include="res\icon_unit\101531.png" />
+    <Resource Include="res\icon_unit\101611.png" />
+    <Resource Include="res\icon_unit\101631.png" />
+    <Resource Include="res\icon_unit\101661.png" />
+    <Resource Include="res\icon_unit\101711.png" />
+    <Resource Include="res\icon_unit\101731.png" />
+    <Resource Include="res\icon_unit\101811.png" />
+    <Resource Include="res\icon_unit\101831.png" />
+    <Resource Include="res\icon_unit\101861.png" />
+    <Resource Include="res\icon_unit\102011.png" />
+    <Resource Include="res\icon_unit\102031.png" />
+    <Resource Include="res\icon_unit\102111.png" />
+    <Resource Include="res\icon_unit\102131.png" />
+    <Resource Include="res\icon_unit\102211.png" />
+    <Resource Include="res\icon_unit\102231.png" />
+    <Resource Include="res\icon_unit\102311.png" />
+    <Resource Include="res\icon_unit\102331.png" />
+    <Resource Include="res\icon_unit\102361.png" />
+    <Resource Include="res\icon_unit\102511.png" />
+    <Resource Include="res\icon_unit\102531.png" />
+    <Resource Include="res\icon_unit\102611.png" />
+    <Resource Include="res\icon_unit\102631.png" />
+    <Resource Include="res\icon_unit\102711.png" />
+    <Resource Include="res\icon_unit\102731.png" />
+    <Resource Include="res\icon_unit\102811.png" />
+    <Resource Include="res\icon_unit\102831.png" />
+    <Resource Include="res\icon_unit\102861.png" />
+    <Resource Include="res\icon_unit\102911.png" />
+    <Resource Include="res\icon_unit\102931.png" />
+    <Resource Include="res\icon_unit\103011.png" />
+    <Resource Include="res\icon_unit\103031.png" />
+    <Resource Include="res\icon_unit\103061.png" />
+    <Resource Include="res\icon_unit\103111.png" />
+    <Resource Include="res\icon_unit\103131.png" />
+    <Resource Include="res\icon_unit\103211.png" />
+    <Resource Include="res\icon_unit\103231.png" />
+    <Resource Include="res\icon_unit\103261.png" />
+    <Resource Include="res\icon_unit\103311.png" />
+    <Resource Include="res\icon_unit\103331.png" />
+    <Resource Include="res\icon_unit\103361.png" />
+    <Resource Include="res\icon_unit\103411.png" />
+    <Resource Include="res\icon_unit\103431.png" />
+    <Resource Include="res\icon_unit\103461.png" />
+    <Resource Include="res\icon_unit\103611.png" />
+    <Resource Include="res\icon_unit\103631.png" />
+    <Resource Include="res\icon_unit\103711.png" />
+    <Resource Include="res\icon_unit\103731.png" />
+    <Resource Include="res\icon_unit\103811.png" />
+    <Resource Include="res\icon_unit\103831.png" />
+    <Resource Include="res\icon_unit\104011.png" />
+    <Resource Include="res\icon_unit\104031.png" />
+    <Resource Include="res\icon_unit\104211.png" />
+    <Resource Include="res\icon_unit\104231.png" />
+    <Resource Include="res\icon_unit\104311.png" />
+    <Resource Include="res\icon_unit\104331.png" />
+    <Resource Include="res\icon_unit\104411.png" />
+    <Resource Include="res\icon_unit\104431.png" />
+    <Resource Include="res\icon_unit\104511.png" />
+    <Resource Include="res\icon_unit\104531.png" />
+    <Resource Include="res\icon_unit\104611.png" />
+    <Resource Include="res\icon_unit\104631.png" />
+    <Resource Include="res\icon_unit\104661.png" />
+    <Resource Include="res\icon_unit\104711.png" />
+    <Resource Include="res\icon_unit\104731.png" />
+    <Resource Include="res\icon_unit\104811.png" />
+    <Resource Include="res\icon_unit\104831.png" />
+    <Resource Include="res\icon_unit\104861.png" />
+    <Resource Include="res\icon_unit\104911.png" />
+    <Resource Include="res\icon_unit\104931.png" />
+    <Resource Include="res\icon_unit\104961.png" />
+    <Resource Include="res\icon_unit\105011.png" />
+    <Resource Include="res\icon_unit\105031.png" />
+    <Resource Include="res\icon_unit\105111.png" />
+    <Resource Include="res\icon_unit\105131.png" />
+    <Resource Include="res\icon_unit\105211.png" />
+    <Resource Include="res\icon_unit\105231.png" />
+    <Resource Include="res\icon_unit\105261.png" />
+    <Resource Include="res\icon_unit\105311.png" />
+    <Resource Include="res\icon_unit\105331.png" />
+    <Resource Include="res\icon_unit\105411.png" />
+    <Resource Include="res\icon_unit\105431.png" />
+    <Resource Include="res\icon_unit\105511.png" />
+    <Resource Include="res\icon_unit\105531.png" />
+    <Resource Include="res\icon_unit\105611.png" />
+    <Resource Include="res\icon_unit\105631.png" />
+    <Resource Include="res\icon_unit\105711.png" />
+    <Resource Include="res\icon_unit\105731.png" />
+    <Resource Include="res\icon_unit\105811.png" />
+    <Resource Include="res\icon_unit\105831.png" />
+    <Resource Include="res\icon_unit\105861.png" />
+    <Resource Include="res\icon_unit\105911.png" />
+    <Resource Include="res\icon_unit\105931.png" />
+    <Resource Include="res\icon_unit\105961.png" />
+    <Resource Include="res\icon_unit\106011.png" />
+    <Resource Include="res\icon_unit\106031.png" />
+    <Resource Include="res\icon_unit\106061.png" />
+    <Resource Include="res\icon_unit\106111.png" />
+    <Resource Include="res\icon_unit\106131.png" />
+    <Resource Include="res\icon_unit\106311.png" />
+    <Resource Include="res\icon_unit\106331.png" />
+    <Resource Include="res\icon_unit\106511.png" />
+    <Resource Include="res\icon_unit\106531.png" />
+    <Resource Include="res\icon_unit\106611.png" />
+    <Resource Include="res\icon_unit\106631.png" />
+    <Resource Include="res\icon_unit\106711.png" />
+    <Resource Include="res\icon_unit\106811.png" />
+    <Resource Include="res\icon_unit\106831.png" />
+    <Resource Include="res\icon_unit\106911.png" />
+    <Resource Include="res\icon_unit\107011.png" />
+    <Resource Include="res\icon_unit\107031.png" />
+    <Resource Include="res\icon_unit\107111.png" />
+    <Resource Include="res\icon_unit\107131.png" />
+    <Resource Include="res\icon_unit\107311.png" />
+    <Resource Include="res\icon_unit\107511.png" />
+    <Resource Include="res\icon_unit\107531.png" />
+    <Resource Include="res\icon_unit\107611.png" />
+    <Resource Include="res\icon_unit\107631.png" />
+    <Resource Include="res\icon_unit\107711.png" />
+    <Resource Include="res\icon_unit\107731.png" />
+    <Resource Include="res\icon_unit\107811.png" />
+    <Resource Include="res\icon_unit\107831.png" />
+    <Resource Include="res\icon_unit\107911.png" />
+    <Resource Include="res\icon_unit\107931.png" />
+    <Resource Include="res\icon_unit\108011.png" />
+    <Resource Include="res\icon_unit\108031.png" />
+    <Resource Include="res\icon_unit\108111.png" />
+    <Resource Include="res\icon_unit\108131.png" />
+    <Resource Include="res\icon_unit\108211.png" />
+    <Resource Include="res\icon_unit\108231.png" />
+    <Resource Include="res\icon_unit\108311.png" />
+    <Resource Include="res\icon_unit\108331.png" />
+    <Resource Include="res\icon_unit\108411.png" />
+    <Resource Include="res\icon_unit\108431.png" />
+    <Resource Include="res\icon_unit\108511.png" />
+    <Resource Include="res\icon_unit\108531.png" />
+    <Resource Include="res\icon_unit\108611.png" />
+    <Resource Include="res\icon_unit\108631.png" />
+    <Resource Include="res\icon_unit\108711.png" />
+    <Resource Include="res\icon_unit\108731.png" />
+    <Resource Include="res\icon_unit\108811.png" />
+    <Resource Include="res\icon_unit\108831.png" />
+    <Resource Include="res\icon_unit\108911.png" />
+    <Resource Include="res\icon_unit\108931.png" />
+    <Resource Include="res\icon_unit\109011.png" />
+    <Resource Include="res\icon_unit\109031.png" />
+    <Resource Include="res\icon_unit\109111.png" />
+    <Resource Include="res\icon_unit\109131.png" />
+    <Resource Include="res\icon_unit\109211.png" />
+    <Resource Include="res\icon_unit\109231.png" />
+    <Resource Include="res\icon_unit\109311.png" />
+    <Resource Include="res\icon_unit\109331.png" />
+    <Resource Include="res\icon_unit\109411.png" />
+    <Resource Include="res\icon_unit\109431.png" />
+    <Resource Include="res\icon_unit\109511.png" />
+    <Resource Include="res\icon_unit\109531.png" />
+    <Resource Include="res\icon_unit\109611.png" />
+    <Resource Include="res\icon_unit\109631.png" />
+    <Resource Include="res\icon_unit\109711.png" />
+    <Resource Include="res\icon_unit\109731.png" />
+    <Resource Include="res\icon_unit\109811.png" />
+    <Resource Include="res\icon_unit\109831.png" />
+    <Resource Include="res\icon_unit\109911.png" />
+    <Resource Include="res\icon_unit\109931.png" />
+    <Resource Include="res\icon_unit\110011.png" />
+    <Resource Include="res\icon_unit\110031.png" />
+    <Resource Include="res\icon_unit\110111.png" />
+    <Resource Include="res\icon_unit\110131.png" />
+    <Resource Include="res\icon_unit\110311.png" />
+    <Resource Include="res\icon_unit\110331.png" />
+    <Resource Include="res\icon_unit\110411.png" />
+    <Resource Include="res\icon_unit\110431.png" />
+    <Resource Include="res\icon_unit\110511.png" />
+    <Resource Include="res\icon_unit\110531.png" />
+    <Resource Include="res\icon_unit\110611.png" />
+    <Resource Include="res\icon_unit\110631.png" />
+    <Resource Include="res\icon_unit\110711.png" />
+    <Resource Include="res\icon_unit\110731.png" />
+    <Resource Include="res\icon_unit\110811.png" />
+    <Resource Include="res\icon_unit\110831.png" />
+    <Resource Include="res\icon_unit\110911.png" />
+    <Resource Include="res\icon_unit\110931.png" />
+    <Resource Include="res\icon_unit\111011.png" />
+    <Resource Include="res\icon_unit\111031.png" />
+    <Resource Include="res\icon_unit\111111.png" />
+    <Resource Include="res\icon_unit\111131.png" />
+    <Resource Include="res\icon_unit\111211.png" />
+    <Resource Include="res\icon_unit\111231.png" />
+    <Resource Include="res\icon_unit\111311.png" />
+    <Resource Include="res\icon_unit\111331.png" />
+    <Resource Include="res\icon_unit\111411.png" />
+    <Resource Include="res\icon_unit\111431.png" />
+    <Resource Include="res\icon_unit\111511.png" />
+    <Resource Include="res\icon_unit\111531.png" />
+    <Resource Include="res\icon_unit\111611.png" />
+    <Resource Include="res\icon_unit\111631.png" />
+    <Resource Include="res\icon_unit\111711.png" />
+    <Resource Include="res\icon_unit\111731.png" />
+    <Resource Include="res\icon_unit\111811.png" />
+    <Resource Include="res\icon_unit\111831.png" />
+    <Resource Include="res\icon_unit\111911.png" />
+    <Resource Include="res\icon_unit\111931.png" />
+    <Resource Include="res\icon_unit\112011.png" />
+    <Resource Include="res\icon_unit\112031.png" />
+    <Resource Include="res\icon_unit\112111.png" />
+    <Resource Include="res\icon_unit\112131.png" />
+    <Resource Include="res\icon_unit\112211.png" />
+    <Resource Include="res\icon_unit\112231.png" />
+    <Resource Include="res\icon_unit\112311.png" />
+    <Resource Include="res\icon_unit\112331.png" />
+    <Resource Include="res\icon_unit\112411.png" />
+    <Resource Include="res\icon_unit\112431.png" />
+    <Resource Include="res\icon_unit\112511.png" />
+    <Resource Include="res\icon_unit\112531.png" />
+    <Resource Include="res\icon_unit\112611.png" />
+    <Resource Include="res\icon_unit\112631.png" />
+    <Resource Include="res\icon_unit\112711.png" />
+    <Resource Include="res\icon_unit\112731.png" />
+    <Resource Include="res\icon_unit\112811.png" />
+    <Resource Include="res\icon_unit\112831.png" />
+    <Resource Include="res\icon_unit\112911.png" />
+    <Resource Include="res\icon_unit\112931.png" />
+    <Resource Include="res\icon_unit\113011.png" />
+    <Resource Include="res\icon_unit\113031.png" />
+    <Resource Include="res\icon_unit\113111.png" />
+    <Resource Include="res\icon_unit\113131.png" />
+    <Resource Include="res\icon_unit\113211.png" />
+    <Resource Include="res\icon_unit\113231.png" />
+    <Resource Include="res\icon_unit\113311.png" />
+    <Resource Include="res\icon_unit\113331.png" />
+    <Resource Include="res\icon_unit\113411.png" />
+    <Resource Include="res\icon_unit\113431.png" />
+    <Resource Include="res\icon_unit\113511.png" />
+    <Resource Include="res\icon_unit\113531.png" />
+    <Resource Include="res\icon_unit\113611.png" />
+    <Resource Include="res\icon_unit\113631.png" />
+    <Resource Include="res\icon_unit\113711.png" />
+    <Resource Include="res\icon_unit\113731.png" />
+    <Resource Include="res\icon_unit\113811.png" />
+    <Resource Include="res\icon_unit\113831.png" />
+    <Resource Include="res\icon_unit\113911.png" />
+    <Resource Include="res\icon_unit\113931.png" />
+    <Resource Include="res\icon_unit\114011.png" />
+    <Resource Include="res\icon_unit\114031.png" />
+    <Resource Include="res\icon_unit\114111.png" />
+    <Resource Include="res\icon_unit\114131.png" />
+    <Resource Include="res\icon_unit\114211.png" />
+    <Resource Include="res\icon_unit\114231.png" />
+    <Resource Include="res\icon_unit\114311.png" />
+    <Resource Include="res\icon_unit\114331.png" />
+    <Resource Include="res\icon_unit\114411.png" />
+    <Resource Include="res\icon_unit\114431.png" />
+    <Resource Include="res\icon_unit\114511.png" />
+    <Resource Include="res\icon_unit\114531.png" />
+    <Resource Include="res\icon_unit\114611.png" />
+    <Resource Include="res\icon_unit\114631.png" />
+    <Resource Include="res\icon_unit\114711.png" />
+    <Resource Include="res\icon_unit\114731.png" />
+    <Resource Include="res\icon_unit\115011.png" />
+    <Resource Include="res\icon_unit\115031.png" />
+    <Resource Include="res\icon_unit\115511.png" />
+    <Resource Include="res\icon_unit\115531.png" />
+    <Resource Include="res\icon_unit\115611.png" />
+    <Resource Include="res\icon_unit\115631.png" />
+    <Resource Include="res\icon_unit\180111.png" />
+    <Resource Include="res\icon_unit\180131.png" />
+    <Resource Include="res\icon_unit\180211.png" />
+    <Resource Include="res\icon_unit\180231.png" />
+    <Resource Include="res\icon_unit\180411.png" />
+    <Resource Include="res\icon_unit\180431.png" />
+    <Resource Include="res\icon_unit\180511.png" />
+    <Resource Include="res\icon_unit\180531.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\icon_equipment\101011.png" />
+    <Resource Include="res\icon_equipment\101071.png" />
+    <Resource Include="res\icon_equipment\101101.png" />
+    <Resource Include="res\icon_equipment\101131.png" />
+    <Resource Include="res\icon_equipment\101161.png" />
+    <Resource Include="res\icon_equipment\101191.png" />
+    <Resource Include="res\icon_equipment\101251.png" />
+    <Resource Include="res\icon_equipment\101281.png" />
+    <Resource Include="res\icon_equipment\101371.png" />
+    <Resource Include="res\icon_equipment\101401.png" />
+    <Resource Include="res\icon_equipment\101431.png" />
+    <Resource Include="res\icon_equipment\101521.png" />
+    <Resource Include="res\icon_equipment\101551.png" />
+    <Resource Include="res\icon_equipment\101581.png" />
+    <Resource Include="res\icon_equipment\101611.png" />
+    <Resource Include="res\icon_equipment\102011.png" />
+    <Resource Include="res\icon_equipment\102012.png" />
+    <Resource Include="res\icon_equipment\102013.png" />
+    <Resource Include="res\icon_equipment\102014.png" />
+    <Resource Include="res\icon_equipment\102041.png" />
+    <Resource Include="res\icon_equipment\102071.png" />
+    <Resource Include="res\icon_equipment\102101.png" />
+    <Resource Include="res\icon_equipment\102131.png" />
+    <Resource Include="res\icon_equipment\102161.png" />
+    <Resource Include="res\icon_equipment\102162.png" />
+    <Resource Include="res\icon_equipment\102163.png" />
+    <Resource Include="res\icon_equipment\102191.png" />
+    <Resource Include="res\icon_equipment\102192.png" />
+    <Resource Include="res\icon_equipment\102221.png" />
+    <Resource Include="res\icon_equipment\102222.png" />
+    <Resource Include="res\icon_equipment\102251.png" />
+    <Resource Include="res\icon_equipment\102252.png" />
+    <Resource Include="res\icon_equipment\102281.png" />
+    <Resource Include="res\icon_equipment\102282.png" />
+    <Resource Include="res\icon_equipment\102311.png" />
+    <Resource Include="res\icon_equipment\102312.png" />
+    <Resource Include="res\icon_equipment\102341.png" />
+    <Resource Include="res\icon_equipment\102342.png" />
+    <Resource Include="res\icon_equipment\102371.png" />
+    <Resource Include="res\icon_equipment\102372.png" />
+    <Resource Include="res\icon_equipment\102401.png" />
+    <Resource Include="res\icon_equipment\102431.png" />
+    <Resource Include="res\icon_equipment\102432.png" />
+    <Resource Include="res\icon_equipment\102461.png" />
+    <Resource Include="res\icon_equipment\102491.png" />
+    <Resource Include="res\icon_equipment\102492.png" />
+    <Resource Include="res\icon_equipment\102493.png" />
+    <Resource Include="res\icon_equipment\102521.png" />
+    <Resource Include="res\icon_equipment\102551.png" />
+    <Resource Include="res\icon_equipment\102552.png" />
+    <Resource Include="res\icon_equipment\102581.png" />
+    <Resource Include="res\icon_equipment\102582.png" />
+    <Resource Include="res\icon_equipment\102611.png" />
+    <Resource Include="res\icon_equipment\102612.png" />
+    <Resource Include="res\icon_equipment\102613.png" />
+    <Resource Include="res\icon_equipment\102614.png" />
+    <Resource Include="res\icon_equipment\103011.png" />
+    <Resource Include="res\icon_equipment\103012.png" />
+    <Resource Include="res\icon_equipment\103013.png" />
+    <Resource Include="res\icon_equipment\103041.png" />
+    <Resource Include="res\icon_equipment\103042.png" />
+    <Resource Include="res\icon_equipment\103071.png" />
+    <Resource Include="res\icon_equipment\103072.png" />
+    <Resource Include="res\icon_equipment\103101.png" />
+    <Resource Include="res\icon_equipment\103131.png" />
+    <Resource Include="res\icon_equipment\103132.png" />
+    <Resource Include="res\icon_equipment\103161.png" />
+    <Resource Include="res\icon_equipment\103162.png" />
+    <Resource Include="res\icon_equipment\103191.png" />
+    <Resource Include="res\icon_equipment\103192.png" />
+    <Resource Include="res\icon_equipment\103193.png" />
+    <Resource Include="res\icon_equipment\103221.png" />
+    <Resource Include="res\icon_equipment\103222.png" />
+    <Resource Include="res\icon_equipment\103251.png" />
+    <Resource Include="res\icon_equipment\103252.png" />
+    <Resource Include="res\icon_equipment\103281.png" />
+    <Resource Include="res\icon_equipment\103282.png" />
+    <Resource Include="res\icon_equipment\103283.png" />
+    <Resource Include="res\icon_equipment\103311.png" />
+    <Resource Include="res\icon_equipment\103341.png" />
+    <Resource Include="res\icon_equipment\103342.png" />
+    <Resource Include="res\icon_equipment\103343.png" />
+    <Resource Include="res\icon_equipment\103371.png" />
+    <Resource Include="res\icon_equipment\103372.png" />
+    <Resource Include="res\icon_equipment\103401.png" />
+    <Resource Include="res\icon_equipment\103431.png" />
+    <Resource Include="res\icon_equipment\103432.png" />
+    <Resource Include="res\icon_equipment\103461.png" />
+    <Resource Include="res\icon_equipment\103491.png" />
+    <Resource Include="res\icon_equipment\103521.png" />
+    <Resource Include="res\icon_equipment\103522.png" />
+    <Resource Include="res\icon_equipment\103551.png" />
+    <Resource Include="res\icon_equipment\103552.png" />
+    <Resource Include="res\icon_equipment\103553.png" />
+    <Resource Include="res\icon_equipment\103581.png" />
+    <Resource Include="res\icon_equipment\103582.png" />
+    <Resource Include="res\icon_equipment\103583.png" />
+    <Resource Include="res\icon_equipment\103611.png" />
+    <Resource Include="res\icon_equipment\103612.png" />
+    <Resource Include="res\icon_equipment\103613.png" />
+    <Resource Include="res\icon_equipment\103614.png" />
+    <Resource Include="res\icon_equipment\104011.png" />
+    <Resource Include="res\icon_equipment\104012.png" />
+    <Resource Include="res\icon_equipment\104013.png" />
+    <Resource Include="res\icon_equipment\104014.png" />
+    <Resource Include="res\icon_equipment\104041.png" />
+    <Resource Include="res\icon_equipment\104042.png" />
+    <Resource Include="res\icon_equipment\104043.png" />
+    <Resource Include="res\icon_equipment\104044.png" />
+    <Resource Include="res\icon_equipment\104071.png" />
+    <Resource Include="res\icon_equipment\104072.png" />
+    <Resource Include="res\icon_equipment\104073.png" />
+    <Resource Include="res\icon_equipment\104074.png" />
+    <Resource Include="res\icon_equipment\104101.png" />
+    <Resource Include="res\icon_equipment\104102.png" />
+    <Resource Include="res\icon_equipment\104103.png" />
+    <Resource Include="res\icon_equipment\104104.png" />
+    <Resource Include="res\icon_equipment\104131.png" />
+    <Resource Include="res\icon_equipment\104132.png" />
+    <Resource Include="res\icon_equipment\104133.png" />
+    <Resource Include="res\icon_equipment\104134.png" />
+    <Resource Include="res\icon_equipment\104161.png" />
+    <Resource Include="res\icon_equipment\104162.png" />
+    <Resource Include="res\icon_equipment\104163.png" />
+    <Resource Include="res\icon_equipment\104164.png" />
+    <Resource Include="res\icon_equipment\104191.png" />
+    <Resource Include="res\icon_equipment\104192.png" />
+    <Resource Include="res\icon_equipment\104193.png" />
+    <Resource Include="res\icon_equipment\104194.png" />
+    <Resource Include="res\icon_equipment\104221.png" />
+    <Resource Include="res\icon_equipment\104222.png" />
+    <Resource Include="res\icon_equipment\104223.png" />
+    <Resource Include="res\icon_equipment\104224.png" />
+    <Resource Include="res\icon_equipment\104251.png" />
+    <Resource Include="res\icon_equipment\104252.png" />
+    <Resource Include="res\icon_equipment\104253.png" />
+    <Resource Include="res\icon_equipment\104254.png" />
+    <Resource Include="res\icon_equipment\104281.png" />
+    <Resource Include="res\icon_equipment\104282.png" />
+    <Resource Include="res\icon_equipment\104283.png" />
+    <Resource Include="res\icon_equipment\104284.png" />
+    <Resource Include="res\icon_equipment\104311.png" />
+    <Resource Include="res\icon_equipment\104312.png" />
+    <Resource Include="res\icon_equipment\104313.png" />
+    <Resource Include="res\icon_equipment\104314.png" />
+    <Resource Include="res\icon_equipment\104341.png" />
+    <Resource Include="res\icon_equipment\104342.png" />
+    <Resource Include="res\icon_equipment\104343.png" />
+    <Resource Include="res\icon_equipment\104344.png" />
+    <Resource Include="res\icon_equipment\104371.png" />
+    <Resource Include="res\icon_equipment\104372.png" />
+    <Resource Include="res\icon_equipment\104373.png" />
+    <Resource Include="res\icon_equipment\104401.png" />
+    <Resource Include="res\icon_equipment\104402.png" />
+    <Resource Include="res\icon_equipment\104431.png" />
+    <Resource Include="res\icon_equipment\104432.png" />
+    <Resource Include="res\icon_equipment\104433.png" />
+    <Resource Include="res\icon_equipment\104461.png" />
+    <Resource Include="res\icon_equipment\104462.png" />
+    <Resource Include="res\icon_equipment\104463.png" />
+    <Resource Include="res\icon_equipment\104491.png" />
+    <Resource Include="res\icon_equipment\104521.png" />
+    <Resource Include="res\icon_equipment\104522.png" />
+    <Resource Include="res\icon_equipment\104523.png" />
+    <Resource Include="res\icon_equipment\104551.png" />
+    <Resource Include="res\icon_equipment\104552.png" />
+    <Resource Include="res\icon_equipment\104553.png" />
+    <Resource Include="res\icon_equipment\104554.png" />
+    <Resource Include="res\icon_equipment\104581.png" />
+    <Resource Include="res\icon_equipment\104582.png" />
+    <Resource Include="res\icon_equipment\104583.png" />
+    <Resource Include="res\icon_equipment\104611.png" />
+    <Resource Include="res\icon_equipment\104612.png" />
+    <Resource Include="res\icon_equipment\104613.png" />
+    <Resource Include="res\icon_equipment\105011.png" />
+    <Resource Include="res\icon_equipment\105012.png" />
+    <Resource Include="res\icon_equipment\105013.png" />
+    <Resource Include="res\icon_equipment\105014.png" />
+    <Resource Include="res\icon_equipment\105015.png" />
+    <Resource Include="res\icon_equipment\105016.png" />
+    <Resource Include="res\icon_equipment\105017.png" />
+    <Resource Include="res\icon_equipment\105041.png" />
+    <Resource Include="res\icon_equipment\105042.png" />
+    <Resource Include="res\icon_equipment\105043.png" />
+    <Resource Include="res\icon_equipment\105044.png" />
+    <Resource Include="res\icon_equipment\105045.png" />
+    <Resource Include="res\icon_equipment\105046.png" />
+    <Resource Include="res\icon_equipment\105047.png" />
+    <Resource Include="res\icon_equipment\105071.png" />
+    <Resource Include="res\icon_equipment\105072.png" />
+    <Resource Include="res\icon_equipment\105073.png" />
+    <Resource Include="res\icon_equipment\105074.png" />
+    <Resource Include="res\icon_equipment\105075.png" />
+    <Resource Include="res\icon_equipment\105076.png" />
+    <Resource Include="res\icon_equipment\105077.png" />
+    <Resource Include="res\icon_equipment\105101.png" />
+    <Resource Include="res\icon_equipment\105102.png" />
+    <Resource Include="res\icon_equipment\105103.png" />
+    <Resource Include="res\icon_equipment\105104.png" />
+    <Resource Include="res\icon_equipment\105105.png" />
+    <Resource Include="res\icon_equipment\105106.png" />
+    <Resource Include="res\icon_equipment\105107.png" />
+    <Resource Include="res\icon_equipment\105131.png" />
+    <Resource Include="res\icon_equipment\105132.png" />
+    <Resource Include="res\icon_equipment\105133.png" />
+    <Resource Include="res\icon_equipment\105134.png" />
+    <Resource Include="res\icon_equipment\105135.png" />
+    <Resource Include="res\icon_equipment\105136.png" />
+    <Resource Include="res\icon_equipment\105137.png" />
+    <Resource Include="res\icon_equipment\105161.png" />
+    <Resource Include="res\icon_equipment\105162.png" />
+    <Resource Include="res\icon_equipment\105163.png" />
+    <Resource Include="res\icon_equipment\105164.png" />
+    <Resource Include="res\icon_equipment\105165.png" />
+    <Resource Include="res\icon_equipment\105166.png" />
+    <Resource Include="res\icon_equipment\105167.png" />
+    <Resource Include="res\icon_equipment\105191.png" />
+    <Resource Include="res\icon_equipment\105192.png" />
+    <Resource Include="res\icon_equipment\105193.png" />
+    <Resource Include="res\icon_equipment\105194.png" />
+    <Resource Include="res\icon_equipment\105195.png" />
+    <Resource Include="res\icon_equipment\105196.png" />
+    <Resource Include="res\icon_equipment\105197.png" />
+    <Resource Include="res\icon_equipment\105221.png" />
+    <Resource Include="res\icon_equipment\105222.png" />
+    <Resource Include="res\icon_equipment\105223.png" />
+    <Resource Include="res\icon_equipment\105224.png" />
+    <Resource Include="res\icon_equipment\105225.png" />
+    <Resource Include="res\icon_equipment\105226.png" />
+    <Resource Include="res\icon_equipment\105227.png" />
+    <Resource Include="res\icon_equipment\105251.png" />
+    <Resource Include="res\icon_equipment\105252.png" />
+    <Resource Include="res\icon_equipment\105253.png" />
+    <Resource Include="res\icon_equipment\105254.png" />
+    <Resource Include="res\icon_equipment\105255.png" />
+    <Resource Include="res\icon_equipment\105256.png" />
+    <Resource Include="res\icon_equipment\105257.png" />
+    <Resource Include="res\icon_equipment\105281.png" />
+    <Resource Include="res\icon_equipment\105282.png" />
+    <Resource Include="res\icon_equipment\105283.png" />
+    <Resource Include="res\icon_equipment\105284.png" />
+    <Resource Include="res\icon_equipment\105285.png" />
+    <Resource Include="res\icon_equipment\105286.png" />
+    <Resource Include="res\icon_equipment\105287.png" />
+    <Resource Include="res\icon_equipment\105311.png" />
+    <Resource Include="res\icon_equipment\105312.png" />
+    <Resource Include="res\icon_equipment\105313.png" />
+    <Resource Include="res\icon_equipment\105314.png" />
+    <Resource Include="res\icon_equipment\105315.png" />
+    <Resource Include="res\icon_equipment\105316.png" />
+    <Resource Include="res\icon_equipment\105317.png" />
+    <Resource Include="res\icon_equipment\105341.png" />
+    <Resource Include="res\icon_equipment\105342.png" />
+    <Resource Include="res\icon_equipment\105343.png" />
+    <Resource Include="res\icon_equipment\105344.png" />
+    <Resource Include="res\icon_equipment\105345.png" />
+    <Resource Include="res\icon_equipment\105346.png" />
+    <Resource Include="res\icon_equipment\105347.png" />
+    <Resource Include="res\icon_equipment\105371.png" />
+    <Resource Include="res\icon_equipment\105372.png" />
+    <Resource Include="res\icon_equipment\105373.png" />
+    <Resource Include="res\icon_equipment\105374.png" />
+    <Resource Include="res\icon_equipment\105375.png" />
+    <Resource Include="res\icon_equipment\105376.png" />
+    <Resource Include="res\icon_equipment\105377.png" />
+    <Resource Include="res\icon_equipment\105401.png" />
+    <Resource Include="res\icon_equipment\105402.png" />
+    <Resource Include="res\icon_equipment\105403.png" />
+    <Resource Include="res\icon_equipment\105431.png" />
+    <Resource Include="res\icon_equipment\105432.png" />
+    <Resource Include="res\icon_equipment\105433.png" />
+    <Resource Include="res\icon_equipment\105462.png" />
+    <Resource Include="res\icon_equipment\105463.png" />
+    <Resource Include="res\icon_equipment\105464.png" />
+    <Resource Include="res\icon_equipment\105491.png" />
+    <Resource Include="res\icon_equipment\105521.png" />
+    <Resource Include="res\icon_equipment\105522.png" />
+    <Resource Include="res\icon_equipment\105523.png" />
+    <Resource Include="res\icon_equipment\105524.png" />
+    <Resource Include="res\icon_equipment\105551.png" />
+    <Resource Include="res\icon_equipment\105552.png" />
+    <Resource Include="res\icon_equipment\105553.png" />
+    <Resource Include="res\icon_equipment\105554.png" />
+    <Resource Include="res\icon_equipment\105555.png" />
+    <Resource Include="res\icon_equipment\105556.png" />
+    <Resource Include="res\icon_equipment\105557.png" />
+    <Resource Include="res\icon_equipment\105581.png" />
+    <Resource Include="res\icon_equipment\105582.png" />
+    <Resource Include="res\icon_equipment\105583.png" />
+    <Resource Include="res\icon_equipment\105584.png" />
+    <Resource Include="res\icon_equipment\105585.png" />
+    <Resource Include="res\icon_equipment\105586.png" />
+    <Resource Include="res\icon_equipment\105587.png" />
+    <Resource Include="res\icon_equipment\105611.png" />
+    <Resource Include="res\icon_equipment\105612.png" />
+    <Resource Include="res\icon_equipment\105613.png" />
+    <Resource Include="res\icon_equipment\105614.png" />
+    <Resource Include="res\icon_equipment\105615.png" />
+    <Resource Include="res\icon_equipment\105616.png" />
+    <Resource Include="res\icon_equipment\105617.png" />
+    <Resource Include="res\icon_equipment\106011.png" />
+    <Resource Include="res\icon_equipment\106012.png" />
+    <Resource Include="res\icon_equipment\106041.png" />
+    <Resource Include="res\icon_equipment\106042.png" />
+    <Resource Include="res\icon_equipment\106071.png" />
+    <Resource Include="res\icon_equipment\106072.png" />
+    <Resource Include="res\icon_equipment\106101.png" />
+    <Resource Include="res\icon_equipment\106102.png" />
+    <Resource Include="res\icon_equipment\106131.png" />
+    <Resource Include="res\icon_equipment\106132.png" />
+    <Resource Include="res\icon_equipment\106161.png" />
+    <Resource Include="res\icon_equipment\106162.png" />
+    <Resource Include="res\icon_equipment\106191.png" />
+    <Resource Include="res\icon_equipment\106192.png" />
+    <Resource Include="res\icon_equipment\106221.png" />
+    <Resource Include="res\icon_equipment\106222.png" />
+    <Resource Include="res\icon_equipment\106251.png" />
+    <Resource Include="res\icon_equipment\106252.png" />
+    <Resource Include="res\icon_equipment\106281.png" />
+    <Resource Include="res\icon_equipment\106282.png" />
+    <Resource Include="res\icon_equipment\106311.png" />
+    <Resource Include="res\icon_equipment\106312.png" />
+    <Resource Include="res\icon_equipment\106341.png" />
+    <Resource Include="res\icon_equipment\106342.png" />
+    <Resource Include="res\icon_equipment\106371.png" />
+    <Resource Include="res\icon_equipment\106372.png" />
+    <Resource Include="res\icon_equipment\106401.png" />
+    <Resource Include="res\icon_equipment\106431.png" />
+    <Resource Include="res\icon_equipment\106461.png" />
+    <Resource Include="res\icon_equipment\106521.png" />
+    <Resource Include="res\icon_equipment\106551.png" />
+    <Resource Include="res\icon_equipment\106552.png" />
+    <Resource Include="res\icon_equipment\106581.png" />
+    <Resource Include="res\icon_equipment\106582.png" />
+    <Resource Include="res\icon_equipment\106611.png" />
+    <Resource Include="res\icon_equipment\106612.png" />
+    <Resource Include="res\icon_equipment\130011.png" />
+    <Resource Include="res\icon_equipment\130021.png" />
+    <Resource Include="res\icon_equipment\130031.png" />
+    <Resource Include="res\icon_equipment\130041.png" />
+    <Resource Include="res\icon_equipment\130051.png" />
+    <Resource Include="res\icon_equipment\130061.png" />
+    <Resource Include="res\icon_equipment\130071.png" />
+    <Resource Include="res\icon_equipment\130081.png" />
+    <Resource Include="res\icon_equipment\130091.png" />
+    <Resource Include="res\icon_equipment\130101.png" />
+    <Resource Include="res\icon_equipment\130111.png" />
+    <Resource Include="res\icon_equipment\130121.png" />
+    <Resource Include="res\icon_equipment\130131.png" />
+    <Resource Include="res\icon_equipment\130141.png" />
+    <Resource Include="res\icon_equipment\130151.png" />
+    <Resource Include="res\icon_equipment\130161.png" />
+    <Resource Include="res\icon_equipment\130171.png" />
+    <Resource Include="res\icon_equipment\130181.png" />
+    <Resource Include="res\icon_equipment\130201.png" />
+    <Resource Include="res\icon_equipment\130211.png" />
+    <Resource Include="res\icon_equipment\130221.png" />
+    <Resource Include="res\icon_equipment\130231.png" />
+    <Resource Include="res\icon_equipment\130251.png" />
+    <Resource Include="res\icon_equipment\130261.png" />
+    <Resource Include="res\icon_equipment\130271.png" />
+    <Resource Include="res\icon_equipment\130281.png" />
+    <Resource Include="res\icon_equipment\130291.png" />
+    <Resource Include="res\icon_equipment\130301.png" />
+    <Resource Include="res\icon_equipment\130311.png" />
+    <Resource Include="res\icon_equipment\130321.png" />
+    <Resource Include="res\icon_equipment\130331.png" />
+    <Resource Include="res\icon_equipment\130341.png" />
+    <Resource Include="res\icon_equipment\130361.png" />
+    <Resource Include="res\icon_equipment\130371.png" />
+    <Resource Include="res\icon_equipment\130381.png" />
+    <Resource Include="res\icon_equipment\130401.png" />
+    <Resource Include="res\icon_equipment\130421.png" />
+    <Resource Include="res\icon_equipment\130431.png" />
+    <Resource Include="res\icon_equipment\130441.png" />
+    <Resource Include="res\icon_equipment\130451.png" />
+    <Resource Include="res\icon_equipment\130461.png" />
+    <Resource Include="res\icon_equipment\130471.png" />
+    <Resource Include="res\icon_equipment\130481.png" />
+    <Resource Include="res\icon_equipment\130491.png" />
+    <Resource Include="res\icon_equipment\130501.png" />
+    <Resource Include="res\icon_equipment\130511.png" />
+    <Resource Include="res\icon_equipment\130521.png" />
+    <Resource Include="res\icon_equipment\130531.png" />
+    <Resource Include="res\icon_equipment\130541.png" />
+    <Resource Include="res\icon_equipment\130551.png" />
+    <Resource Include="res\icon_equipment\130561.png" />
+    <Resource Include="res\icon_equipment\130571.png" />
+    <Resource Include="res\icon_equipment\130581.png" />
+    <Resource Include="res\icon_equipment\130591.png" />
+    <Resource Include="res\icon_equipment\130601.png" />
+    <Resource Include="res\icon_equipment\130611.png" />
+    <Resource Include="res\icon_equipment\130631.png" />
+    <Resource Include="res\icon_equipment\130651.png" />
+    <Resource Include="res\icon_equipment\130711.png" />
+    <Resource Include="res\icon_equipment\130751.png" />
+    <Resource Include="res\icon_equipment\130761.png" />
+    <Resource Include="res\icon_equipment\130771.png" />
+    <Resource Include="res\icon_equipment\130781.png" />
+    <Resource Include="res\icon_equipment\130791.png" />
+    <Resource Include="res\icon_equipment\130801.png" />
+    <Resource Include="res\icon_equipment\130811.png" />
+    <Resource Include="res\icon_equipment\130821.png" />
+    <Resource Include="res\icon_equipment\130831.png" />
+    <Resource Include="res\icon_equipment\130841.png" />
+    <Resource Include="res\icon_equipment\130851.png" />
+    <Resource Include="res\icon_equipment\130861.png" />
+    <Resource Include="res\icon_equipment\130871.png" />
+    <Resource Include="res\icon_equipment\130881.png" />
+    <Resource Include="res\icon_equipment\130891.png" />
+    <Resource Include="res\icon_equipment\130901.png" />
+    <Resource Include="res\icon_equipment\130911.png" />
+    <Resource Include="res\icon_equipment\130921.png" />
+    <Resource Include="res\icon_equipment\130931.png" />
+    <Resource Include="res\icon_equipment\130941.png" />
+    <Resource Include="res\icon_equipment\130951.png" />
+    <Resource Include="res\icon_equipment\130961.png" />
+    <Resource Include="res\icon_equipment\130971.png" />
+    <Resource Include="res\icon_equipment\130981.png" />
+    <Resource Include="res\icon_equipment\130991.png" />
+    <Resource Include="res\icon_equipment\131001.png" />
+    <Resource Include="res\icon_equipment\131011.png" />
+    <Resource Include="res\icon_equipment\131031.png" />
+    <Resource Include="res\icon_equipment\131041.png" />
+    <Resource Include="res\icon_equipment\131051.png" />
+    <Resource Include="res\icon_equipment\131061.png" />
+    <Resource Include="res\icon_equipment\131071.png" />
+    <Resource Include="res\icon_equipment\131081.png" />
+    <Resource Include="res\icon_equipment\131111.png" />
+    <Resource Include="res\icon_equipment\131121.png" />
+    <Resource Include="res\icon_equipment\131131.png" />
+    <Resource Include="res\icon_equipment\131141.png" />
+    <Resource Include="res\icon_equipment\131151.png" />
+    <Resource Include="res\icon_equipment\131161.png" />
+    <Resource Include="res\icon_equipment\131171.png" />
+    <Resource Include="res\icon_equipment\131191.png" />
+    <Resource Include="res\icon_equipment\131201.png" />
+    <Resource Include="res\icon_equipment\131211.png" />
+    <Resource Include="res\icon_equipment\140000.png" />
+    <Resource Include="res\icon_equipment\140001.png" />
+    <Resource Include="res\icon_equipment\999999.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon_item_91001.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\star_chara.png" />
+    <Resource Include="res\star_chara_6.png" />
+    <Resource Include="res\star_chara_down.png" />
+    <Resource Include="res\star_item.png" />
+    <Resource Include="res\star_item_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\icon_unit_crop\100111.png" />
+    <Resource Include="res\icon_unit_crop\100131.png" />
+    <Resource Include="res\icon_unit_crop\100161.png" />
+    <Resource Include="res\icon_unit_crop\100211.png" />
+    <Resource Include="res\icon_unit_crop\100231.png" />
+    <Resource Include="res\icon_unit_crop\100261.png" />
+    <Resource Include="res\icon_unit_crop\100311.png" />
+    <Resource Include="res\icon_unit_crop\100331.png" />
+    <Resource Include="res\icon_unit_crop\100361.png" />
+    <Resource Include="res\icon_unit_crop\100411.png" />
+    <Resource Include="res\icon_unit_crop\100431.png" />
+    <Resource Include="res\icon_unit_crop\100511.png" />
+    <Resource Include="res\icon_unit_crop\100531.png" />
+    <Resource Include="res\icon_unit_crop\100611.png" />
+    <Resource Include="res\icon_unit_crop\100631.png" />
+    <Resource Include="res\icon_unit_crop\100661.png" />
+    <Resource Include="res\icon_unit_crop\100711.png" />
+    <Resource Include="res\icon_unit_crop\100731.png" />
+    <Resource Include="res\icon_unit_crop\100811.png" />
+    <Resource Include="res\icon_unit_crop\100831.png" />
+    <Resource Include="res\icon_unit_crop\100911.png" />
+    <Resource Include="res\icon_unit_crop\100931.png" />
+    <Resource Include="res\icon_unit_crop\101011.png" />
+    <Resource Include="res\icon_unit_crop\101031.png" />
+    <Resource Include="res\icon_unit_crop\101061.png" />
+    <Resource Include="res\icon_unit_crop\101111.png" />
+    <Resource Include="res\icon_unit_crop\101131.png" />
+    <Resource Include="res\icon_unit_crop\101161.png" />
+    <Resource Include="res\icon_unit_crop\101211.png" />
+    <Resource Include="res\icon_unit_crop\101231.png" />
+    <Resource Include="res\icon_unit_crop\101261.png" />
+    <Resource Include="res\icon_unit_crop\101311.png" />
+    <Resource Include="res\icon_unit_crop\101331.png" />
+    <Resource Include="res\icon_unit_crop\101411.png" />
+    <Resource Include="res\icon_unit_crop\101431.png" />
+    <Resource Include="res\icon_unit_crop\101511.png" />
+    <Resource Include="res\icon_unit_crop\101531.png" />
+    <Resource Include="res\icon_unit_crop\101611.png" />
+    <Resource Include="res\icon_unit_crop\101631.png" />
+    <Resource Include="res\icon_unit_crop\101661.png" />
+    <Resource Include="res\icon_unit_crop\101711.png" />
+    <Resource Include="res\icon_unit_crop\101731.png" />
+    <Resource Include="res\icon_unit_crop\101811.png" />
+    <Resource Include="res\icon_unit_crop\101831.png" />
+    <Resource Include="res\icon_unit_crop\101861.png" />
+    <Resource Include="res\icon_unit_crop\102011.png" />
+    <Resource Include="res\icon_unit_crop\102031.png" />
+    <Resource Include="res\icon_unit_crop\102111.png" />
+    <Resource Include="res\icon_unit_crop\102131.png" />
+    <Resource Include="res\icon_unit_crop\102211.png" />
+    <Resource Include="res\icon_unit_crop\102231.png" />
+    <Resource Include="res\icon_unit_crop\102311.png" />
+    <Resource Include="res\icon_unit_crop\102331.png" />
+    <Resource Include="res\icon_unit_crop\102361.png" />
+    <Resource Include="res\icon_unit_crop\102511.png" />
+    <Resource Include="res\icon_unit_crop\102531.png" />
+    <Resource Include="res\icon_unit_crop\102611.png" />
+    <Resource Include="res\icon_unit_crop\102631.png" />
+    <Resource Include="res\icon_unit_crop\102711.png" />
+    <Resource Include="res\icon_unit_crop\102731.png" />
+    <Resource Include="res\icon_unit_crop\102811.png" />
+    <Resource Include="res\icon_unit_crop\102831.png" />
+    <Resource Include="res\icon_unit_crop\102861.png" />
+    <Resource Include="res\icon_unit_crop\102911.png" />
+    <Resource Include="res\icon_unit_crop\102931.png" />
+    <Resource Include="res\icon_unit_crop\103011.png" />
+    <Resource Include="res\icon_unit_crop\103031.png" />
+    <Resource Include="res\icon_unit_crop\103061.png" />
+    <Resource Include="res\icon_unit_crop\103111.png" />
+    <Resource Include="res\icon_unit_crop\103131.png" />
+    <Resource Include="res\icon_unit_crop\103211.png" />
+    <Resource Include="res\icon_unit_crop\103231.png" />
+    <Resource Include="res\icon_unit_crop\103261.png" />
+    <Resource Include="res\icon_unit_crop\103311.png" />
+    <Resource Include="res\icon_unit_crop\103331.png" />
+    <Resource Include="res\icon_unit_crop\103361.png" />
+    <Resource Include="res\icon_unit_crop\103411.png" />
+    <Resource Include="res\icon_unit_crop\103431.png" />
+    <Resource Include="res\icon_unit_crop\103461.png" />
+    <Resource Include="res\icon_unit_crop\103611.png" />
+    <Resource Include="res\icon_unit_crop\103631.png" />
+    <Resource Include="res\icon_unit_crop\103711.png" />
+    <Resource Include="res\icon_unit_crop\103731.png" />
+    <Resource Include="res\icon_unit_crop\103811.png" />
+    <Resource Include="res\icon_unit_crop\103831.png" />
+    <Resource Include="res\icon_unit_crop\104011.png" />
+    <Resource Include="res\icon_unit_crop\104031.png" />
+    <Resource Include="res\icon_unit_crop\104211.png" />
+    <Resource Include="res\icon_unit_crop\104231.png" />
+    <Resource Include="res\icon_unit_crop\104311.png" />
+    <Resource Include="res\icon_unit_crop\104331.png" />
+    <Resource Include="res\icon_unit_crop\104411.png" />
+    <Resource Include="res\icon_unit_crop\104431.png" />
+    <Resource Include="res\icon_unit_crop\104511.png" />
+    <Resource Include="res\icon_unit_crop\104531.png" />
+    <Resource Include="res\icon_unit_crop\104611.png" />
+    <Resource Include="res\icon_unit_crop\104631.png" />
+    <Resource Include="res\icon_unit_crop\104661.png" />
+    <Resource Include="res\icon_unit_crop\104711.png" />
+    <Resource Include="res\icon_unit_crop\104731.png" />
+    <Resource Include="res\icon_unit_crop\104811.png" />
+    <Resource Include="res\icon_unit_crop\104831.png" />
+    <Resource Include="res\icon_unit_crop\104861.png" />
+    <Resource Include="res\icon_unit_crop\104911.png" />
+    <Resource Include="res\icon_unit_crop\104931.png" />
+    <Resource Include="res\icon_unit_crop\104961.png" />
+    <Resource Include="res\icon_unit_crop\105011.png" />
+    <Resource Include="res\icon_unit_crop\105031.png" />
+    <Resource Include="res\icon_unit_crop\105111.png" />
+    <Resource Include="res\icon_unit_crop\105131.png" />
+    <Resource Include="res\icon_unit_crop\105211.png" />
+    <Resource Include="res\icon_unit_crop\105231.png" />
+    <Resource Include="res\icon_unit_crop\105261.png" />
+    <Resource Include="res\icon_unit_crop\105311.png" />
+    <Resource Include="res\icon_unit_crop\105331.png" />
+    <Resource Include="res\icon_unit_crop\105411.png" />
+    <Resource Include="res\icon_unit_crop\105431.png" />
+    <Resource Include="res\icon_unit_crop\105511.png" />
+    <Resource Include="res\icon_unit_crop\105531.png" />
+    <Resource Include="res\icon_unit_crop\105611.png" />
+    <Resource Include="res\icon_unit_crop\105631.png" />
+    <Resource Include="res\icon_unit_crop\105711.png" />
+    <Resource Include="res\icon_unit_crop\105731.png" />
+    <Resource Include="res\icon_unit_crop\105811.png" />
+    <Resource Include="res\icon_unit_crop\105831.png" />
+    <Resource Include="res\icon_unit_crop\105861.png" />
+    <Resource Include="res\icon_unit_crop\105911.png" />
+    <Resource Include="res\icon_unit_crop\105931.png" />
+    <Resource Include="res\icon_unit_crop\105961.png" />
+    <Resource Include="res\icon_unit_crop\106011.png" />
+    <Resource Include="res\icon_unit_crop\106031.png" />
+    <Resource Include="res\icon_unit_crop\106061.png" />
+    <Resource Include="res\icon_unit_crop\106111.png" />
+    <Resource Include="res\icon_unit_crop\106131.png" />
+    <Resource Include="res\icon_unit_crop\106311.png" />
+    <Resource Include="res\icon_unit_crop\106331.png" />
+    <Resource Include="res\icon_unit_crop\106511.png" />
+    <Resource Include="res\icon_unit_crop\106531.png" />
+    <Resource Include="res\icon_unit_crop\106611.png" />
+    <Resource Include="res\icon_unit_crop\106631.png" />
+    <Resource Include="res\icon_unit_crop\106711.png" />
+    <Resource Include="res\icon_unit_crop\106811.png" />
+    <Resource Include="res\icon_unit_crop\106831.png" />
+    <Resource Include="res\icon_unit_crop\106911.png" />
+    <Resource Include="res\icon_unit_crop\107011.png" />
+    <Resource Include="res\icon_unit_crop\107031.png" />
+    <Resource Include="res\icon_unit_crop\107111.png" />
+    <Resource Include="res\icon_unit_crop\107131.png" />
+    <Resource Include="res\icon_unit_crop\107511.png" />
+    <Resource Include="res\icon_unit_crop\107531.png" />
+    <Resource Include="res\icon_unit_crop\107611.png" />
+    <Resource Include="res\icon_unit_crop\107631.png" />
+    <Resource Include="res\icon_unit_crop\107711.png" />
+    <Resource Include="res\icon_unit_crop\107731.png" />
+    <Resource Include="res\icon_unit_crop\107811.png" />
+    <Resource Include="res\icon_unit_crop\107831.png" />
+    <Resource Include="res\icon_unit_crop\107911.png" />
+    <Resource Include="res\icon_unit_crop\107931.png" />
+    <Resource Include="res\icon_unit_crop\108011.png" />
+    <Resource Include="res\icon_unit_crop\108031.png" />
+    <Resource Include="res\icon_unit_crop\108111.png" />
+    <Resource Include="res\icon_unit_crop\108131.png" />
+    <Resource Include="res\icon_unit_crop\108211.png" />
+    <Resource Include="res\icon_unit_crop\108231.png" />
+    <Resource Include="res\icon_unit_crop\108311.png" />
+    <Resource Include="res\icon_unit_crop\108331.png" />
+    <Resource Include="res\icon_unit_crop\108411.png" />
+    <Resource Include="res\icon_unit_crop\108431.png" />
+    <Resource Include="res\icon_unit_crop\108511.png" />
+    <Resource Include="res\icon_unit_crop\108531.png" />
+    <Resource Include="res\icon_unit_crop\108611.png" />
+    <Resource Include="res\icon_unit_crop\108631.png" />
+    <Resource Include="res\icon_unit_crop\108711.png" />
+    <Resource Include="res\icon_unit_crop\108731.png" />
+    <Resource Include="res\icon_unit_crop\108811.png" />
+    <Resource Include="res\icon_unit_crop\108831.png" />
+    <Resource Include="res\icon_unit_crop\108911.png" />
+    <Resource Include="res\icon_unit_crop\108931.png" />
+    <Resource Include="res\icon_unit_crop\109011.png" />
+    <Resource Include="res\icon_unit_crop\109031.png" />
+    <Resource Include="res\icon_unit_crop\109111.png" />
+    <Resource Include="res\icon_unit_crop\109131.png" />
+    <Resource Include="res\icon_unit_crop\109211.png" />
+    <Resource Include="res\icon_unit_crop\109231.png" />
+    <Resource Include="res\icon_unit_crop\109311.png" />
+    <Resource Include="res\icon_unit_crop\109331.png" />
+    <Resource Include="res\icon_unit_crop\109411.png" />
+    <Resource Include="res\icon_unit_crop\109431.png" />
+    <Resource Include="res\icon_unit_crop\109511.png" />
+    <Resource Include="res\icon_unit_crop\109531.png" />
+    <Resource Include="res\icon_unit_crop\109611.png" />
+    <Resource Include="res\icon_unit_crop\109631.png" />
+    <Resource Include="res\icon_unit_crop\109711.png" />
+    <Resource Include="res\icon_unit_crop\109731.png" />
+    <Resource Include="res\icon_unit_crop\109811.png" />
+    <Resource Include="res\icon_unit_crop\109831.png" />
+    <Resource Include="res\icon_unit_crop\109911.png" />
+    <Resource Include="res\icon_unit_crop\109931.png" />
+    <Resource Include="res\icon_unit_crop\110011.png" />
+    <Resource Include="res\icon_unit_crop\110031.png" />
+    <Resource Include="res\icon_unit_crop\110111.png" />
+    <Resource Include="res\icon_unit_crop\110131.png" />
+    <Resource Include="res\icon_unit_crop\110311.png" />
+    <Resource Include="res\icon_unit_crop\110331.png" />
+    <Resource Include="res\icon_unit_crop\110411.png" />
+    <Resource Include="res\icon_unit_crop\110431.png" />
+    <Resource Include="res\icon_unit_crop\110511.png" />
+    <Resource Include="res\icon_unit_crop\110531.png" />
+    <Resource Include="res\icon_unit_crop\110611.png" />
+    <Resource Include="res\icon_unit_crop\110631.png" />
+    <Resource Include="res\icon_unit_crop\110711.png" />
+    <Resource Include="res\icon_unit_crop\110731.png" />
+    <Resource Include="res\icon_unit_crop\110811.png" />
+    <Resource Include="res\icon_unit_crop\110831.png" />
+    <Resource Include="res\icon_unit_crop\110911.png" />
+    <Resource Include="res\icon_unit_crop\110931.png" />
+    <Resource Include="res\icon_unit_crop\111011.png" />
+    <Resource Include="res\icon_unit_crop\111031.png" />
+    <Resource Include="res\icon_unit_crop\111111.png" />
+    <Resource Include="res\icon_unit_crop\111131.png" />
+    <Resource Include="res\icon_unit_crop\111211.png" />
+    <Resource Include="res\icon_unit_crop\111231.png" />
+    <Resource Include="res\icon_unit_crop\111311.png" />
+    <Resource Include="res\icon_unit_crop\111331.png" />
+    <Resource Include="res\icon_unit_crop\111411.png" />
+    <Resource Include="res\icon_unit_crop\111431.png" />
+    <Resource Include="res\icon_unit_crop\111511.png" />
+    <Resource Include="res\icon_unit_crop\111531.png" />
+    <Resource Include="res\icon_unit_crop\111611.png" />
+    <Resource Include="res\icon_unit_crop\111631.png" />
+    <Resource Include="res\icon_unit_crop\111711.png" />
+    <Resource Include="res\icon_unit_crop\111731.png" />
+    <Resource Include="res\icon_unit_crop\111811.png" />
+    <Resource Include="res\icon_unit_crop\111831.png" />
+    <Resource Include="res\icon_unit_crop\111911.png" />
+    <Resource Include="res\icon_unit_crop\111931.png" />
+    <Resource Include="res\icon_unit_crop\112011.png" />
+    <Resource Include="res\icon_unit_crop\112031.png" />
+    <Resource Include="res\icon_unit_crop\112111.png" />
+    <Resource Include="res\icon_unit_crop\112131.png" />
+    <Resource Include="res\icon_unit_crop\112211.png" />
+    <Resource Include="res\icon_unit_crop\112231.png" />
+    <Resource Include="res\icon_unit_crop\112311.png" />
+    <Resource Include="res\icon_unit_crop\112331.png" />
+    <Resource Include="res\icon_unit_crop\112411.png" />
+    <Resource Include="res\icon_unit_crop\112431.png" />
+    <Resource Include="res\icon_unit_crop\112511.png" />
+    <Resource Include="res\icon_unit_crop\112531.png" />
+    <Resource Include="res\icon_unit_crop\112611.png" />
+    <Resource Include="res\icon_unit_crop\112631.png" />
+    <Resource Include="res\icon_unit_crop\112711.png" />
+    <Resource Include="res\icon_unit_crop\112731.png" />
+    <Resource Include="res\icon_unit_crop\112811.png" />
+    <Resource Include="res\icon_unit_crop\112831.png" />
+    <Resource Include="res\icon_unit_crop\112911.png" />
+    <Resource Include="res\icon_unit_crop\112931.png" />
+    <Resource Include="res\icon_unit_crop\113011.png" />
+    <Resource Include="res\icon_unit_crop\113031.png" />
+    <Resource Include="res\icon_unit_crop\113111.png" />
+    <Resource Include="res\icon_unit_crop\113131.png" />
+    <Resource Include="res\icon_unit_crop\113211.png" />
+    <Resource Include="res\icon_unit_crop\113231.png" />
+    <Resource Include="res\icon_unit_crop\113311.png" />
+    <Resource Include="res\icon_unit_crop\113331.png" />
+    <Resource Include="res\icon_unit_crop\113411.png" />
+    <Resource Include="res\icon_unit_crop\113431.png" />
+    <Resource Include="res\icon_unit_crop\113511.png" />
+    <Resource Include="res\icon_unit_crop\113531.png" />
+    <Resource Include="res\icon_unit_crop\113611.png" />
+    <Resource Include="res\icon_unit_crop\113631.png" />
+    <Resource Include="res\icon_unit_crop\113711.png" />
+    <Resource Include="res\icon_unit_crop\113731.png" />
+    <Resource Include="res\icon_unit_crop\113811.png" />
+    <Resource Include="res\icon_unit_crop\113831.png" />
+    <Resource Include="res\icon_unit_crop\113911.png" />
+    <Resource Include="res\icon_unit_crop\113931.png" />
+    <Resource Include="res\icon_unit_crop\114011.png" />
+    <Resource Include="res\icon_unit_crop\114031.png" />
+    <Resource Include="res\icon_unit_crop\114111.png" />
+    <Resource Include="res\icon_unit_crop\114131.png" />
+    <Resource Include="res\icon_unit_crop\114211.png" />
+    <Resource Include="res\icon_unit_crop\114231.png" />
+    <Resource Include="res\icon_unit_crop\114311.png" />
+    <Resource Include="res\icon_unit_crop\114331.png" />
+    <Resource Include="res\icon_unit_crop\114411.png" />
+    <Resource Include="res\icon_unit_crop\114431.png" />
+    <Resource Include="res\icon_unit_crop\114511.png" />
+    <Resource Include="res\icon_unit_crop\114531.png" />
+    <Resource Include="res\icon_unit_crop\114611.png" />
+    <Resource Include="res\icon_unit_crop\114631.png" />
+    <Resource Include="res\icon_unit_crop\114711.png" />
+    <Resource Include="res\icon_unit_crop\114731.png" />
+    <Resource Include="res\icon_unit_crop\115011.png" />
+    <Resource Include="res\icon_unit_crop\115031.png" />
+    <Resource Include="res\icon_unit_crop\115511.png" />
+    <Resource Include="res\icon_unit_crop\115531.png" />
+    <Resource Include="res\icon_unit_crop\115611.png" />
+    <Resource Include="res\icon_unit_crop\115631.png" />
+    <Resource Include="res\icon_unit_crop\180111.png" />
+    <Resource Include="res\icon_unit_crop\180131.png" />
+    <Resource Include="res\icon_unit_crop\180211.png" />
+    <Resource Include="res\icon_unit_crop\180231.png" />
+    <Resource Include="res\icon_unit_crop\180411.png" />
+    <Resource Include="res\icon_unit_crop\180431.png" />
+    <Resource Include="res\icon_unit_crop\180511.png" />
+    <Resource Include="res\icon_unit_crop\180531.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\icon_unit\100461.png" />
+    <Resource Include="res\icon_unit\102061.png" />
+    <Resource Include="res\icon_unit\102161.png" />
+    <Resource Include="res\icon_unit\102261.png" />
+    <Resource Include="res\icon_unit\102561.png" />
+    <Resource Include="res\icon_unit\102961.png" />
+    <Resource Include="res\icon_unit\103661.png" />
+    <Resource Include="res\icon_unit\106411.png" />
+    <Resource Include="res\icon_unit\106431.png" />
+    <Resource Include="res\icon_unit\115711.png" />
+    <Resource Include="res\icon_unit\115731.png" />
+    <Resource Include="res\icon_unit\115811.png" />
+    <Resource Include="res\icon_unit\115831.png" />
+    <Resource Include="res\icon_unit\115911.png" />
+    <Resource Include="res\icon_unit\115931.png" />
+    <Resource Include="res\icon_unit\116011.png" />
+    <Resource Include="res\icon_unit\116031.png" />
+    <Resource Include="res\icon_unit\116211.png" />
+    <Resource Include="res\icon_unit\116231.png" />
+    <Resource Include="res\icon_unit\116311.png" />
+    <Resource Include="res\icon_unit\116331.png" />
+    <Resource Include="res\icon_unit\116511.png" />
+    <Resource Include="res\icon_unit\116531.png" />
+    <Resource Include="res\icon_unit\116611.png" />
+    <Resource Include="res\icon_unit\116631.png" />
+    <Resource Include="res\icon_unit\116711.png" />
+    <Resource Include="res\icon_unit\116731.png" />
+    <Resource Include="res\icon_unit\116811.png" />
+    <Resource Include="res\icon_unit\116831.png" />
+    <Resource Include="res\icon_unit\170111.png" />
+    <Resource Include="res\icon_unit\170131.png" />
+    <Resource Include="res\icon_unit\170211.png" />
+    <Resource Include="res\icon_unit\170231.png" />
+    <Resource Include="res\icon_unit\180611.png" />
+    <Resource Include="res\icon_unit\180631.png" />
+    <Resource Include="res\icon_unit\191301.png" />
+    <Resource Include="res\icon_unit\191311.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\icon_equipment\106013.png" />
+    <Resource Include="res\icon_equipment\106043.png" />
+    <Resource Include="res\icon_equipment\106073.png" />
+    <Resource Include="res\icon_equipment\106103.png" />
+    <Resource Include="res\icon_equipment\106133.png" />
+    <Resource Include="res\icon_equipment\106163.png" />
+    <Resource Include="res\icon_equipment\106193.png" />
+    <Resource Include="res\icon_equipment\106223.png" />
+    <Resource Include="res\icon_equipment\106253.png" />
+    <Resource Include="res\icon_equipment\106283.png" />
+    <Resource Include="res\icon_equipment\106313.png" />
+    <Resource Include="res\icon_equipment\106343.png" />
+    <Resource Include="res\icon_equipment\106373.png" />
+    <Resource Include="res\icon_equipment\106462.png" />
+    <Resource Include="res\icon_equipment\106491.png" />
+    <Resource Include="res\icon_equipment\106553.png" />
+    <Resource Include="res\icon_equipment\106583.png" />
+    <Resource Include="res\icon_equipment\106613.png" />
+    <Resource Include="res\icon_equipment\107011.png" />
+    <Resource Include="res\icon_equipment\107041.png" />
+    <Resource Include="res\icon_equipment\107071.png" />
+    <Resource Include="res\icon_equipment\107101.png" />
+    <Resource Include="res\icon_equipment\107131.png" />
+    <Resource Include="res\icon_equipment\107161.png" />
+    <Resource Include="res\icon_equipment\107191.png" />
+    <Resource Include="res\icon_equipment\107221.png" />
+    <Resource Include="res\icon_equipment\107251.png" />
+    <Resource Include="res\icon_equipment\107551.png" />
+    <Resource Include="res\icon_equipment\107581.png" />
+    <Resource Include="res\icon_equipment\107611.png" />
+    <Resource Include="res\icon_equipment\130661.png" />
+    <Resource Include="res\icon_equipment\131091.png" />
+    <Resource Include="res\icon_equipment\131101.png" />
+    <Resource Include="res\icon_equipment\131221.png" />
+    <Resource Include="res\icon_equipment\131231.png" />
+    <Resource Include="res\icon_equipment\131241.png" />
+    <Resource Include="res\icon_equipment\131251.png" />
+    <Resource Include="res\icon_equipment\131261.png" />
+    <Resource Include="res\icon_equipment\131271.png" />
+    <Resource Include="res\icon_equipment\131281.png" />
+    <Resource Include="res\icon_equipment\131291.png" />
+    <Resource Include="res\icon_equipment\131301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\icon_unit_crop\000000.png" />
+    <Resource Include="res\icon_unit_crop\000001.png" />
+    <Resource Include="res\icon_unit_crop\100461.png" />
+    <Resource Include="res\icon_unit_crop\102061.png" />
+    <Resource Include="res\icon_unit_crop\102161.png" />
+    <Resource Include="res\icon_unit_crop\102261.png" />
+    <Resource Include="res\icon_unit_crop\102561.png" />
+    <Resource Include="res\icon_unit_crop\102961.png" />
+    <Resource Include="res\icon_unit_crop\103661.png" />
+    <Resource Include="res\icon_unit_crop\106411.png" />
+    <Resource Include="res\icon_unit_crop\106431.png" />
+    <Resource Include="res\icon_unit_crop\107311.png" />
+    <Resource Include="res\icon_unit_crop\115711.png" />
+    <Resource Include="res\icon_unit_crop\115731.png" />
+    <Resource Include="res\icon_unit_crop\115811.png" />
+    <Resource Include="res\icon_unit_crop\115831.png" />
+    <Resource Include="res\icon_unit_crop\115911.png" />
+    <Resource Include="res\icon_unit_crop\115931.png" />
+    <Resource Include="res\icon_unit_crop\116011.png" />
+    <Resource Include="res\icon_unit_crop\116031.png" />
+    <Resource Include="res\icon_unit_crop\116211.png" />
+    <Resource Include="res\icon_unit_crop\116231.png" />
+    <Resource Include="res\icon_unit_crop\116311.png" />
+    <Resource Include="res\icon_unit_crop\116331.png" />
+    <Resource Include="res\icon_unit_crop\116511.png" />
+    <Resource Include="res\icon_unit_crop\116531.png" />
+    <Resource Include="res\icon_unit_crop\116611.png" />
+    <Resource Include="res\icon_unit_crop\116631.png" />
+    <Resource Include="res\icon_unit_crop\116711.png" />
+    <Resource Include="res\icon_unit_crop\116731.png" />
+    <Resource Include="res\icon_unit_crop\116811.png" />
+    <Resource Include="res\icon_unit_crop\116831.png" />
+    <Resource Include="res\icon_unit_crop\170111.png" />
+    <Resource Include="res\icon_unit_crop\170131.png" />
+    <Resource Include="res\icon_unit_crop\170211.png" />
+    <Resource Include="res\icon_unit_crop\170231.png" />
+    <Resource Include="res\icon_unit_crop\180611.png" />
+    <Resource Include="res\icon_unit_crop\180631.png" />
+    <Resource Include="res\icon_unit_crop\191301.png" />
+    <Resource Include="res\icon_unit_crop\191311.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\TextFile1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\icon_unit\101761.png" />
+    <Resource Include="res\icon_unit\104061.png" />
+    <Resource Include="res\icon_unit\105761.png" />
+    <Resource Include="res\icon_unit\116911.png" />
+    <Resource Include="res\icon_unit\116931.png" />
+    <Resource Include="res\icon_unit\117011.png" />
+    <Resource Include="res\icon_unit\117031.png" />
+    <Resource Include="res\icon_unit\117111.png" />
+    <Resource Include="res\icon_unit\117131.png" />
+    <Resource Include="res\icon_unit\117211.png" />
+    <Resource Include="res\icon_unit\117231.png" />
+    <Resource Include="res\icon_unit\117311.png" />
+    <Resource Include="res\icon_unit\117331.png" />
+    <Resource Include="res\icon_unit\117411.png" />
+    <Resource Include="res\icon_unit\117431.png" />
+    <Resource Include="res\icon_unit\117511.png" />
+    <Resource Include="res\icon_unit\117531.png" />
+    <Resource Include="res\icon_unit\117611.png" />
+    <Resource Include="res\icon_unit\117631.png" />
+    <Resource Include="res\icon_unit\118011.png" />
+    <Resource Include="res\icon_unit\118031.png" />
+    <Resource Include="res\icon_unit\118311.png" />
+    <Resource Include="res\icon_unit\118331.png" />
+    <Resource Include="res\icon_unit\118411.png" />
+    <Resource Include="res\icon_unit\118431.png" />
+    <Resource Include="res\icon_unit\180311.png" />
+    <Resource Include="res\icon_unit\180331.png" />
+    <Resource Include="res\icon_unit\180711.png" />
+    <Resource Include="res\icon_unit\180731.png" />
+    <Resource Include="res\icon_unit\191511.png" />
+    <Resource Include="res\icon_unit\191611.png" />
+    <Resource Include="res\icon_unit\191711.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\icon_equipment\107012.png" />
+    <Resource Include="res\icon_equipment\107042.png" />
+    <Resource Include="res\icon_equipment\107072.png" />
+    <Resource Include="res\icon_equipment\107102.png" />
+    <Resource Include="res\icon_equipment\107132.png" />
+    <Resource Include="res\icon_equipment\107162.png" />
+    <Resource Include="res\icon_equipment\107192.png" />
+    <Resource Include="res\icon_equipment\107222.png" />
+    <Resource Include="res\icon_equipment\107252.png" />
+    <Resource Include="res\icon_equipment\107281.png" />
+    <Resource Include="res\icon_equipment\107311.png" />
+    <Resource Include="res\icon_equipment\107341.png" />
+    <Resource Include="res\icon_equipment\107371.png" />
+    <Resource Include="res\icon_equipment\107461.png" />
+    <Resource Include="res\icon_equipment\107491.png" />
+    <Resource Include="res\icon_equipment\107552.png" />
+    <Resource Include="res\icon_equipment\107582.png" />
+    <Resource Include="res\icon_equipment\107612.png" />
+    <Resource Include="res\icon_equipment\130701.png" />
+    <Resource Include="res\icon_equipment\131311.png" />
+    <Resource Include="res\icon_equipment\131321.png" />
+    <Resource Include="res\icon_equipment\131331.png" />
+    <Resource Include="res\icon_equipment\131341.png" />
+    <Resource Include="res\icon_equipment\131351.png" />
+    <Resource Include="res\icon_equipment\131361.png" />
+    <Resource Include="res\icon_equipment\131371.png" />
+    <Resource Include="res\icon_equipment\131381.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\icon_unit_crop\101761.png" />
+    <Resource Include="res\icon_unit_crop\104061.png" />
+    <Resource Include="res\icon_unit_crop\105761.png" />
+    <Resource Include="res\icon_unit_crop\116911.png" />
+    <Resource Include="res\icon_unit_crop\116931.png" />
+    <Resource Include="res\icon_unit_crop\117011.png" />
+    <Resource Include="res\icon_unit_crop\117031.png" />
+    <Resource Include="res\icon_unit_crop\117111.png" />
+    <Resource Include="res\icon_unit_crop\117131.png" />
+    <Resource Include="res\icon_unit_crop\117211.png" />
+    <Resource Include="res\icon_unit_crop\117231.png" />
+    <Resource Include="res\icon_unit_crop\117311.png" />
+    <Resource Include="res\icon_unit_crop\117331.png" />
+    <Resource Include="res\icon_unit_crop\117411.png" />
+    <Resource Include="res\icon_unit_crop\117431.png" />
+    <Resource Include="res\icon_unit_crop\117511.png" />
+    <Resource Include="res\icon_unit_crop\117531.png" />
+    <Resource Include="res\icon_unit_crop\117611.png" />
+    <Resource Include="res\icon_unit_crop\117631.png" />
+    <Resource Include="res\icon_unit_crop\118011.png" />
+    <Resource Include="res\icon_unit_crop\118031.png" />
+    <Resource Include="res\icon_unit_crop\118311.png" />
+    <Resource Include="res\icon_unit_crop\118331.png" />
+    <Resource Include="res\icon_unit_crop\118411.png" />
+    <Resource Include="res\icon_unit_crop\118431.png" />
+    <Resource Include="res\icon_unit_crop\180311.png" />
+    <Resource Include="res\icon_unit_crop\180331.png" />
+    <Resource Include="res\icon_unit_crop\180711.png" />
+    <Resource Include="res\icon_unit_crop\180731.png" />
+    <Resource Include="res\icon_unit_crop\191511.png" />
+    <Resource Include="res\icon_unit_crop\191611.png" />
+    <Resource Include="res\icon_unit_crop\191711.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

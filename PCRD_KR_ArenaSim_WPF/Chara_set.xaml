@@ -1,0 +1,304 @@
+﻿<Window x:Class="PCRD_KR_ArenaSim.Chara_set"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PCRD_KR_ArenaSim"
+        mc:Ignorable="d"
+        Title="캐릭터 설정" Height="440" Width="410" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" KeyDown="Chara_Set_KeyDown" Loaded="Window_Loaded" ContentRendered="Window_ContentRendered">
+    
+    
+    <TabControl x:Name="tabControl" Margin="0,0,0,0" Background="#FFB3FFE7" 
+                    BorderThickness="0" BorderBrush="{x:Null}">
+        <TabItem Header="캐릭터 설정" BorderThickness="0" Background="#FFFF5FDB"
+                     BorderBrush="{x:Null}" MinWidth="70" Margin="0,0,0,0"  Style="{DynamicResource GG}" Height="30" >
+
+            <Grid Style="{DynamicResource GG}">
+                <CheckBox x:Name="cb_enable_set" Content="사용" HorizontalAlignment="Left" Margin="10,29,0,0" VerticalAlignment="Top" Height="17" Width="83" FontSize="14"
+                  Checked="cb_enable_set_Checked"  Unchecked="cb_enable_set_Unchecked"/>
+
+                <Grid Name="Chara_set_grid" >
+                    <Button Name="bt_item1" ToolTip="Item1"   BorderThickness="0"  Background="Transparent"  Width="50" Height="50"  
+                                        Click="bt_item1_set_Click" MouseRightButtonDown="bt_item1_set_ClickR" BorderBrush="{x:Null}" Margin="250,60,100,290"  
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Name="img_item1" Source="res\icon_equipment\101011.png"  Stretch="Fill"   Height="48" Width="48"  />
+                    </Button>
+
+                    <Button Name="bt_item2" ToolTip="Item2"   BorderThickness="0"  Background="Transparent"  Width="50" Height="50"  
+                                        Click="bt_item2_set_Click" MouseRightButtonDown="bt_item2_set_ClickR" BorderBrush="{x:Null}" Margin="288,142,62,208"  >
+                        <Image Name="img_item2"  Source="res/icon_equipment/101071.png"  Stretch="Fill"   Height="48" Width="48"  />
+                    </Button>
+                    <Button Name="bt_item3" ToolTip="Item3"   BorderThickness="0"  Background="Transparent"  Width="50" Height="50"  
+                                        Click="bt_item3_set_Click" MouseRightButtonDown="bt_item3_set_ClickR" BorderBrush="{x:Null}" Margin="250,224,100,126" >
+                        <Image Name="img_item3"  Source="res\icon_equipment\101101.png"  Stretch="Fill"   Height="48" Width="48" />
+                    </Button>
+                    <Button Name="bt_item4" ToolTip="Item4"   BorderThickness="0"  Background="Transparent"  Width="50" Height="50"  
+                                        Click="bt_item4_set_Click" MouseRightButtonDown="bt_item4_set_ClickR" BorderBrush="{x:Null}" Margin="100,224,250,126"    >
+                        <Image Name="img_item4"  Source="res\icon_equipment\101131.png"  Stretch="Fill"  Height="48" Width="48"  />
+                    </Button>
+                    <Button Name="bt_item5" ToolTip="Item5"   BorderThickness="0"  Background="Transparent"  Width="50" Height="50"  
+                                        Click="bt_item5_set_Click" MouseRightButtonDown="bt_item5_set_ClickR" BorderBrush="{x:Null}" Margin="62,142,288,208"  >
+                        <Image Name="img_item5"  Source="res\icon_equipment\101161.png"  Stretch="Fill"   Height="48" Width="48"  />
+                    </Button>
+                    <Button Name="bt_item6" ToolTip="Item6"   BorderThickness="0"  Background="Transparent"  Width="50" Height="50"  
+                                        Click="bt_item6_set_Click" MouseRightButtonDown="bt_item6_set_ClickR" BorderBrush="{x:Null}" Margin="100,60,250,290"   >
+                        <Image Name="img_item6"  Source="res\icon_equipment\101191.png"  Stretch="Fill"   Height="48" Width="48"  />
+                    </Button>
+
+
+
+                    <Button ToolTip="Item_Unique"   BorderThickness="0"  Background="Transparent"  Width="50" Height="50"  
+                                        Click="bt_item_unique_set_Click" BorderBrush="{x:Null}" Margin="178,257,178,97" RenderTransformOrigin="0.491,1.018"   >
+                        <Image Name="img_item_unique" Source="res/icon_equipment/999999.png"  Stretch="Fill"   Height="48" Width="48"  />
+
+                    </Button>
+
+
+                    <ComboBox x:Name="cB_set_rank" Margin="159,70,159,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="#FFF48D8D" Foreground="Black" Width="82" Height="25"
+                     HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" SelectionChanged="cB_set_rank_SelectionChanged">
+                        <ComboBoxItem Content="Rank11" HorizontalAlignment="Left"  Width="80" Foreground="#FFC585FF" />
+                        <ComboBoxItem Content="Rank12" HorizontalAlignment="Left"  Width="80" Foreground="#FFC585FF"/>
+                        <ComboBoxItem Content="Rank13" HorizontalAlignment="Left"  Width="80" Foreground="#FFC07BFF"/>
+                        <ComboBoxItem Content="Rank14" HorizontalAlignment="Left"  Width="80" Foreground="#FFBD74FF"/>
+                        <ComboBoxItem Content="Rank15" HorizontalAlignment="Left"  Width="80" Foreground="#FFBD72FF"/>
+                        <ComboBoxItem Content="Rank16" HorizontalAlignment="Left"  Width="80" Foreground="#FFAE58FB"/>
+                        <ComboBoxItem Content="Rank17" HorizontalAlignment="Left"  Width="80" Foreground="#FFA94EFA"/>
+                        <ComboBoxItem Content="Rank18" HorizontalAlignment="Left"  Width="80" Foreground="#FFE33853"/>
+                        <ComboBoxItem Content="Rank19" HorizontalAlignment="Left"  Width="80" Foreground="#FFE22946"/>
+                        <ComboBoxItem Content="Rank20" HorizontalAlignment="Left"  Width="80" Foreground="#FF3C966D" />
+                        <ComboBoxItem Content="Rank21" HorizontalAlignment="Left"  Width="80" Foreground="#FF329166"/>
+                        <ComboBoxItem Content="Rank22" HorizontalAlignment="Left"  Width="80" Foreground="#FF227A52"/>
+                    </ComboBox>
+
+                    <Image Name="Chara_sel" Source="res\icon_unit\000001.png"  Stretch="Fill"   Margin="168,133,168,207" Height="64"  />
+
+                    <Button ToolTip="공덱"   BorderThickness="0"  Background="#FFEDD4D4"  
+                      Content="공덱으로 저장"                  Click="bt_chara_save_off_Click" BorderBrush="{x:Null}" Margin="17,370,288,10"   />
+                    <Button ToolTip="방덱"   BorderThickness="0"  Background="#FFD4EDD9"  
+                      Content="방덱으로 저장"                   BorderBrush="{x:Null}" Margin="288,370,17,10" IsDefault="True"
+                            Click="bt_chara_save_def_Click"/>
+                    <Button ToolTip="종료하기 전에 저장해"   BorderThickness="0"  Background="White"  
+                      Content="종료"                  Click="bt_chara_set_exit_Click" BorderBrush="{x:Null}" Margin="163,361,163,-2" Width="80" Height="45"   />
+
+                    <Image x:Name="img_star_item6_rf1" Source="res/star_item.png" HorizontalAlignment="Left" Margin="104,112,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9" />
+                    <Image x:Name="img_star_item6_rf2"  Source="res/star_item.png" HorizontalAlignment="Left" Margin="113,112,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9"/>
+                    <Image x:Name="img_star_item6_rf3"  Source="res/star_item.png" HorizontalAlignment="Left" Margin="122,112,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9"/>
+                    <Image x:Name="img_star_item6_rf4"  Source="res/star_item.png" HorizontalAlignment="Left" Margin="131,112,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9" />
+                    <Image x:Name="img_star_item6_rf5" Source="res/star_item.png" HorizontalAlignment="Left" Margin="140,112,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9" />
+
+                    <Image x:Name="img_star_item5_rf1" Source="res/star_item.png" HorizontalAlignment="Left" Margin="67,194,0,0" VerticalAlignment="Top"
+                           Width="9" Height="9"/>
+                    <Image x:Name="img_star_item5_rf2" Source="res/star_item.png" HorizontalAlignment="Left" Margin="76,194,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9"/>
+                    <Image x:Name="img_star_item5_rf3" Source="res/star_item.png" HorizontalAlignment="Left" Margin="85,194,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9"/>
+                    <Image x:Name="img_star_item5_rf4" Source="res/star_item.png" HorizontalAlignment="Left" Margin="94,194,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9"/>
+                    <Image x:Name="img_star_item5_rf5" Source="res/star_item.png" HorizontalAlignment="Left" Margin="103,194,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9" />
+
+                    <Image x:Name="img_star_item4_rf1" Source="res/star_item.png" HorizontalAlignment="Left" Margin="104,276,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9"/>
+                    <Image x:Name="img_star_item4_rf2" Source="res/star_item.png" HorizontalAlignment="Left" Margin="113,276,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9"/>
+                    <Image x:Name="img_star_item4_rf3" Source="res/star_item.png" HorizontalAlignment="Left" Margin="122,276,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9"/>
+                    <Image x:Name="img_star_item4_rf4" Source="res/star_item.png" HorizontalAlignment="Left" Margin="131,276,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9" />
+                    <Image x:Name="img_star_item4_rf5" Source="res/star_item.png" HorizontalAlignment="Left" Margin="140,276,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9" />
+
+                    <Image x:Name="img_star_item3_rf1" Source="res/star_item.png" HorizontalAlignment="Left" Margin="255,276,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9"/>
+                    <Image x:Name="img_star_item3_rf2" Source="res/star_item.png" HorizontalAlignment="Left" Margin="264,276,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9"/>
+                    <Image x:Name="img_star_item3_rf3" Source="res/star_item.png" HorizontalAlignment="Left" Margin="273,276,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9"/>
+                    <Image x:Name="img_star_item3_rf4" Source="res/star_item.png" HorizontalAlignment="Left" Margin="282,276,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9" />
+                    <Image x:Name="img_star_item3_rf5" Source="res/star_item.png" HorizontalAlignment="Left" Margin="291,276,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9" />
+
+                    <Image x:Name="img_star_item2_rf1" Source="res/star_item.png" HorizontalAlignment="Left" Margin="293,194,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9"/>
+                    <Image x:Name="img_star_item2_rf2" Source="res/star_item.png" HorizontalAlignment="Left" Margin="302,194,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9"/>
+                    <Image x:Name="img_star_item2_rf3" Source="res/star_item.png" HorizontalAlignment="Left" Margin="311,194,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9"/>
+                    <Image x:Name="img_star_item2_rf4" Source="res/star_item.png" HorizontalAlignment="Left" Margin="320,194,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9" />
+                    <Image x:Name="img_star_item2_rf5" Source="res/star_item.png" HorizontalAlignment="Left" Margin="329,194,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9" />
+
+                    <Image x:Name="img_star_item1_rf1" Source="res/star_item.png" HorizontalAlignment="Left" Margin="255,112,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9"/>
+                    <Image x:Name="img_star_item1_rf2" Source="res/star_item.png" HorizontalAlignment="Left" Margin="264,112,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9"/>
+                    <Image x:Name="img_star_item1_rf3" Source="res/star_item.png" HorizontalAlignment="Left" Margin="273,112,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9"/>
+                    <Image x:Name="img_star_item1_rf4" Source="res/star_item.png" HorizontalAlignment="Left" Margin="282,112,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9" />
+                    <Image x:Name="img_star_item1_rf5" Source="res/star_item.png" HorizontalAlignment="Left" Margin="291,112,0,0" VerticalAlignment="Top"
+                        Width="9" Height="9"/>
+
+                    <Image x:Name="img_star_chara1" Source="res/star_chara.png" HorizontalAlignment="Left" Margin="147,25,0,0" VerticalAlignment="Top"
+                        Width="20" Height="20"/>
+                    <Image x:Name="img_star_chara2" Source="res/star_chara.png" HorizontalAlignment="Left" Margin="167,25,0,0" VerticalAlignment="Top"
+                        Width="20" Height="20"/>
+                    <Image x:Name="img_star_chara3" Source="res/star_chara.png" HorizontalAlignment="Left" Margin="187,25,0,0" VerticalAlignment="Top"
+                        Width="20" Height="20"/>
+                    <Image x:Name="img_star_chara4" Source="res/star_chara.png" HorizontalAlignment="Left" Margin="207,25,0,0" VerticalAlignment="Top"
+                        Width="20" Height="20"/>
+                    <Image x:Name="img_star_chara5" Source="res/star_chara.png" HorizontalAlignment="Left" Margin="227,25,0,0" VerticalAlignment="Top"
+                        Width="20" Height="20"/>
+                    <Image x:Name="img_star_chara6" Source="res/star_chara_6.png" HorizontalAlignment="Left" Margin="247,25,0,0" VerticalAlignment="Top"
+                        Width="20" Height="20"/>
+                    <Button x:Name="set_star" Style="{StaticResource MouseOverTransparent}"  HorizontalAlignment="Left" Margin="147,25,0,0" VerticalAlignment="Top" Width="120"
+                            ToolTip="star"   BorderThickness="0"  Background="Transparent"   Height="20"  
+                                        Click="bt_chara_star_set_Click" BorderBrush="{x:Null}"  />
+                    <TextBox x:Name="tB_chara_level" HorizontalAlignment="Left" Height="25" Margin="175,202,0,0" TextWrapping="Wrap" Text="157" VerticalAlignment="Top" 
+                             Width="57" BorderBrush="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFFFECCD" TextChanged="tB_chara_level_TextChanged"
+                             />
+                    <TextBox x:Name="tB_unique_level" HorizontalAlignment="Left" Height="25" Margin="183,312,0,0" TextWrapping="Wrap" Text="160" VerticalAlignment="Top"
+                             Width="40" BorderBrush="{x:Null}" Background="#FFFFF0F0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TextChanged="tB_unique_level_TextChanged"/>
+
+                </Grid>
+            </Grid>
+
+        </TabItem>
+
+        <TabItem Header="스텟 확인" BorderThickness="0" Background="#FFC7F7F1"
+                     BorderBrush="{x:Null}" MinWidth="70" Margin="0,0,0,0"  Style="{DynamicResource GG}" Height="30" >
+
+            <Grid  Style="{DynamicResource GG}" Margin="0,0,0,79">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="1" Grid.Column="0">
+                    <TextBox x:Name="textBox_Copy15" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text="HP" VerticalAlignment="Top" Width="100" Background="{x:Null}" Margin="10,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+                    <TextBox x:Name="tB_HP" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text=" " VerticalAlignment="Top" 
+                             Width="70" Background="{x:Null}" Margin="125,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True" />
+
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="0">
+                    <TextBox x:Name="textBox_Copy16" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text="물리 공격력" VerticalAlignment="Top" Width="100" Background="{x:Null}" Margin="10,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+                    <TextBox x:Name="tB_PA" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text=" " VerticalAlignment="Top" 
+                             Width="70" Background="{x:Null}" Margin="125,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="0">
+                    <TextBox x:Name="textBox_Copy17" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="물리 방어력" VerticalAlignment="Top" Width="100" Background="{x:Null}" Margin="10,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+                    <TextBox x:Name="tB_PD" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text=" " VerticalAlignment="Top" 
+                             Width="70" Background="{x:Null}" Margin="125,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="0">
+                    <TextBox x:Name="textBox_Copy18" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="물리 크리티컬" VerticalAlignment="Top" Width="100" Background="{x:Null}" Margin="10,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+                    <TextBox x:Name="tB_PC" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text=" " VerticalAlignment="Top" 
+                             Width="70" Background="{x:Null}" Margin="125,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+
+                </Grid>
+                <Grid Grid.Row="5" Grid.Column="0">
+                    <TextBox x:Name="textBox_Copy19" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text="회피" VerticalAlignment="Top" Width="100" Background="{x:Null}" Margin="10,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+                    <TextBox x:Name="tB_Dodge" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text=" " VerticalAlignment="Top" 
+                             Width="70" Background="{x:Null}" Margin="125,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+
+                </Grid>
+                <Grid Grid.Row="6" Grid.Column="0">
+                    <TextBox x:Name="textBox_Copy20" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text="HP 자동 회복" VerticalAlignment="Top" Width="100" Background="{x:Null}" Margin="10,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+                    <TextBox x:Name="tB_HPauto" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text=" " VerticalAlignment="Top" 
+                             Width="70" Background="{x:Null}" Margin="125,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+
+                </Grid>
+                <Grid Grid.Row="7" Grid.Column="0">
+                    <TextBox x:Name="textBox_Copy270" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text="HP 흡수" VerticalAlignment="Top" Width="100" Background="{x:Null}" Margin="10,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+                    <TextBox x:Name="tB_HPabs" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text=" " VerticalAlignment="Top" 
+                             Width="70" Background="{x:Null}" Margin="125,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+
+                </Grid>
+                <Grid Grid.Row="8" Grid.Column="0">
+                    <TextBox x:Name="textBox_Copy120" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text="TP 상승" VerticalAlignment="Top" Width="70" Background="{x:Null}" Margin="10,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+                    <TextBox x:Name="tB_TPup" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text=" " VerticalAlignment="Top" 
+                             Width="70" Background="{x:Null}" Margin="125,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <TextBox x:Name="textBox_Copy5" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text="전투력" VerticalAlignment="Top" Width="100" Background="{x:Null}" Margin="5,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+                    <TextBox x:Name="tB_Power" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text=" " VerticalAlignment="Top" 
+                             Width="70" Background="{x:Null}" Margin="125,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="1">
+                    <TextBox x:Name="textBox_Copy6" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text="마법 공격력" VerticalAlignment="Top" Width="100" Background="{x:Null}" Margin="5,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+                    <TextBox x:Name="tB_MA" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text=" " VerticalAlignment="Top" 
+                             Width="70" Background="{x:Null}" Margin="125,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="1">
+                    <TextBox x:Name="textBox_Copy7" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="마법 방어력" VerticalAlignment="Top" Width="100" Background="{x:Null}" Margin="5,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+                    <TextBox x:Name="tB_MD" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text=" " VerticalAlignment="Top" 
+                             Width="70" Background="{x:Null}" Margin="125,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="1">
+                    <TextBox x:Name="textBox_Copy8" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="마법 크리티컬" VerticalAlignment="Top" Width="100" Background="{x:Null}" Margin="5,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+                    <TextBox x:Name="tB_MC" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text=" " VerticalAlignment="Top" 
+                             Width="70" Background="{x:Null}" Margin="125,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+
+                </Grid>
+                <Grid Grid.Row="5" Grid.Column="1">
+                    <TextBox x:Name="textBox_Copy9" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text="명중" VerticalAlignment="Top" Width="100" Background="{x:Null}" Margin="5,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+                    <TextBox x:Name="tB_Acc" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text=" " VerticalAlignment="Top" 
+                             Width="70" Background="{x:Null}" Margin="125,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+
+                </Grid>
+                <Grid Grid.Row="6" Grid.Column="1">
+                    <TextBox x:Name="textBox_Copy10" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text="TP 자동 회복" VerticalAlignment="Top" Width="100" Background="{x:Null}" Margin="5,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+                    <TextBox x:Name="tB_TPauto" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text=" " VerticalAlignment="Top" 
+                             Width="70" Background="{x:Null}" Margin="125,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+
+                </Grid>
+                <Grid Grid.Row="7" Grid.Column="1">
+                    <TextBox x:Name="textBox_Copy210" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text="회복량 상승" VerticalAlignment="Top" Width="100" Background="{x:Null}" Margin="5,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+                    <TextBox x:Name="tB_HPup" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text=" " VerticalAlignment="Top" 
+                             Width="70" Background="{x:Null}" Margin="125,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+
+                </Grid>
+                <Grid Grid.Row="8" Grid.Column="1">
+                    <TextBox x:Name="textBox_Copy310" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text="TP 소비 감소" VerticalAlignment="Top" Width="100" Background="{x:Null}" Margin="5,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+                    <TextBox x:Name="tB_TPdec" HorizontalAlignment="Left" Height="20"  TextWrapping="Wrap" Text=" " VerticalAlignment="Top" 
+                             Width="70" Background="{x:Null}" Margin="125,0,0,0" BorderBrush="{x:Null}" IsReadOnly="True"/>
+
+                </Grid>
+                <Button ToolTip="종료하기 전에 저장해"   BorderThickness="0"  Background="White"  
+                    Content="종료"   Click="bt_chara_set_exit_Click" BorderBrush="{x:Null}" 
+                             Width="80" Height="45" Grid.ColumnSpan="2" Margin="163,94,163,-81"  Grid.Row="9"   />
+            </Grid>
+
+
+        </TabItem>
+        
+    </TabControl>
+
+
+</Window>

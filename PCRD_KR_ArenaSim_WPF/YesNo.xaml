@@ -1,0 +1,16 @@
+﻿<Window x:Class="PCRD_KR_ArenaSim.YesNo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PCRD_KR_ArenaSim"
+        mc:Ignorable="d"
+        Title="몰루" Height="200" Width="400" ResizeMode="NoResize" Background="White" WindowStyle="None">
+    <Grid Background="#FFF7FFE2">
+        <Button x:Name="buttonY" Content="공덱" HorizontalAlignment="Left" Height="40" Margin="50,130,0,0" VerticalAlignment="Top" Width="105" BorderBrush="{x:Null}" Background="#FFFDFFB0"
+                Style="{DynamicResource GG}" />
+        <Button x:Name="buttonN" Content="방덱" HorizontalAlignment="Left" Height="40" Margin="250,130,0,0" VerticalAlignment="Top" Width="105" BorderBrush="{x:Null}" Background="#FF8CC3FF"
+               Style="{DynamicResource GG}" />
+
+    </Grid>
+</Window>
