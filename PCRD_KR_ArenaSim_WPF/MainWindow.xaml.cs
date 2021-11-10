@@ -10752,7 +10752,7 @@ namespace PCRD_KR_ArenaSim
         public void UpdateCheck()
         {
             AutoUpdater.Start(@"https://raw.githubusercontent.com/SoKae1/PCRD_KR_ArenaSim/master/PCRD_KR_ArenaSim_WPF/bin/x64/Release/UpdateInfo.xml");
-            AutoUpdater.RunUpdateAsAdmin = false;
+            AutoUpdater.RunUpdateAsAdmin = true;
             AutoUpdater.AppTitle = "프리코네 아레나 시뮬레이터";
             AutoUpdater.ShowRemindLaterButton = false;
             AutoUpdater.ReportErrors = true;

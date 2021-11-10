@@ -507,6 +507,8 @@ namespace PCRD_KR_ArenaSim
             Character_skill.arisa_opponent_counter_est = 0;
             Character_skill.kaya_opponent_counter = 0;
             Character_skill.kaya_opponent_counter_est = 0;
+            Character_skill.kaya_opponent_counter2 = 0;
+            Character_skill.kaya_opponent_counter2_est = 0;
             Character_skill.lou_opponent_omeme = 0;
             Character_skill.lou_opponent_omeme_est = 0;
             Character_skill.suzuna_summer_opponent_counter = 0;

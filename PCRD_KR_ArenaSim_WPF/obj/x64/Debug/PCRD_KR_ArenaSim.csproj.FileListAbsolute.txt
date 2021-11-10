@@ -36,3 +36,4 @@ C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\De
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\bin\x64\Debug\AutoUpdater.NET.dll
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\bin\x64\Debug\AutoUpdater.NET.pdb
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\bin\x64\Debug\AutoUpdater.NET.xml
+C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\PCRD_KR_ArenaSim.csprojAssemblyReference.cache

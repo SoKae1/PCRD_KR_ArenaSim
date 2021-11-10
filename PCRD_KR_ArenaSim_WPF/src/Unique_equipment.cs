@@ -380,6 +380,9 @@
 
         public double[] kaya = new double[15]{0.0, /*atk*/96.0, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/31.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0, /*accuracy*/0.0};
         public double[] kaya_reinforce = new double[15] { 0.0, /*atk*/4.8, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/1.55, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        
+        public double[] runa = new double[15] { 0.0, /*atk*/0.0, /*magic_str*/75.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/30.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/1.0,  /*accuracy*/0.0 };
+        public double[] runa_reinforce = new double[15] { 0.0, /*atk*/0.0, /*magic_str*/3.75, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/1.5, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.05,  /*accuracy*/0.0 };
 
         public double[] inori = new double[15]{0.0, /*atk*/64.0, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/1.0, /*energy_reduce_rate*/0.0,  /*accuracy*/10.0};
         public double[] inori_reinforce = new double[15] { 0.0, /*atk*/3.2, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.05, /*energy_reduce_rate*/0.0,  /*accuracy*/0.5 };
@@ -394,8 +397,7 @@
 
         public double[] yuni = new double[15] {0.0, /*atk*/0.0, /*magic_str*/56.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/200.0, /*wave_energy_recovery*/30.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/1.0,  /*accuracy*/0.0};
 
-        public double[] runa = new double[15]{0.0, /*atk*/0.0, /*magic_str*/75.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/30.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/1.0,  /*accuracy*/0.0};
-
+        
         public double[] kristina_christmas = new double[15] {0.0, /*atk*/86.0, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/20.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/1.0,  /*accuracy*/0.0};
 
         public double[] nozomi_christmas = new double[15] {290.0, /*atk*/0.0, /*magic_str*/0.0, /*def*/12.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/4.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0,  /*accuracy*/0.0};
