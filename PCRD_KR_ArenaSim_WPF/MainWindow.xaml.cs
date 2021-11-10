@@ -4513,7 +4513,6 @@ namespace PCRD_KR_ArenaSim
                     }
                 }
 
-
                 //한쪽의 승리 후 break
                 int death_count1 = 0, death_count2 = 0;
                 for (i = 0; i < 15; i++)
@@ -4530,7 +4529,6 @@ namespace PCRD_KR_ArenaSim
                         death_count2 += 1;
                     }
                 }
-
                 if (death_count1 == 15)
                 {
                     //Debug.WriteLine("현재 방덱 위치값: {0}, {1}, {2}, {3}, {4}", Battle_variable.position[0], Battle_variable.position[1], Battle_variable.position[2], Battle_variable.position[3], Battle_variable.position[4]);
@@ -4570,7 +4568,6 @@ namespace PCRD_KR_ArenaSim
                 }
                 flow_time += 0.001;
             }
-
         }
 
         //작마키, 프캬루까지
@@ -6426,6 +6423,7 @@ namespace PCRD_KR_ArenaSim
             { Debug.WriteLine(e.Message); }
         }
 
+        //캐릭터 선택 성카리까지
         public void CharacterSelectCount(int isOfforDef)
         {
             //isOfforDef == 1 방덱 , 0이면 공덱
@@ -9336,7 +9334,7 @@ namespace PCRD_KR_ArenaSim
 
         #region abbr
         //축약어 뉴이미까지
-        string kyouka_halloween, Abbr_misaki_halloween, Abbr_kyouka, Abbr_yuni, Abbr_yuki, Abbr_yui, Abbr_maho, Abbr_maho_summer, Abbr_chika, Abbr_aoi, Abbr_kyaru_summer, 
+        string Abbr_misaki_halloween, Abbr_kyouka, Abbr_yuni, Abbr_yuki, Abbr_yui, Abbr_maho, Abbr_maho_summer, Abbr_chika, Abbr_aoi, Abbr_kyaru_summer, 
             Abbr_suzume_summer, Abbr_chika_christmas, Abbr_yui_princess, Abbr_runa, Abbr_misaki, Abbr_hatsune, Abbr_kyaru, Abbr_yui_newyear, Abbr_nanaka, Abbr_misato, Abbr_rino_wonder,
             Abbr_kasumi_magical, Abbr_kasumi, Abbr_emilia, Abbr_suzume_newyear, Abbr_suzume, Abbr_io_summer, Abbr_io, Abbr_siori_magical, Abbr_siori, Abbr_suzuna_summer, Abbr_suzuna, 
             Abbr_rino, Abbr_misato_summer, Abbr_mio_deremas, Abbr_kyaru_newyear, Abbr_aoi_nakayosi, Abbr_neneka, Abbr_lou, Abbr_anne, Abbr_arisa, Abbr_miyako_halloween,
@@ -10701,6 +10699,9 @@ namespace PCRD_KR_ArenaSim
                " 이미지 서치 : ", " ");
             AddHyperlinkText("https://github.com/HerDataSam/KasumiNotes/releases", "https://github.com/HerDataSam/KasumiNotes/releases",
                " 카스미노트 : ", " ");
+            AddHyperlinkText("https://redive.estertion.win/spine/", "https://redive.estertion.win/spine/",
+               " 프리코네 모션 시뮬레이터 : ", " ");
+
             AddHyperlinkText("https://github.com/esterTion/redive_master_db_diff/", "https://github.com/esterTion/redive_master_db_diff/",
                " 일섭 DB : ", " "); 
             AddHyperlinkText("https://github.com/HerDataSam/redive_kr_db_diff", "https://github.com/HerDataSam/redive_kr_db_diff",

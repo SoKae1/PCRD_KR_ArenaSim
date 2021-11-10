@@ -12244,7 +12244,7 @@ namespace PCRD_KR_ArenaSim
             {
                 array1 = dt.saren_12;
                 array2 = dt.saren_summer_08;
-                //array3 = dt.saren_christmas_08;
+                array3 = dt.saren_christmas_08;
             }
             else if (character == "nozomi" || character == "nozomi_christmas")
             {
@@ -12264,7 +12264,7 @@ namespace PCRD_KR_ArenaSim
             else if (character == "akino" || character == "akino_christmas")
             {
                 array1 = dt.akino_12;
-                //array2 = dt.akino_christmas_12;
+                array2 = dt.akino_christmas_08;
             }
             else if (character == "mahiru" || character == "mahiru_ranger")
             {
@@ -12274,7 +12274,7 @@ namespace PCRD_KR_ArenaSim
             else if (character == "yukari" || character == "yukari_christmas")
             {
                 array1 = dt.yukari_12;
-                //array2 = dt.yukari_christmas_12;
+                array2 = dt.yukari_christmas_08;
             }
             else if (character == "kyouka" || character == "kyouka_halloween")
             {
@@ -13074,7 +13074,7 @@ namespace PCRD_KR_ArenaSim
             {
                 array1 = dt.saren_12;
                 array2 = dt.saren_summer_08;
-                //array3 = dt.saren_christmas_08;
+                array3 = dt.saren_christmas_08;
             }
             else if (character == "nozomi" || character == "nozomi_christmas")
             {
@@ -13094,7 +13094,7 @@ namespace PCRD_KR_ArenaSim
             else if (character == "akino" || character == "akino_christmas")
             {
                 array1 = dt.akino_12;
-                //array2 = dt.akino_christmas_12;
+                array2 = dt.akino_christmas_08;
             }
             else if (character == "mahiru" || character == "mahiru_ranger")
             {
@@ -13104,7 +13104,7 @@ namespace PCRD_KR_ArenaSim
             else if (character == "yukari" || character == "yukari_christmas")
             {
                 array1 = dt.yukari_12;
-                //array2 = dt.yukari_christmas_12;
+               array2 = dt.yukari_christmas_08;
             }
             else if (character == "kyouka" || character == "kyouka_halloween")
             {

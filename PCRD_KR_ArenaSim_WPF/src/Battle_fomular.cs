@@ -31,16 +31,11 @@ namespace PCRD_KR_ArenaSim
             return heal;
         }
 
-
-
-
         public static double HP_absorption(string attack_type, double damage, int my_order, int opponent_order)
         {
             double heal = damage * Battle_variable.HPabs[my_order] / (100 + Level_variable.Lv[opponent_order] + Battle_variable.HPabs[my_order]);
             return heal;
         }
-
-
 
         public static double buff_hit(string attack_type, double hit, int my_order, int opponent_order)
         {
@@ -71,8 +66,6 @@ namespace PCRD_KR_ArenaSim
             return hit;
         }
 
-
-
         public static double critical(string attack_type, double crit, int my_order, int opponent_order)
         {
             if (crit > 99)
@@ -91,8 +84,6 @@ namespace PCRD_KR_ArenaSim
             }
             return crit;
         }
-
-
 
         public static void action_TP(int my_order)
         {
@@ -133,8 +124,6 @@ namespace PCRD_KR_ArenaSim
             max_TP_Process();
         }
 
-
-
         public static double damage_process(string attack_type, double damage, int my_order, int opponent_order)
         {
             if (Battle_variable.death[opponent_order] == false && Battle_variable.name_eng[opponent_order] == "lou" && Battle_variable.name_eng[my_order] != "lou")
@@ -158,7 +147,27 @@ namespace PCRD_KR_ArenaSim
                     return damage;
                 }
             }
+            if (Battle_variable.death[opponent_order] == false && Battle_variable.name_eng[opponent_order] == "saren_christmas" && Battle_variable.name_eng[my_order] != "saren_christmas")
+            {
+                if (opponent_order < 15 && Character_skill.saren_christmas_opponent_shield >= 1)
+                {
+                    //성사렌이 빛의 방패를 가지고 있으면 대미지를 받을시 반사(고정대미지)하고 빛의 방패가 하나 사라짐
+                    damage = 37.5 + 37.5 * Level_variable.Lv[opponent_order];
+                    damage = damage_process("99", damage, opponent_order, my_order);
 
+                    Character_skill.saren_christmas_opponent_shield -= 1;
+                    return damage;
+                }
+                if (opponent_order >= 15 && Character_skill.saren_christmas_opponent_shield_est >= 1)
+                {
+                    //성사렌이 빛의 방패를 가지고 있으면 대미지를 받을시 반사(고정대미지)하고 빛의 방패가 하나 사라짐
+                    damage = 37.5 + 37.5 * Level_variable.Lv[opponent_order];
+                    damage = damage_process("99", damage, opponent_order, my_order);
+
+                    Character_skill.saren_christmas_opponent_shield -= 1;
+                    return damage;
+                }
+            }
 
             if (attack_type == "1" && Battle_variable.death[opponent_order] == false && Battle_variable.death[my_order] == false && Battle_variable.invincible[opponent_order] == false && Battle_variable.physical_dodge[opponent_order] == false)
             {
@@ -651,8 +660,6 @@ namespace PCRD_KR_ArenaSim
             }
         }
 
-
-
         public static void max_HP_Process()
         {
             for (int i = 0; i < 30; i++)
@@ -832,7 +839,6 @@ namespace PCRD_KR_ArenaSim
             }
         }
 
-
         public static void start_absorb(int array_order)
         {
             if (Battle_variable.absorb[array_order] == true && Battle_variable.absorb_count[array_order] == 0)
@@ -846,7 +852,7 @@ namespace PCRD_KR_ArenaSim
                 Battle_variable.clairvoyance_active[array_order] = true;
             }
         }
-
+        
         public static void end_absorb(int array_order)
         {
             if (Battle_variable.absorb[array_order] == true && Battle_variable.absorb_count[array_order] == 1)
@@ -863,8 +869,7 @@ namespace PCRD_KR_ArenaSim
                 Battle_variable.clairvoyance_active[array_order] = false;
             }
         }
-
-
+                
         public static void buff_process(string buff_type, double coefficient, double duration, int my_order, int opponent_order)
         {
             if (Battle_variable.death[opponent_order] == false && Battle_variable.death[my_order] == false)
@@ -882,6 +887,35 @@ namespace PCRD_KR_ArenaSim
 
                     Battle_variable.HP[opponent_order] += Battle_variable.buff_HP_coef[i, opponent_order];
                     Battle_variable.max_HP[opponent_order] += Battle_variable.buff_HP_coef[i, opponent_order];
+                    if (Battle_variable.name[opponent_order] == "성키노")
+                    {
+                        if (opponent_order < 15)
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter, opponent_order);
+
+                            }
+                        }
+                        else
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize_est == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter_est <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter_est++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter_est = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter_est, opponent_order);
+                            }
+                        }
+                    }
+
                     //Debug.WriteLine("{3}{0}가 {4}{1}에게 HP 버프 {2} 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], Battle_variable.buff_HP_coef[i, opponent_order], my_order, opponent_order);
                     //Debug.WriteLine("{2}{0} HP: {1}\n", Battle_variable.name[opponent_order], Battle_variable.HP[opponent_order], opponent_order);
                 }
@@ -895,8 +929,36 @@ namespace PCRD_KR_ArenaSim
                     Battle_variable.buff_PA[i, opponent_order] = true;
                     Battle_variable.buff_PA_coef[i, opponent_order] = coefficient;
                     Battle_variable.buff_PA_time[i, opponent_order] = duration;
-
                     Battle_variable.PA[opponent_order] += Battle_variable.buff_PA_coef[i, opponent_order];
+                    if (Battle_variable.name[opponent_order] == "성키노")
+                    {
+                        if (opponent_order < 15)
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter, opponent_order);
+
+                            }
+                        }
+                        else
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize_est == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter_est <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter_est++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter_est = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter_est, opponent_order);
+                            }
+                        }
+                    }
+
                     Debug.WriteLine("{3}{0}가 {4}{1}에게 물리공격력 버프 {2} 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], Battle_variable.buff_PA_coef[i, opponent_order], my_order, opponent_order);
                     //Debug.WriteLine("{2}{0} 물리공격력: {1}\n", Battle_variable.name[opponent_order], Battle_variable.PA[opponent_order], opponent_order);
                 }
@@ -910,6 +972,34 @@ namespace PCRD_KR_ArenaSim
                     Battle_variable.buff_MA[i, opponent_order] = true;
                     Battle_variable.buff_MA_coef[i, opponent_order] = coefficient;
                     Battle_variable.buff_MA_time[i, opponent_order] = duration;
+                    if (Battle_variable.name[opponent_order] == "성키노")
+                    {
+                        if (opponent_order < 15)
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter, opponent_order);
+
+                            }
+                        }
+                        else
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize_est == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter_est <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter_est++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter_est = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter_est, opponent_order);
+                            }
+                        }
+                    }
 
                     Battle_variable.MA[opponent_order] += Battle_variable.buff_MA_coef[i, opponent_order];
                     Debug.WriteLine("{3}{0}가 {4}{1}에게 마법공격력 버프 {2} 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], Battle_variable.buff_MA_coef[i, opponent_order], my_order, opponent_order);
@@ -925,8 +1015,36 @@ namespace PCRD_KR_ArenaSim
                     Battle_variable.buff_PD[i, opponent_order] = true;
                     Battle_variable.buff_PD_coef[i, opponent_order] = coefficient;
                     Battle_variable.buff_PD_time[i, opponent_order] = duration;
-
                     Battle_variable.PD[opponent_order] += Battle_variable.buff_PD_coef[i, opponent_order];
+                    if (Battle_variable.name[opponent_order] == "성키노")
+                    {
+                        if (opponent_order < 15)
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter, opponent_order);
+
+                            }
+                        }
+                        else
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize_est == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter_est <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter_est++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter_est = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter_est, opponent_order);
+                            }
+                        }
+                    }
+
                     //Debug.WriteLine("{3}{0}가 {4}{1}에게 물리방어력 버프 {2} 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], Battle_variable.buff_PD_coef[i, opponent_order], my_order, opponent_order);
                     //Debug.WriteLine("{2}{0} 물리방어력: {1}\n", Battle_variable.name[opponent_order], Battle_variable.PD[opponent_order], opponent_order);
                 }
@@ -940,8 +1058,36 @@ namespace PCRD_KR_ArenaSim
                     Battle_variable.buff_MD[i, opponent_order] = true;
                     Battle_variable.buff_MD_coef[i, opponent_order] = coefficient;
                     Battle_variable.buff_MD_time[i, opponent_order] = duration;
-
                     Battle_variable.MD[opponent_order] += Battle_variable.buff_MD_coef[i, opponent_order];
+                    if (Battle_variable.name[opponent_order] == "성키노")
+                    {
+                        if (opponent_order < 15)
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter, opponent_order);
+
+                            }
+                        }
+                        else
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize_est == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter_est <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter_est++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter_est = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter_est, opponent_order);
+                            }
+                        }
+                    }
+
                     //Debug.WriteLine("{3}{0}가 {4}{1}에게 마법방어력 버프 {2} 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], Battle_variable.buff_MD_coef[i, opponent_order], my_order, opponent_order);
                     //Debug.WriteLine("{2}{0} 마법방어력: {1}\n", Battle_variable.name[opponent_order], Battle_variable.MD[opponent_order], opponent_order);
                 }
@@ -955,8 +1101,36 @@ namespace PCRD_KR_ArenaSim
                     Battle_variable.buff_PC[i, opponent_order] = true;
                     Battle_variable.buff_PC_coef[i, opponent_order] = coefficient;
                     Battle_variable.buff_PC_time[i, opponent_order] = duration;
-
                     Battle_variable.PC[opponent_order] += Battle_variable.buff_PC_coef[i, opponent_order];
+                    if (Battle_variable.name[opponent_order] == "성키노")
+                    {
+                        if (opponent_order < 15)
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter, opponent_order);
+
+                            }
+                        }
+                        else
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize_est == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter_est <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter_est++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter_est = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter_est, opponent_order);
+                            }
+                        }
+                    }
+
                     //Debug.WriteLine("{3}{0}가 {4}{1}에게 물리크리티컬 버프 {2} 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], Battle_variable.buff_PC_coef[i, opponent_order], my_order, opponent_order);
                     //Debug.WriteLine("{2}{0} 물리크리티컬: {1}\n", Battle_variable.name[opponent_order], Battle_variable.PC[opponent_order], opponent_order);
                 }
@@ -970,8 +1144,36 @@ namespace PCRD_KR_ArenaSim
                     Battle_variable.buff_MC[i, opponent_order] = true;
                     Battle_variable.buff_MC_coef[i, opponent_order] = coefficient;
                     Battle_variable.buff_MC_time[i, opponent_order] = duration;
-
                     Battle_variable.MC[opponent_order] += Battle_variable.buff_MC_coef[i, opponent_order];
+                    if (Battle_variable.name[opponent_order] == "성키노")
+                    {
+                        if (opponent_order < 15)
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter, opponent_order);
+
+                            }
+                        }
+                        else
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize_est == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter_est <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter_est++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter_est = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter_est, opponent_order);
+                            }
+                        }
+                    }
+
                     //Debug.WriteLine("{3}{0}가 {4}{1}에게 마법크리티컬 버프 {2} 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], Battle_variable.buff_MC_coef[i, opponent_order], my_order, opponent_order);
                     //Debug.WriteLine("{2}{0} 마법크리티컬: {1}\n", Battle_variable.name[opponent_order], Battle_variable.MC[opponent_order], opponent_order);
                 }
@@ -985,8 +1187,37 @@ namespace PCRD_KR_ArenaSim
                     Battle_variable.buff_dodge[i, opponent_order] = true;
                     Battle_variable.buff_dodge_coef[i, opponent_order] = coefficient;
                     Battle_variable.buff_dodge_time[i, opponent_order] = duration;
-
                     Battle_variable.Dodge[opponent_order] += Battle_variable.buff_dodge_coef[i, opponent_order];
+                    if (Battle_variable.name[opponent_order] == "성키노")
+                    {
+                        if (opponent_order < 15)
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter, opponent_order);
+
+                            }
+                        }
+                        else
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize_est == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter_est <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter_est++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter_est = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter_est, opponent_order);
+                            }
+                        }
+                    }
+
+
                     //Debug.WriteLine("{3}{0}가 {4}{1}에게 회피 버프 {2} 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], Battle_variable.buff_dodge_coef[i, opponent_order], my_order, opponent_order);
                     //Debug.WriteLine("{2}{0} 회피: {1}\n", Battle_variable.name[opponent_order], Battle_variable.Dodge[opponent_order], opponent_order);
                 }
@@ -1000,8 +1231,37 @@ namespace PCRD_KR_ArenaSim
                     Battle_variable.PCdamage[i, opponent_order] = true;
                     Battle_variable.PCdamage_save[i, opponent_order] = coefficient - 2;
                     Battle_variable.PCdamage_time[i, opponent_order] = duration;
-
                     Battle_variable.PCdamage_coef[opponent_order] += Battle_variable.PCdamage_save[i, opponent_order];
+                    if (Battle_variable.name[opponent_order] == "성키노")
+                    {
+                        if (opponent_order < 15)
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter, opponent_order);
+
+                            }
+                        }
+                        else
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize_est == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter_est <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter_est++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter_est = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter_est, opponent_order);
+                            }
+                        }
+                    }
+
+
                     //Debug.WriteLine("{2}{0}가 {3}{1}에게 크리티컬 배율 버프 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], my_order, opponent_order);
                     //Debug.WriteLine("{2}{0} 크리티컬 배율: {1} (기본 2)\n", Battle_variable.name[opponent_order], Battle_variable.ConTP_coef[opponent_order], opponent_order);
                 }
@@ -1015,8 +1275,37 @@ namespace PCRD_KR_ArenaSim
                     Battle_variable.MCdamage[i, opponent_order] = true;
                     Battle_variable.MCdamage_save[i, opponent_order] = coefficient - 2;
                     Battle_variable.MCdamage_time[i, opponent_order] = duration;
-
                     Battle_variable.MCdamage_coef[opponent_order] += Battle_variable.MCdamage_save[i, opponent_order];
+                    if (Battle_variable.name[opponent_order] == "성키노")
+                    {
+                        if (opponent_order < 15)
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter, opponent_order);
+
+                            }
+                        }
+                        else
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize_est == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter_est <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter_est++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter_est = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter_est, opponent_order);
+                            }
+                        }
+                    }
+
+
                     //Debug.WriteLine("{2}{0}가 {3}{1}에게 크리티컬 배율 버프 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], my_order, opponent_order);
                     //Debug.WriteLine("{2}{0} 크리티컬 배율: {1} (기본 2)\n", Battle_variable.name[opponent_order], Battle_variable.ConTP_coef[opponent_order], opponent_order);
                 }
@@ -1030,8 +1319,37 @@ namespace PCRD_KR_ArenaSim
                     Battle_variable.buff_TPup[i, opponent_order] = true;
                     Battle_variable.buff_TPup_coef[i, opponent_order] = coefficient;
                     Battle_variable.buff_TPup_time[i, opponent_order] = duration;
-
                     Battle_variable.TPup[opponent_order] += Battle_variable.buff_TPup_coef[i, opponent_order];
+                    if (Battle_variable.name[opponent_order] == "성키노")
+                    {
+                        if (opponent_order < 15)
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter, opponent_order);
+
+                            }
+                        }
+                        else
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize_est == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter_est <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter_est++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter_est = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter_est, opponent_order);
+                            }
+                        }
+                    }
+
+
                     //Debug.WriteLine("{3}{0}가 {4}{1}에게 TP상승 버프 {2} 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], Battle_variable.buff_TPup_coef[i, opponent_order], my_order, opponent_order);
                     //Debug.WriteLine("{2}{0} TP상승: {1}\n", Battle_variable.name[opponent_order], Battle_variable.TPup[opponent_order], opponent_order);
                 }
@@ -1121,6 +1439,35 @@ namespace PCRD_KR_ArenaSim
                     Battle_variable.Aspeed[opponent_order] = true;
                     Battle_variable.Aspeed_coef[opponent_order] = coefficient;
                     Battle_variable.Aspeed_time[opponent_order] = duration;
+                    if (Battle_variable.name[opponent_order] == "성키노")
+                    {
+                        if (opponent_order < 15)
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter, opponent_order);
+
+                            }
+                        }
+                        else
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize_est == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter_est <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter_est++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter_est = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter_est, opponent_order);
+                            }
+                        }
+                    }
+
 
                     //Debug.WriteLine("{2}{0}가 {3}{1}에게 행동속도 버프 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], my_order, opponent_order);
                     //Debug.WriteLine("{2}{0} 행동속도: {1} (기본 1)\n", Battle_variable.name[opponent_order], Battle_variable.ConTP_coef[opponent_order], opponent_order);
@@ -1130,6 +1477,34 @@ namespace PCRD_KR_ArenaSim
                     Battle_variable.Mspeed[opponent_order] = true;
                     Battle_variable.Mspeed_coef[opponent_order] = coefficient;
                     Battle_variable.Mspeed_time[opponent_order] = duration;
+                    if (Battle_variable.name[opponent_order] == "성키노")
+                    {
+                        if (opponent_order < 15)
+                        {
+                            if(Character_skill.akino_christmas_opponent_holyprize == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter = 25;
+                                
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter, opponent_order);
+
+                            }
+                        }
+                        else
+                        {
+                            if (Character_skill.akino_christmas_opponent_holyprize_est == true)
+                            {
+                                if (Character_skill.akino_christmas_opponent_glitter_est <= 25)
+                                    Character_skill.akino_christmas_opponent_glitter_est++;
+                                else
+                                    Character_skill.akino_christmas_opponent_glitter_est = 25;
+
+                                Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter_est, opponent_order);
+                            }
+                        }
+                    }
 
                     //Debug.WriteLine("{2}{0}가 {3}{1}에게 이동속도 버프 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], my_order, opponent_order);
                     //Debug.WriteLine("{2}{0} 이동속도: {1} (기본 450)\n", Battle_variable.name[opponent_order], Battle_variable.ConTP_coef[opponent_order], opponent_order);
@@ -1382,7 +1757,6 @@ namespace PCRD_KR_ArenaSim
                 }
             }
         }
-
         public static void field_process(double center_position, double radius, double duration, string buff_type, double coefficient, int my_order, int enemy_distinction)
         {
             // enemy distinction: 1이면 적, 2이면 아군 선택

@@ -530,7 +530,15 @@ namespace PCRD_KR_ArenaSim
             Character_skill.matsuri_halloween_opponent_stack = 0;
             Character_skill.matsuri_halloween_opponent_stack_est = 0;
 
-            position = new double[30] { -1560, -1360, -1160, -960, -760, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, 1360, 1160, 960, 760, 560, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000 };
+            Character_skill.saren_christmas_opponent_shield = 0;
+            Character_skill.saren_christmas_opponent_shield_est = 0;
+
+            Character_skill.akino_christmas_opponent_glitter = 0;
+            Character_skill.akino_christmas_opponent_glitter_est = 0;
+            Character_skill.akino_christmas_opponent_holyprize = false;
+            Character_skill.akino_christmas_opponent_holyprize_est = false;
+
+        position = new double[30] { -1560, -1360, -1160, -960, -760, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, 1360, 1160, 960, 760, 560, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000 };
             if (Array.IndexOf(Battle_variable.name_eng, "rima") != -1)
             {
                 int a = Array.IndexOf(MainWindow.select_defence_eng, "rima");

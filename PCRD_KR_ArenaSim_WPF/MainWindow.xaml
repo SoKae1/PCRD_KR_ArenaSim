@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PCRD_KR_ArenaSim"
         mc:Ignorable="d"
-        Title="프리코네 아레나 시뮬레이터 R23" Width="1000" Height="900" 
+        Title="프리코네 아레나 시뮬레이터 R24" Width="1000" Height="900" 
                                 MinWidth="1000" MinHeight="900">
     <Grid Background="#FFD7FFFF" Margin="0,0,0,0">
         <TabControl x:Name="tabControl" Margin="0,0,0,0" Background="AliceBlue" 
