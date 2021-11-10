@@ -10750,7 +10750,7 @@ namespace PCRD_KR_ArenaSim
         }
         public void UpdateCheck()
         {
-            AutoUpdater.Start(@"https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/download/c%23/UpdateInfo.xml");
+            AutoUpdater.Start(@"https://raw.githubusercontent.com/SoKae1/PCRD_KR_ArenaSim/master/PCRD_KR_ArenaSim_WPF/bin/x64/Release/UpdateInfo.xml");
             AutoUpdater.RunUpdateAsAdmin = false;
             AutoUpdater.AppTitle = "프리코네 아레나 시뮬레이터";
             AutoUpdater.ShowRemindLaterButton = false;
@@ -10775,9 +10775,11 @@ namespace PCRD_KR_ArenaSim
             wr.WriteStartElement("item");
             wr.WriteElementString("version", System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
             Debug.WriteLine("Xml1");
-            wr.WriteElementString("url", @"https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/download/c%23/PCRD_KR_ArenaSim.exe");
+            wr.WriteElementString("url", @"https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/download/" 
++ System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString() + @"/PCRD_KR_ArenaSim.exe");
             Debug.WriteLine("Xml2");
-            wr.WriteElementString("changelog", @"https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/tag/c%23");
+            wr.WriteElementString("changelog", @"https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/tag/"
++ System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()+@"/");
             wr.WriteElementString("mandatory", "false");
             Debug.WriteLine("Xml3");
             wr.WriteEndElement();
