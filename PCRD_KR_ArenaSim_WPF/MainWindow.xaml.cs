@@ -29,6 +29,7 @@ namespace PCRD_KR_ArenaSim
             InitializeComponent();
             this.Title = "프리코네 아레나 시뮬레이터 "+System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             InitialText();
+            WriteUpdateInfoXml();
             //UpdateCheck();
             //InitialAvaliabilty();
             InitWorkerThread();
