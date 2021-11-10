@@ -15,6 +15,7 @@ using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
+using AutoUpdaterDotNET;
 
 namespace PCRD_KR_ArenaSim
 {
