@@ -16,7 +16,6 @@ C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\bin\x64\De
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\bin\x64\Debug\System.Numerics.Vectors.xml
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\bin\x64\Debug\System.ValueTuple.xml
-C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\PCRD_KR_ArenaSim.csprojAssemblyReference.cache
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\Chara_set.g.cs
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\MainWindow.g.cs
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\App.g.cs
@@ -34,3 +33,6 @@ C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\De
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\PCRD_KR_ArenaSim.pdb
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\YesNo.g.cs
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\YesNo.baml
+C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\bin\x64\Debug\AutoUpdater.NET.dll
+C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\bin\x64\Debug\AutoUpdater.NET.pdb
+C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\bin\x64\Debug\AutoUpdater.NET.xml

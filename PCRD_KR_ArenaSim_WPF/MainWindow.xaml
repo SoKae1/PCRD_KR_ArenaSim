@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PCRD_KR_ArenaSim"
         mc:Ignorable="d"
-        Title="프리코네 아레나 시뮬레이터 R24" Width="1000" Height="900" 
-                                MinWidth="1000" MinHeight="900">
+        Title="PCRD_KR_ArenaSim" Width="1000" Height="900" 
+                                MinWidth="1000" MinHeight="900" AutomationProperties.Name="PCRD_KR_Window">
     <Grid Background="#FFD7FFFF" Margin="0,0,0,0">
         <TabControl x:Name="tabControl" Margin="0,0,0,0" Background="AliceBlue" 
                     BorderThickness="0" BorderBrush="{x:Null}" >
@@ -2600,13 +2600,23 @@
                      Margin="0,0,0,0" Style="{DynamicResource GG}"
                      BorderBrush="{x:Null}" MinWidth="100">
                 <Grid Background="Transparent">
-                    <RichTextBox Name="Rtb_info_maker" BorderBrush="{x:Null}" Background="#FFF2FFFC" 
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="8*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" >
+                        <RichTextBox Name="Rtb_info_maker" BorderBrush="{x:Null}" Background="#FFF2FFFC" 
                                  IsReadOnly="True" AcceptsReturn="True" IsDocumentEnabled="True"
-                              Margin="118,80,133,127.5" FontSize="16">
-                        <FlowDocument>
-                            <Paragraph LineHeight="6"/>
-                        </FlowDocument>
-                    </RichTextBox>
+                              Margin="100,55,100,5" FontSize="16" Height="610">
+                            <FlowDocument>
+                                <Paragraph LineHeight="6"/>
+                            </FlowDocument>
+                        </RichTextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" >
+                        <Button Width="150" Height="50" Content="업데이트 확인" Click="bt_UpdateCheck_Click" Name="bt_UpdateCheck" BorderBrush="{x:Null}" Background="#FFEFE5E5" />
+                    </StackPanel>                    
+
                 </Grid>
             </TabItem>
         </TabControl>

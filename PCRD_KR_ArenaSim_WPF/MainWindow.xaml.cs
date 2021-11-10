@@ -16,7 +16,7 @@ using System.Windows.Documents;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using AutoUpdaterDotNET;
-
+using System.Xml;
 namespace PCRD_KR_ArenaSim
 {
     /// <summary>
@@ -27,13 +27,16 @@ namespace PCRD_KR_ArenaSim
         public MainWindow()
         {
             InitializeComponent();
+            this.Title = "프리코네 아레나 시뮬레이터 "+System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             InitialText();
+            //UpdateCheck();
             //InitialAvaliabilty();
             InitWorkerThread();
             InitializeAbbr();
-            AbbrToChara(Abbr_akari);
+            //Debug.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
         }
 
+        
         public static int select_count = 0;
         public static string[] select_defence = new string[15] { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
         public static string[] select_defence_eng = new string[15] { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
@@ -9348,6 +9351,7 @@ namespace PCRD_KR_ArenaSim
             Abbr_akino, Abbr_ninon_ooedo, Abbr_hiyori_newyear, Abbr_kaya, Abbr_makoto, Abbr_muimi, Abbr_nozomi, Abbr_kotkoro_newyear, Abbr_ruka, Abbr_pekorinnu_princess, 
             Abbr_pekorinnu, Abbr_rin_deremas, Abbr_rei_newyear, Abbr_kaori, Abbr_kuuka_ooedo, Abbr_zyun, Abbr_kuuka, Abbr_miyako, Abbr_rima, Abbr_kyouka_halloween = "";
 
+      
         string Abbr_yori_angel, Abbr_labyrista, Abbr_matsuri_halloween, Abbr_rei_halloween, Abbr_tsumugi_halloween, Abbr_akino_christmas, Abbr_saren_christmas, Abbr_yukari_christmas,
             Abbr_monika_magical, Abbr_tomo_magical, Abbr_pekorinnu_newyear, Abbr_muimi_newyear, Abbr_neneka_newyear, Abbr_kyaru_princess = "";
 
@@ -9584,7 +9588,7 @@ namespace PCRD_KR_ArenaSim
             {
                 string s = sr.ReadLine();
                 string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
-                Debug.WriteLine(s);
+                //Debug.WriteLine(s);
 
                 if (temp[0] == "히요리")
                 {
@@ -10671,8 +10675,8 @@ namespace PCRD_KR_ArenaSim
 
         #endregion
 
-            // 제작자 탭
-
+        // 제작자 탭
+        
         #region maker
         public void InitialText()
         {
@@ -10682,7 +10686,11 @@ namespace PCRD_KR_ArenaSim
             AddHyperlinkText("https://github.com/aattat/priconne_redive_kr_arena_simulator/", "https://github.com/aattat/priconne_redive_kr_arena_simulator/",
                " 원작(프바) : ", " ");
 
-            Rtb_info_maker.Document.Blocks.Add(new Paragraph(new Run("  돚거 후 수정 : 소개 (UID : 233 *** 916 ***) ")));
+            Rtb_info_maker.Document.Blocks.Add(new Paragraph(new Run(" ")));
+
+            AddHyperlinkText("https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/", "소개 (UID : 233 *** 916 ***)",
+                "  돚거 후 수정 :  ", " ");
+            Rtb_info_maker.Document.Blocks.Add(new Paragraph(new Run(" ")));
             AddHyperlinkText("https://visualstudio.microsoft.com/ko/thank-you-downloading-visual-studio/?sku=Community&rel=16", "https://visualstudio.microsoft.com/ko/thank-you-downloading-visual-studio/?sku=Community&rel=16",
                " 비주얼 스튜디오 2019 커뮤니티 : ", " ");
 
@@ -10740,9 +10748,45 @@ namespace PCRD_KR_ArenaSim
 
             Rtb_info_maker.Document.Blocks.Add(para);
         }
+        public void UpdateCheck()
+        {
+            AutoUpdater.Start(@"https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/download/c%23/UpdateInfo.xml");
+            AutoUpdater.RunUpdateAsAdmin = false;
+            AutoUpdater.AppTitle = "프리코네 아레나 시뮬레이터";
+            AutoUpdater.ShowRemindLaterButton = false;
+            AutoUpdater.ReportErrors = true;
+            WriteUpdateInfoXml();
+        }
+        private void bt_UpdateCheck_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateCheck();
+        }
 
+
+        public void WriteUpdateInfoXml()
+        {
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.IndentChars = "\t";
+            settings.NewLineOnAttributes = true;
+            XmlWriter wr = XmlWriter.Create("UpdateInfo.xml", settings);
+            wr.WriteStartDocument();
+            Debug.WriteLine("Xml");
+            wr.WriteStartElement("item");
+            wr.WriteElementString("version", System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            Debug.WriteLine("Xml1");
+            wr.WriteElementString("url", @"https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/download/c%23/PCRD_KR_ArenaSim.exe");
+            Debug.WriteLine("Xml2");
+            wr.WriteElementString("changelog", @"https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/tag/c%23");
+            wr.WriteElementString("mandatory", "false");
+            Debug.WriteLine("Xml3");
+            wr.WriteEndElement();
+            wr.WriteEndDocument();
+            wr.Close();
+            Debug.WriteLine("Xml4");
+        }
         #endregion
 
-       
+
     }
 }
