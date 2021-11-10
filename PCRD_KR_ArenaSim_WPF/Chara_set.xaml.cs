@@ -560,7 +560,6 @@ namespace PCRD_KR_ArenaSim
             else
                 Debug.WriteLine("Error.");
 
-
             //pos + 5~ 10: 1~6템
             //원래 구현 -> 내가 한것
             // 1=>6
@@ -592,7 +591,6 @@ namespace PCRD_KR_ArenaSim
                 // textBox1의 값이 숫자가 아니면 0으로 변경
                 tB_unique_level.Text = "0";
             }
-
         }
 
         private void tB_chara_level_TextChanged(object sender, TextChangedEventArgs e)
