@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("res/textfile1.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("updateinfo.xml")]
 
 
