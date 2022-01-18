@@ -32,6 +32,8 @@ namespace PCRD_KR_ArenaSim
         public static bool misaki_halloween, chika_christmas, kurumi_christmas, ayane_christmas, hiyori_newyear = false;
         public static bool yui_newyear, rei_newyear, eriko_valentine, sizuru_valentine, anne = false;
         public static bool lou, grea, kuuka_ooedo, ninon_ooedo, rem = false;
+
+
         public static bool ram, emilia, suzuna_summer, io_summer, saren_summer = false;
         public static bool makoto_summer, kaori_summer, maho_summer, aoi_nakayosi, chloe = false;
         public static bool chieru, yuni, kyouka_halloween, misogi_halloween, mimi_halloween = false;
@@ -2292,6 +2294,23 @@ namespace PCRD_KR_ArenaSim
         {
             tB_chara_level.Text = Convert.ToString(level);
         }
+
+
+        private void bt_chara_save_autoRein_unique_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void bt_chara_save_autoRein_item_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void bt_chara_save_autoRein_Level_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void cB_set_rank_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Unit_equip Ue = new Unit_equip();
@@ -2306,6 +2325,38 @@ namespace PCRD_KR_ArenaSim
                 if (cB_set_rank.SelectedIndex == 0)
                 {
                     Level_variable.Rank_temp = 11;
+                    if (hiyori_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.hiyori_princess_11[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (neneka_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.neneka_newyear_11[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (muimi_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.muimi_newyear_11[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (pekorinnu_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_11[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
                     if (yukari_christmas == true)
                     {
                         for (int i = 0; i < 6; i++)
@@ -3063,6 +3114,38 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 1)
                 {
                     Level_variable.Rank_temp = 12; 
+                    if (hiyori_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.hiyori_princess_12[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (neneka_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.neneka_newyear_12[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (muimi_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.muimi_newyear_12[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (pekorinnu_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_12[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
                     if (yukari_christmas == true)
                     {
                         for (int i = 0; i < 6; i++)
@@ -3813,6 +3896,39 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 2)
                 {
                     Level_variable.Rank_temp = 13;
+
+                    if (hiyori_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.hiyori_princess_13[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (neneka_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.neneka_newyear_13[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (muimi_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.muimi_newyear_13[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (pekorinnu_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_13[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
                     if (yukari_christmas == true)
                     {
                         for (int i = 0; i < 6; i++)
@@ -4569,6 +4685,39 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 3)
                 {
                     Level_variable.Rank_temp = 14;
+
+                    if (hiyori_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.hiyori_princess_14[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (neneka_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.neneka_newyear_14[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (muimi_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.muimi_newyear_14[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (pekorinnu_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_14[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
                     if (yukari_christmas == true)
                     {
                         for (int i = 0; i < 6; i++)
@@ -5320,6 +5469,39 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 4)
                 {
                     Level_variable.Rank_temp = 15;
+
+                    if (hiyori_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.hiyori_princess_15[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (neneka_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.neneka_newyear_15[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (muimi_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.muimi_newyear_15[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (pekorinnu_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_15[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
                     if (yukari_christmas == true)
                     {
                         for (int i = 0; i < 6; i++)
@@ -6071,6 +6253,39 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 5)
                 {
                     Level_variable.Rank_temp = 16;
+
+                    if (hiyori_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.hiyori_princess_16[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (neneka_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.neneka_newyear_16[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (muimi_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.muimi_newyear_16[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (pekorinnu_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_16[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
                     if (yukari_christmas == true)
                     {
                         for (int i = 0; i < 6; i++)
@@ -6822,6 +7037,39 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 6)
                 {
                     Level_variable.Rank_temp = 17;
+
+                    if (hiyori_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.hiyori_princess_17[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (neneka_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.neneka_newyear_17[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (muimi_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.muimi_newyear_17[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (pekorinnu_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_17[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
                     if (yukari_christmas == true)
                     {
                         for (int i = 0; i < 6; i++)
@@ -7573,6 +7821,39 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 7)
                 {
                     Level_variable.Rank_temp = 18;
+
+                    if (hiyori_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.hiyori_princess_18[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (neneka_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.neneka_newyear_18[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (muimi_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.muimi_newyear_18[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (pekorinnu_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_18[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
                     if (yukari_christmas == true)
                     {
                         for (int i = 0; i < 6; i++)
@@ -8322,6 +8603,39 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 8) 
                 {
                     Level_variable.Rank_temp = 19;
+
+                    if (hiyori_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.hiyori_princess_19[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (neneka_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.neneka_newyear_19[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (muimi_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.muimi_newyear_19[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (pekorinnu_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_19[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
                     if (yukari_christmas == true)
                     {
                         for (int i = 0; i < 6; i++)
@@ -9072,6 +9386,39 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 9) 
                 {
                     Level_variable.Rank_temp = 20;
+
+                    if (hiyori_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.hiyori_princess_20[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (neneka_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.neneka_newyear_20[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (muimi_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.muimi_newyear_20[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (pekorinnu_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_20[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
                     if (yukari_christmas == true)
                     {
                         for (int i = 0; i < 6; i++)
@@ -9821,6 +10168,38 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 10)
                 {
                     Level_variable.Rank_temp = 21;
+                    if (hiyori_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.hiyori_princess_21[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (neneka_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.neneka_newyear_21[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (muimi_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.muimi_newyear_21[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (pekorinnu_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_21[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
                     if (yukari_christmas == true)
                     {
                         for (int i = 0; i < 6; i++)
@@ -10570,6 +10949,38 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 11)
                 {
                     Level_variable.Rank_temp = 22;
+                    if (hiyori_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.hiyori_princess_22[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (neneka_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.neneka_newyear_22[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (muimi_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.muimi_newyear_22[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (pekorinnu_newyear == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_22[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
                     if (yukari_christmas == true)
                     {
                         for (int i = 0; i < 6; i++)
@@ -12116,13 +12527,14 @@ namespace PCRD_KR_ArenaSim
             {
                 array1 = dt.hiyori_12;
                 array2 = dt.hiyori_newyear_08;
-                //array3 = dt.hiyori_princess_08;
+                array3 = dt.hiyori_princess_08;
             }
-            else if (character == "yui" || character == "yui_newyear" || character == "yui_princess")
+            else if (character == "yui" || character == "yui_newyear" || character == "yui_princess" || character == "yui_maiden")
             {
                 array1 = dt.yui_12;
                 array2 = dt.yui_newyear_08;
                 array3 = dt.yui_princess_08;
+                array4 = dt.yui_maiden_08;
             }
             else if (character == "rei" || character == "rei_newyear" || character == "rei_halloween")
             {
@@ -12284,7 +12696,7 @@ namespace PCRD_KR_ArenaSim
             else if (character == "tomo" || character == "tomo_magical")
             {
                 array1 = dt.tomo_08;
-                //array2 = dt.tomo_magical_08;
+                array2 = dt.tomo_magical_08;
             }
             else if (character == "siori" || character == "siori_magical")
             {
@@ -12378,7 +12790,7 @@ namespace PCRD_KR_ArenaSim
                 array1 = dt.pekorinnu_12;
                 array2 = dt.pekorinnu_summer_08;
                 array3 = dt.pekorinnu_princess_08;
-                //array4 = dt.pekorinnu_newyear_08;
+                array4 = dt.pekorinnu_newyear_08;
             }
             else if (character == "kotkoro" || character == "kotkoro_summer" || character == "kotkoro_newyear" || character == "kotkoro_princess" || character == "kotkoro_maiden")
             {
@@ -12386,19 +12798,19 @@ namespace PCRD_KR_ArenaSim
                 array2 = dt.kotkoro_summer_08;
                 array3 = dt.kotkoro_newyear_08;
                 array4 = dt.kotkoro_princess_08;
-                //array5 = dt.kotkoro_maiden_08;
+                array5 = dt.kotkoro_maiden_08;
             }
             else if (character == "kyaru" || character == "kyaru_summer" || character == "kyaru_newyear" || character == "kyaru_princess")
             {
                 array1 = dt.kyaru_12;
                 array2 = dt.kyaru_summer_08;
                 array3 = dt.kyaru_newyear_08;
-                //array4 = dt.kyaru_princess_08;
+                array4 = dt.kyaru_princess_08;
             }
             else if (character == "muimi" || character == "muimi_newyear")
             {
                 array1 = dt.muimi_08;
-                ///array2 = dt.muimi_newyear_08;
+                array2 = dt.muimi_newyear_08;
             }
             else if (character == "arisa")
             {
@@ -12416,9 +12828,10 @@ namespace PCRD_KR_ArenaSim
             {
                 array1 = dt.labyrista_08;
             }
-            else if (character == "neneka")
+            else if (character == "neneka" || character == "neneka_newyear")
             {
                 array1 = dt.neneka_08;
+                array2 = dt.neneka_newyear_08;
             }
             else if (character == "kristina" || character == "kristina_christmas")
             {
@@ -12948,11 +13361,12 @@ namespace PCRD_KR_ArenaSim
                 array2 = dt.hiyori_newyear_08;
                 //array3 = dt.hiyori_princess_08;
             }
-            else if (character == "yui" || character == "yui_newyear" || character == "yui_princess")
+            else if (character == "yui" || character == "yui_newyear" || character == "yui_princess" || character == "yui_maiden")
             {
                 array1 = dt.yui_12;
                 array2 = dt.yui_newyear_08;
                 array3 = dt.yui_princess_08;
+                array4 = dt.yui_maiden_08;
             }
             else if (character == "rei" || character == "rei_newyear" || character == "rei_halloween")
             {
@@ -13114,7 +13528,7 @@ namespace PCRD_KR_ArenaSim
             else if (character == "tomo" || character == "tomo_magical")
             {
                 array1 = dt.tomo_08;
-                //array2 = dt.tomo_magical_08;
+                array2 = dt.tomo_magical_08;
             }
             else if (character == "siori" || character == "siori_magical")
             {
@@ -13208,7 +13622,7 @@ namespace PCRD_KR_ArenaSim
                 array1 = dt.pekorinnu_12;
                 array2 = dt.pekorinnu_summer_08;
                 array3 = dt.pekorinnu_princess_08;
-                //array4 = dt.pekorinnu_newyear_08;
+                array4 = dt.pekorinnu_newyear_08;
             }
             else if (character == "kotkoro" || character == "kotkoro_summer" || character == "kotkoro_newyear" || character == "kotkoro_princess" || character == "kotkoro_maiden")
             {
@@ -13216,19 +13630,19 @@ namespace PCRD_KR_ArenaSim
                 array2 = dt.kotkoro_summer_08;
                 array3 = dt.kotkoro_newyear_08;
                 array4 = dt.kotkoro_princess_08;
-                //array5 = dt.kotkoro_maiden_08;
+                array5 = dt.kotkoro_maiden_08;
             }
             else if (character == "kyaru" || character == "kyaru_summer" || character == "kyaru_newyear" || character == "kyaru_princess")
             {
                 array1 = dt.kyaru_12;
                 array2 = dt.kyaru_summer_08;
                 array3 = dt.kyaru_newyear_08;
-                //array4 = dt.kyaru_princess_08;
+                array4 = dt.kyaru_princess_08;
             }
             else if (character == "muimi" || character == "muimi_newyear")
             {
                 array1 = dt.muimi_08;
-                ///array2 = dt.muimi_newyear_08;
+                array2 = dt.muimi_newyear_08;
             }
             else if (character == "arisa")
             {
@@ -13246,9 +13660,10 @@ namespace PCRD_KR_ArenaSim
             {
                 array1 = dt.labyrista_08;
             }
-            else if (character == "neneka")
+            else if (character == "neneka" || character == "neneka_newyear")
             {
                 array1 = dt.neneka_08;
+                array2 = dt.neneka_newyear_08;
             }
             else if (character == "kristina" || character == "kristina_christmas")
             {

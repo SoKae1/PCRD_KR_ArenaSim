@@ -11,7 +11,7 @@
          https://github.com/esterTion/redive_master_db_diff/blob/master/unique_equipment_enhance_rate.sql
          
         전장 스탯은 엔요리까지
-        강화수치는 람까지
+        강화수치 엔요리까지
          */
 
         public double[] hiyori = new double[15] { 0, 94, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -388,16 +388,19 @@
         public double[] inori_reinforce = new double[15] { 0.0, /*atk*/3.2, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.05, /*energy_reduce_rate*/0.0,  /*accuracy*/0.5 };
 
         public double[] ram = new double[15] {0.0, /*atk*/33.0, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/40.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/5.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0,  /*accuracy*/15.0};
-        public double[] ram_reinforce = new double[15] { 0.0, /*atk*/1.65, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/2.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.25, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0,  /*accuracy*/0.75 };
+        public double[] ram_reinforce = new double[15] { 0.0, /*atk*/1.65, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/2.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.25, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0,  /*accuracy*/0.0 };
 
         public double[] rem = new double[15] {0.0, /*atk*/0.0, /*magic_str*/52.0, /*def*/8.0, /*magic_def*/2.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/1.0, /*energy_reduce_rate*/0.0,  /*accuracy*/0.0};
+        public double[] rem_reinforce = new double[15] { 0.0, /*atk*/0.0, /*magic_str*/2.6, /*def*/8.0, /*magic_def*/0.1, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.05, /*energy_reduce_rate*/0.0,  /*accuracy*/0.0 };
 
         public double[] emilia = new double[15] {0.0, /*atk*/0.0, /*magic_str*/96.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/6.0, /*energy_recovery_rate*/1.0, /*energy_reduce_rate*/0.0,  /*accuracy*/0.0};
-        public double[] chieru = new double[15]{0.0, /*atk*/79.0, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/40.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/1.0, /*energy_reduce_rate*/0.0,  /*accuracy*/0.0};
+        public double[] emilia_reinforce = new double[15] { 0.0, /*atk*/0.0, /*magic_str*/4.8, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.3, /*energy_recovery_rate*/0.05, /*energy_reduce_rate*/0.0,  /*accuracy*/0.0 };
 
+        public double[] chieru = new double[15]{0.0, /*atk*/79.0, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/40.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/1.0, /*energy_reduce_rate*/0.0,  /*accuracy*/0.0};
+         
         public double[] yuni = new double[15] {0.0, /*atk*/0.0, /*magic_str*/56.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/200.0, /*wave_energy_recovery*/30.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/1.0,  /*accuracy*/0.0};
 
-        
+
         public double[] kristina_christmas = new double[15] {0.0, /*atk*/86.0, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/20.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/1.0,  /*accuracy*/0.0};
 
         public double[] nozomi_christmas = new double[15] {290.0, /*atk*/0.0, /*magic_str*/0.0, /*def*/12.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/4.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0,  /*accuracy*/0.0};
@@ -444,18 +447,43 @@
 
         public double[] yori_angel = new double[15] { 300.0, /*atk*/0.0, /*magic_str*/64.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/1.0, /*energy_reduce_rate*/0.0,  /*accuracy*/0.0};
 
-
-    /* HP, 물공, 마공, 물방, 마방, 물크, 마크, HP 자동 회복, TP 자동 회복, 회피, HP 흡수, 회복량 상승, TP 상승, TP 소비 감소, 명중 */
-    /* 전용 장비에 따른 능력치는 전용 장비 능력치를 그대로 더하면 됨 */
-    /* 전용 장비 착용자가 변수명이 됨 */
-    /* 강화로 추가되는 스탯 순서도 동일: 전체 스탯 = 초기 장비 스탯 + 추가 장비 스탯 * ( 전용 장비 레벨 -1)
-     * HP, 물공, 마공, 물방, 마방, 물크, 마크, HP 자동 회복, TP 자동 회복, 회피, HP 흡수, 회복량 상승, TP 상승, TP 소비 감소, 명중 
-        0.0 	0.0 	0.0 	0.35 	0.6 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.25 	0.0 	0.0 	0.0
-     https://github.com/HerDataSam/redive_kr_db_diff/blob/master/unique_equipment_enhance_rate.csv 
-    https://github.com/HerDataSam/redive_kr_db_diff/blob/master/unique_equipment_data.csv
-    https://github.com/esterTion/redive_master_db_diff/blob/master/unique_equipment_enhance_rate.sql
-    https://github.com/esterTion/redive_master_db_diff/blob/master/unique_equipment_data.sql
-     */
-}
+        public double[] chieru_reinforce = new double[15] { 0.0, /*atk*/3.95, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/2.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.05, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] yuni_reinforce = new double[15] { 0.0, /*atk*/0.0, /*magic_str*/2.8, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/10.0, /*wave_energy_recovery*/1.5, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.05, /*accuracy*/0.0 };
+        public double[] kristina_christmas_reinforce = new double[15] { 0.0, /*atk*/4.3, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/1.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.05, /*accuracy*/0.0 };
+        public double[] nozomi_christmas_reinforce = new double[15] { 14.5, /*atk*/0.0, /*magic_str*/0.0, /*def*/0.6, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.2, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] iriya_christmas_reinforce = new double[15] { 5.0, /*atk*/0.0, /*magic_str*/3.75, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.4, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.1, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] pekorinnu_newyear_reinforce = new double[15] { 1.5, /*atk*/0.0, /*magic_str*/0.0, /*def*/0.45, /*magic_def*/0.5, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.05, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] kyaru_newyear_reinforce = new double[15] { 0.0, /*atk*/0.0, /*magic_str*/3.7, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.5, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/1.25, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] suzume_newyear_reinforce = new double[15] { 0.0, /*atk*/0.0, /*magic_str*/3.35, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.5, /*energy_recovery_rate*/0.15, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] kasumi_magical_reinforce = new double[15] { 0.0, /*atk*/0.0, /*magic_str*/2.6, /*def*/0.2, /*magic_def*/0.3, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] siori_magical_reinforce = new double[15] { 0.0, /*atk*/4.2, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/2.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] uzuki_deremas_reinforce = new double[15] { 0.0, /*atk*/4.1, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/1.7, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.05, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] rein_deremas_reinforce = new double[15] { 11.0, /*atk*/0.0, /*magic_str*/0.0, /*def*/0.4, /*magic_def*/0.4, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] mio_deremas_reinforce = new double[15] { 0.0, /*atk*/0.0, /*magic_str*/4.5, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.8, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] rin_ranger_reinforce = new double[15] { 0.0, /*atk*/3.9, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/1.25, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.1, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] mahiru_ranger_reinforce = new double[15] { 0.0, /*atk*/4.35, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/1.3, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] rino_wonder_reinforce = new double[15] { 0.0, /*atk*/4.0, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/1.5, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.05, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] ayumi_wonder_reinforce = new double[15] { 10.5, /*atk*/0.0, /*magic_str*/0.0, /*def*/0.5, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.15, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.05, /*accuracy*/0.0 };
+        public double[] ruka_summer_reinforce = new double[15] { 0.0, /*atk*/4.7, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.65, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] anna_summer_reinforce = new double[15] { 0.0, /*atk*/0.0, /*magic_str*/4.1, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.4, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.1, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] nanaka_summer_reinforce = new double[15] { 0.0, /*atk*/0.0, /*magic_str*/4.55, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.1, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] hatsune_summer_reinforce = new double[15] { 0.0, /*atk*/0.0, /*magic_str*/4.4, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.65, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] misato_summer_reinforce = new double[15] { 0.0, /*atk*/0.0, /*magic_str*/1.5, /*def*/0.0, /*magic_def*/0.6, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.1, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] zyun_summer_reinforce = new double[15] { 5.0, /*atk*/4.45, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] akari_angel_reinforce = new double[15] { 0.0, /*atk*/0.0, /*magic_str*/4.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.65, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.1, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        public double[] yori_angel_reinforce = new double[15] { 15.0, /*atk*/0.0, /*magic_str*/3.2, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.05, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
+        
+        /* HP, 물공, 마공, 물방, 마방, 물크, 마크, HP 자동 회복, TP 자동 회복, 회피, HP 흡수, 회복량 상승, TP 상승, TP 소비 감소, 명중 */
+        /* 전용 장비에 따른 능력치는 전용 장비 능력치를 그대로 더하면 됨 */
+        /* 전용 장비 착용자가 변수명이 됨 */
+        /* 강화로 추가되는 스탯 순서도 동일: 전체 스탯 = 초기 장비 스탯 + 추가 장비 스탯 * ( 전용 장비 레벨 -1)
+         * HP, 물공, 마공, 물방, 마방, 물크, 마크, HP 자동 회복, TP 자동 회복, 회피, HP 흡수, 회복량 상승, TP 상승, TP 소비 감소, 명중 
+            0.0 	0.0 	0.0 	0.35 	0.6 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.0 	0.25 	0.0 	0.0 	0.0
+         https://github.com/HerDataSam/redive_kr_db_diff/blob/master/unique_equipment_enhance_rate.csv 
+        https://github.com/HerDataSam/redive_kr_db_diff/blob/master/unique_equipment_data.csv
+        https://github.com/esterTion/redive_master_db_diff/blob/master/unique_equipment_enhance_rate.sql
+        https://github.com/esterTion/redive_master_db_diff/blob/master/unique_equipment_data.sql
+         */
+    }
 
 }

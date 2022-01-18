@@ -1393,13 +1393,16 @@
                 </Grid>
             </TabItem>
 -->
-            <TabItem Header="캐릭터 설정"  BorderThickness="0" Background="Azure"
+            <TabItem Header="캐릭터 설정"  BorderThickness="0" Background="#FFB3D9FE"
                      BorderBrush="{x:Null}" MinWidth="100"
                      Margin="0,0,0,0" Style="{DynamicResource GG}" >
                 <Grid >
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="5*"></RowDefinition>
+                        <RowDefinition Height="9*"></RowDefinition>
                         <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <WrapPanel Grid.Row="0" >
                         <WrapPanel Margin="5,25,5,25" >
@@ -1418,6 +1421,10 @@
                             <Button  ToolTip="zyun"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                         Click="bt_zyun_set_Click" >
                                 <Image Source="res\icon_unit\104731.png" Stretch="Fill"     Name="img_bt_zyun"  />
+                            </Button>
+                            <Button  ToolTip="muimi_newyear"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
+                                        Click="bt_muimi_newyear_set_Click" >
+                                <Image Source="res\icon_unit\114731.png" Stretch="Fill"     Name="img_bt_muimi_newyear"  />
                             </Button>
                             <Button  ToolTip="kuuka_ooedo"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                         Click="bt_kuuka_ooedo_set_Click" >
@@ -1531,6 +1538,10 @@
                                         Click="bt_inori_set_Click" >
                                 <Image Source="res\icon_unit\106631.png" Stretch="Fill"     Name="img_bt_inori"  />
                             </Button>
+                            <Button  ToolTip="hiyori_princess"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
+                                        Click="bt_hiyori_princess_set_Click" >
+                                <Image Source="res\icon_unit\180131.png" Stretch="Fill"     Name="img_bt_hiyori_princess"  />
+                            </Button>
                             <Button  ToolTip="hiyori"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                         Click="bt_hiyori_set_Click" >
                                 <Image Source="res\icon_unit\100161.png" Stretch="Fill"     Name="img_bt_hiyori"  />
@@ -1578,6 +1589,10 @@
                             <Button  ToolTip="zita"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                     Click="bt_zita_set_Click" >
                                 <Image Source="res\icon_unit\105731.png" Stretch="Fill"     Name="img_bt_zita"  />
+                            </Button>
+                            <Button  ToolTip="pekorinnu_newyear"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
+                                    Click="bt_pekorinnu_newyear_set_Click" >
+                                <Image Source="res\icon_unit\111831.png" Stretch="Fill"     Name="img_bt_pekorinnu_newyear"  />
                             </Button>
                             <Button  ToolTip="rei"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                         Click="bt_rei_set_Click" >
@@ -1753,10 +1768,15 @@
                                          Click="bt_labyrista_set_Click" >
                                 <Image Source="res\icon_unit\106831.png" Stretch="Fill"     Name="img_bt_labyrista"  />
                             </Button>
+                            <Button  ToolTip="neneka_newyear"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
+                                         Click="bt_neneka_newyear_set_Click" >
+                                <Image Source="res\icon_unit\115031.png" Stretch="Fill"     Name="img_bt_neneka_newyear"  />
+                            </Button>
                             <Button  ToolTip="mitsuki"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                          Click="bt_mitsuki_set_Click" >
                                 <Image Source="res\icon_unit\105131.png" Stretch="Fill"     Name="img_bt_mitsuki"  />
                             </Button>
+                            
                             <Button  ToolTip="hatsune_summer"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                          Click="bt_hatsune_summer_set_Click" >
                                 <Image Source="res\icon_unit\113431.png" Stretch="Fill"     Name="img_bt_hatsune_summer"  />
@@ -1950,6 +1970,37 @@
                         </WrapPanel>
                     </WrapPanel>
                     <WrapPanel Grid.Row="1">
+                        <TextBlock Text="최고 레벨" Margin="25,0,5,0" FontSize="18" />
+                        <TextBox Text="" Margin="5,0,5,0" FontSize="18" Name="tb_MaxLevel" MinWidth="80" BorderBrush="{x:Null}" MaxWidth="80" />
+                        <TextBlock Text="최고 랭크" Margin="25,0,5,0" FontSize="18" />
+                        <TextBox Text="" Margin="25,0,5,0" FontSize="18" Name="tb_MaxRank" MinWidth="40" BorderBrush="{x:Null}" MaxWidth="40"/>
+                        <TextBlock Text="랭크" Margin="0,0,5,0" FontSize="18" />
+                            <TextBox Text="" Margin="0,0,5,0" FontSize="18" Name="tb_MaxItemQuqn" MinWidth="20" BorderBrush="{x:Null}" MaxWidth="20"/>
+                        <TextBlock Text="템" Margin="0,0,5,0" FontSize="18" />
+                        <TextBlock Text="최고 전용장비 레벨" Margin="25,0,5,0" FontSize="18" />
+                                <TextBox Text="" Margin="5,0,5,0" FontSize="18" Name="tb_MaxUnique" MinWidth="80" BorderBrush="{x:Null}" MaxWidth="80"/>
+
+                    </WrapPanel>
+                    <WrapPanel Grid.Row="2">
+                        <TextBlock Text="공덱 자동강화" Margin="25,0,5,0" FontSize="18"/>
+
+                        <Button Content="최고 레벨" Margin="25,0,5,0" BorderBrush="{x:Null}" Background="#FF90FCA8" MinWidth="125" MinHeight="35"
+                                Click="bt_OffAutoReinLevel_Click" Style="{DynamicResource GG}" />
+                        <Button Content="최고 랭크" Margin="25,0,25,0" BorderBrush="{x:Null}" Background="#FFF861B4" MinWidth="125" MinHeight="35"
+                                Click="bt_OffAutoReinItem_Click"/>
+                        <Button Content="최고 전용장비 레벨" Margin="25,0,25,0" BorderBrush="{x:Null}" Background="#FFD3B8FF" MinWidth="125" MinHeight="35"
+                                Click="bt_OffAutoReinUniqueEquip_Click"/>
+                    </WrapPanel>
+                    <WrapPanel Grid.Row="3">
+                        <TextBlock Text="방덱 자동강화" Margin="25,0,5,0" FontSize="18"/>
+                        <Button Content="최고 레벨" Margin="25,0,5,0" BorderBrush="{x:Null}" Background="#DD90FCA8" MinWidth="125" MinHeight="35"
+                                Click="bt_DefAutoReinLevel_Click" Style="{DynamicResource GG}" />
+                        <Button Content="최고 랭크" Margin="25,0,25,0" BorderBrush="{x:Null}" Background="#DDF861B4" MinWidth="125" MinHeight="35"
+                                Click="bt_DefAutoReinItem_Click"/>
+                        <Button Content="최고 전용장비 레벨" Margin="25,0,25,0" BorderBrush="{x:Null}" Background="#DDD3B8FF" MinWidth="125" MinHeight="35"
+                                Click="bt_DefAutoReinUniqueEquip_Click"/>
+                    </WrapPanel>
+                    <WrapPanel Grid.Row="4">
                         <Button Content="공덱.txt 열기" Margin="25,0,5,0" BorderBrush="{x:Null}" Background="#FFBCF2C8" MinWidth="125" MinHeight="45"
                                 Click="bt_open_offDeck_Click" Style="{DynamicResource GG}" />
                         <Button Content="방덱.txt 열기" Margin="25,0,25,0" BorderBrush="{x:Null}" Background="#FFFFB8DF" MinWidth="125" MinHeight="45"
@@ -1957,7 +2008,7 @@
                     </WrapPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="로그 읽어보기" BorderThickness="0" Background="MintCream"
+            <TabItem Header="로그 읽어보기" BorderThickness="0" Background="#FFCFE7FE"
                      BorderBrush="{x:Null}" MinWidth="100"
                      Margin="0,0,0,0" Style="{DynamicResource GG}">
                 <Grid >
@@ -1996,7 +2047,7 @@
                     </WrapPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="축약어 설정" BorderThickness="0" Background="Bisque"
+            <TabItem Header="축약어 설정" BorderThickness="0" Background="#FFDFEFFF"
                      BorderBrush="{x:Null}" MinWidth="100"
                      Margin="0,0,0,0" Style="{DynamicResource GG}">
                 <Grid >
@@ -2596,28 +2647,40 @@
                     </WrapPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="제작자 정보" BorderThickness="0" Background ="Cornsilk"
+            <TabItem Header="업데이트 확인" BorderThickness="0" Background ="#FFF2F9FF"
                      Margin="0,0,0,0" Style="{DynamicResource GG}"
                      BorderBrush="{x:Null}" MinWidth="100">
                 <Grid Background="Transparent">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="8*"></RowDefinition>
+                        <RowDefinition Height="5*"></RowDefinition>
                         <RowDefinition Height="1*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0" >
-                        <RichTextBox Name="Rtb_info_maker" BorderBrush="{x:Null}" Background="#FFF2FFFC" 
+                        <RichTextBox Name="Rtb_info_update" BorderBrush="{x:Null}" Background="#FFF2FFFC" 
                                  IsReadOnly="True" AcceptsReturn="True" IsDocumentEnabled="True"
-                              Margin="100,55,100,5" FontSize="16" Height="610">
+                              Margin="100,55,100,5" FontSize="14" Height="575">
                             <FlowDocument>
                                 <Paragraph LineHeight="6"/>
                             </FlowDocument>
                         </RichTextBox>
                     </StackPanel>
                     <StackPanel Grid.Row="1" >
-                        <Button Width="150" Height="50" Content="업데이트 확인" Click="bt_UpdateCheck_Click" Name="bt_UpdateCheck" BorderBrush="{x:Null}" Background="#FFEFE5E5" />
-                    </StackPanel>                    
+                        <Button Width="175" Height="65" Content="업데이트 확인" Click="bt_UpdateCheck_Click" Name="bt_UpdateCheck" BorderBrush="{x:Null}" Background="#FFEFE5E5" />
+                    </StackPanel>
 
                 </Grid>
+            </TabItem>
+
+            <TabItem Header="제작자 정보" BorderThickness="0" Background ="White"
+                     Margin="0,0,0,0" Style="{DynamicResource GG}"
+                     BorderBrush="{x:Null}" MinWidth="100">                
+                    <RichTextBox Name="Rtb_info_maker" BorderBrush="{x:Null}" Background="#FFF2FFFC" 
+                                IsReadOnly="True" AcceptsReturn="True" IsDocumentEnabled="True"
+                            Margin="100,55,100,5" FontSize="14" Height="575">
+                        <FlowDocument>
+                            <Paragraph LineHeight="6"/>
+                        </FlowDocument>
+                    </RichTextBox>                   
             </TabItem>
         </TabControl>
     </Grid>

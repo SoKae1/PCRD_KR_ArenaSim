@@ -929,7 +929,7 @@ namespace PCRD_KR_ArenaSim
                     Battle_variable.buff_PA[i, opponent_order] = true;
                     Battle_variable.buff_PA_coef[i, opponent_order] = coefficient;
                     Battle_variable.buff_PA_time[i, opponent_order] = duration;
-                    Battle_variable.PA[opponent_order] += Battle_variable.buff_PA_coef[i, opponent_order];
+                    Battle_variable.PA[opponent_order] = Math.Max(0, Battle_variable.PA[opponent_order] + Battle_variable.buff_PA_coef[i, opponent_order]);
                     if (Battle_variable.name[opponent_order] == "성키노")
                     {
                         if (opponent_order < 15)
@@ -1001,7 +1001,7 @@ namespace PCRD_KR_ArenaSim
                         }
                     }
 
-                    Battle_variable.MA[opponent_order] += Battle_variable.buff_MA_coef[i, opponent_order];
+                    Battle_variable.MA[opponent_order] = Math.Max(0, Battle_variable.MA[opponent_order] + Battle_variable.buff_MA_coef[i, opponent_order]);
                     Debug.WriteLine("{3}{0}가 {4}{1}에게 마법공격력 버프 {2} 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], Battle_variable.buff_MA_coef[i, opponent_order], my_order, opponent_order);
                     //Debug.WriteLine("{2}{0} 마법공격력: {1}\n", Battle_variable.name[opponent_order], Battle_variable.MA[opponent_order], opponent_order);
                 }
@@ -1015,7 +1015,7 @@ namespace PCRD_KR_ArenaSim
                     Battle_variable.buff_PD[i, opponent_order] = true;
                     Battle_variable.buff_PD_coef[i, opponent_order] = coefficient;
                     Battle_variable.buff_PD_time[i, opponent_order] = duration;
-                    Battle_variable.PD[opponent_order] += Battle_variable.buff_PD_coef[i, opponent_order];
+                    Battle_variable.PD[opponent_order] = Math.Max(0, Battle_variable.PD[opponent_order] + Battle_variable.buff_PD_coef[i, opponent_order]);
                     if (Battle_variable.name[opponent_order] == "성키노")
                     {
                         if (opponent_order < 15)
@@ -1058,7 +1058,8 @@ namespace PCRD_KR_ArenaSim
                     Battle_variable.buff_MD[i, opponent_order] = true;
                     Battle_variable.buff_MD_coef[i, opponent_order] = coefficient;
                     Battle_variable.buff_MD_time[i, opponent_order] = duration;
-                    Battle_variable.MD[opponent_order] += Battle_variable.buff_MD_coef[i, opponent_order];
+
+                    Battle_variable.MD[opponent_order] = Math.Max(0, Battle_variable.MD[opponent_order] + Battle_variable.buff_MD_coef[i, opponent_order]);
                     if (Battle_variable.name[opponent_order] == "성키노")
                     {
                         if (opponent_order < 15)

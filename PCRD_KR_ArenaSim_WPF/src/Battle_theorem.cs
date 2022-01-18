@@ -1150,12 +1150,23 @@ namespace PCRD_KR_ArenaSim
                     //Debug.WriteLine("크리티컬: {3}{0}가 {4}{1}에게 {2} 대미지", Battle_variable.name[my_order], Battle_variable.name[opponent_order], damage, my_order, opponent_order);
                     //Debug.WriteLine("{2}{0} HP: {1}\n", Battle_variable.name[opponent_order], Battle_variable.HP[opponent_order], opponent_order);
 
-                    if (Battle_variable.name_eng[my_order] == "chieru" && ((Character_skill.chieru_opponent_dance == true && my_order < 15) || (Character_skill.chieru_opponent_dance_est == true && my_order >= 15)))//클로에
+                    if (Battle_variable.name_eng[my_order] == "chieru" && ((Character_skill.chieru_opponent_dance == true && my_order < 15) || (Character_skill.chieru_opponent_dance_est == true && my_order >= 15)))//치에루
                     {
-                        if (Battle_variable.chieru_stack[my_order] < 30)
+                        if(Level_variable.equip[my_order] == true)
                         {
-                            Battle_variable.chieru_stack[my_order] += 1;
+                            if (Battle_variable.chieru_stack[my_order] < 77)
+                            {
+                                Battle_variable.chieru_stack[my_order] += 1;
+                            }
                         }
+                        else
+                        {
+                            if (Battle_variable.chieru_stack[my_order] < 30)
+                            {
+                                Battle_variable.chieru_stack[my_order] += 1;
+                            }
+                        }
+                        
                     }
                     if (Battle_variable.name_eng[my_order] == "rino_wonder")
                     {

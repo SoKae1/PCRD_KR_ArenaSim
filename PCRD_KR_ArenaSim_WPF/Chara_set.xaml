@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:PCRD_KR_ArenaSim"
         mc:Ignorable="d"
         Title="캐릭터 설정" Height="440" Width="410" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" KeyDown="Chara_Set_KeyDown" Loaded="Window_Loaded" ContentRendered="Window_ContentRendered">
-    
-    
+
+
     <TabControl x:Name="tabControl" Margin="0,0,0,0" Background="#FFB3FFE7" 
                     BorderThickness="0" BorderBrush="{x:Null}">
         <TabItem Header="캐릭터 설정" BorderThickness="0" Background="#FFFF5FDB"
@@ -71,12 +71,13 @@
                     </ComboBox>
 
                     <Image Name="Chara_sel" Source="res\icon_unit\000001.png"  Stretch="Fill"   Margin="168,133,168,207" Height="64"  />
-
+                    <Label Content="자동강화" Margin="331,244,17,136" FontSize="12"/>
                     <Button ToolTip="공덱"   BorderThickness="0"  Background="#FFEDD4D4"  
                       Content="공덱으로 저장"                  Click="bt_chara_save_off_Click" BorderBrush="{x:Null}" Margin="17,370,288,10"   />
                     <Button ToolTip="방덱"   BorderThickness="0"  Background="#FFD4EDD9"  
                       Content="방덱으로 저장"                   BorderBrush="{x:Null}" Margin="288,370,17,10" IsDefault="True"
                             Click="bt_chara_save_def_Click"/>
+                   
                     <Button ToolTip="종료하기 전에 저장해"   BorderThickness="0"  Background="White"  
                       Content="종료"                  Click="bt_chara_set_exit_Click" BorderBrush="{x:Null}" Margin="163,361,163,-2" Width="80" Height="45"   />
 
@@ -166,8 +167,18 @@
                              />
                     <TextBox x:Name="tB_unique_level" HorizontalAlignment="Left" Height="25" Margin="183,312,0,0" TextWrapping="Wrap" Text="160" VerticalAlignment="Top"
                              Width="40" BorderBrush="{x:Null}" Background="#FFFFF0F0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TextChanged="tB_unique_level_TextChanged"/>
+                    <Button ToolTip=""   BorderThickness="0"  Background="#FF5DDEFB"  
+                      Content="최고레벨"                   BorderBrush="{x:Null}" Margin="329,269,17,111" IsDefault="True"
+                            Click="bt_chara_save_autoRein_Level_Click"/>
+                    <Button ToolTip=""   BorderThickness="0"  Background="#FF4DFF70"  
+                        Content="최고랭크"                   BorderBrush="{x:Null}" Margin="329,303,17,77" IsDefault="True"
+                        Click="bt_chara_save_autoRein_item_Click"/>
+                    <Button ToolTip=""   BorderThickness="0"  Background="#FFF1ACFF"  
+                        Content="전용장비"                   BorderBrush="{x:Null}" Margin="329,337,17,43" IsDefault="True"
+                        Click="bt_chara_save_autoRein_unique_Click"/>
 
                 </Grid>
+
             </Grid>
 
         </TabItem>
@@ -297,7 +308,7 @@
 
 
         </TabItem>
-        
+
     </TabControl>
 
 

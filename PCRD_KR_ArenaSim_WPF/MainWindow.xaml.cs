@@ -17,6 +17,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using AutoUpdaterDotNET;
 using System.Xml;
+using System.Net;
+using HtmlAgilityPack;
+
 namespace PCRD_KR_ArenaSim
 {
     /// <summary>
@@ -30,11 +33,14 @@ namespace PCRD_KR_ArenaSim
             this.Title = "프리코네 아레나 시뮬레이터 "+System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             InitialText();
             WriteUpdateInfoXml();
+            DeleteOldFile();
             //UpdateCheck();
             //InitialAvaliabilty();
             InitWorkerThread();
             InitializeAbbr();
-            //Debug.WriteLine(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            InitialMaxText();
+            Debug.WriteLine(AgilityTest());
+            Debug.WriteLine(maxUnique);
         }
 
         
@@ -3104,6 +3110,42 @@ namespace PCRD_KR_ArenaSim
                                     Action_next_seq[i] += 1;
                                 }
                             }
+                            if (Battle_variable.name_eng[i] == "muimi_newyear")//뉴이미 예외:바로 W->A 상태로 넘어가서 1001스킬 사용, 위치에 도달하면 풀림
+                            {
+                                state[i] = "W";
+                                A_timing[i] = 0;
+
+                                if (array2_CP[Action_next_seq[i] + 1] == 0)
+                                {
+                                    Action_next_seq[i] = (int)array2_CP[0];
+                                }
+
+                                if (array2_CP[Action_next_seq[i] + 1] == 1)
+                                {
+                                    C_next_timing[i] = array1_CRC[2] / Battle_variable.Aspeed_coef[i];
+                                }
+                                else if (array2_CP[Action_next_seq[i] + 1] == 1001 || array2_CP[Action_next_seq[i] + 1] == 2001)
+                                {
+                                    if (Level_variable.equip[i] == true)
+                                    {
+                                        C_next_timing[i] = array1_CRC[5] / Battle_variable.Aspeed_coef[i];
+                                    }
+                                    else
+                                    {
+                                        C_next_timing[i] = array1_CRC[3] / Battle_variable.Aspeed_coef[i];
+                                    }
+                                }
+                                else if (array2_CP[Action_next_seq[i] + 1] == 1002 || array2_CP[Action_next_seq[i] + 1] == 2002)
+                                {
+                                    C_next_timing[i] = array1_CRC[4] / Battle_variable.Aspeed_coef[i];
+                                }
+
+                                Action_next_seq[i] += 1;
+                                if (Action_next_seq[i] == 14)
+                                {
+                                    Action_next_seq[i] += 1;
+                                }
+                            }
                             else
                             {
                                 if (least_distance[i] > array1_CRC[1])
@@ -3807,6 +3849,43 @@ namespace PCRD_KR_ArenaSim
                             Battle_variable.Mspeed_coef[i] = 720;
 
                             if (Battle_variable.name_eng[i] == "rima")//리마 예외:FM 상태에서 1001스킬 계속 사용, 위치에 도달하면 풀림
+                            {
+                                state[i] = "W";
+                                A_timing[i] = 0;
+
+
+                                if (array2_CP[Action_next_seq[i] + 1] == 0)
+                                {
+                                    Action_next_seq[i] = (int)array2_CP[0];
+                                }
+
+                                if (array2_CP[Action_next_seq[i] + 1] == 1)
+                                {
+                                    C_next_timing[i] = array1_CRC[2] / Battle_variable.Aspeed_coef[i];
+                                }
+                                else if (array2_CP[Action_next_seq[i] + 1] == 1001 || array2_CP[Action_next_seq[i] + 1] == 2001)
+                                {
+                                    if (Level_variable.equip[i] == true)
+                                    {
+                                        C_next_timing[i] = array1_CRC[5] / Battle_variable.Aspeed_coef[i];
+                                    }
+                                    else
+                                    {
+                                        C_next_timing[i] = array1_CRC[3] / Battle_variable.Aspeed_coef[i];
+                                    }
+                                }
+                                else if (array2_CP[Action_next_seq[i] + 1] == 1002 || array2_CP[Action_next_seq[i] + 1] == 2002)
+                                {
+                                    C_next_timing[i] = array1_CRC[4] / Battle_variable.Aspeed_coef[i];
+                                }
+
+                                Action_next_seq[i] += 1;
+                                if (Action_next_seq[i] == 14)
+                                {
+                                    Action_next_seq[i] += 1;
+                                }
+                            }
+                            if (Battle_variable.name_eng[i] == "muimi_newyear")//뉴이미 예외:FM 상태에서 1001스킬 계속 사용, 위치에 도달하면 풀림
                             {
                                 state[i] = "W";
                                 A_timing[i] = 0;
@@ -4627,7 +4706,7 @@ namespace PCRD_KR_ArenaSim
             else if (CharaName == "misaki") { ID = "105031"; }
             else if (CharaName == "mitsuki") { ID = "105131"; }
             else if (CharaName == "rima") { ID = "105261"; }
-            else if (CharaName == "monika") { ID = "105311"; }
+            else if (CharaName == "monika") { ID = "105331"; }
             else if (CharaName == "tsumugi") { ID = "105431"; }
             else if (CharaName == "ayumi") { ID = "105531"; }
             else if (CharaName == "ruka") { ID = "105631"; }
@@ -6428,7 +6507,7 @@ namespace PCRD_KR_ArenaSim
             { Debug.WriteLine(e.Message); }
         }
 
-        //캐릭터 선택 성카리까지
+        //캐릭터 선택 의코로까지
         public void CharacterSelectCount(int isOfforDef)
         {
             //isOfforDef == 1 방덱 , 0이면 공덱
@@ -7219,7 +7298,7 @@ namespace PCRD_KR_ArenaSim
                 temp_eng[select_count_temp] = "yukari_christmas";
                 select_count_temp += 1;
             }
-            /*
+            
             if (cs.pekorinnu_newyear == true)
             {
                 temp[select_count_temp] = "뉴페코";
@@ -7238,6 +7317,7 @@ namespace PCRD_KR_ArenaSim
                 temp_eng[select_count_temp] = "neneka_newyear";
                 select_count_temp += 1;
             }
+           
             if (cs.kotkoro_maiden == true)
             {
                 temp[select_count_temp] = "의코로";
@@ -7249,7 +7329,8 @@ namespace PCRD_KR_ArenaSim
                 temp[select_count_temp] = "의유이";
                 temp_eng[select_count_temp] = "yui_maiden";
                 select_count_temp += 1;
-            }
+            } 
+            /*
             if (cs.kasumi_summer == true)
             {
                 temp[select_count_temp] = "수스미";
@@ -7316,12 +7397,7 @@ namespace PCRD_KR_ArenaSim
                 temp_eng[select_count_temp] = "rei_princess";
                 select_count_temp += 1;
             }
-            if (cs.hiyori_princess == true)
-            {
-                temp[select_count_temp] = "프요리";
-                temp_eng[select_count_temp] = "hiyori_princess";
-                select_count_temp += 1;
-            }
+            
             if (cs.kyaru_princess == true)
             {
                 temp[select_count_temp] = "프캬루";
@@ -7329,6 +7405,12 @@ namespace PCRD_KR_ArenaSim
                 select_count_temp += 1;
             }
             */
+            if (cs.hiyori_princess == true)
+            {
+                temp[select_count_temp] = "프요리";
+                temp_eng[select_count_temp] = "hiyori_princess";
+                select_count_temp += 1;
+            }
             if (cs.pekorinnu_princess == true)
             {
                 temp[select_count_temp] = "프페코";
@@ -7414,6 +7496,290 @@ namespace PCRD_KR_ArenaSim
             }
         }
 
+        public static decimal maxLevel = 184;
+        public static decimal maxRank = 19;
+        public static decimal maxItemQuantity = 4;
+        
+        public static decimal maxUnique = (int)(( Math.Floor(maxLevel/10) +1)*10);
+
+        public void InitialMaxText()
+        {
+            tb_MaxLevel.Text = Convert.ToString(maxLevel);
+            tb_MaxRank.Text = Convert.ToString(maxRank) ;
+            tb_MaxItemQuqn.Text = Convert.ToString(maxItemQuantity) ;
+            tb_MaxUnique.Text = Convert.ToString(maxUnique);
+        }
+        private void bt_DefAutoReinUniqueEquip_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                StreamReader sr = new StreamReader("character_defence.txt");
+                int row = 1;
+                string[] stringArray = new string[400];
+                stringArray[0] = sr.ReadLine();
+                while (!sr.EndOfStream)
+                {
+                    string s = sr.ReadLine();
+
+                    string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
+
+                    temp[5] = Convert.ToString(maxUnique);
+
+                    stringArray[row] = StringArrayToCommaString(temp);
+                    row++;
+
+                }
+                sr.Close();
+
+                StreamWriter sw = new StreamWriter("character_defence.txt");
+                int i = 0;
+                while (stringArray[i] != null)
+                {
+                    Debug.WriteLine(i);
+                    sw.WriteLine(stringArray[i]);
+                    Debug.WriteLine(stringArray[i]);
+                    i++;
+                }
+                sw.Close();
+
+                MessageBox.Show("방덱의 전용장비를 " + Convert.ToString(maxUnique) + "레벨로 자동강화 성공!", "알림");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void bt_DefAutoReinItem_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                StreamReader sr = new StreamReader("character_defence.txt");
+                int row = 1;
+                string[] stringArray = new string[400];
+                stringArray[0] = sr.ReadLine();
+                while (!sr.EndOfStream)
+                {
+                    string s = sr.ReadLine();
+
+                    string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
+
+                    temp[4] = Convert.ToString(maxRank);
+                    for (int xx = 0; xx < maxItemQuantity; xx++)
+                    {
+                        temp[6 + xx] = "5";
+                    }
+                    stringArray[row] = StringArrayToCommaString(temp);
+                    row++;
+
+                }
+                sr.Close();
+
+                StreamWriter sw = new StreamWriter("character_defence.txt");
+                int i = 0;
+                while (stringArray[i] != null)
+                {
+                    Debug.WriteLine(i);
+                    sw.WriteLine(stringArray[i]);
+                    Debug.WriteLine(stringArray[i]);
+                    i++;
+                }
+                sw.Close();
+
+                MessageBox.Show("방덱을 " + Convert.ToString(maxRank) + "랭크 " + Convert.ToString(maxItemQuantity) + "템으로 자동강화 성공!", "알림");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void bt_DefAutoReinLevel_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                StreamReader sr = new StreamReader("character_defence.txt");
+                int row = 1;
+                string[] stringArray = new string[400];
+                stringArray[0] = sr.ReadLine();
+                while (!sr.EndOfStream)
+                {
+                    string s = sr.ReadLine();
+
+                    string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
+
+                    temp[3] = Convert.ToString(maxLevel);
+                    Debug.Write(temp[0]);
+                    Debug.Write(temp[1]);
+                    Debug.Write(temp[2]);
+                    Debug.WriteLine(temp[3]);
+                    stringArray[row] = StringArrayToCommaString(temp);
+                    Debug.WriteLine(stringArray[row]);
+                    row++;
+
+                }
+                sr.Close();
+
+                StreamWriter sw = new StreamWriter("character_defence.txt");
+                int i = 0;
+                while (stringArray[i] != null)
+                {
+                    Debug.WriteLine(i);
+                    sw.WriteLine(stringArray[i]);
+                    Debug.WriteLine(stringArray[i]);
+                    i++;
+                }
+                sw.Close();
+
+                MessageBox.Show("방덱을 " + Convert.ToString(maxLevel) + "레벨로 자동강화 성공!", "알림");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void bt_OffAutoReinUniqueEquip_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                StreamReader sr = new StreamReader("character_offence.txt");
+                int row = 1;
+                string[] stringArray = new string[400];
+                stringArray[0] = sr.ReadLine();
+                while (!sr.EndOfStream)
+                {
+                    string s = sr.ReadLine();
+
+                    string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
+
+                    temp[5] = Convert.ToString(maxUnique);
+                    
+                    stringArray[row] = StringArrayToCommaString(temp);
+                    row++;
+
+                }
+                sr.Close();
+
+                StreamWriter sw = new StreamWriter("character_offence.txt");
+                int i = 0;
+                while (stringArray[i] != null)
+                {
+                    Debug.WriteLine(i);
+                    sw.WriteLine(stringArray[i]);
+                    Debug.WriteLine(stringArray[i]);
+                    i++;
+                }
+                sw.Close();
+
+                MessageBox.Show("공덱의 전용장비를 " + Convert.ToString(maxUnique) +  "레벨로 자동강화 성공!", "알림");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void bt_OffAutoReinItem_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                StreamReader sr = new StreamReader("character_offence.txt");
+                int row = 1;
+                string[] stringArray = new string[400];
+                stringArray[0] = sr.ReadLine();
+                while (!sr.EndOfStream)
+                {
+                    string s = sr.ReadLine();
+
+                    string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
+
+                    temp[4] = Convert.ToString(maxRank);
+                    for(int xx=0;xx< maxItemQuantity; xx++)
+                    {
+                        temp[6 + xx] = "5";
+                    }
+                    stringArray[row] = StringArrayToCommaString(temp);
+                    row++;
+
+                }
+                sr.Close();
+
+                StreamWriter sw = new StreamWriter("character_offence.txt");
+                int i = 0;
+                while (stringArray[i] != null)
+                {
+                    Debug.WriteLine(i);
+                    sw.WriteLine(stringArray[i]);
+                    Debug.WriteLine(stringArray[i]);
+                    i++;
+                }
+                sw.Close();
+
+                MessageBox.Show("공덱을 " + Convert.ToString(maxRank) + "랭크 " + Convert.ToString(maxItemQuantity)+"템으로 자동강화 성공!", "알림");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void bt_OffAutoReinLevel_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                StreamReader sr = new StreamReader("character_offence.txt");
+                int row = 1;
+                string[] stringArray = new string[400];
+                stringArray[0] = sr.ReadLine();
+                while (!sr.EndOfStream)
+                {
+                    string s = sr.ReadLine();
+
+                    string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
+
+                    temp[3] = Convert.ToString(maxLevel);
+                    Debug.Write(temp[0]);
+                    Debug.Write(temp[1]);
+                    Debug.Write(temp[2]);
+                    Debug.WriteLine(temp[3]);
+                    stringArray[row] = StringArrayToCommaString(temp);
+                    Debug.WriteLine(stringArray[row]);
+                    row++;
+
+                }
+                sr.Close();
+
+                StreamWriter sw = new StreamWriter("character_offence.txt");
+                int i = 0;
+                while (stringArray[i] != null)
+                {
+                    Debug.WriteLine(i);
+                    sw.WriteLine(stringArray[i]);
+                    Debug.WriteLine(stringArray[i]);
+                    i++;
+                }
+                sw.Close();
+
+                MessageBox.Show( "공덱을 " + Convert.ToString(maxLevel) + "레벨로 자동강화 성공!","알림");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public string StringArrayToCommaString(string[] temp)
+        {
+            string result="";
+            Debug.WriteLine("x = " + temp.Length);
+            for (int i = 0; i < temp.Length; i++)
+            {
+                result = result + temp[i] + ",";
+            }
+            Debug.WriteLine("result = " + result); ;
+            return result.Remove(result.Length -1);
+        }
         #region SetClick
         private void bt_rima_set_Click(object sender, RoutedEventArgs e)
         {
@@ -8091,7 +8457,28 @@ namespace PCRD_KR_ArenaSim
             Chara_set.yukari_christmas = true;
             Chara_set C_S = new Chara_set(); C_S.ShowDialog();
         }
-        //캐릭터 설정 성카리까지
+        private void bt_hiyori_princess_set_Click(object sender, RoutedEventArgs e)
+        {
+            Chara_set.hiyori_princess = true;
+            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
+        }
+        private void bt_pekorinnu_newyear_set_Click(object sender, RoutedEventArgs e)
+        {
+            Chara_set.pekorinnu_newyear = true;
+            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
+        }
+        private void bt_neneka_newyear_set_Click(object sender, RoutedEventArgs e)
+        {
+            Chara_set.neneka_newyear = true;
+            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
+        }
+        private void bt_muimi_newyear_set_Click(object sender, RoutedEventArgs e)
+        {
+            Chara_set.muimi_newyear = true;
+            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
+        }
+
+        //캐릭터 설정 뉴이미까지
 
         #endregion
 
@@ -9352,7 +9739,6 @@ namespace PCRD_KR_ArenaSim
             Abbr_akino, Abbr_ninon_ooedo, Abbr_hiyori_newyear, Abbr_kaya, Abbr_makoto, Abbr_muimi, Abbr_nozomi, Abbr_kotkoro_newyear, Abbr_ruka, Abbr_pekorinnu_princess, 
             Abbr_pekorinnu, Abbr_rin_deremas, Abbr_rei_newyear, Abbr_kaori, Abbr_kuuka_ooedo, Abbr_zyun, Abbr_kuuka, Abbr_miyako, Abbr_rima, Abbr_kyouka_halloween = "";
 
-      
         string Abbr_yori_angel, Abbr_labyrista, Abbr_matsuri_halloween, Abbr_rei_halloween, Abbr_tsumugi_halloween, Abbr_akino_christmas, Abbr_saren_christmas, Abbr_yukari_christmas,
             Abbr_monika_magical, Abbr_tomo_magical, Abbr_pekorinnu_newyear, Abbr_muimi_newyear, Abbr_neneka_newyear, Abbr_kyaru_princess = "";
 
@@ -10676,10 +11062,212 @@ namespace PCRD_KR_ArenaSim
 
         #endregion
 
+        // 업데이트 탭
+
+        #region Update
+        private void UpdateCheck()
+        {
+            if (File.Exists(fileName + ".old"))
+            {
+                System.IO.File.Delete(fileName + ".old");
+            }
+            AutoUpdater.RunUpdateAsAdmin = false;
+            AutoUpdater.CheckForUpdateEvent += AutoUpdaterOnCheckForUpdateEvent;
+            Debug.WriteLine(System.Environment.CurrentDirectory);
+            AutoUpdater.Synchronous = true;
+            AutoUpdater.DownloadPath = System.Environment.CurrentDirectory;
+            AutoUpdater.Start(@"https://raw.githubusercontent.com/SoKae1/PCRD_KR_ArenaSim/master/PCRD_KR_ArenaSim_WPF/bin/x64/Release/UpdateInfo.xml");
+            //https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/latest/download/PCRD_KR_ArenaSim.exe
+            AutoUpdater.AppTitle = "프리코네 아레나 시뮬레이터";
+            AutoUpdater.ShowRemindLaterButton = false;
+            AutoUpdater.ReportErrors = true;
+            WriteUpdateInfoXml();
+        }
+        private void bt_UpdateCheck_Click(object sender, RoutedEventArgs e)
+        {
+            
+                Rtb_info_update.Document.Blocks.Clear();
+            Rtb_info_update.Document.Blocks.Add(new Paragraph(new Run(Environment.NewLine + Environment.NewLine + "업데이트 로그: " + Environment.NewLine + AgilityTest() )));
+
+            UpdateCheck();
+        }
+
+
+        private void AutoUpdaterOnCheckForUpdateEvent(UpdateInfoEventArgs args)
+        {
+            if (args.Error == null)
+            {
+                if (args.IsUpdateAvailable)
+                {
+                    System.Windows.Forms.DialogResult dialogResult;
+                    if (args.Mandatory.Value)
+                    {
+                        dialogResult =
+                            System.Windows.Forms.MessageBox.Show(
+                                $@"새 버전 {args.CurrentVersion} 이 있어요! You are using version {args.InstalledVersion}. This is required update. Press Ok to begin updating the application.", @"알림",
+                                System.Windows.Forms.MessageBoxButtons.OK,
+                                System.Windows.Forms.MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        dialogResult =
+                            System.Windows.Forms.MessageBox.Show(
+                                $@"새 버전 {args.CurrentVersion} 이 있습니다! 지금 실행한 버전은 {
+                                        args.InstalledVersion
+                                    }입니다. 지금 업데이트 하시겠습니까?" , @"알림",
+                                System.Windows.Forms.MessageBoxButtons.YesNo,
+                                System.Windows.Forms.MessageBoxIcon.Information); ; ;
+                    }
+
+                    // Uncomment the following line if you want to show standard update dialog instead.
+                    //AutoUpdater.ShowUpdateForm(args);
+                    if (dialogResult.Equals(System.Windows.Forms.DialogResult.Yes) || dialogResult.Equals(System.Windows.Forms.DialogResult.OK))
+                    {
+                        try
+                        {
+                            DeleteOldFile();
+                            System.IO.File.Move(fileName, fileName + ".old");
+                            Debug.WriteLine("1");
+                            Debug.WriteLine("Change!");
+
+                            if (AutoUpdater.DownloadUpdate(args))
+                            {
+                                Debug.WriteLine("다운로드 완료!");
+
+                                this.Close();
+                            }
+                        }
+                        catch (Exception exception)
+                        {
+                            System.Windows.Forms.MessageBox.Show(exception.Message, exception.GetType().ToString(), System.Windows.Forms.MessageBoxButtons.OK,
+                                System.Windows.Forms.MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show(@"없데이트", @"알림",
+                        System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                if (args.Error is System.Net.WebException)
+                {
+                    System.Windows.Forms.MessageBox.Show(
+                        @"인터넷 연결에 문제가 있어.",
+                        @"알림", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show(args.Error.Message,
+                        args.Error.GetType().ToString(), System.Windows.Forms.MessageBoxButtons.OK,
+                        System.Windows.Forms.MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void WriteUpdateInfoXml()
+        {
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.IndentChars = "\t";
+            settings.NewLineOnAttributes = true;
+            XmlWriter wr = XmlWriter.Create("UpdateInfo.xml", settings);
+            wr.WriteStartDocument();
+            Debug.WriteLine("Xml");
+            wr.WriteStartElement("item");
+            wr.WriteElementString("version", System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            Debug.WriteLine("Xml1");
+            wr.WriteElementString("url", @"https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/download/"
++ System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString() + @"/PCRD_KR_ArenaSim.exe");
+            Debug.WriteLine("Xml2");
+            wr.WriteElementString("changelog", @"https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/tag/"
++ System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString() + @"/");
+            wr.WriteElementString("mandatory", "false");
+            Debug.WriteLine("Xml3");
+            wr.WriteEndElement();
+            wr.WriteEndDocument();
+            wr.Close();
+            Debug.WriteLine("Xml4");
+        }
+
+        private void DeleteOldFile()
+        {
+            if (File.Exists(fileName + ".old"))
+            {
+                System.IO.File.Delete(fileName + ".old");
+                Debug.WriteLine("Deleted old file");
+            }
+            else
+                Debug.WriteLine("No old file exist");
+        }
+
+        private void WebTest()
+        {
+            //WebRequest와 WebResponse를 이용하여
+
+            //응답요청을 한다
+            WebRequest request = null;
+            WebResponse response = null;
+
+            //스트림으로 받아온다
+            Stream resStream = null;
+            StreamReader resReader = null;
+
+            try
+            {
+                //URI를 입력받는다
+                String uriString = @"https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/latest/";
+
+                //URI로부터 요청을 생성한다
+                request = WebRequest.Create(uriString.Trim());
+
+                //요청을 보내고 응답을 받는다
+                response = request.GetResponse();
+
+                //응답을 스트림으로 얻어온다
+                resStream = response.GetResponseStream();
+                resReader = new StreamReader(resStream);
+
+                //결과를 출력
+                string resString = resReader.ReadToEnd();
+                Debug.WriteLine(resString);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                if (resReader != null) resReader.Close();
+                if (response != null) response.Close();
+            }
+        }
+
+        private string AgilityTest()
+        {
+            var html = @"https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/latest/"; ;
+
+            HtmlWeb web = new HtmlWeb();
+
+            var htmlDoc = web.Load(html);
+            HtmlNodeCollection divNodes = htmlDoc.DocumentNode.SelectNodes(@"//body/div[@class='application-main ']/div/main/div[@class='clearfix new-discussion-timeline container-xl px-3 px-md-4 px-lg-5']/div/div/div[@class='Box']/div[@class='Box-body']");
+            string data = "";
+            foreach (HtmlNode node in divNodes)
+            {
+                HtmlNode span = node.SelectSingleNode("div[@class='markdown-body my-3']");
+                data = span.InnerText;
+            }
+            Debug.WriteLine(data);
+            return data;
+        }
+
+        #endregion
+
         // 제작자 탭
-        
+
         #region maker
-        public void InitialText()
+        private void InitialText()
         {
             Rtb_info_maker.Document.Blocks.Clear();
             Rtb_info_maker.Document.Blocks.Add(new Paragraph(new Run(" ")));
@@ -10691,14 +11279,10 @@ namespace PCRD_KR_ArenaSim
 
             AddHyperlinkText("https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/", "소개 (UID : 233 *** 916 ***)",
                 "  돚거 후 수정 :  ", " ");
-            Rtb_info_maker.Document.Blocks.Add(new Paragraph(new Run(" ")));
+            Rtb_info_maker.Document.Blocks.Add(new Paragraph());
             AddHyperlinkText("https://visualstudio.microsoft.com/ko/thank-you-downloading-visual-studio/?sku=Community&rel=16", "https://visualstudio.microsoft.com/ko/thank-you-downloading-visual-studio/?sku=Community&rel=16",
                " 비주얼 스튜디오 2019 커뮤니티 : ", " ");
 
-            AddHyperlinkText("https://www.gg.go.kr/archives/3734940", "https://www.gg.go.kr/archives/3734940",
-               " 경기천년체 : ", " ");
-            AddHyperlinkText("https://redive.estertion.win/", "https://redive.estertion.win/",
-               " 아이콘 퍼온 곳 : ", " ");
 
             AddHyperlinkText("https://github.com/shimat/opencvsharp/", "https://github.com/shimat/opencvsharp/",
                " Opencvsharp : ", " ");
@@ -10707,6 +11291,18 @@ namespace PCRD_KR_ArenaSim
         
             AddHyperlinkText("https://www.pyimagesearch.com/2015/01/26/multi-scale-template-matching-using-python-opencv/", "https://www.pyimagesearch.com/2015/01/26/multi-scale-template-matching-using-python-opencv/",
                " 이미지 서치 : ", " ");
+            AddHyperlinkText("https://html-agility-pack.net/", "https://html-agility-pack.net/",
+               " Html Agility Pack : ", " "); 
+            AddHyperlinkText("https://github.com/ravibpatel/AutoUpdater.NET/releases", "https://github.com/ravibpatel/AutoUpdater.NET/releases",
+                " AutoUpdater.NET : ", " ");
+
+            AddHyperlinkText("https://notepad-plus-plus.org/downloads/", "https://notepad-plus-plus.org/downloads/",
+               " Notepad++ : ", " ");
+            Rtb_info_maker.Document.Blocks.Add(new Paragraph(new Run(@"")));
+            AddHyperlinkText("https://www.gg.go.kr/archives/3734940", "https://www.gg.go.kr/archives/3734940",
+               " 경기천년체 : ", " ");
+            AddHyperlinkText("https://redive.estertion.win/", "https://redive.estertion.win/",
+               " 아이콘 퍼온 곳 : ", " ");
             AddHyperlinkText("https://github.com/HerDataSam/KasumiNotes/releases", "https://github.com/HerDataSam/KasumiNotes/releases",
                " 카스미노트 : ", " ");
             AddHyperlinkText("https://redive.estertion.win/spine/", "https://redive.estertion.win/spine/",
@@ -10722,8 +11318,6 @@ namespace PCRD_KR_ArenaSim
             AddHyperlinkText("https://pcredivewiki.tw/", "https://pcredivewiki.tw/",
                " 머만위키 : ", " ");        
 
-            AddHyperlinkText("https://notepad-plus-plus.org/downloads/", "https://notepad-plus-plus.org/downloads/",
-               " Notepad++ : ", " ");
 
         
 
@@ -10749,46 +11343,13 @@ namespace PCRD_KR_ArenaSim
 
             Rtb_info_maker.Document.Blocks.Add(para);
         }
-        public void UpdateCheck()
-        {
-            AutoUpdater.Start(@"https://raw.githubusercontent.com/SoKae1/PCRD_KR_ArenaSim/master/PCRD_KR_ArenaSim_WPF/bin/x64/Release/UpdateInfo.xml");
-            AutoUpdater.RunUpdateAsAdmin = true;
-            AutoUpdater.AppTitle = "프리코네 아레나 시뮬레이터";
-            AutoUpdater.ShowRemindLaterButton = false;
-            AutoUpdater.ReportErrors = true;
-            WriteUpdateInfoXml();
-        }
-        private void bt_UpdateCheck_Click(object sender, RoutedEventArgs e)
-        {
-            UpdateCheck();
-        }
+        public string fileName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + ".exe";
+        
 
 
-        public void WriteUpdateInfoXml()
-        {
-            XmlWriterSettings settings = new XmlWriterSettings();
-            settings.Indent = true;
-            settings.IndentChars = "\t";
-            settings.NewLineOnAttributes = true;
-            XmlWriter wr = XmlWriter.Create("UpdateInfo.xml", settings);
-            wr.WriteStartDocument();
-            Debug.WriteLine("Xml");
-            wr.WriteStartElement("item");
-            wr.WriteElementString("version", System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
-            Debug.WriteLine("Xml1");
-            wr.WriteElementString("url", @"https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/download/" 
-+ System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString() + @"/PCRD_KR_ArenaSim.exe");
-            Debug.WriteLine("Xml2");
-            wr.WriteElementString("changelog", @"https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/tag/"
-+ System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()+@"/");
-            wr.WriteElementString("mandatory", "false");
-            Debug.WriteLine("Xml3");
-            wr.WriteEndElement();
-            wr.WriteEndDocument();
-            wr.Close();
-            Debug.WriteLine("Xml4");
-        }
         #endregion
+
+
 
 
     }
