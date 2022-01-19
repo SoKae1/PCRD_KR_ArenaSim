@@ -7523,7 +7523,22 @@ namespace PCRD_KR_ArenaSim
 
                     string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
 
-                    temp[5] = Convert.ToString(maxUnique);
+                    if (temp[0] == "뉴코로" || temp[0] == "냐루" || temp[0] == "뉴즈메" || temp[0] == "마스미" || temp[0] == "마오리" || temp[0] == "프페코" || temp[0] == "우즈키"
+                        || temp[0] == "시부린" || temp[0] == "미오" || temp[0] == "유니" || temp[0] == "치에루" || temp[0] == "레린" || temp[0] == "레히루"
+                        || temp[0] == "앨리노" || temp[0] == "앨유미" || temp[0] == "수루카" || temp[0] == "수안나" || temp[0] == "수나카" || temp[0] == "수츠네"
+                        || temp[0] == "수쥰" || temp[0] == "엔카리" || temp[0] == "엔요리" || temp[0] == "프유이" || temp[0] == "프코로" || temp[0] == "프캬루"
+                        || temp[0] == "라비리스타" || temp[0] == "셰피" || temp[0] == "할무기" || temp[0] == "할레이" || temp[0] == "할츠리" || temp[0] == "마니카"
+                        || temp[0] == "마토모" || temp[0] == "성키노" || temp[0] == "성사렌" || temp[0] == "성카리" || temp[0] == "뉴이미" || temp[0] == "뉴네카"
+                        || temp[0] == "뉴페코" || temp[0] == "의코로" || temp[0] == "의유이" || temp[0] == "수스미" || temp[0] == "신리마" || temp[0] == "신마호"
+                        || temp[0] == "신코토" || temp[0] == "성로에" || temp[0] == "성에루" || temp[0] == "시노리" || temp[0] == "시카야" || temp[0] == "작오이" || temp[0] == "작마키")
+                    {
+                        temp[5] = "0";
+                    }
+                    else
+                    {
+                        temp[5] = Convert.ToString(maxUnique);
+                    }
+
 
                     stringArray[row] = StringArrayToCommaString(temp);
                     row++;
@@ -7652,8 +7667,22 @@ namespace PCRD_KR_ArenaSim
                     string s = sr.ReadLine();
 
                     string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
-
-                    temp[5] = Convert.ToString(maxUnique);
+                    if(temp[0]=="뉴코로" || temp[0] == "냐루" || temp[0] == "뉴즈메" || temp[0] == "마스미" || temp[0] == "마오리" || temp[0] == "프페코" || temp[0] == "우즈키"
+                        || temp[0] == "시부린" || temp[0] == "미오" || temp[0] == "유니" || temp[0] == "치에루" || temp[0] == "레린" || temp[0] == "레히루"
+                        || temp[0] == "앨리노" || temp[0] == "앨유미" || temp[0] == "수루카" || temp[0] == "수안나" || temp[0] == "수나카" || temp[0] == "수츠네"
+                        || temp[0] == "수쥰" || temp[0] == "엔카리" || temp[0] == "엔요리" || temp[0] == "프유이" || temp[0] == "프코로" || temp[0] == "프캬루"
+                        || temp[0] == "라비리스타" || temp[0] == "셰피" || temp[0] == "할무기" || temp[0] == "할레이" || temp[0] == "할츠리" || temp[0] == "마니카"
+                        || temp[0] == "마토모" || temp[0] == "성키노" || temp[0] == "성사렌" || temp[0] == "성카리" || temp[0] == "뉴이미" || temp[0] == "뉴네카"
+                        || temp[0] == "뉴페코" || temp[0] == "의코로" || temp[0] == "의유이" || temp[0] == "수스미" || temp[0] == "신리마" || temp[0] == "신마호"
+                        || temp[0] == "신코토" || temp[0] == "성로에" || temp[0] == "성에루" || temp[0] == "시노리" || temp[0] == "시카야" || temp[0] == "작오이" || temp[0] == "작마키")
+                    {
+                        temp[5] = "0";
+                    }
+                    else
+                    {
+                        temp[5] = Convert.ToString(maxUnique);
+                    }
+                    
                     
                     stringArray[row] = StringArrayToCommaString(temp);
                     row++;
