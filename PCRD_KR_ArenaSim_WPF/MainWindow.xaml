@@ -446,7 +446,7 @@
                             </ToggleButton>
                             <ToggleButton Name="tb_akari" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="akari" IsChecked="false" BorderThickness="0"  
                                   Checked="tb_akari_Checked" Unchecked="tb_akari_UnChecked">
-                                <Image Source="res\icon_unit\100631.png"    />
+                                <Image Source="res\icon_unit\100661.png"    />
                             </ToggleButton>
                             <ToggleButton Name="tb_yori" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="yori" IsChecked="false" BorderThickness="0"  
                                           Checked="tb_yori_Checked" Unchecked="tb_yori_UnChecked">
@@ -508,7 +508,7 @@
                             </ToggleButton>
                             <ToggleButton Name="tb_suzuna" Style="{StaticResource OnOffToggleImageStyle}" ToolTip="suzuna" IsChecked="false" BorderThickness="0"  
                                   Checked="tb_suzuna_Checked" Unchecked="tb_suzuna_UnChecked">
-                                <Image Source="res\icon_unit\101631.png"    />
+                                <Image Source="res\icon_unit\101661.png"    />
                             </ToggleButton>
                             <ToggleButton Name="tb_suzuna_summer" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="suzuna_summer" IsChecked="false" BorderThickness="0"  
                                  Checked="tb_suzuna_summer_Checked" Unchecked="tb_suzuna_summer_UnChecked">
@@ -1783,7 +1783,7 @@
                             </Button>
                             <Button  ToolTip="akari"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                           Click="bt_akari_set_Click" >
-                                <Image Source="res\icon_unit\100631.png" Stretch="Fill"     Name="img_bt_akari"  />
+                                <Image Source="res\icon_unit\100661.png" Stretch="Fill"     Name="img_bt_akari"  />
                             </Button>
                             <Button  ToolTip="yori"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                       Click="bt_yori_set_Click" >
@@ -1837,7 +1837,7 @@
                             </Button>
                             <Button ToolTip="suzuna"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                           Click="bt_suzuna_set_Click" >
-                                <Image Source="res\icon_unit\101631.png" Stretch="Fill"     Name="img_bt_suzuna"  />
+                                <Image Source="res\icon_unit\101661.png" Stretch="Fill"     Name="img_bt_suzuna"  />
                             </Button>
                             <Button  ToolTip="suzuna_summer"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                          Click="bt_suzuna_summer_set_Click" >

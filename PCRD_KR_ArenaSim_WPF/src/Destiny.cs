@@ -8,6 +8,7 @@
          https://github.com/esterTion/redive_master_db_diff/blob/master/chara_story_status.sql 일섭은 인연스탯 다를 수 있?나?
         https://github.com/HerDataSam/redive_kr_db_diff/blob/master/chara_story_status.csv
         의유이, 프캬루까지 넣음
+        아카리 6성까지 넣음
          */
         public double[] hiyori_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] hiyori_02 = new double[15] { 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -119,6 +120,12 @@
         public double[] akari_06 = new double[15] { 0, 0, 140, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] akari_07 = new double[15] { 0, 0, 180, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] akari_08 = new double[15] { 0, 0, 240, 0, 14, 0, 0, 0, 60, 0, 0, 0, 0, 0, 0 };
+        public double[] akari_09 = new double[15] { 0, 0, 320, 0, 14, 0, 0, 0, 60, 0, 0, 0, 0, 0, 0 };
+        public double[] akari_10 = new double[15] { 0, 0, 440, 0, 14, 0, 0, 0, 60, 0, 0, 0, 0, 0, 0 };
+        public double[] akari_11 = new double[15] { 0, 0, 560, 0, 14, 0, 0, 0, 60, 0, 0, 0, 0, 0, 0 };
+        public double[] akari_12 = new double[15] { 0, 0, 760, 0, 14, 0, 0, 0, 90, 0, 0, 0, 0, 0, 0 };
+        
+        /* 1HP, 2물공, 3마공, 4물방, 5마방, 6물크, 7마크, 8HP 자동 회복, 9TP 자동 회복, 10회피, 11HP 흡수, 12회복량 상승, 13TP 상승, 14TP 소비 감소, 15명중 */
 
         public double[] akari_angel_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] akari_angel_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -302,7 +309,11 @@
         public double[] suzuna_06 = new double[15] { 200, 140, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] suzuna_07 = new double[15] { 400, 180, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] suzuna_08 = new double[15] { 700, 240, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-
+        public double[] suzuna_09 = new double[15] { 700, 320, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] suzuna_10 = new double[15] { 700, 440, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] suzuna_11 = new double[15] { 700, 560, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] suzuna_12 = new double[15] { 700, 760, 0, 0, 0, 70, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        
         public double[] suzuna_summer_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] suzuna_summer_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] suzuna_summer_03 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -604,6 +615,12 @@
         public double[] mahiru_06 = new double[15] { 0, 140, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] mahiru_07 = new double[15] { 0, 180, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] mahiru_08 = new double[15] { 0, 240, 0, 0, 14, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] mahiru_09 = new double[15] { 0, 320, 0, 0, 14, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] mahiru_10 = new double[15] { 0, 400, 0, 0, 14, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] mahiru_11 = new double[15] { 0, 400, 0, 0, 14, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] mahiru_12 = new double[15] { 0, 610, 0, 0, 14, 90, 0, 0, 0, 0, 0, 0, 0, 0, 20 };
+        /* 1HP, 2물공, 3마공, 4물방, 5마방, 6물크, 7마크, 8HP 자동 회복, 9TP 자동 회복, 10회피, 11HP 흡수, 12회복량 상승, 13TP 상승, 14TP 소비 감소, 15명중 */
+       
 
         public double[] mahiru_ranger_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] mahiru_ranger_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };

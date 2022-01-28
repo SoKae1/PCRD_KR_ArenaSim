@@ -12554,7 +12554,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "akari" || character == "akari_angel")
             {
-                array1 = dt.akari_08;
+                array1 = dt.akari_12;
                 array2 = dt.akari_angel_08;
             }
             else if (character == "miyako" || character == "miyako_halloween")
@@ -12603,7 +12603,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "suzuna" || character == "suzuna_summer")
             {
-                array1 = dt.suzuna_08;
+                array1 = dt.suzuna_12;
                 array2 = dt.suzuna_summer_08;
             }
             else if (character == "kaori" || character == "kaori_summer")
@@ -12680,7 +12680,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "mahiru" || character == "mahiru_ranger")
             {
-                array1 = dt.mahiru_08;
+                array1 = dt.mahiru_12;
                 array2 = dt.mahiru_ranger_08;
             }
             else if (character == "yukari" || character == "yukari_christmas")
@@ -13386,7 +13386,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "akari" || character == "akari_angel")
             {
-                array1 = dt.akari_08;
+                array1 = dt.akari_12;
                 array2 = dt.akari_angel_08;
             }
             else if (character == "miyako" || character == "miyako_halloween")
@@ -13435,7 +13435,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "suzuna" || character == "suzuna_summer")
             {
-                array1 = dt.suzuna_08;
+                array1 = dt.suzuna_12;
                 array2 = dt.suzuna_summer_08;
             }
             else if (character == "kaori" || character == "kaori_summer")
@@ -13512,7 +13512,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "mahiru" || character == "mahiru_ranger")
             {
-                array1 = dt.mahiru_08;
+                array1 = dt.mahiru_12;
                 array2 = dt.mahiru_ranger_08;
             }
             else if (character == "yukari" || character == "yukari_christmas")

@@ -7496,9 +7496,9 @@ namespace PCRD_KR_ArenaSim
             }
         }
 
-        public static decimal maxLevel = 184;
+        public static decimal maxLevel = 187;
         public static decimal maxRank = 19;
-        public static decimal maxItemQuantity = 4;
+        public static decimal maxItemQuantity = 5;
         
         public static decimal maxUnique = (int)(( Math.Floor(maxLevel/10) +1)*10);
 
@@ -7509,6 +7509,66 @@ namespace PCRD_KR_ArenaSim
             tb_MaxItemQuqn.Text = Convert.ToString(maxItemQuantity) ;
             tb_MaxUnique.Text = Convert.ToString(maxUnique);
         }
+        private void AutoReinStar6()
+        {
+            try
+            {
+                StreamReader sr1 = new StreamReader("character_defence.txt");
+                StreamReader sr2 = new StreamReader("character_offence.txt");
+                int row = 1;
+                string[] stringArray1 = new string[400];
+                stringArray1[0] = sr1.ReadLine();
+                string[] stringArray2 = new string[400];
+                stringArray2[0] = sr2.ReadLine();
+                while (!sr1.EndOfStream || !sr2.EndOfStream)
+                {
+                    string s1 = sr1.ReadLine();
+                    string s2 = sr2.ReadLine();
+
+                    string[] temp1 = s1.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
+                    string[] temp2 = s2.Split(',');
+
+                    if (temp1[0] == "페코린느" || temp1[0] == "캬루" || temp1[0] == "콧코로" || temp1[0] == "리노" || temp1[0] == "리마" || temp1[0] == "이오" 
+                        || temp1[0] == "유카리" || temp1[0] == "마호" || temp1[0] == "유이" || temp1[0] == "레이" || temp1[0] == "히요리" || temp1[0] == "하츠네"
+                        || temp1[0] == "타마키" || temp1[0] == "미후유" || temp1[0] == "시즈루" || temp1[0] == "아야네" || temp1[0] == "사렌" || temp1[0] == "아키노"
+                        || temp1[0] == "니논" || temp1[0] == "마히루" || temp1[0] == "스즈나" || temp1[0] == "아카리" )
+                    {
+                        temp1[2] = "6";
+                        temp2[2] = "6";
+                    }
+
+
+                    stringArray1[row] = StringArrayToCommaString(temp1);
+                    stringArray2[row] = StringArrayToCommaString(temp2);
+                    row++;
+
+                }
+                sr1.Close();
+                sr2.Close();
+
+                StreamWriter sw1 = new StreamWriter("character_defence.txt");
+                StreamWriter sw2 = new StreamWriter("character_offence.txt");
+                int i = 0;
+                while (stringArray1[i] != null || stringArray2[i] != null)
+                {
+                    Debug.WriteLine(i);
+                    sw1.WriteLine(stringArray1[i]);
+                    sw2.WriteLine(stringArray2[i]);
+                    Debug.WriteLine(stringArray1[i]);
+                    Debug.WriteLine(stringArray2[i]);
+                    i++;
+                }
+                sw1.Close();
+                sw2.Close();
+
+                Debug.WriteLine("6성 자동강화 성공!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void bt_DefAutoReinUniqueEquip_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -11117,7 +11177,7 @@ namespace PCRD_KR_ArenaSim
             
                 Rtb_info_update.Document.Blocks.Clear();
             Rtb_info_update.Document.Blocks.Add(new Paragraph(new Run(Environment.NewLine + Environment.NewLine + "업데이트 로그: " + Environment.NewLine + AgilityTest() )));
-
+            AutoReinStar6();
             UpdateCheck();
         }
 
