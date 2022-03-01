@@ -90,6 +90,10 @@ namespace PCRD_KR_ArenaSim
         public static double[,] MCdamage_save = new double[100, 30];
         public static double[,] MCdamage_time = new double[100, 30];
 
+        public static bool[,] RCdamage = new bool[100, 30];
+        public static double[] RCdamage_coef = Enumerable.Repeat<double>(1, 30).ToArray<double>();
+        public static double[,] RCdamage_save = new double[100, 30];
+        public static double[,] RCdamage_time = new double[100, 30];
 
         public static bool[] Pbarrier = Enumerable.Repeat<bool>(false, 30).ToArray<bool>();
         public static bool[] Mbarrier = Enumerable.Repeat<bool>(false, 30).ToArray<bool>();
@@ -341,6 +345,8 @@ namespace PCRD_KR_ArenaSim
                 PCdamage_coef[i] = 2;
                 MCdamage_coef[i] = 2;
 
+                RCdamage_coef[i] = 1;//받는 크리티컬배율
+
                 provoke[i] = false;
                 provoke_time[i] = 0;
                 invincible[i] = false;
@@ -540,7 +546,12 @@ namespace PCRD_KR_ArenaSim
             Character_skill.akino_christmas_opponent_holyprize = false;
             Character_skill.akino_christmas_opponent_holyprize_est = false;
 
-        position = new double[30] { -1560, -1360, -1160, -960, -760, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, 1360, 1160, 960, 760, 560, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000 };
+            Character_skill.shepi_opponent_icedragon = 0;
+            Character_skill.shepi_opponent_icedragon_est = 0;
+            Character_skill.shepi_opponent_UBstack = 0;
+            Character_skill.shepi_opponent_UBstack_est = 0;
+
+            position = new double[30] { -1560, -1360, -1160, -960, -760, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, 1360, 1160, 960, 760, 560, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000 };
             if (Array.IndexOf(Battle_variable.name_eng, "rima") != -1)
             {
                 int a = Array.IndexOf(MainWindow.select_defence_eng, "rima");
@@ -600,6 +611,8 @@ namespace PCRD_KR_ArenaSim
 
             PCdamage_coef[i] = 2;
             MCdamage_coef[i] = 2;
+
+            RCdamage_coef[i] = 1;
 
             provoke[i] = false;
             provoke_time[i] = 0;

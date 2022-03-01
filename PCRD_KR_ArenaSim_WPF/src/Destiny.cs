@@ -3,11 +3,13 @@
 
     class Destiny
     {
-        /* 1HP, 2물공, 3마공, 4물방, 5마방, 6물크, 7마크, 8HP 자동 회복, 9TP 자동 회복, 10회피, 11HP 흡수, 12회복량 상승, 13TP 상승, 14TP 소비 감소, 15명중 */
         /* 장비 랭크에 따른 능력치 = 랭크에 따른 보너스 능력치 + 성장 능력치*(랭크) 
-         https://github.com/esterTion/redive_master_db_diff/blob/master/chara_story_status.sql 일섭은 인연스탯 다를 수 있?나?
+         * 
+         * /* 1HP, 2물공, 3마공, 4물방, 5마방, 6물크, 7마크, 8HP 자동 회복, 9TP 자동 회복, 10회피, 11HP 흡수, 12회복량 상승, 13TP 상승, 14TP 소비 감소, 15명중 */
+        /* db상 데이터 1,2,3물방,4마공,5,6물크,7마크,8,9HP 흡수,10,11,12,13,14,15 
+        https://github.com/esterTion/redive_master_db_diff/blob/master/chara_story_status.sql 일섭은 인연스탯 다를 수 있?나?
         https://github.com/HerDataSam/redive_kr_db_diff/blob/master/chara_story_status.csv
-        의유이, 프캬루까지 넣음
+        셰피, 프캬루까지 넣음
         아카리 6성까지 넣음
          */
         public double[] hiyori_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -407,6 +409,10 @@
         public double[] yori_06 = new double[15] { 0, 0, 140, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] yori_07 = new double[15] { 0, 0, 180, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] yori_08 = new double[15] { 0, 0, 240, 14, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0 };
+        public double[] yori_09 = new double[15] { 0, 0, 320, 14, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0 };
+        public double[] yori_10 = new double[15] { 0, 0, 400, 14, 0, 0, 20, 0, 0, 0, 4, 0, 0, 0, 0 };
+        public double[] yori_11 = new double[15] { 0, 0, 480, 14, 0, 0, 40, 0, 0, 0, 4, 0, 0, 0, 0 };
+        public double[] yori_12 = new double[15] { 0, 0, 680, 14, 0, 0, 70, 0, 0, 0, 4, 0, 0, 0, 0 };
 
         public double[] yori_angel_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] yori_angel_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -425,26 +431,10 @@
         public double[] ayane_06 = new double[15] { 200, 155, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] ayane_07 = new double[15] { 400, 195, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] ayane_08 = new double[15] { 700, 255, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-        /* HP, 물공, 마공, 물방, 마방, 물크, 마크, HP 자동 회복, TP 자동 회복, 회피, HP 흡수, 회복량 상승, TP 상승, TP 소비 감소, 명중 */
-
         public double[] ayane_09 = new double[15] { 700, 335, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] ayane_10 = new double[15] { 700, 415, 0, 4, 4, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] ayane_11 = new double[15] { 700, 495, 0, 8, 8, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] ayane_12 = new double[15] { 700, 615, 0, 18, 18, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-        /*
-         *  1023002 	아야네 에피소드 제2화 	2 	15 	0 	0 	0 	0 	0 	0 	0 	0 	1023 	1086 	0 	0 	0 	0 	0 	0 	0 	0
-            1023003 	아야네 에피소드 제3화 	2 	30 	0 	0 	0 	0 	0 	0 	0 	0 	1023 	1086 	0 	0 	0 	0 	0 	0 	0 	0
-            1023004 	아야네 에피소드 제4화 	2 	30 	0 	0 	0 	0 	0 	0 	0 	0 	1023 	1086 	0 	0 	0 	0 	0 	0 	0 	0
-            1023005 	아야네 에피소드 제5화 	2 	40 	0 	0 	0 	0 	0 	0 	0 	0 	1023 	1086 	0 	0 	0 	0 	0 	0 	0 	0
-            1023006 	아야네 에피소드 제6화 	2 	40 	1 	200 	0 	0 	0 	0 	0 	0 	1023 	1086 	0 	0 	0 	0 	0 	0 	0 	0
-            1023007 	아야네 에피소드 제7화 	2 	40 	1 	200 	0 	0 	0 	0 	0 	0 	1023 	1086 	0 	0 	0 	0 	0 	0 	0 	0
-            1023008 	아야네 에피소드 제8화 	2 	60 	1 	300 	6 	10 	0 	0 	0 	0 	1023 	1086 	0 	0 	0 	0 	0 	0 	0 	0
-
-         *  1023009 	아야네 에피소드 제9화 	2 	80  	0 	0 	0 	0 	0 	0 	0 	0 	1023 	1086 	0 	0 	0 	0 	0 	0 	0 	0
-            1023010 	아야네 에피소드 제10화 	2 	80 	    3 	4 	5 	4 	0 	0 	0 	0 	1023 	1086 	0 	0 	0 	0 	0 	0 	0 	0
-            1023011 	아야네 에피소드 제11화 	2 	80 	    3 	4 	5 	4 	0 	0 	0 	0 	1023 	1086 	0 	0 	0 	0 	0 	0 	0 	0
-            1023012 	아야네 에피소드 제12화 	2 	120 	3 	10 	5 	10 	0 	0 	0 	0 	1023 	1086 	0 	0 	0 	0 	0 	0 	0 	0
-         */
 
         public double[] ayane_christmas_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] ayane_christmas_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -566,6 +556,10 @@
         public double[] ninon_06 = new double[15] { 0, 140, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] ninon_07 = new double[15] { 0, 180, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] ninon_08 = new double[15] { 0, 240, 0, 14, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] ninon_09 = new double[15] { 0, 320, 0, 14, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] ninon_10 = new double[15] { 0, 400, 0, 14, 0, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] ninon_11 = new double[15] { 0, 480, 0, 14, 0, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] ninon_12 = new double[15] { 0, 680, 0, 14, 0, 150, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
         public double[] ninon_ooedo_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] ninon_ooedo_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -1394,6 +1388,26 @@
         public double[] kyaru_princess_06 = new double[15] { 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] kyaru_princess_07 = new double[15] { 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] kyaru_princess_08 = new double[15] { 0, 0, 65, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0 };
+
+        public double[] kasumi_summer_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kasumi_summer_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kasumi_summer_03 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kasumi_summer_04 = new double[15] { 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kasumi_summer_05 = new double[15] { 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kasumi_summer_06 = new double[15] { 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kasumi_summer_07 = new double[15] { 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kasumi_summer_08 = new double[15] { 0, 0, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+        public double[] shepi_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] shepi_02 = new double[15] { 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] shepi_03 = new double[15] { 0, 30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] shepi_04 = new double[15] { 0, 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] shepi_05 = new double[15] { 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] shepi_06 = new double[15] { 0, 160, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] shepi_07 = new double[15] { 0, 220, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] shepi_08 = new double[15] { 0, 310, 0, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 0 };
     }
+     /* 1HP, 2물공, 3마공, 4물방, 5마방, 6물크, 7마크, 8HP 자동 회복, 9TP 자동 회복, 10회피, 11HP 흡수, 12회복량 상승, 13TP 상승, 14TP 소비 감소, 15명중 */
+        /* db상 데이터 1,2물공,3물방,4마공,5,6물크,7마크,8,9HP 흡수,10,11,12,13,14,15 */
 
 }

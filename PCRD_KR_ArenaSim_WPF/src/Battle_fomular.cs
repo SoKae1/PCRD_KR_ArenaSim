@@ -1310,6 +1310,22 @@ namespace PCRD_KR_ArenaSim
                     //Debug.WriteLine("{2}{0}가 {3}{1}에게 크리티컬 배율 버프 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], my_order, opponent_order);
                     //Debug.WriteLine("{2}{0} 크리티컬 배율: {1} (기본 2)\n", Battle_variable.name[opponent_order], Battle_variable.ConTP_coef[opponent_order], opponent_order);
                 }
+                else if (buff_type == "RCdamage" && (Battle_variable.invincible[opponent_order] == false || coefficient > 1))
+                {
+                    int i = 0;
+                    while (Battle_variable.RCdamage[i, opponent_order] != false)
+                    {
+                        i++;
+                    }
+                    Battle_variable.RCdamage[i, opponent_order] = true;
+                    Battle_variable.RCdamage_save[i, opponent_order] = coefficient - 1;
+                    Battle_variable.RCdamage_time[i, opponent_order] = duration;
+                    Battle_variable.RCdamage_coef[opponent_order] += Battle_variable.RCdamage_save[i, opponent_order];
+                  
+
+                    //Debug.WriteLine("{2}{0}가 {3}{1}에게 받는 크리티컬 배율 디버프 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], my_order, opponent_order);
+                    //Debug.WriteLine("{2}{0} 받는 크리티컬 배율: {1} (기본 2)\n", Battle_variable.name[opponent_order], Battle_variable.ConTP_coef[opponent_order], opponent_order);
+                }
                 else if (buff_type == "buff_TPup" && (Battle_variable.invincible[opponent_order] == false || coefficient > 0))
                 {
                     int i = 0;

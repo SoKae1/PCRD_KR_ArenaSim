@@ -147,7 +147,6 @@
     </Compile>
     <Compile Include="Combination.cs" />
     <Compile Include="Sim.cs" />
-    <Compile Include="src\Character_SortByRange.cs" />
     <Compile Include="src\Rank.cs" />
     <Compile Include="src\Stat_variable.cs" />
     <Compile Include="src\Unique_equipment.cs" />

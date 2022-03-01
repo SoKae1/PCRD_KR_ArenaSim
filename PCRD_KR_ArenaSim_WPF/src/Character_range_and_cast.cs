@@ -3,13 +3,13 @@
 
     class Character_range_and_cast
     {
-        /* 타입(물리1, 마법2), 사거리, 평타 cast time, 스킬1 cast time, 스킬2 cast time, 전용장비 스킬1 cast time 
+        /* 타입(물리1, 마법2), 사거리, 평타 cast time, 스킬1 cast time, 스킬2 cast time, 전용장비 스킬1 cast time ,SP 스킬1 cast time
          https://github.com/HerDataSam/redive_kr_db_diff/blob/master/unit_data.csv
         https://github.com/esterTion/redive_master_db_diff/blob/master/skill_data.sql
         https://pcredivewiki.tw/Stand
 
 
-        의유이, 프캬루까지 
+        셰피, 프캬루까지 
          */
 
         public double[] hiyori = new double[6] { 1, 200, 2.295, 1.125, 1.295, 1.125 };
@@ -155,7 +155,8 @@
         public double[] neneka_newyear = new double[6] { 2, 562, 2.07, 0.59, 0.59, 0.59 };
         public double[] kotkoro_maiden = new double[6] { 2, 533, 2.0, 0.59, 0.9, 0.59 };
         public double[] yui_maiden = new double[6] { 2, 578, 1.97, 0.7, 0.5, 0.7 };
-        public double[] shepi = new double[6] { 2, 368, 1.84, 0.465, 0.465, 0.465 };
+        public double[] shepi = new double[7] { 2, 368, 1.84, 0.465, 0.465, 0.465 ,0.5};
+        public double[] kasumi_summer = new double[6] { 2, 738, 2.27, 0.94, 0.94, 0.94 };
 
 
         public double[] yui_princess = new double[6] { 2, 767, 1.92, 0.59, 0.59, 0.59 };

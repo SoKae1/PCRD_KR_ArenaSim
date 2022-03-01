@@ -230,6 +230,7 @@ namespace PCRD_KR_ArenaSim
 
             #region UI_Setting
 
+            //전용장비 이미지 앨유미까지
             Debug.WriteLine("3545 Initialize level star unique");
 
             Initialize_chara_level(Level_variable.Lv_temp);
@@ -2201,6 +2202,18 @@ namespace PCRD_KR_ArenaSim
                 Chara_Selected_EN = "yui_maiden";
                 Chara_Selected_KR = "의유이";
             }
+            else if (kasumi_summer == true)
+            {
+                cb_enable_set.IsChecked = true;
+                Chara_Selected_EN = "kasumi_summer";
+                Chara_Selected_KR = "수스미";
+            }
+            else if (shepi == true)
+            {
+                cb_enable_set.IsChecked = true;
+                Chara_Selected_EN = "shepi";
+                Chara_Selected_KR = "셰피";
+            }
             else
             {
                 MessageBox.Show("오잉", "알림");
@@ -2318,13 +2331,45 @@ namespace PCRD_KR_ArenaSim
             string[] uriStringSpecific = new string[6];
             string[] ItemSet = new string[6];
 
-            //랭크 설정 성카리까지
+            //랭크 설정 셰피까지
             try
             {
                 //11랭크부터
                 if (cB_set_rank.SelectedIndex == 0)
                 {
                     Level_variable.Rank_temp = 11;
+                    if (shepi == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.shepi_11[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kasumi_summer == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kasumi_summer_11[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (yui_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.yui_maiden_11[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kotkoro_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_11[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
                     if (hiyori_princess == true)
                     {
                         for (int i = 0; i < 6; i++)
@@ -3113,7 +3158,39 @@ namespace PCRD_KR_ArenaSim
                 //12랭크
                 else if (cB_set_rank.SelectedIndex == 1)
                 {
-                    Level_variable.Rank_temp = 12; 
+                    Level_variable.Rank_temp = 12;
+                    if (shepi == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.shepi_12[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kasumi_summer == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kasumi_summer_12[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (yui_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.yui_maiden_12[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kotkoro_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_12[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
                     if (hiyori_princess == true)
                     {
                         for (int i = 0; i < 6; i++)
@@ -3896,6 +3973,38 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 2)
                 {
                     Level_variable.Rank_temp = 13;
+                    if (shepi == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.shepi_13[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kasumi_summer == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kasumi_summer_13[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (yui_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.yui_maiden_13[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kotkoro_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_13[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
 
                     if (hiyori_princess == true)
                     {
@@ -4685,6 +4794,38 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 3)
                 {
                     Level_variable.Rank_temp = 14;
+                    if (shepi == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.shepi_14[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kasumi_summer == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kasumi_summer_14[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (yui_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.yui_maiden_14[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kotkoro_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_14[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
 
                     if (hiyori_princess == true)
                     {
@@ -5469,6 +5610,38 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 4)
                 {
                     Level_variable.Rank_temp = 15;
+                    if (shepi == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.shepi_15[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kasumi_summer == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kasumi_summer_15[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (yui_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.yui_maiden_15[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kotkoro_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_15[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
 
                     if (hiyori_princess == true)
                     {
@@ -6253,6 +6426,38 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 5)
                 {
                     Level_variable.Rank_temp = 16;
+                    if (shepi == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.shepi_16[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kasumi_summer == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kasumi_summer_16[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (yui_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.yui_maiden_16[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kotkoro_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_16[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
 
                     if (hiyori_princess == true)
                     {
@@ -7037,6 +7242,38 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 6)
                 {
                     Level_variable.Rank_temp = 17;
+                    if (shepi == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.shepi_17[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kasumi_summer == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kasumi_summer_17[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (yui_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.yui_maiden_17[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kotkoro_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_17[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
 
                     if (hiyori_princess == true)
                     {
@@ -7821,6 +8058,38 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 7)
                 {
                     Level_variable.Rank_temp = 18;
+                    if (shepi == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.shepi_18[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kasumi_summer == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kasumi_summer_18[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (yui_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.yui_maiden_18[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kotkoro_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_18[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
 
                     if (hiyori_princess == true)
                     {
@@ -8603,6 +8872,38 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 8) 
                 {
                     Level_variable.Rank_temp = 19;
+                    if (shepi == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.shepi_19[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kasumi_summer == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kasumi_summer_19[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (yui_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.yui_maiden_19[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kotkoro_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_19[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
 
                     if (hiyori_princess == true)
                     {
@@ -9386,6 +9687,38 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 9) 
                 {
                     Level_variable.Rank_temp = 20;
+                    if (shepi == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.shepi_20[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kasumi_summer == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kasumi_summer_20[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (yui_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.yui_maiden_20[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kotkoro_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_20[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
 
                     if (hiyori_princess == true)
                     {
@@ -10168,6 +10501,38 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 10)
                 {
                     Level_variable.Rank_temp = 21;
+                    if (shepi == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.shepi_21[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kasumi_summer == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kasumi_summer_21[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (yui_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.yui_maiden_21[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kotkoro_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_21[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
                     if (hiyori_princess == true)
                     {
                         for (int i = 0; i < 6; i++)
@@ -10949,6 +11314,38 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 11)
                 {
                     Level_variable.Rank_temp = 22;
+                    if (shepi == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.shepi_22[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kasumi_summer == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kasumi_summer_22[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (yui_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.yui_maiden_22[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
+                    if (kotkoro_maiden == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_22[i]);
+                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        }
+                    }
                     if (hiyori_princess == true)
                     {
                         for (int i = 0; i < 6; i++)
@@ -12595,6 +12992,7 @@ namespace PCRD_KR_ArenaSim
             {
                 array1 = dt.kasumi_08;
                 array2 = dt.kasumi_magical_08;
+                array3 = dt.kasumi_summer_08;
             }
             else if (character == "misato" || character == "misato_summer")
             {
@@ -12628,7 +13026,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "yori" || character == "yori_angel")
             {
-                array1 = dt.yori_08;
+                array1 = dt.yori_12;
                 array2 = dt.yori_angel_08;
             }
             else if (character == "ayane" || character == "ayane_christmas")
@@ -12665,7 +13063,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "ninon" || character == "ninon_ooedo")
             {
-                array1 = dt.ninon_08;
+                array1 = dt.ninon_12;
                 array2 = dt.ninon_ooedo_08;
             }
             else if (character == "sinobu" || character == "sinobu_halloween")
@@ -12764,7 +13162,7 @@ namespace PCRD_KR_ArenaSim
             else if (character == "monika" || character == "monika_magical")
             {
                 array1 = dt.monika_08;
-                //array2 = dt.monika_magical_08;
+                array2 = dt.monika_magical_08;
             }
             else if (character == "tsumugi" || character == "tsumugi_halloween")
             {
@@ -12889,6 +13287,10 @@ namespace PCRD_KR_ArenaSim
             else if (character == "mio_deremas")
             {
                 array1 = dt.mio_deremas_08;
+            }
+            else if (character == "shepi")
+            {
+                array1 = dt.shepi_08;
             }
 
             #endregion
@@ -13359,7 +13761,7 @@ namespace PCRD_KR_ArenaSim
             {
                 array1 = dt.hiyori_12;
                 array2 = dt.hiyori_newyear_08;
-                //array3 = dt.hiyori_princess_08;
+                array3 = dt.hiyori_princess_08;
             }
             else if (character == "yui" || character == "yui_newyear" || character == "yui_princess" || character == "yui_maiden")
             {
@@ -13427,6 +13829,7 @@ namespace PCRD_KR_ArenaSim
             {
                 array1 = dt.kasumi_08;
                 array2 = dt.kasumi_magical_08;
+                array3 = dt.kasumi_summer_08;
             }
             else if (character == "misato" || character == "misato_summer")
             {
@@ -13460,7 +13863,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "yori" || character == "yori_angel")
             {
-                array1 = dt.yori_08;
+                array1 = dt.yori_12;
                 array2 = dt.yori_angel_08;
             }
             else if (character == "ayane" || character == "ayane_christmas")
@@ -13497,7 +13900,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "ninon" || character == "ninon_ooedo")
             {
-                array1 = dt.ninon_08;
+                array1 = dt.ninon_12;
                 array2 = dt.ninon_ooedo_08;
             }
             else if (character == "sinobu" || character == "sinobu_halloween")
@@ -13596,7 +13999,7 @@ namespace PCRD_KR_ArenaSim
             else if (character == "monika" || character == "monika_magical")
             {
                 array1 = dt.monika_08;
-                //array2 = dt.monika_magical_08;
+                array2 = dt.monika_magical_08;
             }
             else if (character == "tsumugi" || character == "tsumugi_halloween")
             {
@@ -13721,6 +14124,10 @@ namespace PCRD_KR_ArenaSim
             else if (character == "mio_deremas")
             {
                 array1 = dt.mio_deremas_08;
+            }
+            else if (character == "shepi")
+            {
+                array1 = dt.shepi_08;
             }
 
             #endregion

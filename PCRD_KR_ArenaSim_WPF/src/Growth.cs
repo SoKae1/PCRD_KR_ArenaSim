@@ -8,7 +8,7 @@
          * https://github.com/esterTion/redive_master_db_diff/blob/master/unit_rarity.sql 일섭?? 한섭이랑 다름??
          * https://github.com/HerDataSam/redive_kr_db_diff/blob/master/unit_rarity.csv
          * 
-         * 의유이, 프캬루까지 넣음
+         * 이노리, 프캬루까지 넣음
          * 리틀리리컬 6성까지
          */
         public double[] hiyori_1 = new double[17] { 376, 41.77, 51.04, 5.67, 0, 0, 2.73, 0.3, 2.28, 0.25, 20, 0, 0, 0, 0, 0, 0 };
@@ -933,6 +933,51 @@
         public double[] golem_3 = new double[17] { 243.8, 38.68, 68.58, 10.88, 0, 0, 7.98, 1.26, 4.46, 0.7, 0, 0, 0, 0, 0, 0, 0 };
         public double[] golem_4 = new double[17] { 278.6, 48.35, 78.38, 13.6, 0, 0, 9.12, 1.57, 5.1, 0.87, 0, 0, 0, 0, 0, 0, 0 };
         public double[] golem_5 = new double[17] { 313.4, 58.02, 88.18, 16.32, 0, 0, 10.26, 1.89, 5.74, 1.05, 0, 0, 0, 0, 0, 0, 0 };
+
+        public double[] shepi_1 = new double[17] { 323.8,35.97,52.97,5.89,0,0,2.51,0.28,2.28,0.25,15,0,0,0,0,0,0 };
+        public double[] shepi_2 = new double[17] { 388.6,53.96,63.56,8.84,0,0,3.01,0.42,2.74,0.38,15,0,0,0,0,0,0 };
+        public double[] shepi_3 = new double[17] { 453.3,71.94,74.16,11.78,0,0,3.51,0.56,3.19,0.5,15,0,0,0,0,0,0 };
+        public double[] shepi_4 = new double[17] { 518.1,89.93,84.75,14.73,0,0,4.02,0.7,3.65,0.63,15,0,0,0,0,0,0 };
+        public double[] shepi_5 = new double[17] { 582.8,108,95.35,17.67,0,0,4.52,0.84,4.1,0.75,15,0,0,0,0,0,0 };
+
+
+
+        public double[] kasumi_summer_1 = new double[17] { 303.4, 33.71, 0, 0, 45.23, 5.03, 2.05, 0.23, 1.82, 0.2, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kasumi_summer_2 = new double[17] { 364.1, 50.57, 0, 0, 54.28, 7.55, 2.46, 0.35, 2.18, 0.3, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kasumi_summer_3 = new double[17] { 424.8, 67.42, 0, 0, 63.32, 10.06, 2.87, 0.46, 2.55, 0.4, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kasumi_summer_4 = new double[17] { 485.4, 84.28, 0, 0, 72.37, 12.58, 3.28, 0.58, 2.91, 0.5, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kasumi_summer_5 = new double[17] { 546.1, 101.2, 0, 0, 81.41, 15.09, 3.69, 0.69, 3.28, 0.6, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] rima_cinderella_1 = new double[17] { 344.6, 38.29, 51.72, 5.75, 0, 0, 3.3, 0.37, 2.85, 0.32, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] rima_cinderella_2 = new double[17] { 413.5, 57.44, 62.06, 8.63, 0, 0, 3.96, 0.56, 3.42, 0.48, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] rima_cinderella_3 = new double[17] { 482.4, 76.58, 72.41, 11.5, 0, 0, 4.62, 0.74, 3.99, 0.64, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] rima_cinderella_4 = new double[17] { 551.4, 95.73, 82.75, 14.38, 0, 0, 5.28, 0.93, 4.56, 0.8, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] rima_cinderella_5 = new double[17] { 620.3, 114.9, 93.1, 17.25, 0, 0, 5.94, 1.11, 5.13, 0.96, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] makoto_cinderella_1 = new double[17] { 355.1, 39.46, 55.82, 6.2, 0, 0, 2.62, 0.29, 2.28, 0.25, 20, 0, 0, 0, 0, 0, 0 };
+        public double[] makoto_cinderella_2 = new double[17] { 426.1, 59.19, 66.98, 9.3, 0, 0, 3.14, 0.44, 2.74, 0.38, 20, 0, 0, 0, 0, 0, 0 };
+        public double[] makoto_cinderella_3 = new double[17] { 497.1, 78.92, 78.15, 12.4, 0, 0, 3.67, 0.58, 3.19, 0.5, 20, 0, 0, 0, 0, 0, 0 };
+        public double[] makoto_cinderella_4 = new double[17] { 568.2, 98.65, 89.31, 15.5, 0, 0, 4.19, 0.73, 3.65, 0.63, 20, 0, 0, 0, 0, 0, 0 };
+        public double[] makoto_cinderella_5 = new double[17] { 639.2, 118.4, 100.5, 18.6, 0, 0, 4.72, 0.87, 4.1, 0.75, 20, 0, 0, 0, 0, 0, 0 };
+        public double[] maho_cinderella_1 = new double[17] { 282, 31.33, 0, 0, 45.23, 5.03, 2.05, 0.23, 2.28, 0.25, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] maho_cinderella_2 = new double[17] { 338.4, 47, 0, 0, 54.28, 7.55, 2.46, 0.35, 2.74, 0.38, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] maho_cinderella_3 = new double[17] { 394.8, 62.66, 0, 0, 63.32, 10.06, 2.87, 0.46, 3.19, 0.5, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] maho_cinderella_4 = new double[17] { 451.2, 78.33, 0, 0, 72.37, 12.58, 3.28, 0.58, 3.65, 0.63, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] maho_cinderella_5 = new double[17] { 507.6, 93.99, 0, 0, 81.41, 15.09, 3.69, 0.69, 4.1, 0.75, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] chloe_nakayosi_1 = new double[17] { 365.6, 40.62, 54.11, 6.01, 0, 0, 2.96, 0.33, 2.05, 0.23, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] chloe_nakayosi_2 = new double[17] { 438.7, 60.93, 64.93, 9.02, 0, 0, 3.55, 0.5, 2.46, 0.35, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] chloe_nakayosi_3 = new double[17] { 511.8, 81.24, 75.75, 12.02, 0, 0, 4.14, 0.66, 2.87, 0.46, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] chloe_nakayosi_4 = new double[17] { 585, 101.6, 86.58, 15.03, 0, 0, 4.74, 0.83, 3.28, 0.58, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] chloe_nakayosi_5 = new double[17] { 658.1, 121.9, 97.4, 18.03, 0, 0, 5.33, 0.99, 3.69, 0.69, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] chieru_nakayosi_1 = new double[17] { 355.1, 39.46, 54.68, 6.08, 0, 0, 3.3, 0.37, 1.94, 0.22, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] chieru_nakayosi_2 = new double[17] { 426.1, 59.19, 65.62, 9.12, 0, 0, 3.96, 0.56, 2.33, 0.33, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] chieru_nakayosi_3 = new double[17] { 497.1, 78.92, 76.55, 12.16, 0, 0, 4.62, 0.74, 2.72, 0.44, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] chieru_nakayosi_4 = new double[17] { 568.2, 98.65, 87.49, 15.2, 0, 0, 5.28, 0.93, 3.1, 0.55, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] chieru_nakayosi_5 = new double[17] { 639.2, 118.4, 98.42, 18.24, 0, 0, 5.94, 1.11, 3.49, 0.66, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] inori_timetravel_1 = new double[17] { 417.8, 46.42, 48.19, 5.35, 0, 0, 2.73, 0.3, 2.28, 0.25, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] inori_timetravel_2 = new double[17] { 501.4, 69.63, 57.83, 8.03, 0, 0, 3.28, 0.45, 2.74, 0.38, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] inori_timetravel_3 = new double[17] { 584.9, 92.84, 67.47, 10.7, 0, 0, 3.82, 0.6, 3.19, 0.5, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] inori_timetravel_4 = new double[17] { 668.5, 116.1, 77.1, 13.38, 0, 0, 4.37, 0.75, 3.65, 0.63, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] inori_timetravel_5 = new double[17] { 752, 139.3, 86.74, 16.05, 0, 0, 4.91, 0.9, 4.1, 0.75, 10, 0, 0, 0, 0, 0, 0 };
+
     }
 
 }

@@ -1134,17 +1134,19 @@ namespace PCRD_KR_ArenaSim
             }
             crit = Battle_fomular.critical(attack_type, crit, my_order, opponent_order);
 
+            //명중
             if (MainWindow.rand.NextDouble() < hit)
             {
+                //크리티컬 시
                 if (MainWindow.rand.NextDouble() < crit)
                 {
                     if (attack_type == "1" || attack_type == "11")
                     {
-                        damage = damage * Battle_variable.PCdamage_coef[my_order];
+                        damage = damage * Battle_variable.PCdamage_coef[my_order] * Battle_variable.RCdamage_coef[opponent_order];
                     }
                     else if (attack_type == "2")
                     {
-                        damage = damage * Battle_variable.MCdamage_coef[my_order];
+                        damage = damage * Battle_variable.MCdamage_coef[my_order] * Battle_variable.RCdamage_coef[opponent_order];
                     }
                     damage = Battle_fomular.damage_process(attack_type, damage, my_order, opponent_order);
                     //Debug.WriteLine("크리티컬: {3}{0}가 {4}{1}에게 {2} 대미지", Battle_variable.name[my_order], Battle_variable.name[opponent_order], damage, my_order, opponent_order);
