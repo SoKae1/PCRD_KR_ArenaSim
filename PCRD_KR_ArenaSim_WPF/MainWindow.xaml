@@ -450,7 +450,7 @@
                             </ToggleButton>
                             <ToggleButton Name="tb_yori" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="yori" IsChecked="false" BorderThickness="0"  
                                           Checked="tb_yori_Checked" Unchecked="tb_yori_UnChecked">
-                                <Image Source="res\icon_unit\102231.png"    />
+                                <Image Source="res\icon_unit\102261.png"    />
                             </ToggleButton>
                             <ToggleButton Name="tb_yui_maiden" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="yui_maiden" IsChecked="false" BorderThickness="0"  
                                           Checked="tb_yui_maiden_Checked" Unchecked="tb_yui_maiden_UnChecked">
@@ -1792,7 +1792,7 @@
                             </Button>
                             <Button  ToolTip="yori"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                       Click="bt_yori_set_Click" >
-                                <Image Source="res\icon_unit\102231.png" Stretch="Fill"     Name="img_bt_yori"  />
+                                <Image Source="res\icon_unit\102261.png" Stretch="Fill"     Name="img_bt_yori"  />
                             </Button>
                             <Button  ToolTip="saren_summer"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                                  Click="bt_saren_summer_set_Click" >
