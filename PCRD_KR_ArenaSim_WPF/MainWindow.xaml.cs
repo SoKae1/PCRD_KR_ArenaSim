@@ -579,7 +579,7 @@ namespace PCRD_KR_ArenaSim
             tb_yori_angel.IsChecked = false;
             tb_yuni.IsChecked = false;
             tb_inori.IsChecked = false;
-            tb_yori_angel.IsChecked = false;
+            
             tb_tsumugi_halloween.IsChecked = false;
             tb_rei_halloween.IsChecked = false;
             tb_matsuri_halloween.IsChecked = false;

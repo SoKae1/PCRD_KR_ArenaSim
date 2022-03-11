@@ -102,22 +102,28 @@
                                 Checked="tb_makoto_Checked" Unchecked="tb_makoto_UnChecked">
                                 <Image Source="res\icon_unit\104331.png"    />
                             </ToggleButton>
+                            
                             <ToggleButton Name="tb_makoto_cinderella" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="makoto_cinderella" IsChecked="false" BorderThickness="0"  
                                 Checked="tb_makoto_cinderella_Checked" Unchecked="tb_makoto_cinderella_UnChecked">
                                 <Image Source="res\icon_unit\115931.png"    />
+                            
                             </ToggleButton>
+                            
                             <ToggleButton Name="tb_kaya" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="kaya" IsChecked="false" BorderThickness="0"  
                                 Checked="tb_kaya_Checked" Unchecked="tb_kaya_UnChecked">
                                 <Image Source="res\icon_unit\106531.png"    />
                             </ToggleButton>
+                            
                             <ToggleButton Name="tb_kaya_timetravel" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="kaya_timetravel" IsChecked="false" BorderThickness="0"  
                                 Checked="tb_kaya_timetravel_Checked" Unchecked="tb_kaya_timetravel_UnChecked">
                                 <Image Source="res\icon_unit\116631.png"    />
                             </ToggleButton>
+                            
                             <ToggleButton Name="tb_hiyori_newyear" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="hiyori_newyear" IsChecked="false" BorderThickness="0"  
                                 Checked="tb_hiyori_newyear_Checked" Unchecked="tb_hiyori_newyear_UnChecked">
                                 <Image Source="res\icon_unit\108731.png"    />
                             </ToggleButton>
+                            
                             <ToggleButton Name="tb_rima_cinderella" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="rima_cinderella" IsChecked="false" BorderThickness="0"  
                                 Checked="tb_rima_cinderella_Checked" Unchecked="tb_rima_cinderella_UnChecked">
                                 <Image Source="res\icon_unit\115831.png"    />
