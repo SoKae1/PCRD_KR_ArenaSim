@@ -4679,7 +4679,7 @@ namespace PCRD_KR_ArenaSim
             else if (CharaName == "io") { ID = "101861"; }
             else if (CharaName == "mimi") { ID = "102031"; }
             else if (CharaName == "kurumi") { ID = "102131"; }
-            else if (CharaName == "yori") { ID = "102231"; }
+            else if (CharaName == "yori") { ID = "102261"; }
             else if (CharaName == "ayane") { ID = "102361"; }
             else if (CharaName == "suzume") { ID = "102531"; }
             else if (CharaName == "rin") { ID = "102631"; }
@@ -4764,6 +4764,7 @@ namespace PCRD_KR_ArenaSim
             else if (CharaName == "kristina_christmas") { ID = "111531"; }
             else if (CharaName == "nozomi_christmas") { ID = "111631"; }
             else if (CharaName == "iriya_christmas") { ID = "111731"; }
+            else if (CharaName == "pekorinnu_newyear") { ID = "111831"; }
             else if (CharaName == "kotkoro_newyear") { ID = "111931"; }
             else if (CharaName == "kyaru_newyear") { ID = "112031"; }
             else if (CharaName == "suzume_newyear") { ID = "112131"; }
@@ -4793,7 +4794,7 @@ namespace PCRD_KR_ArenaSim
             else if (CharaName == "saren_christmas") { ID = "114531"; }
             else if (CharaName == "yukari_christmas") { ID = "114631"; }
             else if (CharaName == "muimi_newyear") { ID = "114731"; }
-            else if (CharaName == "pekorinnu_newyear") { ID = "115031"; }
+            else if (CharaName == "neneka_newyear") { ID = "115031"; }
             else if (CharaName == "kotkoro_maiden") { ID = "115531"; }
             else if (CharaName == "yui_maiden") { ID = "115631"; }
             else if (CharaName == "kasumi_summer") { ID = "115731"; }
