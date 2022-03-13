@@ -55,7 +55,18 @@ namespace PCRD_KR_ArenaSim
         public static bool chloe_nakayosi2, chieru_nakayosi2, yuni_nakayosi2 = false;
         public static bool inori_timetravel, kaya_timetravel = false;
         public static bool aoi_worker, tamaki_worker, mihuyu_worker = false;
-        //작후유까지 
+
+        public static bool eriko_summer, sizuru_summer, nozomi_summer, chika_summer, tsumugi_summer = false;
+        public static bool mitsuki_ooedo, yuki_ooedo = false;
+        public static bool kaori_halloween, ninon_halloween, suzuna_halloween = false;
+        public static bool credita, ranpa, hatsune_princess, siori_princess, karin = false;
+        public static bool io_noir, kuuka_noir = false;
+        public static bool mahiru_christmas, rino_christmas, miyako_christmas = false;
+        public static bool mimi_princess, misogi_princess, kyouka_princess = false;
+        public static bool shepi_newyear, ruka_newyear, iriya_newyear = false;
+        public static bool pekorinnu_overload, kyaru_overload, labirista_overload = false;
+        public static bool kurumi_stage = false;
+        public static bool hatsusio, littlelyri = false;
 
         public string Chara_Selected_EN;
         public string Chara_Selected_KR;

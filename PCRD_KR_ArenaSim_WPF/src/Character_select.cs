@@ -3,7 +3,7 @@
     class Character_select
     {
 
-        // 작후유까지 넣음
+        // 쿠루미(스테이지, 리틀리리까지 넣음
 
         public bool hiyori, yui, rei, misogi, matsuri, akari, miyako, yuki, anna, maho;
         public bool rino, hatsune, nanaka, kasumi, misato, suzuna, kaori, io, mimi, kurumi;
@@ -37,6 +37,17 @@
         public bool chloe_nakayosi2, chieru_nakayosi2, yuni_nakayosi2;
         public bool inori_timetravel, kaya_timetravel;
         public bool aoi_worker, tamaki_worker, mihuyu_worker;
+        public bool eriko_summer, sizuru_summer, nozomi_summer, chika_summer, tsumugi_summer = false;
+        public bool mitsuki_ooedo, yuki_ooedo = false;
+        public bool kaori_halloween, ninon_halloween, suzuna_halloween = false;
+        public bool credita, ranpa, hatsune_princess, siori_princess, karin = false;
+        public bool io_noir, kuuka_noir = false;
+        public bool mahiru_christmas, rino_christmas, miyako_christmas = false;
+        public bool mimi_princess, misogi_princess, kyouka_princess = false;
+        public bool shepi_newyear, ruka_newyear, iriya_newyear = false;
+        public bool pekorinnu_overload, kyaru_overload, labirista_overload = false;
+        public bool kurumi_stage = false;
+        public bool hatsusio, littlelyri = false;
 
         public bool blank;
 
