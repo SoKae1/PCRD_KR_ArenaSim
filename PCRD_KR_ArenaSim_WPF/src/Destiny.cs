@@ -5,12 +5,13 @@
     {
         /* 장비 랭크에 따른 능력치 = 랭크에 따른 보너스 능력치 + 성장 능력치*(랭크) 
          * 
-         * /* 1HP, 2물공, 3마공, 4물방, 5마방, 6물크, 7마크, 8HP 자동 회복, 9TP 자동 회복, 10회피, 11HP 흡수, 12회복량 상승, 13TP 상승, 14TP 소비 감소, 15명중 */
-        /* db상 데이터 1,2,3물방,4마공,5,6물크,7마크,8,9HP 흡수,10,11,12,13,14,15 
+         * 
+         1HP, 2물공, 3마공, 4물방, 5마방, 6물크, 7마크, 8HP 자동 회복, 9TP 자동 회복, 10회피, 11HP 흡수, 12회복량 상승, 13TP 상승, 14TP 소비 감소, 15명중 */
+        /* db상 데이터 1,2,3물방,4마공,5마방,6물크,7마크,8,9HP 흡수,10,11,12,13,14,15 
         https://github.com/esterTion/redive_master_db_diff/blob/master/chara_story_status.sql 일섭은 인연스탯 다를 수 있?나?
         https://github.com/HerDataSam/redive_kr_db_diff/blob/master/chara_story_status.csv
-        셰피, 프캬루까지 넣음
-        아카리 6성까지 넣음
+        작후유, 프캬루까지 넣음
+        스즈메 6성까지 넣음
          */
         public double[] hiyori_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] hiyori_02 = new double[15] { 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -95,6 +96,12 @@
         public double[] misogi_06 = new double[15] { 0, 155, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] misogi_07 = new double[15] { 0, 195, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] misogi_08 = new double[15] { 200, 255, 0, 14, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] misogi_09 = new double[15] { 200, 335, 0, 14, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] misogi_10 = new double[15] { 200, 415, 0, 14, 0, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] misogi_11 = new double[15] { 200, 495, 0, 14, 0, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] misogi_12 = new double[15] { 200, 695, 0, 14, 0, 150, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        /* 1HP, 2물공, 3마공, 4물방, 5마방, 6물크, 7마크, 8HP 자동 회복, 9TP 자동 회복, 10회피, 11HP 흡수, 12회복량 상승, 13TP 상승, 14TP 소비 감소, 15명중 */
+        /* db상 데이터 1,2,3물방,4마공,5,6물크,7마크,8,9HP 흡수,10,11,12,13,14,15 */
 
         public double[] misogi_halloween_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] misogi_halloween_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -373,7 +380,13 @@
         public double[] mimi_06 = new double[15] { 0, 140, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] mimi_07 = new double[15] { 0, 180, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] mimi_08 = new double[15] { 200, 240, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] mimi_09 = new double[15] { 200, 320, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] mimi_10 = new double[15] { 200, 400, 0, 14, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] mimi_11 = new double[15] { 200, 480, 0, 14, 0, 80, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] mimi_12 = new double[15] { 200, 680, 0, 14, 0, 140, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
+        /* 1HP, 2물공, 3마공, 4물방, 5마방, 6물크, 7마크, 8HP 자동 회복, 9TP 자동 회복, 10회피, 11HP 흡수, 12회복량 상승, 13TP 상승, 14TP 소비 감소, 15명중 */
+        /* db상 데이터 1,2,3물방,4마공,5,6물크,7마크,8,9HP 흡수,10,11,12,13,14,15 */
         public double[] mimi_halloween_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] mimi_halloween_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] mimi_halloween_03 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -453,7 +466,13 @@
         public double[] suzume_06 = new double[15] { 0, 0, 140, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] suzume_07 = new double[15] { 0, 0, 180, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] suzume_08 = new double[15] { 0, 0, 240, 14, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] suzume_09 = new double[15] { 0, 0, 320, 14, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] suzume_10 = new double[15] { 0, 0, 440, 14, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] suzume_11 = new double[15] { 0, 0, 560, 14, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] suzume_12 = new double[15] { 0, 0, 760, 14, 4, 0, 30, 0, 0, 0, 0, 0, 0, 0, 0 };
 
+         /*1HP, 2물공, 3마공, 4물방, 5마방, 6물크, 7마크, 8HP 자동 회복, 9TP 자동 회복, 10회피, 11HP 흡수, 12회복량 상승, 13TP 상승, 14TP 소비 감소, 15명중*/
+        /* db상 데이터 1,2,3물방,4마공,5마방,6물크,7마크,8,9HP 흡수,10,11,12,13,14,15 */
         public double[] suzume_summer_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] suzume_summer_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] suzume_summer_03 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -538,7 +557,13 @@
         public double[] nozomi_06 = new double[15] { 0, 0, 0, 4, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] nozomi_07 = new double[15] { 0, 0, 0, 8, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] nozomi_08 = new double[15] { 0, 0, 0, 14, 48, 0, 0, 200, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] nozomi_09 = new double[15] { 0, 0, 0, 20, 60, 0, 0, 200, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] nozomi_10 = new double[15] { 0, 0, 0, 28, 76, 0, 0, 200, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] nozomi_11 = new double[15] { 0, 0, 0, 36, 92, 0, 0, 200, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] nozomi_12 = new double[15] { 0, 0, 0, 52, 120, 0, 0, 200, 0, 0, 0, 0, 0, 0, 0 };
 
+        /* 1HP, 2물공, 3마공, 4물방, 5마방, 6물크, 7마크, 8HP 자동 회복, 9TP 자동 회복, 10회피, 11HP 흡수, 12회복량 상승, 13TP 상승, 14TP 소비 감소, 15명중 */
+        /* db상 데이터 1,2,3물방,4마공,5마방,6물크,7마크,8,9HP 흡수,10,11,12,13,14,15 */
         public double[] nozomi_christmas_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] nozomi_christmas_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] nozomi_christmas_03 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -646,7 +671,14 @@
         public double[] kyouka_06 = new double[15] { 0, 0, 160, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] kyouka_07 = new double[15] { 0, 0, 220, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] kyouka_08 = new double[15] { 0, 0, 310, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kyouka_09 = new double[15] { 0, 0, 390, 0, 0, 0, 30, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kyouka_10 = new double[15] { 0, 0, 470, 0, 0, 0, 50, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kyouka_11 = new double[15] { 0, 0, 550, 0, 0, 0, 70, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kyouka_12 = new double[15] { 0, 0, 750, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0 };
 
+
+        /* db상 데이터 1,2,3물방,4마공,5,6물크,7마크,8,9HP 흡수,10,11,12,13,14,15 
+        /* 1HP, 2물공, 3마공, 4물방, 5마방, 6물크, 7마크, 8HP 자동 회복, 9TP 자동 회복, 10회피, 11HP 흡수, 12회복량 상승, 13TP 상승, 14TP 소비 감소, 15명중 */
         public double[] kyouka_halloween_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] kyouka_halloween_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] kyouka_halloween_03 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -1406,6 +1438,96 @@
         public double[] shepi_06 = new double[15] { 0, 160, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] shepi_07 = new double[15] { 0, 220, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] shepi_08 = new double[15] { 0, 310, 0, 0, 0, 10, 0, 0, 0, 0, 0, 10, 0, 0, 0 };
+
+        public double[] maho_cinderella_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] maho_cinderella_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] maho_cinderella_03 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] maho_cinderella_04 = new double[15] { 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] maho_cinderella_05 = new double[15] { 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] maho_cinderella_06 = new double[15] { 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] maho_cinderella_07 = new double[15] { 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] maho_cinderella_08 = new double[15] { 0, 0, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+        public double[] makoto_cinderella_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] makoto_cinderella_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] makoto_cinderella_03 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] makoto_cinderella_04 = new double[15] { 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] makoto_cinderella_05 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] makoto_cinderella_06 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] makoto_cinderella_07 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] makoto_cinderella_08 = new double[15] { 0, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+        public double[] rima_cinderella_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] rima_cinderella_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] rima_cinderella_03 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] rima_cinderella_04 = new double[15] { 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] rima_cinderella_05 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] rima_cinderella_06 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] rima_cinderella_07 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] rima_cinderella_08 = new double[15] { 0, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+        public double[] chloe_nakayosi2_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] chloe_nakayosi2_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] chloe_nakayosi2_03 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] chloe_nakayosi2_04 = new double[15] { 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] chloe_nakayosi2_05 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] chloe_nakayosi2_06 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] chloe_nakayosi2_07 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] chloe_nakayosi2_08 = new double[15] { 0, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+        public double[] chieru_nakayosi2_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] chieru_nakayosi2_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] chieru_nakayosi2_03 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] chieru_nakayosi2_04 = new double[15] { 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] chieru_nakayosi2_05 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] chieru_nakayosi2_06 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] chieru_nakayosi2_07 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] chieru_nakayosi2_08 = new double[15] { 0, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+        public double[] inori_timetravel_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] inori_timetravel_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] inori_timetravel_03 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] inori_timetravel_04 = new double[15] { 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] inori_timetravel_05 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] inori_timetravel_06 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] inori_timetravel_07 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] inori_timetravel_08 = new double[15] { 0, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+        public double[] kaya_timetravel_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kaya_timetravel_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kaya_timetravel_03 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kaya_timetravel_04 = new double[15] { 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kaya_timetravel_05 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kaya_timetravel_06 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kaya_timetravel_07 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kaya_timetravel_08 = new double[15] { 0, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+        public double[] aoi_worker_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] aoi_worker_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] aoi_worker_03 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] aoi_worker_04 = new double[15] { 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] aoi_worker_05 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] aoi_worker_06 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] aoi_worker_07 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] aoi_worker_08 = new double[15] { 0, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+        public double[] tamaki_worker_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] tamaki_worker_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] tamaki_worker_03 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] tamaki_worker_04 = new double[15] { 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] tamaki_worker_05 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] tamaki_worker_06 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] tamaki_worker_07 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] tamaki_worker_08 = new double[15] { 0, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+        public double[] mihuyu_worker_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] mihuyu_worker_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] mihuyu_worker_03 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] mihuyu_worker_04 = new double[15] { 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] mihuyu_worker_05 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] mihuyu_worker_06 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] mihuyu_worker_07 = new double[15] { 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] mihuyu_worker_08 = new double[15] { 0, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     }
      /* 1HP, 2물공, 3마공, 4물방, 5마방, 6물크, 7마크, 8HP 자동 회복, 9TP 자동 회복, 10회피, 11HP 흡수, 12회복량 상승, 13TP 상승, 14TP 소비 감소, 15명중 */
         /* db상 데이터 1,2물공,3물방,4마공,5,6물크,7마크,8,9HP 흡수,10,11,12,13,14,15 */

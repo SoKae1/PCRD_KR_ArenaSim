@@ -1772,6 +1772,39 @@ namespace PCRD_KR_ArenaSim
 
                     //Debug.WriteLine("{2}{0}가 {3}{1}에게 폭탄 설치\n", Battle_variable.name[my_order], Battle_variable.name[opponent_order], my_order, opponent_order);
                 }
+
+                else if (buff_type == "rima_cinderella_UB" && (Battle_variable.invincible[opponent_order] == false || coefficient > 0))
+                {
+                    int i = 0;
+                    while (Battle_variable.buff_PA[i, opponent_order] != false)
+                    {
+                        i++;
+                    }
+                    Battle_variable.buff_PA[i, opponent_order] = true;
+                    Battle_variable.buff_PA_coef[i, opponent_order] = coefficient;
+                    Battle_variable.buff_PA_time[i, opponent_order] = duration;
+                    Battle_variable.name_eng[opponent_order] = "rima_cinderella_2";
+                   
+
+                    Debug.WriteLine("{3}{0}가 {4}{1}에게 변이 버프 {2} 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], Battle_variable.buff_PA_coef[i, opponent_order], my_order, opponent_order);
+                    //Debug.WriteLine("{2}{0} 물리공격력: {1}\n", Battle_variable.name[opponent_order], Battle_variable.PA[opponent_order], opponent_order);
+                }
+                else if (buff_type == "rima_cinderella_SP3" && (Battle_variable.invincible[opponent_order] == false || coefficient > 0))
+                {
+                    int i = 0;
+                    while (Battle_variable.buff_PA[i, opponent_order] != false)
+                    {
+                        i++;
+                    }
+                    Battle_variable.buff_PA[i, opponent_order] = true;
+                    Battle_variable.buff_PA_coef[i, opponent_order] = coefficient;
+                    Battle_variable.buff_PA_time[i, opponent_order] = duration;
+                    Battle_variable.name_eng[opponent_order] = "rima_cinderella_2";
+
+
+                    Debug.WriteLine("{3}{0}가 {4}{1}에게 변이 버프 {2} 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], Battle_variable.buff_PA_coef[i, opponent_order], my_order, opponent_order);
+                    //Debug.WriteLine("{2}{0} 물리공격력: {1}\n", Battle_variable.name[opponent_order], Battle_variable.PA[opponent_order], opponent_order);
+                }
             }
         }
         public static void field_process(double center_position, double radius, double duration, string buff_type, double coefficient, int my_order, int enemy_distinction)

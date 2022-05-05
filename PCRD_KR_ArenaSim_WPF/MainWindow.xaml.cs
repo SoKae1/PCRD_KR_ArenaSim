@@ -617,7 +617,6 @@ namespace PCRD_KR_ArenaSim
         {
             if (tb_CharaAbbr.Text == "")
             {
-
                 select_count_temp = 0;
 
                 Debug.Write("select_count = ");
@@ -4923,6 +4922,10 @@ namespace PCRD_KR_ArenaSim
                 {
                     string s = sr.ReadLine();
                     string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
+                    if (temp[0] == "시카야")
+                        temp[0] = "타카야";
+                    if (temp[0] == "시노리")
+                        temp[0] = "타노리";
                     int pos = Array.IndexOf(temp, select_defence_temp[i]);
                     if (pos > -1)
                     {
@@ -5065,6 +5068,10 @@ namespace PCRD_KR_ArenaSim
                 {
                     string s = sr.ReadLine();
                     string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
+                    if (temp[0] == "시카야")
+                        temp[0] = "타카야";
+                    if (temp[0] == "시노리")
+                        temp[0] = "타노리";
                     int pos = Array.IndexOf(temp, select_offence_temp[i - 15]);
                     if (pos > -1)
                     {
@@ -5210,8 +5217,8 @@ namespace PCRD_KR_ArenaSim
             int CharaIndex = 1;
             int Index = 0;
 
-            //작마키까지 168
-            while (CharaIndex <= 168)
+            //작후유까지 169
+            while (CharaIndex <= 169)
             {
                 //빈칸 제거
                 if (CharaIndex == 19 || CharaIndex == 24 || CharaIndex == 35 || CharaIndex == 39
@@ -6002,7 +6009,7 @@ namespace PCRD_KR_ArenaSim
             { Debug.WriteLine(e.Message); }
         }
 
-        //캐릭터 선택 수스미까지
+        //캐릭터 선택 작후유까지
         public void CharacterSelectCount(int isOfforDef)
         {
             //isOfforDef == 1 방덱 , 0이면 공덱
@@ -6832,9 +6839,9 @@ namespace PCRD_KR_ArenaSim
                 temp_eng[select_count_temp] = "kasumi_summer";
                 select_count_temp += 1;
             }
-            #endregion
+            
 
-            /*
+            
             if (cs.rima_cinderella == true)
             {
                 temp[select_count_temp] = "신리마";
@@ -6853,6 +6860,8 @@ namespace PCRD_KR_ArenaSim
                 temp_eng[select_count_temp] = "maho_cinderella";
                 select_count_temp += 1;
             }
+            
+            
             if (cs.chloe_nakayosi2 == true)
             {
                 temp[select_count_temp] = "성로에";
@@ -6867,13 +6876,13 @@ namespace PCRD_KR_ArenaSim
             }
             if (cs.inori_timetravel == true)
             {
-                temp[select_count_temp] = "시노리";
+                temp[select_count_temp] = "타노리";
                 temp_eng[select_count_temp] = "inori_timetravel";
                 select_count_temp += 1;
             }
             if (cs.kaya_timetravel == true)
             {
-                temp[select_count_temp] = "시카야";
+                temp[select_count_temp] = "타카야";
                 temp_eng[select_count_temp] = "kaya_timetravel";
                 select_count_temp += 1;
             }
@@ -6889,20 +6898,25 @@ namespace PCRD_KR_ArenaSim
                 temp_eng[select_count_temp] = "tamaki_worker";
                 select_count_temp += 1;
             }
+            if (cs.mihuyu_worker == true)
+            {
+                temp[select_count_temp] = "작후유";
+                temp_eng[select_count_temp] = "mihuyu_worker";
+                select_count_temp += 1;
+            }
             if (cs.rei_princess == true)
             {
                 temp[select_count_temp] = "프레이";
                 temp_eng[select_count_temp] = "rei_princess";
                 select_count_temp += 1;
             }
-            
             if (cs.kyaru_princess == true)
             {
                 temp[select_count_temp] = "프캬루";
                 temp_eng[select_count_temp] = "kyaru_princess";
                 select_count_temp += 1;
             }
-            */
+            
             if (cs.hiyori_princess == true)
             {
                 temp[select_count_temp] = "프요리";
@@ -6951,7 +6965,8 @@ namespace PCRD_KR_ArenaSim
                 temp_eng[select_count_temp] = "shepi";
                 select_count_temp += 1;
             }
-            
+
+            #endregion
             //isOfforDef == 1 방덱 , 0이면 공덱
             if (isOfforDef == 0)
             {
@@ -6976,7 +6991,7 @@ namespace PCRD_KR_ArenaSim
 
             else if (CharaName == "yui") { ID = "100261"; }
             else if (CharaName == "rei") { ID = "100361"; }
-            else if (CharaName == "misogi") { ID = "100431"; }
+            else if (CharaName == "misogi") { ID = "100461"; }
             else if (CharaName == "matsuri") { ID = "100531"; }
             else if (CharaName == "akari") { ID = "100661"; }
             else if (CharaName == "miyako") { ID = "100731"; }
@@ -6991,21 +7006,21 @@ namespace PCRD_KR_ArenaSim
             else if (CharaName == "suzuna") { ID = "101661"; }
             else if (CharaName == "kaori") { ID = "101731"; }
             else if (CharaName == "io") { ID = "101861"; }
-            else if (CharaName == "mimi") { ID = "102031"; }
+            else if (CharaName == "mimi") { ID = "102061"; }
             else if (CharaName == "kurumi") { ID = "102131"; }
             else if (CharaName == "yori") { ID = "102261"; }
             else if (CharaName == "ayane") { ID = "102361"; }
-            else if (CharaName == "suzume") { ID = "102531"; }
+            else if (CharaName == "suzume") { ID = "102561"; }
             else if (CharaName == "rin") { ID = "102631"; }
             else if (CharaName == "eriko") { ID = "102731"; }
             else if (CharaName == "saren") { ID = "102861"; }
-            else if (CharaName == "nozomi") { ID = "102931"; }
+            else if (CharaName == "nozomi") { ID = "102961"; }
             else if (CharaName == "ninon") { ID = "103061"; }
             else if (CharaName == "sinobu") { ID = "103131"; }
             else if (CharaName == "akino") { ID = "103261"; }
             else if (CharaName == "mahiru") { ID = "103331"; }
             else if (CharaName == "yukari") { ID = "103461"; }
-            else if (CharaName == "kyouka") { ID = "103631"; }
+            else if (CharaName == "kyouka") { ID = "103661"; }
             else if (CharaName == "tomo") { ID = "103731"; }
             else if (CharaName == "siori") { ID = "103831"; }
             else if (CharaName == "aoi") { ID = "104031"; }
@@ -7525,7 +7540,7 @@ namespace PCRD_KR_ArenaSim
                 else if (LikeOperator.LikeString(ID, "1163*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "성에루";
                 else if (LikeOperator.LikeString(ID, "1163*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "성유니";
                 else if (LikeOperator.LikeString(ID, "1165*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "시노리";
-                else if (LikeOperator.LikeString(ID, "1166*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "시카야";
+                else if (LikeOperator.LikeString(ID, "1166*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "타카야";
                 else if (LikeOperator.LikeString(ID, "1167*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "작오이";
                 else if (LikeOperator.LikeString(ID, "1168*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "작마키";
 
@@ -7613,9 +7628,9 @@ namespace PCRD_KR_ArenaSim
             }
         }
 
-        public static decimal maxLevel = 190;
+        public static decimal maxLevel = 196;
         public static decimal maxRank = 20;
-        public static decimal maxItemQuantity = 3;
+        public static decimal maxItemQuantity = 5;
         
         public static decimal maxUnique = (int)(( Math.Floor((maxLevel-1)/10))*10)+10;
 
@@ -7626,6 +7641,71 @@ namespace PCRD_KR_ArenaSim
             tb_MaxItemQuqn.Text = Convert.ToString(maxItemQuantity) ;
             tb_MaxUnique.Text = Convert.ToString(maxUnique);
         }
+        
+        private void tb_MaxLevel_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            int i;
+            if (int.TryParse(tb_MaxLevel.Text.Replace(",", ""), out i))
+            {
+                tb_MaxLevel.Text = i.ToString();
+                maxLevel = Convert.ToInt32( tb_MaxLevel.Text);
+            }
+            else
+            {
+                tb_MaxLevel.Text =  Convert.ToString( maxLevel);
+            }
+        }
+        private void tb_MaxUnique_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            int i;
+            if (int.TryParse(tb_MaxUnique.Text.Replace(",", ""), out i))
+            {
+                tb_MaxUnique.Text = i.ToString();
+                int x = Convert.ToInt32(tb_MaxUnique.Text);
+                if (x > (int)((Math.Floor((maxLevel - 1) / 10)) * 10) + 10)
+                    x = (int)((Math.Floor((maxLevel - 1) / 10)) * 10) + 10; 
+                maxUnique = Convert.ToInt32(x);
+            }
+            else
+            {
+                tb_MaxUnique.Text = Convert.ToString(maxUnique);
+            }
+        }
+
+        private void tb_MaxItemQuqn_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            int i;
+            if (int.TryParse(tb_MaxItemQuqn.Text.Replace(",", ""), out i))
+            {
+                tb_MaxItemQuqn.Text = i.ToString();
+                int x = Convert.ToInt32(tb_MaxItemQuqn.Text);
+                if (x > 6)
+                    x = 6;
+                maxItemQuantity = Convert.ToInt32(x);
+            }
+            else
+            {
+                tb_MaxItemQuqn.Text = Convert.ToString(maxItemQuantity);
+            }
+        }
+
+        private void tb_MaxRank_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            int i;
+            if (int.TryParse(tb_MaxRank.Text.Replace(",", ""), out i))
+            {
+                tb_MaxRank.Text = i.ToString();
+                int x = Convert.ToInt32(tb_MaxRank.Text);
+                if (x > 22)
+                    x = 22;
+                maxRank = Convert.ToInt32(x);
+            }
+            else
+            {
+                tb_MaxRank.Text = Convert.ToString(maxRank);
+            }
+        }
+
         private void AutoReinStar6()
         {
             try
@@ -7648,7 +7728,10 @@ namespace PCRD_KR_ArenaSim
                     if (temp1[0] == "페코린느" || temp1[0] == "캬루" || temp1[0] == "콧코로" || temp1[0] == "리노" || temp1[0] == "리마" || temp1[0] == "이오" 
                         || temp1[0] == "유카리" || temp1[0] == "마호" || temp1[0] == "유이" || temp1[0] == "레이" || temp1[0] == "히요리" || temp1[0] == "하츠네"
                         || temp1[0] == "타마키" || temp1[0] == "미후유" || temp1[0] == "시즈루" || temp1[0] == "아야네" || temp1[0] == "사렌" || temp1[0] == "아키노"
-                        || temp1[0] == "니논" || temp1[0] == "마히루" || temp1[0] == "스즈나" || temp1[0] == "아카리" || temp1[0] == "요리")
+                        || temp1[0] == "니논" || temp1[0] == "마히루" || temp1[0] == "스즈나" || temp1[0] == "아카리" || temp1[0] == "요리" 
+                        || temp1[0] == "쿄우카" || temp1[0] == "미소기" || temp1[0] == "미미"
+                        || temp1[0] == "노조미"
+                        || temp1[0] == "스즈메" )
                     {
                         temp1[2] = "6";
                         temp2[2] = "6";
@@ -7700,14 +7783,13 @@ namespace PCRD_KR_ArenaSim
 
                     string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
 
-                    if (temp[0] == "프페코" || temp[0] == "우즈키"
-                        || temp[0] == "시부린" || temp[0] == "미오" || temp[0] == "유니" || temp[0] == "치에루" || temp[0] == "레린" || temp[0] == "레히루"
+                    if (temp[0] == "프페코" 
                         || temp[0] == "앨리노" || temp[0] == "앨유미" || temp[0] == "수루카" || temp[0] == "수안나" || temp[0] == "수나카" || temp[0] == "수츠네"
                         || temp[0] == "수쥰" || temp[0] == "엔카리" || temp[0] == "엔요리" || temp[0] == "프유이" || temp[0] == "프코로" || temp[0] == "프캬루"
                         || temp[0] == "라비리스타" || temp[0] == "셰피" || temp[0] == "할무기" || temp[0] == "할레이" || temp[0] == "할츠리" || temp[0] == "마니카"
                         || temp[0] == "마토모" || temp[0] == "성키노" || temp[0] == "성사렌" || temp[0] == "성카리" || temp[0] == "뉴이미" || temp[0] == "뉴네카"
                         || temp[0] == "뉴페코" || temp[0] == "의코로" || temp[0] == "의유이" || temp[0] == "수스미" || temp[0] == "신리마" || temp[0] == "신마호"
-                        || temp[0] == "신코토" || temp[0] == "성로에" || temp[0] == "성에루" || temp[0] == "시노리" || temp[0] == "시카야" || temp[0] == "작오이" || temp[0] == "작마키")
+                        || temp[0] == "신코토" || temp[0] == "성로에" || temp[0] == "성에루" || temp[0] == "시노리" || temp[0] == "시카야" || temp[0] == "타노리" || temp[0] == "타카야" || temp[0] == "작오이" || temp[0] == "작마키")
                     {
                         temp[5] = "0";
                     }
@@ -7755,11 +7837,15 @@ namespace PCRD_KR_ArenaSim
                     string s = sr.ReadLine();
 
                     string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
-
+                    int y = 0;
                     temp[4] = Convert.ToString(maxRank);
-                    for (int xx = 0; xx < maxItemQuantity; xx++)
+                    for (int xx = 0; xx < 6; xx++)
                     {
+                        if (y< maxItemQuantity)
                         temp[6 + xx] = "5";
+                        else
+                            temp[6 + xx] = "-1";
+                        y++;
                     }
                     stringArray[row] = StringArrayToCommaString(temp);
                     row++;
@@ -7844,22 +7930,20 @@ namespace PCRD_KR_ArenaSim
                     string s = sr.ReadLine();
 
                     string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
-                    if( temp[0] == "프페코" || temp[0] == "우즈키"
-                        || temp[0] == "시부린" || temp[0] == "미오" || temp[0] == "유니" || temp[0] == "치에루" || temp[0] == "레린" || temp[0] == "레히루"
+                    if( temp[0] == "프페코" 
                         || temp[0] == "앨리노" || temp[0] == "앨유미" || temp[0] == "수루카" || temp[0] == "수안나" || temp[0] == "수나카" || temp[0] == "수츠네"
                         || temp[0] == "수쥰" || temp[0] == "엔카리" || temp[0] == "엔요리" || temp[0] == "프유이" || temp[0] == "프코로" || temp[0] == "프캬루"
                         || temp[0] == "라비리스타" || temp[0] == "셰피" || temp[0] == "할무기" || temp[0] == "할레이" || temp[0] == "할츠리" || temp[0] == "마니카"
                         || temp[0] == "마토모" || temp[0] == "성키노" || temp[0] == "성사렌" || temp[0] == "성카리" || temp[0] == "뉴이미" || temp[0] == "뉴네카"
                         || temp[0] == "뉴페코" || temp[0] == "의코로" || temp[0] == "의유이" || temp[0] == "수스미" || temp[0] == "신리마" || temp[0] == "신마호"
-                        || temp[0] == "신코토" || temp[0] == "성로에" || temp[0] == "성에루" || temp[0] == "시노리" || temp[0] == "시카야" || temp[0] == "작오이" || temp[0] == "작마키")
+                        || temp[0] == "신코토" || temp[0] == "성로에" || temp[0] == "성에루" || temp[0] == "시노리" || temp[0] == "타노리" || temp[0] == "시카야" || temp[0] == "타카야" || temp[0] == "작오이" || temp[0] == "작마키")
                     {
                         temp[5] = "0";
                     }
                     else
                     {
                         temp[5] = Convert.ToString(maxUnique);
-                    }
-                    
+                    }                   
                     
                     stringArray[row] = StringArrayToCommaString(temp);
                     row++;
@@ -7900,10 +7984,15 @@ namespace PCRD_KR_ArenaSim
 
                     string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
 
+                    int y = 0;
                     temp[4] = Convert.ToString(maxRank);
-                    for(int xx=0;xx< maxItemQuantity; xx++)
+                    for (int xx = 0; xx < 6; xx++)
                     {
-                        temp[6 + xx] = "5";
+                        if (y < maxItemQuantity)
+                            temp[6 + xx] = "5";
+                        else
+                            temp[6 + xx] = "-1";
+                        y++;
                     }
                     stringArray[row] = StringArrayToCommaString(temp);
                     row++;
@@ -8703,10 +8792,66 @@ namespace PCRD_KR_ArenaSim
             Chara_set.shepi = true;
             Chara_set C_S = new Chara_set(); C_S.ShowDialog();
         }
-        //캐릭터 설정 셰피까지
+        private void bt_maho_cinderella_set_Click(object sender, RoutedEventArgs e)
+        {
+            Chara_set.maho_cinderella = true;
+            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
+        }
+        private void bt_rima_cinderella_set_Click(object sender, RoutedEventArgs e)
+        {
+            Chara_set.rima_cinderella = true;
+            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
+        }
+        private void bt_makoto_cinderella_set_Click(object sender, RoutedEventArgs e)
+        {
+            Chara_set.makoto_cinderella = true;
+            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
+        }
+
+        private void bt_chieru_nakayosi2_set_Click(object sender, RoutedEventArgs e)
+        {
+            Chara_set.chieru_nakayosi2 = true;
+            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
+        }
+        private void bt_chloe_nakayosi2_set_Click(object sender, RoutedEventArgs e)
+        {
+            Chara_set.chloe_nakayosi2 = true;
+            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
+        }
+        private void bt_inori_timetravel_set_Click(object sender, RoutedEventArgs e)
+        {
+            Chara_set.inori_timetravel = true;
+            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
+        }
+        private void bt_kaya_timetravel_set_Click(object sender, RoutedEventArgs e)
+        {
+            Chara_set.kaya_timetravel = true;
+            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
+        }
+        private void bt_tamaki_worker_set_Click(object sender, RoutedEventArgs e)
+        {
+            Chara_set.tamaki_worker = true;
+            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
+        }
+        private void bt_aoi_worker_set_Click(object sender, RoutedEventArgs e)
+        {
+            Chara_set.aoi_worker = true;
+            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
+        }
+        private void bt_mihuyu_worker_set_Click(object sender, RoutedEventArgs e)
+        {
+            Chara_set.mihuyu_worker = true;
+            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
+        }
+        private void bt_kyaru_princess_set_Click(object sender, RoutedEventArgs e)
+        {
+            Chara_set.kyaru_princess = true;
+            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
+        }
+        //캐릭터 설정 프캬류 작후유까지
 
         #endregion
-        //캐릭터 설정 셰피까지
+        //캐릭터 설정 프캬류 작후유까지
 
 
         #endregion
@@ -9950,7 +10095,7 @@ namespace PCRD_KR_ArenaSim
         //
 
         #region abbr
-        //축약어 뉴이미까지
+        //축약어 작후유까지
         string Abbr_misaki_halloween, Abbr_kyouka, Abbr_yuni, Abbr_yuki, Abbr_yui, Abbr_maho, Abbr_maho_summer, Abbr_chika, Abbr_aoi, Abbr_kyaru_summer, 
             Abbr_suzume_summer, Abbr_chika_christmas, Abbr_yui_princess, Abbr_runa, Abbr_misaki, Abbr_hatsune, Abbr_kyaru, Abbr_yui_newyear, Abbr_nanaka, Abbr_misato, Abbr_rino_wonder,
             Abbr_kasumi_magical, Abbr_kasumi, Abbr_emilia, Abbr_suzume_newyear, Abbr_suzume, Abbr_io_summer, Abbr_io, Abbr_siori_magical, Abbr_siori, Abbr_suzuna_summer, Abbr_suzuna, 
@@ -9964,10 +10109,17 @@ namespace PCRD_KR_ArenaSim
             Abbr_akino, Abbr_ninon_ooedo, Abbr_hiyori_newyear, Abbr_kaya, Abbr_makoto, Abbr_muimi, Abbr_nozomi, Abbr_kotkoro_newyear, Abbr_ruka, Abbr_pekorinnu_princess, 
             Abbr_pekorinnu, Abbr_rin_deremas, Abbr_rei_newyear, Abbr_kaori, Abbr_kuuka_ooedo, Abbr_zyun, Abbr_kuuka, Abbr_miyako, Abbr_rima, Abbr_kyouka_halloween = "";
 
+       
 
+        string Abbr_hiyori_princess;
         string Abbr_yori_angel, Abbr_labyrista, Abbr_matsuri_halloween, Abbr_rei_halloween, Abbr_tsumugi_halloween, Abbr_akino_christmas, Abbr_saren_christmas, Abbr_yukari_christmas,
             Abbr_monika_magical, Abbr_tomo_magical, Abbr_pekorinnu_newyear, Abbr_muimi_newyear, Abbr_neneka_newyear, Abbr_kyaru_princess = "";
         string Abbr_kotkoro_maiden, Abbr_yui_maiden, Abbr_shepi, Abbr_kasumi_summer;
+        string Abbr_rima_cinderella, Abbr_maho_cinderella, Abbr_makoto_cinderella;
+        string Abbr_chloe_nakayosi2, Abbr_chieru_nakayosi2;
+        string Abbr_inori_timetravel, Abbr_kaya_timetravel;
+        string Abbr_aoi_worker, Abbr_tamaki_worker, Abbr_mihuyu_worker;
+
         private void bt_open_abbr_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -10703,7 +10855,7 @@ namespace PCRD_KR_ArenaSim
                 }
                 else if (temp[0] == "프요리")
                 {
-                    //tb_abbr_hiyori_princess.Text = Abbr_hiyori_princess = temp[1];
+                    tb_abbr_hiyori_princess.Text = Abbr_hiyori_princess = temp[1];
                 }
                 else if (temp[0] == "프캬루")
                 {
@@ -10782,7 +10934,7 @@ namespace PCRD_KR_ArenaSim
                 {
                     tb_abbr_kasumi_summer.Text = Abbr_kasumi_summer = temp[1];
                 }
-                /*
+                
                 else if (temp[0] == "신리마")
                 {
                     tb_abbr_rima_cinderella.Text = Abbr_rima_cinderella = temp[1];
@@ -10795,6 +10947,7 @@ namespace PCRD_KR_ArenaSim
                 {
                     tb_abbr_makoto_cinderella.Text = Abbr_makoto_cinderella = temp[1];
                 }
+                
                 else if (temp[0] == "성로에")
                 {
                     tb_abbr_chloe_nakayosi2.Text = Abbr_chloe_nakayosi2 = temp[1];
@@ -10803,11 +10956,11 @@ namespace PCRD_KR_ArenaSim
                 {
                     tb_abbr_chieru_nakayosi2.Text = Abbr_chieru_nakayosi2 = temp[1];
                 }
-                else if (temp[0] == "시노리")
+                else if ( temp[0] == "타노리"||temp[0] == "시노리")
                 {
                     tb_abbr_inori_timetravel.Text = Abbr_inori_timetravel = temp[1];
                 }
-                else if (temp[0] == "시카야")
+                else if (temp[0] == "타카야"||temp[0] == "시카야")
                 {
                     tb_abbr_kaya_timetravel.Text = Abbr_kaya_timetravel = temp[1];
                 }
@@ -10819,7 +10972,11 @@ namespace PCRD_KR_ArenaSim
                 {
                     tb_abbr_tamaki_worker.Text = Abbr_tamaki_worker = temp[1];
                 }
-                */
+                else if (temp[0] == "작후유")
+                {
+                    tb_abbr_mihuyu_worker.Text = Abbr_mihuyu_worker = temp[1];
+                }
+
                 //Debug.WriteLine(String.Format("index = {0}", index));
                 //Debug.WriteLine(string.Format("{0},{1}", temp[0], temp[1]));
 
@@ -10848,12 +11005,16 @@ namespace PCRD_KR_ArenaSim
                 sw.WriteLine(string.Format("노조미,{0}", tb_abbr_nozomi.Text));
                 sw.WriteLine(string.Format("무이미,{0}", tb_abbr_muimi.Text));
                 sw.WriteLine(string.Format("마코토,{0}", tb_abbr_makoto.Text));
+                sw.WriteLine(string.Format("신코토,{0}", tb_abbr_makoto_cinderella.Text));
                 sw.WriteLine(string.Format("카야,{0}", tb_abbr_kaya.Text));
+                sw.WriteLine(string.Format("타카야,{0}", tb_abbr_kaya_timetravel.Text));
                 sw.WriteLine(string.Format("뉴요리,{0}", tb_abbr_hiyori_newyear.Text));
+                sw.WriteLine(string.Format("신리마,{0}", tb_abbr_rima_cinderella.Text));
                 sw.WriteLine(string.Format("오니논,{0}", tb_abbr_ninon_ooedo.Text));
                 sw.WriteLine(string.Format("아키노,{0}", tb_abbr_akino.Text));
                 sw.WriteLine(string.Format("수코토,{0}", tb_abbr_makoto_summer.Text));
                 sw.WriteLine(string.Format("수쥰,{0}", tb_abbr_zyun_summer.Text));
+                sw.WriteLine(string.Format("성로에,{0}", tb_abbr_chloe_nakayosi2.Text));
                 sw.WriteLine(string.Format("마츠리,{0}", tb_abbr_matsuri.Text));
                 sw.WriteLine(string.Format("클로에,{0}", tb_abbr_chloe.Text));
                 sw.WriteLine(string.Format("할츠리,{0}", tb_abbr_matsuri_halloween.Text));
@@ -10863,13 +11024,16 @@ namespace PCRD_KR_ArenaSim
                 sw.WriteLine(string.Format("수루카,{0}", tb_abbr_ruka_summer.Text));
                 sw.WriteLine(string.Format("츠무기,{0}", tb_abbr_tsumugi.Text));
                 sw.WriteLine(string.Format("이노리,{0}", tb_abbr_inori.Text));
+                sw.WriteLine(string.Format("프요리,{0}", tb_abbr_hiyori_princess.Text));
                 sw.WriteLine(string.Format("히요리,{0}", tb_abbr_hiyori.Text));
                 sw.WriteLine(string.Format("미소기,{0}", tb_abbr_misogi.Text));
                 sw.WriteLine(string.Format("아야네,{0}", tb_abbr_ayane.Text));
                 sw.WriteLine(string.Format("할소기,{0}", tb_abbr_misogi_halloween.Text));
                 sw.WriteLine(string.Format("타마키,{0}", tb_abbr_tamaki.Text));
+                sw.WriteLine(string.Format("작마키,{0}", tb_abbr_tamaki_worker.Text));
                 sw.WriteLine(string.Format("토모,{0}", tb_abbr_tomo.Text));
                 sw.WriteLine(string.Format("치에루,{0}", tb_abbr_chieru.Text));
+                sw.WriteLine(string.Format("성에루,{0}", tb_abbr_chieru_nakayosi2.Text));
                 sw.WriteLine(string.Format("수마키,{0}", tb_abbr_tamaki_summer.Text));
                 sw.WriteLine(string.Format("에리코,{0}", tb_abbr_eriko.Text));
                 sw.WriteLine(string.Format("수페코,{0}", tb_abbr_pekorinnu_summer.Text));
@@ -10877,9 +11041,11 @@ namespace PCRD_KR_ArenaSim
                 sw.WriteLine(string.Format("지타,{0}", tb_abbr_zita.Text));
                 sw.WriteLine(string.Format("뉴페코,{0}", tb_abbr_pekorinnu_newyear.Text));
                 sw.WriteLine(string.Format("레이,{0}", tb_abbr_rei.Text));
+                sw.WriteLine(string.Format("타노리,{0}", tb_abbr_inori_timetravel.Text));
                 sw.WriteLine(string.Format("성리야,{0}", tb_abbr_iriya_christmas.Text));
                 sw.WriteLine(string.Format("수안나,{0}", tb_abbr_anna_summer.Text));
                 sw.WriteLine(string.Format("성리스,{0}", tb_abbr_kristina_christmas.Text));
+                sw.WriteLine(string.Format("작후유,{0}", tb_abbr_mihuyu_worker.Text));
                 sw.WriteLine(string.Format("시즈루,{0}", tb_abbr_sizuru.Text));
                 sw.WriteLine(string.Format("크리스티나,{0}", tb_abbr_kristina.Text));
                 sw.WriteLine(string.Format("성루미,{0}", tb_abbr_kurumi_christmas.Text));
@@ -10888,6 +11054,7 @@ namespace PCRD_KR_ArenaSim
                 sw.WriteLine(string.Format("미미,{0}", tb_abbr_mimi.Text));
                 sw.WriteLine(string.Format("시노부,{0}", tb_abbr_sinobu.Text));
                 sw.WriteLine(string.Format("할미미,{0}", tb_abbr_mimi_halloween.Text));
+                sw.WriteLine(string.Format("셰피,{0}", tb_abbr_shepi.Text));
                 sw.WriteLine(string.Format("우즈키,{0}", tb_abbr_uzuki_deremas.Text));
                 sw.WriteLine(string.Format("할레이,{0}", tb_abbr_rei_halloween.Text));
                 sw.WriteLine(string.Format("발즈루,{0}", tb_abbr_sizuru_valentine.Text));
@@ -10933,6 +11100,7 @@ namespace PCRD_KR_ArenaSim
                 sw.WriteLine(string.Format("아리사,{0}", tb_abbr_arisa.Text));
                 sw.WriteLine(string.Format("앤,{0}", tb_abbr_anne.Text));
                 sw.WriteLine(string.Format("루,{0}", tb_abbr_lou.Text));
+                sw.WriteLine(string.Format("신마호,{0}", tb_abbr_maho_cinderella.Text));
                 sw.WriteLine(string.Format("네네카,{0}", tb_abbr_neneka.Text));
                 sw.WriteLine(string.Format("편오이,{0}", tb_abbr_aoi_nakayosi.Text));
                 sw.WriteLine(string.Format("냐루,{0}", tb_abbr_kyaru_newyear.Text));
@@ -10952,6 +11120,7 @@ namespace PCRD_KR_ArenaSim
                 sw.WriteLine(string.Format("마스미,{0}", tb_abbr_kasumi_magical.Text));
                 sw.WriteLine(string.Format("앨리노,{0}", tb_abbr_rino_wonder.Text));
                 sw.WriteLine(string.Format("미사토,{0}", tb_abbr_misato.Text));
+                sw.WriteLine(string.Format("수스미,{0}", tb_abbr_kasumi_summer.Text));
                 sw.WriteLine(string.Format("나나카,{0}", tb_abbr_nanaka.Text));
                 sw.WriteLine(string.Format("뉴이,{0}", tb_abbr_yui_newyear.Text));
                 sw.WriteLine(string.Format("프캬루,{0}", tb_abbr_kyaru_princess.Text));
@@ -11116,6 +11285,22 @@ namespace PCRD_KR_ArenaSim
                 Abbr_kyouka = 	tb_abbr_kyouka.Text;
                 Abbr_misaki_halloween = 	tb_abbr_misaki_halloween.Text;
                 Abbr_kyouka_halloween = 	tb_abbr_kyouka_halloween.Text;
+
+                Abbr_makoto_cinderella = tb_abbr_makoto_cinderella.Text;
+                Abbr_rima_cinderella = tb_abbr_rima_cinderella.Text;
+                Abbr_maho_cinderella = tb_abbr_maho_cinderella.Text;
+
+                Abbr_hiyori_princess = tb_abbr_hiyori_princess.Text;
+
+                Abbr_kaya_timetravel = tb_abbr_kaya_timetravel.Text;
+                Abbr_inori_timetravel = tb_abbr_inori_timetravel.Text;
+
+                Abbr_chieru_nakayosi2 = tb_abbr_chieru_nakayosi2.Text;
+                Abbr_chloe_nakayosi2 = tb_abbr_chloe_nakayosi2.Text;
+
+                Abbr_aoi_worker = tb_abbr_aoi_worker.Text;
+                Abbr_tamaki_worker = tb_abbr_tamaki_worker.Text;
+                Abbr_mihuyu_worker = tb_abbr_mihuyu_worker.Text;
 
                 MessageBox.Show("저장해썽!", "알림");
             }
@@ -11289,6 +11474,18 @@ namespace PCRD_KR_ArenaSim
             else if (abbrChara == Abbr_kotkoro_maiden) return "kotkoro_maiden";
             else if (abbrChara == Abbr_shepi) return "shepi";
             else if (abbrChara == Abbr_kasumi_summer) return "kasumi_summer";
+            else if (abbrChara == Abbr_hiyori_princess) return "hiyori_princess";
+            else if (abbrChara == Abbr_makoto_cinderella) return "makoto_cinderella";
+            else if (abbrChara == Abbr_maho_cinderella) return "maho_cinderella";
+            else if (abbrChara == Abbr_rima_cinderella) return "rima_cinderella";
+            else if (abbrChara == Abbr_chieru_nakayosi2) return "chieru_nakayosi2";
+            else if (abbrChara == Abbr_chloe_nakayosi2) return "chloe_nakayosi2";
+            else if (abbrChara == Abbr_inori_timetravel) return "inori_timetravel";
+            else if (abbrChara == Abbr_kaya_timetravel) return "kaya_timetravel";
+            else if (abbrChara == Abbr_aoi_worker) return "aoi_worker";
+            else if (abbrChara == Abbr_tamaki_worker) return "tamaki_worker";
+            else if (abbrChara == Abbr_mihuyu_worker) return "mihuyu_worker";
+
 
             else return "";
         }
@@ -11481,12 +11678,15 @@ namespace PCRD_KR_ArenaSim
 
         private string AgilityTest()
         {
-            var html = @"https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/latest/"; ;
+            var html = @"https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/latest"; ;
 
             HtmlWeb web = new HtmlWeb();
 
             var htmlDoc = web.Load(html);
-            HtmlNodeCollection divNodes = htmlDoc.DocumentNode.SelectNodes(@"//body/div[@class='application-main ']/div/main/div[@class='clearfix new-discussion-timeline container-xl px-3 px-md-4 px-lg-5']/div/div/div[@class='Box']/div[@class='Box-body']");
+            HtmlNodeCollection divNodes = 
+                htmlDoc.DocumentNode.SelectNodes(@"//body/div[@class='application-main ']/div/main/div[@class='repository-content ']/div[@class='clearfix container-xl px-3 px-md-4 px-lg-5 mt-4']/div/div[@class='Box']/div[@class='Box-body']");
+            //                htmlDoc.DocumentNode.SelectNodes(@"//body/div[@class='application-main ']/div/main/div[@class='repository-content ']/div[@class='clearfix container-xl px-3 px-md-4 px-lg-5 mt-4']/div/div[@class='d-flex flex-column flex-md-row my-5 flex-justify-center']/div[@class='col-md-9']/div[@class='Box']/div[@class='Box-body']/div[@class=markdown/body my-3]/");
+
             string data = "";
             foreach (HtmlNode node in divNodes)
             {

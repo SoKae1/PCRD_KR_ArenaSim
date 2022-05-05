@@ -226,7 +226,8 @@ namespace PCRD_KR_ArenaSim
         public static int[] intimidated_stack = Enumerable.Repeat<int>(0, 30).ToArray<int>();
 
         public static int[] chieru_stack = Enumerable.Repeat<int>(0, 30).ToArray<int>();
-
+        public static int[] chieru_nakayosi2_stack = Enumerable.Repeat<int>(0, 30).ToArray<int>();
+        public static int[] chloe_nakayosi2_stack = Enumerable.Repeat<int>(0, 30).ToArray<int>();
 
         public static bool[] panic = Enumerable.Repeat<bool>(false, 30).ToArray<bool>();
         public static double[] panic_time = Enumerable.Repeat<double>(0, 30).ToArray<double>();
@@ -417,6 +418,8 @@ namespace PCRD_KR_ArenaSim
 
                 intimidated_stack[i] = 0;
                 chieru_stack[i] = 0;
+                chieru_nakayosi2_stack[i] = 0;
+                chloe_nakayosi2_stack[i] = 0;
 
                 panic[i] = false;
                 panic_time[i] = 0;
@@ -551,6 +554,12 @@ namespace PCRD_KR_ArenaSim
             Character_skill.shepi_opponent_UBstack = 0;
             Character_skill.shepi_opponent_UBstack_est = 0;
 
+            Character_skill.chieru_nakayosi2_opponent_chieru= false;
+            Character_skill.chieru_nakayosi2_opponent_chieru_est = false;
+
+            Character_skill.chloe_nakayosi2_opponent_counter = 0;
+            Character_skill.chloe_nakayosi2_opponent_counter_est = 0;
+
             position = new double[30] { -1560, -1360, -1160, -960, -760, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, 1360, 1160, 960, 760, 560, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000 };
             if (Array.IndexOf(Battle_variable.name_eng, "rima") != -1)
             {
@@ -684,6 +693,8 @@ namespace PCRD_KR_ArenaSim
 
             intimidated_stack[i] = 0;
             chieru_stack[i] = 0;
+            chieru_nakayosi2_stack[i] = 0;
+            chloe_nakayosi2_stack[i] = 0;
 
             panic[i] = false;
             panic_time[i] = 0;

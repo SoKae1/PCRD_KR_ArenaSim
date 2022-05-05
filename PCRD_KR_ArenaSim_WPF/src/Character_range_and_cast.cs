@@ -9,7 +9,7 @@
         https://pcredivewiki.tw/Stand
 
 
-        셰피, 프캬루까지 
+        작후유 까지
          */
 
         public double[] hiyori = new double[6] { 1, 200, 2.295, 1.125, 1.295, 1.125 };
@@ -146,7 +146,7 @@
         public double[] rei_halloween = new double[6] { 2, 375, 1.965, 0.59, 0.59, 0.59 };
         public double[] matsuri_halloween = new double[6] { 2, 186, 2.295, 1.27, 0.97, 1.27 };
         public double[] monika_magical = new double[6] { 2, 528, 2.24, 0.8, 0.7, 0.8 };
-        public double[] tomo_magical = new double[6] { 2, 402, 2.0, 0.59, 0.59, 0.59  };
+        public double[] tomo_magical = new double[6] { 2, 402, 2.0, 0.59, 0.59, 0.59 };
         public double[] akino_christmas = new double[6] { 2, 189, 2.0, 0.4, 0.4, 0.4 };
         public double[] saren_christmas = new double[6] { 2, 150, 2.09, 0.8, 0.8, 0.8 };
         public double[] yukari_christmas = new double[6] { 2, 408, 2.09, 0.59, 0.82, 0.59 };
@@ -155,10 +155,30 @@
         public double[] neneka_newyear = new double[6] { 2, 562, 2.07, 0.59, 0.59, 0.59 };
         public double[] kotkoro_maiden = new double[6] { 2, 533, 2.0, 0.59, 0.9, 0.59 };
         public double[] yui_maiden = new double[6] { 2, 578, 1.97, 0.7, 0.5, 0.7 };
-        public double[] shepi = new double[7] { 2, 368, 1.84, 0.465, 0.465, 0.465 ,0.5};
+        public double[] shepi = new double[7] { 2, 368, 1.84, 0.465, 0.465, 0.465, 0.5 };
         public double[] kasumi_summer = new double[6] { 2, 738, 2.27, 0.94, 0.94, 0.94 };
 
+        public double[] maho_cinderella = new double[6] { 2, 645, 2.27, 0.525, 0.525, 0.525 };
+        public double[] rima_cinderella_1 = new double[6] { 1, 173, 2.27, 0.865, 0.795, 0.865 };
+        public double[] rima_cinderella_2 = new double[7] { 1, 173, 2.27, 0.525, 0.625, 0.525, 0.595 };
+        public double[] rima_cinderella = new double[7] { 1, 173, 2.27, 0.525, 0.625, 0.525, 0.595 };
+        //행동패턴3: rima_cinderella
+        //행동패턴2:rima_cinderella_2
+        //행동패턴1:rima_cinderella_1
+        public double[] makoto_cinderella = new double[6] { 1, 166, 2.27, 0.465, 0.465, 0.465 };
 
+        public double[] chieru_nakayosi2 = new double[6] { 1, 223, 2.295, 1.155, 1.155, 1.155 };
+        public double[] chloe_nakayosi2 = new double[6] { 1, 184, 2.125, 0.465, 0.465, 0.465 };
+
+        public double[] inori_timetravel = new double[6] { 1, 252, 2.295, 0.525, 0.525, 0.525 };
+
+        public double[] kaya_timetravel = new double[6] { 1, 169, 2.295, 1.295, 0.625, 1.295 };
+
+        public double[] tamaki_worker = new double[6] { 1, 216, 2.295, 1.365, 0.495, 1.365 };
+        public double[] aoi_worker = new double[6] { 1, 738, 1.82, 0.465, 0.465, 0.465 };
+        public double[] mihuyu_worker = new double[6] { 1, 275, 2.065, 0.59, 0.59, 0.59 };
+
+        //
         public double[] yui_princess = new double[6] { 2, 767, 1.92, 0.59, 0.59, 0.59 };
         public double[] pekorinnu_princess = new double[6] { 1, 155.000001, 1.965, 0.92, 0.62, 0.92 };
         public double[] kotkoro_princess = new double[6] { 1, 555, 2.14, 0.66, 0.66, 0.66 };
@@ -173,6 +193,14 @@
         public double[] sylph_chika_christmas_3 = new double[6] { 2, 800, 2, 3, 0, 3 };
         public double[] golem = new double[6] { 1, 95, 3, 0, 0, 0 };
 
+        /* 타입(물리1, 마법2), 사거리, 평타 cast time, 스킬1 cast time, 스킬2 cast time, 전용장비 스킬1 cast time ,SP 스킬1 cast time
+         https://github.com/HerDataSam/redive_kr_db_diff/blob/master/unit_data.csv
+        https://github.com/esterTion/redive_master_db_diff/blob/master/skill_data.sql
+        https://pcredivewiki.tw/Stand
+
+
+        작후유 까지
+         */
     }
 
 }

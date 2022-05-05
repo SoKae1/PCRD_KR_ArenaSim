@@ -1357,7 +1357,7 @@ namespace PCRD_KR_ArenaSim
         }
 
         #endregion
-        //의유이까지
+        //작마키까지
         private void InitializeSet()
         {
             #region SelectedCharaString
@@ -2225,6 +2225,66 @@ namespace PCRD_KR_ArenaSim
                 Chara_Selected_EN = "shepi";
                 Chara_Selected_KR = "셰피";
             }
+            else if (kyaru_princess == true)
+            {
+                cb_enable_set.IsChecked = true;
+                Chara_Selected_EN = "kyaru_princess";
+                Chara_Selected_KR = "프캬루";
+            }
+            else if (maho_cinderella == true)
+            {
+                cb_enable_set.IsChecked = true;
+                Chara_Selected_EN = "maho_cinderella";
+                Chara_Selected_KR = "신마호";
+            }
+            else if (rima_cinderella == true)
+            {
+                cb_enable_set.IsChecked = true;
+                Chara_Selected_EN = "rima_cinderella";
+                Chara_Selected_KR = "신리마";
+            }
+            else if (makoto_cinderella == true)
+            {
+                cb_enable_set.IsChecked = true;
+                Chara_Selected_EN = "makoto_cinderella";
+                Chara_Selected_KR = "신코토";
+            }
+            else if (inori_timetravel == true)
+            {
+                cb_enable_set.IsChecked = true;
+                Chara_Selected_EN = "inori_timetravel";
+                Chara_Selected_KR = "타노리";
+            }
+            else if (kaya_timetravel == true)
+            {
+                cb_enable_set.IsChecked = true;
+                Chara_Selected_EN = "kaya_timetravel";
+                Chara_Selected_KR = "타카야";
+            }
+            else if (chloe_nakayosi2 == true)
+            {
+                cb_enable_set.IsChecked = true;
+                Chara_Selected_EN = "chloe_nakayosi2";
+                Chara_Selected_KR = "성로에";
+            }
+            else if (chieru_nakayosi2 == true)
+            {
+                cb_enable_set.IsChecked = true;
+                Chara_Selected_EN = "chieru_nakayosi2";
+                Chara_Selected_KR = "치에루";
+            }
+            else if (aoi_worker == true)
+            {
+                cb_enable_set.IsChecked = true;
+                Chara_Selected_EN = "aoi_worker";
+                Chara_Selected_KR = "작오이";
+            }
+            else if (tamaki_worker == true)
+            {
+                cb_enable_set.IsChecked = true;
+                Chara_Selected_EN = "tamaki_worker";
+                Chara_Selected_KR = "작마키";
+            }
             else
             {
                 MessageBox.Show("오잉", "알림");
@@ -2255,18 +2315,32 @@ namespace PCRD_KR_ArenaSim
             ayumi_wonder = false; ruka_summer = false; anna_summer = false; nanaka_summer = false; hatsune_summer = false;
             misato_summer = false; zyun_summer = false; akari_angel = false; yui_princess = false; pekorinnu_princess = false;
             kotkoro_princess = false;
-             yori_angel= false; tsumugi_halloween= false; rei_halloween= false; matsuri_halloween = false;
-          monika_magical= false; tomo_magical = false;
-          shepi= false; hiyori_princess= false; kyaru_princess = false;
-          akino_christmas= false; saren_christmas= false; yukari_christmas = false;
-          muimi_newyear= false; neneka_newyear= false; pekorinnu_newyear = false;
-          kotkoro_maiden= false; yui_maiden = false;
-          kasumi_summer = false;
-          rima_cinderella= false; makoto_cinderella= false; maho_cinderella = false;
-          chloe_nakayosi2= false; chieru_nakayosi2= false; yuni_nakayosi2 = false;
-          inori_timetravel= false; kaya_timetravel = false;
-          aoi_worker= false; tamaki_worker= false; mihuyu_worker = false;
-    }
+            yori_angel = false; tsumugi_halloween = false; rei_halloween = false; matsuri_halloween = false;
+            monika_magical = false; tomo_magical = false;
+            shepi = false; hiyori_princess = false; kyaru_princess = false;
+            akino_christmas = false; saren_christmas = false; yukari_christmas = false;
+            muimi_newyear = false; neneka_newyear = false; pekorinnu_newyear = false;
+            kotkoro_maiden = false; yui_maiden = false;
+            kasumi_summer = false;
+            rima_cinderella = false; makoto_cinderella = false; maho_cinderella = false;
+            chloe_nakayosi2 = false; chieru_nakayosi2 = false; yuni_nakayosi2 = false;
+            inori_timetravel = false; kaya_timetravel = false;
+            aoi_worker = false; tamaki_worker = false; mihuyu_worker = false;
+
+            eriko_summer= false; sizuru_summer= false; nozomi_summer= false; chika_summer= false; tsumugi_summer = false;
+            mitsuki_ooedo= false; yuki_ooedo = false;
+            kaori_halloween= false; ninon_halloween= false; suzuna_halloween = false;
+            credita= false; ranpa= false; hatsune_princess= false; siori_princess= false; karin = false;
+            io_noir= false; kuuka_noir = false;
+            mahiru_christmas= false; rino_christmas= false; miyako_christmas = false;
+            mimi_princess= false; misogi_princess= false; kyouka_princess = false;
+            shepi_newyear= false; ruka_newyear= false; iriya_newyear = false;
+            pekorinnu_overload= false; kyaru_overload= false; labirista_overload = false;
+            kurumi_stage = false;
+            hatsusio= false; littlelyri = false;
+        }
+
+    
 
         private void Initialize_item_unique(int ue_level)
         {
@@ -2342,19 +2416,96 @@ namespace PCRD_KR_ArenaSim
             string[] uriStringSpecific = new string[6];
             string[] ItemSet = new string[6];
 
-            //랭크 설정 셰피까지
+            //랭크 설정 작마키까지
             try
             {
                 //11랭크부터
                 if (cB_set_rank.SelectedIndex == 0)
                 {
                     Level_variable.Rank_temp = 11;
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_11[i]);                       
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_11[i]);
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_11[i]);
+                    }
+                    if (inori_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.inori_timetravel_11[i]);
+                    }
+                    if (kaya_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_11[i]);
+                    }
+                    if (chloe_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_11[i]);
+                    }
+                    if (chieru_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_11[i]);
+                    }
+                    if (aoi_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.aoi_worker_11[i]);
+                    }
+                    if (tamaki_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.tamaki_worker_11[i]);
+                    }
+                    if (kyaru_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kyaru_princess_11[i]);
+                            
+                        }
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_11[i]);
+                            
+                        }
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_11[i]);
+                            
+                        }
+                    }
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_11[i]);
+                            
+                        }
+                    }
                     if (shepi == true)
                     {
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.shepi_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kasumi_summer == true)
@@ -2362,7 +2513,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kasumi_summer_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_maiden == true)
@@ -2370,7 +2521,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_maiden_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_maiden == true)
@@ -2378,7 +2529,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hiyori_princess == true)
@@ -2386,7 +2537,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_princess_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (neneka_newyear == true)
@@ -2394,7 +2545,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.neneka_newyear_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi_newyear == true)
@@ -2402,7 +2553,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_newyear_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_newyear == true)
@@ -2410,7 +2561,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari_christmas == true)
@@ -2418,7 +2569,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_christmas_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_christmas == true)
@@ -2426,7 +2577,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_christmas_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino_christmas == true)
@@ -2434,7 +2585,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_christmas_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo_magical == true)
@@ -2442,7 +2593,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_magical_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika_magical == true)
@@ -2450,7 +2601,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_magical_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri_halloween == true)
@@ -2458,7 +2609,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_halloween_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_halloween == true)
@@ -2466,7 +2617,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_halloween_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi_halloween == true)
@@ -2474,7 +2625,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_halloween_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yori_angel == true)
@@ -2482,7 +2633,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yori_angel_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (labyrista == true)
@@ -2490,7 +2641,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.labyrista_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_princess == true)
@@ -2498,7 +2649,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_princess_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (inori == true)
@@ -2506,7 +2657,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.inori_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun_summer == true)
@@ -2514,7 +2665,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_summer_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_princess == true)
@@ -2522,7 +2673,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_princess_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_princess == true)
@@ -2530,7 +2681,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_princess_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (uzuki_deremas == true)
@@ -2538,7 +2689,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.uzuki_deremas_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mio_deremas == true)
@@ -2546,7 +2697,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mio_deremas_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_deremas == true)
@@ -2554,7 +2705,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_deremas_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_ranger == true)
@@ -2562,7 +2713,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_ranger_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru_ranger == true)
@@ -2570,7 +2721,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_ranger_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rino_wonder == true)
@@ -2578,7 +2729,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_wonder_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi_wonder == true)
@@ -2586,7 +2737,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_wonder_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi == true)
@@ -2594,7 +2745,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka_summer == true)
@@ -2602,7 +2753,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_summer_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (anna_summer == true)
@@ -2610,7 +2761,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_summer_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nanaka_summer == true)
@@ -2618,7 +2769,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nanaka_summer_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hatsune_summer == true)
@@ -2626,7 +2777,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_summer_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misato_summer == true)
@@ -2634,7 +2785,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_summer_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akari_angel == true)
@@ -2642,7 +2793,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_angel_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rima == true)
@@ -2650,7 +2801,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rima_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hiyori == true)
@@ -2658,7 +2809,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui == true || kuuka_ooedo == true)
@@ -2666,7 +2817,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei == true)
@@ -2674,7 +2825,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misogi == true)
@@ -2682,7 +2833,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misogi_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri == true)
@@ -2690,7 +2841,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜탱
@@ -2699,7 +2850,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako == true || kotkoro_summer == true)
@@ -2707,7 +2858,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuki == true)
@@ -2715,7 +2866,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuki_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜1
@@ -2725,7 +2876,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러1
@@ -2734,7 +2885,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.maho_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //활쟁이
@@ -2743,7 +2894,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜2 15랭마딜
@@ -2752,7 +2903,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러2
@@ -2761,7 +2912,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //5성권캐
@@ -2770,7 +2921,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io == true)
@@ -2778,7 +2929,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi == true)
@@ -2786,7 +2937,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi == true)
@@ -2794,7 +2945,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane == true)
@@ -2802,7 +2953,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (suzume == true)
@@ -2810,7 +2961,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.suzume_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin == true || kotkoro || kotkoro_newyear)
@@ -2818,7 +2969,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (eriko == true || eriko_valentine)
@@ -2826,7 +2977,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.eriko_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren == true || mitsuki)
@@ -2834,7 +2985,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nozomi == true || nozomi_christmas)
@@ -2842,7 +2993,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nozomi_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon == true)
@@ -2850,7 +3001,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu == true)
@@ -2858,7 +3009,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino == true)
@@ -2866,7 +3017,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru == true)
@@ -2874,7 +3025,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari == true)
@@ -2882,7 +3033,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -2890,7 +3041,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (makoto == true || makoto_summer)
@@ -2898,7 +3049,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.makoto_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kuuka == true)
@@ -2906,7 +3057,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kuuka_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki == true)
@@ -2914,7 +3065,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun == true || sizuru)
@@ -2922,7 +3073,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu == true)
@@ -2930,7 +3081,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika == true)
@@ -2938,7 +3089,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi == true)
@@ -2946,7 +3097,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka == true)
@@ -2954,7 +3105,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zita == true || kristina || kristina_christmas)
@@ -2962,7 +3113,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zita_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu == true || pekorinnu_princess)
@@ -2970,7 +3121,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi == true)
@@ -2978,7 +3129,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_summer == true)
@@ -2986,7 +3137,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_summer_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki_summer == true || chloe)
@@ -2994,7 +3145,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_summer_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo == true)
@@ -3002,7 +3153,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (chieru == true)
@@ -3010,7 +3161,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.chieru_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu_summer == true)
@@ -3018,7 +3169,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_summer_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -3026,7 +3177,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu_halloween == true)
@@ -3034,7 +3185,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_halloween_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako_halloween == true)
@@ -3042,7 +3193,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_halloween_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misaki_halloween == true)
@@ -3050,7 +3201,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misaki_halloween_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi_christmas == true)
@@ -3058,7 +3209,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_christmas_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane_christmas == true)
@@ -3066,7 +3217,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_christmas_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -3074,7 +3225,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sizuru_valentine == true)
@@ -3082,7 +3233,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sizuru_valentine_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -3090,7 +3241,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon_ooedo == true)
@@ -3098,7 +3249,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_ooedo_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rem == true)
@@ -3106,7 +3257,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rem_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ram == true)
@@ -3114,7 +3265,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ram_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io_summer == true)
@@ -3122,7 +3273,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_summer_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_summer == true)
@@ -3130,7 +3281,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_summer_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kaori_summer == true || misogi_halloween)
@@ -3138,7 +3289,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_summer_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kyouka_halloween == true)
@@ -3146,7 +3297,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kyouka_halloween_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi_halloween == true)
@@ -3154,7 +3305,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_halloween_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuni == true)
@@ -3162,20 +3313,97 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuni_11[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                 }
                 //12랭크
                 else if (cB_set_rank.SelectedIndex == 1)
                 {
-                    Level_variable.Rank_temp = 12;
+                    Level_variable.Rank_temp = 12; 
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_12[i]);
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_12[i]);
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_12[i]);
+                    }
+                    if (inori_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.inori_timetravel_12[i]);
+                    }
+                    if (kaya_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_12[i]);
+                    }
+                    if (chloe_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_12[i]);
+                    }
+                    if (chieru_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_12[i]);
+                    }
+                    if (aoi_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.aoi_worker_12[i]);
+                    }
+                    if (tamaki_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.tamaki_worker_12[i]);
+                    }
+                    if (kyaru_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kyaru_princess_12[i]);
+                            
+                        }
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_12[i]);
+                            
+                        }
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_12[i]);
+                            
+                        }
+                    }
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_12[i]);
+                            
+                        }
+                    }
                     if (shepi == true)
                     {
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.shepi_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kasumi_summer == true)
@@ -3183,7 +3411,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kasumi_summer_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_maiden == true)
@@ -3191,7 +3419,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_maiden_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_maiden == true)
@@ -3199,7 +3427,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hiyori_princess == true)
@@ -3207,7 +3435,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_princess_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (neneka_newyear == true)
@@ -3215,7 +3443,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.neneka_newyear_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi_newyear == true)
@@ -3223,7 +3451,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_newyear_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_newyear == true)
@@ -3231,7 +3459,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari_christmas == true)
@@ -3239,7 +3467,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_christmas_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_christmas == true)
@@ -3247,7 +3475,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_christmas_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino_christmas == true)
@@ -3255,7 +3483,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_christmas_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo_magical == true)
@@ -3263,7 +3491,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_magical_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika_magical == true)
@@ -3271,7 +3499,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_magical_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri_halloween == true)
@@ -3279,7 +3507,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_halloween_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_halloween == true)
@@ -3287,7 +3515,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_halloween_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi_halloween == true)
@@ -3295,7 +3523,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_halloween_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yori_angel == true)
@@ -3303,7 +3531,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yori_angel_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (labyrista == true)
@@ -3311,7 +3539,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.labyrista_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_princess == true)
@@ -3319,7 +3547,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_princess_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (inori == true)
@@ -3328,7 +3556,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.inori_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun_summer == true)
@@ -3336,7 +3564,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_summer_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_princess == true)
@@ -3344,7 +3572,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_princess_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (uzuki_deremas == true)
@@ -3352,7 +3580,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.uzuki_deremas_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mio_deremas == true)
@@ -3360,7 +3588,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mio_deremas_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_deremas == true)
@@ -3368,7 +3596,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_deremas_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_ranger == true)
@@ -3376,7 +3604,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_ranger_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru_ranger == true)
@@ -3384,7 +3612,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_ranger_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rino_wonder == true)
@@ -3392,7 +3620,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_wonder_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi_wonder == true)
@@ -3400,7 +3628,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_wonder_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi == true)
@@ -3408,7 +3636,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka_summer == true)
@@ -3416,7 +3644,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_summer_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (anna_summer == true)
@@ -3424,7 +3652,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_summer_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nanaka_summer == true)
@@ -3432,7 +3660,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nanaka_summer_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hatsune_summer == true)
@@ -3440,7 +3668,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_summer_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misato_summer == true)
@@ -3448,7 +3676,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_summer_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akari_angel == true)
@@ -3456,7 +3684,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_angel_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rima == true)
@@ -3464,7 +3692,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rima_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hiyori == true)
@@ -3472,7 +3700,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui == true || kuuka_ooedo == true)
@@ -3480,7 +3708,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei == true)
@@ -3488,7 +3716,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misogi == true)
@@ -3496,7 +3724,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misogi_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri == true)
@@ -3504,7 +3732,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜탱
@@ -3513,7 +3741,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako == true || kotkoro_summer == true)
@@ -3521,7 +3749,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuki == true)
@@ -3529,7 +3757,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuki_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜1
@@ -3539,7 +3767,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러1
@@ -3548,7 +3776,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.maho_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //활쟁이
@@ -3557,7 +3785,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜2 15랭마딜
@@ -3566,7 +3794,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러2
@@ -3575,7 +3803,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //5성권캐
@@ -3584,7 +3812,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io == true)
@@ -3592,7 +3820,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi == true)
@@ -3600,7 +3828,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi == true)
@@ -3608,7 +3836,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane == true)
@@ -3616,7 +3844,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (suzume == true)
@@ -3624,7 +3852,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.suzume_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin == true || kotkoro || kotkoro_newyear)
@@ -3632,7 +3860,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (eriko == true || eriko_valentine)
@@ -3640,7 +3868,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.eriko_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren == true || mitsuki)
@@ -3648,7 +3876,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nozomi == true || nozomi_christmas)
@@ -3656,7 +3884,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nozomi_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon == true)
@@ -3664,7 +3892,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu == true)
@@ -3672,7 +3900,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino == true)
@@ -3680,7 +3908,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru == true)
@@ -3688,7 +3916,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari == true)
@@ -3696,7 +3924,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -3704,7 +3932,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (makoto == true || makoto_summer)
@@ -3712,7 +3940,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.makoto_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kuuka == true)
@@ -3720,7 +3948,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kuuka_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki == true)
@@ -3728,7 +3956,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun == true || sizuru)
@@ -3736,7 +3964,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu == true)
@@ -3744,7 +3972,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika == true)
@@ -3752,7 +3980,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi == true)
@@ -3760,7 +3988,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka == true)
@@ -3768,7 +3996,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zita == true || kristina || kristina_christmas)
@@ -3776,7 +4004,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zita_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu == true || pekorinnu_princess)
@@ -3784,7 +4012,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi == true)
@@ -3792,7 +4020,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_summer == true)
@@ -3800,7 +4028,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_summer_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki_summer == true || chloe)
@@ -3808,7 +4036,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_summer_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo == true)
@@ -3816,7 +4044,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (chieru == true)
@@ -3824,7 +4052,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.chieru_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu_summer == true)
@@ -3832,7 +4060,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_summer_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -3840,7 +4068,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu_halloween == true)
@@ -3848,7 +4076,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_halloween_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako_halloween == true)
@@ -3856,7 +4084,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_halloween_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misaki_halloween == true)
@@ -3864,7 +4092,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misaki_halloween_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi_christmas == true)
@@ -3872,7 +4100,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_christmas_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane_christmas == true)
@@ -3880,7 +4108,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_christmas_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -3888,7 +4116,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sizuru_valentine == true)
@@ -3896,7 +4124,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sizuru_valentine_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -3904,7 +4132,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon_ooedo == true)
@@ -3912,7 +4140,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_ooedo_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rem == true)
@@ -3920,7 +4148,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rem_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ram == true)
@@ -3928,7 +4156,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ram_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io_summer == true)
@@ -3936,7 +4164,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_summer_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_summer == true)
@@ -3944,7 +4172,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_summer_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kaori_summer == true || misogi_halloween)
@@ -3952,7 +4180,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_summer_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kyouka_halloween == true)
@@ -3960,7 +4188,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kyouka_halloween_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi_halloween == true)
@@ -3968,7 +4196,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_halloween_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuni == true)
@@ -3976,7 +4204,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuni_12[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                 }
@@ -3984,12 +4212,89 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 2)
                 {
                     Level_variable.Rank_temp = 13;
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_13[i]);
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_13[i]);
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_13[i]);
+                    }
+                    if (inori_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.inori_timetravel_13[i]);
+                    }
+                    if (kaya_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_13[i]);
+                    }
+                    if (chloe_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_13[i]);
+                    }
+                    if (chieru_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_13[i]);
+                    }
+                    if (aoi_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.aoi_worker_13[i]);
+                    }
+                    if (tamaki_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.tamaki_worker_13[i]);
+                    }
+                    if (kyaru_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kyaru_princess_13[i]);
+                            
+                        }
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_13[i]);
+                            
+                        }
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_13[i]);
+                            
+                        }
+                    }
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_13[i]);
+                            
+                        }
+                    }
                     if (shepi == true)
                     {
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.shepi_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kasumi_summer == true)
@@ -3997,7 +4302,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kasumi_summer_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_maiden == true)
@@ -4005,7 +4310,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_maiden_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_maiden == true)
@@ -4013,7 +4318,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
 
@@ -4022,7 +4327,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_princess_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (neneka_newyear == true)
@@ -4030,7 +4335,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.neneka_newyear_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi_newyear == true)
@@ -4038,7 +4343,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_newyear_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_newyear == true)
@@ -4046,7 +4351,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari_christmas == true)
@@ -4054,7 +4359,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_christmas_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_christmas == true)
@@ -4062,7 +4367,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_christmas_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino_christmas == true)
@@ -4070,7 +4375,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_christmas_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo_magical == true)
@@ -4078,7 +4383,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_magical_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika_magical == true)
@@ -4086,7 +4391,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_magical_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri_halloween == true)
@@ -4094,7 +4399,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_halloween_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_halloween == true)
@@ -4102,7 +4407,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_halloween_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi_halloween == true)
@@ -4110,7 +4415,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_halloween_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yori_angel == true)
@@ -4118,7 +4423,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yori_angel_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (labyrista == true)
@@ -4126,7 +4431,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.labyrista_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_princess == true)
@@ -4134,20 +4439,20 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_princess_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     for (int i = 0; i < 6; i++)
                     {
                         ItemSet[i] = Convert.ToString(Ue.yui_princess_13[i]);
-                        uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                        
                     }
                     if (inori == true)
                     {
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.inori_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun_summer == true)
@@ -4155,7 +4460,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_summer_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_princess == true)
@@ -4163,7 +4468,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_princess_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (uzuki_deremas == true)
@@ -4171,7 +4476,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.uzuki_deremas_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mio_deremas == true)
@@ -4179,7 +4484,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mio_deremas_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_deremas == true)
@@ -4187,7 +4492,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_deremas_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_ranger == true)
@@ -4195,7 +4500,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_ranger_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru_ranger == true)
@@ -4203,7 +4508,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_ranger_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rino_wonder == true)
@@ -4211,7 +4516,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_wonder_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi_wonder == true)
@@ -4219,7 +4524,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_wonder_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi == true)
@@ -4227,7 +4532,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka_summer == true)
@@ -4235,7 +4540,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_summer_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (anna_summer == true)
@@ -4243,7 +4548,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_summer_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nanaka_summer == true)
@@ -4251,7 +4556,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nanaka_summer_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hatsune_summer == true)
@@ -4259,7 +4564,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_summer_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misato_summer == true)
@@ -4267,7 +4572,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_summer_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akari_angel == true)
@@ -4275,7 +4580,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_angel_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rima == true)
@@ -4283,7 +4588,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rima_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hiyori == true)
@@ -4291,7 +4596,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui == true || kuuka_ooedo == true)
@@ -4299,7 +4604,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei == true)
@@ -4307,7 +4612,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misogi == true)
@@ -4315,7 +4620,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misogi_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri == true)
@@ -4323,7 +4628,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜탱
@@ -4332,7 +4637,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako == true || kotkoro_summer == true)
@@ -4340,7 +4645,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuki == true)
@@ -4348,7 +4653,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuki_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜1
@@ -4358,7 +4663,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러1
@@ -4367,7 +4672,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.maho_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //활쟁이
@@ -4376,7 +4681,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜2 15랭마딜
@@ -4385,7 +4690,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러2
@@ -4394,7 +4699,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //5성권캐
@@ -4403,7 +4708,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io == true)
@@ -4411,7 +4716,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi == true)
@@ -4419,7 +4724,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi == true)
@@ -4427,7 +4732,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane == true)
@@ -4435,7 +4740,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (suzume == true)
@@ -4443,7 +4748,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.suzume_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin == true || kotkoro || kotkoro_newyear)
@@ -4451,7 +4756,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (eriko == true || eriko_valentine)
@@ -4459,7 +4764,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.eriko_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren == true || mitsuki)
@@ -4467,7 +4772,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nozomi == true || nozomi_christmas)
@@ -4475,7 +4780,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nozomi_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon == true)
@@ -4483,7 +4788,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu == true)
@@ -4491,7 +4796,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino == true)
@@ -4499,7 +4804,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru == true)
@@ -4507,7 +4812,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari == true)
@@ -4515,7 +4820,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -4523,7 +4828,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (makoto == true || makoto_summer)
@@ -4531,7 +4836,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.makoto_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kuuka == true)
@@ -4539,7 +4844,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kuuka_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki == true)
@@ -4547,7 +4852,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun == true || sizuru)
@@ -4555,7 +4860,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu == true)
@@ -4563,7 +4868,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika == true)
@@ -4571,7 +4876,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi == true)
@@ -4579,7 +4884,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka == true)
@@ -4587,7 +4892,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zita == true || kristina || kristina_christmas)
@@ -4595,7 +4900,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zita_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu == true || pekorinnu_princess)
@@ -4603,7 +4908,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi == true)
@@ -4611,7 +4916,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_summer == true)
@@ -4619,7 +4924,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_summer_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki_summer == true || chloe)
@@ -4627,7 +4932,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_summer_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo == true)
@@ -4635,7 +4940,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (chieru == true)
@@ -4643,7 +4948,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.chieru_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu_summer == true)
@@ -4651,7 +4956,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_summer_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -4659,7 +4964,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu_halloween == true)
@@ -4667,7 +4972,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_halloween_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako_halloween == true)
@@ -4675,7 +4980,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_halloween_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misaki_halloween == true)
@@ -4683,7 +4988,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misaki_halloween_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi_christmas == true)
@@ -4691,7 +4996,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_christmas_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane_christmas == true)
@@ -4699,7 +5004,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_christmas_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -4707,7 +5012,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sizuru_valentine == true)
@@ -4715,7 +5020,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sizuru_valentine_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -4723,7 +5028,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon_ooedo == true)
@@ -4731,7 +5036,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_ooedo_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rem == true)
@@ -4739,7 +5044,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rem_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ram == true)
@@ -4747,7 +5052,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ram_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io_summer == true)
@@ -4755,7 +5060,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_summer_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_summer == true)
@@ -4763,7 +5068,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_summer_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kaori_summer == true || misogi_halloween)
@@ -4771,7 +5076,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_summer_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kyouka_halloween == true)
@@ -4779,7 +5084,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kyouka_halloween_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi_halloween == true)
@@ -4787,7 +5092,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_halloween_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuni == true)
@@ -4795,7 +5100,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuni_13[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                 }
@@ -4805,12 +5110,89 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 3)
                 {
                     Level_variable.Rank_temp = 14;
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_14[i]);
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_14[i]);
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_14[i]);
+                    }
+                    if (inori_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.inori_timetravel_14[i]);
+                    }
+                    if (kaya_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_14[i]);
+                    }
+                    if (chloe_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_14[i]);
+                    }
+                    if (chieru_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_14[i]);
+                    }
+                    if (aoi_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.aoi_worker_14[i]);
+                    }
+                    if (tamaki_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.tamaki_worker_14[i]);
+                    }
+                    if (kyaru_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kyaru_princess_14[i]);
+                            
+                        }
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_14[i]);
+                            
+                        }
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_14[i]);
+                            
+                        }
+                    }
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_14[i]);
+                            
+                        }
+                    }
                     if (shepi == true)
                     {
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.shepi_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kasumi_summer == true)
@@ -4818,7 +5200,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kasumi_summer_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_maiden == true)
@@ -4826,7 +5208,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_maiden_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_maiden == true)
@@ -4834,7 +5216,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
 
@@ -4843,7 +5225,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_princess_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (neneka_newyear == true)
@@ -4851,7 +5233,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.neneka_newyear_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi_newyear == true)
@@ -4859,7 +5241,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_newyear_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_newyear == true)
@@ -4867,7 +5249,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari_christmas == true)
@@ -4875,7 +5257,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_christmas_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_christmas == true)
@@ -4883,7 +5265,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_christmas_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino_christmas == true)
@@ -4891,7 +5273,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_christmas_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo_magical == true)
@@ -4899,7 +5281,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_magical_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika_magical == true)
@@ -4907,7 +5289,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_magical_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri_halloween == true)
@@ -4915,7 +5297,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_halloween_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_halloween == true)
@@ -4923,7 +5305,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_halloween_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi_halloween == true)
@@ -4931,7 +5313,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_halloween_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yori_angel == true)
@@ -4939,7 +5321,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yori_angel_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (labyrista == true)
@@ -4947,7 +5329,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.labyrista_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_princess == true)
@@ -4955,7 +5337,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_princess_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (inori == true)
@@ -4963,7 +5345,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.inori_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun_summer == true)
@@ -4971,7 +5353,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_summer_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_princess == true)
@@ -4979,7 +5361,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_princess_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (uzuki_deremas == true)
@@ -4987,7 +5369,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.uzuki_deremas_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mio_deremas == true)
@@ -4995,7 +5377,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mio_deremas_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_deremas == true)
@@ -5003,7 +5385,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_deremas_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_ranger == true)
@@ -5011,7 +5393,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_ranger_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru_ranger == true)
@@ -5019,7 +5401,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_ranger_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rino_wonder == true)
@@ -5027,7 +5409,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_wonder_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi_wonder == true)
@@ -5035,7 +5417,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_wonder_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi == true)
@@ -5043,7 +5425,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka_summer == true)
@@ -5051,7 +5433,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_summer_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (anna_summer == true)
@@ -5059,7 +5441,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_summer_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nanaka_summer == true)
@@ -5067,7 +5449,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nanaka_summer_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hatsune_summer == true)
@@ -5075,7 +5457,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_summer_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misato_summer == true)
@@ -5083,7 +5465,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_summer_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akari_angel == true)
@@ -5091,7 +5473,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_angel_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rima == true)
@@ -5099,7 +5481,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rima_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hiyori == true)
@@ -5107,7 +5489,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui == true || kuuka_ooedo == true)
@@ -5115,7 +5497,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei == true)
@@ -5123,7 +5505,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misogi == true)
@@ -5131,7 +5513,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misogi_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri == true)
@@ -5139,7 +5521,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜탱
@@ -5148,7 +5530,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako == true || kotkoro_summer == true)
@@ -5156,7 +5538,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuki == true)
@@ -5164,7 +5546,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuki_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜1
@@ -5174,7 +5556,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러1
@@ -5183,7 +5565,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.maho_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //활쟁이
@@ -5192,7 +5574,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜2 15랭마딜
@@ -5201,7 +5583,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러2
@@ -5210,7 +5592,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //5성권캐
@@ -5219,7 +5601,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io == true)
@@ -5227,7 +5609,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi == true)
@@ -5235,7 +5617,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi == true)
@@ -5243,7 +5625,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane == true)
@@ -5251,7 +5633,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (suzume == true)
@@ -5259,7 +5641,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.suzume_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin == true || kotkoro || kotkoro_newyear)
@@ -5267,7 +5649,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (eriko == true || eriko_valentine)
@@ -5275,7 +5657,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.eriko_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren == true || mitsuki)
@@ -5283,7 +5665,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nozomi == true || nozomi_christmas)
@@ -5291,7 +5673,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nozomi_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon == true)
@@ -5299,7 +5681,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu == true)
@@ -5307,7 +5689,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino == true)
@@ -5315,7 +5697,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru == true)
@@ -5323,7 +5705,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari == true)
@@ -5331,7 +5713,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -5339,7 +5721,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (makoto == true || makoto_summer)
@@ -5347,7 +5729,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.makoto_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kuuka == true)
@@ -5355,7 +5737,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kuuka_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki == true)
@@ -5363,7 +5745,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun == true || sizuru)
@@ -5371,7 +5753,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu == true)
@@ -5379,7 +5761,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika == true)
@@ -5387,7 +5769,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi == true)
@@ -5395,7 +5777,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka == true)
@@ -5403,7 +5785,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zita == true || kristina || kristina_christmas)
@@ -5411,7 +5793,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zita_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu == true || pekorinnu_princess)
@@ -5419,7 +5801,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi == true)
@@ -5427,7 +5809,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_summer == true)
@@ -5435,7 +5817,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_summer_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki_summer == true || chloe)
@@ -5443,7 +5825,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_summer_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo == true)
@@ -5451,7 +5833,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (chieru == true)
@@ -5459,7 +5841,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.chieru_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu_summer == true)
@@ -5467,7 +5849,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_summer_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -5475,7 +5857,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu_halloween == true)
@@ -5483,7 +5865,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_halloween_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako_halloween == true)
@@ -5491,7 +5873,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_halloween_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misaki_halloween == true)
@@ -5499,7 +5881,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misaki_halloween_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi_christmas == true)
@@ -5507,7 +5889,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_christmas_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane_christmas == true)
@@ -5515,7 +5897,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_christmas_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -5523,7 +5905,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sizuru_valentine == true)
@@ -5531,7 +5913,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sizuru_valentine_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -5539,7 +5921,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon_ooedo == true)
@@ -5547,7 +5929,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_ooedo_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rem == true)
@@ -5555,7 +5937,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rem_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ram == true)
@@ -5563,7 +5945,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ram_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io_summer == true)
@@ -5571,7 +5953,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_summer_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_summer == true)
@@ -5579,7 +5961,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_summer_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kaori_summer == true || misogi_halloween)
@@ -5587,7 +5969,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_summer_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kyouka_halloween == true)
@@ -5595,7 +5977,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kyouka_halloween_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi_halloween == true)
@@ -5603,7 +5985,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_halloween_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuni == true)
@@ -5611,7 +5993,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuni_14[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                 }
@@ -5621,12 +6003,89 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 4)
                 {
                     Level_variable.Rank_temp = 15;
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_15[i]);
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_15[i]);
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_15[i]);
+                    }
+                    if (inori_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.inori_timetravel_15[i]);
+                    }
+                    if (kaya_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_15[i]);
+                    }
+                    if (chloe_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_15[i]);
+                    }
+                    if (chieru_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_15[i]);
+                    }
+                    if (aoi_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.aoi_worker_15[i]);
+                    }
+                    if (tamaki_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.tamaki_worker_15[i]);
+                    }
+                    if (kyaru_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kyaru_princess_15[i]);
+                            
+                        }
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_15[i]);
+                            
+                        }
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_15[i]);
+                            
+                        }
+                    }
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_15[i]);
+                            
+                        }
+                    }
                     if (shepi == true)
                     {
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.shepi_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kasumi_summer == true)
@@ -5634,7 +6093,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kasumi_summer_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_maiden == true)
@@ -5642,7 +6101,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_maiden_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_maiden == true)
@@ -5650,7 +6109,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
 
@@ -5659,7 +6118,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_princess_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (neneka_newyear == true)
@@ -5667,7 +6126,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.neneka_newyear_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi_newyear == true)
@@ -5675,7 +6134,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_newyear_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_newyear == true)
@@ -5683,7 +6142,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari_christmas == true)
@@ -5691,7 +6150,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_christmas_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_christmas == true)
@@ -5699,7 +6158,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_christmas_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino_christmas == true)
@@ -5707,7 +6166,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_christmas_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo_magical == true)
@@ -5715,7 +6174,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_magical_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika_magical == true)
@@ -5723,7 +6182,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_magical_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri_halloween == true)
@@ -5731,7 +6190,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_halloween_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_halloween == true)
@@ -5739,7 +6198,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_halloween_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi_halloween == true)
@@ -5747,7 +6206,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_halloween_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yori_angel == true)
@@ -5755,7 +6214,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yori_angel_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (labyrista == true)
@@ -5763,7 +6222,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.labyrista_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_princess == true)
@@ -5771,7 +6230,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_princess_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (inori == true)
@@ -5779,7 +6238,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.inori_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun_summer == true)
@@ -5787,7 +6246,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_summer_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_princess == true)
@@ -5795,7 +6254,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_princess_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rima == true)
@@ -5803,7 +6262,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rima_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hiyori == true)
@@ -5811,7 +6270,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui == true || kuuka_ooedo == true)
@@ -5819,7 +6278,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei == true)
@@ -5827,7 +6286,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misogi == true)
@@ -5835,7 +6294,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misogi_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri == true)
@@ -5843,7 +6302,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜탱
@@ -5852,7 +6311,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako == true || kotkoro_summer == true)
@@ -5860,7 +6319,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuki == true)
@@ -5868,7 +6327,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuki_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜1
@@ -5878,7 +6337,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러1
@@ -5887,7 +6346,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.maho_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //활쟁이
@@ -5896,7 +6355,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜2 15랭마딜
@@ -5905,7 +6364,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러2
@@ -5914,7 +6373,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //5성권캐
@@ -5923,7 +6382,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io == true)
@@ -5931,7 +6390,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi == true)
@@ -5939,7 +6398,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi == true)
@@ -5947,7 +6406,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane == true)
@@ -5955,7 +6414,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (suzume == true)
@@ -5963,7 +6422,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.suzume_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin == true || kotkoro || kotkoro_newyear)
@@ -5971,7 +6430,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (eriko == true || eriko_valentine)
@@ -5979,7 +6438,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.eriko_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren == true || mitsuki)
@@ -5987,7 +6446,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nozomi == true || nozomi_christmas)
@@ -5995,7 +6454,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nozomi_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon == true)
@@ -6003,7 +6462,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu == true)
@@ -6011,7 +6470,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino == true)
@@ -6019,7 +6478,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru == true)
@@ -6027,7 +6486,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari == true)
@@ -6035,7 +6494,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -6043,7 +6502,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (makoto == true || makoto_summer)
@@ -6051,7 +6510,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.makoto_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kuuka == true)
@@ -6059,7 +6518,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kuuka_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki == true)
@@ -6067,7 +6526,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun == true || sizuru)
@@ -6075,7 +6534,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu == true)
@@ -6083,7 +6542,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika == true)
@@ -6091,7 +6550,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi == true)
@@ -6099,7 +6558,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka == true)
@@ -6107,7 +6566,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zita == true || kristina || kristina_christmas)
@@ -6115,7 +6574,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zita_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu == true || pekorinnu_princess)
@@ -6123,7 +6582,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi == true)
@@ -6131,7 +6590,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_summer == true)
@@ -6139,7 +6598,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_summer_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki_summer == true || chloe)
@@ -6147,7 +6606,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_summer_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo == true)
@@ -6155,7 +6614,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (chieru == true)
@@ -6163,7 +6622,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.chieru_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu_summer == true)
@@ -6171,7 +6630,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_summer_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -6179,7 +6638,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu_halloween == true)
@@ -6187,7 +6646,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_halloween_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako_halloween == true)
@@ -6195,7 +6654,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_halloween_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misaki_halloween == true)
@@ -6203,7 +6662,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misaki_halloween_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi_christmas == true)
@@ -6211,7 +6670,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_christmas_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane_christmas == true)
@@ -6219,7 +6678,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_christmas_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -6227,7 +6686,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sizuru_valentine == true)
@@ -6235,7 +6694,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sizuru_valentine_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -6243,7 +6702,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon_ooedo == true)
@@ -6251,7 +6710,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_ooedo_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rem == true)
@@ -6259,7 +6718,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rem_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ram == true)
@@ -6267,7 +6726,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ram_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io_summer == true)
@@ -6275,7 +6734,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_summer_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_summer == true)
@@ -6283,7 +6742,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_summer_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kaori_summer == true || misogi_halloween)
@@ -6291,7 +6750,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_summer_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kyouka_halloween == true)
@@ -6299,7 +6758,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kyouka_halloween_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi_halloween == true)
@@ -6307,7 +6766,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_halloween_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (uzuki_deremas == true)
@@ -6315,7 +6774,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.uzuki_deremas_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mio_deremas == true)
@@ -6323,7 +6782,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mio_deremas_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_deremas == true)
@@ -6331,7 +6790,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_deremas_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_ranger == true)
@@ -6339,7 +6798,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_ranger_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru_ranger == true)
@@ -6347,7 +6806,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_ranger_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rino_wonder == true)
@@ -6355,7 +6814,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_wonder_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi_wonder == true)
@@ -6363,7 +6822,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_wonder_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi == true)
@@ -6371,7 +6830,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka_summer == true)
@@ -6379,7 +6838,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_summer_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (anna_summer == true)
@@ -6387,7 +6846,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_summer_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nanaka_summer == true)
@@ -6395,7 +6854,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nanaka_summer_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hatsune_summer == true)
@@ -6403,7 +6862,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_summer_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misato_summer == true)
@@ -6411,7 +6870,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_summer_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akari_angel == true)
@@ -6419,7 +6878,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_angel_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuni == true)
@@ -6427,7 +6886,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuni_15[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                 }
@@ -6437,12 +6896,89 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 5)
                 {
                     Level_variable.Rank_temp = 16;
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_16[i]);
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_16[i]);
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_16[i]);
+                    }
+                    if (inori_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.inori_timetravel_16[i]);
+                    }
+                    if (kaya_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_16[i]);
+                    }
+                    if (chloe_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_16[i]);
+                    }
+                    if (chieru_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_16[i]);
+                    }
+                    if (aoi_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.aoi_worker_16[i]);
+                    }
+                    if (tamaki_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.tamaki_worker_16[i]);
+                    }
+                    if (kyaru_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kyaru_princess_16[i]);
+                            
+                        }
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_16[i]);
+                            
+                        }
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_16[i]);
+                            
+                        }
+                    }
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_16[i]);
+                            
+                        }
+                    }
                     if (shepi == true)
                     {
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.shepi_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kasumi_summer == true)
@@ -6450,7 +6986,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kasumi_summer_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_maiden == true)
@@ -6458,7 +6994,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_maiden_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_maiden == true)
@@ -6466,7 +7002,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
 
@@ -6475,7 +7011,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_princess_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (neneka_newyear == true)
@@ -6483,7 +7019,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.neneka_newyear_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi_newyear == true)
@@ -6491,7 +7027,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_newyear_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_newyear == true)
@@ -6499,7 +7035,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari_christmas == true)
@@ -6507,7 +7043,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_christmas_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_christmas == true)
@@ -6515,7 +7051,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_christmas_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino_christmas == true)
@@ -6523,7 +7059,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_christmas_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo_magical == true)
@@ -6531,7 +7067,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_magical_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika_magical == true)
@@ -6539,7 +7075,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_magical_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri_halloween == true)
@@ -6547,7 +7083,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_halloween_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_halloween == true)
@@ -6555,7 +7091,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_halloween_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi_halloween == true)
@@ -6563,7 +7099,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_halloween_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yori_angel == true)
@@ -6571,7 +7107,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yori_angel_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (labyrista == true)
@@ -6579,7 +7115,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.labyrista_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_princess == true)
@@ -6587,7 +7123,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_princess_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (inori == true)
@@ -6595,7 +7131,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.inori_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun_summer == true)
@@ -6603,7 +7139,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_summer_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_princess == true)
@@ -6611,7 +7147,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_princess_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rima == true)
@@ -6619,7 +7155,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rima_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hiyori == true)
@@ -6627,7 +7163,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui == true || kuuka_ooedo == true)
@@ -6635,7 +7171,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei == true)
@@ -6643,7 +7179,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misogi == true)
@@ -6651,7 +7187,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misogi_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri == true)
@@ -6659,7 +7195,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜탱
@@ -6668,7 +7204,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako == true || kotkoro_summer == true)
@@ -6676,7 +7212,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuki == true)
@@ -6684,7 +7220,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuki_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜1
@@ -6694,7 +7230,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러1
@@ -6703,7 +7239,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.maho_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //활쟁이
@@ -6712,7 +7248,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜2 15랭마딜
@@ -6721,7 +7257,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러2
@@ -6730,7 +7266,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //5성권캐
@@ -6739,7 +7275,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io == true)
@@ -6747,7 +7283,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi == true)
@@ -6755,7 +7291,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi == true)
@@ -6763,7 +7299,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane == true)
@@ -6771,7 +7307,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (suzume == true)
@@ -6779,7 +7315,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.suzume_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin == true || kotkoro || kotkoro_newyear)
@@ -6787,7 +7323,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (eriko == true || eriko_valentine)
@@ -6795,7 +7331,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.eriko_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren == true || mitsuki)
@@ -6803,7 +7339,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nozomi == true || nozomi_christmas)
@@ -6811,7 +7347,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nozomi_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon == true)
@@ -6819,7 +7355,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu == true)
@@ -6827,7 +7363,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino == true)
@@ -6835,7 +7371,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru == true)
@@ -6843,7 +7379,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari == true)
@@ -6851,7 +7387,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -6859,7 +7395,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (makoto == true || makoto_summer)
@@ -6867,7 +7403,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.makoto_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kuuka == true)
@@ -6875,7 +7411,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kuuka_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki == true)
@@ -6883,7 +7419,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun == true || sizuru)
@@ -6891,7 +7427,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu == true)
@@ -6899,7 +7435,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika == true)
@@ -6907,7 +7443,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi == true)
@@ -6915,7 +7451,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka == true)
@@ -6923,7 +7459,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zita == true || kristina || kristina_christmas)
@@ -6931,7 +7467,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zita_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu == true || pekorinnu_princess)
@@ -6939,7 +7475,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi == true)
@@ -6947,7 +7483,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_summer == true)
@@ -6955,7 +7491,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_summer_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki_summer == true || chloe)
@@ -6963,7 +7499,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_summer_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo == true)
@@ -6971,7 +7507,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (chieru == true)
@@ -6979,7 +7515,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.chieru_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu_summer == true)
@@ -6987,7 +7523,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_summer_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -6995,7 +7531,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu_halloween == true)
@@ -7003,7 +7539,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_halloween_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako_halloween == true)
@@ -7011,7 +7547,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_halloween_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misaki_halloween == true)
@@ -7019,7 +7555,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misaki_halloween_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi_christmas == true)
@@ -7027,7 +7563,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_christmas_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane_christmas == true)
@@ -7035,7 +7571,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_christmas_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -7043,7 +7579,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sizuru_valentine == true)
@@ -7051,7 +7587,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sizuru_valentine_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -7059,7 +7595,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon_ooedo == true)
@@ -7067,7 +7603,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_ooedo_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rem == true)
@@ -7075,7 +7611,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rem_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ram == true)
@@ -7083,7 +7619,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ram_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io_summer == true)
@@ -7091,7 +7627,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_summer_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_summer == true)
@@ -7099,7 +7635,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_summer_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kaori_summer == true || misogi_halloween)
@@ -7107,7 +7643,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_summer_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kyouka_halloween == true)
@@ -7115,7 +7651,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kyouka_halloween_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi_halloween == true)
@@ -7123,7 +7659,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_halloween_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (uzuki_deremas == true)
@@ -7131,7 +7667,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.uzuki_deremas_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mio_deremas == true)
@@ -7139,7 +7675,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mio_deremas_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_deremas == true)
@@ -7147,7 +7683,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_deremas_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_ranger == true)
@@ -7155,7 +7691,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_ranger_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru_ranger == true)
@@ -7163,7 +7699,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_ranger_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rino_wonder == true)
@@ -7171,7 +7707,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_wonder_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi_wonder == true)
@@ -7179,7 +7715,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_wonder_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi == true)
@@ -7187,7 +7723,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka_summer == true)
@@ -7195,7 +7731,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_summer_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (anna_summer == true)
@@ -7203,7 +7739,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_summer_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nanaka_summer == true)
@@ -7211,7 +7747,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nanaka_summer_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hatsune_summer == true)
@@ -7219,7 +7755,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_summer_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misato_summer == true)
@@ -7227,7 +7763,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_summer_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akari_angel == true)
@@ -7235,7 +7771,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_angel_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuni == true)
@@ -7243,7 +7779,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuni_16[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                 }
@@ -7253,12 +7789,89 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 6)
                 {
                     Level_variable.Rank_temp = 17;
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_17[i]);
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_17[i]);
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_17[i]);
+                    }
+                    if (inori_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.inori_timetravel_17[i]);
+                    }
+                    if (kaya_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_17[i]);
+                    }
+                    if (chloe_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_17[i]);
+                    }
+                    if (chieru_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_17[i]);
+                    }
+                    if (aoi_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.aoi_worker_17[i]);
+                    }
+                    if (tamaki_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.tamaki_worker_17[i]);
+                    }
+                    if (kyaru_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kyaru_princess_17[i]);
+                            
+                        }
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_17[i]);
+                            
+                        }
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_17[i]);
+                            
+                        }
+                    }
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_17[i]);
+                            
+                        }
+                    }
                     if (shepi == true)
                     {
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.shepi_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kasumi_summer == true)
@@ -7266,7 +7879,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kasumi_summer_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_maiden == true)
@@ -7274,7 +7887,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_maiden_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_maiden == true)
@@ -7282,7 +7895,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
 
@@ -7291,7 +7904,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_princess_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (neneka_newyear == true)
@@ -7299,7 +7912,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.neneka_newyear_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi_newyear == true)
@@ -7307,7 +7920,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_newyear_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_newyear == true)
@@ -7315,7 +7928,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari_christmas == true)
@@ -7323,7 +7936,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_christmas_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_christmas == true)
@@ -7331,7 +7944,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_christmas_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino_christmas == true)
@@ -7339,7 +7952,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_christmas_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo_magical == true)
@@ -7347,7 +7960,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_magical_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika_magical == true)
@@ -7355,7 +7968,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_magical_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri_halloween == true)
@@ -7363,7 +7976,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_halloween_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_halloween == true)
@@ -7371,7 +7984,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_halloween_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi_halloween == true)
@@ -7379,7 +7992,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_halloween_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yori_angel == true)
@@ -7387,7 +8000,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yori_angel_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (labyrista == true)
@@ -7395,7 +8008,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.labyrista_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_princess == true)
@@ -7403,7 +8016,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_princess_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (inori == true)
@@ -7411,7 +8024,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.inori_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun_summer == true)
@@ -7419,7 +8032,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_summer_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_princess == true)
@@ -7427,7 +8040,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_princess_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rima == true)
@@ -7435,7 +8048,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rima_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hiyori == true)
@@ -7443,7 +8056,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui == true || kuuka_ooedo == true)
@@ -7451,7 +8064,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei == true)
@@ -7459,7 +8072,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misogi == true)
@@ -7467,7 +8080,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misogi_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri == true)
@@ -7475,7 +8088,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜탱
@@ -7484,7 +8097,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako == true || kotkoro_summer == true)
@@ -7492,7 +8105,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuki == true)
@@ -7500,7 +8113,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuki_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜1
@@ -7510,7 +8123,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러1
@@ -7519,7 +8132,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.maho_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //활쟁이
@@ -7528,7 +8141,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜2 15랭마딜
@@ -7537,7 +8150,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러2
@@ -7546,7 +8159,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //5성권캐
@@ -7555,7 +8168,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io == true)
@@ -7563,7 +8176,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi == true)
@@ -7571,7 +8184,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi == true)
@@ -7579,7 +8192,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane == true)
@@ -7587,7 +8200,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (suzume == true)
@@ -7595,7 +8208,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.suzume_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin == true || kotkoro || kotkoro_newyear)
@@ -7603,7 +8216,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (eriko == true || eriko_valentine)
@@ -7611,7 +8224,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.eriko_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren == true || mitsuki)
@@ -7619,7 +8232,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nozomi == true || nozomi_christmas)
@@ -7627,7 +8240,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nozomi_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon == true)
@@ -7635,7 +8248,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu == true)
@@ -7643,7 +8256,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino == true)
@@ -7651,7 +8264,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru == true)
@@ -7659,7 +8272,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari == true)
@@ -7667,7 +8280,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -7675,7 +8288,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (makoto == true || makoto_summer)
@@ -7683,7 +8296,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.makoto_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kuuka == true)
@@ -7691,7 +8304,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kuuka_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki == true)
@@ -7699,7 +8312,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun == true || sizuru)
@@ -7707,7 +8320,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu == true)
@@ -7715,7 +8328,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika == true)
@@ -7723,7 +8336,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi == true)
@@ -7731,7 +8344,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka == true)
@@ -7739,7 +8352,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zita == true || kristina || kristina_christmas)
@@ -7747,7 +8360,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zita_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu == true || pekorinnu_princess)
@@ -7755,7 +8368,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi == true)
@@ -7763,7 +8376,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_summer == true)
@@ -7771,7 +8384,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_summer_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki_summer == true || chloe)
@@ -7779,7 +8392,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_summer_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo == true)
@@ -7787,7 +8400,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (chieru == true)
@@ -7795,7 +8408,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.chieru_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu_summer == true)
@@ -7803,7 +8416,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_summer_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -7811,7 +8424,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu_halloween == true)
@@ -7819,7 +8432,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_halloween_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako_halloween == true)
@@ -7827,7 +8440,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_halloween_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misaki_halloween == true)
@@ -7835,7 +8448,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misaki_halloween_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi_christmas == true)
@@ -7843,7 +8456,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_christmas_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane_christmas == true)
@@ -7851,7 +8464,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_christmas_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -7859,7 +8472,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sizuru_valentine == true)
@@ -7867,7 +8480,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sizuru_valentine_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -7875,7 +8488,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon_ooedo == true)
@@ -7883,7 +8496,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_ooedo_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rem == true)
@@ -7891,7 +8504,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rem_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ram == true)
@@ -7899,7 +8512,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ram_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io_summer == true)
@@ -7907,7 +8520,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_summer_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_summer == true)
@@ -7915,7 +8528,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_summer_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kaori_summer == true || misogi_halloween)
@@ -7923,7 +8536,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_summer_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kyouka_halloween == true)
@@ -7931,7 +8544,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kyouka_halloween_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi_halloween == true)
@@ -7939,7 +8552,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_halloween_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (uzuki_deremas == true)
@@ -7947,7 +8560,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.uzuki_deremas_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mio_deremas == true)
@@ -7955,7 +8568,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mio_deremas_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_deremas == true)
@@ -7963,7 +8576,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_deremas_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_ranger == true)
@@ -7971,7 +8584,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_ranger_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru_ranger == true)
@@ -7979,7 +8592,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_ranger_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rino_wonder == true)
@@ -7987,7 +8600,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_wonder_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi_wonder == true)
@@ -7995,7 +8608,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_wonder_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi == true)
@@ -8003,7 +8616,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka_summer == true)
@@ -8011,7 +8624,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_summer_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (anna_summer == true)
@@ -8019,7 +8632,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_summer_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nanaka_summer == true)
@@ -8027,7 +8640,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nanaka_summer_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hatsune_summer == true)
@@ -8035,7 +8648,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_summer_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misato_summer == true)
@@ -8043,7 +8656,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_summer_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akari_angel == true)
@@ -8051,7 +8664,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_angel_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuni == true)
@@ -8059,7 +8672,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuni_17[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                 }
@@ -8069,12 +8682,89 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 7)
                 {
                     Level_variable.Rank_temp = 18;
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_18[i]);
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_18[i]);
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_18[i]);
+                    }
+                    if (inori_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.inori_timetravel_18[i]);
+                    }
+                    if (kaya_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_18[i]);
+                    }
+                    if (chloe_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_18[i]);
+                    }
+                    if (chieru_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_18[i]);
+                    }
+                    if (aoi_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.aoi_worker_18[i]);
+                    }
+                    if (tamaki_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.tamaki_worker_18[i]);
+                    }
+                    if (kyaru_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kyaru_princess_18[i]);
+                            
+                        }
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_18[i]);
+                            
+                        }
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_18[i]);
+                            
+                        }
+                    }
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_18[i]);
+                            
+                        }
+                    }
                     if (shepi == true)
                     {
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.shepi_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kasumi_summer == true)
@@ -8082,7 +8772,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kasumi_summer_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_maiden == true)
@@ -8090,7 +8780,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_maiden_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_maiden == true)
@@ -8098,7 +8788,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
 
@@ -8107,7 +8797,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_princess_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (neneka_newyear == true)
@@ -8115,7 +8805,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.neneka_newyear_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi_newyear == true)
@@ -8123,7 +8813,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_newyear_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_newyear == true)
@@ -8131,7 +8821,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari_christmas == true)
@@ -8139,7 +8829,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_christmas_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_christmas == true)
@@ -8147,7 +8837,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_christmas_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino_christmas == true)
@@ -8155,7 +8845,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_christmas_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo_magical == true)
@@ -8163,7 +8853,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_magical_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika_magical == true)
@@ -8171,7 +8861,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_magical_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri_halloween == true)
@@ -8179,7 +8869,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_halloween_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_halloween == true)
@@ -8187,7 +8877,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_halloween_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi_halloween == true)
@@ -8195,7 +8885,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_halloween_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yori_angel == true)
@@ -8203,7 +8893,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yori_angel_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (labyrista == true)
@@ -8211,7 +8901,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.labyrista_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_princess == true)
@@ -8219,7 +8909,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_princess_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (inori == true)
@@ -8227,7 +8917,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.inori_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun_summer == true)
@@ -8235,7 +8925,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_summer_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_princess == true)
@@ -8243,7 +8933,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_princess_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rima == true)
@@ -8251,7 +8941,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rima_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hiyori == true)
@@ -8259,7 +8949,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui == true || kuuka_ooedo == true)
@@ -8267,7 +8957,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei == true)
@@ -8275,7 +8965,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misogi == true)
@@ -8283,7 +8973,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misogi_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri == true)
@@ -8291,7 +8981,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜탱
@@ -8300,7 +8990,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako == true || kotkoro_summer == true)
@@ -8308,7 +8998,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuki == true)
@@ -8316,7 +9006,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuki_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜1
@@ -8326,7 +9016,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러1
@@ -8335,7 +9025,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.maho_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //활쟁이
@@ -8344,7 +9034,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜2 15랭마딜
@@ -8353,7 +9043,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러2
@@ -8362,7 +9052,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //5성권캐
@@ -8371,7 +9061,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io == true)
@@ -8379,7 +9069,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi == true)
@@ -8387,7 +9077,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi == true)
@@ -8395,7 +9085,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane == true)
@@ -8403,7 +9093,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (suzume == true)
@@ -8411,7 +9101,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.suzume_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin == true || kotkoro || kotkoro_newyear)
@@ -8419,7 +9109,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (eriko == true || eriko_valentine)
@@ -8427,7 +9117,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.eriko_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren == true || mitsuki)
@@ -8435,7 +9125,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nozomi == true || nozomi_christmas)
@@ -8443,7 +9133,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nozomi_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon == true)
@@ -8451,7 +9141,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu == true)
@@ -8459,7 +9149,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino == true)
@@ -8467,7 +9157,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru == true)
@@ -8475,7 +9165,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari == true)
@@ -8483,7 +9173,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -8491,7 +9181,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (makoto == true || makoto_summer)
@@ -8499,7 +9189,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.makoto_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kuuka == true)
@@ -8507,7 +9197,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kuuka_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki == true)
@@ -8515,7 +9205,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun == true || sizuru)
@@ -8523,7 +9213,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu == true)
@@ -8531,7 +9221,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika == true)
@@ -8539,7 +9229,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi == true)
@@ -8547,7 +9237,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka == true)
@@ -8555,7 +9245,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zita == true || kristina || kristina_christmas)
@@ -8563,7 +9253,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zita_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu == true || pekorinnu_princess)
@@ -8571,7 +9261,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi == true)
@@ -8579,7 +9269,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_summer == true)
@@ -8587,7 +9277,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_summer_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki_summer == true || chloe)
@@ -8595,7 +9285,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_summer_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo == true)
@@ -8603,7 +9293,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (chieru == true)
@@ -8611,7 +9301,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.chieru_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu_summer == true)
@@ -8619,7 +9309,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_summer_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -8627,7 +9317,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu_halloween == true)
@@ -8635,7 +9325,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_halloween_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako_halloween == true)
@@ -8643,7 +9333,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_halloween_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misaki_halloween == true)
@@ -8651,7 +9341,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misaki_halloween_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi_christmas == true)
@@ -8659,7 +9349,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_christmas_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane_christmas == true)
@@ -8667,7 +9357,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_christmas_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -8675,7 +9365,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sizuru_valentine == true)
@@ -8683,7 +9373,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sizuru_valentine_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -8691,7 +9381,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon_ooedo == true)
@@ -8699,7 +9389,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_ooedo_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rem == true)
@@ -8707,7 +9397,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rem_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ram == true)
@@ -8715,7 +9405,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ram_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io_summer == true)
@@ -8723,7 +9413,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_summer_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_summer == true)
@@ -8731,7 +9421,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_summer_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kaori_summer == true || misogi_halloween)
@@ -8739,7 +9429,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_summer_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kyouka_halloween == true)
@@ -8747,7 +9437,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kyouka_halloween_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi_halloween == true)
@@ -8755,7 +9445,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_halloween_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (uzuki_deremas == true)
@@ -8763,7 +9453,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.uzuki_deremas_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mio_deremas == true)
@@ -8771,7 +9461,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mio_deremas_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_deremas == true)
@@ -8779,7 +9469,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_deremas_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_ranger == true)
@@ -8787,7 +9477,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_ranger_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru_ranger == true)
@@ -8795,7 +9485,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_ranger_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rino_wonder == true)
@@ -8803,7 +9493,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_wonder_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi_wonder == true)
@@ -8811,7 +9501,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_wonder_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi == true)
@@ -8819,7 +9509,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka_summer == true)
@@ -8827,7 +9517,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_summer_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (anna_summer == true)
@@ -8835,7 +9525,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_summer_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nanaka_summer == true)
@@ -8843,7 +9533,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nanaka_summer_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hatsune_summer == true)
@@ -8851,7 +9541,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_summer_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misato_summer == true)
@@ -8859,7 +9549,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_summer_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akari_angel == true)
@@ -8867,7 +9557,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_angel_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuni == true)
@@ -8875,7 +9565,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuni_18[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                 }
@@ -8883,12 +9573,89 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 8) 
                 {
                     Level_variable.Rank_temp = 19;
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_19[i]);
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_19[i]);
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_19[i]);
+                    }
+                    if (inori_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.inori_timetravel_19[i]);
+                    }
+                    if (kaya_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_19[i]);
+                    }
+                    if (chloe_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_19[i]);
+                    }
+                    if (chieru_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_19[i]);
+                    }
+                    if (aoi_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.aoi_worker_19[i]);
+                    }
+                    if (tamaki_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.tamaki_worker_19[i]);
+                    }
+                    if (kyaru_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kyaru_princess_19[i]);
+                            
+                        }
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_19[i]);
+                            
+                        }
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_19[i]);
+                            
+                        }
+                    }
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_19[i]);
+                            
+                        }
+                    }
                     if (shepi == true)
                     {
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.shepi_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kasumi_summer == true)
@@ -8896,7 +9663,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kasumi_summer_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_maiden == true)
@@ -8904,7 +9671,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_maiden_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_maiden == true)
@@ -8912,7 +9679,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
 
@@ -8921,7 +9688,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_princess_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (neneka_newyear == true)
@@ -8929,7 +9696,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.neneka_newyear_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi_newyear == true)
@@ -8937,7 +9704,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_newyear_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_newyear == true)
@@ -8945,7 +9712,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari_christmas == true)
@@ -8953,7 +9720,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_christmas_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_christmas == true)
@@ -8961,7 +9728,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_christmas_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino_christmas == true)
@@ -8969,7 +9736,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_christmas_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo_magical == true)
@@ -8977,7 +9744,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_magical_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika_magical == true)
@@ -8985,7 +9752,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_magical_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri_halloween == true)
@@ -8993,7 +9760,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_halloween_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_halloween == true)
@@ -9001,7 +9768,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_halloween_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi_halloween == true)
@@ -9009,7 +9776,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_halloween_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yori_angel == true)
@@ -9017,7 +9784,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yori_angel_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (labyrista == true)
@@ -9025,7 +9792,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.labyrista_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_princess == true)
@@ -9033,7 +9800,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_princess_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (inori == true)
@@ -9041,7 +9808,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.inori_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun_summer == true)
@@ -9049,7 +9816,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_summer_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_princess == true)
@@ -9057,7 +9824,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_princess_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rima == true)
@@ -9065,7 +9832,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rima_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hiyori == true)
@@ -9073,7 +9840,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui == true || kuuka_ooedo == true)
@@ -9081,7 +9848,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei == true)
@@ -9089,7 +9856,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misogi == true)
@@ -9097,7 +9864,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misogi_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri == true)
@@ -9105,7 +9872,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜탱
@@ -9114,7 +9881,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako == true || kotkoro_summer == true)
@@ -9122,7 +9889,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuki == true)
@@ -9130,7 +9897,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuki_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜1
@@ -9140,7 +9907,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러1
@@ -9149,7 +9916,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.maho_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //활쟁이
@@ -9158,7 +9925,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜2 15랭마딜
@@ -9167,7 +9934,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러2
@@ -9176,7 +9943,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //5성권캐
@@ -9185,7 +9952,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io == true)
@@ -9193,7 +9960,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi == true)
@@ -9201,7 +9968,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi == true)
@@ -9209,7 +9976,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane == true)
@@ -9217,7 +9984,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (suzume == true)
@@ -9225,7 +9992,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.suzume_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin == true || kotkoro || kotkoro_newyear)
@@ -9233,7 +10000,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (eriko == true || eriko_valentine)
@@ -9241,7 +10008,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.eriko_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren == true || mitsuki)
@@ -9249,7 +10016,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nozomi == true || nozomi_christmas)
@@ -9257,7 +10024,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nozomi_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon == true)
@@ -9265,7 +10032,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu == true)
@@ -9273,7 +10040,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino == true)
@@ -9281,7 +10048,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru == true)
@@ -9289,7 +10056,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari == true)
@@ -9297,7 +10064,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -9305,7 +10072,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (makoto == true || makoto_summer)
@@ -9313,7 +10080,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.makoto_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kuuka == true)
@@ -9321,7 +10088,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kuuka_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki == true)
@@ -9329,7 +10096,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun == true || sizuru)
@@ -9337,7 +10104,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu == true)
@@ -9345,7 +10112,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika == true)
@@ -9353,7 +10120,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi == true)
@@ -9361,7 +10128,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka == true)
@@ -9369,7 +10136,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zita == true || kristina || kristina_christmas)
@@ -9377,7 +10144,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zita_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu == true || pekorinnu_princess)
@@ -9385,7 +10152,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi == true)
@@ -9393,7 +10160,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_summer == true)
@@ -9401,7 +10168,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_summer_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki_summer == true || chloe)
@@ -9409,7 +10176,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_summer_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo == true)
@@ -9417,7 +10184,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (chieru == true)
@@ -9425,7 +10192,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.chieru_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu_summer == true)
@@ -9433,7 +10200,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_summer_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -9441,7 +10208,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu_halloween == true)
@@ -9449,7 +10216,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_halloween_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako_halloween == true)
@@ -9457,7 +10224,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_halloween_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misaki_halloween == true)
@@ -9465,7 +10232,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misaki_halloween_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi_christmas == true)
@@ -9473,7 +10240,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_christmas_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane_christmas == true)
@@ -9481,7 +10248,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_christmas_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -9489,7 +10256,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sizuru_valentine == true)
@@ -9497,7 +10264,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sizuru_valentine_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -9505,7 +10272,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon_ooedo == true)
@@ -9513,7 +10280,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_ooedo_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rem == true)
@@ -9521,7 +10288,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rem_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ram == true)
@@ -9529,7 +10296,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ram_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io_summer == true)
@@ -9537,7 +10304,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_summer_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_summer == true)
@@ -9545,7 +10312,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_summer_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kaori_summer == true || misogi_halloween)
@@ -9553,7 +10320,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_summer_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kyouka_halloween == true)
@@ -9561,7 +10328,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kyouka_halloween_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi_halloween == true)
@@ -9569,7 +10336,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_halloween_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (uzuki_deremas == true)
@@ -9577,7 +10344,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.uzuki_deremas_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mio_deremas == true)
@@ -9585,7 +10352,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mio_deremas_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_deremas == true)
@@ -9593,7 +10360,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_deremas_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_ranger == true)
@@ -9601,7 +10368,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_ranger_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
 
                     }
@@ -9610,7 +10377,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_ranger_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rino_wonder == true)
@@ -9618,7 +10385,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_wonder_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi_wonder == true)
@@ -9626,7 +10393,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_wonder_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi == true)
@@ -9634,7 +10401,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka_summer == true)
@@ -9642,7 +10409,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_summer_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (anna_summer == true)
@@ -9650,7 +10417,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_summer_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nanaka_summer == true)
@@ -9658,7 +10425,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nanaka_summer_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hatsune_summer == true)
@@ -9666,7 +10433,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_summer_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misato_summer == true)
@@ -9674,7 +10441,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_summer_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akari_angel == true)
@@ -9682,7 +10449,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_angel_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuni == true)
@@ -9690,7 +10457,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuni_19[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                 }
@@ -9698,12 +10465,89 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 9) 
                 {
                     Level_variable.Rank_temp = 20;
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_20[i]);
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_20[i]);
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_20[i]);
+                    }
+                    if (inori_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.inori_timetravel_20[i]);
+                    }
+                    if (kaya_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_20[i]);
+                    }
+                    if (chloe_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_20[i]);
+                    }
+                    if (chieru_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_20[i]);
+                    }
+                    if (aoi_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.aoi_worker_20[i]);
+                    }
+                    if (tamaki_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.tamaki_worker_20[i]);
+                    }
+                    if (kyaru_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kyaru_princess_20[i]);
+                            
+                        }
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_20[i]);
+                            
+                        }
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_20[i]);
+                            
+                        }
+                    }
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_20[i]);
+                            
+                        }
+                    }
                     if (shepi == true)
                     {
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.shepi_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kasumi_summer == true)
@@ -9711,7 +10555,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kasumi_summer_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_maiden == true)
@@ -9719,7 +10563,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_maiden_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_maiden == true)
@@ -9727,7 +10571,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
 
@@ -9736,7 +10580,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_princess_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (neneka_newyear == true)
@@ -9744,7 +10588,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.neneka_newyear_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi_newyear == true)
@@ -9752,7 +10596,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_newyear_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_newyear == true)
@@ -9760,7 +10604,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari_christmas == true)
@@ -9768,7 +10612,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_christmas_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_christmas == true)
@@ -9776,7 +10620,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_christmas_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino_christmas == true)
@@ -9784,7 +10628,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_christmas_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo_magical == true)
@@ -9792,7 +10636,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_magical_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika_magical == true)
@@ -9800,7 +10644,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_magical_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri_halloween == true)
@@ -9808,7 +10652,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_halloween_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_halloween == true)
@@ -9816,7 +10660,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_halloween_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi_halloween == true)
@@ -9824,7 +10668,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_halloween_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yori_angel == true)
@@ -9832,7 +10676,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yori_angel_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (labyrista == true)
@@ -9840,7 +10684,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.labyrista_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_princess == true)
@@ -9848,7 +10692,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_princess_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (inori == true)
@@ -9856,7 +10700,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.inori_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun_summer == true)
@@ -9864,7 +10708,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_summer_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_princess == true)
@@ -9872,7 +10716,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_princess_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rima == true)
@@ -9880,7 +10724,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rima_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hiyori == true)
@@ -9888,7 +10732,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui == true || kuuka_ooedo == true)
@@ -9896,7 +10740,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei == true)
@@ -9904,7 +10748,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misogi == true)
@@ -9912,7 +10756,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misogi_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri == true)
@@ -9920,7 +10764,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜탱
@@ -9929,7 +10773,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako == true || kotkoro_summer == true)
@@ -9937,7 +10781,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuki == true)
@@ -9945,7 +10789,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuki_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜1
@@ -9955,7 +10799,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러1
@@ -9964,7 +10808,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.maho_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //활쟁이
@@ -9973,7 +10817,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜2 15랭마딜
@@ -9982,7 +10826,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러2
@@ -9991,7 +10835,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //5성권캐
@@ -10000,7 +10844,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io == true)
@@ -10008,7 +10852,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi == true)
@@ -10016,7 +10860,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi == true)
@@ -10024,7 +10868,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane == true)
@@ -10032,7 +10876,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (suzume == true)
@@ -10040,7 +10884,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.suzume_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin == true || kotkoro || kotkoro_newyear)
@@ -10048,7 +10892,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (eriko == true || eriko_valentine)
@@ -10056,7 +10900,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.eriko_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren == true || mitsuki)
@@ -10064,7 +10908,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nozomi == true || nozomi_christmas)
@@ -10072,7 +10916,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nozomi_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon == true)
@@ -10080,7 +10924,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu == true)
@@ -10088,7 +10932,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino == true)
@@ -10096,7 +10940,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru == true)
@@ -10104,7 +10948,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari == true)
@@ -10112,7 +10956,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -10120,7 +10964,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (makoto == true || makoto_summer)
@@ -10128,7 +10972,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.makoto_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kuuka == true)
@@ -10136,7 +10980,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kuuka_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki == true)
@@ -10144,7 +10988,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun == true || sizuru)
@@ -10152,7 +10996,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu == true)
@@ -10160,7 +11004,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika == true)
@@ -10168,7 +11012,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi == true)
@@ -10176,7 +11020,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka == true)
@@ -10184,7 +11028,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zita == true || kristina || kristina_christmas)
@@ -10192,7 +11036,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zita_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu == true || pekorinnu_princess)
@@ -10200,7 +11044,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi == true)
@@ -10208,7 +11052,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_summer == true)
@@ -10216,7 +11060,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_summer_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki_summer == true || chloe)
@@ -10224,7 +11068,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_summer_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo == true)
@@ -10232,7 +11076,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (chieru == true)
@@ -10240,7 +11084,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.chieru_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu_summer == true)
@@ -10248,7 +11092,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_summer_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -10256,7 +11100,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu_halloween == true)
@@ -10264,7 +11108,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_halloween_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako_halloween == true)
@@ -10272,7 +11116,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_halloween_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misaki_halloween == true)
@@ -10280,7 +11124,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misaki_halloween_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi_christmas == true)
@@ -10288,7 +11132,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_christmas_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane_christmas == true)
@@ -10296,7 +11140,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_christmas_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -10304,7 +11148,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sizuru_valentine == true)
@@ -10312,7 +11156,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sizuru_valentine_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -10320,7 +11164,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon_ooedo == true)
@@ -10328,7 +11172,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_ooedo_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rem == true)
@@ -10336,7 +11180,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rem_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ram == true)
@@ -10344,7 +11188,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ram_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io_summer == true)
@@ -10352,7 +11196,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_summer_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_summer == true)
@@ -10360,7 +11204,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_summer_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kaori_summer == true || misogi_halloween)
@@ -10368,7 +11212,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_summer_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kyouka_halloween == true)
@@ -10376,7 +11220,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kyouka_halloween_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi_halloween == true)
@@ -10384,7 +11228,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_halloween_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (uzuki_deremas == true)
@@ -10392,7 +11236,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.uzuki_deremas_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mio_deremas == true)
@@ -10400,7 +11244,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mio_deremas_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_deremas == true)
@@ -10408,7 +11252,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_deremas_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_ranger == true)
@@ -10416,7 +11260,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_ranger_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru_ranger == true)
@@ -10424,7 +11268,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_ranger_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rino_wonder == true)
@@ -10432,7 +11276,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_wonder_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi_wonder == true)
@@ -10440,7 +11284,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_wonder_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi == true)
@@ -10448,7 +11292,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka_summer == true)
@@ -10456,7 +11300,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_summer_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (anna_summer == true)
@@ -10464,7 +11308,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_summer_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nanaka_summer == true)
@@ -10472,7 +11316,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nanaka_summer_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hatsune_summer == true)
@@ -10480,7 +11324,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_summer_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misato_summer == true)
@@ -10488,7 +11332,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_summer_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akari_angel == true)
@@ -10496,7 +11340,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_angel_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuni == true)
@@ -10504,7 +11348,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuni_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                 }
@@ -10512,12 +11356,89 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 10)
                 {
                     Level_variable.Rank_temp = 21;
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_21[i]);
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_21[i]);
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_21[i]);
+                    }
+                    if (inori_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.inori_timetravel_21[i]);
+                    }
+                    if (kaya_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_21[i]);
+                    }
+                    if (chloe_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_21[i]);
+                    }
+                    if (chieru_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_21[i]);
+                    }
+                    if (aoi_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.aoi_worker_21[i]);
+                    }
+                    if (tamaki_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.tamaki_worker_21[i]);
+                    }
+                    if (kyaru_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kyaru_princess_21[i]);
+                            
+                        }
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_21[i]);
+                            
+                        }
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_21[i]);
+                            
+                        }
+                    }
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_21[i]);
+                            
+                        }
+                    }
                     if (shepi == true)
                     {
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.shepi_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kasumi_summer == true)
@@ -10525,7 +11446,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kasumi_summer_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_maiden == true)
@@ -10533,7 +11454,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_maiden_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_maiden == true)
@@ -10541,7 +11462,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hiyori_princess == true)
@@ -10549,7 +11470,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_princess_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (neneka_newyear == true)
@@ -10557,7 +11478,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.neneka_newyear_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi_newyear == true)
@@ -10565,7 +11486,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_newyear_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_newyear == true)
@@ -10573,7 +11494,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari_christmas == true)
@@ -10581,7 +11502,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_christmas_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_christmas == true)
@@ -10589,7 +11510,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_christmas_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino_christmas == true)
@@ -10597,7 +11518,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_christmas_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo_magical == true)
@@ -10605,7 +11526,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_magical_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika_magical == true)
@@ -10613,7 +11534,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_magical_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri_halloween == true)
@@ -10621,7 +11542,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_halloween_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_halloween == true)
@@ -10629,7 +11550,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_halloween_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi_halloween == true)
@@ -10637,7 +11558,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_halloween_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yori_angel == true)
@@ -10645,7 +11566,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yori_angel_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (labyrista == true)
@@ -10653,7 +11574,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.labyrista_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_princess == true)
@@ -10661,7 +11582,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_princess_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (inori == true)
@@ -10669,7 +11590,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.inori_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun_summer == true)
@@ -10677,7 +11598,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_summer_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_princess == true)
@@ -10685,7 +11606,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_princess_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rima == true)
@@ -10693,7 +11614,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rima_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hiyori == true)
@@ -10701,7 +11622,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui == true || kuuka_ooedo == true)
@@ -10709,7 +11630,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei == true)
@@ -10717,7 +11638,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misogi == true)
@@ -10725,7 +11646,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misogi_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri == true)
@@ -10733,7 +11654,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜탱
@@ -10742,7 +11663,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako == true || kotkoro_summer == true)
@@ -10750,7 +11671,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuki == true)
@@ -10758,7 +11679,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuki_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜1
@@ -10768,7 +11689,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러1
@@ -10777,7 +11698,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.maho_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //활쟁이
@@ -10786,7 +11707,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜2 15랭마딜
@@ -10795,7 +11716,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러2
@@ -10804,7 +11725,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //5성권캐
@@ -10813,7 +11734,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io == true)
@@ -10821,7 +11742,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi == true)
@@ -10829,7 +11750,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi == true)
@@ -10837,7 +11758,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane == true)
@@ -10845,7 +11766,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (suzume == true)
@@ -10853,7 +11774,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.suzume_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin == true || kotkoro || kotkoro_newyear)
@@ -10861,7 +11782,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (eriko == true || eriko_valentine)
@@ -10869,7 +11790,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.eriko_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren == true || mitsuki)
@@ -10877,7 +11798,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nozomi == true || nozomi_christmas)
@@ -10885,7 +11806,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nozomi_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon == true)
@@ -10893,7 +11814,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu == true)
@@ -10901,7 +11822,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino == true)
@@ -10909,7 +11830,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru == true)
@@ -10917,7 +11838,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari == true)
@@ -10925,7 +11846,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -10933,7 +11854,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (makoto == true || makoto_summer)
@@ -10941,7 +11862,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.makoto_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kuuka == true)
@@ -10949,7 +11870,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kuuka_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki == true)
@@ -10957,7 +11878,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun == true || sizuru)
@@ -10965,7 +11886,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu == true)
@@ -10973,7 +11894,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika == true)
@@ -10981,7 +11902,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi == true)
@@ -10989,7 +11910,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka == true)
@@ -10997,7 +11918,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zita == true || kristina || kristina_christmas)
@@ -11005,7 +11926,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zita_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu == true || pekorinnu_princess)
@@ -11013,7 +11934,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi == true)
@@ -11021,7 +11942,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_summer == true)
@@ -11029,7 +11950,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_summer_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki_summer == true || chloe)
@@ -11037,7 +11958,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_summer_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo == true)
@@ -11045,7 +11966,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (chieru == true)
@@ -11053,7 +11974,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.chieru_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu_summer == true)
@@ -11061,7 +11982,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_summer_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -11069,7 +11990,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu_halloween == true)
@@ -11077,7 +11998,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_halloween_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako_halloween == true)
@@ -11085,7 +12006,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_halloween_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misaki_halloween == true)
@@ -11093,7 +12014,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misaki_halloween_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi_christmas == true)
@@ -11101,7 +12022,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_christmas_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane_christmas == true)
@@ -11109,7 +12030,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_christmas_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -11117,7 +12038,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sizuru_valentine == true)
@@ -11125,7 +12046,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sizuru_valentine_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -11133,7 +12054,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon_ooedo == true)
@@ -11141,7 +12062,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_ooedo_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rem == true)
@@ -11149,7 +12070,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rem_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ram == true)
@@ -11157,7 +12078,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ram_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io_summer == true)
@@ -11165,7 +12086,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_summer_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_summer == true)
@@ -11173,7 +12094,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_summer_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kaori_summer == true || misogi_halloween)
@@ -11181,7 +12102,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_summer_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kyouka_halloween == true)
@@ -11189,7 +12110,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kyouka_halloween_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi_halloween == true)
@@ -11197,7 +12118,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_halloween_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (uzuki_deremas == true)
@@ -11205,7 +12126,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.uzuki_deremas_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mio_deremas == true)
@@ -11213,7 +12134,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mio_deremas_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_deremas == true)
@@ -11221,7 +12142,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_deremas_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_ranger == true)
@@ -11229,7 +12150,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_ranger_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru_ranger == true)
@@ -11237,7 +12158,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_ranger_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rino_wonder == true)
@@ -11245,7 +12166,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_wonder_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi_wonder == true)
@@ -11253,7 +12174,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_wonder_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi == true)
@@ -11261,7 +12182,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka_summer == true)
@@ -11269,7 +12190,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_summer_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (anna_summer == true)
@@ -11277,7 +12198,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_summer_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nanaka_summer == true)
@@ -11285,7 +12206,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nanaka_summer_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hatsune_summer == true)
@@ -11293,7 +12214,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_summer_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misato_summer == true)
@@ -11301,7 +12222,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_summer_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akari_angel == true)
@@ -11309,7 +12230,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_angel_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuni == true)
@@ -11317,7 +12238,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuni_21[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                 }
@@ -11325,12 +12246,89 @@ namespace PCRD_KR_ArenaSim
                 else if (cB_set_rank.SelectedIndex == 11)
                 {
                     Level_variable.Rank_temp = 22;
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_22[i]);
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_22[i]);
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_22[i]);
+                    }
+                    if (inori_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.inori_timetravel_22[i]);
+                    }
+                    if (kaya_timetravel == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_22[i]);
+                    }
+                    if (chloe_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_22[i]);
+                    }
+                    if (chieru_nakayosi2 == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_22[i]);
+                    }
+                    if (aoi_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.aoi_worker_22[i]);
+                    }
+                    if (tamaki_worker == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                            ItemSet[i] = Convert.ToString(Ue.tamaki_worker_22[i]);
+                    }
+                    if (kyaru_princess == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.kyaru_princess_22[i]);
+                            
+                        }
+                    }
+                    if (makoto_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.makoto_cinderella_22[i]);
+                            
+                        }
+                    }
+                    if (rima_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.rima_cinderella_22[i]);
+                            
+                        }
+                    }
+                    if (maho_cinderella == true)
+                    {
+                        for (int i = 0; i < 6; i++)
+                        {
+                            ItemSet[i] = Convert.ToString(Ue.maho_cinderella_22[i]);
+                            
+                        }
+                    }
                     if (shepi == true)
                     {
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.shepi_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kasumi_summer == true)
@@ -11338,7 +12336,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kasumi_summer_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_maiden == true)
@@ -11346,7 +12344,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_maiden_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_maiden == true)
@@ -11354,7 +12352,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_maiden_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hiyori_princess == true)
@@ -11362,7 +12360,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_princess_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (neneka_newyear == true)
@@ -11370,7 +12368,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.neneka_newyear_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi_newyear == true)
@@ -11378,7 +12376,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_newyear_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_newyear == true)
@@ -11386,7 +12384,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_newyear_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari_christmas == true)
@@ -11394,7 +12392,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_christmas_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_christmas == true)
@@ -11402,7 +12400,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_christmas_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino_christmas == true)
@@ -11410,7 +12408,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_christmas_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo_magical == true)
@@ -11418,7 +12416,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_magical_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika_magical == true)
@@ -11426,7 +12424,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_magical_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri_halloween == true)
@@ -11434,7 +12432,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_halloween_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_halloween == true)
@@ -11442,7 +12440,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_halloween_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi_halloween == true)
@@ -11450,7 +12448,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_halloween_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yori_angel == true)
@@ -11458,7 +12456,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yori_angel_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (labyrista == true)
@@ -11466,7 +12464,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.labyrista_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui_princess == true)
@@ -11474,7 +12472,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_princess_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (inori == true)
@@ -11482,7 +12480,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.inori_20[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun_summer == true)
@@ -11490,7 +12488,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_summer_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kotkoro_princess == true)
@@ -11498,7 +12496,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kotkoro_princess_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rima == true)
@@ -11506,7 +12504,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rima_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hiyori == true)
@@ -11514,7 +12512,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hiyori_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yui == true || kuuka_ooedo == true)
@@ -11522,7 +12520,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yui_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei == true)
@@ -11530,7 +12528,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misogi == true)
@@ -11538,7 +12536,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misogi_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (matsuri == true)
@@ -11546,7 +12544,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.matsuri_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜탱
@@ -11555,7 +12553,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako == true || kotkoro_summer == true)
@@ -11563,7 +12561,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuki == true)
@@ -11571,7 +12569,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuki_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜1
@@ -11581,7 +12579,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러1
@@ -11590,7 +12588,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.maho_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //활쟁이
@@ -11599,7 +12597,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //마딜2 15랭마딜
@@ -11608,7 +12606,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //힐러2
@@ -11617,7 +12615,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     //5성권캐
@@ -11626,7 +12624,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io == true)
@@ -11634,7 +12632,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi == true)
@@ -11642,7 +12640,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi == true)
@@ -11650,7 +12648,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane == true)
@@ -11658,7 +12656,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (suzume == true)
@@ -11666,7 +12664,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.suzume_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin == true || kotkoro || kotkoro_newyear)
@@ -11674,7 +12672,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (eriko == true || eriko_valentine)
@@ -11682,7 +12680,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.eriko_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren == true || mitsuki)
@@ -11690,7 +12688,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nozomi == true || nozomi_christmas)
@@ -11698,7 +12696,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nozomi_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon == true)
@@ -11706,7 +12704,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu == true)
@@ -11714,7 +12712,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akino == true)
@@ -11722,7 +12720,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akino_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru == true)
@@ -11730,7 +12728,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yukari == true)
@@ -11738,7 +12736,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yukari_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -11746,7 +12744,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (makoto == true || makoto_summer)
@@ -11754,7 +12752,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.makoto_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kuuka == true)
@@ -11762,7 +12760,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kuuka_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki == true)
@@ -11770,7 +12768,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zyun == true || sizuru)
@@ -11778,7 +12776,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zyun_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu == true)
@@ -11786,7 +12784,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (monika == true)
@@ -11794,7 +12792,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.monika_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tsumugi == true)
@@ -11802,7 +12800,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tsumugi_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka == true)
@@ -11810,7 +12808,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (zita == true || kristina || kristina_christmas)
@@ -11818,7 +12816,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.zita_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu == true || pekorinnu_princess)
@@ -11826,7 +12824,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (muimi == true)
@@ -11834,7 +12832,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.muimi_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (pekorinnu_summer == true)
@@ -11842,7 +12840,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.pekorinnu_summer_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tamaki_summer == true || chloe)
@@ -11850,7 +12848,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tamaki_summer_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (tomo == true)
@@ -11858,7 +12856,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.tomo_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (chieru == true)
@@ -11866,7 +12864,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.chieru_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mihuyu_summer == true)
@@ -11874,7 +12872,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mihuyu_summer_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (aoi == true)
@@ -11882,7 +12880,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.aoi_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sinobu_halloween == true)
@@ -11890,7 +12888,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sinobu_halloween_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (miyako_halloween == true)
@@ -11898,7 +12896,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.miyako_halloween_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misaki_halloween == true)
@@ -11906,7 +12904,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misaki_halloween_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kurumi_christmas == true)
@@ -11914,7 +12912,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kurumi_christmas_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayane_christmas == true)
@@ -11922,7 +12920,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayane_christmas_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -11930,7 +12928,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (sizuru_valentine == true)
@@ -11938,7 +12936,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.sizuru_valentine_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rei_newyear == true)
@@ -11946,7 +12944,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rei_newyear_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ninon_ooedo == true)
@@ -11954,7 +12952,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ninon_ooedo_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rem == true)
@@ -11962,7 +12960,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rem_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ram == true)
@@ -11970,7 +12968,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ram_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (io_summer == true)
@@ -11978,7 +12976,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.io_summer_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (saren_summer == true)
@@ -11986,7 +12984,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.saren_summer_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kaori_summer == true || misogi_halloween)
@@ -11994,7 +12992,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kaori_summer_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (kyouka_halloween == true)
@@ -12002,7 +13000,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.kyouka_halloween_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mimi_halloween == true)
@@ -12010,7 +13008,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mimi_halloween_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (uzuki_deremas == true)
@@ -12018,7 +13016,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.uzuki_deremas_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mio_deremas == true)
@@ -12026,7 +13024,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mio_deremas_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_deremas == true)
@@ -12034,7 +13032,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_deremas_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rin_ranger == true)
@@ -12042,7 +13040,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rin_ranger_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (mahiru_ranger == true)
@@ -12050,7 +13048,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.mahiru_ranger_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (rino_wonder == true)
@@ -12058,7 +13056,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.rino_wonder_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi_wonder == true)
@@ -12066,7 +13064,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_wonder_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ayumi == true)
@@ -12074,7 +13072,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ayumi_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (ruka_summer == true)
@@ -12082,7 +13080,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.ruka_summer_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (anna_summer == true)
@@ -12090,7 +13088,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.anna_summer_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (nanaka_summer == true)
@@ -12098,7 +13096,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.nanaka_summer_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (hatsune_summer == true)
@@ -12106,7 +13104,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.hatsune_summer_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (misato_summer == true)
@@ -12114,7 +13112,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.misato_summer_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (akari_angel == true)
@@ -12122,7 +13120,7 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.akari_angel_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                     if (yuni == true)
@@ -12130,10 +13128,14 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                         {
                             ItemSet[i] = Convert.ToString(Ue.yuni_22[i]);
-                            uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+                            
                         }
                     }
                 }
+
+                for(int i=0; i < 6; i++)
+                    uriStringSpecific[i] = uriString + ItemSet[i] + ".png";
+
                 var uriSource1 = new Uri(uriStringSpecific[0], UriKind.Absolute);
                 BitmapImage bmi1 = new BitmapImage(uriSource1);
                 var uriSource2 = new Uri(uriStringSpecific[1], UriKind.Absolute);
@@ -12927,6 +13929,9 @@ namespace PCRD_KR_ArenaSim
             double[] array3 = Enumerable.Repeat<double>(0, 15).ToArray<double>();
             double[] array4 = Enumerable.Repeat<double>(0, 15).ToArray<double>();
             double[] array5 = Enumerable.Repeat<double>(0, 15).ToArray<double>();
+            double[] array6 = Enumerable.Repeat<double>(0, 15).ToArray<double>();
+            double[] array7 = Enumerable.Repeat<double>(0, 15).ToArray<double>();
+            double[] array8 = Enumerable.Repeat<double>(0, 15).ToArray<double>();
 
             #region Destiny
 
@@ -12944,16 +13949,18 @@ namespace PCRD_KR_ArenaSim
                 array3 = dt.yui_princess_08;
                 array4 = dt.yui_maiden_08;
             }
-            else if (character == "rei" || character == "rei_newyear" || character == "rei_halloween")
+            else if (character == "rei" || character == "rei_newyear" || character == "rei_halloween" || character == "rei_princess")
             {
                 array1 = dt.rei_12;
                 array2 = dt.rei_newyear_08;
                 array3 = dt.rei_halloween_08;
+                //array4 = dt.rei_princess_08;
             }
             else if (character == "misogi" || character == "misogi_halloween")
             {
-                array1 = dt.misogi_08;
+                array1 = dt.misogi_12;
                 array2 = dt.misogi_halloween_08;
+                //array3 = dt.littlelyri_08;
             }
             else if (character == "matsuri" || character == "matsuri_halloween")
             {
@@ -12965,41 +13972,46 @@ namespace PCRD_KR_ArenaSim
                 array1 = dt.akari_12;
                 array2 = dt.akari_angel_08;
             }
-            else if (character == "miyako" || character == "miyako_halloween")
+            else if (character == "miyako" || character == "miyako_halloween" || character == "miyako_christmas")
             {
                 array1 = dt.miyako_08;
                 array2 = dt.miyako_halloween_08;
+                //array3 = dt.miyako_christmas_08;
             }
-            else if (character == "yuki")
+            else if (character == "yuki" || character == "yuki_ooedo")
             {
                 array1 = dt.yuki_08;
+                //array2= dt.yuki_ooedo_08;
             }
             else if (character == "anna" || character == "anna_summer")
             {
                 array1 = dt.anna_08;
                 array2 = dt.anna_summer_08;
             }
-            else if (character == "maho" || character == "maho_summer")
+            else if (character == "maho" || character == "maho_summer" || character == "maho_cinderella")
             {
                 array1 = dt.maho_12;
                 array2 = dt.maho_summer_08;
+                array3 = dt.maho_cinderella_08;
             }
-            else if (character == "rino" || character == "rino_wonder")
+            else if (character == "rino" || character == "rino_wonder" || character == "rino_christmas")
             {
                 array1 = dt.rino_12;
                 array2 = dt.rino_wonder_08;
+                //array3 = dt.rino_christmas_08;
             }
             else if (character == "hatsune" || character == "hatsune_summer")
             {
                 array1 = dt.hatsune_12;
                 array2 = dt.hatsune_summer_08;
+                //array3 = dt.hatsusio_08;
             }
             else if (character == "nanaka" || character == "nanaka_summer")
             {
                 array1 = dt.nanaka_08;
                 array2 = dt.nanaka_summer_08;
             }
-            else if (character == "kasumi" || character == "kasumi_magical")
+            else if (character == "kasumi" || character == "kasumi_magical" || character == "kasumi_summer_08")
             {
                 array1 = dt.kasumi_08;
                 array2 = dt.kasumi_magical_08;
@@ -13010,30 +14022,35 @@ namespace PCRD_KR_ArenaSim
                 array1 = dt.misato_08;
                 array2 = dt.misato_summer_08;
             }
-            else if (character == "suzuna" || character == "suzuna_summer")
+            else if (character == "suzuna" || character == "suzuna_summer" || character == "suzuna_halloween")
             {
                 array1 = dt.suzuna_12;
                 array2 = dt.suzuna_summer_08;
+                //array3 = dt.suzuna_halloween_08;
             }
-            else if (character == "kaori" || character == "kaori_summer")
+            else if (character == "kaori" || character == "kaori_summer" || character == "kaori_halloween")
             {
                 array1 = dt.kaori_08;
                 array2 = dt.kaori_summer_08;
+                //array3 = dt.kaori_halloween_08;
             }
-            else if (character == "io" || character == "io_summer")
+            else if (character == "io" || character == "io_summer" || character == "io_noir")
             {
                 array1 = dt.io_12;
                 array2 = dt.io_summer_08;
+                //array3 = dt.io_noir_08;
             }
             else if (character == "mimi" || character == "mimi_halloween")
             {
-                array1 = dt.mimi_08;
+                array1 = dt.mimi_12;
                 array2 = dt.mimi_halloween_08;
+                //array3 = dt.littlelyri_08;
             }
-            else if (character == "kurumi" || character == "kurumi_christmas")
+            else if (character == "kurumi" || character == "kurumi_christmas" || character == "kurumi_stage")
             {
                 array1 = dt.kurumi_08;
                 array2 = dt.kurumi_christmas_08;
+                //array3 = dt.kurumi_stage_08;
             }
             else if (character == "yori" || character == "yori_angel")
             {
@@ -13047,7 +14064,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "suzume" || character == "suzume_summer" || character == "suzume_newyear")
             {
-                array1 = dt.suzume_08;
+                array1 = dt.suzume_12 ;
                 array2 = dt.suzume_summer_08;
                 array3 = dt.suzume_newyear_08;
             }
@@ -13056,10 +14073,12 @@ namespace PCRD_KR_ArenaSim
                 array1 = dt.rin_08;
                 array2 = dt.rin_ranger_08;
             }
-            else if (character == "eriko" || character == "eriko_valentine")
+            else if (character == "eriko" || character == "eriko_valentine" || character == "eriko_summer")
             {
                 array1 = dt.eriko_08;
                 array2 = dt.eriko_valentine_08;
+                //array3 = dt.eriko_summer_08;
+
             }
             else if (character == "saren" || character == "saren_summer" || character == "saren_christmas")
             {
@@ -13067,15 +14086,17 @@ namespace PCRD_KR_ArenaSim
                 array2 = dt.saren_summer_08;
                 array3 = dt.saren_christmas_08;
             }
-            else if (character == "nozomi" || character == "nozomi_christmas")
+            else if (character == "nozomi" || character == "nozomi_christmas" || character == "nozomi_summer")
             {
-                array1 = dt.nozomi_08;
+                array1 = dt.nozomi_12;
                 array2 = dt.nozomi_christmas_08;
+                //array3 = dt.nozomi_summer_08;
             }
-            else if (character == "ninon" || character == "ninon_ooedo")
+            else if (character == "ninon" || character == "ninon_ooedo" || character == "ninon_halloween")
             {
                 array1 = dt.ninon_12;
                 array2 = dt.ninon_ooedo_08;
+                //array3 = dt.ninon_halloween_08;
             }
             else if (character == "sinobu" || character == "sinobu_halloween")
             {
@@ -13087,10 +14108,11 @@ namespace PCRD_KR_ArenaSim
                 array1 = dt.akino_12;
                 array2 = dt.akino_christmas_08;
             }
-            else if (character == "mahiru" || character == "mahiru_ranger")
+            else if (character == "mahiru" || character == "mahiru_ranger" || character == "mahiru_christmas")
             {
                 array1 = dt.mahiru_12;
                 array2 = dt.mahiru_ranger_08;
+                //array3 = dt.mahiru_christmas_08;
             }
             else if (character == "yukari" || character == "yukari_christmas")
             {
@@ -13099,8 +14121,9 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "kyouka" || character == "kyouka_halloween")
             {
-                array1 = dt.kyouka_08;
+                array1 = dt.kyouka_12;
                 array2 = dt.kyouka_halloween_08;
+                //array3 = dt.littlelyri_08;
             }
             else if (character == "tomo" || character == "tomo_magical")
             {
@@ -13111,74 +14134,86 @@ namespace PCRD_KR_ArenaSim
             {
                 array1 = dt.siori_08;
                 array2 = dt.siori_magical_08;
+                //array3 = dt.hatsusio_08;
             }
-            else if (character == "aoi" || character == "aoi_nakayosi")
+            else if (character == "aoi" || character == "aoi_nakayosi" /*|| character ==  "aoi_worker"*/)
             {
                 array1 = dt.aoi_08;
                 array2 = dt.aoi_nakayosi_08;
+                array3 = dt.aoi_worker_08;
             }
-            else if (character == "chika" || character == "chika_christmas")
+            else if (character == "chika" || character == "chika_christmas" || character == "chika_summer")
             {
                 array1 = dt.chika_08;
                 array2 = dt.chika_christmas_08;
+                //array3 = dt.chika_summer_08;
             }
-            else if (character == "makoto" || character == "makoto_summer")
+            else if (character == "makoto" || character == "makoto_summer" || character == "makoto_cinderella")
             {
                 array1 = dt.makoto_08;
                 array2 = dt.makoto_summer_08;
+                array3 = dt.makoto_cinderella_08;
             }
-            else if (character == "iriya" || character == "iriya_christmas")
+            else if (character == "iriya" || character == "iriya_christmas" || character == "iriya_newyear")
             {
                 array1 = dt.iriya_08;
                 array2 = dt.iriya_christmas_08;
+                //array3 = dt.iriya_newyear_08;
             }
-            else if (character == "kuuka" || character == "kuuka_ooedo")
+            else if (character == "kuuka" || character == "kuuka_ooedo" || character == "kuuka_noir")
             {
                 array1 = dt.kuuka_08;
                 array2 = dt.kuuka_ooedo_08;
+                //array3 = dt.kuuka_noir_08;
             }
-            else if (character == "tamaki" || character == "tamaki_summer")
+            else if (character == "tamaki" || character == "tamaki_summer" || character == "tamaki_worker")
             {
                 array1 = dt.tamaki_12;
                 array2 = dt.tamaki_summer_08;
+                array3= dt.tamaki_worker_08;
             }
             else if (character == "zyun" || character == "zyun_summer")
             {
                 array1 = dt.zyun_08;
                 array2 = dt.zyun_summer_08;
             }
-            else if (character == "mihuyu" || character == "mihuyu_summer")
+            else if (character == "mihuyu" || character == "mihuyu_summer" || character == "mihuyu_worker")
             {
                 array1 = dt.mihuyu_12;
                 array2 = dt.mihuyu_summer_08;
+                //array3= dt.mihuyu_worker_08;
             }
-            else if (character == "sizuru" || character == "sizuru_valentine")
+            else if (character == "sizuru" || character == "sizuru_valentine" || character == "sizuru_summer")
             {
                 array1 = dt.sizuru_12;
                 array2 = dt.sizuru_valentine_08;
+                //array3 = dt.sizuru_summer_08;
             }
             else if (character == "misaki" || character == "misaki_halloween")
             {
                 array1 = dt.misaki_08;
                 array2 = dt.misaki_halloween_08;
             }
-            else if (character == "mitsuki")
+            else if (character == "mitsuki"|| character == "mitsuki_ooedo")
             {
                 array1 = dt.mitsuki_08;
+                //array2 = dt.mitsuki_ooedo_08;
             }
-            else if (character == "rima")
+            else if (character == "rima"|| character == "rima_cinderella")
             {
                 array1 = dt.rima_12;
+                array2 = dt.rima_cinderella_08;
             }
             else if (character == "monika" || character == "monika_magical")
             {
                 array1 = dt.monika_08;
                 array2 = dt.monika_magical_08;
             }
-            else if (character == "tsumugi" || character == "tsumugi_halloween")
+            else if (character == "tsumugi" || character == "tsumugi_halloween" || character == "tsumugi_summer")
             {
                 array1 = dt.tsumugi_08;
                 array2 = dt.tsumugi_halloween_08;
+                //array3 = dt.tsumugi_summer_08;
             }
             else if (character == "ayumi" || character == "ayumi_wonder")
             {
@@ -13189,17 +14224,19 @@ namespace PCRD_KR_ArenaSim
             {
                 array1 = dt.ruka_08;
                 array2 = dt.ruka_summer_08;
+                //array3 = dt.ruka_newyear_08;
             }
             else if (character == "zita")
             {
                 array1 = dt.zita_08;
             }
-            else if (character == "pekorinnu" || character == "pekorinnu_summer" || character == "pekorinnu_princess" || character == "pekorinnu_newyear")
+            else if (character == "pekorinnu" || character == "pekorinnu_summer" || character == "pekorinnu_princess" || character == "pekorinnu_newyear" || character == "pekorinnu_overload")
             {
                 array1 = dt.pekorinnu_12;
                 array2 = dt.pekorinnu_summer_08;
                 array3 = dt.pekorinnu_princess_08;
                 array4 = dt.pekorinnu_newyear_08;
+                //array5 = dt.pekorinnu_overload_08;
             }
             else if (character == "kotkoro" || character == "kotkoro_summer" || character == "kotkoro_newyear" || character == "kotkoro_princess" || character == "kotkoro_maiden")
             {
@@ -13209,12 +14246,13 @@ namespace PCRD_KR_ArenaSim
                 array4 = dt.kotkoro_princess_08;
                 array5 = dt.kotkoro_maiden_08;
             }
-            else if (character == "kyaru" || character == "kyaru_summer" || character == "kyaru_newyear" || character == "kyaru_princess")
+            else if (character == "kyaru" || character == "kyaru_summer" || character == "kyaru_newyear" || character == "kyaru_princess" || character == "kyaru_overload")
             {
                 array1 = dt.kyaru_12;
                 array2 = dt.kyaru_summer_08;
                 array3 = dt.kyaru_newyear_08;
                 array4 = dt.kyaru_princess_08;
+                //array5 = dt.kyaru_overload_08;
             }
             else if (character == "muimi" || character == "muimi_newyear")
             {
@@ -13225,17 +14263,20 @@ namespace PCRD_KR_ArenaSim
             {
                 array1 = dt.arisa_08;
             }
-            else if (character == "kaya")
+            else if (character == "kaya" || character == "kaya_timetravel")
             {
                 array1 = dt.kaya_08;
+                array2 = dt.kaya_timetravel_08;
             }
-            else if (character == "inori")
+            else if (character == "inori"|| character == "inori_timetravel")
             {
                 array1 = dt.inori_08;
+                array2 = dt.inori_timetravel_08;
             }
-            else if (character == "labyrista")
+            else if (character == "labyrista" || character == "labyrista_overload" )
             {
                 array1 = dt.labyrista_08;
+                //array2 = dt.labyrista_overload_08;
             }
             else if (character == "neneka" || character == "neneka_newyear")
             {
@@ -13274,14 +14315,17 @@ namespace PCRD_KR_ArenaSim
             else if (character == "chloe")
             {
                 array1 = dt.chloe_08;
+                array2 = dt.chloe_nakayosi2_08;
             }
             else if (character == "chieru")
             {
                 array1 = dt.chieru_08;
+                array2 = dt.chieru_nakayosi2_08;
             }
             else if (character == "yuni")
             {
                 array1 = dt.yuni_08;
+                //array2 = dt.yuni_nakayosi2_08;
             }
             else if (character == "runa")
             {
@@ -13302,24 +14346,55 @@ namespace PCRD_KR_ArenaSim
             else if (character == "shepi")
             {
                 array1 = dt.shepi_08;
+                //array2 = dt.shepi_newyear_08;
+            }
+            else if (character == "hatsusio")
+            {
+                //array1 = dt.hatsune_12;
+                //array2 = dt.hatsune_summer_08;
+                //array3 = dt.siori_08;
+                //array4 = dt.siori_magical_08;
+                //array5 = dt.hatsusio_08;
+            }
+            else if (character == "credita")
+            {
+                //array1 = dt.credita_08;
+            }
+            else if (character == "karin")
+            {
+                //array1 = dt.karin_08;
+            }
+            else if (character == "littlelyri")
+            {
+                //array1 = dt.misogi_12;
+                //array2 = dt.misogi_halloween_08;
+                //array3 = dt.kyouka_12;
+                //array4 = dt.kyouka_halloween_08;
+                //array5 = dt.mimi_12;
+                //array6 = dt.mimi_halloween_08;
+                //array7 = dt.littlelyri_08;
+            }
+            else if (character == "ranpa")
+            {
+                //array1 = dt.ranpa_08;
             }
 
             #endregion
-            double stat_HP = array1[0] + array2[0] + array3[0] + array4[0] + array5[0];
-            double stat_PA = array1[1] + array2[1] + array3[1] + array4[1] + array5[1];
-            double stat_MA = array1[2] + array2[2] + array3[2] + array4[2] + array5[2];
-            double stat_PD = array1[3] + array2[3] + array3[3] + array4[3] + array5[3];
-            double stat_MD = array1[4] + array2[4] + array3[4] + array4[4] + array5[4];
-            double stat_PC = array1[5] + array2[5] + array3[5] + array4[5] + array5[5];
-            double stat_MC = array1[6] + array2[6] + array3[6] + array4[6] + array5[6];
-            double stat_HPauto = array1[7] + array2[7] + array3[7] + array4[7] + array5[7];
-            double stat_TPauto = array1[8] + array2[8] + array3[8] + array4[8] + array5[8];
-            double stat_Dodge = array1[9] + array2[9] + array3[9] + array4[9] + array5[9];
-            double stat_HPabs = array1[10] + array2[10] + array3[10] + array4[10] + array5[10];
-            double stat_HPup = array1[11] + array2[11] + array3[11] + array4[11] + array5[11];
-            double stat_TPup = array1[12] + array2[12] + array3[12] + array4[12] + array5[12];
-            double stat_TPdec = array1[13] + array2[13] + array3[13] + array4[13] + array5[13];
-            double stat_acc = array1[14] + array2[14] + array3[14] + array4[14] + array5[14];
+            double stat_HP = array1[0] + array2[0] + array3[0] + array4[0] + array5[0] + array6[0] + array7[0] + array8[0];
+            double stat_PA = array1[1] + array2[1] + array3[1] + array4[1] + array5[1] + array6[1] + array7[1] + array8[1];
+            double stat_MA = array1[2] + array2[2] + array3[2] + array4[2] + array5[2] + array6[2] + array7[2] + array8[2];
+            double stat_PD = array1[3] + array2[3] + array3[3] + array4[3] + array5[3] + array6[3] + array7[3] + array8[3];
+            double stat_MD = array1[4] + array2[4] + array3[4] + array4[4] + array5[4] + array6[4] + array7[4] + array8[4];
+            double stat_PC = array1[5] + array2[5] + array3[5] + array4[5] + array5[5] + array6[5] + array7[5] + array8[5];
+            double stat_MC = array1[6] + array2[6] + array3[6] + array4[6] + array5[6] + array6[6] + array7[6] + array8[6];
+            double stat_HPauto = array1[7] + array2[7] + array3[7] + array4[7] + array5[7] + array6[7] + array7[7] + array8[7];
+            double stat_TPauto = array1[8] + array2[8] + array3[8] + array4[8] + array5[8] + array6[8] + array7[8] + array8[8];
+            double stat_Dodge = array1[9] + array2[9] + array3[9] + array4[9] + array5[9] + array6[9] + array7[9] + array8[9];
+            double stat_HPabs = array1[10] + array2[10] + array3[10] + array4[10] + array5[10] + array6[10] + array7[10] + array8[10];
+            double stat_HPup = array1[11] + array2[11] + array3[11] + array4[11] + array5[11] + array6[11] + array7[11] + array8[11];
+            double stat_TPup = array1[12] + array2[12] + array3[12] + array4[12] + array5[12] + array6[12] + array7[12] + array8[12];
+            double stat_TPdec = array1[13] + array2[13] + array3[13] + array4[13] + array5[13] + array6[13] + array7[13] + array8[13];
+            double stat_acc = array1[14] + array2[14] + array3[14] + array4[14] + array5[14] + array6[14] + array7[14] + array8[14];
 
             Stat_variable.HP[array_order] += stat_HP;
             Stat_variable.PA[array_order] += stat_PA;
@@ -13765,8 +14840,13 @@ namespace PCRD_KR_ArenaSim
             double[] array3 = Enumerable.Repeat<double>(0, 15).ToArray<double>();
             double[] array4 = Enumerable.Repeat<double>(0, 15).ToArray<double>();
             double[] array5 = Enumerable.Repeat<double>(0, 15).ToArray<double>();
+            double[] array6 = Enumerable.Repeat<double>(0, 15).ToArray<double>();
+            double[] array7 = Enumerable.Repeat<double>(0, 15).ToArray<double>();
+            double[] array8 = Enumerable.Repeat<double>(0, 15).ToArray<double>();
 
-            #region Destiny_temp
+
+            #region Destiny
+
             Destiny dt = new Destiny();
             if (character == "hiyori" || character == "hiyori_newyear" || character == "hiyori_princess")
             {
@@ -13781,16 +14861,18 @@ namespace PCRD_KR_ArenaSim
                 array3 = dt.yui_princess_08;
                 array4 = dt.yui_maiden_08;
             }
-            else if (character == "rei" || character == "rei_newyear" || character == "rei_halloween")
+            else if (character == "rei" || character == "rei_newyear" || character == "rei_halloween" || character == "rei_princess")
             {
                 array1 = dt.rei_12;
                 array2 = dt.rei_newyear_08;
                 array3 = dt.rei_halloween_08;
+                //array4 = dt.rei_princess_08;
             }
             else if (character == "misogi" || character == "misogi_halloween")
             {
-                array1 = dt.misogi_08;
+                array1 = dt.misogi_12;
                 array2 = dt.misogi_halloween_08;
+                //array3 = dt.littlelyri_08;
             }
             else if (character == "matsuri" || character == "matsuri_halloween")
             {
@@ -13802,41 +14884,46 @@ namespace PCRD_KR_ArenaSim
                 array1 = dt.akari_12;
                 array2 = dt.akari_angel_08;
             }
-            else if (character == "miyako" || character == "miyako_halloween")
+            else if (character == "miyako" || character == "miyako_halloween" || character == "miyako_christmas")
             {
                 array1 = dt.miyako_08;
                 array2 = dt.miyako_halloween_08;
+                //array3 = dt.miyako_christmas_08;
             }
-            else if (character == "yuki")
+            else if (character == "yuki" || character == "yuki_ooedo")
             {
                 array1 = dt.yuki_08;
+                //array2= dt.yuki_ooedo_08;
             }
             else if (character == "anna" || character == "anna_summer")
             {
                 array1 = dt.anna_08;
                 array2 = dt.anna_summer_08;
             }
-            else if (character == "maho" || character == "maho_summer")
+            else if (character == "maho" || character == "maho_summer" || character == "maho_cinderella")
             {
                 array1 = dt.maho_12;
                 array2 = dt.maho_summer_08;
+                array3 = dt.maho_cinderella_08;
             }
-            else if (character == "rino" || character == "rino_wonder")
+            else if (character == "rino" || character == "rino_wonder" || character == "rino_christmas")
             {
                 array1 = dt.rino_12;
                 array2 = dt.rino_wonder_08;
+                //array3 = dt.rino_christmas_08;
             }
             else if (character == "hatsune" || character == "hatsune_summer")
             {
                 array1 = dt.hatsune_12;
                 array2 = dt.hatsune_summer_08;
+                //array3 = dt.hatsusio_08;
             }
             else if (character == "nanaka" || character == "nanaka_summer")
             {
                 array1 = dt.nanaka_08;
                 array2 = dt.nanaka_summer_08;
             }
-            else if (character == "kasumi" || character == "kasumi_magical")
+            else if (character == "kasumi" || character == "kasumi_magical" || character == "kasumi_summer_08")
             {
                 array1 = dt.kasumi_08;
                 array2 = dt.kasumi_magical_08;
@@ -13847,30 +14934,35 @@ namespace PCRD_KR_ArenaSim
                 array1 = dt.misato_08;
                 array2 = dt.misato_summer_08;
             }
-            else if (character == "suzuna" || character == "suzuna_summer")
+            else if (character == "suzuna" || character == "suzuna_summer" || character == "suzuna_halloween")
             {
                 array1 = dt.suzuna_12;
                 array2 = dt.suzuna_summer_08;
+                //array3 = dt.suzuna_halloween_08;
             }
-            else if (character == "kaori" || character == "kaori_summer")
+            else if (character == "kaori" || character == "kaori_summer" || character == "kaori_halloween")
             {
                 array1 = dt.kaori_08;
                 array2 = dt.kaori_summer_08;
+                //array3 = dt.kaori_halloween_08;
             }
-            else if (character == "io" || character == "io_summer")
+            else if (character == "io" || character == "io_summer" || character == "io_noir")
             {
                 array1 = dt.io_12;
                 array2 = dt.io_summer_08;
+                //array3 = dt.io_noir_08;
             }
             else if (character == "mimi" || character == "mimi_halloween")
             {
-                array1 = dt.mimi_08;
+                array1 = dt.mimi_12;
                 array2 = dt.mimi_halloween_08;
+                //array3 = dt.littlelyri_08;
             }
-            else if (character == "kurumi" || character == "kurumi_christmas")
+            else if (character == "kurumi" || character == "kurumi_christmas" || character == "kurumi_stage")
             {
                 array1 = dt.kurumi_08;
                 array2 = dt.kurumi_christmas_08;
+                //array3 = dt.kurumi_stage_08;
             }
             else if (character == "yori" || character == "yori_angel")
             {
@@ -13884,7 +14976,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "suzume" || character == "suzume_summer" || character == "suzume_newyear")
             {
-                array1 = dt.suzume_08;
+                array1 = dt.suzume_12 ;
                 array2 = dt.suzume_summer_08;
                 array3 = dt.suzume_newyear_08;
             }
@@ -13893,10 +14985,12 @@ namespace PCRD_KR_ArenaSim
                 array1 = dt.rin_08;
                 array2 = dt.rin_ranger_08;
             }
-            else if (character == "eriko" || character == "eriko_valentine")
+            else if (character == "eriko" || character == "eriko_valentine" || character == "eriko_summer")
             {
                 array1 = dt.eriko_08;
                 array2 = dt.eriko_valentine_08;
+                //array3 = dt.eriko_summer_08;
+
             }
             else if (character == "saren" || character == "saren_summer" || character == "saren_christmas")
             {
@@ -13904,15 +14998,17 @@ namespace PCRD_KR_ArenaSim
                 array2 = dt.saren_summer_08;
                 array3 = dt.saren_christmas_08;
             }
-            else if (character == "nozomi" || character == "nozomi_christmas")
+            else if (character == "nozomi" || character == "nozomi_christmas" || character == "nozomi_summer")
             {
-                array1 = dt.nozomi_08;
+                array1 = dt.nozomi_12;
                 array2 = dt.nozomi_christmas_08;
+                //array3 = dt.nozomi_summer_08;
             }
-            else if (character == "ninon" || character == "ninon_ooedo")
+            else if (character == "ninon" || character == "ninon_ooedo" || character == "ninon_halloween")
             {
                 array1 = dt.ninon_12;
                 array2 = dt.ninon_ooedo_08;
+                //array3 = dt.ninon_halloween_08;
             }
             else if (character == "sinobu" || character == "sinobu_halloween")
             {
@@ -13924,20 +15020,22 @@ namespace PCRD_KR_ArenaSim
                 array1 = dt.akino_12;
                 array2 = dt.akino_christmas_08;
             }
-            else if (character == "mahiru" || character == "mahiru_ranger")
+            else if (character == "mahiru" || character == "mahiru_ranger" || character == "mahiru_christmas")
             {
                 array1 = dt.mahiru_12;
                 array2 = dt.mahiru_ranger_08;
+                //array3 = dt.mahiru_christmas_08;
             }
             else if (character == "yukari" || character == "yukari_christmas")
             {
                 array1 = dt.yukari_12;
-               array2 = dt.yukari_christmas_08;
+                array2 = dt.yukari_christmas_08;
             }
             else if (character == "kyouka" || character == "kyouka_halloween")
             {
-                array1 = dt.kyouka_08;
+                array1 = dt.kyouka_12;
                 array2 = dt.kyouka_halloween_08;
+                //array3 = dt.littlelyri_08;
             }
             else if (character == "tomo" || character == "tomo_magical")
             {
@@ -13948,74 +15046,86 @@ namespace PCRD_KR_ArenaSim
             {
                 array1 = dt.siori_08;
                 array2 = dt.siori_magical_08;
+                //array3 = dt.hatsusio_08;
             }
-            else if (character == "aoi" || character == "aoi_nakayosi")
+            else if (character == "aoi" || character == "aoi_nakayosi" /*|| character ==  "aoi_worker"*/)
             {
                 array1 = dt.aoi_08;
                 array2 = dt.aoi_nakayosi_08;
+                array3 = dt.aoi_worker_08;
             }
-            else if (character == "chika" || character == "chika_christmas")
+            else if (character == "chika" || character == "chika_christmas" || character == "chika_summer")
             {
                 array1 = dt.chika_08;
                 array2 = dt.chika_christmas_08;
+                //array3 = dt.chika_summer_08;
             }
-            else if (character == "makoto" || character == "makoto_summer")
+            else if (character == "makoto" || character == "makoto_summer" || character == "makoto_cinderella")
             {
                 array1 = dt.makoto_08;
                 array2 = dt.makoto_summer_08;
+                array3 = dt.makoto_cinderella_08;
             }
-            else if (character == "iriya" || character == "iriya_christmas")
+            else if (character == "iriya" || character == "iriya_christmas" || character == "iriya_newyear")
             {
                 array1 = dt.iriya_08;
                 array2 = dt.iriya_christmas_08;
+                //array3 = dt.iriya_newyear_08;
             }
-            else if (character == "kuuka" || character == "kuuka_ooedo")
+            else if (character == "kuuka" || character == "kuuka_ooedo" || character == "kuuka_noir")
             {
                 array1 = dt.kuuka_08;
                 array2 = dt.kuuka_ooedo_08;
+                //array3 = dt.kuuka_noir_08;
             }
-            else if (character == "tamaki" || character == "tamaki_summer")
+            else if (character == "tamaki" || character == "tamaki_summer" || character == "tamaki_worker")
             {
                 array1 = dt.tamaki_12;
                 array2 = dt.tamaki_summer_08;
+                array3 = dt.tamaki_worker_08;
             }
             else if (character == "zyun" || character == "zyun_summer")
             {
                 array1 = dt.zyun_08;
                 array2 = dt.zyun_summer_08;
             }
-            else if (character == "mihuyu" || character == "mihuyu_summer")
+            else if (character == "mihuyu" || character == "mihuyu_summer" || character == "mihuyu_worker")
             {
                 array1 = dt.mihuyu_12;
                 array2 = dt.mihuyu_summer_08;
+                //array3= dt.mihuyu_worker_08;
             }
-            else if (character == "sizuru" || character == "sizuru_valentine")
+            else if (character == "sizuru" || character == "sizuru_valentine" || character == "sizuru_summer")
             {
                 array1 = dt.sizuru_12;
                 array2 = dt.sizuru_valentine_08;
+                //array3 = dt.sizuru_summer_08;
             }
             else if (character == "misaki" || character == "misaki_halloween")
             {
                 array1 = dt.misaki_08;
                 array2 = dt.misaki_halloween_08;
             }
-            else if (character == "mitsuki")
+            else if (character == "mitsuki" || character == "mitsuki_ooedo")
             {
                 array1 = dt.mitsuki_08;
+                //array2 = dt.mitsuki_ooedo_08;
             }
-            else if (character == "rima")
+            else if (character == "rima" || character == "rima_cinderella")
             {
                 array1 = dt.rima_12;
+                array2 = dt.rima_cinderella_08;
             }
             else if (character == "monika" || character == "monika_magical")
             {
                 array1 = dt.monika_08;
                 array2 = dt.monika_magical_08;
             }
-            else if (character == "tsumugi" || character == "tsumugi_halloween")
+            else if (character == "tsumugi" || character == "tsumugi_halloween" || character == "tsumugi_summer")
             {
                 array1 = dt.tsumugi_08;
                 array2 = dt.tsumugi_halloween_08;
+                //array3 = dt.tsumugi_summer_08;
             }
             else if (character == "ayumi" || character == "ayumi_wonder")
             {
@@ -14026,17 +15136,19 @@ namespace PCRD_KR_ArenaSim
             {
                 array1 = dt.ruka_08;
                 array2 = dt.ruka_summer_08;
+                //array3 = dt.ruka_newyear_08;
             }
             else if (character == "zita")
             {
                 array1 = dt.zita_08;
             }
-            else if (character == "pekorinnu" || character == "pekorinnu_summer" || character == "pekorinnu_princess" || character == "pekorinnu_newyear")
+            else if (character == "pekorinnu" || character == "pekorinnu_summer" || character == "pekorinnu_princess" || character == "pekorinnu_newyear" || character == "pekorinnu_overload")
             {
                 array1 = dt.pekorinnu_12;
                 array2 = dt.pekorinnu_summer_08;
                 array3 = dt.pekorinnu_princess_08;
                 array4 = dt.pekorinnu_newyear_08;
+                //array5 = dt.pekorinnu_overload_08;
             }
             else if (character == "kotkoro" || character == "kotkoro_summer" || character == "kotkoro_newyear" || character == "kotkoro_princess" || character == "kotkoro_maiden")
             {
@@ -14046,12 +15158,13 @@ namespace PCRD_KR_ArenaSim
                 array4 = dt.kotkoro_princess_08;
                 array5 = dt.kotkoro_maiden_08;
             }
-            else if (character == "kyaru" || character == "kyaru_summer" || character == "kyaru_newyear" || character == "kyaru_princess")
+            else if (character == "kyaru" || character == "kyaru_summer" || character == "kyaru_newyear" || character == "kyaru_princess" || character == "kyaru_overload")
             {
                 array1 = dt.kyaru_12;
                 array2 = dt.kyaru_summer_08;
                 array3 = dt.kyaru_newyear_08;
                 array4 = dt.kyaru_princess_08;
+                //array5 = dt.kyaru_overload_08;
             }
             else if (character == "muimi" || character == "muimi_newyear")
             {
@@ -14062,17 +15175,20 @@ namespace PCRD_KR_ArenaSim
             {
                 array1 = dt.arisa_08;
             }
-            else if (character == "kaya")
+            else if (character == "kaya" || character == "kaya_timetravel")
             {
                 array1 = dt.kaya_08;
+                array2 = dt.kaya_timetravel_08;
             }
-            else if (character == "inori")
+            else if (character == "inori" || character == "inori_timetravel")
             {
                 array1 = dt.inori_08;
+                array2 = dt.inori_timetravel_08;
             }
-            else if (character == "labyrista")
+            else if (character == "labyrista" || character == "labyrista_overload")
             {
                 array1 = dt.labyrista_08;
+                //array2 = dt.labyrista_overload_08;
             }
             else if (character == "neneka" || character == "neneka_newyear")
             {
@@ -14111,14 +15227,17 @@ namespace PCRD_KR_ArenaSim
             else if (character == "chloe")
             {
                 array1 = dt.chloe_08;
+                array2 = dt.chloe_nakayosi2_08;
             }
             else if (character == "chieru")
             {
                 array1 = dt.chieru_08;
+                array2 = dt.chieru_nakayosi2_08;
             }
             else if (character == "yuni")
             {
                 array1 = dt.yuni_08;
+                //array2 = dt.yuni_nakayosi2_08;
             }
             else if (character == "runa")
             {
@@ -14139,26 +15258,59 @@ namespace PCRD_KR_ArenaSim
             else if (character == "shepi")
             {
                 array1 = dt.shepi_08;
+                //array2 = dt.shepi_newyear_08;
+            }
+            else if (character == "hatsusio")
+            {
+                //array1 = dt.hatsune_12;
+                //array2 = dt.hatsune_summer_08;
+                //array3 = dt.siori_08;
+                //array4 = dt.siori_magical_08;
+                //array5 = dt.hatsusio_08;
+            }
+            else if (character == "credita")
+            {
+                //array1 = dt.credita_08;
+            }
+            else if (character == "karin")
+            {
+                //array1 = dt.karin_08;
+            }
+            else if (character == "littlelyri")
+            {
+                //array1 = dt.misogi_12;
+                //array2 = dt.misogi_halloween_08;
+                //array3 = dt.kyouka_12;
+                //array4 = dt.kyouka_halloween_08;
+                //array5 = dt.mimi_12;
+                //array6 = dt.mimi_halloween_08;
+                //array7 = dt.littlelyri_08;
+            }
+            else if (character == "ranpa")
+            {
+                //array1 = dt.ranpa_08;
             }
 
             #endregion
 
-            /* 0HP, 1물공, 2마공, 3물방, 4마방, 5물크, 6마크, 7HP 자동 회복, 8TP 자동 회복, 9회피, 10HP 흡수, 11회복량 상승, 12TP 상승, 13TP 소비 감소, 14명중 */
-            double stat_HP = array1[0] + array2[0] + array3[0] + array4[0] + array5[0];
-            double stat_PA = array1[1] + array2[1] + array3[1] + array4[1] + array5[1];
-            double stat_MA = array1[2] + array2[2] + array3[2] + array4[2] + array5[2];
-            double stat_PD = array1[3] + array2[3] + array3[3] + array4[3] + array5[3];
-            double stat_MD = array1[4] + array2[4] + array3[4] + array4[4] + array5[4];
-            double stat_PC = array1[5] + array2[5] + array3[5] + array4[5] + array5[5];
-            double stat_MC = array1[6] + array2[6] + array3[6] + array4[6] + array5[6];
-            double stat_HPauto = array1[7] + array2[7] + array3[7] + array4[7] + array5[7];
-            double stat_TPauto = array1[8] + array2[8] + array3[8] + array4[8] + array5[8];
-            double stat_Dodge = array1[9] + array2[9] + array3[9] + array4[9] + array5[9];
-            double stat_HPabs = array1[10] + array2[10] + array3[10] + array4[10] + array5[10];
-            double stat_HPup = array1[11] + array2[11] + array3[11] + array4[11] + array5[11];
-            double stat_TPup = array1[12] + array2[12] + array3[12] + array4[12] + array5[12];
-            double stat_TPdec = array1[13] + array2[13] + array3[13] + array4[13] + array5[13];
-            double stat_acc = array1[14] + array2[14] + array3[14] + array4[14] + array5[14];
+            
+
+            double stat_HP = array1[0] + array2[0] + array3[0] + array4[0] + array5[0] + array6[0] + array7[0] + array8[0];
+            double stat_PA = array1[1] + array2[1] + array3[1] + array4[1] + array5[1] + array6[1] + array7[1] + array8[1];
+            double stat_MA = array1[2] + array2[2] + array3[2] + array4[2] + array5[2] + array6[2] + array7[2] + array8[2];
+            double stat_PD = array1[3] + array2[3] + array3[3] + array4[3] + array5[3] + array6[3] + array7[3] + array8[3];
+            double stat_MD = array1[4] + array2[4] + array3[4] + array4[4] + array5[4] + array6[4] + array7[4] + array8[4];
+            double stat_PC = array1[5] + array2[5] + array3[5] + array4[5] + array5[5] + array6[5] + array7[5] + array8[5];
+            double stat_MC = array1[6] + array2[6] + array3[6] + array4[6] + array5[6] + array6[6] + array7[6] + array8[6];
+            double stat_HPauto = array1[7] + array2[7] + array3[7] + array4[7] + array5[7] + array6[7] + array7[7] + array8[7];
+            double stat_TPauto = array1[8] + array2[8] + array3[8] + array4[8] + array5[8] + array6[8] + array7[8] + array8[8];
+            double stat_Dodge = array1[9] + array2[9] + array3[9] + array4[9] + array5[9] + array6[9] + array7[9] + array8[9];
+            double stat_HPabs = array1[10] + array2[10] + array3[10] + array4[10] + array5[10] + array6[10] + array7[10] + array8[10];
+            double stat_HPup = array1[11] + array2[11] + array3[11] + array4[11] + array5[11] + array6[11] + array7[11] + array8[11];
+            double stat_TPup = array1[12] + array2[12] + array3[12] + array4[12] + array5[12] + array6[12] + array7[12] + array8[12];
+            double stat_TPdec = array1[13] + array2[13] + array3[13] + array4[13] + array5[13] + array6[13] + array7[13] + array8[13];
+            double stat_acc = array1[14] + array2[14] + array3[14] + array4[14] + array5[14] + array6[14] + array7[14] + array8[14];
+
 
             Stat_variable.HP_temp += stat_HP;
             Stat_variable.PA_temp += stat_PA;

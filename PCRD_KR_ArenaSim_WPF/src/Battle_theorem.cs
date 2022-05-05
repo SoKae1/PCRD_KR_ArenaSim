@@ -1137,6 +1137,22 @@ namespace PCRD_KR_ArenaSim
             //명중
             if (MainWindow.rand.NextDouble() < hit)
             {
+                //성에루 치에루 스택
+                if (Battle_variable.name_eng[my_order] == "chieru_nakayosi2" && ((Character_skill.chieru_nakayosi2_opponent_chieru == true && my_order < 15) || (Character_skill.chieru_nakayosi2_opponent_chieru_est == true && my_order >= 15)))//성에루
+                {
+                    if (Battle_variable.chieru_nakayosi2_stack[my_order] < 40)
+                    {
+                        Battle_variable.chieru_nakayosi2_stack[my_order] += 1;
+                    }   
+                }
+                //성로에 스택
+                if (Battle_variable.name_eng[my_order] == "chloe_nakayosi2" && ((Character_skill.chloe_nakayosi2_opponent_counter < 1  && my_order < 15) || (Character_skill.chloe_nakayosi2_opponent_counter_est < 1 == true && my_order >= 15)))//성에루
+                {
+                    if (Battle_variable.chloe_nakayosi2_stack[my_order] < 49)
+                    {
+                        Battle_variable.chloe_nakayosi2_stack[my_order] += 1;
+                    }
+                }
                 //크리티컬 시
                 if (MainWindow.rand.NextDouble() < crit)
                 {
