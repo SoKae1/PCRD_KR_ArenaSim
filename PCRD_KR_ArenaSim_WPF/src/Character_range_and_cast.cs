@@ -167,8 +167,8 @@
         //행동패턴1:rima_cinderella_1
         public double[] makoto_cinderella = new double[6] { 1, 166, 2.27, 0.465, 0.465, 0.465 };
 
-        public double[] chieru_nakayosi2 = new double[6] { 1, 223, 2.295, 1.155, 1.155, 1.155 };
-        public double[] chloe_nakayosi2 = new double[6] { 1, 184, 2.125, 0.465, 0.465, 0.465 };
+        public double[] chieru_terefes = new double[6] { 1, 223, 2.295, 1.155, 1.155, 1.155 };
+        public double[] chloe_terefes = new double[6] { 1, 184, 2.125, 0.465, 0.465, 0.465 };
 
         public double[] inori_timetravel = new double[6] { 1, 252, 2.295, 0.525, 0.525, 0.525 };
 

@@ -144,8 +144,8 @@
                                 Checked="tb_zyun_summer_Checked" Unchecked="tb_zyun_summer_UnChecked">
                                 <Image Source="res\icon_unit\113631.png"    />
                             </ToggleButton>
-                            <ToggleButton Name="tb_chloe_nakayosi2" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="chloe_nakayosi2" IsChecked="false" BorderThickness="0"  
-                                Checked="tb_chloe_nakayosi2_Checked" Unchecked="tb_chloe_nakayosi2_UnChecked">
+                            <ToggleButton Name="tb_chloe_terefes" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="chloe_terefes" IsChecked="false" BorderThickness="0"  
+                                Checked="tb_chloe_terefes_Checked" Unchecked="tb_chloe_terefes_UnChecked">
                                 <Image Source="res\icon_unit\116231.png"    />
                             </ToggleButton>
                             <ToggleButton Name="tb_matsuri" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="matsuri" IsChecked="false" BorderThickness="0"  
@@ -220,8 +220,8 @@
                                 Checked="tb_chieru_Checked" Unchecked="tb_chieru_UnChecked">
                                 <Image Source="res\icon_unit\110931.png"    />
                             </ToggleButton>
-                            <ToggleButton Name="tb_chieru_nakayosi2" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="chieru_nakayosi2" IsChecked="false" BorderThickness="0"  
-                                Checked="tb_chieru_nakayosi2_Checked" Unchecked="tb_chieru_nakayosi2_UnChecked">
+                            <ToggleButton Name="tb_chieru_terefes" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="chieru_terefes" IsChecked="false" BorderThickness="0"  
+                                Checked="tb_chieru_terefes_Checked" Unchecked="tb_chieru_terefes_UnChecked">
                                 <Image Source="res\icon_unit\116331.png"    />
                             </ToggleButton>
                             <ToggleButton Name="tb_tamaki_summer" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="tamaki_summer" IsChecked="false" BorderThickness="0"  
@@ -710,7 +710,7 @@
                             Click="bt_sim_start_Click"/>
                             <Button x:Name="bt_sim_start_multi" Content="시작 (멀티)" BorderBrush="{x:Null}" Background="#FFFDFFE5" 
                                 MinWidth="125" Margin="30,0,20,0" 
-                                Click="bt_sim_start_multi_Click">
+                                Click="bt_sim_start_multi_Click" IsEnabled="False">
                             </Button>
                         </DockPanel>
                         <TextBlock x:Name="textBlock" TextWrapping="Wrap" 
@@ -887,8 +887,8 @@
                                 Checked="tb_enable_zyun_summer_Checked" Unchecked="tb_enable_zyun_summer_UnChecked">
                                 <Image Source="res\icon_unit\113631.png"    />
                             </ToggleButton>
-                            <ToggleButton Name="tb_enable_chloe_nakayosi2" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="chloe_nakayosi2" IsChecked="false" BorderThickness="0"  
-                                Checked="tb_enable_chloe_nakayosi2_Checked" Unchecked="tb_enable_chloe_nakayosi2_UnChecked">
+                            <ToggleButton Name="tb_enable_chloe_terefes" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="chloe_terefes" IsChecked="false" BorderThickness="0"  
+                                Checked="tb_enable_chloe_terefes_Checked" Unchecked="tb_enable_chloe_terefes_UnChecked">
                                 <Image Source="res\icon_unit\116231.png"    />
                             </ToggleButton>
                             <ToggleButton Name="tb_enable_matsuri" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="matsuri" IsChecked="false" BorderThickness="0"  
@@ -963,8 +963,8 @@
                                 Checked="tb_enable_chieru_Checked" Unchecked="tb_enable_chieru_UnChecked">
                                 <Image Source="res\icon_unit\110931.png"    />
                             </ToggleButton>
-                            <ToggleButton Name="tb_enable_chieru_nakayosi2" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="chieru_nakayosi2" IsChecked="false" BorderThickness="0"  
-                                Checked="tb_enable_chieru_nakayosi2_Checked" Unchecked="tb_enable_chieru_nakayosi2_UnChecked">
+                            <ToggleButton Name="tb_enable_chieru_terefes" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="chieru_terefes" IsChecked="false" BorderThickness="0"  
+                                Checked="tb_enable_chieru_terefes_Checked" Unchecked="tb_enable_chieru_terefes_UnChecked">
                                 <Image Source="res\icon_unit\116331.png"    />
                             </ToggleButton>
                             <ToggleButton Name="tb_enable_tamaki_summer" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="tamaki_summer" IsChecked="false" BorderThickness="0"  
@@ -1525,9 +1525,9 @@
                                         Click="bt_zyun_summer_set_Click" >
                                 <Image Source="res\icon_unit\113631.png" Stretch="Fill"     Name="img_bt_zyun_summer"  />
                             </Button>
-                            <Button  ToolTip="chloe_nakayosi2"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
-                                        Click="bt_chloe_nakayosi2_set_Click" >
-                                <Image Source="res\icon_unit\116231.png" Stretch="Fill"     Name="img_bt_chloe_nakayosi2"  />
+                            <Button  ToolTip="chloe_terefes"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
+                                        Click="bt_chloe_terefes_set_Click" >
+                                <Image Source="res\icon_unit\116231.png" Stretch="Fill"     Name="img_bt_chloe_terefes"  />
                             </Button>
                             <Button  ToolTip="matsuri"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                         Click="bt_matsuri_set_Click" >
@@ -1601,9 +1601,9 @@
                                         Click="bt_chieru_set_Click" >
                                 <Image Source="res\icon_unit\110931.png" Stretch="Fill"     Name="img_bt_chieru"  />
                             </Button>
-                            <Button  ToolTip="chieru_nakayosi2"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
-                                        Click="bt_chieru_nakayosi2_set_Click" >
-                                <Image Source="res\icon_unit\116331.png" Stretch="Fill"     Name="img_bt_chieru_nakayosi2"  />
+                            <Button  ToolTip="chieru_terefes"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
+                                        Click="bt_chieru_terefes_set_Click" >
+                                <Image Source="res\icon_unit\116331.png" Stretch="Fill"     Name="img_bt_chieru_terefes"  />
                             </Button>
                             <Button  ToolTip="tamaki_summer"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                         Click="bt_tamaki_summer_set_Click" >
@@ -2244,7 +2244,7 @@
                                 </DockPanel>
                                 <DockPanel>
                                     <TextBlock  Text="성로에" Margin="0,2,2,0" Width="80" Height="20" />
-                                    <TextBox MaxLength = "1"  Text="" Name="tb_abbr_chloe_nakayosi2" Margin="0,2,2,0" Width="25"  BorderBrush="{x:Null}" InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native"   Height="20" />
+                                    <TextBox MaxLength = "1"  Text="" Name="tb_abbr_chloe_terefes" Margin="0,2,2,0" Width="25"  BorderBrush="{x:Null}" InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native"   Height="20" />
                                 </DockPanel>
                                 <DockPanel>
                                     <TextBlock  Text="마츠리" Margin="0,2,2,0" Width="80" Height="20" />
@@ -2320,7 +2320,7 @@
                                 </DockPanel>
                                 <DockPanel>
                                     <TextBlock  Text="성에루" Margin="0,2,2,0" Width="80" Height="20" />
-                                    <TextBox MaxLength = "1"  Text="" Name="tb_abbr_chieru_nakayosi2" Margin="0,2,2,0" Width="25"  BorderBrush="{x:Null}" InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native"   Height="20" />
+                                    <TextBox MaxLength = "1"  Text="" Name="tb_abbr_chieru_terefes" Margin="0,2,2,0" Width="25"  BorderBrush="{x:Null}" InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native"   Height="20" />
                                 </DockPanel>
                                 <DockPanel>
                                     <TextBlock  Text="수마키" Margin="0,2,2,0" Width="80" Height="20" />

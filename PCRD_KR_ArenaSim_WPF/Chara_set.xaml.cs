@@ -52,7 +52,7 @@ namespace PCRD_KR_ArenaSim
         public static bool kotkoro_maiden, yui_maiden = false;
         public static bool kasumi_summer = false;
         public static bool rima_cinderella, makoto_cinderella, maho_cinderella = false;
-        public static bool chloe_nakayosi2, chieru_nakayosi2, yuni_nakayosi2 = false;
+        public static bool chloe_terefes, chieru_terefes, yuni_terefes = false;
         public static bool inori_timetravel, kaya_timetravel = false;
         public static bool aoi_worker, tamaki_worker, mihuyu_worker = false;
 
@@ -2261,16 +2261,16 @@ namespace PCRD_KR_ArenaSim
                 Chara_Selected_EN = "kaya_timetravel";
                 Chara_Selected_KR = "타카야";
             }
-            else if (chloe_nakayosi2 == true)
+            else if (chloe_terefes == true)
             {
                 cb_enable_set.IsChecked = true;
-                Chara_Selected_EN = "chloe_nakayosi2";
+                Chara_Selected_EN = "chloe_terefes";
                 Chara_Selected_KR = "성로에";
             }
-            else if (chieru_nakayosi2 == true)
+            else if (chieru_terefes == true)
             {
                 cb_enable_set.IsChecked = true;
-                Chara_Selected_EN = "chieru_nakayosi2";
+                Chara_Selected_EN = "chieru_terefes";
                 Chara_Selected_KR = "치에루";
             }
             else if (aoi_worker == true)
@@ -2323,7 +2323,7 @@ namespace PCRD_KR_ArenaSim
             kotkoro_maiden = false; yui_maiden = false;
             kasumi_summer = false;
             rima_cinderella = false; makoto_cinderella = false; maho_cinderella = false;
-            chloe_nakayosi2 = false; chieru_nakayosi2 = false; yuni_nakayosi2 = false;
+            chloe_terefes = false; chieru_terefes = false; yuni_terefes = false;
             inori_timetravel = false; kaya_timetravel = false;
             aoi_worker = false; tamaki_worker = false; mihuyu_worker = false;
 
@@ -2448,15 +2448,15 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                             ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_11[i]);
                     }
-                    if (chloe_nakayosi2 == true)
+                    if (chloe_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_11[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chloe_terefes_11[i]);
                     }
-                    if (chieru_nakayosi2 == true)
+                    if (chieru_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_11[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chieru_terefes_11[i]);
                     }
                     if (aoi_worker == true)
                     {
@@ -3346,15 +3346,15 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                             ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_12[i]);
                     }
-                    if (chloe_nakayosi2 == true)
+                    if (chloe_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_12[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chloe_terefes_12[i]);
                     }
-                    if (chieru_nakayosi2 == true)
+                    if (chieru_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_12[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chieru_terefes_12[i]);
                     }
                     if (aoi_worker == true)
                     {
@@ -4237,15 +4237,15 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                             ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_13[i]);
                     }
-                    if (chloe_nakayosi2 == true)
+                    if (chloe_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_13[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chloe_terefes_13[i]);
                     }
-                    if (chieru_nakayosi2 == true)
+                    if (chieru_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_13[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chieru_terefes_13[i]);
                     }
                     if (aoi_worker == true)
                     {
@@ -5135,15 +5135,15 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                             ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_14[i]);
                     }
-                    if (chloe_nakayosi2 == true)
+                    if (chloe_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_14[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chloe_terefes_14[i]);
                     }
-                    if (chieru_nakayosi2 == true)
+                    if (chieru_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_14[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chieru_terefes_14[i]);
                     }
                     if (aoi_worker == true)
                     {
@@ -6028,15 +6028,15 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                             ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_15[i]);
                     }
-                    if (chloe_nakayosi2 == true)
+                    if (chloe_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_15[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chloe_terefes_15[i]);
                     }
-                    if (chieru_nakayosi2 == true)
+                    if (chieru_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_15[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chieru_terefes_15[i]);
                     }
                     if (aoi_worker == true)
                     {
@@ -6921,15 +6921,15 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                             ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_16[i]);
                     }
-                    if (chloe_nakayosi2 == true)
+                    if (chloe_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_16[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chloe_terefes_16[i]);
                     }
-                    if (chieru_nakayosi2 == true)
+                    if (chieru_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_16[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chieru_terefes_16[i]);
                     }
                     if (aoi_worker == true)
                     {
@@ -7814,15 +7814,15 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                             ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_17[i]);
                     }
-                    if (chloe_nakayosi2 == true)
+                    if (chloe_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_17[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chloe_terefes_17[i]);
                     }
-                    if (chieru_nakayosi2 == true)
+                    if (chieru_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_17[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chieru_terefes_17[i]);
                     }
                     if (aoi_worker == true)
                     {
@@ -8707,15 +8707,15 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                             ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_18[i]);
                     }
-                    if (chloe_nakayosi2 == true)
+                    if (chloe_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_18[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chloe_terefes_18[i]);
                     }
-                    if (chieru_nakayosi2 == true)
+                    if (chieru_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_18[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chieru_terefes_18[i]);
                     }
                     if (aoi_worker == true)
                     {
@@ -9598,15 +9598,15 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                             ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_19[i]);
                     }
-                    if (chloe_nakayosi2 == true)
+                    if (chloe_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_19[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chloe_terefes_19[i]);
                     }
-                    if (chieru_nakayosi2 == true)
+                    if (chieru_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_19[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chieru_terefes_19[i]);
                     }
                     if (aoi_worker == true)
                     {
@@ -10490,15 +10490,15 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                             ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_20[i]);
                     }
-                    if (chloe_nakayosi2 == true)
+                    if (chloe_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_20[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chloe_terefes_20[i]);
                     }
-                    if (chieru_nakayosi2 == true)
+                    if (chieru_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_20[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chieru_terefes_20[i]);
                     }
                     if (aoi_worker == true)
                     {
@@ -11381,15 +11381,15 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                             ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_21[i]);
                     }
-                    if (chloe_nakayosi2 == true)
+                    if (chloe_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_21[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chloe_terefes_21[i]);
                     }
-                    if (chieru_nakayosi2 == true)
+                    if (chieru_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_21[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chieru_terefes_21[i]);
                     }
                     if (aoi_worker == true)
                     {
@@ -12271,15 +12271,15 @@ namespace PCRD_KR_ArenaSim
                         for (int i = 0; i < 6; i++)
                             ItemSet[i] = Convert.ToString(Ue.kaya_timetravel_22[i]);
                     }
-                    if (chloe_nakayosi2 == true)
+                    if (chloe_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chloe_nakayosi2_22[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chloe_terefes_22[i]);
                     }
-                    if (chieru_nakayosi2 == true)
+                    if (chieru_terefes == true)
                     {
                         for (int i = 0; i < 6; i++)
-                            ItemSet[i] = Convert.ToString(Ue.chieru_nakayosi2_22[i]);
+                            ItemSet[i] = Convert.ToString(Ue.chieru_terefes_22[i]);
                     }
                     if (aoi_worker == true)
                     {
@@ -14315,17 +14315,17 @@ namespace PCRD_KR_ArenaSim
             else if (character == "chloe")
             {
                 array1 = dt.chloe_08;
-                array2 = dt.chloe_nakayosi2_08;
+                array2 = dt.chloe_terefes_08;
             }
             else if (character == "chieru")
             {
                 array1 = dt.chieru_08;
-                array2 = dt.chieru_nakayosi2_08;
+                array2 = dt.chieru_terefes_08;
             }
             else if (character == "yuni")
             {
                 array1 = dt.yuni_08;
-                //array2 = dt.yuni_nakayosi2_08;
+                //array2 = dt.yuni_terefes_08;
             }
             else if (character == "runa")
             {
@@ -15227,17 +15227,17 @@ namespace PCRD_KR_ArenaSim
             else if (character == "chloe")
             {
                 array1 = dt.chloe_08;
-                array2 = dt.chloe_nakayosi2_08;
+                array2 = dt.chloe_terefes_08;
             }
             else if (character == "chieru")
             {
                 array1 = dt.chieru_08;
-                array2 = dt.chieru_nakayosi2_08;
+                array2 = dt.chieru_terefes_08;
             }
             else if (character == "yuni")
             {
                 array1 = dt.yuni_08;
-                //array2 = dt.yuni_nakayosi2_08;
+                //array2 = dt.yuni_terefes_08;
             }
             else if (character == "runa")
             {

@@ -965,16 +965,16 @@
         public double[] maho_cinderella_4 = new double[17] { 451.2, 78.33, 0, 0, 72.37, 12.58, 3.28, 0.58, 3.65, 0.63, 0, 0, 0, 0, 0, 0, 0 };
         public double[] maho_cinderella_5 = new double[17] { 507.6, 93.99, 0, 0, 81.41, 15.09, 3.69, 0.69, 4.1, 0.75, 0, 0, 0, 0, 0, 0, 0 };
        
-        public double[] chloe_nakayosi2_1 = new double[17] { 365.6, 40.62, 54.11, 6.01, 0, 0, 2.96, 0.33, 2.05, 0.23, 10, 0, 0, 0, 0, 0, 0 };
-        public double[] chloe_nakayosi2_2 = new double[17] { 438.7, 60.93, 64.93, 9.02, 0, 0, 3.55, 0.5, 2.46, 0.35, 10, 0, 0, 0, 0, 0, 0 };
-        public double[] chloe_nakayosi2_3 = new double[17] { 511.8, 81.24, 75.75, 12.02, 0, 0, 4.14, 0.66, 2.87, 0.46, 10, 0, 0, 0, 0, 0, 0 };
-        public double[] chloe_nakayosi2_4 = new double[17] { 585, 101.6, 86.58, 15.03, 0, 0, 4.74, 0.83, 3.28, 0.58, 10, 0, 0, 0, 0, 0, 0 };
-        public double[] chloe_nakayosi2_5 = new double[17] { 658.1, 121.9, 97.4, 18.03, 0, 0, 5.33, 0.99, 3.69, 0.69, 10, 0, 0, 0, 0, 0, 0 };
-        public double[] chieru_nakayosi2_1 = new double[17] { 355.1, 39.46, 54.68, 6.08, 0, 0, 3.3, 0.37, 1.94, 0.22, 10, 0, 0, 0, 0, 0, 0 };
-        public double[] chieru_nakayosi2_2 = new double[17] { 426.1, 59.19, 65.62, 9.12, 0, 0, 3.96, 0.56, 2.33, 0.33, 10, 0, 0, 0, 0, 0, 0 };
-        public double[] chieru_nakayosi2_3 = new double[17] { 497.1, 78.92, 76.55, 12.16, 0, 0, 4.62, 0.74, 2.72, 0.44, 10, 0, 0, 0, 0, 0, 0 };
-        public double[] chieru_nakayosi2_4 = new double[17] { 568.2, 98.65, 87.49, 15.2, 0, 0, 5.28, 0.93, 3.1, 0.55, 10, 0, 0, 0, 0, 0, 0 };        
-        public double[] chieru_nakayosi2_5 = new double[17] { 639.2, 118.4, 98.42, 18.24, 0, 0, 5.94, 1.11, 3.49, 0.66, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] chloe_terefes_1 = new double[17] { 365.6, 40.62, 54.11, 6.01, 0, 0, 2.96, 0.33, 2.05, 0.23, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] chloe_terefes_2 = new double[17] { 438.7, 60.93, 64.93, 9.02, 0, 0, 3.55, 0.5, 2.46, 0.35, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] chloe_terefes_3 = new double[17] { 511.8, 81.24, 75.75, 12.02, 0, 0, 4.14, 0.66, 2.87, 0.46, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] chloe_terefes_4 = new double[17] { 585, 101.6, 86.58, 15.03, 0, 0, 4.74, 0.83, 3.28, 0.58, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] chloe_terefes_5 = new double[17] { 658.1, 121.9, 97.4, 18.03, 0, 0, 5.33, 0.99, 3.69, 0.69, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] chieru_terefes_1 = new double[17] { 355.1, 39.46, 54.68, 6.08, 0, 0, 3.3, 0.37, 1.94, 0.22, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] chieru_terefes_2 = new double[17] { 426.1, 59.19, 65.62, 9.12, 0, 0, 3.96, 0.56, 2.33, 0.33, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] chieru_terefes_3 = new double[17] { 497.1, 78.92, 76.55, 12.16, 0, 0, 4.62, 0.74, 2.72, 0.44, 10, 0, 0, 0, 0, 0, 0 };
+        public double[] chieru_terefes_4 = new double[17] { 568.2, 98.65, 87.49, 15.2, 0, 0, 5.28, 0.93, 3.1, 0.55, 10, 0, 0, 0, 0, 0, 0 };        
+        public double[] chieru_terefes_5 = new double[17] { 639.2, 118.4, 98.42, 18.24, 0, 0, 5.94, 1.11, 3.49, 0.66, 10, 0, 0, 0, 0, 0, 0 };
         
         public double[] inori_timetravel_1 = new double[17] { 417.8, 46.42, 48.19, 5.35, 0, 0, 2.73, 0.3, 2.28, 0.25, 10, 0, 0, 0, 0, 0, 0 };
         public double[] inori_timetravel_2 = new double[17] { 501.4, 69.63, 57.83, 8.03, 0, 0, 3.28, 0.45, 2.74, 0.38, 10, 0, 0, 0, 0, 0, 0 };

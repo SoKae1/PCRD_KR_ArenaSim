@@ -427,12 +427,12 @@ namespace PCRD_KR_ArenaSim
         public void tb_makoto_cinderella_UnChecked(object sender, RoutedEventArgs args) { cs.makoto_cinderella = false; select_count--; }
         public void tb_maho_cinderella_Checked(object sender, RoutedEventArgs e) { cs.maho_cinderella = true; select_count++; }
         public void tb_maho_cinderella_UnChecked(object sender, RoutedEventArgs args) { cs.maho_cinderella = false; select_count--; }
-        public void tb_chloe_nakayosi2_Checked(object sender, RoutedEventArgs e) { cs.chloe_nakayosi2 = true; select_count++; }
-        public void tb_chloe_nakayosi2_UnChecked(object sender, RoutedEventArgs args) { cs.chloe_nakayosi2 = false; select_count--; }
-        public void tb_chieru_nakayosi2_Checked(object sender, RoutedEventArgs e) { cs.chieru_nakayosi2 = true; select_count++; }
-        public void tb_chieru_nakayosi2_UnChecked(object sender, RoutedEventArgs args) { cs.chieru_nakayosi2 = false; select_count--; }
-        public void tb_yuni_nakayosi2_Checked(object sender, RoutedEventArgs e) { cs.yuni_nakayosi2 = true; select_count++; }
-        public void tb_yuni_nakayosi2_UnChecked(object sender, RoutedEventArgs args) { cs.yuni_nakayosi2 = false; select_count--; }
+        public void tb_chloe_terefes_Checked(object sender, RoutedEventArgs e) { cs.chloe_terefes = true; select_count++; }
+        public void tb_chloe_terefes_UnChecked(object sender, RoutedEventArgs args) { cs.chloe_terefes = false; select_count--; }
+        public void tb_chieru_terefes_Checked(object sender, RoutedEventArgs e) { cs.chieru_terefes = true; select_count++; }
+        public void tb_chieru_terefes_UnChecked(object sender, RoutedEventArgs args) { cs.chieru_terefes = false; select_count--; }
+        public void tb_yuni_terefes_Checked(object sender, RoutedEventArgs e) { cs.yuni_terefes = true; select_count++; }
+        public void tb_yuni_terefes_UnChecked(object sender, RoutedEventArgs args) { cs.yuni_terefes = false; select_count--; }
         public void tb_inori_timetravel_Checked(object sender, RoutedEventArgs e) { cs.inori_timetravel = true; select_count++; }
         public void tb_inori_timetravel_UnChecked(object sender, RoutedEventArgs args) { cs.inori_timetravel = false; select_count--; }
         public void tb_kaya_timetravel_Checked(object sender, RoutedEventArgs e) { cs.kaya_timetravel = true; select_count++; }
@@ -601,9 +601,9 @@ namespace PCRD_KR_ArenaSim
             tb_rima_cinderella.IsChecked = false;
             tb_maho_cinderella.IsChecked = false;
             tb_makoto_cinderella.IsChecked = false;
-            tb_chloe_nakayosi2.IsChecked = false;
-            tb_chieru_nakayosi2.IsChecked = false;
-            //tb_yuni_nakayosi2.IsChecked = false;
+            tb_chloe_terefes.IsChecked = false;
+            tb_chieru_terefes.IsChecked = false;
+            //tb_yuni_terefes.IsChecked = false;
             tb_inori_timetravel.IsChecked = false;
             tb_kaya_timetravel.IsChecked = false;
             tb_aoi_worker.IsChecked = false;
@@ -1944,7 +1944,6 @@ namespace PCRD_KR_ArenaSim
                     }
                 }
             }
-
             //실제 전투 시작
             flow_time = 0;
             while (true)
@@ -2041,6 +2040,7 @@ namespace PCRD_KR_ArenaSim
                             }
                         }
                     }
+
                 }
 
                 //버프 시간 처리
@@ -2902,8 +2902,6 @@ namespace PCRD_KR_ArenaSim
                         }
                         Battle_variable.field_double[i, 2] -= 0.001;
 
-
-
                         if (Battle_variable.field_double[i, 2] < 0)
                         {
                             //Debug.WriteLine("{3}{0}의 필드 {1}:{2}가 해제됨", Battle_variable.name[Battle_variable.field_int[i, 0]], Battle_variable.field_string[i, 0], Battle_variable.field_double[i, 3], Battle_variable.field_int[i, 0]);
@@ -2918,7 +2916,6 @@ namespace PCRD_KR_ArenaSim
                         }
                     }
                 }
-
                 //가장 가까운 적과의 거리 결정
                 double[] distance = Enumerable.Repeat<double>(1000000, 15).ToArray<double>();
                 double[] least_distance = Enumerable.Repeat<double>(1000000, 30).ToArray<double>();
@@ -3578,7 +3575,6 @@ namespace PCRD_KR_ArenaSim
                                 MethodInfo skilldummy = Cs.GetType().GetMethod(string.Format("{0}_UB", Battle_variable.name_eng[i]), BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public | BindingFlags.Static);
                                 UB_ending[i] = (double)skilldummy.Invoke(Cs, new Object[] { i });
 
-
                                 if (Battle_variable.name_eng[i] == "muimi_ub")
                                 {
                                     Action_seq[i] = 1;
@@ -3611,7 +3607,6 @@ namespace PCRD_KR_ArenaSim
                                         C_next_timing[i] = array1_CRC[4] / Battle_variable.Aspeed_coef[i];
                                     }
                                 }
-
                                 if (Battle_variable.name_eng[i] == "labyrista_ub")
                                 {
                                     Action_seq[i] = 1;
@@ -3638,8 +3633,6 @@ namespace PCRD_KR_ArenaSim
                                         C_next_timing[i] = array1_CRC[4] / Battle_variable.Aspeed_coef[i];
                                     }
                                 }
-
-
                                 if (Battle_variable.name_eng[i] == "chika" && Array.IndexOf(Battle_variable.name_eng, "sylph_chika") != -1)
                                 {
                                     int a;
@@ -3666,7 +3659,6 @@ namespace PCRD_KR_ArenaSim
                                         Action_next_seq[a] = (int)array2_CP[0];
                                     }
                                 }
-
 
                                 if (Battle_variable.name_eng[i] == "chika_christmas" && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_1") != -1 && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_2") != -1 && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3") != -1)
                                 {
@@ -3769,12 +3761,10 @@ namespace PCRD_KR_ArenaSim
                                 }
                             }
 
-
                             if (UB_timing[i] > UB_ending[i])
                             {
                                 state[i] = "C";
                             }
-
                             if (Battle_variable.paralyze[i] == true || Battle_variable.stun[i] == true || Battle_variable.knockback[i] == true || Battle_variable.bind[i] == true || Battle_variable.freeze[i] == true ||
                                 Battle_variable.timestop[i] == true || Battle_variable.delay[i] == true || Battle_variable.sleep[i] == true)
                             {
@@ -3889,7 +3879,6 @@ namespace PCRD_KR_ArenaSim
                                 state[i] = "W";
                                 A_timing[i] = 0;
 
-
                                 if (array2_CP[Action_next_seq[i] + 1] == 0)
                                 {
                                     Action_next_seq[i] = (int)array2_CP[0];
@@ -3932,7 +3921,6 @@ namespace PCRD_KR_ArenaSim
                                     state[i] = "W";
                                     A_timing[i] = 0;
                                     Battle_variable.Mspeed_coef[i] = 450;
-
 
                                     if (array2_CP[Action_next_seq[i] + 1] == 0)
                                     {
@@ -6862,16 +6850,16 @@ namespace PCRD_KR_ArenaSim
             }
             
             
-            if (cs.chloe_nakayosi2 == true)
+            if (cs.chloe_terefes == true)
             {
                 temp[select_count_temp] = "성로에";
-                temp_eng[select_count_temp] = "chloe_nakayosi2";
+                temp_eng[select_count_temp] = "chloe_terefes";
                 select_count_temp += 1;
             }
-            if (cs.chieru_nakayosi2 == true)
+            if (cs.chieru_terefes == true)
             {
                 temp[select_count_temp] = "성에루";
-                temp_eng[select_count_temp] = "chieru_nakayosi2";
+                temp_eng[select_count_temp] = "chieru_terefes";
                 select_count_temp += 1;
             }
             if (cs.inori_timetravel == true)
@@ -7130,9 +7118,9 @@ namespace PCRD_KR_ArenaSim
             else if (CharaName == "rima_cinderella") { ID = "115831"; }
             else if (CharaName == "makoto_cinderella") { ID = "115931"; }
             else if (CharaName == "maho_cinderella") { ID = "116031"; }
-            else if (CharaName == "chloe_nakayosi2") { ID = "116231"; }
-            else if (CharaName == "chieru_nakayosi2") { ID = "116331"; }
-            else if (CharaName == "yuni_nakayosi2") { ID = "116431"; }
+            else if (CharaName == "chloe_terefes") { ID = "116231"; }
+            else if (CharaName == "chieru_terefes") { ID = "116331"; }
+            else if (CharaName == "yuni_terefes") { ID = "116431"; }
             else if (CharaName == "inori_timetravel") { ID = "116531"; }
             else if (CharaName == "kaya_timetravel") { ID = "116631"; }
             else if (CharaName == "aoi_worker") { ID = "116731"; }
@@ -7331,9 +7319,9 @@ namespace PCRD_KR_ArenaSim
                 else if (LikeOperator.LikeString(ID, "1158*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "rima_cinderella";
                 else if (LikeOperator.LikeString(ID, "1159*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "makoto_cinderella";
                 else if (LikeOperator.LikeString(ID, "1160*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "maho_cinderella";
-                else if (LikeOperator.LikeString(ID, "1162*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "chloe_nakayosi2";
-                else if (LikeOperator.LikeString(ID, "1163*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "chieru_nakayosi2";
-                else if (LikeOperator.LikeString(ID, "1163*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "yuni_nakayosi2";
+                else if (LikeOperator.LikeString(ID, "1162*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "chloe_terefes";
+                else if (LikeOperator.LikeString(ID, "1163*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "chieru_terefes";
+                else if (LikeOperator.LikeString(ID, "1163*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "yuni_terefes";
                 else if (LikeOperator.LikeString(ID, "1165*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "inori_timetravel";
                 else if (LikeOperator.LikeString(ID, "1166*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "kaya_timetravel";
                 else if (LikeOperator.LikeString(ID, "1167*1", Microsoft.VisualBasic.CompareMethod.Binary)) return "aoi_worker";
@@ -8808,14 +8796,14 @@ namespace PCRD_KR_ArenaSim
             Chara_set C_S = new Chara_set(); C_S.ShowDialog();
         }
 
-        private void bt_chieru_nakayosi2_set_Click(object sender, RoutedEventArgs e)
+        private void bt_chieru_terefes_set_Click(object sender, RoutedEventArgs e)
         {
-            Chara_set.chieru_nakayosi2 = true;
+            Chara_set.chieru_terefes = true;
             Chara_set C_S = new Chara_set(); C_S.ShowDialog();
         }
-        private void bt_chloe_nakayosi2_set_Click(object sender, RoutedEventArgs e)
+        private void bt_chloe_terefes_set_Click(object sender, RoutedEventArgs e)
         {
-            Chara_set.chloe_nakayosi2 = true;
+            Chara_set.chloe_terefes = true;
             Chara_set C_S = new Chara_set(); C_S.ShowDialog();
         }
         private void bt_inori_timetravel_set_Click(object sender, RoutedEventArgs e)
@@ -9174,12 +9162,12 @@ namespace PCRD_KR_ArenaSim
         public void tb_enable_makoto_cinderella_UnChecked(object sender, RoutedEventArgs args) { cs.makoto_cinderella_enable = false; SomeMeaninglessVariable--; }
         public void tb_enable_maho_cinderella_Checked(object sender, RoutedEventArgs e) { cs.maho_cinderella_enable = true; SomeMeaninglessVariable++; }
         public void tb_enable_maho_cinderella_UnChecked(object sender, RoutedEventArgs args) { cs.maho_cinderella_enable = false; SomeMeaninglessVariable--; }
-        public void tb_enable_chloe_nakayosi2_Checked(object sender, RoutedEventArgs e) { cs.chloe_nakayosi2_enable = true; SomeMeaninglessVariable++; }
-        public void tb_enable_chloe_nakayosi2_UnChecked(object sender, RoutedEventArgs args) { cs.chloe_nakayosi2_enable = false; SomeMeaninglessVariable--; }
-        public void tb_enable_chieru_nakayosi2_Checked(object sender, RoutedEventArgs e) { cs.chieru_nakayosi2_enable = true; SomeMeaninglessVariable++; }
-        public void tb_enable_chieru_nakayosi2_UnChecked(object sender, RoutedEventArgs args) { cs.chieru_nakayosi2_enable = false; SomeMeaninglessVariable--; }
-        public void tb_enable_yuni_nakayosi2_Checked(object sender, RoutedEventArgs e) { cs.yuni_nakayosi2_enable = true; SomeMeaninglessVariable++; }
-        public void tb_enable_yuni_nakayosi2_UnChecked(object sender, RoutedEventArgs args) { cs.yuni_nakayosi2_enable = false; SomeMeaninglessVariable--; }
+        public void tb_enable_chloe_terefes_Checked(object sender, RoutedEventArgs e) { cs.chloe_terefes_enable = true; SomeMeaninglessVariable++; }
+        public void tb_enable_chloe_terefes_UnChecked(object sender, RoutedEventArgs args) { cs.chloe_terefes_enable = false; SomeMeaninglessVariable--; }
+        public void tb_enable_chieru_terefes_Checked(object sender, RoutedEventArgs e) { cs.chieru_terefes_enable = true; SomeMeaninglessVariable++; }
+        public void tb_enable_chieru_terefes_UnChecked(object sender, RoutedEventArgs args) { cs.chieru_terefes_enable = false; SomeMeaninglessVariable--; }
+        public void tb_enable_yuni_terefes_Checked(object sender, RoutedEventArgs e) { cs.yuni_terefes_enable = true; SomeMeaninglessVariable++; }
+        public void tb_enable_yuni_terefes_UnChecked(object sender, RoutedEventArgs args) { cs.yuni_terefes_enable = false; SomeMeaninglessVariable--; }
         public void tb_enable_inori_timetravel_Checked(object sender, RoutedEventArgs e) { cs.inori_timetravel_enable = true; SomeMeaninglessVariable++; }
         public void tb_enable_inori_timetravel_UnChecked(object sender, RoutedEventArgs args) { cs.inori_timetravel_enable = false; SomeMeaninglessVariable--; }
         public void tb_enable_kaya_timetravel_Checked(object sender, RoutedEventArgs e) { cs.kaya_timetravel_enable = true; SomeMeaninglessVariable++; }
@@ -10017,13 +10005,13 @@ namespace PCRD_KR_ArenaSim
                 }
                 else if (temp[0] == "성로에")
                 {
-                    if (temp[1] == "0") { cs.chloe_nakayosi2_enable = false; tb_enable_chloe_nakayosi2.IsChecked = true; }
-                    else { cs.chloe_nakayosi2_enable = true; AvailableCharaList[index] = temp[0]; index++; tb_chloe_nakayosi2.IsChecked = false; }
+                    if (temp[1] == "0") { cs.chloe_terefes_enable = false; tb_enable_chloe_terefes.IsChecked = true; }
+                    else { cs.chloe_terefes_enable = true; AvailableCharaList[index] = temp[0]; index++; tb_chloe_terefes.IsChecked = false; }
                 }
                 else if (temp[0] == "성에루")
                 {
-                    if (temp[1] == "0") { cs.chieru_nakayosi2_enable = false; tb_enable_chieru_nakayosi2.IsChecked = true; }
-                    else { cs.chieru_nakayosi2_enable = true; AvailableCharaList[index] = temp[0]; index++; tb_chieru_nakayosi2.IsChecked = false; }
+                    if (temp[1] == "0") { cs.chieru_terefes_enable = false; tb_enable_chieru_terefes.IsChecked = true; }
+                    else { cs.chieru_terefes_enable = true; AvailableCharaList[index] = temp[0]; index++; tb_chieru_terefes.IsChecked = false; }
                 }
                 else if (temp[0] == "시노리")
                 {
@@ -10116,7 +10104,7 @@ namespace PCRD_KR_ArenaSim
             Abbr_monika_magical, Abbr_tomo_magical, Abbr_pekorinnu_newyear, Abbr_muimi_newyear, Abbr_neneka_newyear, Abbr_kyaru_princess = "";
         string Abbr_kotkoro_maiden, Abbr_yui_maiden, Abbr_shepi, Abbr_kasumi_summer;
         string Abbr_rima_cinderella, Abbr_maho_cinderella, Abbr_makoto_cinderella;
-        string Abbr_chloe_nakayosi2, Abbr_chieru_nakayosi2;
+        string Abbr_chloe_terefes, Abbr_chieru_terefes;
         string Abbr_inori_timetravel, Abbr_kaya_timetravel;
         string Abbr_aoi_worker, Abbr_tamaki_worker, Abbr_mihuyu_worker;
 
@@ -10950,11 +10938,11 @@ namespace PCRD_KR_ArenaSim
                 
                 else if (temp[0] == "성로에")
                 {
-                    tb_abbr_chloe_nakayosi2.Text = Abbr_chloe_nakayosi2 = temp[1];
+                    tb_abbr_chloe_terefes.Text = Abbr_chloe_terefes = temp[1];
                 }
                 else if (temp[0] == "성에루")
                 {
-                    tb_abbr_chieru_nakayosi2.Text = Abbr_chieru_nakayosi2 = temp[1];
+                    tb_abbr_chieru_terefes.Text = Abbr_chieru_terefes = temp[1];
                 }
                 else if ( temp[0] == "타노리"||temp[0] == "시노리")
                 {
@@ -11014,7 +11002,7 @@ namespace PCRD_KR_ArenaSim
                 sw.WriteLine(string.Format("아키노,{0}", tb_abbr_akino.Text));
                 sw.WriteLine(string.Format("수코토,{0}", tb_abbr_makoto_summer.Text));
                 sw.WriteLine(string.Format("수쥰,{0}", tb_abbr_zyun_summer.Text));
-                sw.WriteLine(string.Format("성로에,{0}", tb_abbr_chloe_nakayosi2.Text));
+                sw.WriteLine(string.Format("성로에,{0}", tb_abbr_chloe_terefes.Text));
                 sw.WriteLine(string.Format("마츠리,{0}", tb_abbr_matsuri.Text));
                 sw.WriteLine(string.Format("클로에,{0}", tb_abbr_chloe.Text));
                 sw.WriteLine(string.Format("할츠리,{0}", tb_abbr_matsuri_halloween.Text));
@@ -11033,7 +11021,7 @@ namespace PCRD_KR_ArenaSim
                 sw.WriteLine(string.Format("작마키,{0}", tb_abbr_tamaki_worker.Text));
                 sw.WriteLine(string.Format("토모,{0}", tb_abbr_tomo.Text));
                 sw.WriteLine(string.Format("치에루,{0}", tb_abbr_chieru.Text));
-                sw.WriteLine(string.Format("성에루,{0}", tb_abbr_chieru_nakayosi2.Text));
+                sw.WriteLine(string.Format("성에루,{0}", tb_abbr_chieru_terefes.Text));
                 sw.WriteLine(string.Format("수마키,{0}", tb_abbr_tamaki_summer.Text));
                 sw.WriteLine(string.Format("에리코,{0}", tb_abbr_eriko.Text));
                 sw.WriteLine(string.Format("수페코,{0}", tb_abbr_pekorinnu_summer.Text));
@@ -11295,8 +11283,8 @@ namespace PCRD_KR_ArenaSim
                 Abbr_kaya_timetravel = tb_abbr_kaya_timetravel.Text;
                 Abbr_inori_timetravel = tb_abbr_inori_timetravel.Text;
 
-                Abbr_chieru_nakayosi2 = tb_abbr_chieru_nakayosi2.Text;
-                Abbr_chloe_nakayosi2 = tb_abbr_chloe_nakayosi2.Text;
+                Abbr_chieru_terefes = tb_abbr_chieru_terefes.Text;
+                Abbr_chloe_terefes = tb_abbr_chloe_terefes.Text;
 
                 Abbr_aoi_worker = tb_abbr_aoi_worker.Text;
                 Abbr_tamaki_worker = tb_abbr_tamaki_worker.Text;
@@ -11478,8 +11466,8 @@ namespace PCRD_KR_ArenaSim
             else if (abbrChara == Abbr_makoto_cinderella) return "makoto_cinderella";
             else if (abbrChara == Abbr_maho_cinderella) return "maho_cinderella";
             else if (abbrChara == Abbr_rima_cinderella) return "rima_cinderella";
-            else if (abbrChara == Abbr_chieru_nakayosi2) return "chieru_nakayosi2";
-            else if (abbrChara == Abbr_chloe_nakayosi2) return "chloe_nakayosi2";
+            else if (abbrChara == Abbr_chieru_terefes) return "chieru_terefes";
+            else if (abbrChara == Abbr_chloe_terefes) return "chloe_terefes";
             else if (abbrChara == Abbr_inori_timetravel) return "inori_timetravel";
             else if (abbrChara == Abbr_kaya_timetravel) return "kaya_timetravel";
             else if (abbrChara == Abbr_aoi_worker) return "aoi_worker";

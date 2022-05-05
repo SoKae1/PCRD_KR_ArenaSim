@@ -34,7 +34,7 @@
         public bool kotkoro_maiden, yui_maiden;
         public bool kasumi_summer;
         public bool rima_cinderella, makoto_cinderella, maho_cinderella;
-        public bool chloe_nakayosi2, chieru_nakayosi2, yuni_nakayosi2;
+        public bool chloe_terefes, chieru_terefes, yuni_terefes;
         public bool inori_timetravel, kaya_timetravel;
         public bool aoi_worker, tamaki_worker, mihuyu_worker;
         public bool eriko_summer, sizuru_summer, nozomi_summer, chika_summer, tsumugi_summer = false;
@@ -80,7 +80,7 @@
         public bool kotkoro_maiden_enable, yui_maiden_enable;
         public bool kasumi_summer_enable;
         public bool rima_cinderella_enable, makoto_cinderella_enable, maho_cinderella_enable;
-        public bool chloe_nakayosi2_enable, chieru_nakayosi2_enable, yuni_nakayosi2_enable;
+        public bool chloe_terefes_enable, chieru_terefes_enable, yuni_terefes_enable;
         public bool inori_timetravel_enable, kaya_timetravel_enable;
         public bool aoi_worker_enable, tamaki_worker_enable, mihuyu_worker_enable;
 
