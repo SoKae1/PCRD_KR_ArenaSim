@@ -11,7 +11,7 @@
         https://github.com/esterTion/redive_master_db_diff/blob/master/chara_story_status.sql 일섭은 인연스탯 다를 수 있?나?
         https://github.com/HerDataSam/redive_kr_db_diff/blob/master/chara_story_status.csv
         작후유, 프캬루까지 넣음
-        스즈메 6성까지 넣음
+        카오리 6성까지 넣음
          */
         public double[] hiyori_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] hiyori_02 = new double[15] { 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -340,7 +340,13 @@
         public double[] kaori_06 = new double[15] { 0, 160, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] kaori_07 = new double[15] { 0, 220, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] kaori_08 = new double[15] { 0, 310, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-
+        public double[] kaori_09 = new double[15] { 0, 380, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kaori_10 = new double[15] { 0, 480, 0, 0, 0, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kaori_11 = new double[15] { 0, 580, 0, 0, 0, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kaori_12 = new double[15] { 0, 710, 0, 0, 0, 150, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        
+        // 1HP, 2물공, 3마공, 4물방, 5마방, 6물크, 7마크, 8HP 자동 회복, 9TP 자동 회복, 10회피, 11HP 흡수, 12회복량 상승, 13TP 상승, 14TP 소비 감소, 15명중
+        /* db상 데이터 1,2,3물방,4마공,5마방,6물크,7마크,8,9HP 흡수,10,11,12,13,14,15 */
         public double[] kaori_summer_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] kaori_summer_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] kaori_summer_03 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -404,6 +410,10 @@
         public double[] kurumi_06 = new double[15] { 1400, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] kurumi_07 = new double[15] { 1800, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] kurumi_08 = new double[15] { 2400, 0, 0, 14, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kurumi_09 = new double[15] { 2400, 80, 0, 14, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kurumi_10 = new double[15] { 2400, 160, 0, 14, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kurumi_11 = new double[15] { 2400, 240, 0, 14, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] kurumi_12 = new double[15] { 2400, 320, 0, 14, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20 };
 
         public double[] kurumi_christmas_01 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] kurumi_christmas_02 = new double[15] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };

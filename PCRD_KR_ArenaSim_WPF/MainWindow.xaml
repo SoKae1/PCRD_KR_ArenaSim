@@ -238,7 +238,7 @@
                             </ToggleButton>
                             <ToggleButton Name="tb_kurumi" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="kurumi" IsChecked="false" BorderThickness="0"  
                                 Checked="tb_kurumi_Checked" Unchecked="tb_kurumi_UnChecked">
-                                <Image Source="res\icon_unit\102131.png"    />
+                                <Image Source="res\icon_unit\102161.png"    />
                             </ToggleButton>
                             <ToggleButton Name="tb_zita" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="zita" IsChecked="false" BorderThickness="0"  
                             Checked="tb_zita_Checked" Unchecked="tb_zita_UnChecked">
@@ -981,7 +981,7 @@
                             </ToggleButton>
                             <ToggleButton Name="tb_enable_kurumi" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="kurumi" IsChecked="false" BorderThickness="0"  
                                 Checked="tb_enable_kurumi_Checked" Unchecked="tb_enable_kurumi_UnChecked">
-                                <Image Source="res\icon_unit\102131.png"    />
+                                <Image Source="res\icon_unit\102161.png"    />
                             </ToggleButton>
                             <ToggleButton Name="tb_enable_zita" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="zita" IsChecked="false" BorderThickness="0"  
                             Checked="tb_enable_zita_Checked" Unchecked="tb_enable_zita_UnChecked">
@@ -1619,7 +1619,7 @@
                             </Button>
                             <Button  ToolTip="kurumi"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                         Click="bt_kurumi_set_Click" >
-                                <Image Source="res\icon_unit\102131.png" Stretch="Fill"     Name="img_bt_kurumi"  />
+                                <Image Source="res\icon_unit\102161.png" Stretch="Fill"     Name="img_bt_kurumi"  />
                             </Button>
                             <Button  ToolTip="zita"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                     Click="bt_zita_set_Click" >
@@ -2093,10 +2093,12 @@
                     <DockPanel Grid.Row="0" LastChildFill="true">
 
                         <DockPanel>
-                            <RichTextBox x:Name="RTxtbox_Logbox" Margin="15,15,15,15"  
+                            
+                            <RichTextBox x:Name="Rtb_Logbox" Margin="15,15,15,15"  
                                 BorderBrush="{x:Null}" 
                              Background="AliceBlue" IsReadOnly="True" 
                                          VerticalScrollBarVisibility="Visible" Block.LineHeight="6" >
+                                
                                 <FlowDocument>
                                     <Paragraph Padding="1,6,0,0"/>
                                 </FlowDocument>
@@ -2114,7 +2116,14 @@
                                 MinWidth="100" Margin="25,25,5,0" Background="#FFFDFDFD"
                                 Click="bt_clear_log_Click" MinHeight="35"/>
 
-                        <TextBox Text="0 ~ 4 : 방덱, 15 ~ 19 : 공덱" Margin="25,25,5,0" VerticalAlignment="Center" Height="35" VerticalContentAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                        <TextBox Text="0 ~ 4 : 방덱, 15 ~ 19 : 공덱" Margin="25,25,5,0" VerticalAlignment="Center" Height="35" VerticalContentAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" IsUndoEnabled="False"/>
+                        <TextBox Text="검색하기" Margin="85,25,5,0" VerticalAlignment="Center" Height="35" VerticalContentAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" IsUndoEnabled="False"/>
+
+                        <TextBox x:Name="tb_searchLog" Text="" Margin="15,25,5,0" VerticalAlignment="Center" MinWidth ="200"  Height="35" 
+                                 VerticalContentAlignment="Center" BorderBrush="{x:Null}" KeyUp="tb_searchLog_KeyUp" TextChanged="tb_searchLog_TextChanged"/>
+                        <Button x:Name="bt_searchLog" Content="검색" Width="75" BorderBrush="{x:Null}" 
+                                MinWidth="55"  Margin="25,25,5,0" Background="#FFFFE7E7" 
+                                Click="bt_searchLog_Click" MinHeight="35"/>
                     </WrapPanel>
                 </Grid>
             </TabItem>

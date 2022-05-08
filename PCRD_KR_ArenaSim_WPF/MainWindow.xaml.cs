@@ -19,6 +19,7 @@ using AutoUpdaterDotNET;
 using System.Xml;
 using System.Net;
 using HtmlAgilityPack;
+using System.Windows.Controls;
 
 namespace PCRD_KR_ArenaSim
 {
@@ -608,7 +609,7 @@ namespace PCRD_KR_ArenaSim
             tb_kaya_timetravel.IsChecked = false;
             tb_aoi_worker.IsChecked = false;
             tb_tamaki_worker.IsChecked = false;
-            //tb_mihuyu_worker.IsChecked = false;
+            tb_mihuyu_worker.IsChecked = false;
             //tb_.IsChecked = false;
 
             tb_CharaAbbr.Text = "";
@@ -1130,7 +1131,7 @@ namespace PCRD_KR_ArenaSim
 
                     myFlowDoc.Blocks.Add(new Paragraph(new Run("")));
                     myFlowDoc.Blocks.Clear();
-                    RTxtbox_Logbox.Document = myFlowDoc;
+                    Rtb_Logbox.Document = myFlowDoc;
 
                     Debug.WriteLine("1-select_count = {0} ", select_count);
                     Debug.WriteLine("1-select_count_temp = {0}", select_count_temp);
@@ -1241,7 +1242,7 @@ namespace PCRD_KR_ArenaSim
 
                         Debug.WriteLine("파티 수 : {0}", FoundPick_KR.Length);
                         myFlowDoc.Blocks.Add(new Paragraph(new Run(LogString)));
-                        RTxtbox_Logbox.Document = myFlowDoc;
+                        Rtb_Logbox.Document = myFlowDoc;
 
                         LogString = "";
                         isOffDeckReady = true;
@@ -1310,7 +1311,7 @@ namespace PCRD_KR_ArenaSim
                         //Debug.WriteLine("파티 수 : {0}", FoundPick_KR.Length);
 
                         myFlowDoc.Blocks.Add(new Paragraph(new Run(LogString)));
-                        RTxtbox_Logbox.Document = myFlowDoc;
+                        Rtb_Logbox.Document = myFlowDoc;
 
                         LogString = "";
 
@@ -1424,7 +1425,7 @@ namespace PCRD_KR_ArenaSim
                         Debug.WriteLine(String.Format("{0}, {1}, {2}, {3}, {4} ", RealFindParty[xxx][0], RealFindParty[xxx][1], RealFindParty[xxx][2], RealFindParty[xxx][3], RealFindParty[xxx][4]));
                     }
                     myFlowDoc.Blocks.Add(new Paragraph(new Run(LogString)));
-                    RTxtbox_Logbox.Document = myFlowDoc;
+                    Rtb_Logbox.Document = myFlowDoc;
 
                 }
 
@@ -1526,7 +1527,7 @@ namespace PCRD_KR_ArenaSim
                 WriteLog(String.Format("\n방어덱 시간 승률: {0:0.#}%", (double)def_timecount / ((double)off_count + (double)def_count + (double)def_timecount) * 100));
 
                 myFlowDoc.Blocks.Add(new Paragraph(new Run(LogString)));
-                RTxtbox_Logbox.Document = myFlowDoc;
+                Rtb_Logbox.Document = myFlowDoc;
 
                 /*
                 MessageBox.Show(String.Format("공격덱 승률: {0:0.#}%\n", (double)off_count / ((double)off_count + (double)def_count + (double)def_timecount) * 100)
@@ -1575,7 +1576,7 @@ namespace PCRD_KR_ArenaSim
                     myFlowDoc.Blocks.Add(new Paragraph(new Run("")));
                     myFlowDoc.Blocks.Clear();
 
-                    RTxtbox_Logbox.Document = myFlowDoc;
+                    Rtb_Logbox.Document = myFlowDoc;
                     LogString = "";
                     SimTime = DateTime.Now;
 
@@ -1723,7 +1724,7 @@ namespace PCRD_KR_ArenaSim
                 myFlowDoc.Blocks.Add(new Paragraph(new Run("")));
                 myFlowDoc.Blocks.Clear();
 
-                RTxtbox_Logbox.Document = myFlowDoc;
+                Rtb_Logbox.Document = myFlowDoc;
                 LogString = "";
 
                 DateTime SimTime = DateTime.Now;
@@ -1878,7 +1879,7 @@ namespace PCRD_KR_ArenaSim
                     WriteLog(String.Format("\n방어덱 시간 승률: {0:0.#}%", (double)def_timecount / ((double)off_count + (double)def_count + (double)def_timecount) * 100));
 
                     myFlowDoc.Blocks.Add(new Paragraph(new Run(LogString)));
-                    RTxtbox_Logbox.Document = myFlowDoc;
+                    Rtb_Logbox.Document = myFlowDoc;
 
 
                     MessageBox.Show(String.Format("공격덱 승률: {0:0.#}%\n", (double)off_count / ((double)off_count + (double)def_count + (double)def_timecount) * 100)
@@ -6995,7 +6996,7 @@ namespace PCRD_KR_ArenaSim
             else if (CharaName == "kaori") { ID = "101731"; }
             else if (CharaName == "io") { ID = "101861"; }
             else if (CharaName == "mimi") { ID = "102061"; }
-            else if (CharaName == "kurumi") { ID = "102131"; }
+            else if (CharaName == "kurumi") { ID = "102161"; }
             else if (CharaName == "yori") { ID = "102261"; }
             else if (CharaName == "ayane") { ID = "102361"; }
             else if (CharaName == "suzume") { ID = "102561"; }
@@ -7193,7 +7194,7 @@ namespace PCRD_KR_ArenaSim
                 else if (ID == "101711" || ID == "101731" || ID == "101761") return "kaori";
                 else if (ID == "101811" || ID == "101831" || ID == "101861") return "io";
                 else if (ID == "102011" || ID == "102031" || ID == "102061") return "mimi";
-                else if (ID == "102111" || ID == "102131" || ID == "102161") return "kurumi";
+                else if (ID == "102111" || ID == "102161" || ID == "102161") return "kurumi";
                 else if (ID == "102211" || ID == "102231" || ID == "102261") return "yori";
                 else if (ID == "102311" || ID == "102331" || ID == "102361") return "ayane";
                 else if (ID == "102511" || ID == "102531" || ID == "102561") return "suzume";
@@ -7398,7 +7399,7 @@ namespace PCRD_KR_ArenaSim
                 else if (ID == "101711" || ID == "101731" || ID == "101761") return "카오리";
                 else if (ID == "101811" || ID == "101831" || ID == "101861") return "이오";
                 else if (ID == "102011" || ID == "102031" || ID == "102061") return "미미";
-                else if (ID == "102111" || ID == "102131" || ID == "102161") return "쿠루미";
+                else if (ID == "102111" || ID == "102161" || ID == "102161") return "쿠루미";
                 else if (ID == "102211" || ID == "102231" || ID == "102261") return "요리";
                 else if (ID == "102311" || ID == "102331" || ID == "102361") return "아야네";
                 else if (ID == "102511" || ID == "102531" || ID == "102561") return "스즈메";
@@ -7616,9 +7617,9 @@ namespace PCRD_KR_ArenaSim
             }
         }
 
-        public static decimal maxLevel = 196;
-        public static decimal maxRank = 20;
-        public static decimal maxItemQuantity = 5;
+        public static decimal maxLevel = 199;
+        public static decimal maxRank = 21;
+        public static decimal maxItemQuantity = 3;
         
         public static decimal maxUnique = (int)(( Math.Floor((maxLevel-1)/10))*10)+10;
 
@@ -7719,7 +7720,7 @@ namespace PCRD_KR_ArenaSim
                         || temp1[0] == "니논" || temp1[0] == "마히루" || temp1[0] == "스즈나" || temp1[0] == "아카리" || temp1[0] == "요리" 
                         || temp1[0] == "쿄우카" || temp1[0] == "미소기" || temp1[0] == "미미"
                         || temp1[0] == "노조미"
-                        || temp1[0] == "스즈메" )
+                        || temp1[0] == "스즈메" || temp1[0] == "쿠루미")
                     {
                         temp1[2] = "6";
                         temp2[2] = "6";
@@ -7749,7 +7750,7 @@ namespace PCRD_KR_ArenaSim
                 sw1.Close();
                 sw2.Close();
 
-                Debug.WriteLine("6성 자동강화 성공!");
+                Debug.WriteLine("6성 재능개화 성공!");
             }
             catch (Exception ex)
             {
@@ -10071,15 +10072,133 @@ namespace PCRD_KR_ArenaSim
         {
             myFlowDoc.Blocks.Clear();
             myFlowDoc.Blocks.Add(new Paragraph(new Run("3545")));
-            RTxtbox_Logbox.Document = myFlowDoc;
+            Rtb_Logbox.Document = myFlowDoc;
             LogString = "";
         }
-        public static void WriteLog(string text) { LogString += text; }
+
+        private int Start = -1;
+        private void FindText()
+        {
+            //myFlowDoc
+            Paragraph p = (Paragraph)myFlowDoc.Blocks.FirstBlock;
+            if (p != null)
+            {
+                String originalRunText = ((Run)p.Inlines.FirstInline).Text;
+                String word = tb_searchLog.Text;
+
+                var textSearchRange = new TextRange(p.ContentStart, p.ContentEnd);
+                Int32 position = textSearchRange.Text.IndexOf(word, StringComparison.OrdinalIgnoreCase);
+
+                if (position < 0) return;
+
+                TextPointer start;
+                start = textSearchRange.Start.GetPositionAtOffset(position);
+                var end = textSearchRange.Start.GetPositionAtOffset(position + word.Length);
+
+                //var textR = new TextRange(start, end);
+                
+
+                // Programmatically change the selection in the RichTextBox.  
+                Rtb_Logbox.Selection.Select(start, end);
+                //textR.Text = "";
+                Run newRun = new Run(word, start);
+                // newRun.FontSize = 30;
+
+            }
+            else
+                MessageBox.Show("로그가 없습니다", "알림");
+        }
+
+        TextPointer FindWordFromPosition(TextPointer position, string word)
+        {
+            while (position != null)
+            {
+                if (position.GetPointerContext(LogicalDirection.Forward) == TextPointerContext.Text)
+                {
+                    string textRun = position.GetTextInRun(LogicalDirection.Forward);
+
+                    // Find the starting index of any substring that matches "word".
+                    int indexInRun = textRun.IndexOf(word);
+                    if (indexInRun >= 0)
+                    {
+                        position = position.GetPositionAtOffset(indexInRun);
+                        break;
+                    }
+                }
+                else
+                {
+                    position = position.GetNextContextPosition(LogicalDirection.Forward);
+                }
+            }
+
+            // position will be null if "word" is not found.
+            return position;
+        }
+
+        public static bool isSearched = false;  
+        private void Search()
+        {
+            String search = tb_searchLog.Text;
+            bool toScroll = true;
+            TextPointer text = myFlowDoc.ContentStart;
+            
+            while (true)
+            {
+                TextPointer next = text.GetNextContextPosition(LogicalDirection.Forward);
+                if (next == null)
+                {
+                    break;
+                }
+                TextRange txt = new TextRange(text, next);
+
+                int indx = txt.Text.IndexOf(search);
+                if (indx > 0)
+                {
+                    TextPointer sta = text.GetPositionAtOffset(indx);
+                    TextPointer end = text.GetPositionAtOffset(indx + search.Length);
+                    TextRange textR = new TextRange(sta, end);
+
+                    textR.ApplyPropertyValue(TextElement.BackgroundProperty, new System.Windows.Media.SolidColorBrush(System.Windows.Media.Colors.Yellow));
+
+                }
+                text = next;
+            }
+            isSearched = true;
+            
+        }
+        private void bt_searchLog_Click(object sender, RoutedEventArgs e)        
+        {
+            //DoSearch(tb_searchLog.Text);
+            Search();
+        }
+
+        private void tb_searchLog_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(isSearched)
+            {
+                myFlowDoc.Blocks.Clear();
+                myFlowDoc.Blocks.Add(new Paragraph(new Run(LogString)));
+                isSearched = false;
+            }
+        }
+        private void tb_searchLog_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Enter)
+            {
+                Debug.WriteLine("검색해요");
+                //FindText();
+                //DoSearch(tb_searchLog.Text);
+                Search();
+            }
+
+        }
+        public static void WriteLog(string text)       {             LogString += text;       }
+
         #endregion
 
 
         //
-        // 설정 탭
+        // 축약어 탭
         //
 
         #region abbr
@@ -10097,7 +10216,6 @@ namespace PCRD_KR_ArenaSim
             Abbr_akino, Abbr_ninon_ooedo, Abbr_hiyori_newyear, Abbr_kaya, Abbr_makoto, Abbr_muimi, Abbr_nozomi, Abbr_kotkoro_newyear, Abbr_ruka, Abbr_pekorinnu_princess, 
             Abbr_pekorinnu, Abbr_rin_deremas, Abbr_rei_newyear, Abbr_kaori, Abbr_kuuka_ooedo, Abbr_zyun, Abbr_kuuka, Abbr_miyako, Abbr_rima, Abbr_kyouka_halloween = "";
 
-       
 
         string Abbr_hiyori_princess;
         string Abbr_yori_angel, Abbr_labyrista, Abbr_matsuri_halloween, Abbr_rei_halloween, Abbr_tsumugi_halloween, Abbr_akino_christmas, Abbr_saren_christmas, Abbr_yukari_christmas,

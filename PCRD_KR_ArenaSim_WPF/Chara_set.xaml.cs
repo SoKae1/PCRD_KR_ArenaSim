@@ -14030,7 +14030,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "kaori" || character == "kaori_summer" || character == "kaori_halloween")
             {
-                array1 = dt.kaori_08;
+                array1 = dt.kaori_12;
                 array2 = dt.kaori_summer_08;
                 //array3 = dt.kaori_halloween_08;
             }
@@ -14048,7 +14048,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "kurumi" || character == "kurumi_christmas" || character == "kurumi_stage")
             {
-                array1 = dt.kurumi_08;
+                array1 = dt.kurumi_12;
                 array2 = dt.kurumi_christmas_08;
                 //array3 = dt.kurumi_stage_08;
             }
@@ -14942,7 +14942,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "kaori" || character == "kaori_summer" || character == "kaori_halloween")
             {
-                array1 = dt.kaori_08;
+                array1 = dt.kaori_12;
                 array2 = dt.kaori_summer_08;
                 //array3 = dt.kaori_halloween_08;
             }
@@ -14960,7 +14960,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "kurumi" || character == "kurumi_christmas" || character == "kurumi_stage")
             {
-                array1 = dt.kurumi_08;
+                array1 = dt.kurumi_12;
                 array2 = dt.kurumi_christmas_08;
                 //array3 = dt.kurumi_stage_08;
             }
