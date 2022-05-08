@@ -1143,10 +1143,10 @@ namespace PCRD_KR_ArenaSim
                     if (Battle_variable.chieru_terefes_stack[my_order] < 40)
                     {
                         Battle_variable.chieru_terefes_stack[my_order] += 1;
-                    }   
+                    }
                 }
                 //성로에 스택
-                if (Battle_variable.name_eng[my_order] == "chloe_terefes" && ((Character_skill.chloe_terefes_opponent_counter < 1  && my_order < 15) || (Character_skill.chloe_terefes_opponent_counter_est < 1 == true && my_order >= 15)))//성에루
+                if (Battle_variable.name_eng[my_order] == "chloe_terefes" && ((Character_skill.chloe_terefes_opponent_counter < 1 && my_order < 15) || (Character_skill.chloe_terefes_opponent_counter_est < 1 == true && my_order >= 15)))//성에루
                 {
                     if (Battle_variable.chloe_terefes_stack[my_order] < 49)
                     {
@@ -1170,7 +1170,7 @@ namespace PCRD_KR_ArenaSim
 
                     if (Battle_variable.name_eng[my_order] == "chieru" && ((Character_skill.chieru_opponent_dance == true && my_order < 15) || (Character_skill.chieru_opponent_dance_est == true && my_order >= 15)))//치에루
                     {
-                        if(Level_variable.equip[my_order] == true)
+                        if (Level_variable.equip[my_order] == true)
                         {
                             if (Battle_variable.chieru_stack[my_order] < 77)
                             {
@@ -1184,7 +1184,7 @@ namespace PCRD_KR_ArenaSim
                                 Battle_variable.chieru_stack[my_order] += 1;
                             }
                         }
-                        
+
                     }
                     if (Battle_variable.name_eng[my_order] == "rino_wonder")
                     {

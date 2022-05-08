@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
+using System.Net;
 
 namespace CSharpCodeGenerator
 {
@@ -23,7 +20,7 @@ namespace CSharpCodeGenerator
         {
 
             WebClient mywebClient = new WebClient();
-            mywebClient.DownloadFile("https://raw.githubusercontent.com/esterTion/redive_master_db_diff/master/unique_equipment_enhance_rate.sql", Environment.CurrentDirectory+ @"/temp.csv");
+            mywebClient.DownloadFile("https://raw.githubusercontent.com/esterTion/redive_master_db_diff/master/unique_equipment_enhance_rate.sql", Environment.CurrentDirectory + @"/temp.csv");
             Console.WriteLine("done");
         }
         static void ReadCSV(string filename)

@@ -177,7 +177,7 @@ namespace PCRD_KR_ArenaSim
                 }
                 if (Battle_variable.name_eng[my_order] == "chloe" && ((Character_skill.chloe_opponent_twilight == true && my_order < 15) || (Character_skill.chloe_opponent_twilight_est == true && my_order >= 15)))//클로에
                 {
-                    if(Level_variable.equip[my_order] == true)
+                    if (Level_variable.equip[my_order] == true)
                     {
                         if (Battle_variable.intimidated_stack[opponent_order] < 99)
                         {
@@ -190,7 +190,7 @@ namespace PCRD_KR_ArenaSim
                         {
                             Battle_variable.intimidated_stack[opponent_order] += 1;
                         }
-                    }                    
+                    }
                 }
                 LostHP_TP(damage, opponent_order);//먼저 적용
 
@@ -852,7 +852,7 @@ namespace PCRD_KR_ArenaSim
                 Battle_variable.clairvoyance_active[array_order] = true;
             }
         }
-        
+
         public static void end_absorb(int array_order)
         {
             if (Battle_variable.absorb[array_order] == true && Battle_variable.absorb_count[array_order] == 1)
@@ -869,7 +869,7 @@ namespace PCRD_KR_ArenaSim
                 Battle_variable.clairvoyance_active[array_order] = false;
             }
         }
-                
+
         public static void buff_process(string buff_type, double coefficient, double duration, int my_order, int opponent_order)
         {
             if (Battle_variable.death[opponent_order] == false && Battle_variable.death[my_order] == false)
@@ -1321,7 +1321,7 @@ namespace PCRD_KR_ArenaSim
                     Battle_variable.RCdamage_save[i, opponent_order] = coefficient - 1;
                     Battle_variable.RCdamage_time[i, opponent_order] = duration;
                     Battle_variable.RCdamage_coef[opponent_order] += Battle_variable.RCdamage_save[i, opponent_order];
-                  
+
 
                     //Debug.WriteLine("{2}{0}가 {3}{1}에게 받는 크리티컬 배율 디버프 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], my_order, opponent_order);
                     //Debug.WriteLine("{2}{0} 받는 크리티컬 배율: {1} (기본 2)\n", Battle_variable.name[opponent_order], Battle_variable.ConTP_coef[opponent_order], opponent_order);
@@ -1498,13 +1498,13 @@ namespace PCRD_KR_ArenaSim
                     {
                         if (opponent_order < 15)
                         {
-                            if(Character_skill.akino_christmas_opponent_holyprize == true)
+                            if (Character_skill.akino_christmas_opponent_holyprize == true)
                             {
                                 if (Character_skill.akino_christmas_opponent_glitter <= 25)
                                     Character_skill.akino_christmas_opponent_glitter++;
                                 else
                                     Character_skill.akino_christmas_opponent_glitter = 25;
-                                
+
                                 Debug.WriteLine("{2}{0}의 성야의 반짝임 수: {1}\n", Battle_variable.name[opponent_order], Character_skill.akino_christmas_opponent_glitter, opponent_order);
 
                             }
@@ -1784,7 +1784,7 @@ namespace PCRD_KR_ArenaSim
                     Battle_variable.buff_PA_coef[i, opponent_order] = coefficient;
                     Battle_variable.buff_PA_time[i, opponent_order] = duration;
                     Battle_variable.name_eng[opponent_order] = "rima_cinderella_2";
-                   
+
 
                     Debug.WriteLine("{3}{0}가 {4}{1}에게 변이 버프 {2} 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], Battle_variable.buff_PA_coef[i, opponent_order], my_order, opponent_order);
                     //Debug.WriteLine("{2}{0} 물리공격력: {1}\n", Battle_variable.name[opponent_order], Battle_variable.PA[opponent_order], opponent_order);

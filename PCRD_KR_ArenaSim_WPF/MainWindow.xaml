@@ -2094,16 +2094,12 @@
 
                         <DockPanel>
                             
-                            <TextBox x:Name="tb_Logbox" Margin="15,15,15,15"  
-                                BorderBrush="{x:Null}"  
+                            <RichTextBox x:Name="Rtb_Logbox" Margin="15,15,15,15"  
+                                BorderBrush="{x:Null}" PreviewMouseWheel="Rtb_Logbox_Wheel" 
                              Background="AliceBlue" IsReadOnly="True" 
-                                         VerticalScrollBarVisibility="Visible"  >
-                                
-                            </TextBox>
+                                         VerticalScrollBarVisibility="Visible" KeyDown="Rtb_Logbox_KeyDown" FontSize="16"  />
                         </DockPanel>
                             
-                        
-                        
                     </DockPanel>
                     <WrapPanel Grid.Row="1">
                         <Button x:Name="button" Content="로그 저장" Width="75" BorderBrush="{x:Null}" 
@@ -2113,13 +2109,14 @@
                                 MinWidth="100" Margin="25,25,5,0" Background="#FFFDFDFD"
                                 Click="bt_clear_log_Click" MinHeight="35"/>
 
-                        <TextBox Text="0 ~ 4 : 방덱, 15 ~ 19 : 공덱" Margin="25,25,5,0" VerticalAlignment="Center" Height="35" VerticalContentAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" IsUndoEnabled="False"/>
-                        <TextBox Text="검색하기" Margin="85,25,5,0" VerticalAlignment="Center" Height="35" VerticalContentAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" IsUndoEnabled="False"/>
+                        <TextBox Text="0 ~ 4 : 방덱, 15 ~ 19 : 공덱" Margin="25,25,5,0" VerticalAlignment="Center" Height="35" VerticalContentAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" IsUndoEnabled="False" SelectionBrush="{x:Null}"/>
+                        <TextBox Text="검색하기" Margin="85,25,5,0" VerticalAlignment="Center" Height="35" VerticalContentAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnly="True" IsUndoEnabled="False" SelectionBrush="{x:Null}"/>
 
                         <TextBox x:Name="tb_searchLog" Text="" Margin="15,25,5,0" VerticalAlignment="Center" MinWidth ="200"  Height="35" 
-                                 VerticalContentAlignment="Center" BorderBrush="{x:Null}" KeyUp="tb_searchLog_KeyUp" TextChanged="tb_searchLog_TextChanged"/>
+                                 InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native" 
+                                 VerticalContentAlignment="Center" BorderBrush="{x:Null}" KeyDown="tb_searchLog_KeyDown" FontSize="18"/>
                         <Button x:Name="bt_searchLog" Content="검색" Width="75" BorderBrush="{x:Null}" 
-                                MinWidth="55"  Margin="25,25,5,0" Background="#FFFFE7E7" 
+                                MinWidth="55"  Margin="25,25,5,0" Background="#FFFFF9E7" 
                                 Click="bt_searchLog_Click" MinHeight="35"/>
                     </WrapPanel>
                 </Grid>

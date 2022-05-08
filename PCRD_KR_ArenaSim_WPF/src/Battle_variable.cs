@@ -196,7 +196,7 @@ namespace PCRD_KR_ArenaSim
 
         public static bool[] timestop = Enumerable.Repeat<bool>(false, 30).ToArray<bool>();
         public static double[] timestop_time = Enumerable.Repeat<double>(0, 30).ToArray<double>();
-       
+
         public static bool[] delay = Enumerable.Repeat<bool>(false, 30).ToArray<bool>();
         public static double[] delay_time = Enumerable.Repeat<double>(0, 30).ToArray<double>();
 
@@ -438,9 +438,9 @@ namespace PCRD_KR_ArenaSim
 
                 sleep[i] = false;
                 sleep_time[i] = 0;
-                
-                poison_aoi[i]= false;
-                poison_aoi_time[i]= 0;
+
+                poison_aoi[i] = false;
+                poison_aoi_time[i] = 0;
 
                 field_P[i] = false;
                 field_P_coef[i] = 0;
@@ -559,14 +559,14 @@ namespace PCRD_KR_ArenaSim
             Character_skill.shepi_opponent_UBstack = 0;
             Character_skill.shepi_opponent_UBstack_est = 0;
 
-            Character_skill.chieru_terefes_opponent_chieru= false;
+            Character_skill.chieru_terefes_opponent_chieru = false;
             Character_skill.chieru_terefes_opponent_chieru_est = false;
 
             Character_skill.chloe_terefes_opponent_counter = 0;
             Character_skill.chloe_terefes_opponent_counter_est = 0;
 
             position = new double[30] { -1560, -1360, -1160, -960, -760, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, -1000000, 1360, 1160, 960, 760, 560, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000 };
-            
+
             if (Array.IndexOf(Battle_variable.name_eng, "rima") != -1)
             {
                 int a = Array.IndexOf(MainWindow.select_defence_eng, "rima");

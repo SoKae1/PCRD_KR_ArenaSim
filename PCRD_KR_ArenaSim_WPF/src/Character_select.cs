@@ -74,7 +74,7 @@
 
         public bool yori_angel_enable, tsumugi_halloween_enable, rei_halloween_enable, matsuri_halloween_enable;
         public bool monika_magical_enable, tomo_magical_enable;
-        public bool shepi_enable,  hiyori_princess_enable, kyaru_princess_enable;
+        public bool shepi_enable, hiyori_princess_enable, kyaru_princess_enable;
         public bool akino_christmas_enable, saren_christmas_enable, yukari_christmas_enable;
         public bool muimi_newyear_enable, neneka_newyear_enable, pekorinnu_newyear_enable;
         public bool kotkoro_maiden_enable, yui_maiden_enable;

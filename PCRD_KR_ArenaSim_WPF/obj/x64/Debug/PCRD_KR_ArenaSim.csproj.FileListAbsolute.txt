@@ -15,14 +15,12 @@ C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\De
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\PCRD_KR_ArenaSim.csproj.SuggestedBindingRedirects.cache
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\Chara_set.g.cs
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\MainWindow.g.cs
-C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\YesNo.g.cs
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\App.g.cs
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\PCRD_KR_ArenaSim_MarkupCompile.cache
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\PCRD_KR_ArenaSim_MarkupCompile.lref
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\App.baml
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\Chara_set.baml
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\MainWindow.baml
-C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\YesNo.baml
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\PCRD_KR_ArenaSim.g.resources
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\PCRD_KR_ArenaSim.Properties.Resources.resources
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\PCRD_KR_ArenaSim.csproj.GenerateResource.cache
@@ -31,3 +29,4 @@ C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\De
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\PCRD_KR_ArenaSim.csproj.CopyComplete
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\PCRD_KR_ArenaSim.exe
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\PCRD_KR_ArenaSim.pdb
+C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Debug\YesNo.baml

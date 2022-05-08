@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualBasic.CompilerServices;
+﻿using AutoUpdaterDotNET;
+using HtmlAgilityPack;
+using Microsoft.VisualBasic.CompilerServices;
 using OpenCvSharp;
 using System;
 using System.Collections.Generic;
@@ -9,17 +11,15 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
-using AutoUpdaterDotNET;
 using System.Xml;
-using System.Net;
-using HtmlAgilityPack;
-using System.Windows.Controls;
 
 namespace PCRD_KR_ArenaSim
 {
@@ -31,7 +31,7 @@ namespace PCRD_KR_ArenaSim
         public MainWindow()
         {
             InitializeComponent();
-            this.Title = "프리코네 아레나 시뮬레이터 "+System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            this.Title = "프리코네 아레나 시뮬레이터 " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             InitialText();
             WriteUpdateInfoXml();
             DeleteOldFile();
@@ -44,7 +44,7 @@ namespace PCRD_KR_ArenaSim
             Debug.WriteLine(maxUnique);
         }
 
-        
+
         public static int select_count = 0;
         public static string[] select_defence = new string[15] { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
         public static string[] select_defence_eng = new string[15] { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
@@ -451,7 +451,7 @@ namespace PCRD_KR_ArenaSim
 
         #endregion
         private void UnCheckAll()
-        {            
+        {
             tb_akari.IsChecked = false;
             tb_akino.IsChecked = false;
             tb_anna.IsChecked = false;
@@ -580,7 +580,7 @@ namespace PCRD_KR_ArenaSim
             tb_yori_angel.IsChecked = false;
             tb_yuni.IsChecked = false;
             tb_inori.IsChecked = false;
-            
+
             tb_tsumugi_halloween.IsChecked = false;
             tb_rei_halloween.IsChecked = false;
             tb_matsuri_halloween.IsChecked = false;
@@ -713,7 +713,7 @@ namespace PCRD_KR_ArenaSim
             else
             {
                 SetDeckWithAbbr(tb_CharaAbbr.Text, 1);
-                
+
                 /*
                 try
                 {
@@ -844,7 +844,7 @@ namespace PCRD_KR_ArenaSim
                 sort1 = array1[1];
 
                 FieldInfo dummy2 = crc.GetType().GetField(deckEN[i + 1], BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
-                if(dummy2 != null)
+                if (dummy2 != null)
                 {
                     double[] array2 = (double[])dummy2.GetValue(crc);
                     sort2 = array2[1];
@@ -853,7 +853,7 @@ namespace PCRD_KR_ArenaSim
                 {
                     //MessageBox.Show("ㅈ망", "알림");
                     return null;
-                }                
+                }
 
                 if (sort1 < sort2)
                 {
@@ -941,7 +941,7 @@ namespace PCRD_KR_ArenaSim
                 sort1 = array1[1];
 
                 FieldInfo dummy2 = crc.GetType().GetField(deckEN[i + 1], BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
-                
+
                 if (dummy2 != null)
                 {
                     double[] array2 = (double[])dummy2.GetValue(crc);
@@ -949,7 +949,7 @@ namespace PCRD_KR_ArenaSim
                 }
                 else
                 {
-                   // MessageBox.Show("ㅈ망", "알림");
+                    // MessageBox.Show("ㅈ망", "알림");
                     return null;
                 }
                 if (sort1 < sort2)
@@ -975,7 +975,7 @@ namespace PCRD_KR_ArenaSim
         {
             select_count_temp = 0;
             //select_count = 0;
-            select_defence_temp = new string[15]{ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
+            select_defence_temp = new string[15] { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
             select_defence_temp_eng = new string[15] { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
 
             tb_CharaAbbr.Text = "";
@@ -997,7 +997,7 @@ namespace PCRD_KR_ArenaSim
 
         private void bt_set_Off_Click(object sender, RoutedEventArgs e)
         {
-            if(tb_CharaAbbr.Text == "")
+            if (tb_CharaAbbr.Text == "")
             {
                 select_count_temp = 0;
                 Debug.Write("select_count = ");
@@ -1456,7 +1456,7 @@ namespace PCRD_KR_ArenaSim
             worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(worker_RunWorkerCompleted);//작업이 완료되었을 때 실행할 콜백메서드 정의
             Debug.WriteLine("InitWorkerThread");
         }
-               
+
         private void worker_DoWork(object sender, DoWorkEventArgs e)
         {
             Debug.WriteLine("시작!");
@@ -1480,18 +1480,19 @@ namespace PCRD_KR_ArenaSim
                 {
                     case 0:
                         off_count++;
-                        Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate {
+                        Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate
+                        {
                             lb_WinCount.Content = String.Format("{0} 승", off_count);
                         }));
                         break;
                     case 1:
                         def_count++;
-                        Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate { lb_LoseCount.Content = String.Format("{0} 패", def_count+ def_timecount); }));
+                        Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate { lb_LoseCount.Content = String.Format("{0} 패", def_count + def_timecount); }));
 
                         break;
                     case 2:
                         def_timecount++;
-                        Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate { lb_LoseCount.Content = String.Format("{0} 패", def_count+ def_timecount); }));
+                        Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate { lb_LoseCount.Content = String.Format("{0} 패", def_count + def_timecount); }));
 
                         break;
                     default:
@@ -1504,7 +1505,7 @@ namespace PCRD_KR_ArenaSim
                 {
 
                     Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate { lb_CurrentProgress.Content = String.Format("{0} / {1}", idx + 1, max_repeat); }));
-                    Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate { lb_WinRate.Content = String.Format("{0:0.#} %", (float)off_count / (float)(idx + 1) * 100.0) ; }));
+                    Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate { lb_WinRate.Content = String.Format("{0:0.#} %", (float)off_count / (float)(idx + 1) * 100.0); }));
 
                     highestPercentageReached = percentComplete;
                     worker.ReportProgress(percentComplete);
@@ -1527,8 +1528,8 @@ namespace PCRD_KR_ArenaSim
                 WriteLog(String.Format("\n방어덱 시간 승률: {0:0.#}%", (double)def_timecount / ((double)off_count + (double)def_count + (double)def_timecount) * 100));
 
                 myFlowDoc.Blocks.Add(new Paragraph(new Run(LogString)));
-                tb_Logbox.Text = LogString;
-                //Rtb_Logbox.Document = myFlowDoc;
+                //tb_Logbox.Text = LogString;
+                Rtb_Logbox.Document = myFlowDoc;
 
                 /*
                 MessageBox.Show(String.Format("공격덱 승률: {0:0.#}%\n", (double)off_count / ((double)off_count + (double)def_count + (double)def_timecount) * 100)
@@ -1563,7 +1564,7 @@ namespace PCRD_KR_ArenaSim
 
         private void bt_sim_start_Click(object sender, RoutedEventArgs e)
         {
-            if((string) bt_sim_start.Content == "시작")
+            if ((string)bt_sim_start.Content == "시작")
             {
                 if (isDefDeckReady && isOffDeckReady)
                 {
@@ -1577,17 +1578,17 @@ namespace PCRD_KR_ArenaSim
                     myFlowDoc.Blocks.Add(new Paragraph(new Run("")));
                     myFlowDoc.Blocks.Clear();
 
-                    //Rtb_Logbox.Document = myFlowDoc;
+                    Rtb_Logbox.Document = myFlowDoc;
                     LogString = "";
                     SimTime = DateTime.Now;
 
                     lb_LoseCount.Content = "0 패";
                     lb_WinCount.Content = "0 승";
-                    lb_WinRate.Content = "0 %"; 
+                    lb_WinRate.Content = "0 %";
                     lb_CurrentProgress.Content = "0 / 0";
                     Filename = "Log_" + SimTime.ToString("yyyyMMdd_HHmmss");
                     sw.Restart();
-                    
+
 
                     LoadDefDeck();
                     LoadOffDeck();
@@ -1669,7 +1670,7 @@ namespace PCRD_KR_ArenaSim
                 else
                     MessageBox.Show("덱 구성이 완전히 되지 않았습니다", "알림");
             }
-            else if((string)bt_sim_start.Content == "정지")
+            else if ((string)bt_sim_start.Content == "정지")
             {
 
                 this.worker.CancelAsync();
@@ -1679,12 +1680,12 @@ namespace PCRD_KR_ArenaSim
                 Debug.WriteLine("정지했어");
 
             }
-            
+
 
 
         }
         private void bt_sim_start_multi_Click(object sender, RoutedEventArgs e)
-        {
+        {/*
             if (isDefDeckReady && isOffDeckReady)
             {
                 //Debug.WriteLine("\n시뮬레이션 반복 횟수를 입력해주세요 (매 반복마다 최대 5~6초 정도 소요)");
@@ -1697,7 +1698,7 @@ namespace PCRD_KR_ArenaSim
                 myFlowDoc.Blocks.Add(new Paragraph(new Run("")));
                 myFlowDoc.Blocks.Clear();
 
-                //Rtb_Logbox.Document = myFlowDoc;
+                Rtb_Logbox.Document = myFlowDoc;
                 LogString = "";
 
                 DateTime SimTime = DateTime.Now;
@@ -1766,12 +1767,12 @@ namespace PCRD_KR_ArenaSim
 
                 int[] result2 = new int[max_repeat];
 
-                Debug.WriteLine("ProcessorCount = {0}" ,Environment.ProcessorCount);
+                Debug.WriteLine("ProcessorCount = {0}", Environment.ProcessorCount);
 
                 //ConcurrentBag 사용
                 var parallelOptions = new ParallelOptions
                 {
-                    MaxDegreeOfParallelism = Environment.ProcessorCount - 1 
+                    MaxDegreeOfParallelism = Environment.ProcessorCount - 1
                 };
 
 
@@ -1784,15 +1785,15 @@ namespace PCRD_KR_ArenaSim
                 }
 
                 System.Collections.Concurrent.ConcurrentBag<int> resultCollection = new System.Collections.Concurrent.ConcurrentBag<int>();
-                ParallelLoopResult result = Parallel.For(0, max_repeat, parallelOptions,(i) =>
-                {
-                    //resultx[i] = simul[i]._Sim_Start(max_repeat);
-                    //resultCollection.Add(resultx[i]);
-                    //resultCollection.Add(simul[i]._Sim_Start(max_repeat));
-                    resultCollection.Add(simul[i]._Sim_Start(max_repeat));
-                    //Debug.WriteLine("{0}: {1}, result = {2} ", System.Threading.Thread.CurrentThread.ManagedThreadId, i, resultx[i]);
+                ParallelLoopResult result = Parallel.For(0, max_repeat, parallelOptions, (i) =>
+                 {
+                     //resultx[i] = simul[i]._Sim_Start(max_repeat);
+                     //resultCollection.Add(resultx[i]);
+                     //resultCollection.Add(simul[i]._Sim_Start(max_repeat));
+                     resultCollection.Add(simul[i]._Sim_Start(max_repeat));
+                     //Debug.WriteLine("{0}: {1}, result = {2} ", System.Threading.Thread.CurrentThread.ManagedThreadId, i, resultx[i]);
 
-                });
+                 });
 #if DEBUG
                 Debug.WriteLine("IsCompleted: {0}", result.IsCompleted);
 #endif
@@ -1852,7 +1853,7 @@ namespace PCRD_KR_ArenaSim
                     WriteLog(String.Format("\n방어덱 시간 승률: {0:0.#}%", (double)def_timecount / ((double)off_count + (double)def_count + (double)def_timecount) * 100));
 
                     myFlowDoc.Blocks.Add(new Paragraph(new Run(LogString)));
-                    //Rtb_Logbox.Document = myFlowDoc;
+                    Rtb_Logbox.Document = myFlowDoc;
 
 
                     MessageBox.Show(String.Format("공격덱 승률: {0:0.#}%\n", (double)off_count / ((double)off_count + (double)def_count + (double)def_timecount) * 100)
@@ -1862,7 +1863,7 @@ namespace PCRD_KR_ArenaSim
 
             }
             else
-                MessageBox.Show("덱 구성이 완전히 되지 않았습니다", "알림");
+                MessageBox.Show("덱 구성이 완전히 되지 않았습니다", "알림");*/
         }
         private int Sim_Start(int _max_repeat)
         {
@@ -3164,7 +3165,7 @@ namespace PCRD_KR_ArenaSim
                         }
                         else if (state[i] == "W")
                         {
-                            if (Battle_variable.paralyze[i] == false && Battle_variable.stun[i] == false && Battle_variable.knockback[i] == false && Battle_variable.bind[i] == false && 
+                            if (Battle_variable.paralyze[i] == false && Battle_variable.stun[i] == false && Battle_variable.knockback[i] == false && Battle_variable.bind[i] == false &&
                                 Battle_variable.freeze[i] == false && Battle_variable.timestop[i] == false && Battle_variable.delay[i] == false && Battle_variable.sleep[i] == false)
                             {
                                 W_timing[i] += 0.001;
@@ -3245,7 +3246,7 @@ namespace PCRD_KR_ArenaSim
                                 continue;
                             }
 
-                            if (Battle_variable.paralyze[i] == true || Battle_variable.stun[i] == true || Battle_variable.knockback[i] == true || Battle_variable.bind[i] == true || 
+                            if (Battle_variable.paralyze[i] == true || Battle_variable.stun[i] == true || Battle_variable.knockback[i] == true || Battle_variable.bind[i] == true ||
                                 Battle_variable.freeze[i] == true || Battle_variable.timestop[i] == true || Battle_variable.delay[i] == true || Battle_variable.sleep[i] == true)
                             {
                                 state[i] = "C";
@@ -3435,7 +3436,7 @@ namespace PCRD_KR_ArenaSim
                                     Action_next_seq[i] += 1;
                                 }
                             }
-                            else if (Battle_variable.TP[i] >= 1000 && Battle_variable.confuse[i] == false && Battle_variable.enchant[i] == false && Battle_variable.paralyze[i] == false && Battle_variable.stun[i] == false && 
+                            else if (Battle_variable.TP[i] >= 1000 && Battle_variable.confuse[i] == false && Battle_variable.enchant[i] == false && Battle_variable.paralyze[i] == false && Battle_variable.stun[i] == false &&
                                 Battle_variable.knockback[i] == false && Battle_variable.bind[i] == false && Battle_variable.freeze[i] == false && Battle_variable.timestop[i] == false && Battle_variable.delay[i] == false
                                 && Battle_variable.sleep[i] == false)
                             {
@@ -3466,7 +3467,7 @@ namespace PCRD_KR_ArenaSim
                                 else if (array2_CP[Action_next_seq[i]] == 1001 || array2_CP[Action_next_seq[i]] == 2001)
                                 {
                                     C_next_timing[i] = array1_CRC[3] / Battle_variable.Aspeed_coef[i];
-                                    
+
                                 }
                                 else if (array2_CP[Action_next_seq[i]] == 1002 || array2_CP[Action_next_seq[i]] == 2002)
                                 {
@@ -3475,10 +3476,10 @@ namespace PCRD_KR_ArenaSim
 
                                 if (max_repeat == 1)
                                 {
-                                    WriteLog(String.Format( "\n{0}{1}의 UB 모드가 해제됨", i, Battle_variable.name[i]));
+                                    WriteLog(String.Format("\n{0}{1}의 UB 모드가 해제됨", i, Battle_variable.name[i]));
                                 }
                             }
-                            
+
                             if (Battle_variable.name_eng[i] == "muimi_ub" && Battle_variable.TP[i] == 0)
                             {
                                 Battle_variable.name_eng[i] = "muimi";
@@ -3519,7 +3520,7 @@ namespace PCRD_KR_ArenaSim
                                 }
                             }
 
-                            if (Battle_variable.paralyze[i] == false && Battle_variable.stun[i] == false && Battle_variable.knockback[i] == false && Battle_variable.bind[i] == false && 
+                            if (Battle_variable.paralyze[i] == false && Battle_variable.stun[i] == false && Battle_variable.knockback[i] == false && Battle_variable.bind[i] == false &&
                                 Battle_variable.freeze[i] == false && Battle_variable.timestop[i] == false && Battle_variable.delay[i] == false && Battle_variable.sleep[i] == false)
                             {
                                 C_timing[i] += 0.001;
@@ -3600,7 +3601,7 @@ namespace PCRD_KR_ArenaSim
                                     else if (array2_CP[Action_next_seq[i]] == 1001 || array2_CP[Action_next_seq[i]] == 2001)
                                     {
                                         C_next_timing[i] = array1_CRC[3] / Battle_variable.Aspeed_coef[i];
-                                       
+
                                     }
                                     else if (array2_CP[Action_next_seq[i]] == 1002 || array2_CP[Action_next_seq[i]] == 2002)
                                     {
@@ -3966,7 +3967,7 @@ namespace PCRD_KR_ArenaSim
                                         Battle_variable.confuse_break[i] = true;
                                     }
                                 }
-                                else if (Battle_variable.paralyze[i] == false && Battle_variable.stun[i] == false && Battle_variable.knockback[i] == false && Battle_variable.bind[i] == false 
+                                else if (Battle_variable.paralyze[i] == false && Battle_variable.stun[i] == false && Battle_variable.knockback[i] == false && Battle_variable.bind[i] == false
                                     && Battle_variable.freeze[i] == false && Battle_variable.timestop[i] == false && Battle_variable.delay[i] == false && Battle_variable.sleep[i] == false)
                                 {
                                     if (Battle_variable.position[least_order[i]] < Battle_variable.position[i])
@@ -4012,7 +4013,7 @@ namespace PCRD_KR_ArenaSim
                                 continue;
                             }
 
-                            if (Battle_variable.paralyze[i] == true || Battle_variable.stun[i] == true || Battle_variable.knockback[i] == true || Battle_variable.bind[i] == true || Battle_variable.freeze[i] == true || 
+                            if (Battle_variable.paralyze[i] == true || Battle_variable.stun[i] == true || Battle_variable.knockback[i] == true || Battle_variable.bind[i] == true || Battle_variable.freeze[i] == true ||
                                 Battle_variable.timestop[i] == true || Battle_variable.delay[i] == true || Battle_variable.sleep[i] == true)
                             {
                                 state[i] = "C";
@@ -4204,8 +4205,8 @@ namespace PCRD_KR_ArenaSim
                                     Action_next_seq[i] += 1;
                                 }
                             }
-                            else if (Battle_variable.TP[i] >= 1000 && Battle_variable.confuse[i] == false && Battle_variable.enchant[i] == false && Battle_variable.paralyze[i] == false && Battle_variable.stun[i] == false 
-                                && Battle_variable.knockback[i] == false && Battle_variable.bind[i] == false && Battle_variable.freeze[i] == false && Battle_variable.timestop[i] == false 
+                            else if (Battle_variable.TP[i] >= 1000 && Battle_variable.confuse[i] == false && Battle_variable.enchant[i] == false && Battle_variable.paralyze[i] == false && Battle_variable.stun[i] == false
+                                && Battle_variable.knockback[i] == false && Battle_variable.bind[i] == false && Battle_variable.freeze[i] == false && Battle_variable.timestop[i] == false
                                 && Battle_variable.delay[i] == false && Battle_variable.sleep[i] == false)
                             {
                                 if (Battle_variable.name_eng[i] != "skull" && Battle_variable.name_eng[i] != "sylph_chika" && Battle_variable.name_eng[i] != "sylph_chika_christmas_1" && Battle_variable.name_eng[i] != "sylph_chika_christmas_2" && Battle_variable.name_eng[i] != "sylph_chika_christmas_3" && Battle_variable.name_eng[i] != "golem" && Battle_variable.name_eng[i] != "neneka_alter" && Battle_variable.name_eng[i] != "muimi_ub" && Battle_variable.name_eng[i] != "labyrista_ub")
@@ -4287,7 +4288,7 @@ namespace PCRD_KR_ArenaSim
                             }
 
                             if (Battle_variable.paralyze[i] == false && Battle_variable.stun[i] == false && Battle_variable.knockback[i] == false && Battle_variable.bind[i] == false && Battle_variable.freeze[i] == false
-                                && Battle_variable.timestop[i] == false && Battle_variable.delay[i] == false && Battle_variable.sleep[i] == false) 
+                                && Battle_variable.timestop[i] == false && Battle_variable.delay[i] == false && Battle_variable.sleep[i] == false)
                             {
                                 C_timing[i] += 0.001;
                             }
@@ -4313,7 +4314,7 @@ namespace PCRD_KR_ArenaSim
                         {
                             if (UB_timing[i] < 0.0001)
                             {
-                                string temp =string.Format("{0}_UB", Battle_variable.name_eng[i]);
+                                string temp = string.Format("{0}_UB", Battle_variable.name_eng[i]);
                                 Debug.Write("temp = ");
                                 Debug.WriteLine(temp);
                                 MethodInfo skilldummy = Cs.GetType().GetMethod(string.Format("{0}_UB", Battle_variable.name_eng[i]), BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public | BindingFlags.Static);
@@ -4513,7 +4514,7 @@ namespace PCRD_KR_ArenaSim
                                 state[i] = "C";
                             }
 
-                            if (Battle_variable.paralyze[i] == true || Battle_variable.stun[i] == true || Battle_variable.knockback[i] == true || Battle_variable.bind[i] == true || Battle_variable.freeze[i] == true || 
+                            if (Battle_variable.paralyze[i] == true || Battle_variable.stun[i] == true || Battle_variable.knockback[i] == true || Battle_variable.bind[i] == true || Battle_variable.freeze[i] == true ||
                                 Battle_variable.timestop[i] == true || Battle_variable.delay[i] == true || Battle_variable.sleep[i] == true)
                             {
                                 state[i] = "C";
@@ -4873,7 +4874,7 @@ namespace PCRD_KR_ArenaSim
             }
 
         }
-        
+
         public void LoadDefDeck()
         {
             power_sum_def = 0.0;
@@ -5164,14 +5165,14 @@ namespace PCRD_KR_ArenaSim
 
         }
         public void SetDefPower(int power) { tB_def_power.Text = "방덱 전투력 : " + Convert.ToString(power) + "     "; }
-        public void SetOffPower(int power) 
+        public void SetOffPower(int power)
         {
-            if(isFindOffReady)
+            if (isFindOffReady)
                 tB_off_power.Text = "     " + "공덱 전투력 : ??";
             else
                 tB_off_power.Text = "     " + "공덱 전투력 : " + Convert.ToString(power);
         }
-        
+
         public void ImagePrepare()
         {
             int StarIndex = 1;
@@ -5187,7 +5188,7 @@ namespace PCRD_KR_ArenaSim
                     || CharaIndex == 41 || CharaIndex == 62 || CharaIndex == 64 || CharaIndex == 67 || CharaIndex == 69
                     || CharaIndex == 72 || CharaIndex == 73 || CharaIndex == 74 || CharaIndex == 102
                     || CharaIndex == 148 || CharaIndex == 149 || CharaIndex == 151 || CharaIndex == 152 || CharaIndex == 153 || CharaIndex == 154
-                    || CharaIndex == 161 || CharaIndex == 164 )
+                    || CharaIndex == 161 || CharaIndex == 164)
                 {
 
                 }
@@ -5195,10 +5196,10 @@ namespace PCRD_KR_ArenaSim
                 {
                     //6성
                     if (CharaIndex == 1 || CharaIndex == 2 || CharaIndex == 3 || CharaIndex == 4 || CharaIndex == 6 || CharaIndex == 10 || CharaIndex == 11
-                        || CharaIndex == 12 || CharaIndex == 16 || CharaIndex == 18 || CharaIndex == 20 || CharaIndex == 21 || CharaIndex == 22 || CharaIndex == 23 
-                        || CharaIndex == 25 || CharaIndex == 28 ||  CharaIndex == 29 
-                        || CharaIndex == 30 || CharaIndex == 32 || CharaIndex == 33 || CharaIndex == 34 
-                        || CharaIndex == 36 || CharaIndex == 46 || CharaIndex == 48 || CharaIndex == 49 ||  CharaIndex == 52 || CharaIndex == 58 || CharaIndex == 59 
+                        || CharaIndex == 12 || CharaIndex == 16 || CharaIndex == 18 || CharaIndex == 20 || CharaIndex == 21 || CharaIndex == 22 || CharaIndex == 23
+                        || CharaIndex == 25 || CharaIndex == 28 || CharaIndex == 29
+                        || CharaIndex == 30 || CharaIndex == 32 || CharaIndex == 33 || CharaIndex == 34
+                        || CharaIndex == 36 || CharaIndex == 46 || CharaIndex == 48 || CharaIndex == 49 || CharaIndex == 52 || CharaIndex == 58 || CharaIndex == 59
                         || CharaIndex == 60)
                     {
                         for (StarIndex = 0; StarIndex < 3; StarIndex++)
@@ -5724,21 +5725,21 @@ namespace PCRD_KR_ArenaSim
                     }
                     else
                         MessageBox.Show("ㅈ망", "알림");
-                    
+
 
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Debug.WriteLine(e);
             }
-            
+
         }
 
         public void SetOffDeck(string[] DeckListEng, string[] DeckListKor)
         {
             select_count_temp = DeckListEng.Length;
-            
+
             #region save
             try
             {
@@ -5964,7 +5965,7 @@ namespace PCRD_KR_ArenaSim
                     }
                     else
                         MessageBox.Show("ㅈ망", "알림");
-                    
+
                 }
             }
             catch (Exception e)
@@ -5975,7 +5976,7 @@ namespace PCRD_KR_ArenaSim
         public void CharacterSelectCount(int isOfforDef)
         {
             //isOfforDef == 1 방덱 , 0이면 공덱
-            
+
             string[] temp = new string[15] { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
             string[] temp_eng = new string[15] { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
 
@@ -6731,7 +6732,7 @@ namespace PCRD_KR_ArenaSim
                 temp_eng[select_count_temp] = "matsuri_halloween";
                 select_count_temp += 1;
             }
-           
+
             if (cs.monika_magical == true)
             {
                 temp[select_count_temp] = "마니카";
@@ -6755,14 +6756,14 @@ namespace PCRD_KR_ArenaSim
                 temp[select_count_temp] = "성사렌";
                 temp_eng[select_count_temp] = "saren_christmas";
                 select_count_temp += 1;
-            } 
+            }
             if (cs.yukari_christmas == true)
             {
                 temp[select_count_temp] = "성카리";
                 temp_eng[select_count_temp] = "yukari_christmas";
                 select_count_temp += 1;
             }
-            
+
             if (cs.pekorinnu_newyear == true)
             {
                 temp[select_count_temp] = "뉴페코";
@@ -6781,7 +6782,7 @@ namespace PCRD_KR_ArenaSim
                 temp_eng[select_count_temp] = "neneka_newyear";
                 select_count_temp += 1;
             }
-           
+
             if (cs.kotkoro_maiden == true)
             {
                 temp[select_count_temp] = "의코로";
@@ -6793,17 +6794,17 @@ namespace PCRD_KR_ArenaSim
                 temp[select_count_temp] = "의유이";
                 temp_eng[select_count_temp] = "yui_maiden";
                 select_count_temp += 1;
-            } 
-          
+            }
+
             if (cs.kasumi_summer == true)
             {
                 temp[select_count_temp] = "수스미";
                 temp_eng[select_count_temp] = "kasumi_summer";
                 select_count_temp += 1;
             }
-            
 
-            
+
+
             if (cs.rima_cinderella == true)
             {
                 temp[select_count_temp] = "신리마";
@@ -6822,8 +6823,8 @@ namespace PCRD_KR_ArenaSim
                 temp_eng[select_count_temp] = "maho_cinderella";
                 select_count_temp += 1;
             }
-            
-            
+
+
             if (cs.chloe_terefes == true)
             {
                 temp[select_count_temp] = "성로에";
@@ -6878,7 +6879,7 @@ namespace PCRD_KR_ArenaSim
                 temp_eng[select_count_temp] = "kyaru_princess";
                 select_count_temp += 1;
             }
-            
+
             if (cs.hiyori_princess == true)
             {
                 temp[select_count_temp] = "프요리";
@@ -7593,28 +7594,28 @@ namespace PCRD_KR_ArenaSim
         public static decimal maxLevel = 199;
         public static decimal maxRank = 21;
         public static decimal maxItemQuantity = 3;
-        
-        public static decimal maxUnique = (int)(( Math.Floor((maxLevel-1)/10))*10)+10;
+
+        public static decimal maxUnique = (int)((Math.Floor((maxLevel - 1) / 10)) * 10) + 10;
 
         public void InitialMaxText()
         {
             tb_MaxLevel.Text = Convert.ToString(maxLevel);
-            tb_MaxRank.Text = Convert.ToString(maxRank) ;
-            tb_MaxItemQuqn.Text = Convert.ToString(maxItemQuantity) ;
+            tb_MaxRank.Text = Convert.ToString(maxRank);
+            tb_MaxItemQuqn.Text = Convert.ToString(maxItemQuantity);
             tb_MaxUnique.Text = Convert.ToString(maxUnique);
         }
-        
+
         private void tb_MaxLevel_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             int i;
             if (int.TryParse(tb_MaxLevel.Text.Replace(",", ""), out i))
             {
                 tb_MaxLevel.Text = i.ToString();
-                maxLevel = Convert.ToInt32( tb_MaxLevel.Text);
+                maxLevel = Convert.ToInt32(tb_MaxLevel.Text);
             }
             else
             {
-                tb_MaxLevel.Text =  Convert.ToString( maxLevel);
+                tb_MaxLevel.Text = Convert.ToString(maxLevel);
             }
         }
         private void tb_MaxUnique_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
@@ -7625,7 +7626,7 @@ namespace PCRD_KR_ArenaSim
                 tb_MaxUnique.Text = i.ToString();
                 int x = Convert.ToInt32(tb_MaxUnique.Text);
                 if (x > (int)((Math.Floor((maxLevel - 1) / 10)) * 10) + 10)
-                    x = (int)((Math.Floor((maxLevel - 1) / 10)) * 10) + 10; 
+                    x = (int)((Math.Floor((maxLevel - 1) / 10)) * 10) + 10;
                 maxUnique = Convert.ToInt32(x);
             }
             else
@@ -7687,10 +7688,10 @@ namespace PCRD_KR_ArenaSim
                     string[] temp1 = s1.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
                     string[] temp2 = s2.Split(',');
 
-                    if (temp1[0] == "페코린느" || temp1[0] == "캬루" || temp1[0] == "콧코로" || temp1[0] == "리노" || temp1[0] == "리마" || temp1[0] == "이오" 
+                    if (temp1[0] == "페코린느" || temp1[0] == "캬루" || temp1[0] == "콧코로" || temp1[0] == "리노" || temp1[0] == "리마" || temp1[0] == "이오"
                         || temp1[0] == "유카리" || temp1[0] == "마호" || temp1[0] == "유이" || temp1[0] == "레이" || temp1[0] == "히요리" || temp1[0] == "하츠네"
                         || temp1[0] == "타마키" || temp1[0] == "미후유" || temp1[0] == "시즈루" || temp1[0] == "아야네" || temp1[0] == "사렌" || temp1[0] == "아키노"
-                        || temp1[0] == "니논" || temp1[0] == "마히루" || temp1[0] == "스즈나" || temp1[0] == "아카리" || temp1[0] == "요리" 
+                        || temp1[0] == "니논" || temp1[0] == "마히루" || temp1[0] == "스즈나" || temp1[0] == "아카리" || temp1[0] == "요리"
                         || temp1[0] == "쿄우카" || temp1[0] == "미소기" || temp1[0] == "미미"
                         || temp1[0] == "노조미"
                         || temp1[0] == "스즈메" || temp1[0] == "쿠루미")
@@ -7745,7 +7746,7 @@ namespace PCRD_KR_ArenaSim
 
                     string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
 
-                    if (temp[0] == "프페코" 
+                    if (temp[0] == "프페코"
                         || temp[0] == "앨리노" || temp[0] == "앨유미" || temp[0] == "수루카" || temp[0] == "수안나" || temp[0] == "수나카" || temp[0] == "수츠네"
                         || temp[0] == "수쥰" || temp[0] == "엔카리" || temp[0] == "엔요리" || temp[0] == "프유이" || temp[0] == "프코로" || temp[0] == "프캬루"
                         || temp[0] == "라비리스타" || temp[0] == "셰피" || temp[0] == "할무기" || temp[0] == "할레이" || temp[0] == "할츠리" || temp[0] == "마니카"
@@ -7803,8 +7804,8 @@ namespace PCRD_KR_ArenaSim
                     temp[4] = Convert.ToString(maxRank);
                     for (int xx = 0; xx < 6; xx++)
                     {
-                        if (y< maxItemQuantity)
-                        temp[6 + xx] = "5";
+                        if (y < maxItemQuantity)
+                            temp[6 + xx] = "5";
                         else
                             temp[6 + xx] = "-1";
                         y++;
@@ -7892,7 +7893,7 @@ namespace PCRD_KR_ArenaSim
                     string s = sr.ReadLine();
 
                     string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
-                    if( temp[0] == "프페코" 
+                    if (temp[0] == "프페코"
                         || temp[0] == "앨리노" || temp[0] == "앨유미" || temp[0] == "수루카" || temp[0] == "수안나" || temp[0] == "수나카" || temp[0] == "수츠네"
                         || temp[0] == "수쥰" || temp[0] == "엔카리" || temp[0] == "엔요리" || temp[0] == "프유이" || temp[0] == "프코로" || temp[0] == "프캬루"
                         || temp[0] == "라비리스타" || temp[0] == "셰피" || temp[0] == "할무기" || temp[0] == "할레이" || temp[0] == "할츠리" || temp[0] == "마니카"
@@ -7905,8 +7906,8 @@ namespace PCRD_KR_ArenaSim
                     else
                     {
                         temp[5] = Convert.ToString(maxUnique);
-                    }                   
-                    
+                    }
+
                     stringArray[row] = StringArrayToCommaString(temp);
                     row++;
 
@@ -7924,7 +7925,7 @@ namespace PCRD_KR_ArenaSim
                 }
                 sw.Close();
 
-                MessageBox.Show("공덱의 전용장비를 " + Convert.ToString(maxUnique) +  "레벨로 자동강화 성공!", "알림");
+                MessageBox.Show("공덱의 전용장비를 " + Convert.ToString(maxUnique) + "레벨로 자동강화 성공!", "알림");
             }
             catch (Exception ex)
             {
@@ -7973,7 +7974,7 @@ namespace PCRD_KR_ArenaSim
                 }
                 sw.Close();
 
-                MessageBox.Show("공덱을 " + Convert.ToString(maxRank) + "랭크 " + Convert.ToString(maxItemQuantity)+"템으로 자동강화 성공!", "알림");
+                MessageBox.Show("공덱을 " + Convert.ToString(maxRank) + "랭크 " + Convert.ToString(maxItemQuantity) + "템으로 자동강화 성공!", "알림");
             }
             catch (Exception ex)
             {
@@ -8018,9 +8019,9 @@ namespace PCRD_KR_ArenaSim
                 }
                 sw.Close();
 
-                MessageBox.Show( "공덱을 " + Convert.ToString(maxLevel) + "레벨로 자동강화 성공!","알림");
+                MessageBox.Show("공덱을 " + Convert.ToString(maxLevel) + "레벨로 자동강화 성공!", "알림");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -8028,14 +8029,14 @@ namespace PCRD_KR_ArenaSim
 
         public string StringArrayToCommaString(string[] temp)
         {
-            string result="";
+            string result = "";
             Debug.WriteLine("x = " + temp.Length);
             for (int i = 0; i < temp.Length; i++)
             {
                 result = result + temp[i] + ",";
             }
             Debug.WriteLine("result = " + result); ;
-            return result.Remove(result.Length -1);
+            return result.Remove(result.Length - 1);
         }
         #region SetClick
         private void bt_rima_set_Click(object sender, RoutedEventArgs e)
@@ -8229,7 +8230,7 @@ namespace PCRD_KR_ArenaSim
             Chara_set C_S = new Chara_set(); C_S.ShowDialog();
         }
         private void bt_iriya_christmas_set_Click(object sender, RoutedEventArgs e)
-        {            
+        {
             Chara_set.iriya_christmas = true;
             Chara_set C_S = new Chara_set(); C_S.ShowDialog();
         }
@@ -10045,107 +10046,95 @@ namespace PCRD_KR_ArenaSim
         {
             myFlowDoc.Blocks.Clear();
             myFlowDoc.Blocks.Add(new Paragraph(new Run("3545")));
-            //Rtb_Logbox.Document = myFlowDoc;
+            Rtb_Logbox.Document = myFlowDoc;
             LogString = "";
-            isSearched = false;
         }
 
 
-        TextPointer FindWordFromPosition(TextPointer position, string word)
+        // Search text and Highlight it (Per Click)
+        // Manually add the "FindText"
+        public bool DoSearch(RichTextBox richTextBox, string searchText, bool searchNext)
         {
-            while (position != null)
+            TextRange searchRange;
+
+            // Get the range to search
+            if (searchNext)
+                searchRange = new TextRange(
+                    richTextBox.Selection.Start.GetPositionAtOffset(1),
+                    richTextBox.Document.ContentEnd);
+            else
+                searchRange = new TextRange(
+                    richTextBox.Document.ContentStart,
+                    richTextBox.Document.ContentEnd);
+
+            // Do the search
+            TextRange foundRange = FindTextInRange(searchRange, searchText);
+            if (foundRange == null)
+                return false;
+
+            // Select the found range
+            richTextBox.Focus();
+            richTextBox.Selection.Select(foundRange.Start, foundRange.End);
+            return true;
+        }
+
+        public TextRange FindTextInRange(TextRange searchRange, string searchText)
+        {
+            // Search the text with IndexOf
+            int offset = searchRange.Text.IndexOf(searchText);
+            if (offset < 0)
+                return null;  // Not found
+
+            // Try to select the text as a contiguous range
+            for (TextPointer start = searchRange.Start.GetPositionAtOffset(offset); start != searchRange.End; start = start.GetPositionAtOffset(1))
             {
-                if (position.GetPointerContext(LogicalDirection.Forward) == TextPointerContext.Text)
-                {
-                    string textRun = position.GetTextInRun(LogicalDirection.Forward);
-
-                    // Find the starting index of any substring that matches "word".
-                    int indexInRun = textRun.IndexOf(word);
-                    if (indexInRun >= 0)
-                    {
-                        position = position.GetPositionAtOffset(indexInRun);
-                        break;
-                    }
-                }
-                else
-                {
-                    position = position.GetNextContextPosition(LogicalDirection.Forward);
-                }
+                TextRange result = new TextRange(start, start.GetPositionAtOffset(searchText.Length));
+                if (result.Text == searchText)
+                    return result;
             }
-
-            // position will be null if "word" is not found.
-            return position;
+            return null;
         }
 
-        public static bool isSearched = false;  
-        private void Search()
+        private void bt_searchLog_Click(object sender, RoutedEventArgs e)
         {
-            /*
-            String search = tb_searchLog.Text;
-            bool toScroll = true;
-            TextPointer text = myFlowDoc.ContentStart;
-            
-            while (true)
-            {
-                TextPointer next = text.GetNextContextPosition(LogicalDirection.Forward);
-                if (next == null)
-                {
-                    break;
-                }
-                TextRange txt = new TextRange(text, next);
-
-                int indx = txt.Text.IndexOf(search);
-                if (indx > 0)
-                {
-                    TextPointer sta = text.GetPositionAtOffset(indx);
-                    TextPointer end = text.GetPositionAtOffset(indx + search.Length);
-                    TextRange textR = new TextRange(sta, end);
-
-                    textR.ApplyPropertyValue(TextElement.BackgroundProperty, new System.Windows.Media.SolidColorBrush(System.Windows.Media.Colors.Yellow));
-
-                }
-                text = next;
-            }
-            */
-            int index = 0;
-           while(index < tb_Logbox.Text.LastIndexOf(tb_searchLog.Text))
-           {
-                tb_Logbox.Focus();
-                tb_Logbox.Select(index, tb_searchLog.Text.Length);
-                tb_Logbox.SelectionBrush = System.Windows.Media.Brushes.Red;
-               index = tb_Logbox.Text.IndexOf(tb_searchLog.Text, index);
-           }
-
-            isSearched = true;
-            
-        }
-        private void bt_searchLog_Click(object sender, RoutedEventArgs e)        
-        {
-            //DoSearch(tb_searchLog.Text);
-            Search();
+            DoSearch(Rtb_Logbox, tb_searchLog.Text, true);
         }
 
-        private void tb_searchLog_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if(isSearched)
-            {
-                myFlowDoc.Blocks.Clear();
-                myFlowDoc.Blocks.Add(new Paragraph(new Run(LogString)));
-                isSearched = false;
-            }
-        }
-        private void tb_searchLog_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        private void tb_searchLog_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             if (e.Key == System.Windows.Input.Key.Enter)
             {
                 Debug.WriteLine("검색해요");
-                //FindText();
-                //DoSearch(tb_searchLog.Text);
-                Search();
+                DoSearch(Rtb_Logbox, tb_searchLog.Text, true);
+            }
+        }
+
+        private void Rtb_Logbox_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Enter)
+            {
+                Debug.WriteLine("검색해요");
+                DoSearch(Rtb_Logbox, tb_searchLog.Text, true);
+            }
+        }
+        private void Rtb_Logbox_Wheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
+        {
+            if (System.Windows.Input.Keyboard.Modifiers != System.Windows.Input.ModifierKeys.Control)
+            {
+                return;
             }
 
+            e.Handled = true;
+            if (e.Delta > 0)
+            {
+                ++Rtb_Logbox.FontSize;
+            }
+            else
+            {
+                --Rtb_Logbox.FontSize;
+            }
         }
-        public static void WriteLog(string text)       {             LogString += text;       }
+        public static void WriteLog(string text) { LogString += text; }
 
         #endregion
 
@@ -10156,17 +10145,17 @@ namespace PCRD_KR_ArenaSim
 
         #region abbr
         //축약어 작후유까지
-        string Abbr_misaki_halloween, Abbr_kyouka, Abbr_yuni, Abbr_yuki, Abbr_yui, Abbr_maho, Abbr_maho_summer, Abbr_chika, Abbr_aoi, Abbr_kyaru_summer, 
+        string Abbr_misaki_halloween, Abbr_kyouka, Abbr_yuni, Abbr_yuki, Abbr_yui, Abbr_maho, Abbr_maho_summer, Abbr_chika, Abbr_aoi, Abbr_kyaru_summer,
             Abbr_suzume_summer, Abbr_chika_christmas, Abbr_yui_princess, Abbr_runa, Abbr_misaki, Abbr_hatsune, Abbr_kyaru, Abbr_yui_newyear, Abbr_nanaka, Abbr_misato, Abbr_rino_wonder,
-            Abbr_kasumi_magical, Abbr_kasumi, Abbr_emilia, Abbr_suzume_newyear, Abbr_suzume, Abbr_io_summer, Abbr_io, Abbr_siori_magical, Abbr_siori, Abbr_suzuna_summer, Abbr_suzuna, 
+            Abbr_kasumi_magical, Abbr_kasumi, Abbr_emilia, Abbr_suzume_newyear, Abbr_suzume, Abbr_io_summer, Abbr_io, Abbr_siori_magical, Abbr_siori, Abbr_suzuna_summer, Abbr_suzuna,
             Abbr_rino, Abbr_misato_summer, Abbr_mio_deremas, Abbr_kyaru_newyear, Abbr_aoi_nakayosi, Abbr_neneka, Abbr_lou, Abbr_anne, Abbr_arisa, Abbr_miyako_halloween,
-            Abbr_saren_summer, Abbr_yori, Abbr_akari, Abbr_hatsune_summer, Abbr_mitsuki, Abbr_kotkoro_princess, Abbr_rin, Abbr_ram, Abbr_rem, Abbr_kotkoro_summer, Abbr_akari_angel, 
-            Abbr_grea, Abbr_ayumi, Abbr_ayumi_wonder, Abbr_kotkoro, Abbr_mihuyu_summer, Abbr_nanaka_summer, Abbr_sinobu_halloween, Abbr_anna, Abbr_saren, Abbr_kaori_summer, Abbr_iriya, 
-            Abbr_rin_ranger, Abbr_mihuyu, Abbr_nozomi_christmas, Abbr_ninon, Abbr_monika, Abbr_yukari, Abbr_mahiru, Abbr_mahiru_ranger, Abbr_sizuru_valentine, Abbr_uzuki_deremas, 
-            Abbr_mimi_halloween, Abbr_sinobu, Abbr_mimi, Abbr_kurumi_christmas, Abbr_kristina, Abbr_sizuru, Abbr_kristina_christmas, Abbr_anna_summer, Abbr_iriya_christmas, Abbr_rei, 
-            Abbr_zita, Abbr_kurumi, Abbr_pekorinnu_summer, Abbr_eriko, Abbr_tamaki_summer, Abbr_chieru, Abbr_tomo, Abbr_tamaki, Abbr_misogi_halloween, Abbr_ayane, Abbr_misogi, 
-            Abbr_hiyori, Abbr_inori, Abbr_tsumugi, Abbr_ruka_summer, Abbr_ayane_christmas, Abbr_eriko_valentine, Abbr_chloe, Abbr_matsuri, Abbr_zyun_summer, Abbr_makoto_summer, 
-            Abbr_akino, Abbr_ninon_ooedo, Abbr_hiyori_newyear, Abbr_kaya, Abbr_makoto, Abbr_muimi, Abbr_nozomi, Abbr_kotkoro_newyear, Abbr_ruka, Abbr_pekorinnu_princess, 
+            Abbr_saren_summer, Abbr_yori, Abbr_akari, Abbr_hatsune_summer, Abbr_mitsuki, Abbr_kotkoro_princess, Abbr_rin, Abbr_ram, Abbr_rem, Abbr_kotkoro_summer, Abbr_akari_angel,
+            Abbr_grea, Abbr_ayumi, Abbr_ayumi_wonder, Abbr_kotkoro, Abbr_mihuyu_summer, Abbr_nanaka_summer, Abbr_sinobu_halloween, Abbr_anna, Abbr_saren, Abbr_kaori_summer, Abbr_iriya,
+            Abbr_rin_ranger, Abbr_mihuyu, Abbr_nozomi_christmas, Abbr_ninon, Abbr_monika, Abbr_yukari, Abbr_mahiru, Abbr_mahiru_ranger, Abbr_sizuru_valentine, Abbr_uzuki_deremas,
+            Abbr_mimi_halloween, Abbr_sinobu, Abbr_mimi, Abbr_kurumi_christmas, Abbr_kristina, Abbr_sizuru, Abbr_kristina_christmas, Abbr_anna_summer, Abbr_iriya_christmas, Abbr_rei,
+            Abbr_zita, Abbr_kurumi, Abbr_pekorinnu_summer, Abbr_eriko, Abbr_tamaki_summer, Abbr_chieru, Abbr_tomo, Abbr_tamaki, Abbr_misogi_halloween, Abbr_ayane, Abbr_misogi,
+            Abbr_hiyori, Abbr_inori, Abbr_tsumugi, Abbr_ruka_summer, Abbr_ayane_christmas, Abbr_eriko_valentine, Abbr_chloe, Abbr_matsuri, Abbr_zyun_summer, Abbr_makoto_summer,
+            Abbr_akino, Abbr_ninon_ooedo, Abbr_hiyori_newyear, Abbr_kaya, Abbr_makoto, Abbr_muimi, Abbr_nozomi, Abbr_kotkoro_newyear, Abbr_ruka, Abbr_pekorinnu_princess,
             Abbr_pekorinnu, Abbr_rin_deremas, Abbr_rei_newyear, Abbr_kaori, Abbr_kuuka_ooedo, Abbr_zyun, Abbr_kuuka, Abbr_miyako, Abbr_rima, Abbr_kyouka_halloween = "";
 
 
@@ -10232,10 +10221,10 @@ namespace PCRD_KR_ArenaSim
 
         private void tb_CharaAbbr_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            
-            
-            
-            
+
+
+
+
         }
 
         private void SetDeckWithAbbr(string s, int isOfforDef)
@@ -10312,7 +10301,7 @@ namespace PCRD_KR_ArenaSim
 
                     select_count = select_count_temp;
 
-                    if(isOfforDef == 0)
+                    if (isOfforDef == 0)
                     {
                         for (int i = 0; i < 5; i++)
                         {
@@ -10347,7 +10336,7 @@ namespace PCRD_KR_ArenaSim
 
                         UnCheckAll();
                     }
-                    else if(isOfforDef == 1)
+                    else if (isOfforDef == 1)
                     {
                         for (int i = 0; i < 5; i++)
                         {
@@ -10383,9 +10372,9 @@ namespace PCRD_KR_ArenaSim
                     }
                     else
                     {
-                        MessageBox.Show("??", "알림");                       
+                        MessageBox.Show("??", "알림");
                     }
-                    
+
                 }
                 else
                 {
@@ -10400,8 +10389,8 @@ namespace PCRD_KR_ArenaSim
             }
         }
 
-        
-        
+
+
 
         private void InitializeAbbr()
         {
@@ -10976,7 +10965,7 @@ namespace PCRD_KR_ArenaSim
                 {
                     tb_abbr_pekorinnu_newyear.Text = Abbr_pekorinnu_newyear = temp[1];
                 }
-                
+
                 else if (temp[0] == "셰피")
                 {
                     tb_abbr_shepi.Text = Abbr_shepi = temp[1];
@@ -10993,7 +10982,7 @@ namespace PCRD_KR_ArenaSim
                 {
                     tb_abbr_kasumi_summer.Text = Abbr_kasumi_summer = temp[1];
                 }
-                
+
                 else if (temp[0] == "신리마")
                 {
                     tb_abbr_rima_cinderella.Text = Abbr_rima_cinderella = temp[1];
@@ -11006,7 +10995,7 @@ namespace PCRD_KR_ArenaSim
                 {
                     tb_abbr_makoto_cinderella.Text = Abbr_makoto_cinderella = temp[1];
                 }
-                
+
                 else if (temp[0] == "성로에")
                 {
                     tb_abbr_chloe_terefes.Text = Abbr_chloe_terefes = temp[1];
@@ -11015,11 +11004,11 @@ namespace PCRD_KR_ArenaSim
                 {
                     tb_abbr_chieru_terefes.Text = Abbr_chieru_terefes = temp[1];
                 }
-                else if ( temp[0] == "타노리"||temp[0] == "시노리")
+                else if (temp[0] == "타노리" || temp[0] == "시노리")
                 {
                     tb_abbr_inori_timetravel.Text = Abbr_inori_timetravel = temp[1];
                 }
-                else if (temp[0] == "타카야"||temp[0] == "시카야")
+                else if (temp[0] == "타카야" || temp[0] == "시카야")
                 {
                     tb_abbr_kaya_timetravel.Text = Abbr_kaya_timetravel = temp[1];
                 }
@@ -11045,7 +11034,7 @@ namespace PCRD_KR_ArenaSim
         private void bt_save_abbr_Click(object sender, RoutedEventArgs e)
         {
             StreamWriter sw = new StreamWriter("character_abbreviation.txt");
-            if(sw != null)
+            if (sw != null)
             {
                 sw.WriteLine(string.Format("리마,{0}", tb_abbr_rima.Text));
                 sw.WriteLine(string.Format("미야코,{0}", tb_abbr_miyako.Text));
@@ -11215,7 +11204,7 @@ namespace PCRD_KR_ArenaSim
                 Abbr_tsumugi_halloween = tb_abbr_tsumugi_halloween.Text;
                 Abbr_rei_newyear = tb_abbr_rei_newyear.Text;
                 Abbr_rin_deremas = tb_abbr_rin_deremas.Text;
-                Abbr_pekorinnu =   tb_abbr_pekorinnu.Text;
+                Abbr_pekorinnu = tb_abbr_pekorinnu.Text;
                 Abbr_pekorinnu_princess = tb_abbr_pekorinnu_princess.Text;
                 Abbr_ruka = tb_abbr_ruka.Text;
                 Abbr_kotkoro_newyear = tb_abbr_kotkoro_newyear.Text;
@@ -11253,97 +11242,97 @@ namespace PCRD_KR_ArenaSim
                 Abbr_anna_summer = tb_abbr_anna_summer.Text;
                 Abbr_kristina_christmas = tb_abbr_kristina_christmas.Text;
                 Abbr_sizuru = tb_abbr_sizuru.Text;
-                Abbr_kristina =  tb_abbr_kristina.Text;
-                Abbr_kurumi_christmas = 	tb_abbr_kurumi_christmas.Text;
-	
-	
-                Abbr_mimi = 	tb_abbr_mimi.Text;
-                Abbr_sinobu = 	tb_abbr_sinobu.Text;
-                Abbr_mimi_halloween = 	tb_abbr_mimi_halloween.Text;
-                Abbr_uzuki_deremas = 	tb_abbr_uzuki_deremas.Text;
+                Abbr_kristina = tb_abbr_kristina.Text;
+                Abbr_kurumi_christmas = tb_abbr_kurumi_christmas.Text;
+
+
+                Abbr_mimi = tb_abbr_mimi.Text;
+                Abbr_sinobu = tb_abbr_sinobu.Text;
+                Abbr_mimi_halloween = tb_abbr_mimi_halloween.Text;
+                Abbr_uzuki_deremas = tb_abbr_uzuki_deremas.Text;
                 Abbr_rei_halloween = tb_abbr_rei_halloween.Text;
-                Abbr_sizuru_valentine = 	tb_abbr_sizuru_valentine.Text;
-                Abbr_mahiru_ranger = 	tb_abbr_mahiru_ranger.Text;
-                Abbr_mahiru = 	tb_abbr_mahiru.Text;
-                Abbr_yukari = 	tb_abbr_yukari.Text;
+                Abbr_sizuru_valentine = tb_abbr_sizuru_valentine.Text;
+                Abbr_mahiru_ranger = tb_abbr_mahiru_ranger.Text;
+                Abbr_mahiru = tb_abbr_mahiru.Text;
+                Abbr_yukari = tb_abbr_yukari.Text;
                 Abbr_yukari_christmas = tb_abbr_yukari_christmas.Text;
-                Abbr_monika = 	tb_abbr_monika.Text;
-                Abbr_ninon = 	tb_abbr_ninon.Text;
-                Abbr_nozomi_christmas = 	tb_abbr_nozomi_christmas.Text;
-                Abbr_mihuyu = 	tb_abbr_mihuyu.Text;
-                Abbr_rin_ranger = 	tb_abbr_rin_ranger.Text;
-                Abbr_iriya = 	tb_abbr_iriya.Text;
-                Abbr_kaori_summer = 	tb_abbr_kaori_summer.Text;
-                Abbr_saren = 	tb_abbr_saren.Text;
-                Abbr_anna = 	tb_abbr_anna.Text;
-                Abbr_sinobu_halloween = 	tb_abbr_sinobu_halloween.Text;
-                Abbr_nanaka_summer = 	tb_abbr_nanaka_summer.Text;
-                Abbr_mihuyu_summer = 	tb_abbr_mihuyu_summer.Text;
-                Abbr_kotkoro = 	tb_abbr_kotkoro.Text;
-                Abbr_ayumi_wonder = 	tb_abbr_ayumi_wonder.Text;
-                Abbr_ayumi = 	tb_abbr_ayumi.Text;
-                Abbr_grea = 	tb_abbr_grea.Text;
+                Abbr_monika = tb_abbr_monika.Text;
+                Abbr_ninon = tb_abbr_ninon.Text;
+                Abbr_nozomi_christmas = tb_abbr_nozomi_christmas.Text;
+                Abbr_mihuyu = tb_abbr_mihuyu.Text;
+                Abbr_rin_ranger = tb_abbr_rin_ranger.Text;
+                Abbr_iriya = tb_abbr_iriya.Text;
+                Abbr_kaori_summer = tb_abbr_kaori_summer.Text;
+                Abbr_saren = tb_abbr_saren.Text;
+                Abbr_anna = tb_abbr_anna.Text;
+                Abbr_sinobu_halloween = tb_abbr_sinobu_halloween.Text;
+                Abbr_nanaka_summer = tb_abbr_nanaka_summer.Text;
+                Abbr_mihuyu_summer = tb_abbr_mihuyu_summer.Text;
+                Abbr_kotkoro = tb_abbr_kotkoro.Text;
+                Abbr_ayumi_wonder = tb_abbr_ayumi_wonder.Text;
+                Abbr_ayumi = tb_abbr_ayumi.Text;
+                Abbr_grea = tb_abbr_grea.Text;
                 Abbr_monika_magical = tb_abbr_monika_magical.Text;
-                Abbr_akari_angel = 	tb_abbr_akari_angel.Text;
-                Abbr_yori_angel = 	tb_abbr_yori_angel.Text;
-                Abbr_kotkoro_summer = 	tb_abbr_kotkoro_summer.Text;
-                Abbr_rem = 	tb_abbr_rem.Text;
-                Abbr_ram = 	tb_abbr_ram.Text;
-                Abbr_rin = 	tb_abbr_rin.Text;
-                Abbr_kotkoro_princess = 	tb_abbr_kotkoro_princess.Text;
-                Abbr_labyrista = 	tb_abbr_labyrista.Text;
+                Abbr_akari_angel = tb_abbr_akari_angel.Text;
+                Abbr_yori_angel = tb_abbr_yori_angel.Text;
+                Abbr_kotkoro_summer = tb_abbr_kotkoro_summer.Text;
+                Abbr_rem = tb_abbr_rem.Text;
+                Abbr_ram = tb_abbr_ram.Text;
+                Abbr_rin = tb_abbr_rin.Text;
+                Abbr_kotkoro_princess = tb_abbr_kotkoro_princess.Text;
+                Abbr_labyrista = tb_abbr_labyrista.Text;
                 Abbr_neneka_newyear = tb_abbr_neneka_newyear.Text;
-                Abbr_mitsuki = 	tb_abbr_mitsuki.Text;
-                Abbr_hatsune_summer = 	tb_abbr_hatsune_summer.Text;
-                Abbr_akari = 	tb_abbr_akari.Text;
-                Abbr_yori = 	tb_abbr_yori.Text;
-                Abbr_saren_summer = 	tb_abbr_saren_summer.Text;
-                Abbr_miyako_halloween = 	tb_abbr_miyako_halloween.Text;
-	
-	
-                Abbr_arisa = 	tb_abbr_arisa.Text;
-                Abbr_anne = 	tb_abbr_anne.Text;
-                Abbr_lou = 	tb_abbr_lou.Text;
-                Abbr_neneka = 	tb_abbr_neneka.Text;
-                Abbr_aoi_nakayosi = 	tb_abbr_aoi_nakayosi.Text;
-                Abbr_kyaru_newyear = 	tb_abbr_kyaru_newyear.Text;
-                Abbr_mio_deremas = 	tb_abbr_mio_deremas.Text;
-                Abbr_misato_summer = 	tb_abbr_misato_summer.Text;
-                Abbr_rino = 	tb_abbr_rino.Text;
-                Abbr_suzuna = 	tb_abbr_suzuna.Text;
-                Abbr_suzuna_summer = 	tb_abbr_suzuna_summer.Text;
-                Abbr_siori = 	tb_abbr_siori.Text;
-                Abbr_siori_magical = 	tb_abbr_siori_magical.Text;
-                Abbr_io = 	tb_abbr_io.Text;
-                Abbr_io_summer = 	tb_abbr_io_summer.Text;
-                Abbr_suzume = 	tb_abbr_suzume.Text;
-                Abbr_suzume_newyear = 	tb_abbr_suzume_newyear.Text;
-                Abbr_emilia = 	tb_abbr_emilia.Text;
-                Abbr_kasumi = 	tb_abbr_kasumi.Text;
-                Abbr_kasumi_magical = 	tb_abbr_kasumi_magical.Text;
-                Abbr_rino_wonder = 	tb_abbr_rino_wonder.Text;
-                Abbr_misato = 	tb_abbr_misato.Text;
-                Abbr_nanaka = 	tb_abbr_nanaka.Text;
-                Abbr_yui_newyear = 	tb_abbr_yui_newyear.Text;
+                Abbr_mitsuki = tb_abbr_mitsuki.Text;
+                Abbr_hatsune_summer = tb_abbr_hatsune_summer.Text;
+                Abbr_akari = tb_abbr_akari.Text;
+                Abbr_yori = tb_abbr_yori.Text;
+                Abbr_saren_summer = tb_abbr_saren_summer.Text;
+                Abbr_miyako_halloween = tb_abbr_miyako_halloween.Text;
+
+
+                Abbr_arisa = tb_abbr_arisa.Text;
+                Abbr_anne = tb_abbr_anne.Text;
+                Abbr_lou = tb_abbr_lou.Text;
+                Abbr_neneka = tb_abbr_neneka.Text;
+                Abbr_aoi_nakayosi = tb_abbr_aoi_nakayosi.Text;
+                Abbr_kyaru_newyear = tb_abbr_kyaru_newyear.Text;
+                Abbr_mio_deremas = tb_abbr_mio_deremas.Text;
+                Abbr_misato_summer = tb_abbr_misato_summer.Text;
+                Abbr_rino = tb_abbr_rino.Text;
+                Abbr_suzuna = tb_abbr_suzuna.Text;
+                Abbr_suzuna_summer = tb_abbr_suzuna_summer.Text;
+                Abbr_siori = tb_abbr_siori.Text;
+                Abbr_siori_magical = tb_abbr_siori_magical.Text;
+                Abbr_io = tb_abbr_io.Text;
+                Abbr_io_summer = tb_abbr_io_summer.Text;
+                Abbr_suzume = tb_abbr_suzume.Text;
+                Abbr_suzume_newyear = tb_abbr_suzume_newyear.Text;
+                Abbr_emilia = tb_abbr_emilia.Text;
+                Abbr_kasumi = tb_abbr_kasumi.Text;
+                Abbr_kasumi_magical = tb_abbr_kasumi_magical.Text;
+                Abbr_rino_wonder = tb_abbr_rino_wonder.Text;
+                Abbr_misato = tb_abbr_misato.Text;
+                Abbr_nanaka = tb_abbr_nanaka.Text;
+                Abbr_yui_newyear = tb_abbr_yui_newyear.Text;
                 Abbr_kyaru_princess = tb_abbr_kyaru_princess.Text;
-                Abbr_kyaru = 	tb_abbr_kyaru.Text;
-                Abbr_hatsune = 	tb_abbr_hatsune.Text;
-                Abbr_misaki = 	tb_abbr_misaki.Text;
-                Abbr_runa = 	tb_abbr_runa.Text;
-                Abbr_yui_princess = 	tb_abbr_yui_princess.Text;
-                Abbr_chika_christmas = 	tb_abbr_chika_christmas.Text;
-                Abbr_suzume_summer = 	tb_abbr_suzume_summer.Text;
-                Abbr_kyaru_summer = 	tb_abbr_kyaru_summer.Text;
-                Abbr_aoi = 	tb_abbr_aoi.Text;
-                Abbr_chika = 	tb_abbr_chika.Text;
-                Abbr_maho_summer = 	tb_abbr_maho_summer.Text;
-                Abbr_maho = 	tb_abbr_maho.Text;
-                Abbr_yui = 	tb_abbr_yui.Text;
-                Abbr_yuki = 	tb_abbr_yuki.Text;
-                Abbr_yuni = 	tb_abbr_yuni.Text;
-                Abbr_kyouka = 	tb_abbr_kyouka.Text;
-                Abbr_misaki_halloween = 	tb_abbr_misaki_halloween.Text;
-                Abbr_kyouka_halloween = 	tb_abbr_kyouka_halloween.Text;
+                Abbr_kyaru = tb_abbr_kyaru.Text;
+                Abbr_hatsune = tb_abbr_hatsune.Text;
+                Abbr_misaki = tb_abbr_misaki.Text;
+                Abbr_runa = tb_abbr_runa.Text;
+                Abbr_yui_princess = tb_abbr_yui_princess.Text;
+                Abbr_chika_christmas = tb_abbr_chika_christmas.Text;
+                Abbr_suzume_summer = tb_abbr_suzume_summer.Text;
+                Abbr_kyaru_summer = tb_abbr_kyaru_summer.Text;
+                Abbr_aoi = tb_abbr_aoi.Text;
+                Abbr_chika = tb_abbr_chika.Text;
+                Abbr_maho_summer = tb_abbr_maho_summer.Text;
+                Abbr_maho = tb_abbr_maho.Text;
+                Abbr_yui = tb_abbr_yui.Text;
+                Abbr_yuki = tb_abbr_yuki.Text;
+                Abbr_yuni = tb_abbr_yuni.Text;
+                Abbr_kyouka = tb_abbr_kyouka.Text;
+                Abbr_misaki_halloween = tb_abbr_misaki_halloween.Text;
+                Abbr_kyouka_halloween = tb_abbr_kyouka_halloween.Text;
 
                 Abbr_makoto_cinderella = tb_abbr_makoto_cinderella.Text;
                 Abbr_rima_cinderella = tb_abbr_rima_cinderella.Text;
@@ -11375,15 +11364,15 @@ namespace PCRD_KR_ArenaSim
                 InitializeAbbr();
                 MessageBox.Show("불러왔어!", "알림");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "알림");
             }
 
         }
 
-        
-        private string AbbrToChara (string abbrChara)
+
+        private string AbbrToChara(string abbrChara)
         {
             if (abbrChara == Abbr_rima) return "rima";
             else if (abbrChara == Abbr_miyako) return "miyako";
@@ -11574,10 +11563,10 @@ namespace PCRD_KR_ArenaSim
         }
         private void bt_UpdateCheck_Click(object sender, RoutedEventArgs e)
         {
-            
-                Rtb_info_update.Document.Blocks.Clear();
-            Rtb_info_update.Document.Blocks.Add(new Paragraph(new Run(Environment.NewLine + Environment.NewLine + "업데이트 로그: " + Environment.NewLine + AgilityTest() )));
-            
+
+            Rtb_info_update.Document.Blocks.Clear();
+            Rtb_info_update.Document.Blocks.Add(new Paragraph(new Run(Environment.NewLine + Environment.NewLine + "업데이트 로그: " + Environment.NewLine + AgilityTest())));
+
             AutoReinStar6();
 
             UpdateCheck();
@@ -11605,7 +11594,7 @@ namespace PCRD_KR_ArenaSim
                             System.Windows.Forms.MessageBox.Show(
                                 $@"새 버전 {args.CurrentVersion} 이 있습니다! 지금 실행한 버전은 {
                                         args.InstalledVersion
-                                    }입니다. 지금 업데이트 하시겠습니까?" , @"알림",
+                                    }입니다. 지금 업데이트 하시겠습니까?", @"알림",
                                 System.Windows.Forms.MessageBoxButtons.YesNo,
                                 System.Windows.Forms.MessageBoxIcon.Information); ; ;
                     }
@@ -11742,7 +11731,7 @@ namespace PCRD_KR_ArenaSim
             HtmlWeb web = new HtmlWeb();
 
             var htmlDoc = web.Load(html);
-            HtmlNodeCollection divNodes = 
+            HtmlNodeCollection divNodes =
                 htmlDoc.DocumentNode.SelectNodes(@"//body/div[@class='application-main ']/div/main/div[@class='repository-content ']/div[@class='clearfix container-xl px-3 px-md-4 px-lg-5 mt-4']/div/div[@class='Box']/div[@class='Box-body']");
             //                htmlDoc.DocumentNode.SelectNodes(@"//body/div[@class='application-main ']/div/main/div[@class='repository-content ']/div[@class='clearfix container-xl px-3 px-md-4 px-lg-5 mt-4']/div/div[@class='d-flex flex-column flex-md-row my-5 flex-justify-center']/div[@class='col-md-9']/div[@class='Box']/div[@class='Box-body']/div[@class=markdown/body my-3]/");
 
@@ -11779,25 +11768,29 @@ namespace PCRD_KR_ArenaSim
                " 비주얼 스튜디오 2022 커뮤니티 : ", " ");
             AddHyperlinkText("https://www.bluestacks.com/ko/bluestacks-5.html", "https://www.bluestacks.com/ko/bluestacks-5.html",
                " 블루스택 5 N32 : ", " ");
-        
+
 
             AddHyperlinkText("https://github.com/shimat/opencvsharp/", "https://github.com/shimat/opencvsharp/",
                " Opencvsharp : ", " ");
             AddHyperlinkText("https://stackoverflow.com/questions/tagged/c%23", "https://stackoverflow.com/questions/tagged/c%23",
                " Stackoverflow C# : ", " ");
-        
+
             AddHyperlinkText("https://www.pyimagesearch.com/2015/01/26/multi-scale-template-matching-using-python-opencv/", "https://www.pyimagesearch.com/2015/01/26/multi-scale-template-matching-using-python-opencv/",
                " 이미지 서치 : ", " ");
             AddHyperlinkText("https://html-agility-pack.net/", "https://html-agility-pack.net/",
-               " Html Agility Pack : ", " "); 
+               " Html Agility Pack : ", " ");
             AddHyperlinkText("https://github.com/ravibpatel/AutoUpdater.NET/releases", "https://github.com/ravibpatel/AutoUpdater.NET/releases",
                 " AutoUpdater.NET : ", " ");
+            AddHyperlinkText("https://code-examples.net/ko/q/1aceac", "https://code-examples.net/ko/q/1aceac",
+                " RichTextBox 검색 : ", " ");
 
             AddHyperlinkText("https://notepad-plus-plus.org/downloads/", "https://notepad-plus-plus.org/downloads/",
                " Notepad++ : ", " ");
-            Rtb_info_maker.Document.Blocks.Add(new Paragraph(new Run(@"")));
             AddHyperlinkText("https://www.gg.go.kr/archives/3734940", "https://www.gg.go.kr/archives/3734940",
                " 경기천년체 : ", " ");
+            Rtb_info_maker.Document.Blocks.Add(new Paragraph(new Run(@"  ^(?([^\r\n])\s)*\r?$\r?\n ")));
+
+            Rtb_info_maker.Document.Blocks.Add(new Paragraph(new Run(@"")));
             AddHyperlinkText("https://redive.estertion.win/", "https://redive.estertion.win/",
                " 아이콘 퍼온 곳 : ", " ");
             AddHyperlinkText("https://github.com/HerDataSam/KasumiNotes/releases", "https://github.com/HerDataSam/KasumiNotes/releases",
@@ -11806,20 +11799,20 @@ namespace PCRD_KR_ArenaSim
                " 프리코네 모션 시뮬레이터 : ", " ");
 
             AddHyperlinkText("https://github.com/esterTion/redive_master_db_diff/", "https://github.com/esterTion/redive_master_db_diff/",
-               " 일섭 DB : ", " "); 
+               " 일섭 DB : ", " ");
             AddHyperlinkText("https://github.com/HerDataSam/redive_kr_db_diff", "https://github.com/HerDataSam/redive_kr_db_diff",
                 " 한섭 DB : ", " ");
-        
+
             AddHyperlinkText("https://rwiki.jp/priconne_redive/", "https://rwiki.jp/priconne_redive/",
                " R위키 : ", " ");
             AddHyperlinkText("https://pcredivewiki.tw/", "https://pcredivewiki.tw/",
-               " 머만위키 : ", " ");        
+               " 머만위키 : ", " ");
 
 
-        
 
-            //Rtb_info_maker.Document.Blocks.Add(new Paragraph(new Run(@"  ^(?([^\r\n])\s)*\r?$\r?\n ")));
-            
+
+            //
+
         }
         private void AddHyperlinkText(string linkURL, string linkName,
               string TextBeforeLink, string TextAfterLink)
@@ -11841,7 +11834,7 @@ namespace PCRD_KR_ArenaSim
             Rtb_info_maker.Document.Blocks.Add(para);
         }
         public string fileName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + ".exe";
-        
+
 
 
         #endregion

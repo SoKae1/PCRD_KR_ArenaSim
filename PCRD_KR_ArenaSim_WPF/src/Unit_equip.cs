@@ -934,7 +934,7 @@
         public double[] zyun_21 = new double[6] { 107012, /*equip_slot_2*/107011, /*equip_slot_3*/107311, /*equip_slot_4*/106313, /*equip_slot_5*/107581, /*equip_slot_6*/106583 };
         public double[] zyun_22 = new double[6] { 999999, /*equip_slot_2*/107012, /*equip_slot_3*/999999, /*equip_slot_4*/107311, /*equip_slot_5*/107582, /*equip_slot_6*/107581 };
 
-        
+
         public double[] mihuyu_01 = new double[6] { 101161, /*equip_slot_2*/101191, /*equip_slot_3*/101281, /*equip_slot_4*/101431, /*equip_slot_5*/101161, /*equip_slot_6*/101581 };
         public double[] mihuyu_02 = new double[6] { 102163, /*equip_slot_2*/102191, /*equip_slot_3*/102311, /*equip_slot_4*/102493, /*equip_slot_5*/101161, /*equip_slot_6*/101581 };
         public double[] mihuyu_03 = new double[6] { 103161, /*equip_slot_2*/102192, /*equip_slot_3*/102282, /*equip_slot_4*/102401, /*equip_slot_5*/102162, /*equip_slot_6*/102581 };
