@@ -2094,15 +2094,12 @@
 
                         <DockPanel>
                             
-                            <RichTextBox x:Name="Rtb_Logbox" Margin="15,15,15,15"  
-                                BorderBrush="{x:Null}" 
+                            <TextBox x:Name="tb_Logbox" Margin="15,15,15,15"  
+                                BorderBrush="{x:Null}"  
                              Background="AliceBlue" IsReadOnly="True" 
-                                         VerticalScrollBarVisibility="Visible" Block.LineHeight="6" >
+                                         VerticalScrollBarVisibility="Visible"  >
                                 
-                                <FlowDocument>
-                                    <Paragraph Padding="1,6,0,0"/>
-                                </FlowDocument>
-                            </RichTextBox>
+                            </TextBox>
                         </DockPanel>
                             
                         

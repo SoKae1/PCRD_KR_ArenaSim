@@ -1527,7 +1527,8 @@ namespace PCRD_KR_ArenaSim
                 WriteLog(String.Format("\n방어덱 시간 승률: {0:0.#}%", (double)def_timecount / ((double)off_count + (double)def_count + (double)def_timecount) * 100));
 
                 myFlowDoc.Blocks.Add(new Paragraph(new Run(LogString)));
-                Rtb_Logbox.Document = myFlowDoc;
+                tb_Logbox.Text = LogString;
+                //Rtb_Logbox.Document = myFlowDoc;
 
                 /*
                 MessageBox.Show(String.Format("공격덱 승률: {0:0.#}%\n", (double)off_count / ((double)off_count + (double)def_count + (double)def_timecount) * 100)
@@ -1576,7 +1577,7 @@ namespace PCRD_KR_ArenaSim
                     myFlowDoc.Blocks.Add(new Paragraph(new Run("")));
                     myFlowDoc.Blocks.Clear();
 
-                    Rtb_Logbox.Document = myFlowDoc;
+                    //Rtb_Logbox.Document = myFlowDoc;
                     LogString = "";
                     SimTime = DateTime.Now;
 
@@ -1644,34 +1645,6 @@ namespace PCRD_KR_ArenaSim
 
                     }
 
-                    /*
-                    int def_count = 0, off_count = 0, def_timecount = 0;
-
-                    int[] result2 = new int[max_repeat];
-
-
-                    for (int idx = 0; idx < max_repeat; idx++)
-                    {
-                        int result = Sim_Start(max_repeat);
-
-                        switch (result)
-                        {
-                            case 0:
-                                off_count++;
-                                break;
-                            case 1:
-                                def_count++;
-                                break;
-                            case 2:
-                                def_timecount++;
-                                break;
-                            default:
-                                break;
-                        }
-                        Debug.WriteLine(result);
-                    }
-
-                    */
                     highestPercentageReached = 0;
                     //max_repeat1 = MainWindow.max_repeat;
                     worker.RunWorkerAsync();
@@ -1724,7 +1697,7 @@ namespace PCRD_KR_ArenaSim
                 myFlowDoc.Blocks.Add(new Paragraph(new Run("")));
                 myFlowDoc.Blocks.Clear();
 
-                Rtb_Logbox.Document = myFlowDoc;
+                //Rtb_Logbox.Document = myFlowDoc;
                 LogString = "";
 
                 DateTime SimTime = DateTime.Now;
@@ -1879,7 +1852,7 @@ namespace PCRD_KR_ArenaSim
                     WriteLog(String.Format("\n방어덱 시간 승률: {0:0.#}%", (double)def_timecount / ((double)off_count + (double)def_count + (double)def_timecount) * 100));
 
                     myFlowDoc.Blocks.Add(new Paragraph(new Run(LogString)));
-                    Rtb_Logbox.Document = myFlowDoc;
+                    //Rtb_Logbox.Document = myFlowDoc;
 
 
                     MessageBox.Show(String.Format("공격덱 승률: {0:0.#}%\n", (double)off_count / ((double)off_count + (double)def_count + (double)def_timecount) * 100)
@@ -7051,7 +7024,7 @@ namespace PCRD_KR_ArenaSim
             else if (CharaName == "misaki_halloween") { ID = "108331"; }
             else if (CharaName == "chika_christmas") { ID = "108431"; }
             else if (CharaName == "kurumi_christmas") { ID = "108531"; }
-            else if (CharaName == "ayane_christmas") { ID = "108611"; }
+            else if (CharaName == "ayane_christmas") { ID = "108631"; }
             else if (CharaName == "hiyori_newyear") { ID = "108731"; }
             else if (CharaName == "yui_newyear") { ID = "108831"; }
             else if (CharaName == "rei_newyear") { ID = "108931"; }
@@ -10072,42 +10045,11 @@ namespace PCRD_KR_ArenaSim
         {
             myFlowDoc.Blocks.Clear();
             myFlowDoc.Blocks.Add(new Paragraph(new Run("3545")));
-            Rtb_Logbox.Document = myFlowDoc;
+            //Rtb_Logbox.Document = myFlowDoc;
             LogString = "";
+            isSearched = false;
         }
 
-        private int Start = -1;
-        private void FindText()
-        {
-            //myFlowDoc
-            Paragraph p = (Paragraph)myFlowDoc.Blocks.FirstBlock;
-            if (p != null)
-            {
-                String originalRunText = ((Run)p.Inlines.FirstInline).Text;
-                String word = tb_searchLog.Text;
-
-                var textSearchRange = new TextRange(p.ContentStart, p.ContentEnd);
-                Int32 position = textSearchRange.Text.IndexOf(word, StringComparison.OrdinalIgnoreCase);
-
-                if (position < 0) return;
-
-                TextPointer start;
-                start = textSearchRange.Start.GetPositionAtOffset(position);
-                var end = textSearchRange.Start.GetPositionAtOffset(position + word.Length);
-
-                //var textR = new TextRange(start, end);
-                
-
-                // Programmatically change the selection in the RichTextBox.  
-                Rtb_Logbox.Selection.Select(start, end);
-                //textR.Text = "";
-                Run newRun = new Run(word, start);
-                // newRun.FontSize = 30;
-
-            }
-            else
-                MessageBox.Show("로그가 없습니다", "알림");
-        }
 
         TextPointer FindWordFromPosition(TextPointer position, string word)
         {
@@ -10138,6 +10080,7 @@ namespace PCRD_KR_ArenaSim
         public static bool isSearched = false;  
         private void Search()
         {
+            /*
             String search = tb_searchLog.Text;
             bool toScroll = true;
             TextPointer text = myFlowDoc.ContentStart;
@@ -10163,6 +10106,16 @@ namespace PCRD_KR_ArenaSim
                 }
                 text = next;
             }
+            */
+            int index = 0;
+           while(index < tb_Logbox.Text.LastIndexOf(tb_searchLog.Text))
+           {
+                tb_Logbox.Focus();
+                tb_Logbox.Select(index, tb_searchLog.Text.Length);
+                tb_Logbox.SelectionBrush = System.Windows.Media.Brushes.Red;
+               index = tb_Logbox.Text.IndexOf(tb_searchLog.Text, index);
+           }
+
             isSearched = true;
             
         }
