@@ -249,6 +249,7 @@ namespace PCRD_KR_ArenaSim
 
         public static bool[] poison_aoi = Enumerable.Repeat<bool>(false, 30).ToArray<bool>();
         public static double[] poison_aoi_time = Enumerable.Repeat<double>(0, 30).ToArray<double>();
+        public static double[] poison_aoi_coef = Enumerable.Repeat<double>(0, 30).ToArray<double>();
 
         public static bool[] field_P = Enumerable.Repeat<bool>(false, 30).ToArray<bool>();
         public static double[] field_P_coef = Enumerable.Repeat<double>(0, 30).ToArray<double>();
@@ -441,6 +442,7 @@ namespace PCRD_KR_ArenaSim
 
                 poison_aoi[i] = false;
                 poison_aoi_time[i] = 0;
+                poison_aoi_coef[i] = 0;
 
                 field_P[i] = false;
                 field_P_coef[i] = 0;

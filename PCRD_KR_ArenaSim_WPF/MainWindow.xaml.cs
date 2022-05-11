@@ -71,7 +71,7 @@ namespace PCRD_KR_ArenaSim
 
         Character_select cs = new Character_select();
 
-        public static bool[] IsPicked = new bool[150];
+        public static bool[] IsPicked = new bool[350];
 
         public static Random rand = new Random(); // 매우 중요
 
@@ -2687,6 +2687,19 @@ namespace PCRD_KR_ArenaSim
                                 Battle_variable.sleep_time[i] = 0;
                             }
                         }
+                        if (Battle_variable.poison_aoi[i] == true)
+                        {
+                            Battle_variable.poison_aoi_time[i] -= 0.001;
+
+                            if (Battle_variable.poison_aoi_time[i] < 0)
+                            {
+                                //Debug.WriteLine("{0}의 아오이 독 해제", Battle_variable.name[i]);
+
+                                Battle_variable.poison_aoi[i] = false;
+                                Battle_variable.poison_aoi_time[i] = 0;
+                                Battle_variable.poison_aoi_coef[i] = 0;
+                            }
+                        }
                         if (Battle_variable.name_eng[i] == "muimi_ub")
                         {
                             //자신의 TP 감소
@@ -3231,6 +3244,11 @@ namespace PCRD_KR_ArenaSim
                         {
                             if (A_timing[i] < 0)
                             {
+                                if(Battle_variable.poison_aoi[i] == true)
+                                {
+                                    Debug.WriteLine("{0}가 아오이 독으로 인해 {1} 대미지", Battle_variable.name[i], Battle_variable.poison_aoi_coef[i]);
+                                    Battle_fomular.damage_process("99", Battle_variable.poison_aoi_coef[i], i, i);
+                                }
                                 state[i] = "C";
 
                                 C_timing[i] = 0;
@@ -3998,6 +4016,12 @@ namespace PCRD_KR_ArenaSim
                         {
                             if (A_timing[i] < 0)
                             {
+                                if (Battle_variable.poison_aoi[i] == true)
+                                {
+                                    Debug.WriteLine("{0}가 아오이 독으로 인해 {1} 대미지", Battle_variable.name[i], Battle_variable.poison_aoi_coef[i]);
+                                    Battle_fomular.damage_process("99", Battle_variable.poison_aoi_coef[i], i, i);
+                                    
+                                }
                                 state[i] = "C";
 
                                 C_timing[i] = 0;
@@ -7694,7 +7718,7 @@ namespace PCRD_KR_ArenaSim
                         || temp1[0] == "니논" || temp1[0] == "마히루" || temp1[0] == "스즈나" || temp1[0] == "아카리" || temp1[0] == "요리"
                         || temp1[0] == "쿄우카" || temp1[0] == "미소기" || temp1[0] == "미미"
                         || temp1[0] == "노조미"
-                        || temp1[0] == "스즈메" || temp1[0] == "쿠루미")
+                        || temp1[0] == "스즈메" || temp1[0] == "쿠루미" || temp1[0] == "카오리")
                     {
                         temp1[2] = "6";
                         temp2[2] = "6";
@@ -7746,8 +7770,8 @@ namespace PCRD_KR_ArenaSim
 
                     string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
 
-                    if (temp[0] == "프페코"
-                        || temp[0] == "앨리노" || temp[0] == "앨유미" || temp[0] == "수루카" || temp[0] == "수안나" || temp[0] == "수나카" || temp[0] == "수츠네"
+                    if (temp[0] == "프페코" || temp[0] == "네네카" 
+                        || temp[0] == "수츠네"
                         || temp[0] == "수쥰" || temp[0] == "엔카리" || temp[0] == "엔요리" || temp[0] == "프유이" || temp[0] == "프코로" || temp[0] == "프캬루"
                         || temp[0] == "라비리스타" || temp[0] == "셰피" || temp[0] == "할무기" || temp[0] == "할레이" || temp[0] == "할츠리" || temp[0] == "마니카"
                         || temp[0] == "마토모" || temp[0] == "성키노" || temp[0] == "성사렌" || temp[0] == "성카리" || temp[0] == "뉴이미" || temp[0] == "뉴네카"
@@ -7893,8 +7917,8 @@ namespace PCRD_KR_ArenaSim
                     string s = sr.ReadLine();
 
                     string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
-                    if (temp[0] == "프페코"
-                        || temp[0] == "앨리노" || temp[0] == "앨유미" || temp[0] == "수루카" || temp[0] == "수안나" || temp[0] == "수나카" || temp[0] == "수츠네"
+                    if (temp[0] == "프페코" || temp[0] == "네네카"
+                        || temp[0] == "수츠네"
                         || temp[0] == "수쥰" || temp[0] == "엔카리" || temp[0] == "엔요리" || temp[0] == "프유이" || temp[0] == "프코로" || temp[0] == "프캬루"
                         || temp[0] == "라비리스타" || temp[0] == "셰피" || temp[0] == "할무기" || temp[0] == "할레이" || temp[0] == "할츠리" || temp[0] == "마니카"
                         || temp[0] == "마토모" || temp[0] == "성키노" || temp[0] == "성사렌" || temp[0] == "성카리" || temp[0] == "뉴이미" || temp[0] == "뉴네카"

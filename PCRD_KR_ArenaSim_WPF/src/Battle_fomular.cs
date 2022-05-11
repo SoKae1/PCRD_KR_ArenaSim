@@ -168,7 +168,33 @@ namespace PCRD_KR_ArenaSim
                     return damage;
                 }
             }
-
+            if (Battle_variable.death[opponent_order] == false && Battle_variable.name_eng[opponent_order] == "hatsune_summer" && Battle_variable.name_eng[my_order] != "hatsune_summer")
+            {
+                if (opponent_order < 15 && Battle_variable.sleep_time[opponent_order] >= 1)
+                {
+                    //수츠네가 대미지를 받으면 수면 종료
+                    Battle_variable.sleep_time[opponent_order] = 0;
+                    Battle_variable.sleep[opponent_order] = false;
+                    Debug.WriteLine("\n수츠네가 잠에서 깸!\n");
+                    if(Character_skill.simulation_count ==1)
+                    {
+                        MainWindow.WriteLog("\n수츠네가 잠에서 깸!\n");
+                    }
+                    
+                    return damage;
+                }
+                if (opponent_order >= 15 && Battle_variable.sleep_time[opponent_order] >= 1)
+                {
+                    //수츠네가 대미지를 받으면 수면 종료
+                    Battle_variable.sleep_time[opponent_order] = 0;
+                    Battle_variable.sleep[opponent_order] = false;
+                    if (Character_skill.simulation_count == 1)
+                    {
+                        MainWindow.WriteLog("\n수츠네가 잠에서 깸!\n");
+                    }
+                    return damage;
+                }
+            }
             if (attack_type == "1" && Battle_variable.death[opponent_order] == false && Battle_variable.death[my_order] == false && Battle_variable.invincible[opponent_order] == false && Battle_variable.physical_dodge[opponent_order] == false)
             {
                 if (Battle_variable.damage_add[my_order] == true && Battle_variable.damage_add_count[opponent_order] < 5)//카오리
@@ -287,13 +313,14 @@ namespace PCRD_KR_ArenaSim
                         Character_skill.kurumi_christmas_opponent_counter_est += 1;
                     }
                 }
-
+                /*
                 if (Battle_variable.name_eng[opponent_order] == "hatsune_summer" && damage > 0 && Battle_variable.sleep[opponent_order] == true)//수츠네
                 {
                     //받은 대미지 횟수 저장
                     Battle_variable.sleep[opponent_order] = false;
                     Battle_variable.sleep_time[opponent_order] = 0;
                 }
+                */
                 if (Battle_variable.charge[opponent_order] == true)
                 {
                     Battle_variable.charge_coef[opponent_order] += damage;
@@ -334,8 +361,6 @@ namespace PCRD_KR_ArenaSim
                         }
                     }
                 }
-
-
                 LostHP_TP(damage, opponent_order);//먼저 적용
 
                 if (Battle_variable.Mabsorb[opponent_order] == true && damage > 0)
@@ -431,13 +456,13 @@ namespace PCRD_KR_ArenaSim
                         Character_skill.kurumi_christmas_opponent_counter_est += 1;
                     }
                 }
-
+                /*
                 if (Battle_variable.name_eng[opponent_order] == "hatsune_summer" && damage > 0 && Battle_variable.sleep[opponent_order] == true)//수츠네
                 {
                     //받은 대미지 횟수 저장
                     Battle_variable.sleep[opponent_order] = false;
                     Battle_variable.sleep_time[opponent_order] = 0;
-                }
+                }*/
                 if (Battle_variable.charge[opponent_order] == true)
                 {
                     Battle_variable.charge_coef[opponent_order] += damage;
@@ -1804,6 +1829,15 @@ namespace PCRD_KR_ArenaSim
 
                     Debug.WriteLine("{3}{0}가 {4}{1}에게 변이 버프 {2} 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], Battle_variable.buff_PA_coef[i, opponent_order], my_order, opponent_order);
                     //Debug.WriteLine("{2}{0} 물리공격력: {1}\n", Battle_variable.name[opponent_order], Battle_variable.PA[opponent_order], opponent_order);
+                }
+                else if (buff_type == "poison_aoi" && Battle_variable.invincible[opponent_order] == false)
+                {
+                    Battle_variable.poison_aoi[opponent_order] = true;
+                    Battle_variable.poison_aoi_coef[opponent_order] = coefficient;
+                    Battle_variable.poison_aoi_time[opponent_order] = duration;
+
+                    //Debug.WriteLine("{2}{0}가 {3}{1}에게 아오이 독 성공", Battle_variable.name[my_order], Battle_variable.name[opponent_order], my_order, opponent_order);
+                    //Debug.WriteLine("{2}{0} 독 계수: {1}\n", Battle_variable.name[opponent_order], Battle_variable.poison_coef[opponent_order], opponent_order);
                 }
             }
         }
