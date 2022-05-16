@@ -27,4 +27,3 @@ C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Re
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Release\PCRD_KR_ArenaSim.csproj.Fody.CopyLocal.cache
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Release\PCRD_KR_ArenaSim.csproj.CopyComplete
 C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Release\PCRD_KR_ArenaSim.exe
-C:\Users\steil\source\repos\PCRD_KR_ArenaSim_WPF\PCRD_KR_ArenaSim_WPF\obj\x64\Release\YesNo.baml

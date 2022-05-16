@@ -14078,7 +14078,6 @@ namespace PCRD_KR_ArenaSim
                 array1 = dt.eriko_08;
                 array2 = dt.eriko_valentine_08;
                 //array3 = dt.eriko_summer_08;
-
             }
             else if (character == "saren" || character == "saren_summer" || character == "saren_christmas")
             {
@@ -14181,7 +14180,7 @@ namespace PCRD_KR_ArenaSim
             {
                 array1 = dt.mihuyu_12;
                 array2 = dt.mihuyu_summer_08;
-                //array3= dt.mihuyu_worker_08;
+                array3= dt.mihuyu_worker_08;
             }
             else if (character == "sizuru" || character == "sizuru_valentine" || character == "sizuru_summer")
             {
@@ -15093,7 +15092,7 @@ namespace PCRD_KR_ArenaSim
             {
                 array1 = dt.mihuyu_12;
                 array2 = dt.mihuyu_summer_08;
-                //array3= dt.mihuyu_worker_08;
+                array3= dt.mihuyu_worker_08;
             }
             else if (character == "sizuru" || character == "sizuru_valentine" || character == "sizuru_summer")
             {

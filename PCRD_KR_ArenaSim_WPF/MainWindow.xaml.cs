@@ -1664,7 +1664,6 @@ namespace PCRD_KR_ArenaSim
                         //Debug.WriteLine("현재 공덱 HP: {0}, {1}, {2}, {3}, {4}", Battle_variable.HP[15], Battle_variable.HP[16], Battle_variable.HP[17], Battle_variable.HP[18], Battle_variable.HP[19]);
                         //Debug.WriteLine("남은 시간: {0:0.0}", end_time - flow_time);
                     }
-
 #endif
                 }
                 else
@@ -1678,11 +1677,7 @@ namespace PCRD_KR_ArenaSim
                 bt_sim_start_multi.IsEnabled = true;
 
                 Debug.WriteLine("정지했어");
-
             }
-
-
-
         }
         private void bt_sim_start_multi_Click(object sender, RoutedEventArgs e)
         {/*
@@ -4463,7 +4458,6 @@ namespace PCRD_KR_ArenaSim
                                         c = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3", 15, 15);
                                     }
 
-
                                     state[a] = "C";
 
                                     Action_seq[a] = 1;
@@ -4476,8 +4470,6 @@ namespace PCRD_KR_ArenaSim
                                     {
                                         Action_next_seq[a] = (int)array2_CP[0];
                                     }
-
-
                                     state[b] = "C";
 
                                     Action_seq[b] = 1;
@@ -4601,9 +4593,9 @@ namespace PCRD_KR_ArenaSim
                 }
                 if (death_count1 == 15)
                 {
-                    //Debug.WriteLine("현재 방덱 위치값: {0}, {1}, {2}, {3}, {4}", Battle_variable.position[0], Battle_variable.position[1], Battle_variable.position[2], Battle_variable.position[3], Battle_variable.position[4]);
+                    Debug.WriteLine("현재 방덱 위치값: {0}, {1}, {2}, {3}, {4}", Battle_variable.position[0], Battle_variable.position[1], Battle_variable.position[2], Battle_variable.position[3], Battle_variable.position[4]);
 
-                    //Debug.WriteLine("현재 공덱 위치값: {0}, {1}, {2}, {3}, {4}", Battle_variable.position[15], Battle_variable.position[16], Battle_variable.position[17], Battle_variable.position[18], Battle_variable.position[19]);
+                    Debug.WriteLine("현재 공덱 위치값: {0}, {1}, {2}, {3}, {4}", Battle_variable.position[15], Battle_variable.position[16], Battle_variable.position[17], Battle_variable.position[18], Battle_variable.position[19]);
                     Debug.WriteLine("\n현재 방덱 HP: {0}, {1}, {2}, {3}, {4}", Battle_variable.HP[0], Battle_variable.HP[1], Battle_variable.HP[2], Battle_variable.HP[3], Battle_variable.HP[4]);
                     Debug.WriteLine("\n현재 공덱 HP: {0}, {1}, {2}, {3}, {4}", Battle_variable.HP[15], Battle_variable.HP[16], Battle_variable.HP[17], Battle_variable.HP[18], Battle_variable.HP[19]);
                     Debug.WriteLine("\n남은 시간: {0}", end_time - flow_time);
@@ -4613,9 +4605,9 @@ namespace PCRD_KR_ArenaSim
                 }
                 if (death_count2 == 15)
                 {
-                    //Debug.WriteLine("현재 방덱 위치값: {0}, {1}, {2}, {3}, {4}", Battle_variable.position[0], Battle_variable.position[1], Battle_variable.position[2], Battle_variable.position[3], Battle_variable.position[4]);
+                    Debug.WriteLine("현재 방덱 위치값: {0}, {1}, {2}, {3}, {4}", Battle_variable.position[0], Battle_variable.position[1], Battle_variable.position[2], Battle_variable.position[3], Battle_variable.position[4]);
 
-                    //Debug.WriteLine("현재 공덱 위치값: {0}, {1}, {2}, {3}, {4}", Battle_variable.position[15], Battle_variable.position[16], Battle_variable.position[17], Battle_variable.position[18], Battle_variable.position[19]);
+                    Debug.WriteLine("현재 공덱 위치값: {0}, {1}, {2}, {3}, {4}", Battle_variable.position[15], Battle_variable.position[16], Battle_variable.position[17], Battle_variable.position[18], Battle_variable.position[19]);
                     Debug.WriteLine("\n현재 방덱 HP: {0}, {1}, {2}, {3}, {4}", Battle_variable.HP[0], Battle_variable.HP[1], Battle_variable.HP[2], Battle_variable.HP[3], Battle_variable.HP[4]);
                     Debug.WriteLine("\n현재 공덱 HP: {0}, {1}, {2}, {3}, {4}", Battle_variable.HP[15], Battle_variable.HP[16], Battle_variable.HP[17], Battle_variable.HP[18], Battle_variable.HP[19]);
                     Debug.WriteLine("\n남은 시간: {0}", end_time - flow_time);
@@ -4625,9 +4617,9 @@ namespace PCRD_KR_ArenaSim
                 }
                 if (flow_time > end_time)
                 {
-                    //Debug.WriteLine("현재 방덱 위치값: {0}, {1}, {2}, {3}, {4}", Battle_variable.position[0], Battle_variable.position[1], Battle_variable.position[2], Battle_variable.position[3], Battle_variable.position[4]);
+                    Debug.WriteLine("현재 방덱 위치값: {0}, {1}, {2}, {3}, {4}", Battle_variable.position[0], Battle_variable.position[1], Battle_variable.position[2], Battle_variable.position[3], Battle_variable.position[4]);
 
-                    //Debug.WriteLine("현재 공덱 위치값: {0}, {1}, {2}, {3}, {4}", Battle_variable.position[15], Battle_variable.position[16], Battle_variable.position[17], Battle_variable.position[18], Battle_variable.position[19]);
+                    Debug.WriteLine("현재 공덱 위치값: {0}, {1}, {2}, {3}, {4}", Battle_variable.position[15], Battle_variable.position[16], Battle_variable.position[17], Battle_variable.position[18], Battle_variable.position[19]);
                     Debug.WriteLine("\n현재 방덱 HP: {0}, {1}, {2}, {3}, {4}", Battle_variable.HP[0], Battle_variable.HP[1], Battle_variable.HP[2], Battle_variable.HP[3], Battle_variable.HP[4]);
                     Debug.WriteLine("\n현재 공덱 HP: {0}, {1}, {2}, {3}, {4}", Battle_variable.HP[15], Battle_variable.HP[16], Battle_variable.HP[17], Battle_variable.HP[18], Battle_variable.HP[19]);
                     Debug.WriteLine("\n남은 시간: {0}", end_time - flow_time);
@@ -4639,7 +4631,6 @@ namespace PCRD_KR_ArenaSim
                 flow_time += 0.001;
             }
         }
-
 
         private void bt_capture_Def_Click(object sender, RoutedEventArgs e)
         {
@@ -6991,7 +6982,7 @@ namespace PCRD_KR_ArenaSim
             else if (CharaName == "kasumi") { ID = "101411"; }
             else if (CharaName == "misato") { ID = "101531"; }
             else if (CharaName == "suzuna") { ID = "101661"; }
-            else if (CharaName == "kaori") { ID = "101731"; }
+            else if (CharaName == "kaori") { ID = "101761"; }
             else if (CharaName == "io") { ID = "101861"; }
             else if (CharaName == "mimi") { ID = "102061"; }
             else if (CharaName == "kurumi") { ID = "102161"; }
@@ -7756,159 +7747,31 @@ namespace PCRD_KR_ArenaSim
             }
         }
 
-        private void bt_DefAutoReinUniqueEquip_Click(object sender, RoutedEventArgs e)
+        private void bt_DefAutoReinUniqueEquip_Click(object sender, RoutedEventArgs e)        {            AutoReinUniqueEquip(1);        }
+
+        private void bt_DefAutoReinItem_Click(object sender, RoutedEventArgs e)        {            AutoReinItem(1);        }
+
+        private void bt_DefAutoReinLevel_Click(object sender, RoutedEventArgs e)       {            AutoReinLevel(1);        }
+
+        private void bt_OffAutoReinUniqueEquip_Click(object sender, RoutedEventArgs e)        {            AutoReinUniqueEquip(0);        }
+        
+        private void bt_OffAutoReinItem_Click(object sender, RoutedEventArgs e)      {          AutoReinItem(0);        }
+        
+
+        private void bt_OffAutoReinLevel_Click(object sender, RoutedEventArgs e)    {            AutoReinLevel(0);        }
+        private void AutoReinUniqueEquip(int isOfforDef)
         {
             try
             {
-                StreamReader sr = new StreamReader("character_defence.txt");
-                int row = 1;
-                string[] stringArray = new string[400];
-                stringArray[0] = sr.ReadLine();
-                while (!sr.EndOfStream)
+                StreamReader sr;
+                if (isOfforDef == 0)
                 {
-                    string s = sr.ReadLine();
-
-                    string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
-
-                    if (temp[0] == "프페코" || temp[0] == "네네카" 
-                        || temp[0] == "수츠네"
-                        || temp[0] == "수쥰" || temp[0] == "엔카리" || temp[0] == "엔요리" || temp[0] == "프유이" || temp[0] == "프코로" || temp[0] == "프캬루"
-                        || temp[0] == "라비리스타" || temp[0] == "셰피" || temp[0] == "할무기" || temp[0] == "할레이" || temp[0] == "할츠리" || temp[0] == "마니카"
-                        || temp[0] == "마토모" || temp[0] == "성키노" || temp[0] == "성사렌" || temp[0] == "성카리" || temp[0] == "뉴이미" || temp[0] == "뉴네카"
-                        || temp[0] == "뉴페코" || temp[0] == "의코로" || temp[0] == "의유이" || temp[0] == "수스미" || temp[0] == "신리마" || temp[0] == "신마호"
-                        || temp[0] == "신코토" || temp[0] == "성로에" || temp[0] == "성에루" || temp[0] == "시노리" || temp[0] == "시카야" || temp[0] == "타노리" || temp[0] == "타카야" || temp[0] == "작오이" || temp[0] == "작마키")
-                    {
-                        temp[5] = "0";
-                    }
-                    else
-                    {
-                        temp[5] = Convert.ToString(maxUnique);
-                    }
-
-
-                    stringArray[row] = StringArrayToCommaString(temp);
-                    row++;
-
+                    sr = new StreamReader("character_offence.txt");
                 }
-                sr.Close();
-
-                StreamWriter sw = new StreamWriter("character_defence.txt");
-                int i = 0;
-                while (stringArray[i] != null)
+                else
                 {
-                    Debug.WriteLine(i);
-                    sw.WriteLine(stringArray[i]);
-                    Debug.WriteLine(stringArray[i]);
-                    i++;
+                    sr = new StreamReader("character_defence.txt");
                 }
-                sw.Close();
-
-                MessageBox.Show("방덱의 전용장비를 " + Convert.ToString(maxUnique) + "레벨로 자동강화 성공!", "알림");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void bt_DefAutoReinItem_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                StreamReader sr = new StreamReader("character_defence.txt");
-                int row = 1;
-                string[] stringArray = new string[400];
-                stringArray[0] = sr.ReadLine();
-                while (!sr.EndOfStream)
-                {
-                    string s = sr.ReadLine();
-
-                    string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
-                    int y = 0;
-                    temp[4] = Convert.ToString(maxRank);
-                    for (int xx = 0; xx < 6; xx++)
-                    {
-                        if (y < maxItemQuantity)
-                            temp[6 + xx] = "5";
-                        else
-                            temp[6 + xx] = "-1";
-                        y++;
-                    }
-                    stringArray[row] = StringArrayToCommaString(temp);
-                    row++;
-
-                }
-                sr.Close();
-
-                StreamWriter sw = new StreamWriter("character_defence.txt");
-                int i = 0;
-                while (stringArray[i] != null)
-                {
-                    Debug.WriteLine(i);
-                    sw.WriteLine(stringArray[i]);
-                    Debug.WriteLine(stringArray[i]);
-                    i++;
-                }
-                sw.Close();
-
-                MessageBox.Show("방덱을 " + Convert.ToString(maxRank) + "랭크 " + Convert.ToString(maxItemQuantity) + "템으로 자동강화 성공!", "알림");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void bt_DefAutoReinLevel_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                StreamReader sr = new StreamReader("character_defence.txt");
-                int row = 1;
-                string[] stringArray = new string[400];
-                stringArray[0] = sr.ReadLine();
-                while (!sr.EndOfStream)
-                {
-                    string s = sr.ReadLine();
-
-                    string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
-
-                    temp[3] = Convert.ToString(maxLevel);
-                    Debug.Write(temp[0]);
-                    Debug.Write(temp[1]);
-                    Debug.Write(temp[2]);
-                    Debug.WriteLine(temp[3]);
-                    stringArray[row] = StringArrayToCommaString(temp);
-                    Debug.WriteLine(stringArray[row]);
-                    row++;
-
-                }
-                sr.Close();
-
-                StreamWriter sw = new StreamWriter("character_defence.txt");
-                int i = 0;
-                while (stringArray[i] != null)
-                {
-                    Debug.WriteLine(i);
-                    sw.WriteLine(stringArray[i]);
-                    Debug.WriteLine(stringArray[i]);
-                    i++;
-                }
-                sw.Close();
-
-                MessageBox.Show("방덱을 " + Convert.ToString(maxLevel) + "레벨로 자동강화 성공!", "알림");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void bt_OffAutoReinUniqueEquip_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                StreamReader sr = new StreamReader("character_offence.txt");
                 int row = 1;
                 string[] stringArray = new string[400];
                 stringArray[0] = sr.ReadLine();
@@ -7938,7 +7801,15 @@ namespace PCRD_KR_ArenaSim
                 }
                 sr.Close();
 
-                StreamWriter sw = new StreamWriter("character_offence.txt");
+                StreamWriter sw;
+                if (isOfforDef == 0)
+                {
+                    sw = new StreamWriter("character_offence.txt");
+                }
+                else
+                {
+                    sw = new StreamWriter("character_defence.txt");
+                }
                 int i = 0;
                 while (stringArray[i] != null)
                 {
@@ -7956,12 +7827,80 @@ namespace PCRD_KR_ArenaSim
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void bt_OffAutoReinItem_Click(object sender, RoutedEventArgs e)
+        private void AutoReinLevel(int isOfforDef)
         {
             try
             {
-                StreamReader sr = new StreamReader("character_offence.txt");
+                StreamReader sr;
+                if (isOfforDef == 0)
+                {
+                    sr = new StreamReader("character_offence.txt");
+                }
+                else
+                {
+                    sr = new StreamReader("character_defence.txt");
+                }
+                int row = 1;
+                string[] stringArray = new string[400];
+                stringArray[0] = sr.ReadLine();
+                while (!sr.EndOfStream)
+                {
+                    string s = sr.ReadLine();
+
+                    string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
+
+                    temp[3] = Convert.ToString(maxLevel);
+                    Debug.Write(temp[0]);
+                    Debug.Write(temp[1]);
+                    Debug.Write(temp[2]);
+                    Debug.WriteLine(temp[3]);
+                    stringArray[row] = StringArrayToCommaString(temp);
+                    Debug.WriteLine(stringArray[row]);
+                    row++;
+
+                }
+                sr.Close();
+
+                StreamWriter sw;
+                if (isOfforDef == 0)
+                {
+                    sw = new StreamWriter("character_offence.txt");
+                }
+                else
+                {
+                    sw = new StreamWriter("character_defence.txt");
+                }
+                int i = 0;
+                while (stringArray[i] != null)
+                {
+                    Debug.WriteLine(i);
+                    sw.WriteLine(stringArray[i]);
+                    Debug.WriteLine(stringArray[i]);
+                    i++;
+                }
+                sw.Close();
+
+                MessageBox.Show("공덱을 " + Convert.ToString(maxLevel) + "레벨로 자동강화 성공!", "알림");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void AutoReinItem(int isOfforDef)
+        {
+            try
+            {
+                StreamReader sr;
+                if (isOfforDef == 0)
+                {
+                    sr = new StreamReader("character_offence.txt");
+                }
+                else
+                {
+                    sr = new StreamReader("character_defence.txt");
+                }
+
                 int row = 1;
                 string[] stringArray = new string[400];
                 stringArray[0] = sr.ReadLine();
@@ -7987,7 +7926,15 @@ namespace PCRD_KR_ArenaSim
                 }
                 sr.Close();
 
-                StreamWriter sw = new StreamWriter("character_offence.txt");
+                StreamWriter sw;
+                if (isOfforDef == 0)
+                {
+                    sw = new StreamWriter("character_offence.txt");
+                }
+                else
+                {
+                    sw = new StreamWriter("character_defence.txt");
+                }
                 int i = 0;
                 while (stringArray[i] != null)
                 {
@@ -8005,52 +7952,6 @@ namespace PCRD_KR_ArenaSim
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void bt_OffAutoReinLevel_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                StreamReader sr = new StreamReader("character_offence.txt");
-                int row = 1;
-                string[] stringArray = new string[400];
-                stringArray[0] = sr.ReadLine();
-                while (!sr.EndOfStream)
-                {
-                    string s = sr.ReadLine();
-
-                    string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
-
-                    temp[3] = Convert.ToString(maxLevel);
-                    Debug.Write(temp[0]);
-                    Debug.Write(temp[1]);
-                    Debug.Write(temp[2]);
-                    Debug.WriteLine(temp[3]);
-                    stringArray[row] = StringArrayToCommaString(temp);
-                    Debug.WriteLine(stringArray[row]);
-                    row++;
-
-                }
-                sr.Close();
-
-                StreamWriter sw = new StreamWriter("character_offence.txt");
-                int i = 0;
-                while (stringArray[i] != null)
-                {
-                    Debug.WriteLine(i);
-                    sw.WriteLine(stringArray[i]);
-                    Debug.WriteLine(stringArray[i]);
-                    i++;
-                }
-                sw.Close();
-
-                MessageBox.Show("공덱을 " + Convert.ToString(maxLevel) + "레벨로 자동강화 성공!", "알림");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         public string StringArrayToCommaString(string[] temp)
         {
             string result = "";
@@ -11064,6 +10965,7 @@ namespace PCRD_KR_ArenaSim
                 sw.WriteLine(string.Format("미야코,{0}", tb_abbr_miyako.Text));
                 sw.WriteLine(string.Format("쿠우카,{0}", tb_abbr_kuuka.Text));
                 sw.WriteLine(string.Format("쥰,{0}", tb_abbr_zyun.Text));
+                sw.WriteLine(string.Format("뉴이미,{0}", tb_abbr_muimi_newyear.Text));
                 sw.WriteLine(string.Format("오우카,{0}", tb_abbr_kuuka_ooedo.Text));
                 sw.WriteLine(string.Format("카오리,{0}", tb_abbr_kaori.Text));
                 sw.WriteLine(string.Format("성사렌,{0}", tb_abbr_saren_christmas.Text));
@@ -11805,8 +11707,11 @@ namespace PCRD_KR_ArenaSim
                " Html Agility Pack : ", " ");
             AddHyperlinkText("https://github.com/ravibpatel/AutoUpdater.NET/releases", "https://github.com/ravibpatel/AutoUpdater.NET/releases",
                 " AutoUpdater.NET : ", " ");
+            AddHyperlinkText("https://github.com/Fody/Costura", "https://github.com/Fody/Costura",
+                " Costura.Fody : ", " ");
             AddHyperlinkText("https://code-examples.net/ko/q/1aceac", "https://code-examples.net/ko/q/1aceac",
                 " RichTextBox 검색 : ", " ");
+            
 
             AddHyperlinkText("https://notepad-plus-plus.org/downloads/", "https://notepad-plus-plus.org/downloads/",
                " Notepad++ : ", " ");

@@ -56,7 +56,7 @@
                             </ToggleButton>
                             <ToggleButton Name="tb_kaori" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="kaori" IsChecked="false" BorderThickness="0"  
                                 Checked="tb_kaori_Checked" Unchecked="tb_kaori_UnChecked">
-                                <Image Source="res\icon_unit\101731.png"    />
+                                <Image Source="res\icon_unit\101761.png"    />
                             </ToggleButton>
                             <ToggleButton Name="tb_saren_christmas" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="saren_christmas" IsChecked="false" BorderThickness="0"  
                                 Checked="tb_saren_christmas_Checked" Unchecked="tb_saren_christmas_UnChecked">
@@ -805,7 +805,7 @@
                             </ToggleButton>
                             <ToggleButton Name="tb_enable_kaori" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="kaori" IsChecked="false" BorderThickness="0"  
                                 Checked="tb_enable_kaori_Checked" Unchecked="tb_enable_kaori_UnChecked">
-                                <Image Source="res\icon_unit\101731.png"    />
+                                <Image Source="res\icon_unit\101761.png"    />
                             </ToggleButton>
                             <ToggleButton Name="tb_enable_saren_christmas" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="saren_christmas" IsChecked="false" BorderThickness="0"  
                                 Checked="tb_enable_saren_christmas_Checked" Unchecked="tb_enable_saren_christmas_UnChecked">
@@ -1443,7 +1443,7 @@
                             </Button>
                             <Button  ToolTip="kaori"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                         Click="bt_kaori_set_Click" >
-                                <Image Source="res\icon_unit\101731.png" Stretch="Fill"     Name="img_bt_kaori"  />
+                                <Image Source="res\icon_unit\101761.png" Stretch="Fill"     Name="img_bt_kaori"  />
                             </Button>
                             <Button  ToolTip="saren_christmas"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                         Click="bt_saren_christmas_set_Click" >
@@ -2810,7 +2810,7 @@
                      BorderBrush="{x:Null}" MinWidth="100">                
                     <RichTextBox Name="Rtb_info_maker" BorderBrush="{x:Null}" Background="#FFF2FFFC" 
                                 IsReadOnly="True" AcceptsReturn="True" IsDocumentEnabled="True"
-                            Margin="100,55,100,5" FontSize="14" Height="575">
+                            Margin="55,25,55,5" FontSize="14" Height="675">
                         <FlowDocument>
                             <Paragraph LineHeight="6"/>
                         </FlowDocument>
