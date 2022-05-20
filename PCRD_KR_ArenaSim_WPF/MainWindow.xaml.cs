@@ -71,7 +71,7 @@ namespace PCRD_KR_ArenaSim
 
         Character_select cs = new Character_select();
 
-        public static bool[] IsPicked = new bool[350];
+        //public static bool[] IsPicked = new bool[350];
 
         public static Random rand = new Random(); // 매우 중요
 
@@ -94,8 +94,8 @@ namespace PCRD_KR_ArenaSim
 
         string[] DeckIndex = new string[5];
 
-        public static string[] AvailableCharaList = new string[MaxLoopCount];
-        public static string[] AlreadySelectedCharaList;
+       // public static string[] AvailableCharaList = new string[MaxLoopCount];
+        //public static string[] AlreadySelectedCharaList;
 
         FlowDocument myFlowDoc = new FlowDocument();
         public static bool isSimOK = false;
