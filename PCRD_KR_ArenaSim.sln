@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCRD_KR_ArenaSim", "PCRD_KR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpCodeGenerator", "CSharpCodeGenerator\CSharpCodeGenerator.csproj", "{C1D17864-D962-4A0F-BB57-4A98315B619D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameConversion", "NameConversion\NameConversion.csproj", "{F9F83026-6D77-456D-8C68-6CC50FFF8589}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,14 @@ Global
 		{C1D17864-D962-4A0F-BB57-4A98315B619D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C1D17864-D962-4A0F-BB57-4A98315B619D}.Release|x64.ActiveCfg = Release|Any CPU
 		{C1D17864-D962-4A0F-BB57-4A98315B619D}.Release|x64.Build.0 = Release|Any CPU
+		{F9F83026-6D77-456D-8C68-6CC50FFF8589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9F83026-6D77-456D-8C68-6CC50FFF8589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9F83026-6D77-456D-8C68-6CC50FFF8589}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F9F83026-6D77-456D-8C68-6CC50FFF8589}.Debug|x64.Build.0 = Debug|Any CPU
+		{F9F83026-6D77-456D-8C68-6CC50FFF8589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9F83026-6D77-456D-8C68-6CC50FFF8589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9F83026-6D77-456D-8C68-6CC50FFF8589}.Release|x64.ActiveCfg = Release|Any CPU
+		{F9F83026-6D77-456D-8C68-6CC50FFF8589}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

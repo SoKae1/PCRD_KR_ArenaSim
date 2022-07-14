@@ -1765,6 +1765,12 @@
     <Resource Include="res\icon_unit_crop\180811.png" />
     <Resource Include="res\icon_unit_crop\180831.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NameConversion\NameConversion.csproj">
+      <Project>{f9f83026-6d77-456d-8c68-6cc50fff8589}</Project>
+      <Name>NameConversion</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.5.5\build\Fody.targets" Condition="Exists('..\packages\Fody.6.5.5\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

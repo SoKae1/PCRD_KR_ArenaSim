@@ -13939,291 +13939,291 @@ namespace PCRD_KR_ArenaSim
             if (character == "hiyori" || character == "hiyori_newyear" || character == "hiyori_princess")
             {
                 array1 = dt.hiyori_12;
-                array2 = dt.hiyori_newyear_08;
-                array3 = dt.hiyori_princess_08;
+                array2 = dt.hiyori_newyear_04;
+                array3 = dt.hiyori_princess_04;
             }
             else if (character == "yui" || character == "yui_newyear" || character == "yui_princess" || character == "yui_maiden")
             {
                 array1 = dt.yui_12;
-                array2 = dt.yui_newyear_08;
-                array3 = dt.yui_princess_08;
-                array4 = dt.yui_maiden_08;
+                array2 = dt.yui_newyear_04;
+                array3 = dt.yui_princess_04;
+                array4 = dt.yui_maiden_04;
             }
             else if (character == "rei" || character == "rei_newyear" || character == "rei_halloween" || character == "rei_princess")
             {
                 array1 = dt.rei_12;
-                array2 = dt.rei_newyear_08;
-                array3 = dt.rei_halloween_08;
-                //array4 = dt.rei_princess_08;
+                array2 = dt.rei_newyear_04;
+                array3 = dt.rei_halloween_04;
+                //array4 = dt.rei_princess_04;
             }
             else if (character == "misogi" || character == "misogi_halloween")
             {
                 array1 = dt.misogi_12;
-                array2 = dt.misogi_halloween_08;
+                array2 = dt.misogi_halloween_04;
                 //array3 = dt.littlelyri_08;
             }
             else if (character == "matsuri" || character == "matsuri_halloween")
             {
                 array1 = dt.matsuri_08;
-                array2 = dt.matsuri_halloween_08;
+                array2 = dt.matsuri_halloween_04;
             }
             else if (character == "akari" || character == "akari_angel")
             {
                 array1 = dt.akari_12;
-                array2 = dt.akari_angel_08;
+                array2 = dt.akari_angel_04;
             }
             else if (character == "miyako" || character == "miyako_halloween" || character == "miyako_christmas")
             {
                 array1 = dt.miyako_08;
-                array2 = dt.miyako_halloween_08;
-                //array3 = dt.miyako_christmas_08;
+                array2 = dt.miyako_halloween_04;
+                //array3 = dt.miyako_christmas_04;
             }
             else if (character == "yuki" || character == "yuki_ooedo")
             {
                 array1 = dt.yuki_08;
-                //array2= dt.yuki_ooedo_08;
+                //array2= dt.yuki_ooedo_04;
             }
             else if (character == "anna" || character == "anna_summer")
             {
                 array1 = dt.anna_08;
-                array2 = dt.anna_summer_08;
+                array2 = dt.anna_summer_04;
             }
             else if (character == "maho" || character == "maho_summer" || character == "maho_cinderella")
             {
                 array1 = dt.maho_12;
-                array2 = dt.maho_summer_08;
-                array3 = dt.maho_cinderella_08;
+                array2 = dt.maho_summer_04;
+                array3 = dt.maho_cinderella_04;
             }
             else if (character == "rino" || character == "rino_wonder" || character == "rino_christmas")
             {
                 array1 = dt.rino_12;
-                array2 = dt.rino_wonder_08;
-                //array3 = dt.rino_christmas_08;
+                array2 = dt.rino_wonder_04;
+                //array3 = dt.rino_christmas_04;
             }
             else if (character == "hatsune" || character == "hatsune_summer")
             {
                 array1 = dt.hatsune_12;
-                array2 = dt.hatsune_summer_08;
+                array2 = dt.hatsune_summer_04;
                 //array3 = dt.hatsusio_08;
             }
             else if (character == "nanaka" || character == "nanaka_summer")
             {
                 array1 = dt.nanaka_08;
-                array2 = dt.nanaka_summer_08;
+                array2 = dt.nanaka_summer_04;
             }
-            else if (character == "kasumi" || character == "kasumi_magical" || character == "kasumi_summer_08")
+            else if (character == "kasumi" || character == "kasumi_magical" || character == "kasumi_summer_04")
             {
                 array1 = dt.kasumi_08;
-                array2 = dt.kasumi_magical_08;
-                array3 = dt.kasumi_summer_08;
+                array2 = dt.kasumi_magical_04;
+                array3 = dt.kasumi_summer_04;
             }
             else if (character == "misato" || character == "misato_summer")
             {
                 array1 = dt.misato_08;
-                array2 = dt.misato_summer_08;
+                array2 = dt.misato_summer_04;
             }
             else if (character == "suzuna" || character == "suzuna_summer" || character == "suzuna_halloween")
             {
                 array1 = dt.suzuna_12;
-                array2 = dt.suzuna_summer_08;
-                //array3 = dt.suzuna_halloween_08;
+                array2 = dt.suzuna_summer_04;
+                //array3 = dt.suzuna_halloween_04;
             }
             else if (character == "kaori" || character == "kaori_summer" || character == "kaori_halloween")
             {
                 array1 = dt.kaori_12;
-                array2 = dt.kaori_summer_08;
-                //array3 = dt.kaori_halloween_08;
+                array2 = dt.kaori_summer_04;
+                //array3 = dt.kaori_halloween_04;
             }
             else if (character == "io" || character == "io_summer" || character == "io_noir")
             {
                 array1 = dt.io_12;
-                array2 = dt.io_summer_08;
+                array2 = dt.io_summer_04;
                 //array3 = dt.io_noir_08;
             }
             else if (character == "mimi" || character == "mimi_halloween")
             {
                 array1 = dt.mimi_12;
-                array2 = dt.mimi_halloween_08;
+                array2 = dt.mimi_halloween_04;
                 //array3 = dt.littlelyri_08;
             }
             else if (character == "kurumi" || character == "kurumi_christmas" || character == "kurumi_stage")
             {
                 array1 = dt.kurumi_12;
-                array2 = dt.kurumi_christmas_08;
+                array2 = dt.kurumi_christmas_04;
                 //array3 = dt.kurumi_stage_08;
             }
             else if (character == "yori" || character == "yori_angel")
             {
                 array1 = dt.yori_12;
-                array2 = dt.yori_angel_08;
+                array2 = dt.yori_angel_04;
             }
             else if (character == "ayane" || character == "ayane_christmas")
             {
                 array1 = dt.ayane_12;
-                array2 = dt.ayane_christmas_08;
+                array2 = dt.ayane_christmas_04;
             }
             else if (character == "suzume" || character == "suzume_summer" || character == "suzume_newyear")
             {
                 array1 = dt.suzume_12;
-                array2 = dt.suzume_summer_08;
-                array3 = dt.suzume_newyear_08;
+                array2 = dt.suzume_summer_04;
+                array3 = dt.suzume_newyear_04;
             }
             else if (character == "rin" || character == "rin_ranger")
             {
                 array1 = dt.rin_08;
-                array2 = dt.rin_ranger_08;
+                array2 = dt.rin_ranger_04;
             }
             else if (character == "eriko" || character == "eriko_valentine" || character == "eriko_summer")
             {
                 array1 = dt.eriko_08;
-                array2 = dt.eriko_valentine_08;
-                //array3 = dt.eriko_summer_08;
+                array2 = dt.eriko_valentine_04;
+                //array3 = dt.eriko_summer_04;
             }
             else if (character == "saren" || character == "saren_summer" || character == "saren_christmas")
             {
                 array1 = dt.saren_12;
-                array2 = dt.saren_summer_08;
-                array3 = dt.saren_christmas_08;
+                array2 = dt.saren_summer_04;
+                array3 = dt.saren_christmas_04;
             }
             else if (character == "nozomi" || character == "nozomi_christmas" || character == "nozomi_summer")
             {
                 array1 = dt.nozomi_12;
-                array2 = dt.nozomi_christmas_08;
-                //array3 = dt.nozomi_summer_08;
+                array2 = dt.nozomi_christmas_04;
+                //array3 = dt.nozomi_summer_04;
             }
             else if (character == "ninon" || character == "ninon_ooedo" || character == "ninon_halloween")
             {
                 array1 = dt.ninon_12;
-                array2 = dt.ninon_ooedo_08;
-                //array3 = dt.ninon_halloween_08;
+                array2 = dt.ninon_ooedo_04;
+                //array3 = dt.ninon_halloween_04;
             }
             else if (character == "sinobu" || character == "sinobu_halloween")
             {
                 array1 = dt.sinobu_08;
-                array2 = dt.sinobu_halloween_08;
+                array2 = dt.sinobu_halloween_04;
             }
             else if (character == "akino" || character == "akino_christmas")
             {
                 array1 = dt.akino_12;
-                array2 = dt.akino_christmas_08;
+                array2 = dt.akino_christmas_04;
             }
             else if (character == "mahiru" || character == "mahiru_ranger" || character == "mahiru_christmas")
             {
                 array1 = dt.mahiru_12;
-                array2 = dt.mahiru_ranger_08;
-                //array3 = dt.mahiru_christmas_08;
+                array2 = dt.mahiru_ranger_04;
+                //array3 = dt.mahiru_christmas_04;
             }
             else if (character == "yukari" || character == "yukari_christmas")
             {
                 array1 = dt.yukari_12;
-                array2 = dt.yukari_christmas_08;
+                array2 = dt.yukari_christmas_04;
             }
             else if (character == "kyouka" || character == "kyouka_halloween")
             {
                 array1 = dt.kyouka_12;
-                array2 = dt.kyouka_halloween_08;
+                array2 = dt.kyouka_halloween_04;
                 //array3 = dt.littlelyri_08;
             }
             else if (character == "tomo" || character == "tomo_magical")
             {
                 array1 = dt.tomo_08;
-                array2 = dt.tomo_magical_08;
+                array2 = dt.tomo_magical_04;
             }
             else if (character == "siori" || character == "siori_magical")
             {
                 array1 = dt.siori_08;
-                array2 = dt.siori_magical_08;
+                array2 = dt.siori_magical_04;
                 //array3 = dt.hatsusio_08;
             }
             else if (character == "aoi" || character == "aoi_nakayosi" /*|| character ==  "aoi_worker"*/)
             {
                 array1 = dt.aoi_08;
-                array2 = dt.aoi_nakayosi_08;
-                array3 = dt.aoi_worker_08;
+                array2 = dt.aoi_nakayosi_04;
+                array3 = dt.aoi_worker_04;
             }
             else if (character == "chika" || character == "chika_christmas" || character == "chika_summer")
             {
                 array1 = dt.chika_08;
-                array2 = dt.chika_christmas_08;
-                //array3 = dt.chika_summer_08;
+                array2 = dt.chika_christmas_04;
+                //array3 = dt.chika_summer_04;
             }
             else if (character == "makoto" || character == "makoto_summer" || character == "makoto_cinderella")
             {
                 array1 = dt.makoto_08;
-                array2 = dt.makoto_summer_08;
-                array3 = dt.makoto_cinderella_08;
+                array2 = dt.makoto_summer_04;
+                array3 = dt.makoto_cinderella_04;
             }
             else if (character == "iriya" || character == "iriya_christmas" || character == "iriya_newyear")
             {
                 array1 = dt.iriya_08;
-                array2 = dt.iriya_christmas_08;
-                //array3 = dt.iriya_newyear_08;
+                array2 = dt.iriya_christmas_04;
+                //array3 = dt.iriya_newyear_04;
             }
             else if (character == "kuuka" || character == "kuuka_ooedo" || character == "kuuka_noir")
             {
                 array1 = dt.kuuka_08;
-                array2 = dt.kuuka_ooedo_08;
+                array2 = dt.kuuka_ooedo_04;
                 //array3 = dt.kuuka_noir_08;
             }
             else if (character == "tamaki" || character == "tamaki_summer" || character == "tamaki_worker")
             {
                 array1 = dt.tamaki_12;
-                array2 = dt.tamaki_summer_08;
-                array3 = dt.tamaki_worker_08;
+                array2 = dt.tamaki_summer_04;
+                array3 = dt.tamaki_worker_04;
             }
             else if (character == "zyun" || character == "zyun_summer")
             {
                 array1 = dt.zyun_08;
-                array2 = dt.zyun_summer_08;
+                array2 = dt.zyun_summer_04;
             }
             else if (character == "mihuyu" || character == "mihuyu_summer" || character == "mihuyu_worker")
             {
                 array1 = dt.mihuyu_12;
-                array2 = dt.mihuyu_summer_08;
-                array3= dt.mihuyu_worker_08;
+                array2 = dt.mihuyu_summer_04;
+                array3= dt.mihuyu_worker_04;
             }
             else if (character == "sizuru" || character == "sizuru_valentine" || character == "sizuru_summer")
             {
                 array1 = dt.sizuru_12;
-                array2 = dt.sizuru_valentine_08;
-                //array3 = dt.sizuru_summer_08;
+                array2 = dt.sizuru_valentine_04;
+                //array3 = dt.sizuru_summer_04;
             }
             else if (character == "misaki" || character == "misaki_halloween")
             {
                 array1 = dt.misaki_08;
-                array2 = dt.misaki_halloween_08;
+                array2 = dt.misaki_halloween_04;
             }
             else if (character == "mitsuki" || character == "mitsuki_ooedo")
             {
                 array1 = dt.mitsuki_08;
-                //array2 = dt.mitsuki_ooedo_08;
+                //array2 = dt.mitsuki_ooedo_04;
             }
             else if (character == "rima" || character == "rima_cinderella")
             {
                 array1 = dt.rima_12;
-                array2 = dt.rima_cinderella_08;
+                array2 = dt.rima_cinderella_04;
             }
             else if (character == "monika" || character == "monika_magical")
             {
                 array1 = dt.monika_08;
-                array2 = dt.monika_magical_08;
+                array2 = dt.monika_magical_04;
             }
             else if (character == "tsumugi" || character == "tsumugi_halloween" || character == "tsumugi_summer")
             {
                 array1 = dt.tsumugi_08;
-                array2 = dt.tsumugi_halloween_08;
-                //array3 = dt.tsumugi_summer_08;
+                array2 = dt.tsumugi_halloween_04;
+                //array3 = dt.tsumugi_summer_04;
             }
             else if (character == "ayumi" || character == "ayumi_wonder")
             {
                 array1 = dt.ayumi_08;
-                array2 = dt.ayumi_wonder_08;
+                array2 = dt.ayumi_wonder_04;
             }
             else if (character == "ruka" || character == "ruka_summer")
             {
                 array1 = dt.ruka_08;
-                array2 = dt.ruka_summer_08;
-                //array3 = dt.ruka_newyear_08;
+                array2 = dt.ruka_summer_04;
+                //array3 = dt.ruka_newyear_04;
             }
             else if (character == "zita")
             {
@@ -14232,31 +14232,31 @@ namespace PCRD_KR_ArenaSim
             else if (character == "pekorinnu" || character == "pekorinnu_summer" || character == "pekorinnu_princess" || character == "pekorinnu_newyear" || character == "pekorinnu_overload")
             {
                 array1 = dt.pekorinnu_12;
-                array2 = dt.pekorinnu_summer_08;
-                array3 = dt.pekorinnu_princess_08;
-                array4 = dt.pekorinnu_newyear_08;
+                array2 = dt.pekorinnu_summer_04;
+                array3 = dt.pekorinnu_princess_04;
+                array4 = dt.pekorinnu_newyear_04;
                 //array5 = dt.pekorinnu_overload_08;
             }
             else if (character == "kotkoro" || character == "kotkoro_summer" || character == "kotkoro_newyear" || character == "kotkoro_princess" || character == "kotkoro_maiden")
             {
                 array1 = dt.kotkoro_12;
-                array2 = dt.kotkoro_summer_08;
-                array3 = dt.kotkoro_newyear_08;
-                array4 = dt.kotkoro_princess_08;
-                array5 = dt.kotkoro_maiden_08;
+                array2 = dt.kotkoro_summer_04;
+                array3 = dt.kotkoro_newyear_04;
+                array4 = dt.kotkoro_princess_04;
+                array5 = dt.kotkoro_maiden_04;
             }
             else if (character == "kyaru" || character == "kyaru_summer" || character == "kyaru_newyear" || character == "kyaru_princess" || character == "kyaru_overload")
             {
                 array1 = dt.kyaru_12;
-                array2 = dt.kyaru_summer_08;
-                array3 = dt.kyaru_newyear_08;
-                array4 = dt.kyaru_princess_08;
+                array2 = dt.kyaru_summer_04;
+                array3 = dt.kyaru_newyear_04;
+                array4 = dt.kyaru_princess_04;
                 //array5 = dt.kyaru_overload_08;
             }
             else if (character == "muimi" || character == "muimi_newyear")
             {
-                array1 = dt.muimi_08;
-                array2 = dt.muimi_newyear_08;
+                array1 = dt.muimi_04;
+                array2 = dt.muimi_newyear_04;
             }
             else if (character == "arisa")
             {
@@ -14265,66 +14265,66 @@ namespace PCRD_KR_ArenaSim
             else if (character == "kaya" || character == "kaya_timetravel")
             {
                 array1 = dt.kaya_08;
-                array2 = dt.kaya_timetravel_08;
+                array2 = dt.kaya_timetravel_04;
             }
             else if (character == "inori" || character == "inori_timetravel")
             {
                 array1 = dt.inori_08;
-                array2 = dt.inori_timetravel_08;
+                array2 = dt.inori_timetravel_04;
             }
             else if (character == "labyrista" || character == "labyrista_overload")
             {
-                array1 = dt.labyrista_08;
+                array1 = dt.labyrista_04;
                 //array2 = dt.labyrista_overload_08;
             }
             else if (character == "neneka" || character == "neneka_newyear")
             {
-                array1 = dt.neneka_08;
-                array2 = dt.neneka_newyear_08;
+                array1 = dt.neneka_04;
+                array2 = dt.neneka_newyear_04;
             }
             else if (character == "kristina" || character == "kristina_christmas")
             {
-                array1 = dt.kristina_08;
-                array2 = dt.kristina_christmas_08;
+                array1 = dt.kristina_04;
+                array2 = dt.kristina_christmas_04;
             }
             else if (character == "anne")
             {
-                array1 = dt.anne_08;
+                array1 = dt.anne_04;
             }
             else if (character == "lou")
             {
-                array1 = dt.lou_08;
+                array1 = dt.lou_04;
             }
             else if (character == "grea")
             {
-                array1 = dt.grea_08;
+                array1 = dt.grea_04;
             }
             else if (character == "rem")
             {
-                array1 = dt.rem_08;
+                array1 = dt.rem_04;
             }
             else if (character == "ram")
             {
-                array1 = dt.ram_08;
+                array1 = dt.ram_04;
             }
             else if (character == "emilia")
             {
-                array1 = dt.emilia_08;
+                array1 = dt.emilia_04;
             }
             else if (character == "chloe")
             {
                 array1 = dt.chloe_08;
-                array2 = dt.chloe_terefes_08;
+                array2 = dt.chloe_terefes_04;
             }
             else if (character == "chieru")
             {
                 array1 = dt.chieru_08;
-                array2 = dt.chieru_terefes_08;
+                array2 = dt.chieru_terefes_04;
             }
             else if (character == "yuni")
             {
                 array1 = dt.yuni_08;
-                //array2 = dt.yuni_terefes_08;
+                //array2 = dt.yuni_terefes_04;
             }
             else if (character == "runa")
             {
@@ -14332,27 +14332,27 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "uzuki_deremas")
             {
-                array1 = dt.uzuki_deremas_08;
+                array1 = dt.uzuki_deremas_04;
             }
             else if (character == "rin_deremas")
             {
-                array1 = dt.rin_deremas_08;
+                array1 = dt.rin_deremas_04;
             }
             else if (character == "mio_deremas")
             {
-                array1 = dt.mio_deremas_08;
+                array1 = dt.mio_deremas_04;
             }
             else if (character == "shepi")
             {
                 array1 = dt.shepi_08;
-                //array2 = dt.shepi_newyear_08;
+                //array2 = dt.shepi_newyear_04;
             }
             else if (character == "hatsusio")
             {
                 //array1 = dt.hatsune_12;
-                //array2 = dt.hatsune_summer_08;
+                //array2 = dt.hatsune_summer_04;
                 //array3 = dt.siori_08;
-                //array4 = dt.siori_magical_08;
+                //array4 = dt.siori_magical_04;
                 //array5 = dt.hatsusio_08;
             }
             else if (character == "credita")
@@ -14366,11 +14366,11 @@ namespace PCRD_KR_ArenaSim
             else if (character == "littlelyri")
             {
                 //array1 = dt.misogi_12;
-                //array2 = dt.misogi_halloween_08;
+                //array2 = dt.misogi_halloween_04;
                 //array3 = dt.kyouka_12;
-                //array4 = dt.kyouka_halloween_08;
+                //array4 = dt.kyouka_halloween_04;
                 //array5 = dt.mimi_12;
-                //array6 = dt.mimi_halloween_08;
+                //array6 = dt.mimi_halloween_04;
                 //array7 = dt.littlelyri_08;
             }
             else if (character == "ranpa")
@@ -14850,292 +14850,292 @@ namespace PCRD_KR_ArenaSim
             if (character == "hiyori" || character == "hiyori_newyear" || character == "hiyori_princess")
             {
                 array1 = dt.hiyori_12;
-                array2 = dt.hiyori_newyear_08;
-                array3 = dt.hiyori_princess_08;
+                array2 = dt.hiyori_newyear_04;
+                array3 = dt.hiyori_princess_04;
             }
             else if (character == "yui" || character == "yui_newyear" || character == "yui_princess" || character == "yui_maiden")
             {
                 array1 = dt.yui_12;
-                array2 = dt.yui_newyear_08;
-                array3 = dt.yui_princess_08;
-                array4 = dt.yui_maiden_08;
+                array2 = dt.yui_newyear_04;
+                array3 = dt.yui_princess_04;
+                array4 = dt.yui_maiden_04;
             }
             else if (character == "rei" || character == "rei_newyear" || character == "rei_halloween" || character == "rei_princess")
             {
                 array1 = dt.rei_12;
-                array2 = dt.rei_newyear_08;
-                array3 = dt.rei_halloween_08;
-                //array4 = dt.rei_princess_08;
+                array2 = dt.rei_newyear_04;
+                array3 = dt.rei_halloween_04;
+                //array4 = dt.rei_princess_04;
             }
             else if (character == "misogi" || character == "misogi_halloween")
             {
                 array1 = dt.misogi_12;
-                array2 = dt.misogi_halloween_08;
+                array2 = dt.misogi_halloween_04;
                 //array3 = dt.littlelyri_08;
             }
             else if (character == "matsuri" || character == "matsuri_halloween")
             {
                 array1 = dt.matsuri_08;
-                array2 = dt.matsuri_halloween_08;
+                array2 = dt.matsuri_halloween_04;
             }
             else if (character == "akari" || character == "akari_angel")
             {
                 array1 = dt.akari_12;
-                array2 = dt.akari_angel_08;
+                array2 = dt.akari_angel_04;
             }
             else if (character == "miyako" || character == "miyako_halloween" || character == "miyako_christmas")
             {
                 array1 = dt.miyako_08;
-                array2 = dt.miyako_halloween_08;
-                //array3 = dt.miyako_christmas_08;
+                array2 = dt.miyako_halloween_04;
+                //array3 = dt.miyako_christmas_04;
             }
             else if (character == "yuki" || character == "yuki_ooedo")
             {
                 array1 = dt.yuki_08;
-                //array2= dt.yuki_ooedo_08;
+                //array2= dt.yuki_ooedo_04;
             }
             else if (character == "anna" || character == "anna_summer")
             {
                 array1 = dt.anna_08;
-                array2 = dt.anna_summer_08;
+                array2 = dt.anna_summer_04;
             }
             else if (character == "maho" || character == "maho_summer" || character == "maho_cinderella")
             {
                 array1 = dt.maho_12;
-                array2 = dt.maho_summer_08;
-                array3 = dt.maho_cinderella_08;
+                array2 = dt.maho_summer_04;
+                array3 = dt.maho_cinderella_04;
             }
             else if (character == "rino" || character == "rino_wonder" || character == "rino_christmas")
             {
                 array1 = dt.rino_12;
-                array2 = dt.rino_wonder_08;
-                //array3 = dt.rino_christmas_08;
+                array2 = dt.rino_wonder_04;
+                //array3 = dt.rino_christmas_04;
             }
             else if (character == "hatsune" || character == "hatsune_summer")
             {
                 array1 = dt.hatsune_12;
-                array2 = dt.hatsune_summer_08;
+                array2 = dt.hatsune_summer_04;
                 //array3 = dt.hatsusio_08;
             }
             else if (character == "nanaka" || character == "nanaka_summer")
             {
                 array1 = dt.nanaka_08;
-                array2 = dt.nanaka_summer_08;
+                array2 = dt.nanaka_summer_04;
             }
-            else if (character == "kasumi" || character == "kasumi_magical" || character == "kasumi_summer_08")
+            else if (character == "kasumi" || character == "kasumi_magical" || character == "kasumi_summer_04")
             {
                 array1 = dt.kasumi_08;
-                array2 = dt.kasumi_magical_08;
-                array3 = dt.kasumi_summer_08;
+                array2 = dt.kasumi_magical_04;
+                array3 = dt.kasumi_summer_04;
             }
             else if (character == "misato" || character == "misato_summer")
             {
                 array1 = dt.misato_08;
-                array2 = dt.misato_summer_08;
+                array2 = dt.misato_summer_04;
             }
             else if (character == "suzuna" || character == "suzuna_summer" || character == "suzuna_halloween")
             {
                 array1 = dt.suzuna_12;
-                array2 = dt.suzuna_summer_08;
-                //array3 = dt.suzuna_halloween_08;
+                array2 = dt.suzuna_summer_04;
+                //array3 = dt.suzuna_halloween_04;
             }
             else if (character == "kaori" || character == "kaori_summer" || character == "kaori_halloween")
             {
                 array1 = dt.kaori_12;
-                array2 = dt.kaori_summer_08;
-                //array3 = dt.kaori_halloween_08;
+                array2 = dt.kaori_summer_04;
+                //array3 = dt.kaori_halloween_04;
             }
             else if (character == "io" || character == "io_summer" || character == "io_noir")
             {
                 array1 = dt.io_12;
-                array2 = dt.io_summer_08;
+                array2 = dt.io_summer_04;
                 //array3 = dt.io_noir_08;
             }
             else if (character == "mimi" || character == "mimi_halloween")
             {
                 array1 = dt.mimi_12;
-                array2 = dt.mimi_halloween_08;
+                array2 = dt.mimi_halloween_04;
                 //array3 = dt.littlelyri_08;
             }
             else if (character == "kurumi" || character == "kurumi_christmas" || character == "kurumi_stage")
             {
                 array1 = dt.kurumi_12;
-                array2 = dt.kurumi_christmas_08;
+                array2 = dt.kurumi_christmas_04;
                 //array3 = dt.kurumi_stage_08;
             }
             else if (character == "yori" || character == "yori_angel")
             {
                 array1 = dt.yori_12;
-                array2 = dt.yori_angel_08;
+                array2 = dt.yori_angel_04;
             }
             else if (character == "ayane" || character == "ayane_christmas")
             {
                 array1 = dt.ayane_12;
-                array2 = dt.ayane_christmas_08;
+                array2 = dt.ayane_christmas_04;
             }
             else if (character == "suzume" || character == "suzume_summer" || character == "suzume_newyear")
             {
                 array1 = dt.suzume_12;
-                array2 = dt.suzume_summer_08;
-                array3 = dt.suzume_newyear_08;
+                array2 = dt.suzume_summer_04;
+                array3 = dt.suzume_newyear_04;
             }
             else if (character == "rin" || character == "rin_ranger")
             {
                 array1 = dt.rin_08;
-                array2 = dt.rin_ranger_08;
+                array2 = dt.rin_ranger_04;
             }
             else if (character == "eriko" || character == "eriko_valentine" || character == "eriko_summer")
             {
                 array1 = dt.eriko_08;
-                array2 = dt.eriko_valentine_08;
-                //array3 = dt.eriko_summer_08;
+                array2 = dt.eriko_valentine_04;
+                //array3 = dt.eriko_summer_04;
 
             }
             else if (character == "saren" || character == "saren_summer" || character == "saren_christmas")
             {
                 array1 = dt.saren_12;
-                array2 = dt.saren_summer_08;
-                array3 = dt.saren_christmas_08;
+                array2 = dt.saren_summer_04;
+                array3 = dt.saren_christmas_04;
             }
             else if (character == "nozomi" || character == "nozomi_christmas" || character == "nozomi_summer")
             {
                 array1 = dt.nozomi_12;
-                array2 = dt.nozomi_christmas_08;
-                //array3 = dt.nozomi_summer_08;
+                array2 = dt.nozomi_christmas_04;
+                //array3 = dt.nozomi_summer_04;
             }
             else if (character == "ninon" || character == "ninon_ooedo" || character == "ninon_halloween")
             {
                 array1 = dt.ninon_12;
-                array2 = dt.ninon_ooedo_08;
-                //array3 = dt.ninon_halloween_08;
+                array2 = dt.ninon_ooedo_04;
+                //array3 = dt.ninon_halloween_04;
             }
             else if (character == "sinobu" || character == "sinobu_halloween")
             {
                 array1 = dt.sinobu_08;
-                array2 = dt.sinobu_halloween_08;
+                array2 = dt.sinobu_halloween_04;
             }
             else if (character == "akino" || character == "akino_christmas")
             {
                 array1 = dt.akino_12;
-                array2 = dt.akino_christmas_08;
+                array2 = dt.akino_christmas_04;
             }
             else if (character == "mahiru" || character == "mahiru_ranger" || character == "mahiru_christmas")
             {
                 array1 = dt.mahiru_12;
-                array2 = dt.mahiru_ranger_08;
-                //array3 = dt.mahiru_christmas_08;
+                array2 = dt.mahiru_ranger_04;
+                //array3 = dt.mahiru_christmas_04;
             }
             else if (character == "yukari" || character == "yukari_christmas")
             {
                 array1 = dt.yukari_12;
-                array2 = dt.yukari_christmas_08;
+                array2 = dt.yukari_christmas_04;
             }
             else if (character == "kyouka" || character == "kyouka_halloween")
             {
                 array1 = dt.kyouka_12;
-                array2 = dt.kyouka_halloween_08;
+                array2 = dt.kyouka_halloween_04;
                 //array3 = dt.littlelyri_08;
             }
             else if (character == "tomo" || character == "tomo_magical")
             {
                 array1 = dt.tomo_08;
-                array2 = dt.tomo_magical_08;
+                array2 = dt.tomo_magical_04;
             }
             else if (character == "siori" || character == "siori_magical")
             {
                 array1 = dt.siori_08;
-                array2 = dt.siori_magical_08;
+                array2 = dt.siori_magical_04;
                 //array3 = dt.hatsusio_08;
             }
             else if (character == "aoi" || character == "aoi_nakayosi" /*|| character ==  "aoi_worker"*/)
             {
                 array1 = dt.aoi_08;
-                array2 = dt.aoi_nakayosi_08;
-                array3 = dt.aoi_worker_08;
+                array2 = dt.aoi_nakayosi_04;
+                array3 = dt.aoi_worker_04;
             }
             else if (character == "chika" || character == "chika_christmas" || character == "chika_summer")
             {
                 array1 = dt.chika_08;
-                array2 = dt.chika_christmas_08;
-                //array3 = dt.chika_summer_08;
+                array2 = dt.chika_christmas_04;
+                //array3 = dt.chika_summer_04;
             }
             else if (character == "makoto" || character == "makoto_summer" || character == "makoto_cinderella")
             {
                 array1 = dt.makoto_08;
-                array2 = dt.makoto_summer_08;
-                array3 = dt.makoto_cinderella_08;
+                array2 = dt.makoto_summer_04;
+                array3 = dt.makoto_cinderella_04;
             }
             else if (character == "iriya" || character == "iriya_christmas" || character == "iriya_newyear")
             {
                 array1 = dt.iriya_08;
-                array2 = dt.iriya_christmas_08;
-                //array3 = dt.iriya_newyear_08;
+                array2 = dt.iriya_christmas_04;
+                //array3 = dt.iriya_newyear_04;
             }
             else if (character == "kuuka" || character == "kuuka_ooedo" || character == "kuuka_noir")
             {
                 array1 = dt.kuuka_08;
-                array2 = dt.kuuka_ooedo_08;
+                array2 = dt.kuuka_ooedo_04;
                 //array3 = dt.kuuka_noir_08;
             }
             else if (character == "tamaki" || character == "tamaki_summer" || character == "tamaki_worker")
             {
                 array1 = dt.tamaki_12;
-                array2 = dt.tamaki_summer_08;
-                array3 = dt.tamaki_worker_08;
+                array2 = dt.tamaki_summer_04;
+                array3 = dt.tamaki_worker_04;
             }
             else if (character == "zyun" || character == "zyun_summer")
             {
                 array1 = dt.zyun_08;
-                array2 = dt.zyun_summer_08;
+                array2 = dt.zyun_summer_04;
             }
             else if (character == "mihuyu" || character == "mihuyu_summer" || character == "mihuyu_worker")
             {
                 array1 = dt.mihuyu_12;
-                array2 = dt.mihuyu_summer_08;
-                array3= dt.mihuyu_worker_08;
+                array2 = dt.mihuyu_summer_04;
+                array3= dt.mihuyu_worker_04;
             }
             else if (character == "sizuru" || character == "sizuru_valentine" || character == "sizuru_summer")
             {
                 array1 = dt.sizuru_12;
-                array2 = dt.sizuru_valentine_08;
-                //array3 = dt.sizuru_summer_08;
+                array2 = dt.sizuru_valentine_04;
+                //array3 = dt.sizuru_summer_04;
             }
             else if (character == "misaki" || character == "misaki_halloween")
             {
                 array1 = dt.misaki_08;
-                array2 = dt.misaki_halloween_08;
+                array2 = dt.misaki_halloween_04;
             }
             else if (character == "mitsuki" || character == "mitsuki_ooedo")
             {
                 array1 = dt.mitsuki_08;
-                //array2 = dt.mitsuki_ooedo_08;
+                //array2 = dt.mitsuki_ooedo_04;
             }
             else if (character == "rima" || character == "rima_cinderella")
             {
                 array1 = dt.rima_12;
-                array2 = dt.rima_cinderella_08;
+                array2 = dt.rima_cinderella_04;
             }
             else if (character == "monika" || character == "monika_magical")
             {
                 array1 = dt.monika_08;
-                array2 = dt.monika_magical_08;
+                array2 = dt.monika_magical_04;
             }
             else if (character == "tsumugi" || character == "tsumugi_halloween" || character == "tsumugi_summer")
             {
                 array1 = dt.tsumugi_08;
-                array2 = dt.tsumugi_halloween_08;
-                //array3 = dt.tsumugi_summer_08;
+                array2 = dt.tsumugi_halloween_04;
+                //array3 = dt.tsumugi_summer_04;
             }
             else if (character == "ayumi" || character == "ayumi_wonder")
             {
                 array1 = dt.ayumi_08;
-                array2 = dt.ayumi_wonder_08;
+                array2 = dt.ayumi_wonder_04;
             }
             else if (character == "ruka" || character == "ruka_summer")
             {
                 array1 = dt.ruka_08;
-                array2 = dt.ruka_summer_08;
-                //array3 = dt.ruka_newyear_08;
+                array2 = dt.ruka_summer_04;
+                //array3 = dt.ruka_newyear_04;
             }
             else if (character == "zita")
             {
@@ -15144,31 +15144,31 @@ namespace PCRD_KR_ArenaSim
             else if (character == "pekorinnu" || character == "pekorinnu_summer" || character == "pekorinnu_princess" || character == "pekorinnu_newyear" || character == "pekorinnu_overload")
             {
                 array1 = dt.pekorinnu_12;
-                array2 = dt.pekorinnu_summer_08;
-                array3 = dt.pekorinnu_princess_08;
-                array4 = dt.pekorinnu_newyear_08;
+                array2 = dt.pekorinnu_summer_04;
+                array3 = dt.pekorinnu_princess_04;
+                array4 = dt.pekorinnu_newyear_04;
                 //array5 = dt.pekorinnu_overload_08;
             }
             else if (character == "kotkoro" || character == "kotkoro_summer" || character == "kotkoro_newyear" || character == "kotkoro_princess" || character == "kotkoro_maiden")
             {
                 array1 = dt.kotkoro_12;
-                array2 = dt.kotkoro_summer_08;
-                array3 = dt.kotkoro_newyear_08;
-                array4 = dt.kotkoro_princess_08;
-                array5 = dt.kotkoro_maiden_08;
+                array2 = dt.kotkoro_summer_04;
+                array3 = dt.kotkoro_newyear_04;
+                array4 = dt.kotkoro_princess_04;
+                array5 = dt.kotkoro_maiden_04;
             }
             else if (character == "kyaru" || character == "kyaru_summer" || character == "kyaru_newyear" || character == "kyaru_princess" || character == "kyaru_overload")
             {
                 array1 = dt.kyaru_12;
-                array2 = dt.kyaru_summer_08;
-                array3 = dt.kyaru_newyear_08;
-                array4 = dt.kyaru_princess_08;
+                array2 = dt.kyaru_summer_04;
+                array3 = dt.kyaru_newyear_04;
+                array4 = dt.kyaru_princess_04;
                 //array5 = dt.kyaru_overload_08;
             }
             else if (character == "muimi" || character == "muimi_newyear")
             {
-                array1 = dt.muimi_08;
-                array2 = dt.muimi_newyear_08;
+                array1 = dt.muimi_04;
+                array2 = dt.muimi_newyear_04;
             }
             else if (character == "arisa")
             {
@@ -15177,66 +15177,66 @@ namespace PCRD_KR_ArenaSim
             else if (character == "kaya" || character == "kaya_timetravel")
             {
                 array1 = dt.kaya_08;
-                array2 = dt.kaya_timetravel_08;
+                array2 = dt.kaya_timetravel_04;
             }
             else if (character == "inori" || character == "inori_timetravel")
             {
                 array1 = dt.inori_08;
-                array2 = dt.inori_timetravel_08;
+                array2 = dt.inori_timetravel_04;
             }
             else if (character == "labyrista" || character == "labyrista_overload")
             {
-                array1 = dt.labyrista_08;
+                array1 = dt.labyrista_04;
                 //array2 = dt.labyrista_overload_08;
             }
             else if (character == "neneka" || character == "neneka_newyear")
             {
-                array1 = dt.neneka_08;
-                array2 = dt.neneka_newyear_08;
+                array1 = dt.neneka_04;
+                array2 = dt.neneka_newyear_04;
             }
             else if (character == "kristina" || character == "kristina_christmas")
             {
-                array1 = dt.kristina_08;
-                array2 = dt.kristina_christmas_08;
+                array1 = dt.kristina_04;
+                array2 = dt.kristina_christmas_04;
             }
             else if (character == "anne")
             {
-                array1 = dt.anne_08;
+                array1 = dt.anne_04;
             }
             else if (character == "lou")
             {
-                array1 = dt.lou_08;
+                array1 = dt.lou_04;
             }
             else if (character == "grea")
             {
-                array1 = dt.grea_08;
+                array1 = dt.grea_04;
             }
             else if (character == "rem")
             {
-                array1 = dt.rem_08;
+                array1 = dt.rem_04;
             }
             else if (character == "ram")
             {
-                array1 = dt.ram_08;
+                array1 = dt.ram_04;
             }
             else if (character == "emilia")
             {
-                array1 = dt.emilia_08;
+                array1 = dt.emilia_04;
             }
             else if (character == "chloe")
             {
                 array1 = dt.chloe_08;
-                array2 = dt.chloe_terefes_08;
+                array2 = dt.chloe_terefes_04;
             }
             else if (character == "chieru")
             {
                 array1 = dt.chieru_08;
-                array2 = dt.chieru_terefes_08;
+                array2 = dt.chieru_terefes_04;
             }
             else if (character == "yuni")
             {
                 array1 = dt.yuni_08;
-                //array2 = dt.yuni_terefes_08;
+                //array2 = dt.yuni_terefes_04;
             }
             else if (character == "runa")
             {
@@ -15244,27 +15244,27 @@ namespace PCRD_KR_ArenaSim
             }
             else if (character == "uzuki_deremas")
             {
-                array1 = dt.uzuki_deremas_08;
+                array1 = dt.uzuki_deremas_04;
             }
             else if (character == "rin_deremas")
             {
-                array1 = dt.rin_deremas_08;
+                array1 = dt.rin_deremas_04;
             }
             else if (character == "mio_deremas")
             {
-                array1 = dt.mio_deremas_08;
+                array1 = dt.mio_deremas_04;
             }
             else if (character == "shepi")
             {
                 array1 = dt.shepi_08;
-                //array2 = dt.shepi_newyear_08;
+                //array2 = dt.shepi_newyear_04;
             }
             else if (character == "hatsusio")
             {
                 //array1 = dt.hatsune_12;
-                //array2 = dt.hatsune_summer_08;
+                //array2 = dt.hatsune_summer_04;
                 //array3 = dt.siori_08;
-                //array4 = dt.siori_magical_08;
+                //array4 = dt.siori_magical_04;
                 //array5 = dt.hatsusio_08;
             }
             else if (character == "credita")
@@ -15278,11 +15278,11 @@ namespace PCRD_KR_ArenaSim
             else if (character == "littlelyri")
             {
                 //array1 = dt.misogi_12;
-                //array2 = dt.misogi_halloween_08;
+                //array2 = dt.misogi_halloween_04;
                 //array3 = dt.kyouka_12;
-                //array4 = dt.kyouka_halloween_08;
+                //array4 = dt.kyouka_halloween_04;
                 //array5 = dt.mimi_12;
-                //array6 = dt.mimi_halloween_08;
+                //array6 = dt.mimi_halloween_04;
                 //array7 = dt.littlelyri_08;
             }
             else if (character == "ranpa")

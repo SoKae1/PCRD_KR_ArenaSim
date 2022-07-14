@@ -50,5 +50,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NameConversion\NameConversion.csproj">
+      <Project>{f9f83026-6d77-456d-8c68-6cc50fff8589}</Project>
+      <Name>NameConversion</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
