@@ -725,20 +725,20 @@ namespace PCRD_KR_ArenaSim
                     {
                         if (i < 15)
                         {
-                            if (Array.IndexOf(Battle_variable.name_eng, "sylph_chika", 0) > -1 && Array.IndexOf(Battle_variable.name_eng, "sylph_chika", 0) < 15)
+                            if (Array.IndexOf(Battle_variable.name_eng, "sylph_chika_1", 0) > -1 && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_1", 0) < 15)
                             {
-                                Battle_variable.HP[Array.IndexOf(Battle_variable.name_eng, "sylph_chika", 0)] = 0;
-                                Battle_variable.death[Array.IndexOf(Battle_variable.name_eng, "sylph_chika", 0)] = true;
-                                Battle_variable.battle_unit_initialize(Array.IndexOf(Battle_variable.name_eng, "sylph_chika", 0));
+                                Battle_variable.HP[Array.IndexOf(Battle_variable.name_eng, "sylph_chika_1", 0)] = 0;
+                                Battle_variable.death[Array.IndexOf(Battle_variable.name_eng, "sylph_chika_1", 0)] = true;
+                                Battle_variable.battle_unit_initialize(Array.IndexOf(Battle_variable.name_eng, "sylph_chika_1", 0));
                             }
                         }
                         else
                         {
-                            if (Array.IndexOf(Battle_variable.name_eng, "sylph_chika", 15) > 14 && Array.IndexOf(Battle_variable.name_eng, "sylph_chika", 15) < 30)
+                            if (Array.IndexOf(Battle_variable.name_eng, "sylph_chika_1", 15) > 14 && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_1", 15) < 30)
                             {
-                                Battle_variable.HP[Array.IndexOf(Battle_variable.name_eng, "sylph_chika", 15)] = 0;
-                                Battle_variable.death[Array.IndexOf(Battle_variable.name_eng, "sylph_chika", 15)] = true;
-                                Battle_variable.battle_unit_initialize(Array.IndexOf(Battle_variable.name_eng, "sylph_chika", 15));
+                                Battle_variable.HP[Array.IndexOf(Battle_variable.name_eng, "sylph_chika_1", 15)] = 0;
+                                Battle_variable.death[Array.IndexOf(Battle_variable.name_eng, "sylph_chika_1", 15)] = true;
+                                Battle_variable.battle_unit_initialize(Array.IndexOf(Battle_variable.name_eng, "sylph_chika_1", 15));
                             }
                         }
                     }

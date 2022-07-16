@@ -182,12 +182,12 @@
         public double[] yui_princess = new double[6] { 2, 767, 1.92, 0.59, 0.59, 0.59 };
         public double[] pekorinnu_princess = new double[6] { 1, 155.000001, 1.965, 0.92, 0.62, 0.92 };
         public double[] kotkoro_princess = new double[6] { 1, 555, 2.14, 0.66, 0.66, 0.66 };
-        public double[] hiyori_princess = new double[6] { 1, 199, 2.14, 0.6, 0.6, 0.6 };
-        public double[] rei_princess = new double[6] { 1, 377, 2.14, 0.415, 0.915, 0.415 };
-        public double[] kyaru_princess = new double[6] { 1, 747, 2.14, 0.66, 0.66, 0.66 };
+        public double[] hiyori_princess = new double[6] { 1, 199, 1.62, 0.6, 0.6, 0.6 };
+        public double[] rei_princess = new double[6] { 1, 377, 1.965, 0.415, 0.915, 0.415 };
+        public double[] kyaru_princess = new double[6] { 1, 747, 1.92, 0.66, 0.66, 0.66 };
 
         public double[] skull = new double[6] { 1, 300, 2, 0, 0, 0 };
-        public double[] sylph_chika = new double[6] { 2, 1000, 2, 0, 0, 0 };
+        public double[] sylph_chika_1 = new double[6] { 2, 1000, 2, 0, 0, 0 };
         public double[] sylph_chika_christmas_1 = new double[6] { 2, 700, 2, 0, 0, 0 };
         public double[] sylph_chika_christmas_2 = new double[6] { 2, 750, 2, 3, 0, 3 };
         public double[] sylph_chika_christmas_3 = new double[6] { 2, 800, 2, 3, 0, 3 };

@@ -40,8 +40,8 @@
 
         public static int star_temp = 5;
 
-        public static int Lv_temp = 157;
-        public static int Rank_temp = 16;
+        public static int Lv_temp = 172;
+        public static int Rank_temp = 11;
 
         public static int Destiny_temp = 8;
 
@@ -61,7 +61,7 @@
         public static int rf5_temp = 5;
         public static int rf6_temp = 5;
 
-        public static int UE_Lv_temp = 160;
+        public static int UE_Lv_temp = 0;
 
         public static double power_temp = 0;
     }

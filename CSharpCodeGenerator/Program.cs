@@ -17,6 +17,7 @@ namespace CSharpCodeGenerator
             unit_promotion_status();
             equipment_data();
             unit_rarity();
+            unit_promotion();
 
             Console.ReadKey();
         }
@@ -33,9 +34,11 @@ namespace CSharpCodeGenerator
                 Environment.CurrentDirectory + @"/equipment_data.csv");
             mywebClient.DownloadFile("https://raw.githubusercontent.com/esterTion/redive_master_db_diff/master/unit_rarity.sql",
                 Environment.CurrentDirectory + @"/unit_rarity.csv");
+            mywebClient.DownloadFile("https://raw.githubusercontent.com/esterTion/redive_master_db_diff/master/unit_promotion.sql",
+                Environment.CurrentDirectory + @"/unit_promotion.csv");
 
 
-        
+
 
             Console.WriteLine("done");
         }
@@ -123,11 +126,9 @@ sw.WriteLine("#endregion");
             List<string> listA = new List<string>();
             List<string> status = new List<string>();
 
-
             while (!sr.EndOfStream)
             {
                 var line = sr.ReadLine();
-
                 listA.Add(line);
 
             }
@@ -367,6 +368,68 @@ sw.WriteLine("#endregion");
             // db상 데이터 1HP, 2물공, 3물방, 4마공, 5마방, 6물크,7 마크,8,9HP 흡수,10HP 자동 회복,11 TP 자동회복,12,13,14TP상승,15회복량 상승 
             sw.Close();
         }
+        static void unit_promotion()
+        {
+            string methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
 
+            StreamReader sr = new StreamReader(methodName + ".csv"); ;
+            StreamWriter sw = new StreamWriter(methodName + ".txt");
+            List<string> listA = new List<string>();
+            List<string> status = new List<string>();
+
+            while (!sr.EndOfStream)
+            {
+                var line = sr.ReadLine();
+
+                listA.Add(line);
+
+            }
+            string r = listA[1];
+            listA.RemoveAt(0);
+            listA.RemoveAt(listA.Count - 1);
+
+            int numofComma = r.Split(',').Length;
+            sw.WriteLine("#region Unit_equip");
+            foreach (var row in listA)
+            {
+                //Console.WriteLine(row);
+                string[] temp = new string[6];
+                for (int i = 0; i < 6; i++)
+                    temp[i] = "0";
+
+                string[] values = row.Split(',');
+                string id = values[0].Substring(values[0].Length - 6, 6);
+                string name = idnc.IDtoCharaEngName(id, 6);
+                //Console.WriteLine(values.Length);
+
+                string rank = values[1].Substring(values[1].LastIndexOf("*/") + 2);
+                int intRank = int.Parse(rank);
+                Console.WriteLine(rank);
+
+                //Console.WriteLine(string.Format("{0}_{1:D2}", name, intPromotion));
+                //sw.WriteLine(string.Format("{0}_{1}", name, story));
+
+
+                for (int i = 0; i < 6; i++)
+                {
+                    temp[i] = values[i + 2];
+                }
+                temp[5] = temp[5].Remove(temp[5].Length - 2, 2);
+                //Console.WriteLine(temp[14]);
+                string temps = idnc.StringArrayToCommaString(temp);
+
+                string result = string.Format("public double[] {0}_{1:D2} = new double[{2}] {{{3}}};", name, intRank, temp.Length, temps);
+
+                Console.WriteLine(result);
+                sw.WriteLine(result);
+
+            }
+            sw.WriteLine("#endregion");
+            Console.WriteLine("Finished");
+
+            //            1HP, 2물공, 3마공, 4물방, 5마방, 6물크, 7마크, 8HP 자동 회복, 9TP 자동 회복, 10회피, 11HP 흡수, 12회복량 상승, 13TP 상승, 14TP 소비 감소, 15명중 */
+            // db상 데이터 1HP, 2물공, 3물방, 4마공, 5마방, 6물크,7 마크,8,9HP 흡수,10HP 자동 회복,11 TP 자동회복,12,13,14TP상승,15회복량 상승 
+            sw.Close();
+        }
     }
 }

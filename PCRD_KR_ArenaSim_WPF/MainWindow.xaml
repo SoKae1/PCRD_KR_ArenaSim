@@ -310,6 +310,10 @@
                                  Checked="tb_rei_halloween_Checked" Unchecked="tb_rei_halloween_UnChecked">
                                 <Image Source="res\icon_unit\114031.png"    />
                             </ToggleButton>
+                            <ToggleButton Name="tb_rei_princess" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="rei_princess" IsChecked="false" BorderThickness="0"  
+                                 Checked="tb_rei_princess_Checked" Unchecked="tb_rei_princess_UnChecked">
+                                <Image Source="res\icon_unit\180331.png"    />
+                            </ToggleButton>
                             <ToggleButton Name="tb_sizuru_valentine" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="sizuru_valentine" IsChecked="false" BorderThickness="0"  
                                  Checked="tb_sizuru_valentine_Checked" Unchecked="tb_sizuru_valentine_UnChecked">
                                 <Image Source="res\icon_unit\109131.png"    />
@@ -1691,6 +1695,10 @@
                                          Click="bt_rei_halloween_set_Click" >
                                 <Image Source="res\icon_unit\114031.png" Stretch="Fill"     Name="img_bt_rei_halloween"  />
                             </Button>
+                            <Button  ToolTip="rei_princess"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
+                                         Click="bt_rei_princess_set_Click" >
+                                <Image Source="res\icon_unit\180331.png" Stretch="Fill"     Name="img_bt_rei_princess"  />
+                            </Button>
                             <Button  ToolTip="sizuru_valentine"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                          Click="bt_sizuru_valentine_set_Click" >
                                 <Image Source="res\icon_unit\109131.png" Stretch="Fill"     Name="img_bt_sizuru_valentine"  />
@@ -2414,6 +2422,10 @@
                                 <DockPanel>
                                     <TextBlock  Text="할레이" Margin="0,2,2,0" Width="80" Height="20" />
                                     <TextBox MaxLength = "1"  Text="" Name="tb_abbr_rei_halloween" Margin="0,2,2,0" Width="25"  BorderBrush="{x:Null}" InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native"   Height="20" />
+                                </DockPanel>
+                                <DockPanel>
+                                    <TextBlock  Text="프레이" Margin="0,2,2,0" Width="80" Height="20" />
+                                    <TextBox MaxLength = "1"  Text="" Name="tb_abbr_rei_princess" Margin="0,2,2,0" Width="25"  BorderBrush="{x:Null}" InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native"   Height="20" />
                                 </DockPanel>
                                 <DockPanel>
                                     <TextBlock  Text="발즈루" Margin="0,2,2,0" Width="80" Height="20" />

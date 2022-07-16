@@ -190,7 +190,7 @@
         public double[] kyaru_princess = new double[22] { /*loop_start*/4, /*loop_end*/16, /*atk_pattern_1*/1001, /*atk_pattern_2*/1, /*atk_pattern_3*/1002, /*atk_pattern_4*/1001, /*atk_pattern_5*/1, /*atk_pattern_6*/1002, /*atk_pattern_7*/1001, /*atk_pattern_8*/1, /*atk_pattern_9*/1, /*atk_pattern_10*/1001, /*atk_pattern_11*/1002, /*atk_pattern_12*/1, /*atk_pattern_13*/1001, /*atk_pattern_14*/1, /*atk_pattern_15*/1, /*atk_pattern_16*/1002, /*atk_pattern_17*/0, /*atk_pattern_18*/0, /*atk_pattern_19*/0, /*atk_pattern_20*/0 };
 
         public double[] skull = new double[22] { 2, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-        public double[] sylph_chika = new double[22] { 2, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        public double[] sylph_chika_1 = new double[22] { 2, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] sylph_chika_christmas_1 = new double[22] { 2, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] sylph_chika_christmas_2 = new double[22] { 2, 7, 1001, 1, 1001, 1001, 1, 1001, 1001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         public double[] sylph_chika_christmas_3 = new double[22] { 2, 4, 1001, 1, 1001, 1001, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };

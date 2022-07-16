@@ -1455,9 +1455,9 @@ namespace PCRD_KR_ArenaSim
 
                 Battle_variable.battle_unit_initialize(i);
             }
-            else if (creature == "sylph_chika")
+            else if (creature == "sylph_chika_1")
             {
-                FieldInfo dummy1 = growth_stat.GetType().GetField(string.Format("sylph_chika_{0}", Level_variable.star[summoner_order]), BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
+                FieldInfo dummy1 = growth_stat.GetType().GetField(string.Format("sylph_chika_1_{0}", Level_variable.star[summoner_order]), BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
                 double[] array1 = (double[])dummy1.GetValue(growth_stat);
 
                 int i = 0;
@@ -1465,7 +1465,7 @@ namespace PCRD_KR_ArenaSim
                 {
                     for (i = 0; i < 15; i++)
                     {
-                        if (Battle_variable.name_eng[i] == "" || Battle_variable.name_eng[i] == "sylph_chika")
+                        if (Battle_variable.name_eng[i] == "" || Battle_variable.name_eng[i] == "sylph_chika_1")
                         {
                             break;
                         }
@@ -1475,7 +1475,7 @@ namespace PCRD_KR_ArenaSim
                 {
                     for (i = 15; i < 30; i++)
                     {
-                        if (Battle_variable.name_eng[i] == "" || Battle_variable.name_eng[i] == "sylph_chika")
+                        if (Battle_variable.name_eng[i] == "" || Battle_variable.name_eng[i] == "sylph_chika_1")
                         {
                             break;
                         }
@@ -1484,7 +1484,7 @@ namespace PCRD_KR_ArenaSim
 
 
                 Battle_variable.name[i] = "실프_치카";
-                Battle_variable.name_eng[i] = "sylph_chika";
+                Battle_variable.name_eng[i] = "sylph_chika_1";
 
                 Battle_variable.HP[i] = array1[0] + array1[1] * ((double)Level_variable.Lv[summoner_order] + (double)Level_variable.Rank[summoner_order]);
                 Battle_variable.TP[i] = 0;
@@ -1520,7 +1520,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (creature == "sylph_chika_christmas_1")
             {
-                FieldInfo dummy1 = growth_stat.GetType().GetField(string.Format("sylph_chika_{0}", Level_variable.star[summoner_order]), BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
+                FieldInfo dummy1 = growth_stat.GetType().GetField(string.Format("sylph_chika_1_{0}", Level_variable.star[summoner_order]), BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
                 double[] array1 = (double[])dummy1.GetValue(growth_stat);
 
                 int i = 0;
@@ -1583,7 +1583,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (creature == "sylph_chika_christmas_2")
             {
-                FieldInfo dummy1 = growth_stat.GetType().GetField(string.Format("sylph_chika_{0}", Level_variable.star[summoner_order]), BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
+                FieldInfo dummy1 = growth_stat.GetType().GetField(string.Format("sylph_chika_1_{0}", Level_variable.star[summoner_order]), BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
                 double[] array1 = (double[])dummy1.GetValue(growth_stat);
 
                 int i = 0;
@@ -1646,7 +1646,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (creature == "sylph_chika_christmas_3")
             {
-                FieldInfo dummy1 = growth_stat.GetType().GetField(string.Format("sylph_chika_{0}", Level_variable.star[summoner_order]), BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
+                FieldInfo dummy1 = growth_stat.GetType().GetField(string.Format("sylph_chika_1_{0}", Level_variable.star[summoner_order]), BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
                 double[] array1 = (double[])dummy1.GetValue(growth_stat);
 
                 int i = 0;
@@ -1708,7 +1708,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (creature == "golem")
             {
-                FieldInfo dummy1 = growth_stat.GetType().GetField(string.Format("sylph_chika_{0}", Level_variable.star[summoner_order]), BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
+                FieldInfo dummy1 = growth_stat.GetType().GetField(string.Format("sylph_chika_1_{0}", Level_variable.star[summoner_order]), BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
                 double[] array1 = (double[])dummy1.GetValue(growth_stat);
 
                 int i = 0;
@@ -1771,7 +1771,7 @@ namespace PCRD_KR_ArenaSim
             }
             else if (creature == "neneka_alter")
             {
-                FieldInfo dummy1 = growth_stat.GetType().GetField(string.Format("sylph_chika_{0}", Level_variable.star[summoner_order]), BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
+                FieldInfo dummy1 = growth_stat.GetType().GetField(string.Format("sylph_chika_1_{0}", Level_variable.star[summoner_order]), BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
                 double[] array1 = (double[])dummy1.GetValue(growth_stat);
 
                 int i = 0;

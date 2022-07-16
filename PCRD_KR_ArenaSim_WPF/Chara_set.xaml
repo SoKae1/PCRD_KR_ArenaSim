@@ -68,6 +68,10 @@
                         <ComboBoxItem Content="Rank20" HorizontalAlignment="Left"  Width="80" Foreground="#FF3C966D" />
                         <ComboBoxItem Content="Rank21" HorizontalAlignment="Left"  Width="80" Foreground="#FF329166"/>
                         <ComboBoxItem Content="Rank22" HorizontalAlignment="Left"  Width="80" Foreground="#FF227A52"/>
+                        <ComboBoxItem Content="Rank23" HorizontalAlignment="Left"  Width="80" Foreground="#FF1F6C49"/>
+                        <ComboBoxItem Content="Rank24" HorizontalAlignment="Left"  Width="80" Foreground="#FFFF6218"/>
+                        <ComboBoxItem Content="Rank25" HorizontalAlignment="Left"  Width="80" Foreground="#FFE75B19"/>
+                        
                     </ComboBox>
 
                     <Image Name="Chara_sel" Source="res\icon_unit\000001.png"  Stretch="Fill"   Margin="168,133,168,207" Height="64"  />
@@ -165,7 +169,7 @@
                     <TextBox x:Name="tB_chara_level" HorizontalAlignment="Left" Height="25" Margin="175,202,0,0" TextWrapping="Wrap" Text="157" VerticalAlignment="Top" 
                              Width="57" BorderBrush="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FFFFECCD" TextChanged="tB_chara_level_TextChanged"
                              />
-                    <TextBox x:Name="tB_unique_level" HorizontalAlignment="Left" Height="25" Margin="183,312,0,0" TextWrapping="Wrap" Text="160" VerticalAlignment="Top"
+                    <TextBox x:Name="tB_unique_level" HorizontalAlignment="Left" Height="25" Margin="183,312,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"
                              Width="40" BorderBrush="{x:Null}" Background="#FFFFF0F0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TextChanged="tB_unique_level_TextChanged"/>
                     <Button ToolTip=""   BorderThickness="0"  Background="#FF5DDEFB"  
                       Content="최고레벨"                   BorderBrush="{x:Null}" Margin="329,269,17,111" IsDefault="True"

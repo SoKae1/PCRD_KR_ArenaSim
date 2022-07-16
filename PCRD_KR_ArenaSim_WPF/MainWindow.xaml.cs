@@ -451,6 +451,8 @@ namespace PCRD_KR_ArenaSim
         public void tb_hiyori_princess_UnChecked(object sender, RoutedEventArgs args) { cs.hiyori_princess = false; select_count--; }
         public void tb_kyaru_princess_Checked(object sender, RoutedEventArgs e) { cs.kyaru_princess = true; select_count++; }
         public void tb_kyaru_princess_UnChecked(object sender, RoutedEventArgs args) { cs.kyaru_princess = false; select_count--; }
+        public void tb_rei_princess_Checked(object sender, RoutedEventArgs e) { cs.rei_princess = true; select_count++; }
+        public void tb_rei_princess_UnChecked(object sender, RoutedEventArgs args) { cs.rei_princess = false; select_count--; }
 
         #endregion
         private void UnCheckAll()
@@ -613,6 +615,7 @@ namespace PCRD_KR_ArenaSim
             tb_aoi_worker.IsChecked = false;
             tb_tamaki_worker.IsChecked = false;
             tb_mihuyu_worker.IsChecked = false;
+            tb_rei_princess.IsChecked = false;
             //tb_.IsChecked = false;
 
             tb_CharaAbbr.Text = "";
@@ -3456,7 +3459,7 @@ namespace PCRD_KR_ArenaSim
                                 Battle_variable.knockback[i] == false && Battle_variable.bind[i] == false && Battle_variable.freeze[i] == false && Battle_variable.timestop[i] == false && Battle_variable.delay[i] == false
                                 && Battle_variable.sleep[i] == false)
                             {
-                                if (Battle_variable.name_eng[i] != "skull" && Battle_variable.name_eng[i] != "sylph_chika" && Battle_variable.name_eng[i] != "sylph_chika_christmas_1" && Battle_variable.name_eng[i] != "sylph_chika_christmas_2" && Battle_variable.name_eng[i] != "sylph_chika_christmas_3" && Battle_variable.name_eng[i] != "golem" && Battle_variable.name_eng[i] != "neneka_alter" && Battle_variable.name_eng[i] != "muimi_ub" && Battle_variable.name_eng[i] != "labyrista_ub")
+                                if (Battle_variable.name_eng[i] != "skull" && Battle_variable.name_eng[i] != "sylph_chika_1" && Battle_variable.name_eng[i] != "sylph_chika_christmas_1" && Battle_variable.name_eng[i] != "sylph_chika_christmas_2" && Battle_variable.name_eng[i] != "sylph_chika_christmas_3" && Battle_variable.name_eng[i] != "golem" && Battle_variable.name_eng[i] != "neneka_alter" && Battle_variable.name_eng[i] != "muimi_ub" && Battle_variable.name_eng[i] != "labyrista_ub")
                                 {
                                     state[i] = "UB";
                                     UB_timing[i] = 0;
@@ -3624,16 +3627,16 @@ namespace PCRD_KR_ArenaSim
                                         C_next_timing[i] = array1_CRC[4] / Battle_variable.Aspeed_coef[i];
                                     }
                                 }
-                                if (Battle_variable.name_eng[i] == "chika" && Array.IndexOf(Battle_variable.name_eng, "sylph_chika") != -1)
+                                if (Battle_variable.name_eng[i] == "chika" && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_1") != -1)
                                 {
                                     int a;
                                     if (i < 15)
                                     {
-                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika", 0, 15);
+                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_1", 0, 15);
                                     }
                                     else
                                     {
-                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika", 15, 15);
+                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_1", 15, 15);
                                     }
 
 
@@ -3656,20 +3659,20 @@ namespace PCRD_KR_ArenaSim
                                     int a;
                                     if (i < 15)
                                     {
-                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_1", 0, 15);
+                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3", 0, 15);
                                     }
                                     else
                                     {
-                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_1", 15, 15);
+                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3", 15, 15);
                                     }
                                     int b;
                                     if (i < 15)
                                     {
-                                        b = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_2", 0, 15);
+                                        b = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3", 0, 15);
                                     }
                                     else
                                     {
-                                        b = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_2", 15, 15);
+                                        b = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3", 15, 15);
                                     }
                                     int c;
                                     if (i < 15)
@@ -4231,7 +4234,7 @@ namespace PCRD_KR_ArenaSim
                                 && Battle_variable.knockback[i] == false && Battle_variable.bind[i] == false && Battle_variable.freeze[i] == false && Battle_variable.timestop[i] == false
                                 && Battle_variable.delay[i] == false && Battle_variable.sleep[i] == false)
                             {
-                                if (Battle_variable.name_eng[i] != "skull" && Battle_variable.name_eng[i] != "sylph_chika" && Battle_variable.name_eng[i] != "sylph_chika_christmas_1" && Battle_variable.name_eng[i] != "sylph_chika_christmas_2" && Battle_variable.name_eng[i] != "sylph_chika_christmas_3" && Battle_variable.name_eng[i] != "golem" && Battle_variable.name_eng[i] != "neneka_alter" && Battle_variable.name_eng[i] != "muimi_ub" && Battle_variable.name_eng[i] != "labyrista_ub")
+                                if (Battle_variable.name_eng[i] != "skull" && Battle_variable.name_eng[i] != "sylph_chika_1" && Battle_variable.name_eng[i] != "sylph_chika_christmas_3" && Battle_variable.name_eng[i] != "sylph_chika_christmas_3" && Battle_variable.name_eng[i] != "sylph_chika_christmas_3" && Battle_variable.name_eng[i] != "golem" && Battle_variable.name_eng[i] != "neneka_alter" && Battle_variable.name_eng[i] != "muimi_ub" && Battle_variable.name_eng[i] != "labyrista_ub")
                                 {
                                     state[i] = "UB";
                                     UB_timing[i] = 0;
@@ -4377,16 +4380,16 @@ namespace PCRD_KR_ArenaSim
                                 }
 
 
-                                if (Battle_variable.name_eng[i] == "chika" && Array.IndexOf(Battle_variable.name_eng, "sylph_chika") != -1)
+                                if (Battle_variable.name_eng[i] == "chika" && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_1") != -1)
                                 {
                                     int a;
                                     if (i < 15)
                                     {
-                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika", 0, 15);
+                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_1", 0, 15);
                                     }
                                     else
                                     {
-                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika", 15, 15);
+                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_1", 15, 15);
                                     }
 
 
@@ -4431,25 +4434,25 @@ namespace PCRD_KR_ArenaSim
                                     }
                                 }
 
-                                if (Battle_variable.name_eng[i] == "chika_christmas" && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_1") != -1 && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_2") != -1 && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3") != -1)
+                                if (Battle_variable.name_eng[i] == "chika_christmas" && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3") != -1 && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3") != -1 && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3") != -1)
                                 {
                                     int a;
                                     if (i < 15)
                                     {
-                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_1", 0, 15);
+                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3", 0, 15);
                                     }
                                     else
                                     {
-                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_1", 15, 15);
+                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3", 15, 15);
                                     }
                                     int b;
                                     if (i < 15)
                                     {
-                                        b = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_2", 0, 15);
+                                        b = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3", 0, 15);
                                     }
                                     else
                                     {
-                                        b = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_2", 15, 15);
+                                        b = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3", 15, 15);
                                     }
                                     int c;
                                     if (i < 15)
@@ -4668,8 +4671,6 @@ namespace PCRD_KR_ArenaSim
             {
                 MessageBox.Show("다시 시도하세요", "알림");
             }
-
-
         }
 
         private void bt_capture_Off_Click(object sender, RoutedEventArgs e)
@@ -4757,7 +4758,6 @@ namespace PCRD_KR_ArenaSim
                 return new Bitmap(bitmap);
             }
         }
-
         public void ShowDefCharas(string[] defDeck_eng)
         {
             string[] uriS = new string[5];
@@ -5240,7 +5240,6 @@ namespace PCRD_KR_ArenaSim
                                 //Debug.WriteLine(uriString[Index]);
                                 Index++;
                             }
-
                         }
                     }
                     else
@@ -5276,11 +5275,11 @@ namespace PCRD_KR_ArenaSim
 
             CharaIndex = 1;
 
-            //프린세스 폼 6명
-            while (CharaIndex <= 6)
+            //프린세스 폼 7명
+            while (CharaIndex <= 7)
             {
                 //빈칸 제거
-                if (CharaIndex == 3)
+                if (CharaIndex == 7)
                 {
 
                 }
@@ -7065,8 +7064,8 @@ namespace PCRD_KR_ArenaSim
             {
                 tb_MaxRank.Text = i.ToString();
                 int x = Convert.ToInt32(tb_MaxRank.Text);
-                if (x > 22)
-                    x = 22;
+                if (x > 25)
+                    x = 25;
                 maxRank = Convert.ToInt32(x);
             }
             else
@@ -7105,7 +7104,6 @@ namespace PCRD_KR_ArenaSim
                         temp1[2] = "6";
                         temp2[2] = "6";
                     }
-
 
                     stringArray1[row] = idnc.StringArrayToCommaString(temp1);
                     stringArray2[row] = idnc.StringArrayToCommaString(temp2);
@@ -7177,7 +7175,9 @@ namespace PCRD_KR_ArenaSim
                         || temp[0] == "라비리스타" || temp[0] == "셰피" || temp[0] == "할무기" || temp[0] == "할레이" || temp[0] == "할츠리" || temp[0] == "마니카"
                         || temp[0] == "마토모" || temp[0] == "성키노" || temp[0] == "성사렌" || temp[0] == "성카리" || temp[0] == "뉴이미" || temp[0] == "뉴네카"
                         || temp[0] == "뉴페코" || temp[0] == "의코로" || temp[0] == "의유이" || temp[0] == "수스미" || temp[0] == "신리마" || temp[0] == "신마호"
-                        || temp[0] == "신코토" || temp[0] == "성로에" || temp[0] == "성에루" || temp[0] == "시노리" || temp[0] == "타노리" || temp[0] == "시카야" || temp[0] == "타카야" || temp[0] == "작오이" || temp[0] == "작마키")
+                        || temp[0] == "신코토" || temp[0] == "성로에" || temp[0] == "성에루" || temp[0] == "시노리" || temp[0] == "타노리" || temp[0] == "시카야" || temp[0] == "타카야"
+                        || temp[0] == "작오이" || temp[0] == "작마키" || temp[0] == "작후유"
+                        || temp[0] == "프레이")
                     {
                         temp[5] = "0";
                     }
@@ -7211,7 +7211,7 @@ namespace PCRD_KR_ArenaSim
                 }
                 sw.Close();
 
-                MessageBox.Show("공덱의 전용장비를 " + Convert.ToString(maxUnique) + "레벨로 자동강화 성공!", "알림");
+                MessageBox.Show((isOfforDef == 0 ? "공" : "방") + "덱의 전용장비를 " + Convert.ToString(maxUnique) + "레벨로 자동강화 성공!", "알림");
             }
             catch (Exception ex)
             {
@@ -7271,7 +7271,7 @@ namespace PCRD_KR_ArenaSim
                 }
                 sw.Close();
 
-                MessageBox.Show("공덱을 " + Convert.ToString(maxLevel) + "레벨로 자동강화 성공!", "알림");
+                MessageBox.Show((isOfforDef == 0 ? "공" : "방") + "덱을 " + Convert.ToString(maxLevel) + "레벨로 자동강화 성공!", "알림");
             }
             catch (Exception ex)
             {
@@ -7335,8 +7335,7 @@ namespace PCRD_KR_ArenaSim
                     i++;
                 }
                 sw.Close();
-
-                MessageBox.Show("공덱을 " + Convert.ToString(maxRank) + "랭크 " + Convert.ToString(maxItemQuantity) + "템으로 자동강화 성공!", "알림");
+                MessageBox.Show((isOfforDef == 0 ? "공" : "방") + "덱을 " + Convert.ToString(maxRank) + "랭크 " + Convert.ToString(maxItemQuantity) + "템으로 자동강화 성공!", "알림");
             }
             catch (Exception ex)
             {
@@ -8117,10 +8116,17 @@ namespace PCRD_KR_ArenaSim
             Chara_set.kyaru_princess = true;
             Chara_set C_S = new Chara_set(); C_S.ShowDialog();
         }
-        //캐릭터 설정 프캬류 작후유까지
+
+        private void bt_rei_princess_set_Click(object sender, RoutedEventArgs e)
+        {
+            Chara_set.rei_princess = true;
+            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
+
+        }
+        //캐릭터 설정 프레이 작후유까지
 
         #endregion
-        //캐릭터 설정 프캬류 작후유까지
+        //캐릭터 설정 프레이 작후유까지
 
 
         #endregion
@@ -9463,7 +9469,7 @@ namespace PCRD_KR_ArenaSim
             Abbr_hiyori, Abbr_inori, Abbr_tsumugi, Abbr_ruka_summer, Abbr_ayane_christmas, Abbr_eriko_valentine, Abbr_chloe, Abbr_matsuri, Abbr_zyun_summer, Abbr_makoto_summer,
             Abbr_akino, Abbr_ninon_ooedo, Abbr_hiyori_newyear, Abbr_kaya, Abbr_makoto, Abbr_muimi, Abbr_nozomi, Abbr_kotkoro_newyear, Abbr_ruka, Abbr_pekorinnu_princess,
             Abbr_pekorinnu, Abbr_rin_deremas, Abbr_rei_newyear, Abbr_kaori, Abbr_kuuka_ooedo, Abbr_zyun, Abbr_kuuka, Abbr_miyako, Abbr_rima, Abbr_kyouka_halloween = "";
-
+           string  Abbr_rei_princess = "";
 
         string Abbr_hiyori_princess;
         string Abbr_yori_angel, Abbr_labyrista, Abbr_matsuri_halloween, Abbr_rei_halloween, Abbr_tsumugi_halloween, Abbr_akino_christmas, Abbr_saren_christmas, Abbr_yukari_christmas,
@@ -10412,6 +10418,8 @@ namespace PCRD_KR_ArenaSim
                 sw.WriteLine(string.Format("셰피,{0}", tb_abbr_shepi.Text));
                 sw.WriteLine(string.Format("우즈키,{0}", tb_abbr_uzuki_deremas.Text));
                 sw.WriteLine(string.Format("할레이,{0}", tb_abbr_rei_halloween.Text));
+                sw.WriteLine(string.Format("프레이,{0}", tb_abbr_rei_princess.Text));
+
                 sw.WriteLine(string.Format("발즈루,{0}", tb_abbr_sizuru_valentine.Text));
                 sw.WriteLine(string.Format("레히루,{0}", tb_abbr_mahiru_ranger.Text));
                 sw.WriteLine(string.Format("마히루,{0}", tb_abbr_mahiru.Text));
@@ -10656,6 +10664,7 @@ namespace PCRD_KR_ArenaSim
                 Abbr_aoi_worker = tb_abbr_aoi_worker.Text;
                 Abbr_tamaki_worker = tb_abbr_tamaki_worker.Text;
                 Abbr_mihuyu_worker = tb_abbr_mihuyu_worker.Text;
+                Abbr_rei_princess = tb_abbr_rei_princess.Text;
 
                 MessageBox.Show("저장해썽!", "알림");
             }
@@ -10918,7 +10927,12 @@ namespace PCRD_KR_ArenaSim
                                 mywebClient.DownloadFile("https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/latest/download/NameConversion.dll",
                                     Environment.CurrentDirectory + @"/NameConversion.dll");
                             }
-
+                            if (!File.Exists("OpenCvSharpExtern.dll"))
+                            {
+                                WebClient mywebClient = new WebClient();
+                                mywebClient.DownloadFile("https://github.com/SoKae1/PCRD_KR_ArenaSim/releases/latest/download/OpenCvSharpExtern.dll",
+                                    Environment.CurrentDirectory + @"/OpenCvSharpExtern.dll");
+                            }
                             DeleteOldFile();
                             System.IO.File.Move(fileName, fileName + ".old");
                             Debug.WriteLine("1");

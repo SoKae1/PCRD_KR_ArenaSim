@@ -45,7 +45,7 @@ namespace NameConversion
             else if (CharaName == "ninon") { ID = "103061"; }
             else if (CharaName == "sinobu") { ID = "103131"; }
             else if (CharaName == "akino") { ID = "103261"; }
-            else if (CharaName == "mahiru") { ID = "103331"; }
+            else if (CharaName == "mahiru") { ID = "103361"; }
             else if (CharaName == "yukari") { ID = "103461"; }
             else if (CharaName == "kyouka") { ID = "103661"; }
             else if (CharaName == "tomo") { ID = "103731"; }
@@ -414,6 +414,16 @@ namespace NameConversion
                 else if (LikeOperator.LikeString(ID, "1806" + ls, Microsoft.VisualBasic.CompareMethod.Binary)) return "kyaru_princess";
                 else if (LikeOperator.LikeString(ID, "1807" + ls, Microsoft.VisualBasic.CompareMethod.Binary)) return "hatsusio";
                 else if (LikeOperator.LikeString(ID, "1808" + ls, Microsoft.VisualBasic.CompareMethod.Binary)) return "littlelyri";
+
+                else if (LikeOperator.LikeString(ID, "4031" + ls, Microsoft.VisualBasic.CompareMethod.Binary)) return "skull";
+                else if (LikeOperator.LikeString(ID, "404201" + ls, Microsoft.VisualBasic.CompareMethod.Binary)) return "sylph_chika_1";
+                else if (LikeOperator.LikeString(ID, "404205" + ls, Microsoft.VisualBasic.CompareMethod.Binary)) return "sylph_chika_2";
+                else if (LikeOperator.LikeString(ID, "4077" + ls, Microsoft.VisualBasic.CompareMethod.Binary)) return "golem";
+                else if (LikeOperator.LikeString(ID, "408401", Microsoft.VisualBasic.CompareMethod.Binary)) return "sylph_chika_chiristmas_1";
+                else if (LikeOperator.LikeString(ID, "408402", Microsoft.VisualBasic.CompareMethod.Binary)) return "sylph_chika_chiristmas_2";
+                else if (LikeOperator.LikeString(ID, "408403", Microsoft.VisualBasic.CompareMethod.Binary)) return "sylph_chika_chiristmas_3";
+
+
                 else return null;
             }
             catch (Exception e)
