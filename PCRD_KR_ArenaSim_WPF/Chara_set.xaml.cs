@@ -14867,7 +14867,7 @@ namespace PCRD_KR_ArenaSim
                 if (stat_PA > stat_MA)
                 {                   
                     stat_PA += 1100;
-                    stat_TPup += 5;
+                    stat_TPup += 10;
                 }
                 else
                 {
@@ -15753,7 +15753,7 @@ namespace PCRD_KR_ArenaSim
                 if (stat_PA > stat_MA)
                 {
                     stat_PA += 1100;
-                    stat_TPup += 5;
+                    stat_TPup += 10;
                 }
                 else
                 {
