@@ -334,6 +334,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="spine.xlsx" />
     <Resource Include="res\fonts\GG1000Title_Medium.ttf" />
   </ItemGroup>
   <ItemGroup>

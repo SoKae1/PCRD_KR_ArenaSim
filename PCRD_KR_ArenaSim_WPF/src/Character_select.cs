@@ -25,6 +25,7 @@
         public bool ayumi_wonder, ruka_summer, anna_summer, nanaka_summer, hatsune_summer;
         public bool misato_summer, zyun_summer, akari_angel, yui_princess, pekorinnu_princess;
         public bool kotkoro_princess, rei_princess;
+        public bool homare;
 
         public bool yori_angel, tsumugi_halloween, rei_halloween, matsuri_halloween;
         public bool monika_magical, tomo_magical;

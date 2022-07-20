@@ -5,6 +5,7 @@ using System.Net;
 using NameConversion;
 using System.Reflection;
 using System.Text;
+using Figgle;
 
 namespace CSharpCodeGenerator
 {
@@ -13,13 +14,17 @@ namespace CSharpCodeGenerator
         public static IDNameConversion idnc = new IDNameConversion();
         static void Main(string[] args)
         {
+            Console.WriteLine(FiggleFonts.Big.Render("PCRD KR"));
+            Console.WriteLine(FiggleFonts.Big.Render("ArenaSim"));
+            Console.WriteLine(FiggleFonts.Big.Render("C # Code Generator"));
+
             Download();
             //chara_story_status();
             //unit_promotion_status();
             //equipment_data();
             //unit_rarity();
             //unit_promotion();
-            //unique_equipment_data();
+            unique_equipment_data();
             //unique_equipment_enhance_rate();
             character_range_and_cast();
             Console.ReadKey();
@@ -61,7 +66,6 @@ namespace CSharpCodeGenerator
             List<string> listA = new List<string>();
             List<string> status = new List<string>();
 
-
             while (!sr.EndOfStream)
             {
                 var line = sr.ReadLine();
@@ -74,6 +78,7 @@ namespace CSharpCodeGenerator
 
             int numofComma = r.Split(',').Length;
             sw.WriteLine("#region Destiny");
+
             foreach (var row in listA)
             {
                 //Console.WriteLine(row);
@@ -115,11 +120,12 @@ namespace CSharpCodeGenerator
                 }
                 string temps = idnc.StringArrayToCommaString(temp);
                 string result = string.Format("public double[] {0}_{1} = new double[{2}] {{{3}}};", name, story,temp.Length, temps);
+                
                 Console.WriteLine(result);
                 sw.WriteLine(result);
 
             }
-sw.WriteLine("#endregion");
+            sw.WriteLine("#endregion");
             Console.WriteLine("Finished");
 
             //            1HP, 2물공, 3마공, 4물방, 5마방, 6물크, 7마크, 8HP 자동 회복, 9TP 자동 회복, 10회피, 11HP 흡수, 12회복량 상승, 13TP 상승, 14TP 소비 감소, 15명중 */
@@ -326,6 +332,7 @@ sw.WriteLine("#endregion");
             listA.RemoveAt(listA.Count - 1);
             int numofComma = r.Split(',').Length;
             sw.WriteLine("#region Growth");
+
             foreach (var row in listA)
             {
                 //Console.WriteLine(row);
@@ -340,10 +347,6 @@ sw.WriteLine("#endregion");
 
                 string star = values[1].Substring(values[1].LastIndexOf("*/") + 2);
                 int intStar = int.Parse(star);
-                //Console.WriteLine(promotion);
-
-                //Console.WriteLine(string.Format("{0}_{1:D2}", name, intPromotion));
-                //sw.WriteLine(string.Format("{0}_{1}", name, story));
 
                 //0초기HP, 1성장HP, 2초기 물공, 3성장 물공, 4초기 마공, 5성장 마공, 6물방, 7성장 물방, 8마방, 9성장 마방, 10물크, 11마크, 12HP흡수, 13회복량 상승, 14TP 상승, 15명중, 16회피
                 //0id,1성급
@@ -369,7 +372,6 @@ sw.WriteLine("#endregion");
 
                 Console.WriteLine(result);
                 sw.WriteLine(result);
-
             }
             sw.WriteLine("#endregion");
             Console.WriteLine("Finished");
@@ -454,7 +456,6 @@ sw.WriteLine("#endregion");
                 var line = sr.ReadLine();
 
                 listA.Add(line);
-
             }
             string r = listA[1];
             listA.RemoveAt(0);
@@ -510,7 +511,6 @@ sw.WriteLine("#endregion");
 
                 Console.WriteLine(result);
                 sw.WriteLine(result);
-                
             }
 
             sw.WriteLine("#endregion");
@@ -611,23 +611,41 @@ sw.WriteLine("#endregion");
             StreamWriter sw = new StreamWriter(methodName + ".txt");
             List<string> listA = new List<string>();
             List<string> listB = new List<string>();
-            List<string> Pos = new List<string>();
-            List<string> NormalAtkCastTime = new List<string>();
-            List<string> CastTime1 = new List<string>();
-            List<string> CastTime2 = new List<string>();
-            List<string> CastTime1P = new List<string>();
-            List<string> AtkType = new List<string>();
+            
+            StreamWriter sw2 = new StreamWriter("Checked.txt");
+            StreamWriter sw3 = new StreamWriter("Set_Click.txt");
+            StreamWriter sw4 = new StreamWriter("SelectedCharaString.txt");
+            StreamWriter sw5 = new StreamWriter("RankSelect.txt");
+            StreamWriter sw6 = new StreamWriter("CharacterSelectCount.txt");
+            StreamWriter sw7 = new StreamWriter("save_abbr_Click.txt");
+            StreamWriter sw8 = new StreamWriter("AbbrToChara.txt");
+            StreamWriter sw9 = new StreamWriter("InitializeAbbr.txt");
+            sw2.WriteLine("#region Checked");
+            sw3.WriteLine("#region Set_Click");
+            sw4.WriteLine("#region SelectedCharaString");
+            sw5.WriteLine("#region RankSelect");
+            sw6.WriteLine("#region csss3");
+            sw7.WriteLine("#region save_abbr_Click");
+            sw8.WriteLine("#region AbbrToChara");
+            sw9.WriteLine("#region InitializeAbbr");
+
+
+            var Pos = new Dictionary<string, string>();
+            var NormalAtkCastTime = new Dictionary<string, string>();
+            var CastTime1 = new Dictionary<string, string>();
+            var CastTime2 = new Dictionary<string, string>();
+            var CastTime1P = new Dictionary<string, string>();
+            var AtkType = new Dictionary<string, string>();
+
             while (!sr1.EndOfStream)
             {
                 var line = sr1.ReadLine();
                 listA.Add(line);
-
             } 
             while (!sr2.EndOfStream)
             {
                 var line = sr2.ReadLine();
                 listB.Add(line);
-
             }
             string r = listA[1];
             listA.RemoveAt(0);
@@ -645,16 +663,15 @@ sw.WriteLine("#endregion");
                     string name = idnc.IDtoCharaEngName(id, 6);
 
                     string position = values[10].Substring(values[10].LastIndexOf("*/") + 2);
-                    Pos.Add(position);
+                    Pos.Add(id,position);
                     string atk_type = values[11].Substring(values[11].LastIndexOf("*/") + 2);
-                    AtkType.Add(atk_type);
+                    AtkType.Add(id,atk_type);
                     string normal_atk_cast_time = values[12].Substring(values[12].LastIndexOf("*/") + 2);
-                    NormalAtkCastTime.Add(normal_atk_cast_time);
+                    NormalAtkCastTime.Add(id, normal_atk_cast_time);
 
 
-                    Console.WriteLine(id);
-                    Console.WriteLine(position);
-                    Console.WriteLine(normal_atk_cast_time);
+                    Console.WriteLine(String.Format("{0}, {1}", id,Pos[id]));
+                    Console.WriteLine(String.Format("{0}, {1}", id,NormalAtkCastTime[id]));
                 }
                 
                 //sw.WriteLine(result);
@@ -671,26 +688,22 @@ sw.WriteLine("#endregion");
                     string id2 = id.Substring(4, 3);
 
                     string skill_cast_time = values[4].Substring(values[4].LastIndexOf("*/") + 2);
-                    if(id2 == "002")
+                    if (id2 == "002")
                     {
-                        CastTime1.Add(skill_cast_time);
+                        CastTime1.Add(id1+"01",skill_cast_time);
                     }
-                    else if(id2 == "003")
+                    else if (id2 == "003")
                     {
-
-                        CastTime2.Add(skill_cast_time);
-
+                        CastTime2.Add(id1 + "01", skill_cast_time);
                     }
                     else if (id2 == "012")
                     {
-
-                        CastTime1P.Add(skill_cast_time);
+                        CastTime1P.Add(id1 + "01", skill_cast_time);
                     }
-                    Console.WriteLine(string.Format("{0}, {1}", id, skill_cast_time));
-                    Console.WriteLine(string.Format("{0}, {1}", id1, id2));
-
+                    else
+                        continue;
+                    Console.WriteLine(string.Format("{0}, {1}", id1, CastTime1[id1 + "01"]));
                 }
-
             }
 
             Console.WriteLine(string.Format("{0},{1},{2},{3},{4},{5}",AtkType.Count,Pos.Count, NormalAtkCastTime.Count,CastTime1.Count,CastTime2.Count,CastTime1P.Count));
@@ -698,15 +711,121 @@ sw.WriteLine("#endregion");
             Console.WriteLine();
             Console.WriteLine();
 
+            foreach (string key in CastTime1P.Keys)
+            {
+                Console.WriteLine(string.Format("{0}, {1}", key, CastTime1P[key]));
+            }
+            foreach (string key in AtkType.Keys)
+            {
+                Console.WriteLine(string.Format("{0}, {1}", key, AtkType[key]));
+            }
+            foreach (string key in AtkType.Keys)
+            {
+                string name = idnc.IDtoCharaEngName(key, 6);
+                string nameK = idnc.IDtoCharaKorName(key, 6);
+                string result = string.Format("public double[] {0} = new double[6]{{{1}, {2}, {3}, {4}, {5}, {6}}};",
+                   name,AtkType[key], Pos[key], NormalAtkCastTime[key],
+                    GetDictonaryValue(CastTime1,key), GetDictonaryValue(CastTime2, key), GetDictonaryValue2(CastTime1,CastTime1P, key));
+
+                Console.WriteLine(result);
+                sw.WriteLine(result);
+                string result2 = string.Format("public void tb_{0}_Checked(object sender, RoutedEventArgs e) {{ cs.{1} = true; select_count++; }}", name, name);
+                string result3 = string.Format("public void tb_{0}_UnChecked(object sender, RoutedEventArgs e) {{ cs.{1} = false; select_count--;  }}", name, name);
+
+                sw2.WriteLine(result2);
+                sw2.WriteLine(result3);
+
+                string result4 = string.Format("private void bt_{0}_set_Click(object sender, RoutedEventArgs e)\n" +
+                    "{{" +
+                    " \t Chara_set.{1} = true;" +
+                    " \t Chara_set C_S = new Chara_set(); C_S.ShowDialog();" +
+                    "}} ", name, name);
+
+                sw3.WriteLine(result4);
+                string result5 = string.Format("else if ({0} == true)" +
+                    "{{" +
+                    "  cb_enable_set.IsChecked = true;" +
+                    "Chara_Selected_EN = \"{1}\";" +
+                    "Chara_Selected_KR = \"{2}\";" +
+                    " }}" +
+                    "", name,name, nameK);
+                sw4.WriteLine(result5);
+                string result9 = string.Format("if (cs.{0} == true){{temp[select_count_temp] = \"{1}\"; temp_eng[select_count_temp] = \"{2}\"; select_count_temp++;   }}", name, nameK, name);
+                string result10 = string.Format("sw.WriteLine(string.Format(\"{0},{{0}}\", tb_abbr_{1}.Text));",nameK,name);
+                string result12 = string.Format(" if (abbrChara == Abbr_{0}) return \"{0}\";",name,name);
+                string result13 = string.Format("else if (temp[0] == \"{0}\"){{tb_abbr_{1}.Text = Abbr_{2} = temp[1]; }}",nameK,name,name);
+                
+                sw6.WriteLine(result9);
+                sw7.WriteLine(result10);
+                sw8.WriteLine(result12);
+                sw9.WriteLine(result13);
+            }
+
+            string result11 = "sw.Close();";
+            sw7.WriteLine(result11);
+
+            foreach (string key in AtkType.Keys)
+            {
+                string name = idnc.IDtoCharaEngName(key, 6);
+                string result12 = string.Format("Abbr_{0} = tb_abbr_{1}.Text;", name, name);
+                sw7.WriteLine(result12);
+            }
+            for (int rank = 11; rank <= 25; rank++)
+            {
+                int index = rank - 11;
+                string result7 = string.Format("////{0}랭크\n"
+                   +"else if (cB_set_rank.SelectedIndex == {1}){{\n" +
+                    "Level_variable.Rank_temp = {2}; \n", rank,index, rank);
+                sw5.WriteLine(result7);
+
+                foreach (string key in AtkType.Keys)
+                {
+                    string name = idnc.IDtoCharaEngName(key, 6);
+                    string result6 = string.Format("if ({0}== true) for (int i = 0; i < 6; i++) ItemSet[i] = Convert.ToString(Ue.{1}_{2}[i]);", name, name, rank);
+
+                    sw5.WriteLine(result6);
+                }
+                string result8 = string.Format("\n}}");
+                sw5.WriteLine(result8);
+            }
             sw.WriteLine("#endregion");
-
-
-            Console.WriteLine("Finished");
-
-
-
+            sw2.WriteLine("#endregion");
+            sw3.WriteLine("#endregion");
+            sw4.WriteLine("#endregion");
+            sw5.WriteLine("#endregion");
+            sw6.WriteLine("#endregion");
+            sw7.WriteLine("#endregion");
+            sw8.WriteLine("#endregion");
+            sw9.WriteLine("#endregion");
 
             sw.Close();
+            sw2.Close();
+            sw3.Close();
+            sw4.Close();
+            sw5.Close();
+            sw6.Close();
+            sw7.Close();
+            sw8.Close();
+            sw9.Close();
+            Console.WriteLine("Finished");
+        }
+
+
+        
+
+        public static string GetDictonaryValue(Dictionary<string, string> dic, string key)
+        {
+            if (dic.ContainsKey(key))
+                return dic[key] == null  ?   "0" : dic[key].ToString();
+            else
+                return  "0";
+        }
+        public static string GetDictonaryValue2(Dictionary<string, string> dic1, Dictionary<string, string> dic1P, string key)
+        {
+            if (dic1P.ContainsKey(key))
+                return dic1P[key] == null ? dic1[key] : dic1P[key].ToString();
+            else
+                return "0";
         }
     }
 }

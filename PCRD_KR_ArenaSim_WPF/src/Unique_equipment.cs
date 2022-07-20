@@ -10,8 +10,6 @@
          * HP, 물공, 마공, 물방, 마방, 물크, 마크, HP 자동 회복, TP 자동 회복, 회피, HP 흡수, 회복량 상승, TP 상승, TP 소비 감소, 명중 
          https://github.com/esterTion/redive_master_db_diff/blob/master/unique_equipment_enhance_rate.sql
          
-        전장 스탯은 엔요리까지
-        강화수치 엔요리까지
          */
         #region Unique_equipment
         public double[] hiyori = new double[15] { /*hp*/0.0, /*atk*/94.0, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/20.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };

@@ -1,6 +1,5 @@
 ﻿using AutoUpdaterDotNET;
 using HtmlAgilityPack;
-using Microsoft.VisualBasic.CompilerServices;
 using OpenCvSharp;
 using NameConversion;
 using System;
@@ -42,8 +41,9 @@ namespace PCRD_KR_ArenaSim
             InitializeAbbr();
             InitialMaxText();
             //Debug.WriteLine(AgilityTest());
-            Debug.WriteLine(maxUnique);
-            Debug.WriteLine(idnc.IDtoCharaEngName("10013212", 8));
+            //Debug.WriteLine(maxUnique);
+            //Debug.WriteLine(idnc.IDtoCharaEngName("10013212", 8));
+            //CheckCharaList();
         }
 
 
@@ -120,343 +120,385 @@ namespace PCRD_KR_ArenaSim
 
         //메인 탭
         #region MainTab
-
         #region Checked
-        public void tb_hiyori_Checked(object sender, RoutedEventArgs args) { cs.hiyori = true; select_count++; }
-        public void tb_hiyori_UnChecked(object sender, RoutedEventArgs args) { cs.hiyori = false; select_count--; }
-        public void tb_rei_Checked(object sender, RoutedEventArgs args) { cs.rei = true; select_count++; }
-        public void tb_rei_UnChecked(object sender, RoutedEventArgs args) { cs.rei = false; select_count--; }
-        public void tb_yui_Checked(object sender, RoutedEventArgs args) { cs.yui = true; select_count++; }
-        public void tb_yui_UnChecked(object sender, RoutedEventArgs args) { cs.yui = false; select_count--; }
-        public void tb_misogi_Checked(object sender, RoutedEventArgs args) { cs.misogi = true; select_count++; }
-        public void tb_misogi_UnChecked(object sender, RoutedEventArgs args) { cs.misogi = false; select_count--; }
-
-        public void tb_matsuri_Checked(object sender, RoutedEventArgs args) { cs.matsuri = true; select_count++; }
-        public void tb_matsuri_UnChecked(object sender, RoutedEventArgs args) { cs.matsuri = false; select_count--; }
-
-        public void tb_akari_Checked(object sender, RoutedEventArgs args) { cs.akari = true; select_count++; }
-        public void tb_akari_UnChecked(object sender, RoutedEventArgs args) { cs.akari = false; select_count--; }
-
-        public void tb_miyako_Checked(object sender, RoutedEventArgs args) { cs.miyako = true; select_count++; }
-        public void tb_miyako_UnChecked(object sender, RoutedEventArgs args) { cs.miyako = false; select_count--; }
-
-        public void tb_yuki_Checked(object sender, RoutedEventArgs args) { cs.yuki = true; select_count++; }
-        public void tb_yuki_UnChecked(object sender, RoutedEventArgs args) { cs.yuki = false; select_count--; }
-
-        public void tb_anna_Checked(object sender, RoutedEventArgs args) { cs.anna = true; select_count++; }
-        public void tb_anna_UnChecked(object sender, RoutedEventArgs args) { cs.anna = false; select_count--; }
-        public void tb_maho_Checked(object sender, RoutedEventArgs args) { cs.maho = true; select_count++; }
-        public void tb_maho_UnChecked(object sender, RoutedEventArgs args) { cs.maho = false; select_count--; }
-        public void tb_rino_Checked(object sender, RoutedEventArgs args) { cs.rino = true; select_count++; }
-        public void tb_rino_UnChecked(object sender, RoutedEventArgs args) { cs.rino = false; select_count--; }
-        public void tb_hatsune_Checked(object sender, RoutedEventArgs args) { cs.hatsune = true; select_count++; }
-        public void tb_hatsune_UnChecked(object sender, RoutedEventArgs args) { cs.hatsune = false; select_count--; }
-        public void tb_nanaka_Checked(object sender, RoutedEventArgs args) { cs.nanaka = true; select_count++; }
-        public void tb_nanaka_UnChecked(object sender, RoutedEventArgs args) { cs.nanaka = false; select_count--; }
-        public void tb_kasumi_Checked(object sender, RoutedEventArgs args) { cs.kasumi = true; select_count++; }
-        public void tb_kasumi_UnChecked(object sender, RoutedEventArgs args) { cs.kasumi = false; select_count--; }
-        public void tb_misato_Checked(object sender, RoutedEventArgs args) { cs.misato = true; select_count++; }
-        public void tb_misato_UnChecked(object sender, RoutedEventArgs args) { cs.misato = false; select_count--; }
-        public void tb_suzuna_Checked(object sender, RoutedEventArgs args) { cs.suzuna = true; select_count++; }
-        public void tb_suzuna_UnChecked(object sender, RoutedEventArgs args) { cs.suzuna = false; select_count--; }
-        public void tb_kaori_Checked(object sender, RoutedEventArgs args) { cs.kaori = true; select_count++; }
-        public void tb_kaori_UnChecked(object sender, RoutedEventArgs args) { cs.kaori = false; select_count--; }
-        public void tb_io_Checked(object sender, RoutedEventArgs args) { cs.io = true; select_count++; }
-        public void tb_io_UnChecked(object sender, RoutedEventArgs args) { cs.io = false; select_count--; }
-        public void tb_mimi_Checked(object sender, RoutedEventArgs args) { cs.mimi = true; select_count++; }
-        public void tb_mimi_UnChecked(object sender, RoutedEventArgs args) { cs.mimi = false; select_count--; }
-        public void tb_kurumi_Checked(object sender, RoutedEventArgs args) { cs.kurumi = true; select_count++; }
-        public void tb_kurumi_UnChecked(object sender, RoutedEventArgs args) { cs.kurumi = false; select_count--; }
-        public void tb_yori_Checked(object sender, RoutedEventArgs args) { cs.yori = true; select_count++; }
-        public void tb_yori_UnChecked(object sender, RoutedEventArgs args) { cs.yori = false; select_count--; }
-        public void tb_ayane_Checked(object sender, RoutedEventArgs args) { cs.ayane = true; select_count++; }
-        public void tb_ayane_UnChecked(object sender, RoutedEventArgs args) { cs.ayane = false; select_count--; }
-        public void tb_suzume_Checked(object sender, RoutedEventArgs args) { cs.suzume = true; select_count++; }
-        public void tb_suzume_UnChecked(object sender, RoutedEventArgs args) { cs.suzume = false; select_count--; }
-        public void tb_rin_Checked(object sender, RoutedEventArgs args) { cs.rin = true; select_count++; }
-        public void tb_rin_UnChecked(object sender, RoutedEventArgs args) { cs.rin = false; select_count--; }
-        public void tb_eriko_Checked(object sender, RoutedEventArgs args) { cs.eriko = true; select_count++; }
-        public void tb_eriko_UnChecked(object sender, RoutedEventArgs args) { cs.eriko = false; select_count--; }
-        public void tb_saren_Checked(object sender, RoutedEventArgs args) { cs.saren = true; select_count++; }
-        public void tb_saren_UnChecked(object sender, RoutedEventArgs args) { cs.saren = false; select_count--; }
-        public void tb_nozomi_Checked(object sender, RoutedEventArgs args) { cs.nozomi = true; select_count++; }
-        public void tb_nozomi_UnChecked(object sender, RoutedEventArgs args) { cs.nozomi = false; select_count--; }
-        public void tb_ninon_Checked(object sender, RoutedEventArgs args) { cs.ninon = true; select_count++; }
-        public void tb_ninon_UnChecked(object sender, RoutedEventArgs args) { cs.ninon = false; select_count--; }
-        public void tb_sinobu_Checked(object sender, RoutedEventArgs args) { cs.sinobu = true; select_count++; }
-        public void tb_sinobu_UnChecked(object sender, RoutedEventArgs args) { cs.sinobu = false; select_count--; }
-        public void tb_akino_Checked(object sender, RoutedEventArgs args) { cs.akino = true; select_count++; }
-        public void tb_akino_UnChecked(object sender, RoutedEventArgs args) { cs.akino = false; select_count--; }
-        public void tb_mahiru_Checked(object sender, RoutedEventArgs args) { cs.mahiru = true; select_count++; }
-        public void tb_mahiru_UnChecked(object sender, RoutedEventArgs args) { cs.mahiru = false; select_count--; }
-        public void tb_yukari_Checked(object sender, RoutedEventArgs args) { cs.yukari = true; select_count++; }
-        public void tb_yukari_UnChecked(object sender, RoutedEventArgs args) { cs.yukari = false; select_count--; }
-        public void tb_kyouka_Checked(object sender, RoutedEventArgs args) { cs.kyouka = true; select_count++; }
-        public void tb_kyouka_UnChecked(object sender, RoutedEventArgs args) { cs.kyouka = false; select_count--; }
-        public void tb_tomo_Checked(object sender, RoutedEventArgs args) { cs.tomo = true; select_count++; }
-        public void tb_tomo_UnChecked(object sender, RoutedEventArgs args) { cs.tomo = false; select_count--; }
-        public void tb_siori_Checked(object sender, RoutedEventArgs args) { cs.siori = true; select_count++; }
-        public void tb_siori_UnChecked(object sender, RoutedEventArgs args) { cs.siori = false; select_count--; }
-        public void tb_aoi_Checked(object sender, RoutedEventArgs args) { cs.aoi = true; select_count++; }
-        public void tb_aoi_UnChecked(object sender, RoutedEventArgs args) { cs.aoi = false; select_count--; }
-        public void tb_chika_Checked(object sender, RoutedEventArgs args) { cs.chika = true; select_count++; }
-        public void tb_chika_UnChecked(object sender, RoutedEventArgs args) { cs.chika = false; select_count--; }
-        public void tb_makoto_Checked(object sender, RoutedEventArgs args) { cs.makoto = true; select_count++; }
-        public void tb_makoto_UnChecked(object sender, RoutedEventArgs args) { cs.makoto = false; select_count--; }
-        public void tb_iriya_Checked(object sender, RoutedEventArgs args) { cs.iriya = true; select_count++; }
-        public void tb_iriya_UnChecked(object sender, RoutedEventArgs args) { cs.iriya = false; select_count--; }
-        public void tb_kuuka_Checked(object sender, RoutedEventArgs args) { cs.kuuka = true; select_count++; }
-        public void tb_kuuka_UnChecked(object sender, RoutedEventArgs args) { cs.kuuka = false; select_count--; }
-        public void tb_tamaki_Checked(object sender, RoutedEventArgs args) { cs.tamaki = true; select_count++; }
-        public void tb_tamaki_UnChecked(object sender, RoutedEventArgs args) { cs.tamaki = false; select_count--; }
-        public void tb_zyun_Checked(object sender, RoutedEventArgs args) { cs.zyun = true; select_count++; }
-        public void tb_zyun_UnChecked(object sender, RoutedEventArgs args) { cs.zyun = false; select_count--; }
-        public void tb_mihuyu_Checked(object sender, RoutedEventArgs args) { cs.mihuyu = true; select_count++; }
-        public void tb_mihuyu_UnChecked(object sender, RoutedEventArgs args) { cs.mihuyu = false; select_count--; }
-        public void tb_sizuru_Checked(object sender, RoutedEventArgs args) { cs.sizuru = true; select_count++; }
-        public void tb_sizuru_UnChecked(object sender, RoutedEventArgs args) { cs.sizuru = false; select_count--; }
-        public void tb_misaki_Checked(object sender, RoutedEventArgs args) { cs.misaki = true; select_count++; }
-        public void tb_misaki_UnChecked(object sender, RoutedEventArgs args) { cs.misaki = false; select_count--; }
-        public void tb_mitsuki_Checked(object sender, RoutedEventArgs args) { cs.mitsuki = true; select_count++; }
-        public void tb_mitsuki_UnChecked(object sender, RoutedEventArgs args) { cs.mitsuki = false; select_count--; }
-        public void tb_rima_Checked(object sender, RoutedEventArgs args) { cs.rima = true; select_count++; }
-        public void rima_Checked() { cs.rima = true; select_count++; }
-        public void tb_rima_UnChecked(object sender, RoutedEventArgs args) { cs.rima = false; select_count--; }
-        public void tb_monika_Checked(object sender, RoutedEventArgs args) { cs.monika = true; select_count++; }
-        public void tb_monika_UnChecked(object sender, RoutedEventArgs args) { cs.monika = false; select_count--; }
-        public void tb_tsumugi_Checked(object sender, RoutedEventArgs args) { cs.tsumugi = true; select_count++; }
-        public void tb_tsumugi_UnChecked(object sender, RoutedEventArgs args) { cs.tsumugi = false; select_count--; }
-        public void tb_ayumi_Checked(object sender, RoutedEventArgs args) { cs.ayumi = true; select_count++; }
-        public void tb_ayumi_UnChecked(object sender, RoutedEventArgs args) { cs.ayumi = false; select_count--; }
-        public void tb_ruka_Checked(object sender, RoutedEventArgs args) { cs.ruka = true; select_count++; }
-        public void tb_ruka_UnChecked(object sender, RoutedEventArgs args) { cs.ruka = false; select_count--; }
-        public void tb_zita_Checked(object sender, RoutedEventArgs args) { cs.zita = true; select_count++; }
-        public void tb_zita_UnChecked(object sender, RoutedEventArgs args) { cs.zita = false; select_count--; }
-        public void tb_pekorinnu_Checked(object sender, RoutedEventArgs args) { cs.pekorinnu = true; select_count++; }
-        public void tb_pekorinnu_UnChecked(object sender, RoutedEventArgs args) { cs.pekorinnu = false; select_count--; }
-        public void tb_kotkoro_Checked(object sender, RoutedEventArgs args) { cs.kotkoro = true; select_count++; }
-        public void tb_kotkoro_UnChecked(object sender, RoutedEventArgs args) { cs.kotkoro = false; select_count--; }
-        public void tb_kyaru_Checked(object sender, RoutedEventArgs args) { cs.kyaru = true; select_count++; }
-        public void tb_kyaru_UnChecked(object sender, RoutedEventArgs args) { cs.kyaru = false; select_count--; }
-        public void tb_muimi_Checked(object sender, RoutedEventArgs args) { cs.muimi = true; select_count++; }
-        public void tb_muimi_UnChecked(object sender, RoutedEventArgs args) { cs.muimi = false; select_count--; }
-        public void tb_arisa_Checked(object sender, RoutedEventArgs args) { cs.arisa = true; select_count++; }
-        public void tb_arisa_UnChecked(object sender, RoutedEventArgs args) { cs.arisa = false; select_count--; }
-        public void tb_kaya_Checked(object sender, RoutedEventArgs args) { cs.kaya = true; select_count++; }
-        public void tb_kaya_UnChecked(object sender, RoutedEventArgs args) { cs.kaya = false; select_count--; }
-        public void tb_neneka_Checked(object sender, RoutedEventArgs args) { cs.neneka = true; select_count++; }
-        public void tb_neneka_UnChecked(object sender, RoutedEventArgs args) { cs.neneka = false; select_count--; }
-        public void tb_kristina_Checked(object sender, RoutedEventArgs args) { cs.kristina = true; select_count++; }
-        public void tb_kristina_UnChecked(object sender, RoutedEventArgs args) { cs.kristina = false; select_count--; }
-        public void tb_pekorinnu_summer_Checked(object sender, RoutedEventArgs args) { cs.pekorinnu_summer = true; select_count++; }
-        public void tb_pekorinnu_summer_UnChecked(object sender, RoutedEventArgs args) { cs.pekorinnu_summer = false; select_count--; }
-        public void tb_kotkoro_summer_Checked(object sender, RoutedEventArgs args) { cs.kotkoro_summer = true; select_count++; }
-        public void tb_kotkoro_summer_UnChecked(object sender, RoutedEventArgs args) { cs.kotkoro_summer = false; select_count--; }
-        public void tb_suzume_summer_Checked(object sender, RoutedEventArgs args) { cs.suzume_summer = true; select_count++; }
-        public void tb_suzume_summer_UnChecked(object sender, RoutedEventArgs args) { cs.suzume_summer = false; select_count--; }
-        public void tb_kyaru_summer_Checked(object sender, RoutedEventArgs args) { cs.kyaru_summer = true; select_count++; }
-        public void tb_kyaru_summer_UnChecked(object sender, RoutedEventArgs args) { cs.kyaru_summer = false; select_count--; }
-        public void tb_tamaki_summer_Checked(object sender, RoutedEventArgs args) { cs.tamaki_summer = true; select_count++; }
-        public void tb_tamaki_summer_UnChecked(object sender, RoutedEventArgs args) { cs.tamaki_summer = false; select_count--; }
-        public void tb_mihuyu_summer_Checked(object sender, RoutedEventArgs args) { cs.mihuyu_summer = true; select_count++; }
-        public void tb_mihuyu_summer_UnChecked(object sender, RoutedEventArgs args) { cs.mihuyu_summer = false; select_count--; }
-        public void tb_sinobu_halloween_Checked(object sender, RoutedEventArgs args) { cs.sinobu_halloween = true; select_count++; }
-        public void tb_sinobu_halloween_UnChecked(object sender, RoutedEventArgs args) { cs.sinobu_halloween = false; select_count--; }
-        public void tb_miyako_halloween_Checked(object sender, RoutedEventArgs args) { cs.miyako_halloween = true; select_count++; }
-        public void tb_miyako_halloween_UnChecked(object sender, RoutedEventArgs args) { cs.miyako_halloween = false; select_count--; }
-        public void tb_misaki_halloween_Checked(object sender, RoutedEventArgs args) { cs.misaki_halloween = true; select_count++; }
-        public void tb_misaki_halloween_UnChecked(object sender, RoutedEventArgs args) { cs.misaki_halloween = false; select_count--; }
-        public void tb_chika_christmas_Checked(object sender, RoutedEventArgs args) { cs.chika_christmas = true; select_count++; }
-        public void tb_chika_christmas_UnChecked(object sender, RoutedEventArgs args) { cs.chika_christmas = false; select_count--; }
-        public void tb_kurumi_christmas_Checked(object sender, RoutedEventArgs args) { cs.kurumi_christmas = true; select_count++; }
-        public void tb_kurumi_christmas_UnChecked(object sender, RoutedEventArgs args) { cs.kurumi_christmas = false; select_count--; }
-        public void tb_ayane_christmas_Checked(object sender, RoutedEventArgs args) { cs.ayane_christmas = true; select_count++; }
-        public void tb_ayane_christmas_UnChecked(object sender, RoutedEventArgs args) { cs.ayane_christmas = false; select_count--; }
-        public void tb_hiyori_newyear_Checked(object sender, RoutedEventArgs args) { cs.hiyori_newyear = true; select_count++; }
-        public void tb_hiyori_newyear_UnChecked(object sender, RoutedEventArgs args) { cs.hiyori_newyear = false; select_count--; }
-        public void tb_yui_newyear_Checked(object sender, RoutedEventArgs args) { cs.yui_newyear = true; select_count++; }
-        public void tb_yui_newyear_UnChecked(object sender, RoutedEventArgs args) { cs.yui_newyear = false; select_count--; }
-        public void tb_rei_newyear_Checked(object sender, RoutedEventArgs args) { cs.rei_newyear = true; select_count++; }
-        public void tb_rei_newyear_UnChecked(object sender, RoutedEventArgs args) { cs.rei_newyear = false; select_count--; }
-        public void tb_eriko_valentine_Checked(object sender, RoutedEventArgs args) { cs.eriko_valentine = true; select_count++; }
-        public void tb_eriko_valentine_UnChecked(object sender, RoutedEventArgs args) { cs.eriko_valentine = false; select_count--; }
-        public void tb_sizuru_valentine_Checked(object sender, RoutedEventArgs args) { cs.sizuru_valentine = true; select_count++; }
-        public void tb_sizuru_valentine_UnChecked(object sender, RoutedEventArgs args) { cs.sizuru_valentine = false; select_count--; }
-        public void tb_anne_Checked(object sender, RoutedEventArgs args) { cs.anne = true; select_count++; }
-        public void tb_anne_UnChecked(object sender, RoutedEventArgs args) { cs.anne = false; select_count--; }
-        public void tb_lou_Checked(object sender, RoutedEventArgs args) { cs.lou = true; select_count++; }
-        public void tb_lou_UnChecked(object sender, RoutedEventArgs args) { cs.lou = false; select_count--; }
-        public void tb_grea_Checked(object sender, RoutedEventArgs args) { cs.grea = true; select_count++; }
-        public void tb_grea_UnChecked(object sender, RoutedEventArgs args) { cs.grea = false; select_count--; }
-        public void tb_kuuka_ooedo_Checked(object sender, RoutedEventArgs args) { cs.kuuka_ooedo = true; select_count++; }
-        public void tb_kuuka_ooedo_UnChecked(object sender, RoutedEventArgs args) { cs.kuuka_ooedo = false; select_count--; }
-        public void tb_ninon_ooedo_Checked(object sender, RoutedEventArgs args) { cs.ninon_ooedo = true; select_count++; }
-        public void tb_ninon_ooedo_UnChecked(object sender, RoutedEventArgs args) { cs.ninon_ooedo = false; select_count--; }
-        public void tb_rem_Checked(object sender, RoutedEventArgs args) { cs.rem = true; select_count++; }
-        public void tb_rem_UnChecked(object sender, RoutedEventArgs args) { cs.rem = false; select_count--; }
-        public void tb_ram_Checked(object sender, RoutedEventArgs args) { cs.ram = true; select_count++; }
-        public void tb_ram_UnChecked(object sender, RoutedEventArgs args) { cs.ram = false; select_count--; }
-        public void tb_emilia_Checked(object sender, RoutedEventArgs args) { cs.emilia = true; select_count++; }
-        public void tb_emilia_UnChecked(object sender, RoutedEventArgs args) { cs.emilia = false; select_count--; }
-        public void tb_suzuna_summer_Checked(object sender, RoutedEventArgs args) { cs.suzuna_summer = true; select_count++; }
-        public void tb_suzuna_summer_UnChecked(object sender, RoutedEventArgs args) { cs.suzuna_summer = false; select_count--; }
-        public void tb_io_summer_Checked(object sender, RoutedEventArgs args) { cs.io_summer = true; select_count++; }
-        public void tb_io_summer_UnChecked(object sender, RoutedEventArgs args) { cs.io_summer = false; select_count--; }
-        public void tb_saren_summer_Checked(object sender, RoutedEventArgs args) { cs.saren_summer = true; select_count++; }
-        public void tb_saren_summer_UnChecked(object sender, RoutedEventArgs args) { cs.saren_summer = false; select_count--; }
-        public void tb_makoto_summer_Checked(object sender, RoutedEventArgs args) { cs.makoto_summer = true; select_count++; }
-        public void tb_makoto_summer_UnChecked(object sender, RoutedEventArgs args) { cs.makoto_summer = false; select_count--; }
-        public void tb_kaori_summer_Checked(object sender, RoutedEventArgs args) { cs.kaori_summer = true; select_count++; }
-        public void tb_kaori_summer_UnChecked(object sender, RoutedEventArgs args) { cs.kaori_summer = false; select_count--; }
-        public void tb_maho_summer_Checked(object sender, RoutedEventArgs args) { cs.maho_summer = true; select_count++; }
-        public void tb_maho_summer_UnChecked(object sender, RoutedEventArgs args) { cs.maho_summer = false; select_count--; }
-        public void tb_aoi_nakayosi_Checked(object sender, RoutedEventArgs args) { cs.aoi_nakayosi = true; select_count++; }
-        public void tb_aoi_nakayosi_UnChecked(object sender, RoutedEventArgs args) { cs.aoi_nakayosi = false; select_count--; }
-        public void tb_chloe_Checked(object sender, RoutedEventArgs args) { cs.chloe = true; select_count++; }
-        public void tb_chloe_UnChecked(object sender, RoutedEventArgs args) { cs.chloe = false; select_count--; }
-        public void tb_chieru_Checked(object sender, RoutedEventArgs args) { cs.chieru = true; select_count++; }
-        public void tb_chieru_UnChecked(object sender, RoutedEventArgs args) { cs.chieru = false; select_count--; }
-        public void tb_kyouka_halloween_Checked(object sender, RoutedEventArgs args) { cs.kyouka_halloween = true; select_count++; }
-        public void tb_kyouka_halloween_UnChecked(object sender, RoutedEventArgs args) { cs.kyouka_halloween = false; select_count--; }
-        public void tb_misogi_halloween_Checked(object sender, RoutedEventArgs args) { cs.misogi_halloween = true; select_count++; }
-        public void tb_misogi_halloween_UnChecked(object sender, RoutedEventArgs args) { cs.misogi_halloween = false; select_count--; }
-        public void tb_mimi_halloween_Checked(object sender, RoutedEventArgs args) { cs.mimi_halloween = true; select_count++; }
-        public void tb_mimi_halloween_UnChecked(object sender, RoutedEventArgs args) { cs.mimi_halloween = false; select_count--; }
-        public void tb_runa_Checked(object sender, RoutedEventArgs args) { cs.runa = true; select_count++; }
-        public void tb_runa_UnChecked(object sender, RoutedEventArgs args) { cs.runa = false; select_count--; }
-        public void tb_kristina_christmas_Checked(object sender, RoutedEventArgs args) { cs.kristina_christmas = true; select_count++; }
-        public void tb_kristina_christmas_UnChecked(object sender, RoutedEventArgs args) { cs.kristina_christmas = false; select_count--; }
-        public void tb_nozomi_christmas_Checked(object sender, RoutedEventArgs args) { cs.nozomi_christmas = true; select_count++; }
-        public void tb_nozomi_christmas_UnChecked(object sender, RoutedEventArgs args) { cs.nozomi_christmas = false; select_count--; }
-        public void tb_iriya_christmas_Checked(object sender, RoutedEventArgs args) { cs.iriya_christmas = true; select_count++; }
-        public void tb_iriya_christmas_UnChecked(object sender, RoutedEventArgs args) { cs.iriya_christmas = false; select_count--; }
-        public void tb_kotkoro_newyear_Checked(object sender, RoutedEventArgs args) { cs.kotkoro_newyear = true; select_count++; }
-        public void tb_kotkoro_newyear_UnChecked(object sender, RoutedEventArgs args) { cs.kotkoro_newyear = false; select_count--; }
-        public void tb_kyaru_newyear_Checked(object sender, RoutedEventArgs args) { cs.kyaru_newyear = true; select_count++; }
-        public void tb_kyaru_newyear_UnChecked(object sender, RoutedEventArgs args) { cs.kyaru_newyear = false; select_count--; }
-        public void tb_suzume_newyear_Checked(object sender, RoutedEventArgs args) { cs.suzume_newyear = true; select_count++; }
-        public void tb_suzume_newyear_UnChecked(object sender, RoutedEventArgs args) { cs.suzume_newyear = false; select_count--; }
-        public void tb_kasumi_magical_Checked(object sender, RoutedEventArgs args) { cs.kasumi_magical = true; select_count++; }
-        public void tb_kasumi_magical_UnChecked(object sender, RoutedEventArgs args) { cs.kasumi_magical = false; select_count--; }
-        public void tb_siori_magical_Checked(object sender, RoutedEventArgs args) { cs.siori_magical = true; select_count++; }
-        public void tb_siori_magical_UnChecked(object sender, RoutedEventArgs args) { cs.siori_magical = false; select_count--; }
-
-        private void tb_uzuki_deremas_Checked(object sender, RoutedEventArgs e) { cs.uzuki_deremas = true; select_count++; }
-        public void tb_uzuki_deremas_UnChecked(object sender, RoutedEventArgs args) { cs.uzuki_deremas = false; select_count--; }
-        private void tb_mio_deremas_Checked(object sender, RoutedEventArgs e) { cs.mio_deremas = true; select_count++; }
-        public void tb_mio_deremas_UnChecked(object sender, RoutedEventArgs args) { cs.mio_deremas = false; select_count--; }
-        private void tb_rin_deremas_Checked(object sender, RoutedEventArgs e) { cs.rin_deremas = true; select_count++; }
-        public void tb_rin_deremas_UnChecked(object sender, RoutedEventArgs args) { cs.rin_deremas = false; select_count--; }
-
-
-        private void tb_rin_ranger_Checked(object sender, RoutedEventArgs e) { cs.rin_ranger = true; select_count++; }
-        public void tb_rin_ranger_UnChecked(object sender, RoutedEventArgs args) { cs.rin_ranger = false; select_count--; }
-
-        private void tb_mahiru_ranger_Checked(object sender, RoutedEventArgs e) { cs.mahiru_ranger = true; select_count++; }
-        public void tb_mahiru_ranger_UnChecked(object sender, RoutedEventArgs args) { cs.mahiru_ranger = false; select_count--; }
-
-        private void tb_rino_wonder_Checked(object sender, RoutedEventArgs e) { cs.rino_wonder = true; select_count++; }
-        public void tb_rino_wonder_UnChecked(object sender, RoutedEventArgs args) { cs.rino_wonder = false; select_count--; }
-
-        private void tb_ayumi_wonder_Checked(object sender, RoutedEventArgs e) { cs.ayumi_wonder = true; select_count++; }
-        public void tb_ayumi_wonder_UnChecked(object sender, RoutedEventArgs args) { cs.ayumi_wonder = false; select_count--; }
-
-        private void tb_ruka_summer_Checked(object sender, RoutedEventArgs e) { cs.ruka_summer = true; select_count++; }
-        public void tb_ruka_summer_UnChecked(object sender, RoutedEventArgs args) { cs.ruka_summer = false; select_count--; }
-        private void tb_anna_summer_Checked(object sender, RoutedEventArgs e) { cs.anna_summer = true; select_count++; }
-        public void tb_anna_summer_UnChecked(object sender, RoutedEventArgs args) { cs.anna_summer = false; select_count--; }
-        private void tb_nanaka_summer_Checked(object sender, RoutedEventArgs e) { cs.nanaka_summer = true; select_count++; }
-        public void tb_nanaka_summer_UnChecked(object sender, RoutedEventArgs args) { cs.nanaka_summer = false; select_count--; }
-        private void tb_hatsune_summer_Checked(object sender, RoutedEventArgs e) { cs.hatsune_summer = true; select_count++; }
-        public void tb_hatsune_summer_UnChecked(object sender, RoutedEventArgs args) { cs.hatsune_summer = false; select_count--; }
-        private void tb_misato_summer_Checked(object sender, RoutedEventArgs e) { cs.misato_summer = true; select_count++; }
-        public void tb_misato_summer_UnChecked(object sender, RoutedEventArgs args) { cs.misato_summer = false; select_count--; }
-        private void tb_zyun_summer_Checked(object sender, RoutedEventArgs e) { cs.zyun_summer = true; select_count++; }
-        public void tb_zyun_summer_UnChecked(object sender, RoutedEventArgs args) { cs.zyun_summer = false; select_count--; }
-        private void tb_akari_angel_Checked(object sender, RoutedEventArgs e) { cs.akari_angel = true; select_count++; }
-        public void tb_akari_angel_UnChecked(object sender, RoutedEventArgs args) { cs.akari_angel = false; select_count--; }
-        private void tb_yori_angel_Checked(object sender, RoutedEventArgs e) { cs.yori_angel = true; select_count++; }
-        public void tb_yori_angel_UnChecked(object sender, RoutedEventArgs args) { cs.yori_angel = false; select_count--; }
-
-        private void tb_yui_princess_Checked(object sender, RoutedEventArgs e) { cs.yui_princess = true; select_count++; }
-        public void tb_yui_princess_UnChecked(object sender, RoutedEventArgs args) { cs.yui_princess = false; select_count--; }
-        public void tb_pekorinnu_princess_Checked(object sender, RoutedEventArgs args) { cs.pekorinnu_princess = true; select_count++; }
-        public void tb_pekorinnu_princess_UnChecked(object sender, RoutedEventArgs args) { cs.pekorinnu_princess = false; select_count--; }
-
-        public void tb_kotkoro_princess_Checked(object sender, RoutedEventArgs e) { cs.kotkoro_princess = true; select_count++; }
-        public void tb_kotkoro_princess_UnChecked(object sender, RoutedEventArgs args) { cs.kotkoro_princess = false; select_count--; }
-
-        public void tb_yuni_Checked(object sender, RoutedEventArgs e) { cs.yuni = true; select_count++; }
-        public void tb_yuni_UnChecked(object sender, RoutedEventArgs args) { cs.yuni = false; select_count--; }
-
-        public void tb_inori_Checked(object sender, RoutedEventArgs e) { cs.inori = true; select_count++; }
-        public void tb_inori_UnChecked(object sender, RoutedEventArgs args) { cs.inori = false; select_count--; }
-        public void tb_labyrista_Checked(object sender, RoutedEventArgs e) { cs.labyrista = true; select_count++; }
-        public void tb_labyrista_UnChecked(object sender, RoutedEventArgs args) { cs.labyrista = false; select_count--; }
-
-
-        public void tb_tsumugi_halloween_Checked(object sender, RoutedEventArgs e) { cs.tsumugi_halloween = true; select_count++; }
-        public void tb_tsumugi_halloween_UnChecked(object sender, RoutedEventArgs args) { cs.tsumugi_halloween = false; select_count--; }
-        public void tb_rei_halloween_Checked(object sender, RoutedEventArgs e) { cs.rei_halloween = true; select_count++; }
-        public void tb_rei_halloween_UnChecked(object sender, RoutedEventArgs args) { cs.rei_halloween = false; select_count--; }
-        public void tb_matsuri_halloween_Checked(object sender, RoutedEventArgs e) { cs.matsuri_halloween = true; select_count++; }
-        public void tb_matsuri_halloween_UnChecked(object sender, RoutedEventArgs args) { cs.matsuri_halloween = false; select_count--; }
-        public void tb_monika_magical_Checked(object sender, RoutedEventArgs e) { cs.monika_magical = true; select_count++; }
-        public void tb_monika_magical_UnChecked(object sender, RoutedEventArgs args) { cs.monika_magical = false; select_count--; }
-        public void tb_tomo_magical_Checked(object sender, RoutedEventArgs e) { cs.tomo_magical = true; select_count++; }
-        public void tb_tomo_magical_UnChecked(object sender, RoutedEventArgs args) { cs.tomo_magical = false; select_count--; }
+        public void tb_hiyori_Checked(object sender, RoutedEventArgs e) { cs.hiyori = true; select_count++; }
+        public void tb_hiyori_UnChecked(object sender, RoutedEventArgs e) { cs.hiyori = false; select_count--; }
+        public void tb_yui_Checked(object sender, RoutedEventArgs e) { cs.yui = true; select_count++; }
+        public void tb_yui_UnChecked(object sender, RoutedEventArgs e) { cs.yui = false; select_count--; }
+        public void tb_rei_Checked(object sender, RoutedEventArgs e) { cs.rei = true; select_count++; }
+        public void tb_rei_UnChecked(object sender, RoutedEventArgs e) { cs.rei = false; select_count--; }
+        public void tb_misogi_Checked(object sender, RoutedEventArgs e) { cs.misogi = true; select_count++; }
+        public void tb_misogi_UnChecked(object sender, RoutedEventArgs e) { cs.misogi = false; select_count--; }
+        public void tb_matsuri_Checked(object sender, RoutedEventArgs e) { cs.matsuri = true; select_count++; }
+        public void tb_matsuri_UnChecked(object sender, RoutedEventArgs e) { cs.matsuri = false; select_count--; }
+        public void tb_akari_Checked(object sender, RoutedEventArgs e) { cs.akari = true; select_count++; }
+        public void tb_akari_UnChecked(object sender, RoutedEventArgs e) { cs.akari = false; select_count--; }
+        public void tb_miyako_Checked(object sender, RoutedEventArgs e) { cs.miyako = true; select_count++; }
+        public void tb_miyako_UnChecked(object sender, RoutedEventArgs e) { cs.miyako = false; select_count--; }
+        public void tb_yuki_Checked(object sender, RoutedEventArgs e) { cs.yuki = true; select_count++; }
+        public void tb_yuki_UnChecked(object sender, RoutedEventArgs e) { cs.yuki = false; select_count--; }
+        public void tb_anna_Checked(object sender, RoutedEventArgs e) { cs.anna = true; select_count++; }
+        public void tb_anna_UnChecked(object sender, RoutedEventArgs e) { cs.anna = false; select_count--; }
+        public void tb_maho_Checked(object sender, RoutedEventArgs e) { cs.maho = true; select_count++; }
+        public void tb_maho_UnChecked(object sender, RoutedEventArgs e) { cs.maho = false; select_count--; }
+        public void tb_rino_Checked(object sender, RoutedEventArgs e) { cs.rino = true; select_count++; }
+        public void tb_rino_UnChecked(object sender, RoutedEventArgs e) { cs.rino = false; select_count--; }
+        public void tb_hatsune_Checked(object sender, RoutedEventArgs e) { cs.hatsune = true; select_count++; }
+        public void tb_hatsune_UnChecked(object sender, RoutedEventArgs e) { cs.hatsune = false; select_count--; }
+        public void tb_nanaka_Checked(object sender, RoutedEventArgs e) { cs.nanaka = true; select_count++; }
+        public void tb_nanaka_UnChecked(object sender, RoutedEventArgs e) { cs.nanaka = false; select_count--; }
+        public void tb_kasumi_Checked(object sender, RoutedEventArgs e) { cs.kasumi = true; select_count++; }
+        public void tb_kasumi_UnChecked(object sender, RoutedEventArgs e) { cs.kasumi = false; select_count--; }
+        public void tb_misato_Checked(object sender, RoutedEventArgs e) { cs.misato = true; select_count++; }
+        public void tb_misato_UnChecked(object sender, RoutedEventArgs e) { cs.misato = false; select_count--; }
+        public void tb_suzuna_Checked(object sender, RoutedEventArgs e) { cs.suzuna = true; select_count++; }
+        public void tb_suzuna_UnChecked(object sender, RoutedEventArgs e) { cs.suzuna = false; select_count--; }
+        public void tb_kaori_Checked(object sender, RoutedEventArgs e) { cs.kaori = true; select_count++; }
+        public void tb_kaori_UnChecked(object sender, RoutedEventArgs e) { cs.kaori = false; select_count--; }
+        public void tb_io_Checked(object sender, RoutedEventArgs e) { cs.io = true; select_count++; }
+        public void tb_io_UnChecked(object sender, RoutedEventArgs e) { cs.io = false; select_count--; }
+        public void tb_mimi_Checked(object sender, RoutedEventArgs e) { cs.mimi = true; select_count++; }
+        public void tb_mimi_UnChecked(object sender, RoutedEventArgs e) { cs.mimi = false; select_count--; }
+        public void tb_kurumi_Checked(object sender, RoutedEventArgs e) { cs.kurumi = true; select_count++; }
+        public void tb_kurumi_UnChecked(object sender, RoutedEventArgs e) { cs.kurumi = false; select_count--; }
+        public void tb_yori_Checked(object sender, RoutedEventArgs e) { cs.yori = true; select_count++; }
+        public void tb_yori_UnChecked(object sender, RoutedEventArgs e) { cs.yori = false; select_count--; }
+        public void tb_ayane_Checked(object sender, RoutedEventArgs e) { cs.ayane = true; select_count++; }
+        public void tb_ayane_UnChecked(object sender, RoutedEventArgs e) { cs.ayane = false; select_count--; }
+        public void tb_suzume_Checked(object sender, RoutedEventArgs e) { cs.suzume = true; select_count++; }
+        public void tb_suzume_UnChecked(object sender, RoutedEventArgs e) { cs.suzume = false; select_count--; }
+        public void tb_rin_Checked(object sender, RoutedEventArgs e) { cs.rin = true; select_count++; }
+        public void tb_rin_UnChecked(object sender, RoutedEventArgs e) { cs.rin = false; select_count--; }
+        public void tb_eriko_Checked(object sender, RoutedEventArgs e) { cs.eriko = true; select_count++; }
+        public void tb_eriko_UnChecked(object sender, RoutedEventArgs e) { cs.eriko = false; select_count--; }
+        public void tb_saren_Checked(object sender, RoutedEventArgs e) { cs.saren = true; select_count++; }
+        public void tb_saren_UnChecked(object sender, RoutedEventArgs e) { cs.saren = false; select_count--; }
+        public void tb_nozomi_Checked(object sender, RoutedEventArgs e) { cs.nozomi = true; select_count++; }
+        public void tb_nozomi_UnChecked(object sender, RoutedEventArgs e) { cs.nozomi = false; select_count--; }
+        public void tb_ninon_Checked(object sender, RoutedEventArgs e) { cs.ninon = true; select_count++; }
+        public void tb_ninon_UnChecked(object sender, RoutedEventArgs e) { cs.ninon = false; select_count--; }
+        public void tb_sinobu_Checked(object sender, RoutedEventArgs e) { cs.sinobu = true; select_count++; }
+        public void tb_sinobu_UnChecked(object sender, RoutedEventArgs e) { cs.sinobu = false; select_count--; }
+        public void tb_akino_Checked(object sender, RoutedEventArgs e) { cs.akino = true; select_count++; }
+        public void tb_akino_UnChecked(object sender, RoutedEventArgs e) { cs.akino = false; select_count--; }
+        public void tb_mahiru_Checked(object sender, RoutedEventArgs e) { cs.mahiru = true; select_count++; }
+        public void tb_mahiru_UnChecked(object sender, RoutedEventArgs e) { cs.mahiru = false; select_count--; }
+        public void tb_yukari_Checked(object sender, RoutedEventArgs e) { cs.yukari = true; select_count++; }
+        public void tb_yukari_UnChecked(object sender, RoutedEventArgs e) { cs.yukari = false; select_count--; }
+        public void tb_kyouka_Checked(object sender, RoutedEventArgs e) { cs.kyouka = true; select_count++; }
+        public void tb_kyouka_UnChecked(object sender, RoutedEventArgs e) { cs.kyouka = false; select_count--; }
+        public void tb_tomo_Checked(object sender, RoutedEventArgs e) { cs.tomo = true; select_count++; }
+        public void tb_tomo_UnChecked(object sender, RoutedEventArgs e) { cs.tomo = false; select_count--; }
+        public void tb_siori_Checked(object sender, RoutedEventArgs e) { cs.siori = true; select_count++; }
+        public void tb_siori_UnChecked(object sender, RoutedEventArgs e) { cs.siori = false; select_count--; }
+        public void tb_aoi_Checked(object sender, RoutedEventArgs e) { cs.aoi = true; select_count++; }
+        public void tb_aoi_UnChecked(object sender, RoutedEventArgs e) { cs.aoi = false; select_count--; }
+        public void tb_chika_Checked(object sender, RoutedEventArgs e) { cs.chika = true; select_count++; }
+        public void tb_chika_UnChecked(object sender, RoutedEventArgs e) { cs.chika = false; select_count--; }
+        public void tb_makoto_Checked(object sender, RoutedEventArgs e) { cs.makoto = true; select_count++; }
+        public void tb_makoto_UnChecked(object sender, RoutedEventArgs e) { cs.makoto = false; select_count--; }
+        public void tb_iriya_Checked(object sender, RoutedEventArgs e) { cs.iriya = true; select_count++; }
+        public void tb_iriya_UnChecked(object sender, RoutedEventArgs e) { cs.iriya = false; select_count--; }
+        public void tb_kuuka_Checked(object sender, RoutedEventArgs e) { cs.kuuka = true; select_count++; }
+        public void tb_kuuka_UnChecked(object sender, RoutedEventArgs e) { cs.kuuka = false; select_count--; }
+        public void tb_tamaki_Checked(object sender, RoutedEventArgs e) { cs.tamaki = true; select_count++; }
+        public void tb_tamaki_UnChecked(object sender, RoutedEventArgs e) { cs.tamaki = false; select_count--; }
+        public void tb_zyun_Checked(object sender, RoutedEventArgs e) { cs.zyun = true; select_count++; }
+        public void tb_zyun_UnChecked(object sender, RoutedEventArgs e) { cs.zyun = false; select_count--; }
+        public void tb_mihuyu_Checked(object sender, RoutedEventArgs e) { cs.mihuyu = true; select_count++; }
+        public void tb_mihuyu_UnChecked(object sender, RoutedEventArgs e) { cs.mihuyu = false; select_count--; }
+        public void tb_sizuru_Checked(object sender, RoutedEventArgs e) { cs.sizuru = true; select_count++; }
+        public void tb_sizuru_UnChecked(object sender, RoutedEventArgs e) { cs.sizuru = false; select_count--; }
+        public void tb_misaki_Checked(object sender, RoutedEventArgs e) { cs.misaki = true; select_count++; }
+        public void tb_misaki_UnChecked(object sender, RoutedEventArgs e) { cs.misaki = false; select_count--; }
+        public void tb_mitsuki_Checked(object sender, RoutedEventArgs e) { cs.mitsuki = true; select_count++; }
+        public void tb_mitsuki_UnChecked(object sender, RoutedEventArgs e) { cs.mitsuki = false; select_count--; }
+        public void tb_rima_Checked(object sender, RoutedEventArgs e) { cs.rima = true; select_count++; }
+        public void tb_rima_UnChecked(object sender, RoutedEventArgs e) { cs.rima = false; select_count--; }
+        public void tb_monika_Checked(object sender, RoutedEventArgs e) { cs.monika = true; select_count++; }
+        public void tb_monika_UnChecked(object sender, RoutedEventArgs e) { cs.monika = false; select_count--; }
+        public void tb_tsumugi_Checked(object sender, RoutedEventArgs e) { cs.tsumugi = true; select_count++; }
+        public void tb_tsumugi_UnChecked(object sender, RoutedEventArgs e) { cs.tsumugi = false; select_count--; }
+        public void tb_ayumi_Checked(object sender, RoutedEventArgs e) { cs.ayumi = true; select_count++; }
+        public void tb_ayumi_UnChecked(object sender, RoutedEventArgs e) { cs.ayumi = false; select_count--; }
+        public void tb_ruka_Checked(object sender, RoutedEventArgs e) { cs.ruka = true; select_count++; }
+        public void tb_ruka_UnChecked(object sender, RoutedEventArgs e) { cs.ruka = false; select_count--; }
+        public void tb_zita_Checked(object sender, RoutedEventArgs e) { cs.zita = true; select_count++; }
+        public void tb_zita_UnChecked(object sender, RoutedEventArgs e) { cs.zita = false; select_count--; }
+        public void tb_pekorinnu_Checked(object sender, RoutedEventArgs e) { cs.pekorinnu = true; select_count++; }
+        public void tb_pekorinnu_UnChecked(object sender, RoutedEventArgs e) { cs.pekorinnu = false; select_count--; }
+        public void tb_kotkoro_Checked(object sender, RoutedEventArgs e) { cs.kotkoro = true; select_count++; }
+        public void tb_kotkoro_UnChecked(object sender, RoutedEventArgs e) { cs.kotkoro = false; select_count--; }
+        public void tb_kyaru_Checked(object sender, RoutedEventArgs e) { cs.kyaru = true; select_count++; }
+        public void tb_kyaru_UnChecked(object sender, RoutedEventArgs e) { cs.kyaru = false; select_count--; }
+        public void tb_muimi_Checked(object sender, RoutedEventArgs e) { cs.muimi = true; select_count++; }
+        public void tb_muimi_UnChecked(object sender, RoutedEventArgs e) { cs.muimi = false; select_count--; }
+        public void tb_arisa_Checked(object sender, RoutedEventArgs e) { cs.arisa = true; select_count++; }
+        public void tb_arisa_UnChecked(object sender, RoutedEventArgs e) { cs.arisa = false; select_count--; }
         public void tb_shepi_Checked(object sender, RoutedEventArgs e) { cs.shepi = true; select_count++; }
-        public void tb_shepi_UnChecked(object sender, RoutedEventArgs args) { cs.shepi = false; select_count--; }
-        public void tb_akino_christmas_Checked(object sender, RoutedEventArgs e) { cs.akino_christmas = true; select_count++; }
-        public void tb_akino_christmas_UnChecked(object sender, RoutedEventArgs args) { cs.akino_christmas = false; select_count--; }
-        public void tb_saren_christmas_Checked(object sender, RoutedEventArgs e) { cs.saren_christmas = true; select_count++; }
-        public void tb_saren_christmas_UnChecked(object sender, RoutedEventArgs args) { cs.saren_christmas = false; select_count--; }
-        public void tb_yukari_christmas_Checked(object sender, RoutedEventArgs e) { cs.yukari_christmas = true; select_count++; }
-        public void tb_yukari_christmas_UnChecked(object sender, RoutedEventArgs args) { cs.yukari_christmas = false; select_count--; }
-        public void tb_muimi_newyear_Checked(object sender, RoutedEventArgs e) { cs.muimi_newyear = true; select_count++; }
-        public void tb_muimi_newyear_UnChecked(object sender, RoutedEventArgs args) { cs.muimi_newyear = false; select_count--; }
-        public void tb_neneka_newyear_Checked(object sender, RoutedEventArgs e) { cs.neneka_newyear = true; select_count++; }
-        public void tb_neneka_newyear_UnChecked(object sender, RoutedEventArgs args) { cs.neneka_newyear = false; select_count--; }
+        public void tb_shepi_UnChecked(object sender, RoutedEventArgs e) { cs.shepi = false; select_count--; }
+        public void tb_kaya_Checked(object sender, RoutedEventArgs e) { cs.kaya = true; select_count++; }
+        public void tb_kaya_UnChecked(object sender, RoutedEventArgs e) { cs.kaya = false; select_count--; }
+        public void tb_inori_Checked(object sender, RoutedEventArgs e) { cs.inori = true; select_count++; }
+        public void tb_inori_UnChecked(object sender, RoutedEventArgs e) { cs.inori = false; select_count--; }
+        public void tb_labyrista_Checked(object sender, RoutedEventArgs e) { cs.labyrista = true; select_count++; }
+        public void tb_labyrista_UnChecked(object sender, RoutedEventArgs e) { cs.labyrista = false; select_count--; }
+        public void tb_neneka_Checked(object sender, RoutedEventArgs e) { cs.neneka = true; select_count++; }
+        public void tb_neneka_UnChecked(object sender, RoutedEventArgs e) { cs.neneka = false; select_count--; }
+        public void tb_kristina_Checked(object sender, RoutedEventArgs e) { cs.kristina = true; select_count++; }
+        public void tb_kristina_UnChecked(object sender, RoutedEventArgs e) { cs.kristina = false; select_count--; }
+        public void tb_pekorinnu_summer_Checked(object sender, RoutedEventArgs e) { cs.pekorinnu_summer = true; select_count++; }
+        public void tb_pekorinnu_summer_UnChecked(object sender, RoutedEventArgs e) { cs.pekorinnu_summer = false; select_count--; }
+        public void tb_kotkoro_summer_Checked(object sender, RoutedEventArgs e) { cs.kotkoro_summer = true; select_count++; }
+        public void tb_kotkoro_summer_UnChecked(object sender, RoutedEventArgs e) { cs.kotkoro_summer = false; select_count--; }
+        public void tb_suzume_summer_Checked(object sender, RoutedEventArgs e) { cs.suzume_summer = true; select_count++; }
+        public void tb_suzume_summer_UnChecked(object sender, RoutedEventArgs e) { cs.suzume_summer = false; select_count--; }
+        public void tb_kyaru_summer_Checked(object sender, RoutedEventArgs e) { cs.kyaru_summer = true; select_count++; }
+        public void tb_kyaru_summer_UnChecked(object sender, RoutedEventArgs e) { cs.kyaru_summer = false; select_count--; }
+        public void tb_tamaki_summer_Checked(object sender, RoutedEventArgs e) { cs.tamaki_summer = true; select_count++; }
+        public void tb_tamaki_summer_UnChecked(object sender, RoutedEventArgs e) { cs.tamaki_summer = false; select_count--; }
+        public void tb_mihuyu_summer_Checked(object sender, RoutedEventArgs e) { cs.mihuyu_summer = true; select_count++; }
+        public void tb_mihuyu_summer_UnChecked(object sender, RoutedEventArgs e) { cs.mihuyu_summer = false; select_count--; }
+        public void tb_sinobu_halloween_Checked(object sender, RoutedEventArgs e) { cs.sinobu_halloween = true; select_count++; }
+        public void tb_sinobu_halloween_UnChecked(object sender, RoutedEventArgs e) { cs.sinobu_halloween = false; select_count--; }
+        public void tb_miyako_halloween_Checked(object sender, RoutedEventArgs e) { cs.miyako_halloween = true; select_count++; }
+        public void tb_miyako_halloween_UnChecked(object sender, RoutedEventArgs e) { cs.miyako_halloween = false; select_count--; }
+        public void tb_misaki_halloween_Checked(object sender, RoutedEventArgs e) { cs.misaki_halloween = true; select_count++; }
+        public void tb_misaki_halloween_UnChecked(object sender, RoutedEventArgs e) { cs.misaki_halloween = false; select_count--; }
+        public void tb_chika_christmas_Checked(object sender, RoutedEventArgs e) { cs.chika_christmas = true; select_count++; }
+        public void tb_chika_christmas_UnChecked(object sender, RoutedEventArgs e) { cs.chika_christmas = false; select_count--; }
+        public void tb_kurumi_christmas_Checked(object sender, RoutedEventArgs e) { cs.kurumi_christmas = true; select_count++; }
+        public void tb_kurumi_christmas_UnChecked(object sender, RoutedEventArgs e) { cs.kurumi_christmas = false; select_count--; }
+        public void tb_ayane_christmas_Checked(object sender, RoutedEventArgs e) { cs.ayane_christmas = true; select_count++; }
+        public void tb_ayane_christmas_UnChecked(object sender, RoutedEventArgs e) { cs.ayane_christmas = false; select_count--; }
+        public void tb_hiyori_newyear_Checked(object sender, RoutedEventArgs e) { cs.hiyori_newyear = true; select_count++; }
+        public void tb_hiyori_newyear_UnChecked(object sender, RoutedEventArgs e) { cs.hiyori_newyear = false; select_count--; }
+        public void tb_yui_newyear_Checked(object sender, RoutedEventArgs e) { cs.yui_newyear = true; select_count++; }
+        public void tb_yui_newyear_UnChecked(object sender, RoutedEventArgs e) { cs.yui_newyear = false; select_count--; }
+        public void tb_rei_newyear_Checked(object sender, RoutedEventArgs e) { cs.rei_newyear = true; select_count++; }
+        public void tb_rei_newyear_UnChecked(object sender, RoutedEventArgs e) { cs.rei_newyear = false; select_count--; }
+        public void tb_eriko_valentine_Checked(object sender, RoutedEventArgs e) { cs.eriko_valentine = true; select_count++; }
+        public void tb_eriko_valentine_UnChecked(object sender, RoutedEventArgs e) { cs.eriko_valentine = false; select_count--; }
+        public void tb_sizuru_valentine_Checked(object sender, RoutedEventArgs e) { cs.sizuru_valentine = true; select_count++; }
+        public void tb_sizuru_valentine_UnChecked(object sender, RoutedEventArgs e) { cs.sizuru_valentine = false; select_count--; }
+        public void tb_anne_Checked(object sender, RoutedEventArgs e) { cs.anne = true; select_count++; }
+        public void tb_anne_UnChecked(object sender, RoutedEventArgs e) { cs.anne = false; select_count--; }
+        public void tb_lou_Checked(object sender, RoutedEventArgs e) { cs.lou = true; select_count++; }
+        public void tb_lou_UnChecked(object sender, RoutedEventArgs e) { cs.lou = false; select_count--; }
+        public void tb_grea_Checked(object sender, RoutedEventArgs e) { cs.grea = true; select_count++; }
+        public void tb_grea_UnChecked(object sender, RoutedEventArgs e) { cs.grea = false; select_count--; }
+        public void tb_kuuka_ooedo_Checked(object sender, RoutedEventArgs e) { cs.kuuka_ooedo = true; select_count++; }
+        public void tb_kuuka_ooedo_UnChecked(object sender, RoutedEventArgs e) { cs.kuuka_ooedo = false; select_count--; }
+        public void tb_ninon_ooedo_Checked(object sender, RoutedEventArgs e) { cs.ninon_ooedo = true; select_count++; }
+        public void tb_ninon_ooedo_UnChecked(object sender, RoutedEventArgs e) { cs.ninon_ooedo = false; select_count--; }
+        public void tb_rem_Checked(object sender, RoutedEventArgs e) { cs.rem = true; select_count++; }
+        public void tb_rem_UnChecked(object sender, RoutedEventArgs e) { cs.rem = false; select_count--; }
+        public void tb_ram_Checked(object sender, RoutedEventArgs e) { cs.ram = true; select_count++; }
+        public void tb_ram_UnChecked(object sender, RoutedEventArgs e) { cs.ram = false; select_count--; }
+        public void tb_emilia_Checked(object sender, RoutedEventArgs e) { cs.emilia = true; select_count++; }
+        public void tb_emilia_UnChecked(object sender, RoutedEventArgs e) { cs.emilia = false; select_count--; }
+        public void tb_suzuna_summer_Checked(object sender, RoutedEventArgs e) { cs.suzuna_summer = true; select_count++; }
+        public void tb_suzuna_summer_UnChecked(object sender, RoutedEventArgs e) { cs.suzuna_summer = false; select_count--; }
+        public void tb_io_summer_Checked(object sender, RoutedEventArgs e) { cs.io_summer = true; select_count++; }
+        public void tb_io_summer_UnChecked(object sender, RoutedEventArgs e) { cs.io_summer = false; select_count--; }
+        public void tb_saren_summer_Checked(object sender, RoutedEventArgs e) { cs.saren_summer = true; select_count++; }
+        public void tb_saren_summer_UnChecked(object sender, RoutedEventArgs e) { cs.saren_summer = false; select_count--; }
+        public void tb_makoto_summer_Checked(object sender, RoutedEventArgs e) { cs.makoto_summer = true; select_count++; }
+        public void tb_makoto_summer_UnChecked(object sender, RoutedEventArgs e) { cs.makoto_summer = false; select_count--; }
+        public void tb_kaori_summer_Checked(object sender, RoutedEventArgs e) { cs.kaori_summer = true; select_count++; }
+        public void tb_kaori_summer_UnChecked(object sender, RoutedEventArgs e) { cs.kaori_summer = false; select_count--; }
+        public void tb_maho_summer_Checked(object sender, RoutedEventArgs e) { cs.maho_summer = true; select_count++; }
+        public void tb_maho_summer_UnChecked(object sender, RoutedEventArgs e) { cs.maho_summer = false; select_count--; }
+        public void tb_aoi_nakayosi_Checked(object sender, RoutedEventArgs e) { cs.aoi_nakayosi = true; select_count++; }
+        public void tb_aoi_nakayosi_UnChecked(object sender, RoutedEventArgs e) { cs.aoi_nakayosi = false; select_count--; }
+        public void tb_chloe_Checked(object sender, RoutedEventArgs e) { cs.chloe = true; select_count++; }
+        public void tb_chloe_UnChecked(object sender, RoutedEventArgs e) { cs.chloe = false; select_count--; }
+        public void tb_chieru_Checked(object sender, RoutedEventArgs e) { cs.chieru = true; select_count++; }
+        public void tb_chieru_UnChecked(object sender, RoutedEventArgs e) { cs.chieru = false; select_count--; }
+        public void tb_yuni_Checked(object sender, RoutedEventArgs e) { cs.yuni = true; select_count++; }
+        public void tb_yuni_UnChecked(object sender, RoutedEventArgs e) { cs.yuni = false; select_count--; }
+        public void tb_kyouka_halloween_Checked(object sender, RoutedEventArgs e) { cs.kyouka_halloween = true; select_count++; }
+        public void tb_kyouka_halloween_UnChecked(object sender, RoutedEventArgs e) { cs.kyouka_halloween = false; select_count--; }
+        public void tb_misogi_halloween_Checked(object sender, RoutedEventArgs e) { cs.misogi_halloween = true; select_count++; }
+        public void tb_misogi_halloween_UnChecked(object sender, RoutedEventArgs e) { cs.misogi_halloween = false; select_count--; }
+        public void tb_mimi_halloween_Checked(object sender, RoutedEventArgs e) { cs.mimi_halloween = true; select_count++; }
+        public void tb_mimi_halloween_UnChecked(object sender, RoutedEventArgs e) { cs.mimi_halloween = false; select_count--; }
+        public void tb_runa_Checked(object sender, RoutedEventArgs e) { cs.runa = true; select_count++; }
+        public void tb_runa_UnChecked(object sender, RoutedEventArgs e) { cs.runa = false; select_count--; }
+        public void tb_kristina_christmas_Checked(object sender, RoutedEventArgs e) { cs.kristina_christmas = true; select_count++; }
+        public void tb_kristina_christmas_UnChecked(object sender, RoutedEventArgs e) { cs.kristina_christmas = false; select_count--; }
+        public void tb_nozomi_christmas_Checked(object sender, RoutedEventArgs e) { cs.nozomi_christmas = true; select_count++; }
+        public void tb_nozomi_christmas_UnChecked(object sender, RoutedEventArgs e) { cs.nozomi_christmas = false; select_count--; }
+        public void tb_iriya_christmas_Checked(object sender, RoutedEventArgs e) { cs.iriya_christmas = true; select_count++; }
+        public void tb_iriya_christmas_UnChecked(object sender, RoutedEventArgs e) { cs.iriya_christmas = false; select_count--; }
         public void tb_pekorinnu_newyear_Checked(object sender, RoutedEventArgs e) { cs.pekorinnu_newyear = true; select_count++; }
-        public void tb_pekorinnu_newyear_UnChecked(object sender, RoutedEventArgs args) { cs.pekorinnu_newyear = false; select_count--; }
+        public void tb_pekorinnu_newyear_UnChecked(object sender, RoutedEventArgs e) { cs.pekorinnu_newyear = false; select_count--; }
+        public void tb_kotkoro_newyear_Checked(object sender, RoutedEventArgs e) { cs.kotkoro_newyear = true; select_count++; }
+        public void tb_kotkoro_newyear_UnChecked(object sender, RoutedEventArgs e) { cs.kotkoro_newyear = false; select_count--; }
+        public void tb_kyaru_newyear_Checked(object sender, RoutedEventArgs e) { cs.kyaru_newyear = true; select_count++; }
+        public void tb_kyaru_newyear_UnChecked(object sender, RoutedEventArgs e) { cs.kyaru_newyear = false; select_count--; }
+        public void tb_suzume_newyear_Checked(object sender, RoutedEventArgs e) { cs.suzume_newyear = true; select_count++; }
+        public void tb_suzume_newyear_UnChecked(object sender, RoutedEventArgs e) { cs.suzume_newyear = false; select_count--; }
+        public void tb_kasumi_magical_Checked(object sender, RoutedEventArgs e) { cs.kasumi_magical = true; select_count++; }
+        public void tb_kasumi_magical_UnChecked(object sender, RoutedEventArgs e) { cs.kasumi_magical = false; select_count--; }
+        public void tb_siori_magical_Checked(object sender, RoutedEventArgs e) { cs.siori_magical = true; select_count++; }
+        public void tb_siori_magical_UnChecked(object sender, RoutedEventArgs e) { cs.siori_magical = false; select_count--; }
+        public void tb_uzuki_deremas_Checked(object sender, RoutedEventArgs e) { cs.uzuki_deremas = true; select_count++; }
+        public void tb_uzuki_deremas_UnChecked(object sender, RoutedEventArgs e) { cs.uzuki_deremas = false; select_count--; }
+        public void tb_rin_deremas_Checked(object sender, RoutedEventArgs e) { cs.rin_deremas = true; select_count++; }
+        public void tb_rin_deremas_UnChecked(object sender, RoutedEventArgs e) { cs.rin_deremas = false; select_count--; }
+        public void tb_mio_deremas_Checked(object sender, RoutedEventArgs e) { cs.mio_deremas = true; select_count++; }
+        public void tb_mio_deremas_UnChecked(object sender, RoutedEventArgs e) { cs.mio_deremas = false; select_count--; }
+        public void tb_rin_ranger_Checked(object sender, RoutedEventArgs e) { cs.rin_ranger = true; select_count++; }
+        public void tb_rin_ranger_UnChecked(object sender, RoutedEventArgs e) { cs.rin_ranger = false; select_count--; }
+        public void tb_mahiru_ranger_Checked(object sender, RoutedEventArgs e) { cs.mahiru_ranger = true; select_count++; }
+        public void tb_mahiru_ranger_UnChecked(object sender, RoutedEventArgs e) { cs.mahiru_ranger = false; select_count--; }
+        public void tb_rino_wonder_Checked(object sender, RoutedEventArgs e) { cs.rino_wonder = true; select_count++; }
+        public void tb_rino_wonder_UnChecked(object sender, RoutedEventArgs e) { cs.rino_wonder = false; select_count--; }
+        public void tb_ayumi_wonder_Checked(object sender, RoutedEventArgs e) { cs.ayumi_wonder = true; select_count++; }
+        public void tb_ayumi_wonder_UnChecked(object sender, RoutedEventArgs e) { cs.ayumi_wonder = false; select_count--; }
+        public void tb_ruka_summer_Checked(object sender, RoutedEventArgs e) { cs.ruka_summer = true; select_count++; }
+        public void tb_ruka_summer_UnChecked(object sender, RoutedEventArgs e) { cs.ruka_summer = false; select_count--; }
+        public void tb_anna_summer_Checked(object sender, RoutedEventArgs e) { cs.anna_summer = true; select_count++; }
+        public void tb_anna_summer_UnChecked(object sender, RoutedEventArgs e) { cs.anna_summer = false; select_count--; }
+        public void tb_nanaka_summer_Checked(object sender, RoutedEventArgs e) { cs.nanaka_summer = true; select_count++; }
+        public void tb_nanaka_summer_UnChecked(object sender, RoutedEventArgs e) { cs.nanaka_summer = false; select_count--; }
+        public void tb_hatsune_summer_Checked(object sender, RoutedEventArgs e) { cs.hatsune_summer = true; select_count++; }
+        public void tb_hatsune_summer_UnChecked(object sender, RoutedEventArgs e) { cs.hatsune_summer = false; select_count--; }
+        public void tb_misato_summer_Checked(object sender, RoutedEventArgs e) { cs.misato_summer = true; select_count++; }
+        public void tb_misato_summer_UnChecked(object sender, RoutedEventArgs e) { cs.misato_summer = false; select_count--; }
+        public void tb_zyun_summer_Checked(object sender, RoutedEventArgs e) { cs.zyun_summer = true; select_count++; }
+        public void tb_zyun_summer_UnChecked(object sender, RoutedEventArgs e) { cs.zyun_summer = false; select_count--; }
+        public void tb_akari_angel_Checked(object sender, RoutedEventArgs e) { cs.akari_angel = true; select_count++; }
+        public void tb_akari_angel_UnChecked(object sender, RoutedEventArgs e) { cs.akari_angel = false; select_count--; }
+        public void tb_yori_angel_Checked(object sender, RoutedEventArgs e) { cs.yori_angel = true; select_count++; }
+        public void tb_yori_angel_UnChecked(object sender, RoutedEventArgs e) { cs.yori_angel = false; select_count--; }
+        public void tb_tsumugi_halloween_Checked(object sender, RoutedEventArgs e) { cs.tsumugi_halloween = true; select_count++; }
+        public void tb_tsumugi_halloween_UnChecked(object sender, RoutedEventArgs e) { cs.tsumugi_halloween = false; select_count--; }
+        public void tb_rei_halloween_Checked(object sender, RoutedEventArgs e) { cs.rei_halloween = true; select_count++; }
+        public void tb_rei_halloween_UnChecked(object sender, RoutedEventArgs e) { cs.rei_halloween = false; select_count--; }
+        public void tb_matsuri_halloween_Checked(object sender, RoutedEventArgs e) { cs.matsuri_halloween = true; select_count++; }
+        public void tb_matsuri_halloween_UnChecked(object sender, RoutedEventArgs e) { cs.matsuri_halloween = false; select_count--; }
+        public void tb_monika_magical_Checked(object sender, RoutedEventArgs e) { cs.monika_magical = true; select_count++; }
+        public void tb_monika_magical_UnChecked(object sender, RoutedEventArgs e) { cs.monika_magical = false; select_count--; }
+        public void tb_tomo_magical_Checked(object sender, RoutedEventArgs e) { cs.tomo_magical = true; select_count++; }
+        public void tb_tomo_magical_UnChecked(object sender, RoutedEventArgs e) { cs.tomo_magical = false; select_count--; }
+        public void tb_akino_christmas_Checked(object sender, RoutedEventArgs e) { cs.akino_christmas = true; select_count++; }
+        public void tb_akino_christmas_UnChecked(object sender, RoutedEventArgs e) { cs.akino_christmas = false; select_count--; }
+        public void tb_saren_christmas_Checked(object sender, RoutedEventArgs e) { cs.saren_christmas = true; select_count++; }
+        public void tb_saren_christmas_UnChecked(object sender, RoutedEventArgs e) { cs.saren_christmas = false; select_count--; }
+        public void tb_yukari_christmas_Checked(object sender, RoutedEventArgs e) { cs.yukari_christmas = true; select_count++; }
+        public void tb_yukari_christmas_UnChecked(object sender, RoutedEventArgs e) { cs.yukari_christmas = false; select_count--; }
+        public void tb_muimi_newyear_Checked(object sender, RoutedEventArgs e) { cs.muimi_newyear = true; select_count++; }
+        public void tb_muimi_newyear_UnChecked(object sender, RoutedEventArgs e) { cs.muimi_newyear = false; select_count--; }
+        public void tb_neneka_newyear_Checked(object sender, RoutedEventArgs e) { cs.neneka_newyear = true; select_count++; }
+        public void tb_neneka_newyear_UnChecked(object sender, RoutedEventArgs e) { cs.neneka_newyear = false; select_count--; }
         public void tb_kotkoro_maiden_Checked(object sender, RoutedEventArgs e) { cs.kotkoro_maiden = true; select_count++; }
-        public void tb_kotkoro_maiden_UnChecked(object sender, RoutedEventArgs args) { cs.kotkoro_maiden = false; select_count--; }
+        public void tb_kotkoro_maiden_UnChecked(object sender, RoutedEventArgs e) { cs.kotkoro_maiden = false; select_count--; }
         public void tb_yui_maiden_Checked(object sender, RoutedEventArgs e) { cs.yui_maiden = true; select_count++; }
-        public void tb_yui_maiden_UnChecked(object sender, RoutedEventArgs args) { cs.yui_maiden = false; select_count--; }
+        public void tb_yui_maiden_UnChecked(object sender, RoutedEventArgs e) { cs.yui_maiden = false; select_count--; }
         public void tb_kasumi_summer_Checked(object sender, RoutedEventArgs e) { cs.kasumi_summer = true; select_count++; }
-        public void tb_kasumi_summer_UnChecked(object sender, RoutedEventArgs args) { cs.kasumi_summer = false; select_count--; }
+        public void tb_kasumi_summer_UnChecked(object sender, RoutedEventArgs e) { cs.kasumi_summer = false; select_count--; }
         public void tb_rima_cinderella_Checked(object sender, RoutedEventArgs e) { cs.rima_cinderella = true; select_count++; }
-        public void tb_rima_cinderella_UnChecked(object sender, RoutedEventArgs args) { cs.rima_cinderella = false; select_count--; }
+        public void tb_rima_cinderella_UnChecked(object sender, RoutedEventArgs e) { cs.rima_cinderella = false; select_count--; }
         public void tb_makoto_cinderella_Checked(object sender, RoutedEventArgs e) { cs.makoto_cinderella = true; select_count++; }
-        public void tb_makoto_cinderella_UnChecked(object sender, RoutedEventArgs args) { cs.makoto_cinderella = false; select_count--; }
+        public void tb_makoto_cinderella_UnChecked(object sender, RoutedEventArgs e) { cs.makoto_cinderella = false; select_count--; }
         public void tb_maho_cinderella_Checked(object sender, RoutedEventArgs e) { cs.maho_cinderella = true; select_count++; }
-        public void tb_maho_cinderella_UnChecked(object sender, RoutedEventArgs args) { cs.maho_cinderella = false; select_count--; }
+        public void tb_maho_cinderella_UnChecked(object sender, RoutedEventArgs e) { cs.maho_cinderella = false; select_count--; }
         public void tb_chloe_terefes_Checked(object sender, RoutedEventArgs e) { cs.chloe_terefes = true; select_count++; }
-        public void tb_chloe_terefes_UnChecked(object sender, RoutedEventArgs args) { cs.chloe_terefes = false; select_count--; }
+        public void tb_chloe_terefes_UnChecked(object sender, RoutedEventArgs e) { cs.chloe_terefes = false; select_count--; }
         public void tb_chieru_terefes_Checked(object sender, RoutedEventArgs e) { cs.chieru_terefes = true; select_count++; }
-        public void tb_chieru_terefes_UnChecked(object sender, RoutedEventArgs args) { cs.chieru_terefes = false; select_count--; }
-        public void tb_yuni_terefes_Checked(object sender, RoutedEventArgs e) { cs.yuni_terefes = true; select_count++; }
-        public void tb_yuni_terefes_UnChecked(object sender, RoutedEventArgs args) { cs.yuni_terefes = false; select_count--; }
+        public void tb_chieru_terefes_UnChecked(object sender, RoutedEventArgs e) { cs.chieru_terefes = false; select_count--; }
         public void tb_inori_timetravel_Checked(object sender, RoutedEventArgs e) { cs.inori_timetravel = true; select_count++; }
-        public void tb_inori_timetravel_UnChecked(object sender, RoutedEventArgs args) { cs.inori_timetravel = false; select_count--; }
+        public void tb_inori_timetravel_UnChecked(object sender, RoutedEventArgs e) { cs.inori_timetravel = false; select_count--; }
         public void tb_kaya_timetravel_Checked(object sender, RoutedEventArgs e) { cs.kaya_timetravel = true; select_count++; }
-        public void tb_kaya_timetravel_UnChecked(object sender, RoutedEventArgs args) { cs.kaya_timetravel = false; select_count--; }
+        public void tb_kaya_timetravel_UnChecked(object sender, RoutedEventArgs e) { cs.kaya_timetravel = false; select_count--; }
         public void tb_aoi_worker_Checked(object sender, RoutedEventArgs e) { cs.aoi_worker = true; select_count++; }
-        public void tb_aoi_worker_UnChecked(object sender, RoutedEventArgs args) { cs.aoi_worker = false; select_count--; }
+        public void tb_aoi_worker_UnChecked(object sender, RoutedEventArgs e) { cs.aoi_worker = false; select_count--; }
         public void tb_tamaki_worker_Checked(object sender, RoutedEventArgs e) { cs.tamaki_worker = true; select_count++; }
-        public void tb_tamaki_worker_UnChecked(object sender, RoutedEventArgs args) { cs.tamaki_worker = false; select_count--; }
+        public void tb_tamaki_worker_UnChecked(object sender, RoutedEventArgs e) { cs.tamaki_worker = false; select_count--; }
         public void tb_mihuyu_worker_Checked(object sender, RoutedEventArgs e) { cs.mihuyu_worker = true; select_count++; }
-        public void tb_mihuyu_worker_UnChecked(object sender, RoutedEventArgs args) { cs.mihuyu_worker = false; select_count--; }
+        public void tb_mihuyu_worker_UnChecked(object sender, RoutedEventArgs e) { cs.mihuyu_worker = false; select_count--; }
+        public void tb_eriko_summer_Checked(object sender, RoutedEventArgs e) { cs.eriko_summer = true; select_count++; }
+        public void tb_eriko_summer_UnChecked(object sender, RoutedEventArgs e) { cs.eriko_summer = false; select_count--; }
+        public void tb_sizuru_summer_Checked(object sender, RoutedEventArgs e) { cs.sizuru_summer = true; select_count++; }
+        public void tb_sizuru_summer_UnChecked(object sender, RoutedEventArgs e) { cs.sizuru_summer = false; select_count--; }
+        public void tb_nozomi_summer_Checked(object sender, RoutedEventArgs e) { cs.nozomi_summer = true; select_count++; }
+        public void tb_nozomi_summer_UnChecked(object sender, RoutedEventArgs e) { cs.nozomi_summer = false; select_count--; }
+        public void tb_chika_summer_Checked(object sender, RoutedEventArgs e) { cs.chika_summer = true; select_count++; }
+        public void tb_chika_summer_UnChecked(object sender, RoutedEventArgs e) { cs.chika_summer = false; select_count--; }
+        public void tb_tsumugi_summer_Checked(object sender, RoutedEventArgs e) { cs.tsumugi_summer = true; select_count++; }
+        public void tb_tsumugi_summer_UnChecked(object sender, RoutedEventArgs e) { cs.tsumugi_summer = false; select_count--; }
+        public void tb_mitsuki_ooedo_Checked(object sender, RoutedEventArgs e) { cs.mitsuki_ooedo = true; select_count++; }
+        public void tb_mitsuki_ooedo_UnChecked(object sender, RoutedEventArgs e) { cs.mitsuki_ooedo = false; select_count--; }
+        public void tb_yuki_ooedo_Checked(object sender, RoutedEventArgs e) { cs.yuki_ooedo = true; select_count++; }
+        public void tb_yuki_ooedo_UnChecked(object sender, RoutedEventArgs e) { cs.yuki_ooedo = false; select_count--; }
+        public void tb_kaori_halloween_Checked(object sender, RoutedEventArgs e) { cs.kaori_halloween = true; select_count++; }
+        public void tb_kaori_halloween_UnChecked(object sender, RoutedEventArgs e) { cs.kaori_halloween = false; select_count--; }
+        public void tb_ninon_halloween_Checked(object sender, RoutedEventArgs e) { cs.ninon_halloween = true; select_count++; }
+        public void tb_ninon_halloween_UnChecked(object sender, RoutedEventArgs e) { cs.ninon_halloween = false; select_count--; }
+        public void tb_suzuna_halloween_Checked(object sender, RoutedEventArgs e) { cs.suzuna_halloween = true; select_count++; }
+        public void tb_suzuna_halloween_UnChecked(object sender, RoutedEventArgs e) { cs.suzuna_halloween = false; select_count--; }
+        public void tb_credita_Checked(object sender, RoutedEventArgs e) { cs.credita = true; select_count++; }
+        public void tb_credita_UnChecked(object sender, RoutedEventArgs e) { cs.credita = false; select_count--; }
+        public void tb_ranpa_Checked(object sender, RoutedEventArgs e) { cs.ranpa = true; select_count++; }
+        public void tb_ranpa_UnChecked(object sender, RoutedEventArgs e) { cs.ranpa = false; select_count--; }
+        public void tb_hatsune_princess_Checked(object sender, RoutedEventArgs e) { cs.hatsune_princess = true; select_count++; }
+        public void tb_hatsune_princess_UnChecked(object sender, RoutedEventArgs e) { cs.hatsune_princess = false; select_count--; }
+        public void tb_siori_princess_Checked(object sender, RoutedEventArgs e) { cs.siori_princess = true; select_count++; }
+        public void tb_siori_princess_UnChecked(object sender, RoutedEventArgs e) { cs.siori_princess = false; select_count--; }
+        public void tb_karin_Checked(object sender, RoutedEventArgs e) { cs.karin = true; select_count++; }
+        public void tb_karin_UnChecked(object sender, RoutedEventArgs e) { cs.karin = false; select_count--; }
+        public void tb_io_noir_Checked(object sender, RoutedEventArgs e) { cs.io_noir = true; select_count++; }
+        public void tb_io_noir_UnChecked(object sender, RoutedEventArgs e) { cs.io_noir = false; select_count--; }
+        public void tb_kuuka_noir_Checked(object sender, RoutedEventArgs e) { cs.kuuka_noir = true; select_count++; }
+        public void tb_kuuka_noir_UnChecked(object sender, RoutedEventArgs e) { cs.kuuka_noir = false; select_count--; }
+        public void tb_mahiru_christmas_Checked(object sender, RoutedEventArgs e) { cs.mahiru_christmas = true; select_count++; }
+        public void tb_mahiru_christmas_UnChecked(object sender, RoutedEventArgs e) { cs.mahiru_christmas = false; select_count--; }
+        public void tb_rino_christmas_Checked(object sender, RoutedEventArgs e) { cs.rino_christmas = true; select_count++; }
+        public void tb_rino_christmas_UnChecked(object sender, RoutedEventArgs e) { cs.rino_christmas = false; select_count--; }
+        public void tb_miyako_christmas_Checked(object sender, RoutedEventArgs e) { cs.miyako_christmas = true; select_count++; }
+        public void tb_miyako_christmas_UnChecked(object sender, RoutedEventArgs e) { cs.miyako_christmas = false; select_count--; }
+        public void tb_mimi_princess_Checked(object sender, RoutedEventArgs e) { cs.mimi_princess = true; select_count++; }
+        public void tb_mimi_princess_UnChecked(object sender, RoutedEventArgs e) { cs.mimi_princess = false; select_count--; }
+        public void tb_misogi_princess_Checked(object sender, RoutedEventArgs e) { cs.misogi_princess = true; select_count++; }
+        public void tb_misogi_princess_UnChecked(object sender, RoutedEventArgs e) { cs.misogi_princess = false; select_count--; }
+        public void tb_kyouka_princess_Checked(object sender, RoutedEventArgs e) { cs.kyouka_princess = true; select_count++; }
+        public void tb_kyouka_princess_UnChecked(object sender, RoutedEventArgs e) { cs.kyouka_princess = false; select_count--; }
+        public void tb_shepi_newyear_Checked(object sender, RoutedEventArgs e) { cs.shepi_newyear = true; select_count++; }
+        public void tb_shepi_newyear_UnChecked(object sender, RoutedEventArgs e) { cs.shepi_newyear = false; select_count--; }
+        public void tb_ruka_newyear_Checked(object sender, RoutedEventArgs e) { cs.ruka_newyear = true; select_count++; }
+        public void tb_ruka_newyear_UnChecked(object sender, RoutedEventArgs e) { cs.ruka_newyear = false; select_count--; }
+        public void tb_iriya_newyear_Checked(object sender, RoutedEventArgs e) { cs.iriya_newyear = true; select_count++; }
+        public void tb_iriya_newyear_UnChecked(object sender, RoutedEventArgs e) { cs.iriya_newyear = false; select_count--; }
+        public void tb_pekorinnu_overload_Checked(object sender, RoutedEventArgs e) { cs.pekorinnu_overload = true; select_count++; }
+        public void tb_pekorinnu_overload_UnChecked(object sender, RoutedEventArgs e) { cs.pekorinnu_overload = false; select_count--; }
+        public void tb_kyaru_overload_Checked(object sender, RoutedEventArgs e) { cs.kyaru_overload = true; select_count++; }
+        public void tb_kyaru_overload_UnChecked(object sender, RoutedEventArgs e) { cs.kyaru_overload = false; select_count--; }
+        public void tb_labirista_overload_Checked(object sender, RoutedEventArgs e) { cs.labirista_overload = true; select_count++; }
+        public void tb_labirista_overload_UnChecked(object sender, RoutedEventArgs e) { cs.labirista_overload = false; select_count--; }
+        public void tb_kurumi_stage_Checked(object sender, RoutedEventArgs e) { cs.kurumi_stage = true; select_count++; }
+        public void tb_kurumi_stage_UnChecked(object sender, RoutedEventArgs e) { cs.kurumi_stage = false; select_count--; }
         public void tb_hiyori_princess_Checked(object sender, RoutedEventArgs e) { cs.hiyori_princess = true; select_count++; }
-        public void tb_hiyori_princess_UnChecked(object sender, RoutedEventArgs args) { cs.hiyori_princess = false; select_count--; }
-        public void tb_kyaru_princess_Checked(object sender, RoutedEventArgs e) { cs.kyaru_princess = true; select_count++; }
-        public void tb_kyaru_princess_UnChecked(object sender, RoutedEventArgs args) { cs.kyaru_princess = false; select_count--; }
+        public void tb_hiyori_princess_UnChecked(object sender, RoutedEventArgs e) { cs.hiyori_princess = false; select_count--; }
+        public void tb_yui_princess_Checked(object sender, RoutedEventArgs e) { cs.yui_princess = true; select_count++; }
+        public void tb_yui_princess_UnChecked(object sender, RoutedEventArgs e) { cs.yui_princess = false; select_count--; }
         public void tb_rei_princess_Checked(object sender, RoutedEventArgs e) { cs.rei_princess = true; select_count++; }
-        public void tb_rei_princess_UnChecked(object sender, RoutedEventArgs args) { cs.rei_princess = false; select_count--; }
-
+        public void tb_rei_princess_UnChecked(object sender, RoutedEventArgs e) { cs.rei_princess = false; select_count--; }
+        public void tb_pekorinnu_princess_Checked(object sender, RoutedEventArgs e) { cs.pekorinnu_princess = true; select_count++; }
+        public void tb_pekorinnu_princess_UnChecked(object sender, RoutedEventArgs e) { cs.pekorinnu_princess = false; select_count--; }
+        public void tb_kotkoro_princess_Checked(object sender, RoutedEventArgs e) { cs.kotkoro_princess = true; select_count++; }
+        public void tb_kotkoro_princess_UnChecked(object sender, RoutedEventArgs e) { cs.kotkoro_princess = false; select_count--; }
+        public void tb_kyaru_princess_Checked(object sender, RoutedEventArgs e) { cs.kyaru_princess = true; select_count++; }
+        public void tb_kyaru_princess_UnChecked(object sender, RoutedEventArgs e) { cs.kyaru_princess = false; select_count--; }
+        public void tb_hatsusio_Checked(object sender, RoutedEventArgs e) { cs.hatsusio = true; select_count++; }
+        public void tb_hatsusio_UnChecked(object sender, RoutedEventArgs e) { cs.hatsusio = false; select_count--; }
+        public void tb_littlelyri_Checked(object sender, RoutedEventArgs e) { cs.littlelyri = true; select_count++; }
+        public void tb_littlelyri_UnChecked(object sender, RoutedEventArgs e) { cs.littlelyri = false; select_count--; }
         #endregion
         private void UnCheckAll()
         {
+            #region UnCheckAll
             tb_akari.IsChecked = false;
             tb_akino.IsChecked = false;
             tb_anna.IsChecked = false;
@@ -617,7 +659,7 @@ namespace PCRD_KR_ArenaSim
             tb_mihuyu_worker.IsChecked = false;
             tb_rei_princess.IsChecked = false;
             //tb_.IsChecked = false;
-
+            #endregion
             tb_CharaAbbr.Text = "";
         }
         private void bt_set_Def_Click(object sender, RoutedEventArgs e)
@@ -5998,955 +6040,198 @@ namespace PCRD_KR_ArenaSim
             string[] temp_eng = new string[15] { "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" };
 
             #region csss3
-
-            if (cs.hiyori == true)
-            {
-                temp[select_count_temp] = "히요리";
-                temp_eng[select_count_temp] = "hiyori";
-                select_count_temp++;
-            }
-            if (cs.yui == true)
-            {
-                temp[select_count_temp] = "유이";
-                temp_eng[select_count_temp] = "yui";
-                select_count_temp++;
-            }
-            if (cs.rei == true)
-            {
-                temp[select_count_temp] = "레이";
-                temp_eng[select_count_temp] = "rei";
-                select_count_temp++;
-            }
-            if (cs.misogi == true)
-            {
-                temp[select_count_temp] = "미소기";
-                temp_eng[select_count_temp] = "misogi";
-                select_count_temp++;
-            }
-            if (cs.matsuri == true)
-            {
-                temp[select_count_temp] = "마츠리";
-                temp_eng[select_count_temp] = "matsuri";
-                select_count_temp++;
-            }
-            if (cs.akari == true)
-            {
-                temp[select_count_temp] = "아카리";
-                temp_eng[select_count_temp] = "akari";
-                select_count_temp++;
-            }
-            if (cs.miyako == true)
-            {
-                temp[select_count_temp] = "미야코";
-                temp_eng[select_count_temp] = "miyako";
-                select_count_temp++;
-            }
-            if (cs.yuki == true)
-            {
-                temp[select_count_temp] = "유키";
-                temp_eng[select_count_temp] = "yuki";
-                select_count_temp += 1;
-            }
-            if (cs.anna == true)
-            {
-                temp[select_count_temp] = "안나";
-                temp_eng[select_count_temp] = "anna";
-                select_count_temp += 1;
-            }
-            if (cs.maho == true)
-            {
-                temp[select_count_temp] = "마호";
-                temp_eng[select_count_temp] = "maho";
-                select_count_temp += 1;
-
-            }
-            if (cs.rino == true)
-            {
-                temp[select_count_temp] = "리노";
-                temp_eng[select_count_temp] = "rino";
-                select_count_temp += 1;
-            }
-            if (cs.hatsune == true)
-            {
-                temp[select_count_temp] = "하츠네";
-                temp_eng[select_count_temp] = "hatsune";
-                select_count_temp += 1;
-            }
-            if (cs.nanaka == true)
-            {
-                temp[select_count_temp] = "나나카";
-                temp_eng[select_count_temp] = "nanaka";
-                select_count_temp += 1;
-            }
-            if (cs.kasumi == true)
-            {
-                temp[select_count_temp] = "카스미";
-                temp_eng[select_count_temp] = "kasumi";
-                select_count_temp += 1;
-            }
-            if (cs.misato == true)
-            {
-                temp[select_count_temp] = "미사토";
-                temp_eng[select_count_temp] = "misato";
-                select_count_temp += 1;
-            }
-            if (cs.suzuna == true)
-            {
-                temp[select_count_temp] = "스즈나";
-                temp_eng[select_count_temp] = "suzuna";
-                select_count_temp += 1;
-            }
-            if (cs.kaori == true)
-            {
-                temp[select_count_temp] = "카오리";
-                temp_eng[select_count_temp] = "kaori";
-                select_count_temp += 1;
-            }
-            if (cs.io == true)
-            {
-                temp[select_count_temp] = "이오";
-                temp_eng[select_count_temp] = "io";
-                select_count_temp += 1;
-            }
-            if (cs.mimi == true)
-            {
-                temp[select_count_temp] = "미미";
-                temp_eng[select_count_temp] = "mimi";
-                select_count_temp += 1;
-            }
-            if (cs.kurumi == true)
-            {
-                temp[select_count_temp] = "쿠루미";
-                temp_eng[select_count_temp] = "kurumi";
-                select_count_temp += 1;
-            }
-            if (cs.yori == true)
-            {
-                temp[select_count_temp] = "요리";
-                temp_eng[select_count_temp] = "yori";
-                select_count_temp += 1;
-            }
-            if (cs.ayane == true)
-            {
-                temp[select_count_temp] = "아야네";
-                temp_eng[select_count_temp] = "ayane";
-                select_count_temp += 1;
-            }
-            if (cs.suzume == true)
-            {
-                temp[select_count_temp] = "스즈메";
-                temp_eng[select_count_temp] = "suzume";
-                select_count_temp += 1;
-            }
-            if (cs.rin == true)
-            {
-                temp[select_count_temp] = "린";
-                temp_eng[select_count_temp] = "rin";
-                select_count_temp += 1;
-            }
-            if (cs.eriko == true)
-            {
-                temp[select_count_temp] = "에리코";
-                temp_eng[select_count_temp] = "eriko";
-                select_count_temp += 1;
-            }
-            if (cs.saren == true)
-            {
-                temp[select_count_temp] = "사렌";
-                temp_eng[select_count_temp] = "saren";
-                select_count_temp += 1;
-            }
-            if (cs.nozomi == true)
-            {
-                temp[select_count_temp] = "노조미";
-                temp_eng[select_count_temp] = "nozomi";
-                select_count_temp += 1;
-            }
-            if (cs.ninon == true)
-            {
-                temp[select_count_temp] = "니논";
-                temp_eng[select_count_temp] = "ninon";
-                select_count_temp += 1;
-            }
-            if (cs.sinobu == true)
-            {
-                temp[select_count_temp] = "시노부";
-                temp_eng[select_count_temp] = "sinobu";
-                select_count_temp += 1;
-            }
-            if (cs.akino == true)
-            {
-                temp[select_count_temp] = "아키노";
-                temp_eng[select_count_temp] = "akino";
-                select_count_temp += 1;
-            }
-            if (cs.mahiru == true)
-            {
-                temp[select_count_temp] = "마히루";
-                temp_eng[select_count_temp] = "mahiru";
-                select_count_temp += 1;
-            }
-            if (cs.yukari == true)
-            {
-                temp[select_count_temp] = "유카리";
-                temp_eng[select_count_temp] = "yukari";
-                select_count_temp += 1;
-            }
-            if (cs.kyouka == true)
-            {
-                temp[select_count_temp] = "쿄우카";
-                temp_eng[select_count_temp] = "kyouka";
-                select_count_temp += 1;
-            }
-            if (cs.tomo == true)
-            {
-                temp[select_count_temp] = "토모";
-                temp_eng[select_count_temp] = "tomo";
-                select_count_temp += 1;
-            }
-            if (cs.siori == true)
-            {
-                temp[select_count_temp] = "시오리";
-                temp_eng[select_count_temp] = "siori";
-                select_count_temp += 1;
-            }
-            if (cs.aoi == true)
-            {
-                temp[select_count_temp] = "아오이";
-                temp_eng[select_count_temp] = "aoi";
-                select_count_temp += 1;
-            }
-            if (cs.chika == true)
-            {
-                temp[select_count_temp] = "치카";
-                temp_eng[select_count_temp] = "chika";
-                select_count_temp += 1;
-            }
-            if (cs.makoto == true)
-            {
-                temp[select_count_temp] = "마코토";
-                temp_eng[select_count_temp] = "makoto";
-                select_count_temp += 1;
-            }
-            if (cs.iriya == true)
-            {
-                temp[select_count_temp] = "이리야";
-                temp_eng[select_count_temp] = "iriya";
-                select_count_temp += 1;
-            }
-            if (cs.kuuka == true)
-            {
-                temp[select_count_temp] = "쿠우카";
-                temp_eng[select_count_temp] = "kuuka";
-                select_count_temp += 1;
-            }
-            if (cs.tamaki == true)
-            {
-                temp[select_count_temp] = "타마키";
-                temp_eng[select_count_temp] = "tamaki";
-                select_count_temp += 1;
-            }
-            if (cs.zyun == true)
-            {
-                temp[select_count_temp] = "쥰";
-                temp_eng[select_count_temp] = "zyun";
-                select_count_temp += 1;
-            }
-            if (cs.mihuyu == true)
-            {
-                temp[select_count_temp] = "미후유";
-                temp_eng[select_count_temp] = "mihuyu";
-                select_count_temp += 1;
-            }
-            if (cs.sizuru == true)
-            {
-                temp[select_count_temp] = "시즈루";
-                temp_eng[select_count_temp] = "sizuru";
-                select_count_temp += 1;
-            }
-            if (cs.misaki == true)
-            {
-                temp[select_count_temp] = "미사키";
-                temp_eng[select_count_temp] = "misaki";
-                select_count_temp += 1;
-            }
-            if (cs.mitsuki == true)
-            {
-                temp[select_count_temp] = "미츠키";
-                temp_eng[select_count_temp] = "mitsuki";
-                select_count_temp += 1;
-            }
-            if (cs.rima == true)
-            {
-                temp[select_count_temp] = "리마";
-                temp_eng[select_count_temp] = "rima";
-                select_count_temp += 1;
-            }
-            if (cs.monika == true)
-            {
-                temp[select_count_temp] = "모니카";
-                temp_eng[select_count_temp] = "monika";
-                select_count_temp += 1;
-            }
-            if (cs.tsumugi == true)
-            {
-                temp[select_count_temp] = "츠무기";
-                temp_eng[select_count_temp] = "tsumugi";
-                select_count_temp += 1;
-            }
-            if (cs.ayumi == true)
-            {
-                temp[select_count_temp] = "아유미";
-                temp_eng[select_count_temp] = "ayumi";
-                select_count_temp += 1;
-            }
-            if (cs.ruka == true)
-            {
-                temp[select_count_temp] = "루카";
-                temp_eng[select_count_temp] = "ruka";
-                select_count_temp += 1;
-            }
-            if (cs.zita == true)
-            {
-                temp[select_count_temp] = "지타";
-                temp_eng[select_count_temp] = "zita";
-                select_count_temp += 1;
-            }
-            if (cs.pekorinnu == true)
-            {
-                temp[select_count_temp] = "페코린느";
-                temp_eng[select_count_temp] = "pekorinnu";
-                select_count_temp += 1;
-            }
-            if (cs.kotkoro == true)
-            {
-                temp[select_count_temp] = "콧코로";
-                temp_eng[select_count_temp] = "kotkoro";
-                select_count_temp += 1;
-            }
-            if (cs.kyaru == true)
-            {
-                temp[select_count_temp] = "캬루";
-                temp_eng[select_count_temp] = "kyaru";
-                select_count_temp += 1;
-            }
-            if (cs.muimi == true)
-            {
-                temp[select_count_temp] = "무이미";
-                temp_eng[select_count_temp] = "muimi";
-                select_count_temp += 1;
-            }
-            if (cs.arisa == true)
-            {
-                temp[select_count_temp] = "아리사";
-                temp_eng[select_count_temp] = "arisa";
-                select_count_temp += 1;
-            }
-            if (cs.kaya == true)
-            {
-                temp[select_count_temp] = "카야";
-                temp_eng[select_count_temp] = "kaya";
-                select_count_temp += 1;
-            }
-            if (cs.neneka == true)
-            {
-                temp[select_count_temp] = "네네카";
-                temp_eng[select_count_temp] = "neneka";
-                select_count_temp += 1;
-            }
-            if (cs.kristina == true)
-            {
-                temp[select_count_temp] = "크리스티나";
-                temp_eng[select_count_temp] = "kristina";
-                select_count_temp += 1;
-            }
-            if (cs.pekorinnu_summer == true)
-            {
-                temp[select_count_temp] = "수페코";
-                temp_eng[select_count_temp] = "pekorinnu_summer";
-                select_count_temp += 1;
-            }
-            if (cs.kotkoro_summer == true)
-            {
-                temp[select_count_temp] = "수코로";
-                temp_eng[select_count_temp] = "kotkoro_summer";
-                select_count_temp += 1;
-            }
-            if (cs.suzume_summer == true)
-            {
-                temp[select_count_temp] = "수즈메";
-                temp_eng[select_count_temp] = "suzume_summer";
-                select_count_temp += 1;
-            }
-            if (cs.kyaru_summer == true)
-            {
-                temp[select_count_temp] = "수캬루";
-                temp_eng[select_count_temp] = "kyaru_summer";
-                select_count_temp += 1;
-            }
-            if (cs.tamaki_summer == true)
-            {
-                temp[select_count_temp] = "수마키";
-                temp_eng[select_count_temp] = "tamaki_summer";
-                select_count_temp += 1;
-            }
-            if (cs.mihuyu_summer == true)
-            {
-                temp[select_count_temp] = "수후유";
-                temp_eng[select_count_temp] = "mihuyu_summer";
-                select_count_temp += 1;
-            }
-            if (cs.sinobu_halloween == true)
-            {
-                temp[select_count_temp] = "할노부";
-                temp_eng[select_count_temp] = "sinobu_halloween";
-                select_count_temp += 1;
-            }
-            if (cs.miyako_halloween == true)
-            {
-                temp[select_count_temp] = "할푸딩";
-                temp_eng[select_count_temp] = "miyako_halloween";
-                select_count_temp += 1;
-            }
-            if (cs.misaki_halloween == true)
-            {
-                temp[select_count_temp] = "할사키";
-                temp_eng[select_count_temp] = "misaki_halloween";
-                select_count_temp += 1;
-            }
-            if (cs.chika_christmas == true)
-            {
-                temp[select_count_temp] = "성치카";
-                temp_eng[select_count_temp] = "chika_christmas";
-                select_count_temp += 1;
-            }
-            if (cs.kurumi_christmas == true)
-            {
-                temp[select_count_temp] = "성루미";
-                temp_eng[select_count_temp] = "kurumi_christmas";
-                select_count_temp += 1;
-            }
-            if (cs.ayane_christmas == true)
-            {
-                temp[select_count_temp] = "성야네";
-                temp_eng[select_count_temp] = "ayane_christmas";
-                select_count_temp += 1;
-            }
-            if (cs.hiyori_newyear == true)
-            {
-                temp[select_count_temp] = "뉴요리";
-                temp_eng[select_count_temp] = "hiyori_newyear";
-                select_count_temp += 1;
-            }
-            if (cs.yui_newyear == true)
-            {
-                temp[select_count_temp] = "뉴이";
-                temp_eng[select_count_temp] = "yui_newyear";
-                select_count_temp += 1;
-            }
-            if (cs.rei_newyear == true)
-            {
-                temp[select_count_temp] = "신레이";
-                temp_eng[select_count_temp] = "rei_newyear";
-                select_count_temp += 1;
-            }
-            if (cs.eriko_valentine == true)
-            {
-                temp[select_count_temp] = "발리코";
-                temp_eng[select_count_temp] = "eriko_valentine";
-                select_count_temp += 1;
-            }
-            if (cs.sizuru_valentine == true)
-            {
-                temp[select_count_temp] = "발즈루";
-                temp_eng[select_count_temp] = "sizuru_valentine";
-                select_count_temp += 1;
-            }
-            if (cs.anne == true)
-            {
-                temp[select_count_temp] = "앤";
-                temp_eng[select_count_temp] = "anne";
-                select_count_temp += 1;
-            }
-            if (cs.lou == true)
-            {
-                temp[select_count_temp] = "루";
-                temp_eng[select_count_temp] = "lou";
-                select_count_temp += 1;
-            }
-            if (cs.grea == true)
-            {
-                temp[select_count_temp] = "글레어";
-                temp_eng[select_count_temp] = "grea";
-                select_count_temp += 1;
-            }
-            if (cs.kuuka_ooedo == true)
-            {
-                temp[select_count_temp] = "오우카";
-                temp_eng[select_count_temp] = "kuuka_ooedo";
-                select_count_temp += 1;
-            }
-            if (cs.ninon_ooedo == true)
-            {
-                temp[select_count_temp] = "오니논";
-                temp_eng[select_count_temp] = "ninon_ooedo";
-                select_count_temp += 1;
-            }
-            if (cs.rem == true)
-            {
-                temp[select_count_temp] = "렘";
-                temp_eng[select_count_temp] = "rem";
-                select_count_temp += 1;
-            }
-            if (cs.ram == true)
-            {
-                temp[select_count_temp] = "람";
-                temp_eng[select_count_temp] = "ram";
-                select_count_temp += 1;
-            }
-            if (cs.emilia == true)
-            {
-                temp[select_count_temp] = "에밀리아";
-                temp_eng[select_count_temp] = "emilia";
-                select_count_temp += 1;
-            }
-            if (cs.suzuna_summer == true)
-            {
-                temp[select_count_temp] = "수즈나";
-                temp_eng[select_count_temp] = "suzuna_summer";
-                select_count_temp += 1;
-            }
-            if (cs.io_summer == true)
-            {
-                temp[select_count_temp] = "수이오";
-                temp_eng[select_count_temp] = "io_summer";
-                select_count_temp += 1;
-            }
-            if (cs.saren_summer == true)
-            {
-                temp[select_count_temp] = "수사렌";
-                temp_eng[select_count_temp] = "saren_summer";
-                select_count_temp += 1;
-            }
-            if (cs.makoto_summer == true)
-            {
-                temp[select_count_temp] = "수코토";
-                temp_eng[select_count_temp] = "makoto_summer";
-                select_count_temp += 1;
-            }
-            if (cs.kaori_summer == true)
-            {
-                temp[select_count_temp] = "수오리";
-                temp_eng[select_count_temp] = "kaori_summer";
-                select_count_temp += 1;
-            }
-            if (cs.maho_summer == true)
-            {
-                temp[select_count_temp] = "수마호";
-                temp_eng[select_count_temp] = "maho_summer";
-                select_count_temp += 1;
-            }
-            if (cs.aoi_nakayosi == true)
-            {
-                temp[select_count_temp] = "편오이";
-                temp_eng[select_count_temp] = "aoi_nakayosi";
-                select_count_temp += 1;
-            }
-            if (cs.chloe == true)
-            {
-                temp[select_count_temp] = "클로에";
-                temp_eng[select_count_temp] = "chloe";
-                select_count_temp += 1;
-            }
-            if (cs.chieru == true)
-            {
-                temp[select_count_temp] = "치에루";
-                temp_eng[select_count_temp] = "chieru";
-                select_count_temp += 1;
-            }
-            if (cs.kyouka_halloween == true)
-            {
-                temp[select_count_temp] = "할쿄카";
-                temp_eng[select_count_temp] = "kyouka_halloween";
-                select_count_temp += 1;
-            }
-            if (cs.misogi_halloween == true)
-            {
-                temp[select_count_temp] = "할소기";
-                temp_eng[select_count_temp] = "misogi_halloween";
-                select_count_temp += 1;
-            }
-            if (cs.mimi_halloween == true)
-            {
-                temp[select_count_temp] = "할미미";
-                temp_eng[select_count_temp] = "mimi_halloween";
-                select_count_temp += 1;
-            }
-            if (cs.runa == true)
-            {
-                temp[select_count_temp] = "루나";
-                temp_eng[select_count_temp] = "runa";
-                select_count_temp += 1;
-            }
-            if (cs.kristina_christmas == true)
-            {
-                temp[select_count_temp] = "성리스";
-                temp_eng[select_count_temp] = "kristina_christmas";
-                select_count_temp += 1;
-
-            }
-            if (cs.nozomi_christmas == true)
-            {
-                temp[select_count_temp] = "성조미";
-                temp_eng[select_count_temp] = "nozomi_christmas";
-                select_count_temp += 1;
-            }
-            if (cs.iriya_christmas == true)
-            {
-                temp[select_count_temp] = "성리야";
-                temp_eng[select_count_temp] = "iriya_christmas";
-                select_count_temp += 1;
-
-            }
-            if (cs.kotkoro_newyear == true)
-            {
-                temp[select_count_temp] = "뉴코로";
-                temp_eng[select_count_temp] = "kotkoro_newyear";
-                select_count_temp += 1;
-            }
-            if (cs.kyaru_newyear == true)
-            {
-                temp[select_count_temp] = "냐루";
-                temp_eng[select_count_temp] = "kyaru_newyear";
-                select_count_temp += 1;
-            }
-            if (cs.suzume_newyear == true)
-            {
-                temp[select_count_temp] = "뉴즈메";
-                temp_eng[select_count_temp] = "suzume_newyear";
-                select_count_temp += 1;
-
-            }
-            if (cs.kasumi_magical == true)
-            {
-                temp[select_count_temp] = "마스미";
-                temp_eng[select_count_temp] = "kasumi_magical";
-                select_count_temp += 1;
-
-            }
-            if (cs.siori_magical == true)
-            {
-                temp[select_count_temp] = "마오리";
-                temp_eng[select_count_temp] = "siori_magical";
-                select_count_temp += 1;
-
-            }
-            if (cs.uzuki_deremas == true)
-            {
-                temp[select_count_temp] = "우즈키";
-                temp_eng[select_count_temp] = "uzuki_deremas";
-                select_count_temp += 1;
-            }
-            if (cs.mio_deremas == true)
-            {
-                temp[select_count_temp] = "미오";
-                temp_eng[select_count_temp] = "mio_deremas";
-                select_count_temp += 1;
-            }
-            if (cs.rin_deremas == true)
-            {
-                temp[select_count_temp] = "시부린";
-                temp_eng[select_count_temp] = "rin_deremas";
-                select_count_temp += 1;
-            }
-            if (cs.rin_ranger == true)
-            {
-                temp[select_count_temp] = "레린";
-                temp_eng[select_count_temp] = "rin_ranger";
-                select_count_temp += 1;
-            }
-            if (cs.mahiru_ranger == true)
-            {
-                temp[select_count_temp] = "레히루";
-                temp_eng[select_count_temp] = "mahiru_ranger";
-                select_count_temp += 1;
-            }
-            if (cs.rino_wonder == true)
-            {
-                temp[select_count_temp] = "앨리노";
-                temp_eng[select_count_temp] = "rino_wonder";
-                select_count_temp += 1;
-            }
-            if (cs.ayumi_wonder == true)
-            {
-                temp[select_count_temp] = "앨유미";
-                temp_eng[select_count_temp] = "ayumi_wonder";
-                select_count_temp += 1;
-            }
-            if (cs.ruka_summer == true)
-            {
-                temp[select_count_temp] = "수루카";
-                temp_eng[select_count_temp] = "ruka_summer";
-                select_count_temp += 1;
-            }
-            if (cs.anna_summer == true)
-            {
-                temp[select_count_temp] = "수안나";
-                temp_eng[select_count_temp] = "anna_summer";
-                select_count_temp += 1;
-            }
-            if (cs.hatsune_summer == true)
-            {
-                temp[select_count_temp] = "수츠네";
-                temp_eng[select_count_temp] = "hatsune_summer";
-                select_count_temp += 1;
-            }
-            if (cs.nanaka_summer == true)
-            {
-                temp[select_count_temp] = "수나카";
-                temp_eng[select_count_temp] = "nanaka_summer";
-                select_count_temp += 1;
-            }
-            if (cs.misato_summer == true)
-            {
-                temp[select_count_temp] = "수사토";
-                temp_eng[select_count_temp] = "misato_summer";
-                select_count_temp += 1;
-            }
-            if (cs.zyun_summer == true)
-            {
-                temp[select_count_temp] = "수쥰";
-                temp_eng[select_count_temp] = "zyun_summer";
-                select_count_temp += 1;
-            }
-            if (cs.akari_angel == true)
-            {
-                temp[select_count_temp] = "엔카리";
-                temp_eng[select_count_temp] = "akari_angel";
-                select_count_temp += 1;
-            }
-            if (cs.yori_angel == true)
-            {
-                temp[select_count_temp] = "엔요리";
-                temp_eng[select_count_temp] = "yori_angel";
-                select_count_temp += 1;
-            }
-            if (cs.tsumugi_halloween == true)
-            {
-                temp[select_count_temp] = "할무기";
-                temp_eng[select_count_temp] = "tsumugi_halloween";
-                select_count_temp += 1;
-            }
-            if (cs.rei_halloween == true)
-            {
-                temp[select_count_temp] = "할레이";
-                temp_eng[select_count_temp] = "rei_halloween";
-                select_count_temp += 1;
-            }
-            if (cs.matsuri_halloween == true)
-            {
-                temp[select_count_temp] = "할츠리";
-                temp_eng[select_count_temp] = "matsuri_halloween";
-                select_count_temp += 1;
-            }
-
-            if (cs.monika_magical == true)
-            {
-                temp[select_count_temp] = "마니카";
-                temp_eng[select_count_temp] = "monika_magical";
-                select_count_temp += 1;
-            }
-            if (cs.tomo_magical == true)
-            {
-                temp[select_count_temp] = "마토모";
-                temp_eng[select_count_temp] = "tomo_magical";
-                select_count_temp += 1;
-            }
-            if (cs.akino_christmas == true)
-            {
-                temp[select_count_temp] = "성키노";
-                temp_eng[select_count_temp] = "akino_christmas";
-                select_count_temp += 1;
-            }
-            if (cs.saren_christmas == true)
-            {
-                temp[select_count_temp] = "성사렌";
-                temp_eng[select_count_temp] = "saren_christmas";
-                select_count_temp += 1;
-            }
-            if (cs.yukari_christmas == true)
-            {
-                temp[select_count_temp] = "성카리";
-                temp_eng[select_count_temp] = "yukari_christmas";
-                select_count_temp += 1;
-            }
-
-            if (cs.pekorinnu_newyear == true)
-            {
-                temp[select_count_temp] = "뉴페코";
-                temp_eng[select_count_temp] = "pekorinnu_newyear";
-                select_count_temp += 1;
-            }
-            if (cs.muimi_newyear == true)
-            {
-                temp[select_count_temp] = "뉴이미";
-                temp_eng[select_count_temp] = "muimi_newyear";
-                select_count_temp += 1;
-            }
-            if (cs.neneka_newyear == true)
-            {
-                temp[select_count_temp] = "뉴네카";
-                temp_eng[select_count_temp] = "neneka_newyear";
-                select_count_temp += 1;
-            }
-
-            if (cs.kotkoro_maiden == true)
-            {
-                temp[select_count_temp] = "의코로";
-                temp_eng[select_count_temp] = "kotkoro_maiden";
-                select_count_temp += 1;
-            }
-            if (cs.yui_maiden == true)
-            {
-                temp[select_count_temp] = "의유이";
-                temp_eng[select_count_temp] = "yui_maiden";
-                select_count_temp += 1;
-            }
-
-            if (cs.kasumi_summer == true)
-            {
-                temp[select_count_temp] = "수스미";
-                temp_eng[select_count_temp] = "kasumi_summer";
-                select_count_temp += 1;
-            }
-
-
-
-            if (cs.rima_cinderella == true)
-            {
-                temp[select_count_temp] = "신리마";
-                temp_eng[select_count_temp] = "rima_cinderella";
-                select_count_temp += 1;
-            }
-            if (cs.makoto_cinderella == true)
-            {
-                temp[select_count_temp] = "신코토";
-                temp_eng[select_count_temp] = "makoto_cinderella";
-                select_count_temp += 1;
-            }
-            if (cs.maho_cinderella == true)
-            {
-                temp[select_count_temp] = "신마호";
-                temp_eng[select_count_temp] = "maho_cinderella";
-                select_count_temp += 1;
-            }
-
-
-            if (cs.chloe_terefes == true)
-            {
-                temp[select_count_temp] = "성로에";
-                temp_eng[select_count_temp] = "chloe_terefes";
-                select_count_temp += 1;
-            }
-            if (cs.chieru_terefes == true)
-            {
-                temp[select_count_temp] = "성에루";
-                temp_eng[select_count_temp] = "chieru_terefes";
-                select_count_temp += 1;
-            }
-            if (cs.inori_timetravel == true)
-            {
-                temp[select_count_temp] = "타노리";
-                temp_eng[select_count_temp] = "inori_timetravel";
-                select_count_temp += 1;
-            }
-            if (cs.kaya_timetravel == true)
-            {
-                temp[select_count_temp] = "타카야";
-                temp_eng[select_count_temp] = "kaya_timetravel";
-                select_count_temp += 1;
-            }
-            if (cs.aoi_worker == true)
-            {
-                temp[select_count_temp] = "작오이";
-                temp_eng[select_count_temp] = "aoi_worker";
-                select_count_temp += 1;
-            }
-            if (cs.tamaki_worker == true)
-            {
-                temp[select_count_temp] = "작마키";
-                temp_eng[select_count_temp] = "tamaki_worker";
-                select_count_temp += 1;
-            }
-            if (cs.mihuyu_worker == true)
-            {
-                temp[select_count_temp] = "작후유";
-                temp_eng[select_count_temp] = "mihuyu_worker";
-                select_count_temp += 1;
-            }
-            if (cs.rei_princess == true)
-            {
-                temp[select_count_temp] = "프레이";
-                temp_eng[select_count_temp] = "rei_princess";
-                select_count_temp += 1;
-            }
-            if (cs.kyaru_princess == true)
-            {
-                temp[select_count_temp] = "프캬루";
-                temp_eng[select_count_temp] = "kyaru_princess";
-                select_count_temp += 1;
-            }
-
-            if (cs.hiyori_princess == true)
-            {
-                temp[select_count_temp] = "프요리";
-                temp_eng[select_count_temp] = "hiyori_princess";
-                select_count_temp += 1;
-            }
-            if (cs.pekorinnu_princess == true)
-            {
-                temp[select_count_temp] = "프페코";
-                temp_eng[select_count_temp] = "pekorinnu_princess";
-                select_count_temp += 1;
-            }
-            if (cs.kotkoro_princess == true)
-            {
-                temp[select_count_temp] = "프코로";
-                temp_eng[select_count_temp] = "kotkoro_princess";
-                select_count_temp += 1;
-            }
-            if (cs.yui_princess == true)
-            {
-                temp[select_count_temp] = "프유이";
-                temp_eng[select_count_temp] = "yui_princess";
-                select_count_temp += 1;
-            }
-            if (cs.inori == true)
-            {
-                temp[select_count_temp] = "이노리";
-                temp_eng[select_count_temp] = "inori";
-                select_count_temp += 1;
-            }
-            if (cs.yuni == true)
-            {
-                temp[select_count_temp] = "유니";
-                temp_eng[select_count_temp] = "yuni";
-                select_count_temp += 1;
-            }
-            if (cs.labyrista == true)
-            {
-                temp[select_count_temp] = "라비리스타";
-                temp_eng[select_count_temp] = "labyrista";
-                select_count_temp += 1;
-            }
-            if (cs.shepi == true)
-            {
-                temp[select_count_temp] = "셰피";
-                temp_eng[select_count_temp] = "shepi";
-                select_count_temp += 1;
-            }
-
+            if (cs.hiyori == true) { temp[select_count_temp] = "히요리"; temp_eng[select_count_temp] = "hiyori"; select_count_temp++; }
+            if (cs.yui == true) { temp[select_count_temp] = "유이"; temp_eng[select_count_temp] = "yui"; select_count_temp++; }
+            if (cs.rei == true) { temp[select_count_temp] = "레이"; temp_eng[select_count_temp] = "rei"; select_count_temp++; }
+            if (cs.misogi == true) { temp[select_count_temp] = "미소기"; temp_eng[select_count_temp] = "misogi"; select_count_temp++; }
+            if (cs.matsuri == true) { temp[select_count_temp] = "마츠리"; temp_eng[select_count_temp] = "matsuri"; select_count_temp++; }
+            if (cs.akari == true) { temp[select_count_temp] = "아카리"; temp_eng[select_count_temp] = "akari"; select_count_temp++; }
+            if (cs.miyako == true) { temp[select_count_temp] = "미야코"; temp_eng[select_count_temp] = "miyako"; select_count_temp++; }
+            if (cs.yuki == true) { temp[select_count_temp] = "유키"; temp_eng[select_count_temp] = "yuki"; select_count_temp++; }
+            if (cs.anna == true) { temp[select_count_temp] = "안나"; temp_eng[select_count_temp] = "anna"; select_count_temp++; }
+            if (cs.maho == true) { temp[select_count_temp] = "마호"; temp_eng[select_count_temp] = "maho"; select_count_temp++; }
+            if (cs.rino == true) { temp[select_count_temp] = "리노"; temp_eng[select_count_temp] = "rino"; select_count_temp++; }
+            if (cs.hatsune == true) { temp[select_count_temp] = "하츠네"; temp_eng[select_count_temp] = "hatsune"; select_count_temp++; }
+            if (cs.nanaka == true) { temp[select_count_temp] = "나나카"; temp_eng[select_count_temp] = "nanaka"; select_count_temp++; }
+            if (cs.kasumi == true) { temp[select_count_temp] = "카스미"; temp_eng[select_count_temp] = "kasumi"; select_count_temp++; }
+            if (cs.misato == true) { temp[select_count_temp] = "미사토"; temp_eng[select_count_temp] = "misato"; select_count_temp++; }
+            if (cs.suzuna == true) { temp[select_count_temp] = "스즈나"; temp_eng[select_count_temp] = "suzuna"; select_count_temp++; }
+            if (cs.kaori == true) { temp[select_count_temp] = "카오리"; temp_eng[select_count_temp] = "kaori"; select_count_temp++; }
+            if (cs.io == true) { temp[select_count_temp] = "이오"; temp_eng[select_count_temp] = "io"; select_count_temp++; }
+            if (cs.mimi == true) { temp[select_count_temp] = "미미"; temp_eng[select_count_temp] = "mimi"; select_count_temp++; }
+            if (cs.kurumi == true) { temp[select_count_temp] = "쿠루미"; temp_eng[select_count_temp] = "kurumi"; select_count_temp++; }
+            if (cs.yori == true) { temp[select_count_temp] = "요리"; temp_eng[select_count_temp] = "yori"; select_count_temp++; }
+            if (cs.ayane == true) { temp[select_count_temp] = "아야네"; temp_eng[select_count_temp] = "ayane"; select_count_temp++; }
+            if (cs.suzume == true) { temp[select_count_temp] = "스즈메"; temp_eng[select_count_temp] = "suzume"; select_count_temp++; }
+            if (cs.rin == true) { temp[select_count_temp] = "린"; temp_eng[select_count_temp] = "rin"; select_count_temp++; }
+            if (cs.eriko == true) { temp[select_count_temp] = "에리코"; temp_eng[select_count_temp] = "eriko"; select_count_temp++; }
+            if (cs.saren == true) { temp[select_count_temp] = "사렌"; temp_eng[select_count_temp] = "saren"; select_count_temp++; }
+            if (cs.nozomi == true) { temp[select_count_temp] = "노조미"; temp_eng[select_count_temp] = "nozomi"; select_count_temp++; }
+            if (cs.ninon == true) { temp[select_count_temp] = "니논"; temp_eng[select_count_temp] = "ninon"; select_count_temp++; }
+            if (cs.sinobu == true) { temp[select_count_temp] = "시노부"; temp_eng[select_count_temp] = "sinobu"; select_count_temp++; }
+            if (cs.akino == true) { temp[select_count_temp] = "아키노"; temp_eng[select_count_temp] = "akino"; select_count_temp++; }
+            if (cs.mahiru == true) { temp[select_count_temp] = "마히루"; temp_eng[select_count_temp] = "mahiru"; select_count_temp++; }
+            if (cs.yukari == true) { temp[select_count_temp] = "유카리"; temp_eng[select_count_temp] = "yukari"; select_count_temp++; }
+            if (cs.kyouka == true) { temp[select_count_temp] = "쿄우카"; temp_eng[select_count_temp] = "kyouka"; select_count_temp++; }
+            if (cs.tomo == true) { temp[select_count_temp] = "토모"; temp_eng[select_count_temp] = "tomo"; select_count_temp++; }
+            if (cs.siori == true) { temp[select_count_temp] = "시오리"; temp_eng[select_count_temp] = "siori"; select_count_temp++; }
+            if (cs.aoi == true) { temp[select_count_temp] = "아오이"; temp_eng[select_count_temp] = "aoi"; select_count_temp++; }
+            if (cs.chika == true) { temp[select_count_temp] = "치카"; temp_eng[select_count_temp] = "chika"; select_count_temp++; }
+            if (cs.makoto == true) { temp[select_count_temp] = "마코토"; temp_eng[select_count_temp] = "makoto"; select_count_temp++; }
+            if (cs.iriya == true) { temp[select_count_temp] = "이리야"; temp_eng[select_count_temp] = "iriya"; select_count_temp++; }
+            if (cs.kuuka == true) { temp[select_count_temp] = "쿠우카"; temp_eng[select_count_temp] = "kuuka"; select_count_temp++; }
+            if (cs.tamaki == true) { temp[select_count_temp] = "타마키"; temp_eng[select_count_temp] = "tamaki"; select_count_temp++; }
+            if (cs.zyun == true) { temp[select_count_temp] = "쥰"; temp_eng[select_count_temp] = "zyun"; select_count_temp++; }
+            if (cs.mihuyu == true) { temp[select_count_temp] = "미후유"; temp_eng[select_count_temp] = "mihuyu"; select_count_temp++; }
+            if (cs.sizuru == true) { temp[select_count_temp] = "시즈루"; temp_eng[select_count_temp] = "sizuru"; select_count_temp++; }
+            if (cs.misaki == true) { temp[select_count_temp] = "미사키"; temp_eng[select_count_temp] = "misaki"; select_count_temp++; }
+            if (cs.mitsuki == true) { temp[select_count_temp] = "미츠키"; temp_eng[select_count_temp] = "mitsuki"; select_count_temp++; }
+            if (cs.rima == true) { temp[select_count_temp] = "리마"; temp_eng[select_count_temp] = "rima"; select_count_temp++; }
+            if (cs.monika == true) { temp[select_count_temp] = "모니카"; temp_eng[select_count_temp] = "monika"; select_count_temp++; }
+            if (cs.tsumugi == true) { temp[select_count_temp] = "츠무기"; temp_eng[select_count_temp] = "tsumugi"; select_count_temp++; }
+            if (cs.ayumi == true) { temp[select_count_temp] = "아유미"; temp_eng[select_count_temp] = "ayumi"; select_count_temp++; }
+            if (cs.ruka == true) { temp[select_count_temp] = "루카"; temp_eng[select_count_temp] = "ruka"; select_count_temp++; }
+            if (cs.zita == true) { temp[select_count_temp] = "지타"; temp_eng[select_count_temp] = "zita"; select_count_temp++; }
+            if (cs.pekorinnu == true) { temp[select_count_temp] = "페코린느"; temp_eng[select_count_temp] = "pekorinnu"; select_count_temp++; }
+            if (cs.kotkoro == true) { temp[select_count_temp] = "콧코로"; temp_eng[select_count_temp] = "kotkoro"; select_count_temp++; }
+            if (cs.kyaru == true) { temp[select_count_temp] = "캬루"; temp_eng[select_count_temp] = "kyaru"; select_count_temp++; }
+            if (cs.muimi == true) { temp[select_count_temp] = "무이미"; temp_eng[select_count_temp] = "muimi"; select_count_temp++; }
+            if (cs.arisa == true) { temp[select_count_temp] = "아리사"; temp_eng[select_count_temp] = "arisa"; select_count_temp++; }
+            if (cs.shepi == true) { temp[select_count_temp] = "셰피"; temp_eng[select_count_temp] = "shepi"; select_count_temp++; }
+            if (cs.kaya == true) { temp[select_count_temp] = "카야"; temp_eng[select_count_temp] = "kaya"; select_count_temp++; }
+            if (cs.inori == true) { temp[select_count_temp] = "이노리"; temp_eng[select_count_temp] = "inori"; select_count_temp++; }
+            if (cs.homare == true) { temp[select_count_temp] = "호마레"; temp_eng[select_count_temp] = "homare"; select_count_temp++; }
+            if (cs.labyrista == true) { temp[select_count_temp] = "라비리스타"; temp_eng[select_count_temp] = "labyrista"; select_count_temp++; }
+            if (cs.neneka == true) { temp[select_count_temp] = "네네카"; temp_eng[select_count_temp] = "neneka"; select_count_temp++; }
+            if (cs.kristina == true) { temp[select_count_temp] = "크리스티나"; temp_eng[select_count_temp] = "kristina"; select_count_temp++; }
+            if (cs.pekorinnu_summer == true) { temp[select_count_temp] = "수페코"; temp_eng[select_count_temp] = "pekorinnu_summer"; select_count_temp++; }
+            if (cs.kotkoro_summer == true) { temp[select_count_temp] = "수코로"; temp_eng[select_count_temp] = "kotkoro_summer"; select_count_temp++; }
+            if (cs.suzume_summer == true) { temp[select_count_temp] = "수즈메"; temp_eng[select_count_temp] = "suzume_summer"; select_count_temp++; }
+            if (cs.kyaru_summer == true) { temp[select_count_temp] = "수캬루"; temp_eng[select_count_temp] = "kyaru_summer"; select_count_temp++; }
+            if (cs.tamaki_summer == true) { temp[select_count_temp] = "수마키"; temp_eng[select_count_temp] = "tamaki_summer"; select_count_temp++; }
+            if (cs.mihuyu_summer == true) { temp[select_count_temp] = "수후유"; temp_eng[select_count_temp] = "mihuyu_summer"; select_count_temp++; }
+            if (cs.sinobu_halloween == true) { temp[select_count_temp] = "할노부"; temp_eng[select_count_temp] = "sinobu_halloween"; select_count_temp++; }
+            if (cs.miyako_halloween == true) { temp[select_count_temp] = "할푸딩"; temp_eng[select_count_temp] = "miyako_halloween"; select_count_temp++; }
+            if (cs.misaki_halloween == true) { temp[select_count_temp] = "할사키"; temp_eng[select_count_temp] = "misaki_halloween"; select_count_temp++; }
+            if (cs.chika_christmas == true) { temp[select_count_temp] = "성치카"; temp_eng[select_count_temp] = "chika_christmas"; select_count_temp++; }
+            if (cs.kurumi_christmas == true) { temp[select_count_temp] = "성루미"; temp_eng[select_count_temp] = "kurumi_christmas"; select_count_temp++; }
+            if (cs.ayane_christmas == true) { temp[select_count_temp] = "성야네"; temp_eng[select_count_temp] = "ayane_christmas"; select_count_temp++; }
+            if (cs.hiyori_newyear == true) { temp[select_count_temp] = "뉴요리"; temp_eng[select_count_temp] = "hiyori_newyear"; select_count_temp++; }
+            if (cs.yui_newyear == true) { temp[select_count_temp] = "뉴이"; temp_eng[select_count_temp] = "yui_newyear"; select_count_temp++; }
+            if (cs.rei_newyear == true) { temp[select_count_temp] = "신레이"; temp_eng[select_count_temp] = "rei_newyear"; select_count_temp++; }
+            if (cs.eriko_valentine == true) { temp[select_count_temp] = "발리코"; temp_eng[select_count_temp] = "eriko_valentine"; select_count_temp++; }
+            if (cs.sizuru_valentine == true) { temp[select_count_temp] = "발즈루"; temp_eng[select_count_temp] = "sizuru_valentine"; select_count_temp++; }
+            if (cs.anne == true) { temp[select_count_temp] = "앤"; temp_eng[select_count_temp] = "anne"; select_count_temp++; }
+            if (cs.lou == true) { temp[select_count_temp] = "루"; temp_eng[select_count_temp] = "lou"; select_count_temp++; }
+            if (cs.grea == true) { temp[select_count_temp] = "글레어"; temp_eng[select_count_temp] = "grea"; select_count_temp++; }
+            if (cs.kuuka_ooedo == true) { temp[select_count_temp] = "오우카"; temp_eng[select_count_temp] = "kuuka_ooedo"; select_count_temp++; }
+            if (cs.ninon_ooedo == true) { temp[select_count_temp] = "오니논"; temp_eng[select_count_temp] = "ninon_ooedo"; select_count_temp++; }
+            if (cs.rem == true) { temp[select_count_temp] = "렘"; temp_eng[select_count_temp] = "rem"; select_count_temp++; }
+            if (cs.ram == true) { temp[select_count_temp] = "람"; temp_eng[select_count_temp] = "ram"; select_count_temp++; }
+            if (cs.emilia == true) { temp[select_count_temp] = "에밀리아"; temp_eng[select_count_temp] = "emilia"; select_count_temp++; }
+            if (cs.suzuna_summer == true) { temp[select_count_temp] = "수즈나"; temp_eng[select_count_temp] = "suzuna_summer"; select_count_temp++; }
+            if (cs.io_summer == true) { temp[select_count_temp] = "수이오"; temp_eng[select_count_temp] = "io_summer"; select_count_temp++; }
+            if (cs.saren_summer == true) { temp[select_count_temp] = "수사렌"; temp_eng[select_count_temp] = "saren_summer"; select_count_temp++; }
+            if (cs.makoto_summer == true) { temp[select_count_temp] = "수코토"; temp_eng[select_count_temp] = "makoto_summer"; select_count_temp++; }
+            if (cs.kaori_summer == true) { temp[select_count_temp] = "수오리"; temp_eng[select_count_temp] = "kaori_summer"; select_count_temp++; }
+            if (cs.maho_summer == true) { temp[select_count_temp] = "수마호"; temp_eng[select_count_temp] = "maho_summer"; select_count_temp++; }
+            if (cs.aoi_nakayosi == true) { temp[select_count_temp] = "편오이"; temp_eng[select_count_temp] = "aoi_nakayosi"; select_count_temp++; }
+            if (cs.chloe == true) { temp[select_count_temp] = "클로에"; temp_eng[select_count_temp] = "chloe"; select_count_temp++; }
+            if (cs.chieru == true) { temp[select_count_temp] = "치에루"; temp_eng[select_count_temp] = "chieru"; select_count_temp++; }
+            if (cs.yuni == true) { temp[select_count_temp] = "유니"; temp_eng[select_count_temp] = "yuni"; select_count_temp++; }
+            if (cs.kyouka_halloween == true) { temp[select_count_temp] = "할쿄카"; temp_eng[select_count_temp] = "kyouka_halloween"; select_count_temp++; }
+            if (cs.misogi_halloween == true) { temp[select_count_temp] = "할소기"; temp_eng[select_count_temp] = "misogi_halloween"; select_count_temp++; }
+            if (cs.mimi_halloween == true) { temp[select_count_temp] = "할미미"; temp_eng[select_count_temp] = "mimi_halloween"; select_count_temp++; }
+            if (cs.runa == true) { temp[select_count_temp] = "루나"; temp_eng[select_count_temp] = "runa"; select_count_temp++; }
+            if (cs.kristina_christmas == true) { temp[select_count_temp] = "성리스"; temp_eng[select_count_temp] = "kristina_christmas"; select_count_temp++; }
+            if (cs.nozomi_christmas == true) { temp[select_count_temp] = "성조미"; temp_eng[select_count_temp] = "nozomi_christmas"; select_count_temp++; }
+            if (cs.iriya_christmas == true) { temp[select_count_temp] = "성리야"; temp_eng[select_count_temp] = "iriya_christmas"; select_count_temp++; }
+            if (cs.pekorinnu_newyear == true) { temp[select_count_temp] = "뉴페코"; temp_eng[select_count_temp] = "pekorinnu_newyear"; select_count_temp++; }
+            if (cs.kotkoro_newyear == true) { temp[select_count_temp] = "뉴코로"; temp_eng[select_count_temp] = "kotkoro_newyear"; select_count_temp++; }
+            if (cs.kyaru_newyear == true) { temp[select_count_temp] = "냐루"; temp_eng[select_count_temp] = "kyaru_newyear"; select_count_temp++; }
+            if (cs.suzume_newyear == true) { temp[select_count_temp] = "뉴즈메"; temp_eng[select_count_temp] = "suzume_newyear"; select_count_temp++; }
+            if (cs.kasumi_magical == true) { temp[select_count_temp] = "마스미"; temp_eng[select_count_temp] = "kasumi_magical"; select_count_temp++; }
+            if (cs.siori_magical == true) { temp[select_count_temp] = "마오리"; temp_eng[select_count_temp] = "siori_magical"; select_count_temp++; }
+            if (cs.uzuki_deremas == true) { temp[select_count_temp] = "우즈키"; temp_eng[select_count_temp] = "uzuki_deremas"; select_count_temp++; }
+            if (cs.rin_deremas == true) { temp[select_count_temp] = "시부린"; temp_eng[select_count_temp] = "rin_deremas"; select_count_temp++; }
+            if (cs.mio_deremas == true) { temp[select_count_temp] = "미오"; temp_eng[select_count_temp] = "mio_deremas"; select_count_temp++; }
+            if (cs.rin_ranger == true) { temp[select_count_temp] = "레린"; temp_eng[select_count_temp] = "rin_ranger"; select_count_temp++; }
+            if (cs.mahiru_ranger == true) { temp[select_count_temp] = "레히루"; temp_eng[select_count_temp] = "mahiru_ranger"; select_count_temp++; }
+            if (cs.rino_wonder == true) { temp[select_count_temp] = "앨리노"; temp_eng[select_count_temp] = "rino_wonder"; select_count_temp++; }
+            if (cs.ayumi_wonder == true) { temp[select_count_temp] = "앨유미"; temp_eng[select_count_temp] = "ayumi_wonder"; select_count_temp++; }
+            if (cs.ruka_summer == true) { temp[select_count_temp] = "수루카"; temp_eng[select_count_temp] = "ruka_summer"; select_count_temp++; }
+            if (cs.anna_summer == true) { temp[select_count_temp] = "수안나"; temp_eng[select_count_temp] = "anna_summer"; select_count_temp++; }
+            if (cs.nanaka_summer == true) { temp[select_count_temp] = "수나카"; temp_eng[select_count_temp] = "nanaka_summer"; select_count_temp++; }
+            if (cs.hatsune_summer == true) { temp[select_count_temp] = "수츠네"; temp_eng[select_count_temp] = "hatsune_summer"; select_count_temp++; }
+            if (cs.misato_summer == true) { temp[select_count_temp] = "수사토"; temp_eng[select_count_temp] = "misato_summer"; select_count_temp++; }
+            if (cs.zyun_summer == true) { temp[select_count_temp] = "수쥰"; temp_eng[select_count_temp] = "zyun_summer"; select_count_temp++; }
+            if (cs.akari_angel == true) { temp[select_count_temp] = "엔카리"; temp_eng[select_count_temp] = "akari_angel"; select_count_temp++; }
+            if (cs.yori_angel == true) { temp[select_count_temp] = "엔요리"; temp_eng[select_count_temp] = "yori_angel"; select_count_temp++; }
+            if (cs.tsumugi_halloween == true) { temp[select_count_temp] = "할무기"; temp_eng[select_count_temp] = "tsumugi_halloween"; select_count_temp++; }
+            if (cs.rei_halloween == true) { temp[select_count_temp] = "할레이"; temp_eng[select_count_temp] = "rei_halloween"; select_count_temp++; }
+            if (cs.matsuri_halloween == true) { temp[select_count_temp] = "할츠리"; temp_eng[select_count_temp] = "matsuri_halloween"; select_count_temp++; }
+            if (cs.monika_magical == true) { temp[select_count_temp] = "마니카"; temp_eng[select_count_temp] = "monika_magical"; select_count_temp++; }
+            if (cs.tomo_magical == true) { temp[select_count_temp] = "마토모"; temp_eng[select_count_temp] = "tomo_magical"; select_count_temp++; }
+            if (cs.akino_christmas == true) { temp[select_count_temp] = "성키노"; temp_eng[select_count_temp] = "akino_christmas"; select_count_temp++; }
+            if (cs.saren_christmas == true) { temp[select_count_temp] = "성사렌"; temp_eng[select_count_temp] = "saren_christmas"; select_count_temp++; }
+            if (cs.yukari_christmas == true) { temp[select_count_temp] = "성카리"; temp_eng[select_count_temp] = "yukari_christmas"; select_count_temp++; }
+            if (cs.muimi_newyear == true) { temp[select_count_temp] = "뉴이미"; temp_eng[select_count_temp] = "muimi_newyear"; select_count_temp++; }
+            if (cs.neneka_newyear == true) { temp[select_count_temp] = "뉴네카"; temp_eng[select_count_temp] = "neneka_newyear"; select_count_temp++; }
+            if (cs.kotkoro_maiden == true) { temp[select_count_temp] = "의코로"; temp_eng[select_count_temp] = "kotkoro_maiden"; select_count_temp++; }
+            if (cs.yui_maiden == true) { temp[select_count_temp] = "의유이"; temp_eng[select_count_temp] = "yui_maiden"; select_count_temp++; }
+            if (cs.kasumi_summer == true) { temp[select_count_temp] = "수스미"; temp_eng[select_count_temp] = "kasumi_summer"; select_count_temp++; }
+            if (cs.rima_cinderella == true) { temp[select_count_temp] = "신리마"; temp_eng[select_count_temp] = "rima_cinderella"; select_count_temp++; }
+            if (cs.makoto_cinderella == true) { temp[select_count_temp] = "신코토"; temp_eng[select_count_temp] = "makoto_cinderella"; select_count_temp++; }
+            if (cs.maho_cinderella == true) { temp[select_count_temp] = "신마호"; temp_eng[select_count_temp] = "maho_cinderella"; select_count_temp++; }
+            if (cs.chloe_terefes == true) { temp[select_count_temp] = "성로에"; temp_eng[select_count_temp] = "chloe_terefes"; select_count_temp++; }
+            if (cs.chieru_terefes == true) { temp[select_count_temp] = "성에루"; temp_eng[select_count_temp] = "chieru_terefes"; select_count_temp++; }
+            if (cs.inori_timetravel == true) { temp[select_count_temp] = "시노리"; temp_eng[select_count_temp] = "inori_timetravel"; select_count_temp++; }
+            if (cs.kaya_timetravel == true) { temp[select_count_temp] = "타카야"; temp_eng[select_count_temp] = "kaya_timetravel"; select_count_temp++; }
+            if (cs.aoi_worker == true) { temp[select_count_temp] = "작오이"; temp_eng[select_count_temp] = "aoi_worker"; select_count_temp++; }
+            if (cs.tamaki_worker == true) { temp[select_count_temp] = "작마키"; temp_eng[select_count_temp] = "tamaki_worker"; select_count_temp++; }
+            if (cs.mihuyu_worker == true) { temp[select_count_temp] = "작후유"; temp_eng[select_count_temp] = "mihuyu_worker"; select_count_temp++; }
+            if (cs.eriko_summer == true) { temp[select_count_temp] = "수리코"; temp_eng[select_count_temp] = "eriko_summer"; select_count_temp++; }
+            if (cs.sizuru_summer == true) { temp[select_count_temp] = "수즈루"; temp_eng[select_count_temp] = "sizuru_summer"; select_count_temp++; }
+            if (cs.nozomi_summer == true) { temp[select_count_temp] = "수조미"; temp_eng[select_count_temp] = "nozomi_summer"; select_count_temp++; }
+            if (cs.chika_summer == true) { temp[select_count_temp] = "수치카"; temp_eng[select_count_temp] = "chika_summer"; select_count_temp++; }
+            if (cs.tsumugi_summer == true) { temp[select_count_temp] = "수무기"; temp_eng[select_count_temp] = "tsumugi_summer"; select_count_temp++; }
+            if (cs.mitsuki_ooedo == true) { temp[select_count_temp] = "오츠키"; temp_eng[select_count_temp] = "mitsuki_ooedo"; select_count_temp++; }
+            if (cs.yuki_ooedo == true) { temp[select_count_temp] = "오유키"; temp_eng[select_count_temp] = "yuki_ooedo"; select_count_temp++; }
+            if (cs.kaori_halloween == true) { temp[select_count_temp] = "할오리"; temp_eng[select_count_temp] = "kaori_halloween"; select_count_temp++; }
+            if (cs.ninon_halloween == true) { temp[select_count_temp] = "할니논"; temp_eng[select_count_temp] = "ninon_halloween"; select_count_temp++; }
+            if (cs.suzuna_halloween == true) { temp[select_count_temp] = "할즈나"; temp_eng[select_count_temp] = "suzuna_halloween"; select_count_temp++; }
+            if (cs.credita == true) { temp[select_count_temp] = "크레짓타"; temp_eng[select_count_temp] = "credita"; select_count_temp++; }
+            if (cs.ranpa == true) { temp[select_count_temp] = "란파"; temp_eng[select_count_temp] = "ranpa"; select_count_temp++; }
+            if (cs.hatsune_princess == true) { temp[select_count_temp] = "프츠네"; temp_eng[select_count_temp] = "hatsune_princess"; select_count_temp++; }
+            if (cs.siori_princess == true) { temp[select_count_temp] = "프오리"; temp_eng[select_count_temp] = "siori_princess"; select_count_temp++; }
+            if (cs.karin == true) { temp[select_count_temp] = "카린"; temp_eng[select_count_temp] = "karin"; select_count_temp++; }
+            if (cs.io_noir == true) { temp[select_count_temp] = "느이오"; temp_eng[select_count_temp] = "io_noir"; select_count_temp++; }
+            if (cs.kuuka_noir == true) { temp[select_count_temp] = "느우카"; temp_eng[select_count_temp] = "kuuka_noir"; select_count_temp++; }
+            if (cs.mahiru_christmas == true) { temp[select_count_temp] = "성히루"; temp_eng[select_count_temp] = "mahiru_christmas"; select_count_temp++; }
+            if (cs.rino_christmas == true) { temp[select_count_temp] = "성리노"; temp_eng[select_count_temp] = "rino_christmas"; select_count_temp++; }
+            if (cs.miyako_christmas == true) { temp[select_count_temp] = "성푸딩"; temp_eng[select_count_temp] = "miyako_christmas"; select_count_temp++; }
+            if (cs.mimi_princess == true) { temp[select_count_temp] = "프미미"; temp_eng[select_count_temp] = "mimi_princess"; select_count_temp++; }
+            if (cs.misogi_princess == true) { temp[select_count_temp] = "프소기"; temp_eng[select_count_temp] = "misogi_princess"; select_count_temp++; }
+            if (cs.kyouka_princess == true) { temp[select_count_temp] = "프쿄"; temp_eng[select_count_temp] = "kyouka_princess"; select_count_temp++; }
+            if (cs.shepi_newyear == true) { temp[select_count_temp] = "뉴셰피"; temp_eng[select_count_temp] = "shepi_newyear"; select_count_temp++; }
+            if (cs.ruka_newyear == true) { temp[select_count_temp] = "뉴루카"; temp_eng[select_count_temp] = "ruka_newyear"; select_count_temp++; }
+            if (cs.iriya_newyear == true) { temp[select_count_temp] = "뉴리야"; temp_eng[select_count_temp] = "iriya_newyear"; select_count_temp++; }
+            if (cs.pekorinnu_overload == true) { temp[select_count_temp] = "오페코"; temp_eng[select_count_temp] = "pekorinnu_overload"; select_count_temp++; }
+            if (cs.kyaru_overload == true) { temp[select_count_temp] = "오캬루"; temp_eng[select_count_temp] = "kyaru_overload"; select_count_temp++; }
+            if (cs.labirista_overload == true) { temp[select_count_temp] = "오라비"; temp_eng[select_count_temp] = "labirista_overload"; select_count_temp++; }
+            if (cs.kurumi_stage == true) { temp[select_count_temp] = "스루미"; temp_eng[select_count_temp] = "kurumi_stage"; select_count_temp++; }
+            if (cs.hiyori_princess == true) { temp[select_count_temp] = "프요리"; temp_eng[select_count_temp] = "hiyori_princess"; select_count_temp++; }
+            if (cs.yui_princess == true) { temp[select_count_temp] = "프유이"; temp_eng[select_count_temp] = "yui_princess"; select_count_temp++; }
+            if (cs.rei_princess == true) { temp[select_count_temp] = "프레이"; temp_eng[select_count_temp] = "rei_princess"; select_count_temp++; }
+            if (cs.pekorinnu_princess == true) { temp[select_count_temp] = "프페코"; temp_eng[select_count_temp] = "pekorinnu_princess"; select_count_temp++; }
+            if (cs.kotkoro_princess == true) { temp[select_count_temp] = "프코로"; temp_eng[select_count_temp] = "kotkoro_princess"; select_count_temp++; }
+            if (cs.kyaru_princess == true) { temp[select_count_temp] = "프캬루"; temp_eng[select_count_temp] = "kyaru_princess"; select_count_temp++; }
+            if (cs.hatsusio == true) { temp[select_count_temp] = "하츠시오"; temp_eng[select_count_temp] = "hatsusio"; select_count_temp++; }
+            if (cs.littlelyri == true) { temp[select_count_temp] = "리틀리리"; temp_eng[select_count_temp] = "littlelyri"; select_count_temp++; }
             #endregion
+
+
+
             //isOfforDef == 1 방덱 , 0이면 공덱
             if (isOfforDef == 0)
             {
@@ -7176,7 +6461,7 @@ namespace PCRD_KR_ArenaSim
                         || temp[0] == "마토모" || temp[0] == "성키노" || temp[0] == "성사렌" || temp[0] == "성카리" || temp[0] == "뉴이미" || temp[0] == "뉴네카"
                         || temp[0] == "뉴페코" || temp[0] == "의코로" || temp[0] == "의유이" || temp[0] == "수스미" || temp[0] == "신리마" || temp[0] == "신마호"
                         || temp[0] == "신코토" || temp[0] == "성로에" || temp[0] == "성에루" || temp[0] == "시노리" || temp[0] == "타노리" || temp[0] == "시카야" || temp[0] == "타카야"
-                        || temp[0] == "작오이" || temp[0] == "작마키" || temp[0] == "작후유"
+                        || temp[0] == "작오이" || temp[0] == "작마키" || temp[0] == "작후유" || temp[0] == "수치카" || temp[0] == "수리코" || temp[0] == "수즈루" || temp[0] == "수조미" || temp[0] == "수무기"
                         || temp[0] == "프레이")
                     {
                         temp[5] = "0";
@@ -7343,789 +6628,409 @@ namespace PCRD_KR_ArenaSim
             }
         }
         
-        #region SetClick
-        private void bt_rima_set_Click(object sender, RoutedEventArgs e)
+        private int CheckCharaList()
         {
-            Chara_set.rima = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
+            if (!File.Exists("character_offence.txt")){ MessageBox.Show("없어!", "알림"); return -1; }
+            if (!File.Exists("character_defence.txt")){ MessageBox.Show("없어!", "알림"); return -1; }
+
+            string[] updatedCharaList = new string[5] { "수리코", "수즈루", "수조미", "수치카", "수무기" };
+            StreamWriter swO = new StreamWriter("character_offence.txt", append: true);
+            for (int i = 0; i < updatedCharaList.Length; i++)
+            {
+                string newString = string.Format("{0},1,5,157,11,0,5,5,5,5,5,5", updatedCharaList[i]);
+                swO.WriteLine(newString);
+            }
+            swO.Close(); 
+            
+            StreamWriter swD = new StreamWriter("character_defence.txt", append: true);
+            for (int i = 0; i < updatedCharaList.Length; i++)
+            {
+                string newString = string.Format("{0},1,5,157,11,0,5,5,5,5,5,5", updatedCharaList[i]);
+                swD.WriteLine(newString);
+            }
+            swD.Close();
+
+
+            return 1;
         }
-        private void bt_miyako_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.miyako = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kuuka_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kuuka = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_zyun_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.zyun = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kuuka_ooedo_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kuuka_ooedo = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kaori_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kaori = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_rei_newyear_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.rei_newyear = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_pekorinnu_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.pekorinnu = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_pekorinnu_princess_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.pekorinnu_princess = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_ruka_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.ruka = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kotkoro_newyear_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kotkoro_newyear = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_nozomi_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.nozomi = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_muimi_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.muimi = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_makoto_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.makoto = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kaya_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kaya = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_inori_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.inori = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_hiyori_newyear_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.hiyori_newyear = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_ninon_ooedo_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.ninon_ooedo = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_akino_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.akino = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_makoto_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.makoto_summer = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_matsuri_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.matsuri = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_chloe_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.chloe = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_chieru_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.chieru = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_eriko_valentine_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.eriko_valentine = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_ayane_christmas_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.ayane_christmas = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_tsumugi_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.tsumugi = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
+        
+        #region Set_Click
         private void bt_hiyori_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.hiyori = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_misogi_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.misogi = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_ayane_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.ayane = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_misogi_halloween_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.misogi_halloween = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_tamaki_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.tamaki = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_tomo_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.tomo = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_tamaki_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.tamaki = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_eriko_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.eriko = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_pekorinnu_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.pekorinnu_summer = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kurumi_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kurumi = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_zita_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.zita = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_rei_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.rei = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_iriya_christmas_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.iriya_christmas = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kristina_christmas_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kristina_christmas = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_sizuru_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.sizuru = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kristina_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kristina = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kurumi_christmas_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kurumi_christmas = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_mimi_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.mimi = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_sinobu_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.sinobu = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_mimi_halloween_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.mimi_halloween = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_sizuru_valentine_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.sizuru_valentine = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_mahiru_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.mahiru = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_yukari_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.yukari = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_monika_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.monika = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_ninon_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.ninon = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_nozomi_christmas_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.nozomi_christmas = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_mihuyu_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.mihuyu = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_iriya_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.iriya = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kaori_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kaori_summer = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_saren_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.saren = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_anna_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.anna = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_sinobu_halloween_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.sinobu_halloween = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_mihuyu_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.mihuyu_summer = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kotkoro_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kotkoro = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_ayumi_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.ayumi = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_grea_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.grea = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kotkoro_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kotkoro_summer = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_rem_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.rem = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_ram_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.ram = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_rin_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.rin = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_mitsuki_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.mitsuki = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_akari_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.akari = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_yori_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.yori = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_saren_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.saren_summer = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_miyako_halloween_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.miyako_halloween = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_arisa_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.arisa = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_anne_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.anne = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_lou_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.lou = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_neneka_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.neneka = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_aoi_nakayosi_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.aoi_nakayosi = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kyaru_newyear_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kyaru_newyear = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_rino_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.rino = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_suzuna_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.suzuna = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_suzuna_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.suzuna_summer = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_siori_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.siori = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_siori_magical_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.siori_magical = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_io_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.io = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_io_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.io_summer = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_suzume_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.suzume = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_suzume_newyear_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.suzume_newyear = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_emilia_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.emilia = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kasumi_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kasumi = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kasumi_magical_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kasumi_magical = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_misato_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.misato = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_nanaka_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.nanaka = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_yui_newyear_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.yui_newyear = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kyaru_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kyaru = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_hatsune_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.hatsune = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_misaki_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.misaki = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_runa_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.runa = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_chika_christmas_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.chika_christmas = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_suzume_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.suzume_summer = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kyaru_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kyaru_summer = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_aoi_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.aoi = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_chika_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.chika = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_maho_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.maho_summer = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_maho_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.maho = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
+        { Chara_set.hiyori = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
         private void bt_yui_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.yui = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
+        { Chara_set.yui = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_rei_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.rei = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_misogi_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.misogi = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_matsuri_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.matsuri = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_akari_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.akari = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_miyako_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.miyako = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
         private void bt_yuki_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.yuki = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
+        { Chara_set.yuki = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_anna_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.anna = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_maho_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.maho = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_rino_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.rino = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_hatsune_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.hatsune = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_nanaka_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.nanaka = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kasumi_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kasumi = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_misato_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.misato = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_suzuna_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.suzuna = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kaori_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kaori = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_io_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.io = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_mimi_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.mimi = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kurumi_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kurumi = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_yori_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.yori = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_ayane_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.ayane = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_suzume_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.suzume = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_rin_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.rin = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_eriko_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.eriko = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_saren_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.saren = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_nozomi_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.nozomi = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_ninon_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.ninon = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_sinobu_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.sinobu = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_akino_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.akino = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_mahiru_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.mahiru = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_yukari_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.yukari = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
         private void bt_kyouka_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kyouka = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_misaki_halloween_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.misaki_halloween = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kyouka_halloween_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kyouka_halloween = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-
-        private void bt_uzuki_deremas_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.uzuki_deremas = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_mio_deremas_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.mio_deremas = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_rin_deremas_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.rin_deremas = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_rin_ranger_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.rin_ranger = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_mahiru_ranger_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.mahiru_ranger = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_rino_wonder_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.rino_wonder = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_ayumi_wonder_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.ayumi_wonder = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_ruka_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.ruka_summer = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_anna_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.anna_summer = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_nanaka_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.nanaka_summer = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_hatsune_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.hatsune_summer = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_misato_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.misato_summer = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_zyun_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.zyun_summer = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_akari_angel_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.akari_angel = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_yori_angel_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.yori_angel = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kotkoro_princess_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kotkoro_princess = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_yui_princess_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.yui_princess = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_yuni_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.yuni = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_labyrista_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.labyrista = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_tsumugi_halloween_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.tsumugi_halloween = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_rei_halloween_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.rei_halloween = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_matsuri_halloween_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.matsuri_halloween = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_tomo_magical_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.tomo_magical = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_monika_magical_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.monika_magical = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_saren_christmas_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.saren_christmas = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_akino_christmas_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.akino_christmas = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_yukari_christmas_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.yukari_christmas = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_hiyori_princess_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.hiyori_princess = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_pekorinnu_newyear_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.pekorinnu_newyear = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_neneka_newyear_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.neneka_newyear = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_muimi_newyear_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.muimi_newyear = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kotkoro_maiden_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kotkoro_maiden = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_yui_maiden_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.yui_maiden = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kasumi_summer_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kasumi_summer = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
+        { Chara_set.kyouka = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_tomo_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.tomo = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_siori_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.siori = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_aoi_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.aoi = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_chika_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.chika = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_makoto_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.makoto = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_iriya_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.iriya = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kuuka_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kuuka = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_tamaki_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.tamaki = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_zyun_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.zyun = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_mihuyu_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.mihuyu = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_sizuru_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.sizuru = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_misaki_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.misaki = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_mitsuki_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.mitsuki = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_rima_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.rima = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_monika_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.monika = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_tsumugi_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.tsumugi = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_ayumi_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.ayumi = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_ruka_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.ruka = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_zita_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.zita = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_pekorinnu_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.pekorinnu = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kotkoro_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kotkoro = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kyaru_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kyaru = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_muimi_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.muimi = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_arisa_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.arisa = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
         private void bt_shepi_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.shepi = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_maho_cinderella_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.maho_cinderella = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
+        { Chara_set.shepi = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kaya_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kaya = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_inori_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.inori = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_labyrista_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.labyrista = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_neneka_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.neneka = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kristina_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kristina = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_pekorinnu_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.pekorinnu_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kotkoro_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kotkoro_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_suzume_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.suzume_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kyaru_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kyaru_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_tamaki_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.tamaki_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_mihuyu_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.mihuyu_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_sinobu_halloween_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.sinobu_halloween = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_miyako_halloween_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.miyako_halloween = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_misaki_halloween_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.misaki_halloween = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_chika_christmas_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.chika_christmas = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kurumi_christmas_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kurumi_christmas = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_ayane_christmas_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.ayane_christmas = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_hiyori_newyear_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.hiyori_newyear = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_yui_newyear_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.yui_newyear = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_rei_newyear_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.rei_newyear = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_eriko_valentine_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.eriko_valentine = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_sizuru_valentine_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.sizuru_valentine = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_anne_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.anne = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_lou_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.lou = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_grea_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.grea = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kuuka_ooedo_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kuuka_ooedo = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_ninon_ooedo_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.ninon_ooedo = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_rem_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.rem = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_ram_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.ram = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_emilia_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.emilia = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_suzuna_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.suzuna_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_io_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.io_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_saren_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.saren_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_makoto_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.makoto_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kaori_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kaori_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_maho_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.maho_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_aoi_nakayosi_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.aoi_nakayosi = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_chloe_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.chloe = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_chieru_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.chieru = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_yuni_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.yuni = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kyouka_halloween_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kyouka_halloween = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_misogi_halloween_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.misogi_halloween = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_mimi_halloween_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.mimi_halloween = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_runa_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.runa = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kristina_christmas_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kristina_christmas = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_nozomi_christmas_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.nozomi_christmas = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_iriya_christmas_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.iriya_christmas = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_pekorinnu_newyear_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.pekorinnu_newyear = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kotkoro_newyear_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kotkoro_newyear = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kyaru_newyear_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kyaru_newyear = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_suzume_newyear_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.suzume_newyear = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kasumi_magical_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kasumi_magical = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_siori_magical_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.siori_magical = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_uzuki_deremas_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.uzuki_deremas = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_rin_deremas_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.rin_deremas = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_mio_deremas_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.mio_deremas = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_rin_ranger_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.rin_ranger = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_mahiru_ranger_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.mahiru_ranger = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_rino_wonder_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.rino_wonder = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_ayumi_wonder_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.ayumi_wonder = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_ruka_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.ruka_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_anna_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.anna_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_nanaka_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.nanaka_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_hatsune_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.hatsune_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_misato_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.misato_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_zyun_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.zyun_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_akari_angel_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.akari_angel = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_yori_angel_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.yori_angel = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_tsumugi_halloween_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.tsumugi_halloween = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_rei_halloween_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.rei_halloween = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_matsuri_halloween_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.matsuri_halloween = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_monika_magical_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.monika_magical = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_tomo_magical_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.tomo_magical = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_akino_christmas_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.akino_christmas = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_saren_christmas_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.saren_christmas = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_yukari_christmas_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.yukari_christmas = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_muimi_newyear_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.muimi_newyear = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_neneka_newyear_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.neneka_newyear = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kotkoro_maiden_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kotkoro_maiden = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_yui_maiden_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.yui_maiden = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kasumi_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kasumi_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
         private void bt_rima_cinderella_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.rima_cinderella = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
+        { Chara_set.rima_cinderella = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
         private void bt_makoto_cinderella_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.makoto_cinderella = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-
-        private void bt_chieru_terefes_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.chieru_terefes = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
+        { Chara_set.makoto_cinderella = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_maho_cinderella_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.maho_cinderella = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
         private void bt_chloe_terefes_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.chloe_terefes = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
+        { Chara_set.chloe_terefes = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_chieru_terefes_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.chieru_terefes = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
         private void bt_inori_timetravel_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.inori_timetravel = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
+        { Chara_set.inori_timetravel = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
         private void bt_kaya_timetravel_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kaya_timetravel = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_tamaki_worker_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.tamaki_worker = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
+        { Chara_set.kaya_timetravel = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
         private void bt_aoi_worker_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.aoi_worker = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
+        { Chara_set.aoi_worker = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_tamaki_worker_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.tamaki_worker = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
         private void bt_mihuyu_worker_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.mihuyu_worker = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-        private void bt_kyaru_princess_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.kyaru_princess = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-        }
-
+        { Chara_set.mihuyu_worker = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_eriko_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.eriko_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_sizuru_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.sizuru_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_nozomi_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.nozomi_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_chika_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.chika_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_tsumugi_summer_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.tsumugi_summer = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_mitsuki_ooedo_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.mitsuki_ooedo = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_yuki_ooedo_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.yuki_ooedo = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kaori_halloween_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kaori_halloween = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_ninon_halloween_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.ninon_halloween = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_suzuna_halloween_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.suzuna_halloween = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_credita_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.credita = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_ranpa_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.ranpa = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_hatsune_princess_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.hatsune_princess = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_siori_princess_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.siori_princess = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_karin_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.karin = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_io_noir_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.io_noir = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kuuka_noir_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kuuka_noir = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_mahiru_christmas_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.mahiru_christmas = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_rino_christmas_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.rino_christmas = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_miyako_christmas_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.miyako_christmas = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_mimi_princess_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.mimi_princess = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_misogi_princess_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.misogi_princess = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kyouka_princess_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kyouka_princess = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_shepi_newyear_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.shepi_newyear = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_ruka_newyear_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.ruka_newyear = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_iriya_newyear_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.iriya_newyear = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_pekorinnu_overload_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.pekorinnu_overload = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kyaru_overload_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kyaru_overload = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_labirista_overload_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.labirista_overload = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kurumi_stage_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kurumi_stage = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_hiyori_princess_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.hiyori_princess = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_yui_princess_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.yui_princess = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
         private void bt_rei_princess_set_Click(object sender, RoutedEventArgs e)
-        {
-            Chara_set.rei_princess = true;
-            Chara_set C_S = new Chara_set(); C_S.ShowDialog();
-
-        }
-        //캐릭터 설정 프레이 작후유까지
-
+        { Chara_set.rei_princess = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_pekorinnu_princess_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.pekorinnu_princess = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kotkoro_princess_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kotkoro_princess = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_kyaru_princess_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.kyaru_princess = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_hatsusio_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.hatsusio = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
+        private void bt_littlelyri_set_Click(object sender, RoutedEventArgs e)
+        { Chara_set.littlelyri = true; Chara_set C_S = new Chara_set(); C_S.ShowDialog(); }
         #endregion
+
         //캐릭터 설정 프레이 작후유까지
 
 
@@ -9479,6 +8384,8 @@ namespace PCRD_KR_ArenaSim
         string Abbr_chloe_terefes, Abbr_chieru_terefes;
         string Abbr_inori_timetravel, Abbr_kaya_timetravel;
         string Abbr_aoi_worker, Abbr_tamaki_worker, Abbr_mihuyu_worker;
+        string Abbr_eriko_summer, Abbr_sizuru_summer;
+        string Abbr_nozomi_summer, Abbr_chika_summer, Abbr_tsumugi_summer;
 
         private void bt_open_abbr_Click(object sender, RoutedEventArgs e)
         {
@@ -9533,9 +8440,6 @@ namespace PCRD_KR_ArenaSim
 
         private void tb_CharaAbbr_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
-
-
-
 
         }
 
@@ -9713,629 +8617,169 @@ namespace PCRD_KR_ArenaSim
             {
                 string s = sr.ReadLine();
                 string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
-                //Debug.WriteLine(s);
-
-                if (temp[0] == "히요리")
-                {
-                    tb_abbr_hiyori.Text = Abbr_hiyori = temp[1];
-                    Debug.WriteLine("히");
-                }
-                else if (temp[0] == "유이")
-                {
-                    tb_abbr_yui.Text = Abbr_yui = temp[1];
-                    Debug.WriteLine("유이2");
-                }
-                else if (temp[0] == "레이")
-                {
-                    tb_abbr_rei.Text = Abbr_rei = temp[1];
-                }
-                else if (temp[0] == "미소기")
-                {
-                    tb_abbr_misogi.Text = Abbr_misogi = temp[1];
-                }
-                else if (temp[0] == "마츠리")
-                {
-                    tb_abbr_matsuri.Text = Abbr_matsuri = temp[1];
-                }
-                else if (temp[0] == "아카리")
-                {
-                    tb_abbr_akari.Text = Abbr_akari = temp[1];
-                }
-                else if (temp[0] == "미야코")
-                {
-                    tb_abbr_miyako.Text = Abbr_miyako = temp[1];
-                }
-                else if (temp[0] == "유키")
-                {
-                    tb_abbr_yuki.Text = Abbr_yuki = temp[1];
-                }
-                else if (temp[0] == "안나")
-                {
-                    tb_abbr_anna.Text = Abbr_anna = temp[1];
-                }
-                else if (temp[0] == "마호")
-                {
-                    tb_abbr_maho.Text = Abbr_maho = temp[1];
-                }
-                else if (temp[0] == "리노")
-                {
-                    tb_abbr_rino.Text = Abbr_rino = temp[1];
-                }
-                else if (temp[0] == "하츠네")
-                {
-                    tb_abbr_hatsune.Text = Abbr_hatsune = temp[1];
-                }
-                else if (temp[0] == "나나카")
-                {
-                    tb_abbr_nanaka.Text = Abbr_nanaka = temp[1];
-                }
-                else if (temp[0] == "카스미")
-                {
-                    tb_abbr_kasumi.Text = Abbr_kasumi = temp[1];
-                }
-                else if (temp[0] == "미사토")
-                {
-                    tb_abbr_misato.Text = Abbr_misato = temp[1];
-                }
-                else if (temp[0] == "스즈나")
-                {
-                    tb_abbr_suzuna.Text = Abbr_suzuna = temp[1];
-                }
-                else if (temp[0] == "카오리")
-                {
-                    tb_abbr_kaori.Text = Abbr_kaori = temp[1];
-                }
-                else if (temp[0] == "이오")
-                {
-                    tb_abbr_io.Text = Abbr_io = temp[1];
-                }
-                else if (temp[0] == "미미")
-                {
-                    tb_abbr_mimi.Text = Abbr_mimi = temp[1];
-                }
-                else if (temp[0] == "쿠루미")
-                {
-                    tb_abbr_kurumi.Text = Abbr_kurumi = temp[1];
-                }
-                else if (temp[0] == "요리")
-                {
-                    tb_abbr_yori.Text = Abbr_yori = temp[1];
-                }
-                else if (temp[0] == "아야네")
-                {
-                    tb_abbr_ayane.Text = Abbr_ayane = temp[1];
-                }
-                else if (temp[0] == "스즈메")
-                {
-                    tb_abbr_suzume.Text = Abbr_suzume = temp[1];
-                }
-                else if (temp[0] == "린")
-                {
-                    tb_abbr_rin.Text = Abbr_rin = temp[1];
-                }
-                else if (temp[0] == "에리코")
-                {
-                    tb_abbr_eriko.Text = Abbr_eriko = temp[1];
-                }
-                else if (temp[0] == "사렌")
-                {
-                    tb_abbr_saren.Text = Abbr_saren = temp[1];
-                }
-                else if (temp[0] == "노조미")
-                {
-                    tb_abbr_nozomi.Text = Abbr_nozomi = temp[1];
-                }
-                else if (temp[0] == "니논")
-                {
-                    tb_abbr_ninon.Text = Abbr_ninon = temp[1];
-                }
-                else if (temp[0] == "시노부")
-                {
-                    tb_abbr_sinobu.Text = Abbr_sinobu = temp[1];
-                }
-                else if (temp[0] == "아키노")
-                {
-                    tb_abbr_akino.Text = Abbr_akino = temp[1];
-                }
-                else if (temp[0] == "마히루")
-                {
-                    tb_abbr_mahiru.Text = Abbr_mahiru = temp[1];
-                }
-                else if (temp[0] == "유카리")
-                {
-                    tb_abbr_yukari.Text = Abbr_yukari = temp[1];
-                }
-                else if (temp[0] == "쿄우카")
-                {
-                    tb_abbr_kyouka.Text = Abbr_kyouka = temp[1];
-                }
-                else if (temp[0] == "토모")
-                {
-                    tb_abbr_tomo.Text = Abbr_tomo = temp[1];
-                }
-                else if (temp[0] == "시오리")
-                {
-                    tb_abbr_siori.Text = Abbr_siori = temp[1];
-                }
-                else if (temp[0] == "아오이")
-                {
-                    tb_abbr_aoi.Text = Abbr_aoi = temp[1];
-                }
-                else if (temp[0] == "치카")
-                {
-                    tb_abbr_chika.Text = Abbr_chika = temp[1];
-                }
-                else if (temp[0] == "마코토")
-                {
-                    tb_abbr_makoto.Text = Abbr_makoto = temp[1];
-                }
-                else if (temp[0] == "이리야")
-                {
-                    tb_abbr_iriya.Text = Abbr_iriya = temp[1];
-                }
-                else if (temp[0] == "쿠우카")
-                {
-                    tb_abbr_kuuka.Text = Abbr_kuuka = temp[1];
-                }
-                else if (temp[0] == "타마키")
-                {
-                    tb_abbr_tamaki.Text = Abbr_tamaki = temp[1];
-                }
-                else if (temp[0] == "쥰")
-                {
-                    tb_abbr_zyun.Text = Abbr_zyun = temp[1];
-                }
-                else if (temp[0] == "미후유")
-                {
-                    tb_abbr_mihuyu.Text = Abbr_mihuyu = temp[1];
-                }
-                else if (temp[0] == "시즈루")
-                {
-                    tb_abbr_sizuru.Text = Abbr_sizuru = temp[1];
-                }
-                else if (temp[0] == "미사키")
-                {
-                    tb_abbr_misaki.Text = Abbr_misaki = temp[1];
-                }
-                else if (temp[0] == "미츠키")
-                {
-                    tb_abbr_mitsuki.Text = Abbr_mitsuki = temp[1];
-                }
-                else if (temp[0] == "리마")
-                {
-                    tb_abbr_rima.Text = Abbr_rima = temp[1];
-                }
-                else if (temp[0] == "모니카")
-                {
-                    tb_abbr_monika.Text = Abbr_monika = temp[1];
-                }
-                else if (temp[0] == "츠무기")
-                {
-                    tb_abbr_tsumugi.Text = Abbr_tsumugi = temp[1];
-                }
-                else if (temp[0] == "아유미")
-                {
-                    tb_abbr_ayumi.Text = Abbr_ayumi = temp[1];
-                }
-                else if (temp[0] == "루카")
-                {
-                    tb_abbr_ruka.Text = Abbr_ruka = temp[1];
-                }
-                else if (temp[0] == "지타")
-                {
-                    tb_abbr_zita.Text = Abbr_zita = temp[1];
-                }
-                else if (temp[0] == "페코린느")
-                {
-                    tb_abbr_pekorinnu.Text = Abbr_pekorinnu = temp[1];
-                }
-                else if (temp[0] == "콧코로")
-                {
-                    tb_abbr_kotkoro.Text = Abbr_kotkoro = temp[1];
-                }
-                else if (temp[0] == "캬루")
-                {
-                    tb_abbr_kyaru.Text = Abbr_kyaru = temp[1];
-                }
-                else if (temp[0] == "무이미")
-                {
-                    tb_abbr_muimi.Text = Abbr_muimi = temp[1];
-                }
-                else if (temp[0] == "아리사")
-                {
-                    tb_abbr_arisa.Text = Abbr_arisa = temp[1];
-                }
-                else if (temp[0] == "카야")
-                {
-                    tb_abbr_kaya.Text = Abbr_kaya = temp[1];
-                }
-                else if (temp[0] == "네네카")
-                {
-                    tb_abbr_neneka.Text = Abbr_neneka = temp[1];
-                }
-                else if (temp[0] == "크리스티나")
-                {
-                    tb_abbr_kristina.Text = Abbr_kristina = temp[1];
-                }
-                else if (temp[0] == "수페코")
-                {
-                    tb_abbr_pekorinnu_summer.Text = Abbr_pekorinnu_summer = temp[1];
-                }
-                else if (temp[0] == "수코로")
-                {
-                    tb_abbr_kotkoro_summer.Text = Abbr_kotkoro_summer = temp[1];
-                }
-                else if (temp[0] == "수즈메")
-                {
-                    tb_abbr_suzume_summer.Text = Abbr_suzume_summer = temp[1];
-                }
-                else if (temp[0] == "수캬루")
-                {
-                    tb_abbr_kyaru_summer.Text = Abbr_kyaru_summer = temp[1];
-                }
-                else if (temp[0] == "수마키")
-                {
-                    tb_abbr_tamaki_summer.Text = Abbr_tamaki_summer = temp[1];
-                }
-                else if (temp[0] == "수후유")
-                {
-                    tb_abbr_mihuyu_summer.Text = Abbr_mihuyu_summer = temp[1];
-                }
-                else if (temp[0] == "할노부")
-                {
-                    tb_abbr_sinobu_halloween.Text = Abbr_sinobu_halloween = temp[1];
-                }
-                else if (temp[0] == "할푸딩")
-                {
-                    tb_abbr_miyako_halloween.Text = Abbr_miyako_halloween = temp[1];
-                }
-                else if (temp[0] == "할사키")
-                {
-                    tb_abbr_misaki_halloween.Text = Abbr_misaki_halloween = temp[1];
-                }
-                else if (temp[0] == "성치카")
-                {
-                    tb_abbr_chika_christmas.Text = Abbr_chika_christmas = temp[1];
-                }
-                else if (temp[0] == "성루미")
-                {
-                    tb_abbr_kurumi_christmas.Text = Abbr_kurumi_christmas = temp[1];
-                }
-                else if (temp[0] == "성야네")
-                {
-                    tb_abbr_ayane_christmas.Text = Abbr_ayane_christmas = temp[1];
-                }
-                else if (temp[0] == "뉴요리")
-                {
-                    tb_abbr_hiyori_newyear.Text = Abbr_hiyori_newyear = temp[1];
-                }
-                else if (temp[0] == "뉴이")
-                {
-                    tb_abbr_yui_newyear.Text = Abbr_yui_newyear = temp[1];
-                }
-                else if (temp[0] == "신레이")
-                {
-                    tb_abbr_rei_newyear.Text = Abbr_rei_newyear = temp[1];
-                }
-                else if (temp[0] == "발리코")
-                {
-                    tb_abbr_eriko_valentine.Text = Abbr_eriko_valentine = temp[1];
-                }
-                else if (temp[0] == "발즈루")
-                {
-                    tb_abbr_sizuru_valentine.Text = Abbr_sizuru_valentine = temp[1];
-                }
-                else if (temp[0] == "앤")
-                {
-                    tb_abbr_anne.Text = Abbr_anne = temp[1];
-                }
-                else if (temp[0] == "루")
-                {
-                    tb_abbr_lou.Text = Abbr_lou = temp[1];
-                }
-                else if (temp[0] == "글레어")
-                {
-                    tb_abbr_grea.Text = Abbr_grea = temp[1];
-                }
-                else if (temp[0] == "오우카")
-                {
-                    tb_abbr_kuuka_ooedo.Text = Abbr_kuuka_ooedo = temp[1];
-                }
-                else if (temp[0] == "오니논")
-                {
-                    tb_abbr_ninon_ooedo.Text = Abbr_ninon_ooedo = temp[1];
-                }
-                else if (temp[0] == "렘")
-                {
-                    tb_abbr_rem.Text = Abbr_rem = temp[1];
-                }
-                else if (temp[0] == "람")
-                {
-                    tb_abbr_ram.Text = Abbr_ram = temp[1];
-                }
-                else if (temp[0] == "에밀리아")
-                {
-                    tb_abbr_emilia.Text = Abbr_emilia = temp[1];
-                }
-                else if (temp[0] == "수즈나")
-                {
-                    tb_abbr_suzuna_summer.Text = Abbr_suzuna_summer = temp[1];
-                }
-                else if (temp[0] == "수이오")
-                {
-                    tb_abbr_io_summer.Text = Abbr_io_summer = temp[1];
-                }
-                else if (temp[0] == "수사렌")
-                {
-                    tb_abbr_saren_summer.Text = Abbr_saren_summer = temp[1];
-                }
-                else if (temp[0] == "수코토")
-                {
-                    tb_abbr_makoto_summer.Text = Abbr_makoto_summer = temp[1];
-                }
-                else if (temp[0] == "수오리")
-                {
-                    tb_abbr_kaori_summer.Text = Abbr_kaori_summer = temp[1];
-                }
-                else if (temp[0] == "수마호")
-                {
-                    tb_abbr_maho_summer.Text = Abbr_maho_summer = temp[1];
-                }
-                else if (temp[0] == "편오이")
-                {
-                    tb_abbr_aoi_nakayosi.Text = Abbr_aoi_nakayosi = temp[1];
-                }
-                else if (temp[0] == "클로에")
-                {
-                    tb_abbr_chloe.Text = Abbr_chloe = temp[1];
-                }
-                else if (temp[0] == "할쿄카")
-                {
-                    tb_abbr_kyouka_halloween.Text = Abbr_kyouka_halloween = temp[1];
-                }
-                else if (temp[0] == "할소기")
-                {
-                    tb_abbr_misogi_halloween.Text = Abbr_misogi_halloween = temp[1];
-                }
-                else if (temp[0] == "할미미")
-                {
-                    tb_abbr_mimi_halloween.Text = Abbr_mimi_halloween = temp[1];
-                }
-                else if (temp[0] == "루나")
-                {
-                    tb_abbr_runa.Text = Abbr_runa = temp[1];
-                }
-                else if (temp[0] == "성리스")
-                {
-                    tb_abbr_kristina_christmas.Text = Abbr_kristina_christmas = temp[1];
-                }
-                else if (temp[0] == "성조미")
-                {
-                    tb_abbr_nozomi_christmas.Text = Abbr_nozomi_christmas = temp[1];
-                }
-                else if (temp[0] == "성리야")
-                {
-                    tb_abbr_iriya_christmas.Text = Abbr_iriya_christmas = temp[1];
-                }
-                else if (temp[0] == "뉴코로")
-                {
-                    tb_abbr_kotkoro_newyear.Text = Abbr_kotkoro_newyear = temp[1];
-                }
-                else if (temp[0] == "냐루")
-                {
-                    tb_abbr_kyaru_newyear.Text = Abbr_kyaru_newyear = temp[1];
-                }
-                else if (temp[0] == "뉴즈메")
-                {
-                    tb_abbr_suzume_newyear.Text = Abbr_suzume_newyear = temp[1];
-                }
-                else if (temp[0] == "마스미")
-                {
-                    tb_abbr_kasumi_magical.Text = Abbr_kasumi_magical = temp[1];
-                }
-                else if (temp[0] == "마오리")
-                {
-                    tb_abbr_siori_magical.Text = Abbr_siori_magical = temp[1];
-                }
-                else if (temp[0] == "프페코")
-                {
-                    tb_abbr_pekorinnu_princess.Text = Abbr_pekorinnu_princess = temp[1];
-                }
-                else if (temp[0] == "우즈키")
-                {
-                    tb_abbr_uzuki_deremas.Text = Abbr_uzuki_deremas = temp[1];
-                }
-                else if (temp[0] == "시부린")
-                {
-                    tb_abbr_rin_deremas.Text = Abbr_rin_deremas = temp[1];
-                }
-                else if (temp[0] == "미오")
-                {
-                    tb_abbr_mio_deremas.Text = Abbr_mio_deremas = temp[1];
-                }
-                else if (temp[0] == "유니")
-                {
-                    tb_abbr_yuni.Text = Abbr_yuni = temp[1];
-                }
-                else if (temp[0] == "치에루")
-                {
-                    tb_abbr_chieru.Text = Abbr_chieru = temp[1];
-                }
-                else if (temp[0] == "레린")
-                {
-                    tb_abbr_rin_ranger.Text = Abbr_rin_ranger = temp[1];
-                }
-                else if (temp[0] == "레히루")
-                {
-                    tb_abbr_mahiru_ranger.Text = Abbr_mahiru_ranger = temp[1];
-                }
-                else if (temp[0] == "앨리노")
-                {
-                    tb_abbr_rino_wonder.Text = Abbr_rino_wonder = temp[1];
-                }
-                else if (temp[0] == "앨유미")
-                {
-                    tb_abbr_ayumi_wonder.Text = Abbr_ayumi_wonder = temp[1];
-                }
-                else if (temp[0] == "수루카")
-                {
-                    tb_abbr_ruka_summer.Text = Abbr_ruka_summer = temp[1];
-                }
-                else if (temp[0] == "수안나")
-                {
-                    tb_abbr_anna_summer.Text = Abbr_anna_summer = temp[1];
-                }
-                else if (temp[0] == "수나카")
-                {
-                    tb_abbr_nanaka_summer.Text = Abbr_nanaka_summer = temp[1];
-                }
-                else if (temp[0] == "수츠네")
-                {
-                    tb_abbr_hatsune_summer.Text = Abbr_hatsune_summer = temp[1];
-                }
-                else if (temp[0] == "수사토")
-                {
-                    tb_abbr_misato_summer.Text = Abbr_misato_summer = temp[1];
-                }
-                else if (temp[0] == "수쥰")
-                {
-                    tb_abbr_zyun_summer.Text = Abbr_zyun_summer = temp[1];
-                }
-                else if (temp[0] == "엔카리")
-                {
-                    tb_abbr_akari_angel.Text = Abbr_akari_angel = temp[1];
-                }
-                else if (temp[0] == "프유이")
-                {
-                    tb_abbr_yui_princess.Text = Abbr_yui_princess = temp[1];
-                }
-                else if (temp[0] == "프코로")
-                {
-                    tb_abbr_kotkoro_princess.Text = Abbr_kotkoro_princess = temp[1];
-                }
-                else if (temp[0] == "프요리")
-                {
-                    tb_abbr_hiyori_princess.Text = Abbr_hiyori_princess = temp[1];
-                }
-                else if (temp[0] == "프캬루")
-                {
-                    tb_abbr_kyaru_princess.Text = Abbr_kyaru_princess = temp[1];
-                }
-                else if (temp[0] == "엔요리")
-                {
-                    tb_abbr_yori_angel.Text = Abbr_yori_angel = temp[1];
-                }
-                else if (temp[0] == "라비리스타")
-                {
-                    tb_abbr_labyrista.Text = Abbr_labyrista = temp[1];
-                }
-                else if (temp[0] == "이노리")
-                {
-                    tb_abbr_inori.Text = Abbr_inori = temp[1];
-                }
-                else if (temp[0] == "할무기")
-                {
-                    tb_abbr_tsumugi_halloween.Text = Abbr_tsumugi_halloween = temp[1];
-                }
-                else if (temp[0] == "할레이")
-                {
-                    tb_abbr_rei_halloween.Text = Abbr_rei_halloween = temp[1];
-                }
-                else if (temp[0] == "할츠리")
-                {
-                    tb_abbr_matsuri_halloween.Text = Abbr_matsuri_halloween = temp[1];
-                }
-                else if (temp[0] == "마니카")
-                {
-                    tb_abbr_monika_magical.Text = Abbr_monika_magical = temp[1];
-                }
-                else if (temp[0] == "마토모")
-                {
-                    tb_abbr_tomo_magical.Text = Abbr_tomo_magical = temp[1];
-                }
-                else if (temp[0] == "성리노")
-                {
-                    tb_abbr_akino_christmas.Text = Abbr_akino_christmas = temp[1];
-                }
-                else if (temp[0] == "성사렌")
-                {
-                    tb_abbr_saren_christmas.Text = Abbr_saren_christmas = temp[1];
-                }
-                else if (temp[0] == "성카리")
-                {
-                    tb_abbr_yukari_christmas.Text = Abbr_yukari_christmas = temp[1];
-                }
-                else if (temp[0] == "뉴이미")
-                {
-                    tb_abbr_muimi_newyear.Text = Abbr_muimi_newyear = temp[1];
-                }
-                else if (temp[0] == "뉴네카")
-                {
-                    tb_abbr_neneka_newyear.Text = Abbr_neneka_newyear = temp[1];
-                }
-                else if (temp[0] == "뉴페코")
-                {
-                    tb_abbr_pekorinnu_newyear.Text = Abbr_pekorinnu_newyear = temp[1];
-                }
-
-                else if (temp[0] == "셰피")
-                {
-                    tb_abbr_shepi.Text = Abbr_shepi = temp[1];
-                }
-                else if (temp[0] == "의코로")
-                {
-                    tb_abbr_kotkoro_maiden.Text = Abbr_kotkoro_maiden = temp[1];
-                }
-                else if (temp[0] == "의유이")
-                {
-                    tb_abbr_yui_maiden.Text = Abbr_yui_maiden = temp[1];
-                }
-                else if (temp[0] == "수스미")
-                {
-                    tb_abbr_kasumi_summer.Text = Abbr_kasumi_summer = temp[1];
-                }
-
-                else if (temp[0] == "신리마")
-                {
-                    tb_abbr_rima_cinderella.Text = Abbr_rima_cinderella = temp[1];
-                }
-                else if (temp[0] == "신마호")
-                {
-                    tb_abbr_maho_cinderella.Text = Abbr_maho_cinderella = temp[1];
-                }
-                else if (temp[0] == "신코토")
-                {
-                    tb_abbr_makoto_cinderella.Text = Abbr_makoto_cinderella = temp[1];
-                }
-
-                else if (temp[0] == "성로에")
-                {
-                    tb_abbr_chloe_terefes.Text = Abbr_chloe_terefes = temp[1];
-                }
-                else if (temp[0] == "성에루")
-                {
-                    tb_abbr_chieru_terefes.Text = Abbr_chieru_terefes = temp[1];
-                }
-                else if (temp[0] == "타노리" || temp[0] == "시노리")
-                {
-                    tb_abbr_inori_timetravel.Text = Abbr_inori_timetravel = temp[1];
-                }
-                else if (temp[0] == "타카야" || temp[0] == "시카야")
-                {
-                    tb_abbr_kaya_timetravel.Text = Abbr_kaya_timetravel = temp[1];
-                }
-                else if (temp[0] == "작오이")
-                {
-                    tb_abbr_aoi_worker.Text = Abbr_aoi_worker = temp[1];
-                }
-                else if (temp[0] == "작마키")
-                {
-                    tb_abbr_tamaki_worker.Text = Abbr_tamaki_worker = temp[1];
-                }
-                else if (temp[0] == "작후유")
-                {
-                    tb_abbr_mihuyu_worker.Text = Abbr_mihuyu_worker = temp[1];
-                }
+                                                     //Debug.WriteLine(s);
+                #region InitializeAbbr
+                if (temp[0] == "히요리") { tb_abbr_hiyori.Text = Abbr_hiyori = temp[1]; }
+                else if (temp[0] == "유이") { tb_abbr_yui.Text = Abbr_yui = temp[1]; }
+                else if (temp[0] == "레이") { tb_abbr_rei.Text = Abbr_rei = temp[1]; }
+                else if (temp[0] == "미소기") { tb_abbr_misogi.Text = Abbr_misogi = temp[1]; }
+                else if (temp[0] == "마츠리") { tb_abbr_matsuri.Text = Abbr_matsuri = temp[1]; }
+                else if (temp[0] == "아카리") { tb_abbr_akari.Text = Abbr_akari = temp[1]; }
+                else if (temp[0] == "미야코") { tb_abbr_miyako.Text = Abbr_miyako = temp[1]; }
+                else if (temp[0] == "유키") { tb_abbr_yuki.Text = Abbr_yuki = temp[1]; }
+                else if (temp[0] == "안나") { tb_abbr_anna.Text = Abbr_anna = temp[1]; }
+                else if (temp[0] == "마호") { tb_abbr_maho.Text = Abbr_maho = temp[1]; }
+                else if (temp[0] == "리노") { tb_abbr_rino.Text = Abbr_rino = temp[1]; }
+                else if (temp[0] == "하츠네") { tb_abbr_hatsune.Text = Abbr_hatsune = temp[1]; }
+                else if (temp[0] == "나나카") { tb_abbr_nanaka.Text = Abbr_nanaka = temp[1]; }
+                else if (temp[0] == "카스미") { tb_abbr_kasumi.Text = Abbr_kasumi = temp[1]; }
+                else if (temp[0] == "미사토") { tb_abbr_misato.Text = Abbr_misato = temp[1]; }
+                else if (temp[0] == "스즈나") { tb_abbr_suzuna.Text = Abbr_suzuna = temp[1]; }
+                else if (temp[0] == "카오리") { tb_abbr_kaori.Text = Abbr_kaori = temp[1]; }
+                else if (temp[0] == "이오") { tb_abbr_io.Text = Abbr_io = temp[1]; }
+                else if (temp[0] == "미미") { tb_abbr_mimi.Text = Abbr_mimi = temp[1]; }
+                else if (temp[0] == "쿠루미") { tb_abbr_kurumi.Text = Abbr_kurumi = temp[1]; }
+                else if (temp[0] == "요리") { tb_abbr_yori.Text = Abbr_yori = temp[1]; }
+                else if (temp[0] == "아야네") { tb_abbr_ayane.Text = Abbr_ayane = temp[1]; }
+                else if (temp[0] == "스즈메") { tb_abbr_suzume.Text = Abbr_suzume = temp[1]; }
+                else if (temp[0] == "린") { tb_abbr_rin.Text = Abbr_rin = temp[1]; }
+                else if (temp[0] == "에리코") { tb_abbr_eriko.Text = Abbr_eriko = temp[1]; }
+                else if (temp[0] == "사렌") { tb_abbr_saren.Text = Abbr_saren = temp[1]; }
+                else if (temp[0] == "노조미") { tb_abbr_nozomi.Text = Abbr_nozomi = temp[1]; }
+                else if (temp[0] == "니논") { tb_abbr_ninon.Text = Abbr_ninon = temp[1]; }
+                else if (temp[0] == "시노부") { tb_abbr_sinobu.Text = Abbr_sinobu = temp[1]; }
+                else if (temp[0] == "아키노") { tb_abbr_akino.Text = Abbr_akino = temp[1]; }
+                else if (temp[0] == "마히루") { tb_abbr_mahiru.Text = Abbr_mahiru = temp[1]; }
+                else if (temp[0] == "유카리") { tb_abbr_yukari.Text = Abbr_yukari = temp[1]; }
+                else if (temp[0] == "쿄우카") { tb_abbr_kyouka.Text = Abbr_kyouka = temp[1]; }
+                else if (temp[0] == "토모") { tb_abbr_tomo.Text = Abbr_tomo = temp[1]; }
+                else if (temp[0] == "시오리") { tb_abbr_siori.Text = Abbr_siori = temp[1]; }
+                else if (temp[0] == "아오이") { tb_abbr_aoi.Text = Abbr_aoi = temp[1]; }
+                else if (temp[0] == "치카") { tb_abbr_chika.Text = Abbr_chika = temp[1]; }
+                else if (temp[0] == "마코토") { tb_abbr_makoto.Text = Abbr_makoto = temp[1]; }
+                else if (temp[0] == "이리야") { tb_abbr_iriya.Text = Abbr_iriya = temp[1]; }
+                else if (temp[0] == "쿠우카") { tb_abbr_kuuka.Text = Abbr_kuuka = temp[1]; }
+                else if (temp[0] == "타마키") { tb_abbr_tamaki.Text = Abbr_tamaki = temp[1]; }
+                else if (temp[0] == "쥰") { tb_abbr_zyun.Text = Abbr_zyun = temp[1]; }
+                else if (temp[0] == "미후유") { tb_abbr_mihuyu.Text = Abbr_mihuyu = temp[1]; }
+                else if (temp[0] == "시즈루") { tb_abbr_sizuru.Text = Abbr_sizuru = temp[1]; }
+                else if (temp[0] == "미사키") { tb_abbr_misaki.Text = Abbr_misaki = temp[1]; }
+                else if (temp[0] == "미츠키") { tb_abbr_mitsuki.Text = Abbr_mitsuki = temp[1]; }
+                else if (temp[0] == "리마") { tb_abbr_rima.Text = Abbr_rima = temp[1]; }
+                else if (temp[0] == "모니카") { tb_abbr_monika.Text = Abbr_monika = temp[1]; }
+                else if (temp[0] == "츠무기") { tb_abbr_tsumugi.Text = Abbr_tsumugi = temp[1]; }
+                else if (temp[0] == "아유미") { tb_abbr_ayumi.Text = Abbr_ayumi = temp[1]; }
+                else if (temp[0] == "루카") { tb_abbr_ruka.Text = Abbr_ruka = temp[1]; }
+                else if (temp[0] == "지타") { tb_abbr_zita.Text = Abbr_zita = temp[1]; }
+                else if (temp[0] == "페코린느") { tb_abbr_pekorinnu.Text = Abbr_pekorinnu = temp[1]; }
+                else if (temp[0] == "콧코로") { tb_abbr_kotkoro.Text = Abbr_kotkoro = temp[1]; }
+                else if (temp[0] == "캬루") { tb_abbr_kyaru.Text = Abbr_kyaru = temp[1]; }
+                else if (temp[0] == "무이미") { tb_abbr_muimi.Text = Abbr_muimi = temp[1]; }
+                else if (temp[0] == "아리사") { tb_abbr_arisa.Text = Abbr_arisa = temp[1]; }
+                else if (temp[0] == "셰피") { tb_abbr_shepi.Text = Abbr_shepi = temp[1]; }
+                else if (temp[0] == "카야") { tb_abbr_kaya.Text = Abbr_kaya = temp[1]; }
+                else if (temp[0] == "이노리") { tb_abbr_inori.Text = Abbr_inori = temp[1]; }
+                else if (temp[0] == "라비리스타") { tb_abbr_labyrista.Text = Abbr_labyrista = temp[1]; }
+                else if (temp[0] == "네네카") { tb_abbr_neneka.Text = Abbr_neneka = temp[1]; }
+                else if (temp[0] == "크리스티나") { tb_abbr_kristina.Text = Abbr_kristina = temp[1]; }
+                else if (temp[0] == "수페코") { tb_abbr_pekorinnu_summer.Text = Abbr_pekorinnu_summer = temp[1]; }
+                else if (temp[0] == "수코로") { tb_abbr_kotkoro_summer.Text = Abbr_kotkoro_summer = temp[1]; }
+                else if (temp[0] == "수즈메") { tb_abbr_suzume_summer.Text = Abbr_suzume_summer = temp[1]; }
+                else if (temp[0] == "수캬루") { tb_abbr_kyaru_summer.Text = Abbr_kyaru_summer = temp[1]; }
+                else if (temp[0] == "수마키") { tb_abbr_tamaki_summer.Text = Abbr_tamaki_summer = temp[1]; }
+                else if (temp[0] == "수후유") { tb_abbr_mihuyu_summer.Text = Abbr_mihuyu_summer = temp[1]; }
+                else if (temp[0] == "할노부") { tb_abbr_sinobu_halloween.Text = Abbr_sinobu_halloween = temp[1]; }
+                else if (temp[0] == "할푸딩") { tb_abbr_miyako_halloween.Text = Abbr_miyako_halloween = temp[1]; }
+                else if (temp[0] == "할사키") { tb_abbr_misaki_halloween.Text = Abbr_misaki_halloween = temp[1]; }
+                else if (temp[0] == "성치카") { tb_abbr_chika_christmas.Text = Abbr_chika_christmas = temp[1]; }
+                else if (temp[0] == "성루미") { tb_abbr_kurumi_christmas.Text = Abbr_kurumi_christmas = temp[1]; }
+                else if (temp[0] == "성야네") { tb_abbr_ayane_christmas.Text = Abbr_ayane_christmas = temp[1]; }
+                else if (temp[0] == "뉴요리") { tb_abbr_hiyori_newyear.Text = Abbr_hiyori_newyear = temp[1]; }
+                else if (temp[0] == "뉴이") { tb_abbr_yui_newyear.Text = Abbr_yui_newyear = temp[1]; }
+                else if (temp[0] == "신레이") { tb_abbr_rei_newyear.Text = Abbr_rei_newyear = temp[1]; }
+                else if (temp[0] == "발리코") { tb_abbr_eriko_valentine.Text = Abbr_eriko_valentine = temp[1]; }
+                else if (temp[0] == "발즈루") { tb_abbr_sizuru_valentine.Text = Abbr_sizuru_valentine = temp[1]; }
+                else if (temp[0] == "앤") { tb_abbr_anne.Text = Abbr_anne = temp[1]; }
+                else if (temp[0] == "루") { tb_abbr_lou.Text = Abbr_lou = temp[1]; }
+                else if (temp[0] == "글레어") { tb_abbr_grea.Text = Abbr_grea = temp[1]; }
+                else if (temp[0] == "오우카") { tb_abbr_kuuka_ooedo.Text = Abbr_kuuka_ooedo = temp[1]; }
+                else if (temp[0] == "오니논") { tb_abbr_ninon_ooedo.Text = Abbr_ninon_ooedo = temp[1]; }
+                else if (temp[0] == "렘") { tb_abbr_rem.Text = Abbr_rem = temp[1]; }
+                else if (temp[0] == "람") { tb_abbr_ram.Text = Abbr_ram = temp[1]; }
+                else if (temp[0] == "에밀리아") { tb_abbr_emilia.Text = Abbr_emilia = temp[1]; }
+                else if (temp[0] == "수즈나") { tb_abbr_suzuna_summer.Text = Abbr_suzuna_summer = temp[1]; }
+                else if (temp[0] == "수이오") { tb_abbr_io_summer.Text = Abbr_io_summer = temp[1]; }
+                else if (temp[0] == "수사렌") { tb_abbr_saren_summer.Text = Abbr_saren_summer = temp[1]; }
+                else if (temp[0] == "수코토") { tb_abbr_makoto_summer.Text = Abbr_makoto_summer = temp[1]; }
+                else if (temp[0] == "수오리") { tb_abbr_kaori_summer.Text = Abbr_kaori_summer = temp[1]; }
+                else if (temp[0] == "수마호") { tb_abbr_maho_summer.Text = Abbr_maho_summer = temp[1]; }
+                else if (temp[0] == "편오이") { tb_abbr_aoi_nakayosi.Text = Abbr_aoi_nakayosi = temp[1]; }
+                else if (temp[0] == "클로에") { tb_abbr_chloe.Text = Abbr_chloe = temp[1]; }
+                else if (temp[0] == "치에루") { tb_abbr_chieru.Text = Abbr_chieru = temp[1]; }
+                else if (temp[0] == "유니") { tb_abbr_yuni.Text = Abbr_yuni = temp[1]; }
+                else if (temp[0] == "할쿄카") { tb_abbr_kyouka_halloween.Text = Abbr_kyouka_halloween = temp[1]; }
+                else if (temp[0] == "할소기") { tb_abbr_misogi_halloween.Text = Abbr_misogi_halloween = temp[1]; }
+                else if (temp[0] == "할미미") { tb_abbr_mimi_halloween.Text = Abbr_mimi_halloween = temp[1]; }
+                else if (temp[0] == "루나") { tb_abbr_runa.Text = Abbr_runa = temp[1]; }
+                else if (temp[0] == "성리스") { tb_abbr_kristina_christmas.Text = Abbr_kristina_christmas = temp[1]; }
+                else if (temp[0] == "성조미") { tb_abbr_nozomi_christmas.Text = Abbr_nozomi_christmas = temp[1]; }
+                else if (temp[0] == "성리야") { tb_abbr_iriya_christmas.Text = Abbr_iriya_christmas = temp[1]; }
+                else if (temp[0] == "뉴페코") { tb_abbr_pekorinnu_newyear.Text = Abbr_pekorinnu_newyear = temp[1]; }
+                else if (temp[0] == "뉴코로") { tb_abbr_kotkoro_newyear.Text = Abbr_kotkoro_newyear = temp[1]; }
+                else if (temp[0] == "냐루") { tb_abbr_kyaru_newyear.Text = Abbr_kyaru_newyear = temp[1]; }
+                else if (temp[0] == "뉴즈메") { tb_abbr_suzume_newyear.Text = Abbr_suzume_newyear = temp[1]; }
+                else if (temp[0] == "마스미") { tb_abbr_kasumi_magical.Text = Abbr_kasumi_magical = temp[1]; }
+                else if (temp[0] == "마오리") { tb_abbr_siori_magical.Text = Abbr_siori_magical = temp[1]; }
+                else if (temp[0] == "우즈키") { tb_abbr_uzuki_deremas.Text = Abbr_uzuki_deremas = temp[1]; }
+                else if (temp[0] == "시부린") { tb_abbr_rin_deremas.Text = Abbr_rin_deremas = temp[1]; }
+                else if (temp[0] == "미오") { tb_abbr_mio_deremas.Text = Abbr_mio_deremas = temp[1]; }
+                else if (temp[0] == "레린") { tb_abbr_rin_ranger.Text = Abbr_rin_ranger = temp[1]; }
+                else if (temp[0] == "레히루") { tb_abbr_mahiru_ranger.Text = Abbr_mahiru_ranger = temp[1]; }
+                else if (temp[0] == "앨리노") { tb_abbr_rino_wonder.Text = Abbr_rino_wonder = temp[1]; }
+                else if (temp[0] == "앨유미") { tb_abbr_ayumi_wonder.Text = Abbr_ayumi_wonder = temp[1]; }
+                else if (temp[0] == "수루카") { tb_abbr_ruka_summer.Text = Abbr_ruka_summer = temp[1]; }
+                else if (temp[0] == "수안나") { tb_abbr_anna_summer.Text = Abbr_anna_summer = temp[1]; }
+                else if (temp[0] == "수나카") { tb_abbr_nanaka_summer.Text = Abbr_nanaka_summer = temp[1]; }
+                else if (temp[0] == "수츠네") { tb_abbr_hatsune_summer.Text = Abbr_hatsune_summer = temp[1]; }
+                else if (temp[0] == "수사토") { tb_abbr_misato_summer.Text = Abbr_misato_summer = temp[1]; }
+                else if (temp[0] == "수쥰") { tb_abbr_zyun_summer.Text = Abbr_zyun_summer = temp[1]; }
+                else if (temp[0] == "엔카리") { tb_abbr_akari_angel.Text = Abbr_akari_angel = temp[1]; }
+                else if (temp[0] == "엔요리") { tb_abbr_yori_angel.Text = Abbr_yori_angel = temp[1]; }
+                else if (temp[0] == "할무기") { tb_abbr_tsumugi_halloween.Text = Abbr_tsumugi_halloween = temp[1]; }
+                else if (temp[0] == "할레이") { tb_abbr_rei_halloween.Text = Abbr_rei_halloween = temp[1]; }
+                else if (temp[0] == "할츠리") { tb_abbr_matsuri_halloween.Text = Abbr_matsuri_halloween = temp[1]; }
+                else if (temp[0] == "마니카") { tb_abbr_monika_magical.Text = Abbr_monika_magical = temp[1]; }
+                else if (temp[0] == "마토모") { tb_abbr_tomo_magical.Text = Abbr_tomo_magical = temp[1]; }
+                else if (temp[0] == "성키노") { tb_abbr_akino_christmas.Text = Abbr_akino_christmas = temp[1]; }
+                else if (temp[0] == "성사렌") { tb_abbr_saren_christmas.Text = Abbr_saren_christmas = temp[1]; }
+                else if (temp[0] == "성카리") { tb_abbr_yukari_christmas.Text = Abbr_yukari_christmas = temp[1]; }
+                else if (temp[0] == "뉴이미") { tb_abbr_muimi_newyear.Text = Abbr_muimi_newyear = temp[1]; }
+                else if (temp[0] == "뉴네카") { tb_abbr_neneka_newyear.Text = Abbr_neneka_newyear = temp[1]; }
+                else if (temp[0] == "의코로") { tb_abbr_kotkoro_maiden.Text = Abbr_kotkoro_maiden = temp[1]; }
+                else if (temp[0] == "의유이") { tb_abbr_yui_maiden.Text = Abbr_yui_maiden = temp[1]; }
+                else if (temp[0] == "수스미") { tb_abbr_kasumi_summer.Text = Abbr_kasumi_summer = temp[1]; }
+                else if (temp[0] == "신리마") { tb_abbr_rima_cinderella.Text = Abbr_rima_cinderella = temp[1]; }
+                else if (temp[0] == "신코토") { tb_abbr_makoto_cinderella.Text = Abbr_makoto_cinderella = temp[1]; }
+                else if (temp[0] == "신마호") { tb_abbr_maho_cinderella.Text = Abbr_maho_cinderella = temp[1]; }
+                else if (temp[0] == "성로에") { tb_abbr_chloe_terefes.Text = Abbr_chloe_terefes = temp[1]; }
+                else if (temp[0] == "성에루") { tb_abbr_chieru_terefes.Text = Abbr_chieru_terefes = temp[1]; }
+                else if (temp[0] == "시노리") { tb_abbr_inori_timetravel.Text = Abbr_inori_timetravel = temp[1]; }
+                else if (temp[0] == "타카야") { tb_abbr_kaya_timetravel.Text = Abbr_kaya_timetravel = temp[1]; }
+                else if (temp[0] == "작오이") { tb_abbr_aoi_worker.Text = Abbr_aoi_worker = temp[1]; }
+                else if (temp[0] == "작마키") { tb_abbr_tamaki_worker.Text = Abbr_tamaki_worker = temp[1]; }
+                else if (temp[0] == "작후유") { tb_abbr_mihuyu_worker.Text = Abbr_mihuyu_worker = temp[1]; }
+                else if (temp[0] == "수리코") { tb_abbr_eriko_summer.Text = Abbr_eriko_summer = temp[1]; }
+                else if (temp[0] == "수즈루") { tb_abbr_sizuru_summer.Text = Abbr_sizuru_summer = temp[1]; }
+                else if (temp[0] == "수조미") { tb_abbr_nozomi_summer.Text = Abbr_nozomi_summer = temp[1]; }
+                else if (temp[0] == "수치카") { tb_abbr_chika_summer.Text = Abbr_chika_summer = temp[1]; }
+                else if (temp[0] == "수무기") { tb_abbr_tsumugi_summer.Text = Abbr_tsumugi_summer = temp[1]; }
+                else if (temp[0] == "프요리") { tb_abbr_hiyori_princess.Text = Abbr_hiyori_princess = temp[1]; }
+                else if (temp[0] == "프유이") { tb_abbr_yui_princess.Text = Abbr_yui_princess = temp[1]; }
+                else if (temp[0] == "프레이") { tb_abbr_rei_princess.Text = Abbr_rei_princess = temp[1]; }
+                else if (temp[0] == "프페코") { tb_abbr_pekorinnu_princess.Text = Abbr_pekorinnu_princess = temp[1]; }
+                else if (temp[0] == "프코로") { tb_abbr_kotkoro_princess.Text = Abbr_kotkoro_princess = temp[1]; }
+                else if (temp[0] == "프캬루") { tb_abbr_kyaru_princess.Text = Abbr_kyaru_princess = temp[1]; }
+                #endregion
 
                 //Debug.WriteLine(String.Format("index = {0}", index));
                 //Debug.WriteLine(string.Format("{0},{1}", temp[0], temp[1]));
@@ -10348,323 +8792,329 @@ namespace PCRD_KR_ArenaSim
             StreamWriter sw = new StreamWriter("character_abbreviation.txt");
             if (sw != null)
             {
-                sw.WriteLine(string.Format("리마,{0}", tb_abbr_rima.Text));
-                sw.WriteLine(string.Format("미야코,{0}", tb_abbr_miyako.Text));
-                sw.WriteLine(string.Format("쿠우카,{0}", tb_abbr_kuuka.Text));
-                sw.WriteLine(string.Format("쥰,{0}", tb_abbr_zyun.Text));
-                sw.WriteLine(string.Format("뉴이미,{0}", tb_abbr_muimi_newyear.Text));
-                sw.WriteLine(string.Format("오우카,{0}", tb_abbr_kuuka_ooedo.Text));
-                sw.WriteLine(string.Format("카오리,{0}", tb_abbr_kaori.Text));
-                sw.WriteLine(string.Format("성사렌,{0}", tb_abbr_saren_christmas.Text));
-                sw.WriteLine(string.Format("할무기,{0}", tb_abbr_tsumugi_halloween.Text));
-                sw.WriteLine(string.Format("신레이,{0}", tb_abbr_rei_newyear.Text));
-                sw.WriteLine(string.Format("시부린,{0}", tb_abbr_rin_deremas.Text));
-                sw.WriteLine(string.Format("페코린느,{0}", tb_abbr_pekorinnu.Text));
-                sw.WriteLine(string.Format("프페코,{0}", tb_abbr_pekorinnu_princess.Text));
-                sw.WriteLine(string.Format("루카,{0}", tb_abbr_ruka.Text));
-                sw.WriteLine(string.Format("뉴코로,{0}", tb_abbr_kotkoro_newyear.Text));
-                sw.WriteLine(string.Format("노조미,{0}", tb_abbr_nozomi.Text));
-                sw.WriteLine(string.Format("무이미,{0}", tb_abbr_muimi.Text));
-                sw.WriteLine(string.Format("마코토,{0}", tb_abbr_makoto.Text));
-                sw.WriteLine(string.Format("신코토,{0}", tb_abbr_makoto_cinderella.Text));
-                sw.WriteLine(string.Format("카야,{0}", tb_abbr_kaya.Text));
-                sw.WriteLine(string.Format("타카야,{0}", tb_abbr_kaya_timetravel.Text));
-                sw.WriteLine(string.Format("뉴요리,{0}", tb_abbr_hiyori_newyear.Text));
-                sw.WriteLine(string.Format("신리마,{0}", tb_abbr_rima_cinderella.Text));
-                sw.WriteLine(string.Format("오니논,{0}", tb_abbr_ninon_ooedo.Text));
-                sw.WriteLine(string.Format("아키노,{0}", tb_abbr_akino.Text));
-                sw.WriteLine(string.Format("수코토,{0}", tb_abbr_makoto_summer.Text));
-                sw.WriteLine(string.Format("수쥰,{0}", tb_abbr_zyun_summer.Text));
-                sw.WriteLine(string.Format("성로에,{0}", tb_abbr_chloe_terefes.Text));
-                sw.WriteLine(string.Format("마츠리,{0}", tb_abbr_matsuri.Text));
-                sw.WriteLine(string.Format("클로에,{0}", tb_abbr_chloe.Text));
-                sw.WriteLine(string.Format("할츠리,{0}", tb_abbr_matsuri_halloween.Text));
-                sw.WriteLine(string.Format("발리코,{0}", tb_abbr_eriko_valentine.Text));
-                sw.WriteLine(string.Format("성키노,{0}", tb_abbr_akino_christmas.Text));
-                sw.WriteLine(string.Format("성야네,{0}", tb_abbr_ayane_christmas.Text));
-                sw.WriteLine(string.Format("수루카,{0}", tb_abbr_ruka_summer.Text));
-                sw.WriteLine(string.Format("츠무기,{0}", tb_abbr_tsumugi.Text));
-                sw.WriteLine(string.Format("이노리,{0}", tb_abbr_inori.Text));
-                sw.WriteLine(string.Format("프요리,{0}", tb_abbr_hiyori_princess.Text));
+                #region save_abbr_Click
                 sw.WriteLine(string.Format("히요리,{0}", tb_abbr_hiyori.Text));
-                sw.WriteLine(string.Format("미소기,{0}", tb_abbr_misogi.Text));
-                sw.WriteLine(string.Format("아야네,{0}", tb_abbr_ayane.Text));
-                sw.WriteLine(string.Format("할소기,{0}", tb_abbr_misogi_halloween.Text));
-                sw.WriteLine(string.Format("타마키,{0}", tb_abbr_tamaki.Text));
-                sw.WriteLine(string.Format("작마키,{0}", tb_abbr_tamaki_worker.Text));
-                sw.WriteLine(string.Format("토모,{0}", tb_abbr_tomo.Text));
-                sw.WriteLine(string.Format("치에루,{0}", tb_abbr_chieru.Text));
-                sw.WriteLine(string.Format("성에루,{0}", tb_abbr_chieru_terefes.Text));
-                sw.WriteLine(string.Format("수마키,{0}", tb_abbr_tamaki_summer.Text));
-                sw.WriteLine(string.Format("에리코,{0}", tb_abbr_eriko.Text));
-                sw.WriteLine(string.Format("수페코,{0}", tb_abbr_pekorinnu_summer.Text));
-                sw.WriteLine(string.Format("쿠루미,{0}", tb_abbr_kurumi.Text));
-                sw.WriteLine(string.Format("지타,{0}", tb_abbr_zita.Text));
-                sw.WriteLine(string.Format("뉴페코,{0}", tb_abbr_pekorinnu_newyear.Text));
+                sw.WriteLine(string.Format("유이,{0}", tb_abbr_yui.Text));
                 sw.WriteLine(string.Format("레이,{0}", tb_abbr_rei.Text));
-                sw.WriteLine(string.Format("타노리,{0}", tb_abbr_inori_timetravel.Text));
-                sw.WriteLine(string.Format("성리야,{0}", tb_abbr_iriya_christmas.Text));
-                sw.WriteLine(string.Format("수안나,{0}", tb_abbr_anna_summer.Text));
-                sw.WriteLine(string.Format("성리스,{0}", tb_abbr_kristina_christmas.Text));
-                sw.WriteLine(string.Format("작후유,{0}", tb_abbr_mihuyu_worker.Text));
-                sw.WriteLine(string.Format("시즈루,{0}", tb_abbr_sizuru.Text));
-                sw.WriteLine(string.Format("크리스티나,{0}", tb_abbr_kristina.Text));
-                sw.WriteLine(string.Format("성루미,{0}", tb_abbr_kurumi_christmas.Text));
-
-
-                sw.WriteLine(string.Format("미미,{0}", tb_abbr_mimi.Text));
-                sw.WriteLine(string.Format("시노부,{0}", tb_abbr_sinobu.Text));
-                sw.WriteLine(string.Format("할미미,{0}", tb_abbr_mimi_halloween.Text));
-                sw.WriteLine(string.Format("셰피,{0}", tb_abbr_shepi.Text));
-                sw.WriteLine(string.Format("우즈키,{0}", tb_abbr_uzuki_deremas.Text));
-                sw.WriteLine(string.Format("할레이,{0}", tb_abbr_rei_halloween.Text));
-                sw.WriteLine(string.Format("프레이,{0}", tb_abbr_rei_princess.Text));
-
-                sw.WriteLine(string.Format("발즈루,{0}", tb_abbr_sizuru_valentine.Text));
-                sw.WriteLine(string.Format("레히루,{0}", tb_abbr_mahiru_ranger.Text));
-                sw.WriteLine(string.Format("마히루,{0}", tb_abbr_mahiru.Text));
-                sw.WriteLine(string.Format("마토모,{0}", tb_abbr_tomo_magical.Text));
-                sw.WriteLine(string.Format("유카리,{0}", tb_abbr_yukari.Text));
-                sw.WriteLine(string.Format("성카리,{0}", tb_abbr_yukari_christmas.Text));
-                sw.WriteLine(string.Format("모니카,{0}", tb_abbr_monika.Text));
-                sw.WriteLine(string.Format("니논,{0}", tb_abbr_ninon.Text));
-                sw.WriteLine(string.Format("성조미,{0}", tb_abbr_nozomi_christmas.Text));
-                sw.WriteLine(string.Format("미후유,{0}", tb_abbr_mihuyu.Text));
-                sw.WriteLine(string.Format("레린,{0}", tb_abbr_rin_ranger.Text));
-                sw.WriteLine(string.Format("이리야,{0}", tb_abbr_iriya.Text));
-                sw.WriteLine(string.Format("수오리,{0}", tb_abbr_kaori_summer.Text));
-                sw.WriteLine(string.Format("사렌,{0}", tb_abbr_saren.Text));
-                sw.WriteLine(string.Format("안나,{0}", tb_abbr_anna.Text));
-                sw.WriteLine(string.Format("할노부,{0}", tb_abbr_sinobu_halloween.Text));
-                sw.WriteLine(string.Format("수나카,{0}", tb_abbr_nanaka_summer.Text));
-                sw.WriteLine(string.Format("수후유,{0}", tb_abbr_mihuyu_summer.Text));
-                sw.WriteLine(string.Format("콧코로,{0}", tb_abbr_kotkoro.Text));
-                sw.WriteLine(string.Format("앨유미,{0}", tb_abbr_ayumi_wonder.Text));
-                sw.WriteLine(string.Format("아유미,{0}", tb_abbr_ayumi.Text));
-                sw.WriteLine(string.Format("글레어,{0}", tb_abbr_grea.Text));
-                sw.WriteLine(string.Format("마니카,{0}", tb_abbr_monika_magical.Text));
-                sw.WriteLine(string.Format("엔카리,{0}", tb_abbr_akari_angel.Text));
-                sw.WriteLine(string.Format("엔요리,{0}", tb_abbr_yori_angel.Text));
-                sw.WriteLine(string.Format("수코로,{0}", tb_abbr_kotkoro_summer.Text));
-                sw.WriteLine(string.Format("렘,{0}", tb_abbr_rem.Text));
-                sw.WriteLine(string.Format("람,{0}", tb_abbr_ram.Text));
-                sw.WriteLine(string.Format("린,{0}", tb_abbr_rin.Text));
-                sw.WriteLine(string.Format("프코로,{0}", tb_abbr_kotkoro_princess.Text));
-                sw.WriteLine(string.Format("라비리스타,{0}", tb_abbr_labyrista.Text));
-                sw.WriteLine(string.Format("뉴네카,{0}", tb_abbr_neneka_newyear.Text));
-                sw.WriteLine(string.Format("미츠키,{0}", tb_abbr_mitsuki.Text));
-                sw.WriteLine(string.Format("수츠네,{0}", tb_abbr_hatsune_summer.Text));
+                sw.WriteLine(string.Format("미소기,{0}", tb_abbr_misogi.Text));
+                sw.WriteLine(string.Format("마츠리,{0}", tb_abbr_matsuri.Text));
                 sw.WriteLine(string.Format("아카리,{0}", tb_abbr_akari.Text));
-                sw.WriteLine(string.Format("요리,{0}", tb_abbr_yori.Text));
-                sw.WriteLine(string.Format("수사렌,{0}", tb_abbr_saren_summer.Text));
-                sw.WriteLine(string.Format("할푸딩,{0}", tb_abbr_miyako_halloween.Text));
-
-
-                sw.WriteLine(string.Format("아리사,{0}", tb_abbr_arisa.Text));
-                sw.WriteLine(string.Format("앤,{0}", tb_abbr_anne.Text));
-                sw.WriteLine(string.Format("루,{0}", tb_abbr_lou.Text));
-                sw.WriteLine(string.Format("신마호,{0}", tb_abbr_maho_cinderella.Text));
-                sw.WriteLine(string.Format("네네카,{0}", tb_abbr_neneka.Text));
-                sw.WriteLine(string.Format("편오이,{0}", tb_abbr_aoi_nakayosi.Text));
-                sw.WriteLine(string.Format("냐루,{0}", tb_abbr_kyaru_newyear.Text));
-                sw.WriteLine(string.Format("미오,{0}", tb_abbr_mio_deremas.Text));
-                sw.WriteLine(string.Format("수사토,{0}", tb_abbr_misato_summer.Text));
+                sw.WriteLine(string.Format("미야코,{0}", tb_abbr_miyako.Text));
+                sw.WriteLine(string.Format("유키,{0}", tb_abbr_yuki.Text));
+                sw.WriteLine(string.Format("안나,{0}", tb_abbr_anna.Text));
+                sw.WriteLine(string.Format("마호,{0}", tb_abbr_maho.Text));
                 sw.WriteLine(string.Format("리노,{0}", tb_abbr_rino.Text));
-                sw.WriteLine(string.Format("스즈나,{0}", tb_abbr_suzuna.Text));
-                sw.WriteLine(string.Format("수즈나,{0}", tb_abbr_suzuna_summer.Text));
-                sw.WriteLine(string.Format("시오리,{0}", tb_abbr_siori.Text));
-                sw.WriteLine(string.Format("마오리,{0}", tb_abbr_siori_magical.Text));
-                sw.WriteLine(string.Format("이오,{0}", tb_abbr_io.Text));
-                sw.WriteLine(string.Format("수이오,{0}", tb_abbr_io_summer.Text));
-                sw.WriteLine(string.Format("스즈메,{0}", tb_abbr_suzume.Text));
-                sw.WriteLine(string.Format("뉴즈메,{0}", tb_abbr_suzume_newyear.Text));
-                sw.WriteLine(string.Format("에밀리아,{0}", tb_abbr_emilia.Text));
-                sw.WriteLine(string.Format("카스미,{0}", tb_abbr_kasumi.Text));
-                sw.WriteLine(string.Format("마스미,{0}", tb_abbr_kasumi_magical.Text));
-                sw.WriteLine(string.Format("앨리노,{0}", tb_abbr_rino_wonder.Text));
-                sw.WriteLine(string.Format("미사토,{0}", tb_abbr_misato.Text));
-                sw.WriteLine(string.Format("수스미,{0}", tb_abbr_kasumi_summer.Text));
-                sw.WriteLine(string.Format("나나카,{0}", tb_abbr_nanaka.Text));
-                sw.WriteLine(string.Format("뉴이,{0}", tb_abbr_yui_newyear.Text));
-                sw.WriteLine(string.Format("프캬루,{0}", tb_abbr_kyaru_princess.Text));
-                sw.WriteLine(string.Format("캬루,{0}", tb_abbr_kyaru.Text));
                 sw.WriteLine(string.Format("하츠네,{0}", tb_abbr_hatsune.Text));
-                sw.WriteLine(string.Format("미사키,{0}", tb_abbr_misaki.Text));
-                sw.WriteLine(string.Format("루나,{0}", tb_abbr_runa.Text));
-                sw.WriteLine(string.Format("프유이,{0}", tb_abbr_yui_princess.Text));
-                sw.WriteLine(string.Format("성치카,{0}", tb_abbr_chika_christmas.Text));
-                sw.WriteLine(string.Format("수즈메,{0}", tb_abbr_suzume_summer.Text));
-                sw.WriteLine(string.Format("수캬루,{0}", tb_abbr_kyaru_summer.Text));
+                sw.WriteLine(string.Format("나나카,{0}", tb_abbr_nanaka.Text));
+                sw.WriteLine(string.Format("카스미,{0}", tb_abbr_kasumi.Text));
+                sw.WriteLine(string.Format("미사토,{0}", tb_abbr_misato.Text));
+                sw.WriteLine(string.Format("스즈나,{0}", tb_abbr_suzuna.Text));
+                sw.WriteLine(string.Format("카오리,{0}", tb_abbr_kaori.Text));
+                sw.WriteLine(string.Format("이오,{0}", tb_abbr_io.Text));
+                sw.WriteLine(string.Format("미미,{0}", tb_abbr_mimi.Text));
+                sw.WriteLine(string.Format("쿠루미,{0}", tb_abbr_kurumi.Text));
+                sw.WriteLine(string.Format("요리,{0}", tb_abbr_yori.Text));
+                sw.WriteLine(string.Format("아야네,{0}", tb_abbr_ayane.Text));
+                sw.WriteLine(string.Format("스즈메,{0}", tb_abbr_suzume.Text));
+                sw.WriteLine(string.Format("린,{0}", tb_abbr_rin.Text));
+                sw.WriteLine(string.Format("에리코,{0}", tb_abbr_eriko.Text));
+                sw.WriteLine(string.Format("사렌,{0}", tb_abbr_saren.Text));
+                sw.WriteLine(string.Format("노조미,{0}", tb_abbr_nozomi.Text));
+                sw.WriteLine(string.Format("니논,{0}", tb_abbr_ninon.Text));
+                sw.WriteLine(string.Format("시노부,{0}", tb_abbr_sinobu.Text));
+                sw.WriteLine(string.Format("아키노,{0}", tb_abbr_akino.Text));
+                sw.WriteLine(string.Format("마히루,{0}", tb_abbr_mahiru.Text));
+                sw.WriteLine(string.Format("유카리,{0}", tb_abbr_yukari.Text));
+                sw.WriteLine(string.Format("쿄우카,{0}", tb_abbr_kyouka.Text));
+                sw.WriteLine(string.Format("토모,{0}", tb_abbr_tomo.Text));
+                sw.WriteLine(string.Format("시오리,{0}", tb_abbr_siori.Text));
                 sw.WriteLine(string.Format("아오이,{0}", tb_abbr_aoi.Text));
                 sw.WriteLine(string.Format("치카,{0}", tb_abbr_chika.Text));
-                sw.WriteLine(string.Format("수마호,{0}", tb_abbr_maho_summer.Text));
-                sw.WriteLine(string.Format("마호,{0}", tb_abbr_maho.Text));
-                sw.WriteLine(string.Format("유이,{0}", tb_abbr_yui.Text));
-                sw.WriteLine(string.Format("유키,{0}", tb_abbr_yuki.Text));
-                sw.WriteLine(string.Format("유니,{0}", tb_abbr_yuni.Text));
-                sw.WriteLine(string.Format("쿄우카,{0}", tb_abbr_kyouka.Text));
+                sw.WriteLine(string.Format("마코토,{0}", tb_abbr_makoto.Text));
+                sw.WriteLine(string.Format("이리야,{0}", tb_abbr_iriya.Text));
+                sw.WriteLine(string.Format("쿠우카,{0}", tb_abbr_kuuka.Text));
+                sw.WriteLine(string.Format("타마키,{0}", tb_abbr_tamaki.Text));
+                sw.WriteLine(string.Format("쥰,{0}", tb_abbr_zyun.Text));
+                sw.WriteLine(string.Format("미후유,{0}", tb_abbr_mihuyu.Text));
+                sw.WriteLine(string.Format("시즈루,{0}", tb_abbr_sizuru.Text));
+                sw.WriteLine(string.Format("미사키,{0}", tb_abbr_misaki.Text));
+                sw.WriteLine(string.Format("미츠키,{0}", tb_abbr_mitsuki.Text));
+                sw.WriteLine(string.Format("리마,{0}", tb_abbr_rima.Text));
+                sw.WriteLine(string.Format("모니카,{0}", tb_abbr_monika.Text));
+                sw.WriteLine(string.Format("츠무기,{0}", tb_abbr_tsumugi.Text));
+                sw.WriteLine(string.Format("아유미,{0}", tb_abbr_ayumi.Text));
+                sw.WriteLine(string.Format("루카,{0}", tb_abbr_ruka.Text));
+                sw.WriteLine(string.Format("지타,{0}", tb_abbr_zita.Text));
+                sw.WriteLine(string.Format("페코린느,{0}", tb_abbr_pekorinnu.Text));
+                sw.WriteLine(string.Format("콧코로,{0}", tb_abbr_kotkoro.Text));
+                sw.WriteLine(string.Format("캬루,{0}", tb_abbr_kyaru.Text));
+                sw.WriteLine(string.Format("무이미,{0}", tb_abbr_muimi.Text));
+                sw.WriteLine(string.Format("아리사,{0}", tb_abbr_arisa.Text));
+                sw.WriteLine(string.Format("셰피,{0}", tb_abbr_shepi.Text));
+                sw.WriteLine(string.Format("카야,{0}", tb_abbr_kaya.Text));
+                sw.WriteLine(string.Format("이노리,{0}", tb_abbr_inori.Text));
+                sw.WriteLine(string.Format("라비리스타,{0}", tb_abbr_labyrista.Text));
+                sw.WriteLine(string.Format("네네카,{0}", tb_abbr_neneka.Text));
+                sw.WriteLine(string.Format("크리스티나,{0}", tb_abbr_kristina.Text));
+                sw.WriteLine(string.Format("수페코,{0}", tb_abbr_pekorinnu_summer.Text));
+                sw.WriteLine(string.Format("수코로,{0}", tb_abbr_kotkoro_summer.Text));
+                sw.WriteLine(string.Format("수즈메,{0}", tb_abbr_suzume_summer.Text));
+                sw.WriteLine(string.Format("수캬루,{0}", tb_abbr_kyaru_summer.Text));
+                sw.WriteLine(string.Format("수마키,{0}", tb_abbr_tamaki_summer.Text));
+                sw.WriteLine(string.Format("수후유,{0}", tb_abbr_mihuyu_summer.Text));
+                sw.WriteLine(string.Format("할노부,{0}", tb_abbr_sinobu_halloween.Text));
+                sw.WriteLine(string.Format("할푸딩,{0}", tb_abbr_miyako_halloween.Text));
                 sw.WriteLine(string.Format("할사키,{0}", tb_abbr_misaki_halloween.Text));
+                sw.WriteLine(string.Format("성치카,{0}", tb_abbr_chika_christmas.Text));
+                sw.WriteLine(string.Format("성루미,{0}", tb_abbr_kurumi_christmas.Text));
+                sw.WriteLine(string.Format("성야네,{0}", tb_abbr_ayane_christmas.Text));
+                sw.WriteLine(string.Format("뉴요리,{0}", tb_abbr_hiyori_newyear.Text));
+                sw.WriteLine(string.Format("뉴이,{0}", tb_abbr_yui_newyear.Text));
+                sw.WriteLine(string.Format("신레이,{0}", tb_abbr_rei_newyear.Text));
+                sw.WriteLine(string.Format("발리코,{0}", tb_abbr_eriko_valentine.Text));
+                sw.WriteLine(string.Format("발즈루,{0}", tb_abbr_sizuru_valentine.Text));
+                sw.WriteLine(string.Format("앤,{0}", tb_abbr_anne.Text));
+                sw.WriteLine(string.Format("루,{0}", tb_abbr_lou.Text));
+                sw.WriteLine(string.Format("글레어,{0}", tb_abbr_grea.Text));
+                sw.WriteLine(string.Format("오우카,{0}", tb_abbr_kuuka_ooedo.Text));
+                sw.WriteLine(string.Format("오니논,{0}", tb_abbr_ninon_ooedo.Text));
+                sw.WriteLine(string.Format("렘,{0}", tb_abbr_rem.Text));
+                sw.WriteLine(string.Format("람,{0}", tb_abbr_ram.Text));
+                sw.WriteLine(string.Format("에밀리아,{0}", tb_abbr_emilia.Text));
+                sw.WriteLine(string.Format("수즈나,{0}", tb_abbr_suzuna_summer.Text));
+                sw.WriteLine(string.Format("수이오,{0}", tb_abbr_io_summer.Text));
+                sw.WriteLine(string.Format("수사렌,{0}", tb_abbr_saren_summer.Text));
+                sw.WriteLine(string.Format("수코토,{0}", tb_abbr_makoto_summer.Text));
+                sw.WriteLine(string.Format("수오리,{0}", tb_abbr_kaori_summer.Text));
+                sw.WriteLine(string.Format("수마호,{0}", tb_abbr_maho_summer.Text));
+                sw.WriteLine(string.Format("편오이,{0}", tb_abbr_aoi_nakayosi.Text));
+                sw.WriteLine(string.Format("클로에,{0}", tb_abbr_chloe.Text));
+                sw.WriteLine(string.Format("치에루,{0}", tb_abbr_chieru.Text));
+                sw.WriteLine(string.Format("유니,{0}", tb_abbr_yuni.Text));
                 sw.WriteLine(string.Format("할쿄카,{0}", tb_abbr_kyouka_halloween.Text));
-
+                sw.WriteLine(string.Format("할소기,{0}", tb_abbr_misogi_halloween.Text));
+                sw.WriteLine(string.Format("할미미,{0}", tb_abbr_mimi_halloween.Text));
+                sw.WriteLine(string.Format("루나,{0}", tb_abbr_runa.Text));
+                sw.WriteLine(string.Format("성리스,{0}", tb_abbr_kristina_christmas.Text));
+                sw.WriteLine(string.Format("성조미,{0}", tb_abbr_nozomi_christmas.Text));
+                sw.WriteLine(string.Format("성리야,{0}", tb_abbr_iriya_christmas.Text));
+                sw.WriteLine(string.Format("뉴페코,{0}", tb_abbr_pekorinnu_newyear.Text));
+                sw.WriteLine(string.Format("뉴코로,{0}", tb_abbr_kotkoro_newyear.Text));
+                sw.WriteLine(string.Format("냐루,{0}", tb_abbr_kyaru_newyear.Text));
+                sw.WriteLine(string.Format("뉴즈메,{0}", tb_abbr_suzume_newyear.Text));
+                sw.WriteLine(string.Format("마스미,{0}", tb_abbr_kasumi_magical.Text));
+                sw.WriteLine(string.Format("마오리,{0}", tb_abbr_siori_magical.Text));
+                sw.WriteLine(string.Format("우즈키,{0}", tb_abbr_uzuki_deremas.Text));
+                sw.WriteLine(string.Format("시부린,{0}", tb_abbr_rin_deremas.Text));
+                sw.WriteLine(string.Format("미오,{0}", tb_abbr_mio_deremas.Text));
+                sw.WriteLine(string.Format("레린,{0}", tb_abbr_rin_ranger.Text));
+                sw.WriteLine(string.Format("레히루,{0}", tb_abbr_mahiru_ranger.Text));
+                sw.WriteLine(string.Format("앨리노,{0}", tb_abbr_rino_wonder.Text));
+                sw.WriteLine(string.Format("앨유미,{0}", tb_abbr_ayumi_wonder.Text));
+                sw.WriteLine(string.Format("수루카,{0}", tb_abbr_ruka_summer.Text));
+                sw.WriteLine(string.Format("수안나,{0}", tb_abbr_anna_summer.Text));
+                sw.WriteLine(string.Format("수나카,{0}", tb_abbr_nanaka_summer.Text));
+                sw.WriteLine(string.Format("수츠네,{0}", tb_abbr_hatsune_summer.Text));
+                sw.WriteLine(string.Format("수사토,{0}", tb_abbr_misato_summer.Text));
+                sw.WriteLine(string.Format("수쥰,{0}", tb_abbr_zyun_summer.Text));
+                sw.WriteLine(string.Format("엔카리,{0}", tb_abbr_akari_angel.Text));
+                sw.WriteLine(string.Format("엔요리,{0}", tb_abbr_yori_angel.Text));
+                sw.WriteLine(string.Format("할무기,{0}", tb_abbr_tsumugi_halloween.Text));
+                sw.WriteLine(string.Format("할레이,{0}", tb_abbr_rei_halloween.Text));
+                sw.WriteLine(string.Format("할츠리,{0}", tb_abbr_matsuri_halloween.Text));
+                sw.WriteLine(string.Format("마니카,{0}", tb_abbr_monika_magical.Text));
+                sw.WriteLine(string.Format("마토모,{0}", tb_abbr_tomo_magical.Text));
+                sw.WriteLine(string.Format("성키노,{0}", tb_abbr_akino_christmas.Text));
+                sw.WriteLine(string.Format("성사렌,{0}", tb_abbr_saren_christmas.Text));
+                sw.WriteLine(string.Format("성카리,{0}", tb_abbr_yukari_christmas.Text));
+                sw.WriteLine(string.Format("뉴이미,{0}", tb_abbr_muimi_newyear.Text));
+                sw.WriteLine(string.Format("뉴네카,{0}", tb_abbr_neneka_newyear.Text));
+                sw.WriteLine(string.Format("의코로,{0}", tb_abbr_kotkoro_maiden.Text));
+                sw.WriteLine(string.Format("의유이,{0}", tb_abbr_yui_maiden.Text));
+                sw.WriteLine(string.Format("수스미,{0}", tb_abbr_kasumi_summer.Text));
+                sw.WriteLine(string.Format("신리마,{0}", tb_abbr_rima_cinderella.Text));
+                sw.WriteLine(string.Format("신코토,{0}", tb_abbr_makoto_cinderella.Text));
+                sw.WriteLine(string.Format("신마호,{0}", tb_abbr_maho_cinderella.Text));
+                sw.WriteLine(string.Format("성로에,{0}", tb_abbr_chloe_terefes.Text));
+                sw.WriteLine(string.Format("성에루,{0}", tb_abbr_chieru_terefes.Text));
+                sw.WriteLine(string.Format("시노리,{0}", tb_abbr_inori_timetravel.Text));
+                sw.WriteLine(string.Format("타카야,{0}", tb_abbr_kaya_timetravel.Text));
+                sw.WriteLine(string.Format("작오이,{0}", tb_abbr_aoi_worker.Text));
+                sw.WriteLine(string.Format("작마키,{0}", tb_abbr_tamaki_worker.Text));
+                sw.WriteLine(string.Format("작후유,{0}", tb_abbr_mihuyu_worker.Text));
+                sw.WriteLine(string.Format("수리코,{0}", tb_abbr_eriko_summer.Text));
+                sw.WriteLine(string.Format("수즈루,{0}", tb_abbr_sizuru_summer.Text));
+                sw.WriteLine(string.Format("수조미,{0}", tb_abbr_nozomi_summer.Text));
+                sw.WriteLine(string.Format("수치카,{0}", tb_abbr_chika_summer.Text));
+                sw.WriteLine(string.Format("수무기,{0}", tb_abbr_tsumugi_summer.Text));
+                sw.WriteLine(string.Format("프요리,{0}", tb_abbr_hiyori_princess.Text));
+                sw.WriteLine(string.Format("프유이,{0}", tb_abbr_yui_princess.Text));
+                sw.WriteLine(string.Format("프레이,{0}", tb_abbr_rei_princess.Text));
+                sw.WriteLine(string.Format("프페코,{0}", tb_abbr_pekorinnu_princess.Text));
+                sw.WriteLine(string.Format("프코로,{0}", tb_abbr_kotkoro_princess.Text));
+                sw.WriteLine(string.Format("프캬루,{0}", tb_abbr_kyaru_princess.Text));
                 sw.Close();
-
-                Abbr_rima = tb_abbr_rima.Text;
-                Abbr_miyako = tb_abbr_miyako.Text;
-                Abbr_kuuka = tb_abbr_kuuka.Text;
-                Abbr_zyun = tb_abbr_zyun.Text;
-                Abbr_muimi_newyear = tb_abbr_muimi_newyear.Text;
-                Abbr_kuuka_ooedo = tb_abbr_kuuka_ooedo.Text;
-                Abbr_kaori = tb_abbr_kaori.Text;
-                Abbr_saren_christmas = tb_abbr_saren_christmas.Text;
-                Abbr_tsumugi_halloween = tb_abbr_tsumugi_halloween.Text;
-                Abbr_rei_newyear = tb_abbr_rei_newyear.Text;
-                Abbr_rin_deremas = tb_abbr_rin_deremas.Text;
-                Abbr_pekorinnu = tb_abbr_pekorinnu.Text;
-                Abbr_pekorinnu_princess = tb_abbr_pekorinnu_princess.Text;
-                Abbr_ruka = tb_abbr_ruka.Text;
-                Abbr_kotkoro_newyear = tb_abbr_kotkoro_newyear.Text;
-                Abbr_nozomi = tb_abbr_nozomi.Text;
-                Abbr_muimi = tb_abbr_muimi.Text;
-                Abbr_makoto = tb_abbr_makoto.Text;
-                Abbr_kaya = tb_abbr_kaya.Text;
-                Abbr_hiyori_newyear = tb_abbr_hiyori_newyear.Text;
-                Abbr_ninon_ooedo = tb_abbr_ninon_ooedo.Text;
-                Abbr_akino = tb_abbr_akino.Text;
-                Abbr_makoto_summer = tb_abbr_makoto_summer.Text;
-                Abbr_zyun_summer = tb_abbr_zyun_summer.Text;
-                Abbr_matsuri = tb_abbr_matsuri.Text;
-                Abbr_chloe = tb_abbr_chloe.Text;
-                Abbr_eriko_valentine = tb_abbr_eriko_valentine.Text;
-                Abbr_ayane_christmas = tb_abbr_ayane_christmas.Text;
-                Abbr_ruka_summer = tb_abbr_ruka_summer.Text;
-                Abbr_tsumugi = tb_abbr_tsumugi.Text;
-                Abbr_inori = tb_abbr_inori.Text;
                 Abbr_hiyori = tb_abbr_hiyori.Text;
-                Abbr_misogi = tb_abbr_misogi.Text;
-                Abbr_ayane = tb_abbr_ayane.Text;
-                Abbr_misogi_halloween = tb_abbr_misogi_halloween.Text;
-                Abbr_tamaki = tb_abbr_tamaki.Text;
-                Abbr_tomo = tb_abbr_tomo.Text;
-                Abbr_chieru = tb_abbr_chieru.Text;
-                Abbr_tamaki_summer = tb_abbr_tamaki_summer.Text;
-                Abbr_eriko = tb_abbr_eriko.Text;
-                Abbr_pekorinnu_summer = tb_abbr_pekorinnu_summer.Text;
-                Abbr_kurumi = tb_abbr_kurumi.Text;
-                Abbr_zita = tb_abbr_zita.Text;
-                Abbr_pekorinnu_newyear = tb_abbr_pekorinnu_newyear.Text;
+                Abbr_yui = tb_abbr_yui.Text;
                 Abbr_rei = tb_abbr_rei.Text;
-                Abbr_iriya_christmas = tb_abbr_iriya_christmas.Text;
-                Abbr_anna_summer = tb_abbr_anna_summer.Text;
-                Abbr_kristina_christmas = tb_abbr_kristina_christmas.Text;
-                Abbr_sizuru = tb_abbr_sizuru.Text;
-                Abbr_kristina = tb_abbr_kristina.Text;
-                Abbr_kurumi_christmas = tb_abbr_kurumi_christmas.Text;
-
-
+                Abbr_misogi = tb_abbr_misogi.Text;
+                Abbr_matsuri = tb_abbr_matsuri.Text;
+                Abbr_akari = tb_abbr_akari.Text;
+                Abbr_miyako = tb_abbr_miyako.Text;
+                Abbr_yuki = tb_abbr_yuki.Text;
+                Abbr_anna = tb_abbr_anna.Text;
+                Abbr_maho = tb_abbr_maho.Text;
+                Abbr_rino = tb_abbr_rino.Text;
+                Abbr_hatsune = tb_abbr_hatsune.Text;
+                Abbr_nanaka = tb_abbr_nanaka.Text;
+                Abbr_kasumi = tb_abbr_kasumi.Text;
+                Abbr_misato = tb_abbr_misato.Text;
+                Abbr_suzuna = tb_abbr_suzuna.Text;
+                Abbr_kaori = tb_abbr_kaori.Text;
+                Abbr_io = tb_abbr_io.Text;
                 Abbr_mimi = tb_abbr_mimi.Text;
+                Abbr_kurumi = tb_abbr_kurumi.Text;
+                Abbr_yori = tb_abbr_yori.Text;
+                Abbr_ayane = tb_abbr_ayane.Text;
+                Abbr_suzume = tb_abbr_suzume.Text;
+                Abbr_rin = tb_abbr_rin.Text;
+                Abbr_eriko = tb_abbr_eriko.Text;
+                Abbr_saren = tb_abbr_saren.Text;
+                Abbr_nozomi = tb_abbr_nozomi.Text;
+                Abbr_ninon = tb_abbr_ninon.Text;
                 Abbr_sinobu = tb_abbr_sinobu.Text;
-                Abbr_mimi_halloween = tb_abbr_mimi_halloween.Text;
-                Abbr_uzuki_deremas = tb_abbr_uzuki_deremas.Text;
-                Abbr_rei_halloween = tb_abbr_rei_halloween.Text;
-                Abbr_sizuru_valentine = tb_abbr_sizuru_valentine.Text;
-                Abbr_mahiru_ranger = tb_abbr_mahiru_ranger.Text;
+                Abbr_akino = tb_abbr_akino.Text;
                 Abbr_mahiru = tb_abbr_mahiru.Text;
                 Abbr_yukari = tb_abbr_yukari.Text;
-                Abbr_yukari_christmas = tb_abbr_yukari_christmas.Text;
-                Abbr_monika = tb_abbr_monika.Text;
-                Abbr_ninon = tb_abbr_ninon.Text;
-                Abbr_nozomi_christmas = tb_abbr_nozomi_christmas.Text;
-                Abbr_mihuyu = tb_abbr_mihuyu.Text;
-                Abbr_rin_ranger = tb_abbr_rin_ranger.Text;
-                Abbr_iriya = tb_abbr_iriya.Text;
-                Abbr_kaori_summer = tb_abbr_kaori_summer.Text;
-                Abbr_saren = tb_abbr_saren.Text;
-                Abbr_anna = tb_abbr_anna.Text;
-                Abbr_sinobu_halloween = tb_abbr_sinobu_halloween.Text;
-                Abbr_nanaka_summer = tb_abbr_nanaka_summer.Text;
-                Abbr_mihuyu_summer = tb_abbr_mihuyu_summer.Text;
-                Abbr_kotkoro = tb_abbr_kotkoro.Text;
-                Abbr_ayumi_wonder = tb_abbr_ayumi_wonder.Text;
-                Abbr_ayumi = tb_abbr_ayumi.Text;
-                Abbr_grea = tb_abbr_grea.Text;
-                Abbr_monika_magical = tb_abbr_monika_magical.Text;
-                Abbr_akari_angel = tb_abbr_akari_angel.Text;
-                Abbr_yori_angel = tb_abbr_yori_angel.Text;
-                Abbr_kotkoro_summer = tb_abbr_kotkoro_summer.Text;
-                Abbr_rem = tb_abbr_rem.Text;
-                Abbr_ram = tb_abbr_ram.Text;
-                Abbr_rin = tb_abbr_rin.Text;
-                Abbr_kotkoro_princess = tb_abbr_kotkoro_princess.Text;
-                Abbr_labyrista = tb_abbr_labyrista.Text;
-                Abbr_neneka_newyear = tb_abbr_neneka_newyear.Text;
-                Abbr_mitsuki = tb_abbr_mitsuki.Text;
-                Abbr_hatsune_summer = tb_abbr_hatsune_summer.Text;
-                Abbr_akari = tb_abbr_akari.Text;
-                Abbr_yori = tb_abbr_yori.Text;
-                Abbr_saren_summer = tb_abbr_saren_summer.Text;
-                Abbr_miyako_halloween = tb_abbr_miyako_halloween.Text;
-
-
-                Abbr_arisa = tb_abbr_arisa.Text;
-                Abbr_anne = tb_abbr_anne.Text;
-                Abbr_lou = tb_abbr_lou.Text;
-                Abbr_neneka = tb_abbr_neneka.Text;
-                Abbr_aoi_nakayosi = tb_abbr_aoi_nakayosi.Text;
-                Abbr_kyaru_newyear = tb_abbr_kyaru_newyear.Text;
-                Abbr_mio_deremas = tb_abbr_mio_deremas.Text;
-                Abbr_misato_summer = tb_abbr_misato_summer.Text;
-                Abbr_rino = tb_abbr_rino.Text;
-                Abbr_suzuna = tb_abbr_suzuna.Text;
-                Abbr_suzuna_summer = tb_abbr_suzuna_summer.Text;
+                Abbr_kyouka = tb_abbr_kyouka.Text;
+                Abbr_tomo = tb_abbr_tomo.Text;
                 Abbr_siori = tb_abbr_siori.Text;
-                Abbr_siori_magical = tb_abbr_siori_magical.Text;
-                Abbr_io = tb_abbr_io.Text;
-                Abbr_io_summer = tb_abbr_io_summer.Text;
-                Abbr_suzume = tb_abbr_suzume.Text;
-                Abbr_suzume_newyear = tb_abbr_suzume_newyear.Text;
-                Abbr_emilia = tb_abbr_emilia.Text;
-                Abbr_kasumi = tb_abbr_kasumi.Text;
-                Abbr_kasumi_magical = tb_abbr_kasumi_magical.Text;
-                Abbr_rino_wonder = tb_abbr_rino_wonder.Text;
-                Abbr_misato = tb_abbr_misato.Text;
-                Abbr_nanaka = tb_abbr_nanaka.Text;
-                Abbr_yui_newyear = tb_abbr_yui_newyear.Text;
-                Abbr_kyaru_princess = tb_abbr_kyaru_princess.Text;
-                Abbr_kyaru = tb_abbr_kyaru.Text;
-                Abbr_hatsune = tb_abbr_hatsune.Text;
-                Abbr_misaki = tb_abbr_misaki.Text;
-                Abbr_runa = tb_abbr_runa.Text;
-                Abbr_yui_princess = tb_abbr_yui_princess.Text;
-                Abbr_chika_christmas = tb_abbr_chika_christmas.Text;
-                Abbr_suzume_summer = tb_abbr_suzume_summer.Text;
-                Abbr_kyaru_summer = tb_abbr_kyaru_summer.Text;
                 Abbr_aoi = tb_abbr_aoi.Text;
                 Abbr_chika = tb_abbr_chika.Text;
-                Abbr_maho_summer = tb_abbr_maho_summer.Text;
-                Abbr_maho = tb_abbr_maho.Text;
-                Abbr_yui = tb_abbr_yui.Text;
-                Abbr_yuki = tb_abbr_yuki.Text;
-                Abbr_yuni = tb_abbr_yuni.Text;
-                Abbr_kyouka = tb_abbr_kyouka.Text;
+                Abbr_makoto = tb_abbr_makoto.Text;
+                Abbr_iriya = tb_abbr_iriya.Text;
+                Abbr_kuuka = tb_abbr_kuuka.Text;
+                Abbr_tamaki = tb_abbr_tamaki.Text;
+                Abbr_zyun = tb_abbr_zyun.Text;
+                Abbr_mihuyu = tb_abbr_mihuyu.Text;
+                Abbr_sizuru = tb_abbr_sizuru.Text;
+                Abbr_misaki = tb_abbr_misaki.Text;
+                Abbr_mitsuki = tb_abbr_mitsuki.Text;
+                Abbr_rima = tb_abbr_rima.Text;
+                Abbr_monika = tb_abbr_monika.Text;
+                Abbr_tsumugi = tb_abbr_tsumugi.Text;
+                Abbr_ayumi = tb_abbr_ayumi.Text;
+                Abbr_ruka = tb_abbr_ruka.Text;
+                Abbr_zita = tb_abbr_zita.Text;
+                Abbr_pekorinnu = tb_abbr_pekorinnu.Text;
+                Abbr_kotkoro = tb_abbr_kotkoro.Text;
+                Abbr_kyaru = tb_abbr_kyaru.Text;
+                Abbr_muimi = tb_abbr_muimi.Text;
+                Abbr_arisa = tb_abbr_arisa.Text;
+                Abbr_shepi = tb_abbr_shepi.Text;
+                Abbr_kaya = tb_abbr_kaya.Text;
+                Abbr_inori = tb_abbr_inori.Text;
+                Abbr_labyrista = tb_abbr_labyrista.Text;
+                Abbr_neneka = tb_abbr_neneka.Text;
+                Abbr_kristina = tb_abbr_kristina.Text;
+                Abbr_pekorinnu_summer = tb_abbr_pekorinnu_summer.Text;
+                Abbr_kotkoro_summer = tb_abbr_kotkoro_summer.Text;
+                Abbr_suzume_summer = tb_abbr_suzume_summer.Text;
+                Abbr_kyaru_summer = tb_abbr_kyaru_summer.Text;
+                Abbr_tamaki_summer = tb_abbr_tamaki_summer.Text;
+                Abbr_mihuyu_summer = tb_abbr_mihuyu_summer.Text;
+                Abbr_sinobu_halloween = tb_abbr_sinobu_halloween.Text;
+                Abbr_miyako_halloween = tb_abbr_miyako_halloween.Text;
                 Abbr_misaki_halloween = tb_abbr_misaki_halloween.Text;
+                Abbr_chika_christmas = tb_abbr_chika_christmas.Text;
+                Abbr_kurumi_christmas = tb_abbr_kurumi_christmas.Text;
+                Abbr_ayane_christmas = tb_abbr_ayane_christmas.Text;
+                Abbr_hiyori_newyear = tb_abbr_hiyori_newyear.Text;
+                Abbr_yui_newyear = tb_abbr_yui_newyear.Text;
+                Abbr_rei_newyear = tb_abbr_rei_newyear.Text;
+                Abbr_eriko_valentine = tb_abbr_eriko_valentine.Text;
+                Abbr_sizuru_valentine = tb_abbr_sizuru_valentine.Text;
+                Abbr_anne = tb_abbr_anne.Text;
+                Abbr_lou = tb_abbr_lou.Text;
+                Abbr_grea = tb_abbr_grea.Text;
+                Abbr_kuuka_ooedo = tb_abbr_kuuka_ooedo.Text;
+                Abbr_ninon_ooedo = tb_abbr_ninon_ooedo.Text;
+                Abbr_rem = tb_abbr_rem.Text;
+                Abbr_ram = tb_abbr_ram.Text;
+                Abbr_emilia = tb_abbr_emilia.Text;
+                Abbr_suzuna_summer = tb_abbr_suzuna_summer.Text;
+                Abbr_io_summer = tb_abbr_io_summer.Text;
+                Abbr_saren_summer = tb_abbr_saren_summer.Text;
+                Abbr_makoto_summer = tb_abbr_makoto_summer.Text;
+                Abbr_kaori_summer = tb_abbr_kaori_summer.Text;
+                Abbr_maho_summer = tb_abbr_maho_summer.Text;
+                Abbr_aoi_nakayosi = tb_abbr_aoi_nakayosi.Text;
+                Abbr_chloe = tb_abbr_chloe.Text;
+                Abbr_chieru = tb_abbr_chieru.Text;
+                Abbr_yuni = tb_abbr_yuni.Text;
                 Abbr_kyouka_halloween = tb_abbr_kyouka_halloween.Text;
-
-                Abbr_makoto_cinderella = tb_abbr_makoto_cinderella.Text;
+                Abbr_misogi_halloween = tb_abbr_misogi_halloween.Text;
+                Abbr_mimi_halloween = tb_abbr_mimi_halloween.Text;
+                Abbr_runa = tb_abbr_runa.Text;
+                Abbr_kristina_christmas = tb_abbr_kristina_christmas.Text;
+                Abbr_nozomi_christmas = tb_abbr_nozomi_christmas.Text;
+                Abbr_iriya_christmas = tb_abbr_iriya_christmas.Text;
+                Abbr_pekorinnu_newyear = tb_abbr_pekorinnu_newyear.Text;
+                Abbr_kotkoro_newyear = tb_abbr_kotkoro_newyear.Text;
+                Abbr_kyaru_newyear = tb_abbr_kyaru_newyear.Text;
+                Abbr_suzume_newyear = tb_abbr_suzume_newyear.Text;
+                Abbr_kasumi_magical = tb_abbr_kasumi_magical.Text;
+                Abbr_siori_magical = tb_abbr_siori_magical.Text;
+                Abbr_uzuki_deremas = tb_abbr_uzuki_deremas.Text;
+                Abbr_rin_deremas = tb_abbr_rin_deremas.Text;
+                Abbr_mio_deremas = tb_abbr_mio_deremas.Text;
+                Abbr_rin_ranger = tb_abbr_rin_ranger.Text;
+                Abbr_mahiru_ranger = tb_abbr_mahiru_ranger.Text;
+                Abbr_rino_wonder = tb_abbr_rino_wonder.Text;
+                Abbr_ayumi_wonder = tb_abbr_ayumi_wonder.Text;
+                Abbr_ruka_summer = tb_abbr_ruka_summer.Text;
+                Abbr_anna_summer = tb_abbr_anna_summer.Text;
+                Abbr_nanaka_summer = tb_abbr_nanaka_summer.Text;
+                Abbr_hatsune_summer = tb_abbr_hatsune_summer.Text;
+                Abbr_misato_summer = tb_abbr_misato_summer.Text;
+                Abbr_zyun_summer = tb_abbr_zyun_summer.Text;
+                Abbr_akari_angel = tb_abbr_akari_angel.Text;
+                Abbr_yori_angel = tb_abbr_yori_angel.Text;
+                Abbr_tsumugi_halloween = tb_abbr_tsumugi_halloween.Text;
+                Abbr_rei_halloween = tb_abbr_rei_halloween.Text;
+                Abbr_matsuri_halloween = tb_abbr_matsuri_halloween.Text;
+                Abbr_monika_magical = tb_abbr_monika_magical.Text;
+                Abbr_tomo_magical = tb_abbr_tomo_magical.Text;
+                Abbr_akino_christmas = tb_abbr_akino_christmas.Text;
+                Abbr_saren_christmas = tb_abbr_saren_christmas.Text;
+                Abbr_yukari_christmas = tb_abbr_yukari_christmas.Text;
+                Abbr_muimi_newyear = tb_abbr_muimi_newyear.Text;
+                Abbr_neneka_newyear = tb_abbr_neneka_newyear.Text;
+                Abbr_kotkoro_maiden = tb_abbr_kotkoro_maiden.Text;
+                Abbr_yui_maiden = tb_abbr_yui_maiden.Text;
+                Abbr_kasumi_summer = tb_abbr_kasumi_summer.Text;
                 Abbr_rima_cinderella = tb_abbr_rima_cinderella.Text;
+                Abbr_makoto_cinderella = tb_abbr_makoto_cinderella.Text;
                 Abbr_maho_cinderella = tb_abbr_maho_cinderella.Text;
-
-                Abbr_hiyori_princess = tb_abbr_hiyori_princess.Text;
-
-                Abbr_kaya_timetravel = tb_abbr_kaya_timetravel.Text;
-                Abbr_inori_timetravel = tb_abbr_inori_timetravel.Text;
-
-                Abbr_chieru_terefes = tb_abbr_chieru_terefes.Text;
                 Abbr_chloe_terefes = tb_abbr_chloe_terefes.Text;
-
+                Abbr_chieru_terefes = tb_abbr_chieru_terefes.Text;
+                Abbr_inori_timetravel = tb_abbr_inori_timetravel.Text;
+                Abbr_kaya_timetravel = tb_abbr_kaya_timetravel.Text;
                 Abbr_aoi_worker = tb_abbr_aoi_worker.Text;
                 Abbr_tamaki_worker = tb_abbr_tamaki_worker.Text;
                 Abbr_mihuyu_worker = tb_abbr_mihuyu_worker.Text;
+                Abbr_eriko_summer = tb_abbr_eriko_summer.Text;
+                Abbr_sizuru_summer = tb_abbr_sizuru_summer.Text;
+                Abbr_nozomi_summer = tb_abbr_nozomi_summer.Text;
+                Abbr_chika_summer = tb_abbr_chika_summer.Text;
+                Abbr_tsumugi_summer = tb_abbr_tsumugi_summer.Text;
+                Abbr_hiyori_princess = tb_abbr_hiyori_princess.Text;
+                Abbr_yui_princess = tb_abbr_yui_princess.Text;
                 Abbr_rei_princess = tb_abbr_rei_princess.Text;
+                Abbr_pekorinnu_princess = tb_abbr_pekorinnu_princess.Text;
+                Abbr_kotkoro_princess = tb_abbr_kotkoro_princess.Text;
+                Abbr_kyaru_princess = tb_abbr_kyaru_princess.Text;
+                #endregion
 
                 MessageBox.Show("저장해썽!", "알림");
             }
@@ -10690,165 +9140,168 @@ namespace PCRD_KR_ArenaSim
 
         private string AbbrToChara(string abbrChara)
         {
+            #region AbbrToChara
+            if (abbrChara == Abbr_hiyori) return "hiyori";
+            if (abbrChara == Abbr_yui) return "yui";
+            if (abbrChara == Abbr_rei) return "rei";
+            if (abbrChara == Abbr_misogi) return "misogi";
+            if (abbrChara == Abbr_matsuri) return "matsuri";
+            if (abbrChara == Abbr_akari) return "akari";
+            if (abbrChara == Abbr_miyako) return "miyako";
+            if (abbrChara == Abbr_yuki) return "yuki";
+            if (abbrChara == Abbr_anna) return "anna";
+            if (abbrChara == Abbr_maho) return "maho";
+            if (abbrChara == Abbr_rino) return "rino";
+            if (abbrChara == Abbr_hatsune) return "hatsune";
+            if (abbrChara == Abbr_nanaka) return "nanaka";
+            if (abbrChara == Abbr_kasumi) return "kasumi";
+            if (abbrChara == Abbr_misato) return "misato";
+            if (abbrChara == Abbr_suzuna) return "suzuna";
+            if (abbrChara == Abbr_kaori) return "kaori";
+            if (abbrChara == Abbr_io) return "io";
+            if (abbrChara == Abbr_mimi) return "mimi";
+            if (abbrChara == Abbr_kurumi) return "kurumi";
+            if (abbrChara == Abbr_yori) return "yori";
+            if (abbrChara == Abbr_ayane) return "ayane";
+            if (abbrChara == Abbr_suzume) return "suzume";
+            if (abbrChara == Abbr_rin) return "rin";
+            if (abbrChara == Abbr_eriko) return "eriko";
+            if (abbrChara == Abbr_saren) return "saren";
+            if (abbrChara == Abbr_nozomi) return "nozomi";
+            if (abbrChara == Abbr_ninon) return "ninon";
+            if (abbrChara == Abbr_sinobu) return "sinobu";
+            if (abbrChara == Abbr_akino) return "akino";
+            if (abbrChara == Abbr_mahiru) return "mahiru";
+            if (abbrChara == Abbr_yukari) return "yukari";
+            if (abbrChara == Abbr_kyouka) return "kyouka";
+            if (abbrChara == Abbr_tomo) return "tomo";
+            if (abbrChara == Abbr_siori) return "siori";
+            if (abbrChara == Abbr_aoi) return "aoi";
+            if (abbrChara == Abbr_chika) return "chika";
+            if (abbrChara == Abbr_makoto) return "makoto";
+            if (abbrChara == Abbr_iriya) return "iriya";
+            if (abbrChara == Abbr_kuuka) return "kuuka";
+            if (abbrChara == Abbr_tamaki) return "tamaki";
+            if (abbrChara == Abbr_zyun) return "zyun";
+            if (abbrChara == Abbr_mihuyu) return "mihuyu";
+            if (abbrChara == Abbr_sizuru) return "sizuru";
+            if (abbrChara == Abbr_misaki) return "misaki";
+            if (abbrChara == Abbr_mitsuki) return "mitsuki";
             if (abbrChara == Abbr_rima) return "rima";
-            else if (abbrChara == Abbr_miyako) return "miyako";
-            else if (abbrChara == Abbr_kuuka) return "kuuka";
-            else if (abbrChara == Abbr_zyun) return "zyun";
-            else if (abbrChara == Abbr_muimi_newyear) return "muimi_newyear";
-            else if (abbrChara == Abbr_kuuka_ooedo) return "kuuka_ooedo";
-            else if (abbrChara == Abbr_kaori) return "kaori";
-            else if (abbrChara == Abbr_saren_christmas) return "saren_christmas";
-            else if (abbrChara == Abbr_tsumugi_halloween) return "tsumugi_halloween";
-            else if (abbrChara == Abbr_rei_newyear) return "rei_newyear";
-            else if (abbrChara == Abbr_rin_deremas) return "rin_deremas";
-            else if (abbrChara == Abbr_pekorinnu) return "pekorinnu";
-            else if (abbrChara == Abbr_pekorinnu_princess) return "pekorinnu_princess";
-            else if (abbrChara == Abbr_ruka) return "ruka";
-            else if (abbrChara == Abbr_kotkoro_newyear) return "kotkoro_newyear";
-            else if (abbrChara == Abbr_nozomi) return "nozomi";
-            else if (abbrChara == Abbr_muimi) return "muimi";
-            else if (abbrChara == Abbr_makoto) return "makoto";
-            else if (abbrChara == Abbr_kaya) return "kaya";
-            else if (abbrChara == Abbr_hiyori_newyear) return "hiyori_newyear";
-            else if (abbrChara == Abbr_ninon_ooedo) return "ninon_ooedo";
-            else if (abbrChara == Abbr_akino) return "akino";
-            else if (abbrChara == Abbr_makoto_summer) return "makoto_summer";
-            else if (abbrChara == Abbr_zyun_summer) return "zyun_summer";
-            else if (abbrChara == Abbr_matsuri) return "matsuri";
-            else if (abbrChara == Abbr_chloe) return "chloe";
-            else if (abbrChara == Abbr_matsuri_halloween) return "matsuri_halloween";
-            else if (abbrChara == Abbr_eriko_valentine) return "eriko_valentine";
-            else if (abbrChara == Abbr_akino_christmas) return "akino_christmas";
-            else if (abbrChara == Abbr_ayane_christmas) return "ayane_christmas";
-            else if (abbrChara == Abbr_ruka_summer) return "ruka_summer";
-            else if (abbrChara == Abbr_tsumugi) return "tsumugi";
-            else if (abbrChara == Abbr_inori) return "inori";
-            else if (abbrChara == Abbr_hiyori) return "hiyori";
-            else if (abbrChara == Abbr_misogi) return "misogi";
-            else if (abbrChara == Abbr_ayane) return "ayane";
-            else if (abbrChara == Abbr_misogi_halloween) return "misogi_halloween";
-            else if (abbrChara == Abbr_tamaki) return "tamaki";
-            else if (abbrChara == Abbr_tomo) return "tomo";
-            else if (abbrChara == Abbr_chieru) return "chieru";
-            else if (abbrChara == Abbr_tamaki_summer) return "tamaki_summer";
-            else if (abbrChara == Abbr_eriko) return "eriko";
-            else if (abbrChara == Abbr_pekorinnu_summer) return "pekorinnu_summer";
-            else if (abbrChara == Abbr_kurumi) return "kurumi";
-            else if (abbrChara == Abbr_zita) return "zita";
-            else if (abbrChara == Abbr_pekorinnu_newyear) return "pekorinnu_newyear";
-            else if (abbrChara == Abbr_rei) return "rei";
-            else if (abbrChara == Abbr_iriya_christmas) return "iriya_christmas";
-            else if (abbrChara == Abbr_anna_summer) return "anna_summer";
-            else if (abbrChara == Abbr_kristina_christmas) return "kristina_christmas";
-            else if (abbrChara == Abbr_sizuru) return "sizuru";
-            else if (abbrChara == Abbr_kristina) return "kristina";
-            else if (abbrChara == Abbr_kurumi_christmas) return "kurumi_christmas";
-
-
-            else if (abbrChara == Abbr_mimi) return "mimi";
-            else if (abbrChara == Abbr_sinobu) return "sinobu";
-            else if (abbrChara == Abbr_mimi_halloween) return "mimi_halloween";
-            else if (abbrChara == Abbr_uzuki_deremas) return "uzuki_deremas";
-            else if (abbrChara == Abbr_rei_halloween) return "rei_halloween";
-            else if (abbrChara == Abbr_sizuru_valentine) return "sizuru_valentine";
-            else if (abbrChara == Abbr_mahiru_ranger) return "mahiru_ranger";
-            else if (abbrChara == Abbr_mahiru) return "mahiru";
-            else if (abbrChara == Abbr_tomo_magical) return "tomo_magical";
-            else if (abbrChara == Abbr_yukari) return "yukari";
-            else if (abbrChara == Abbr_yukari_christmas) return "yukari_christmas";
-            else if (abbrChara == Abbr_monika) return "monika";
-            else if (abbrChara == Abbr_ninon) return "ninon";
-            else if (abbrChara == Abbr_nozomi_christmas) return "nozomi_christmas";
-            else if (abbrChara == Abbr_mihuyu) return "mihuyu";
-            else if (abbrChara == Abbr_rin_ranger) return "rin_ranger";
-            else if (abbrChara == Abbr_iriya) return "iriya";
-            else if (abbrChara == Abbr_kaori_summer) return "kaori_summer";
-            else if (abbrChara == Abbr_saren) return "saren";
-            else if (abbrChara == Abbr_anna) return "anna";
-            else if (abbrChara == Abbr_sinobu_halloween) return "sinobu_halloween";
-            else if (abbrChara == Abbr_nanaka_summer) return "nanaka_summer";
-            else if (abbrChara == Abbr_mihuyu_summer) return "mihuyu_summer";
-            else if (abbrChara == Abbr_kotkoro) return "kotkoro";
-            else if (abbrChara == Abbr_ayumi_wonder) return "ayumi_wonder";
-            else if (abbrChara == Abbr_ayumi) return "ayumi";
-            else if (abbrChara == Abbr_grea) return "grea";
-            else if (abbrChara == Abbr_monika_magical) return "monika_magical";
-            else if (abbrChara == Abbr_akari_angel) return "akari_angel";
-            else if (abbrChara == Abbr_yori_angel) return "yori_angel";
-            else if (abbrChara == Abbr_kotkoro_summer) return "kotkoro_summer";
-            else if (abbrChara == Abbr_rem) return "rem";
-            else if (abbrChara == Abbr_ram) return "ram";
-            else if (abbrChara == Abbr_rin) return "rin";
-            else if (abbrChara == Abbr_kotkoro_princess) return "kotkoro_princess";
-            else if (abbrChara == Abbr_labyrista) return "labyrista";
-            else if (abbrChara == Abbr_neneka_newyear) return "neneka_newyear";
-            else if (abbrChara == Abbr_mitsuki) return "mitsuki";
-            else if (abbrChara == Abbr_hatsune_summer) return "hatsune_summer";
-            else if (abbrChara == Abbr_akari) return "akari";
-            else if (abbrChara == Abbr_yori) return "yori";
-            else if (abbrChara == Abbr_saren_summer) return "saren_summer";
-            else if (abbrChara == Abbr_miyako_halloween) return "miyako_halloween";
-
-
-            else if (abbrChara == Abbr_arisa) return "arisa";
-            else if (abbrChara == Abbr_anne) return "anne";
-            else if (abbrChara == Abbr_lou) return "lou";
-            else if (abbrChara == Abbr_neneka) return "neneka";
-            else if (abbrChara == Abbr_aoi_nakayosi) return "aoi_nakayosi";
-            else if (abbrChara == Abbr_kyaru_newyear) return "kyaru_newyear";
-            else if (abbrChara == Abbr_mio_deremas) return "mio_deremas";
-            else if (abbrChara == Abbr_misato_summer) return "misato_summer";
-            else if (abbrChara == Abbr_rino) return "rino";
-            else if (abbrChara == Abbr_suzuna) return "suzuna";
-            else if (abbrChara == Abbr_suzuna_summer) return "suzuna_summer";
-            else if (abbrChara == Abbr_siori) return "siori";
-            else if (abbrChara == Abbr_siori_magical) return "siori_magical";
-            else if (abbrChara == Abbr_io) return "io";
-            else if (abbrChara == Abbr_io_summer) return "io_summer";
-            else if (abbrChara == Abbr_suzume) return "suzume";
-            else if (abbrChara == Abbr_suzume_newyear) return "suzume_newyear";
-            else if (abbrChara == Abbr_emilia) return "emilia";
-            else if (abbrChara == Abbr_kasumi) return "kasumi";
-            else if (abbrChara == Abbr_kasumi_magical) return "kasumi_magical";
-            else if (abbrChara == Abbr_rino_wonder) return "rino_wonder";
-            else if (abbrChara == Abbr_misato) return "misato";
-            else if (abbrChara == Abbr_nanaka) return "nanaka";
-            else if (abbrChara == Abbr_yui_newyear) return "yui_newyear";
-            else if (abbrChara == Abbr_kyaru_princess) return "kyaru_princess";
-            else if (abbrChara == Abbr_kyaru) return "kyaru";
-            else if (abbrChara == Abbr_hatsune) return "hatsune";
-            else if (abbrChara == Abbr_misaki) return "misaki";
-            else if (abbrChara == Abbr_runa) return "runa";
-            else if (abbrChara == Abbr_yui_princess) return "yui_princess";
-            else if (abbrChara == Abbr_chika_christmas) return "chika_christmas";
-            else if (abbrChara == Abbr_suzume_summer) return "suzume_summer";
-            else if (abbrChara == Abbr_kyaru_summer) return "kyaru_summer";
-            else if (abbrChara == Abbr_aoi) return "aoi";
-            else if (abbrChara == Abbr_chika) return "chika";
-            else if (abbrChara == Abbr_maho_summer) return "maho_summer";
-            else if (abbrChara == Abbr_maho) return "maho";
-            else if (abbrChara == Abbr_yui) return "yui";
-            else if (abbrChara == Abbr_yuki) return "yuki";
-            else if (abbrChara == Abbr_yuni) return "yuni";
-            else if (abbrChara == Abbr_kyouka) return "kyouka";
-            else if (abbrChara == Abbr_misaki_halloween) return "misaki_halloween";
-            else if (abbrChara == Abbr_kyouka_halloween) return "kyouka_halloween";
-
-            else if (abbrChara == Abbr_yui_maiden) return "yui_maiden";
-            else if (abbrChara == Abbr_kotkoro_maiden) return "kotkoro_maiden";
-            else if (abbrChara == Abbr_shepi) return "shepi";
-            else if (abbrChara == Abbr_kasumi_summer) return "kasumi_summer";
-            else if (abbrChara == Abbr_hiyori_princess) return "hiyori_princess";
-            else if (abbrChara == Abbr_makoto_cinderella) return "makoto_cinderella";
-            else if (abbrChara == Abbr_maho_cinderella) return "maho_cinderella";
-            else if (abbrChara == Abbr_rima_cinderella) return "rima_cinderella";
-            else if (abbrChara == Abbr_chieru_terefes) return "chieru_terefes";
-            else if (abbrChara == Abbr_chloe_terefes) return "chloe_terefes";
-            else if (abbrChara == Abbr_inori_timetravel) return "inori_timetravel";
-            else if (abbrChara == Abbr_kaya_timetravel) return "kaya_timetravel";
-            else if (abbrChara == Abbr_aoi_worker) return "aoi_worker";
-            else if (abbrChara == Abbr_tamaki_worker) return "tamaki_worker";
-            else if (abbrChara == Abbr_mihuyu_worker) return "mihuyu_worker";
+            if (abbrChara == Abbr_monika) return "monika";
+            if (abbrChara == Abbr_tsumugi) return "tsumugi";
+            if (abbrChara == Abbr_ayumi) return "ayumi";
+            if (abbrChara == Abbr_ruka) return "ruka";
+            if (abbrChara == Abbr_zita) return "zita";
+            if (abbrChara == Abbr_pekorinnu) return "pekorinnu";
+            if (abbrChara == Abbr_kotkoro) return "kotkoro";
+            if (abbrChara == Abbr_kyaru) return "kyaru";
+            if (abbrChara == Abbr_muimi) return "muimi";
+            if (abbrChara == Abbr_arisa) return "arisa";
+            if (abbrChara == Abbr_shepi) return "shepi";
+            if (abbrChara == Abbr_kaya) return "kaya";
+            if (abbrChara == Abbr_inori) return "inori";
+            if (abbrChara == Abbr_labyrista) return "labyrista";
+            if (abbrChara == Abbr_neneka) return "neneka";
+            if (abbrChara == Abbr_kristina) return "kristina";
+            if (abbrChara == Abbr_pekorinnu_summer) return "pekorinnu_summer";
+            if (abbrChara == Abbr_kotkoro_summer) return "kotkoro_summer";
+            if (abbrChara == Abbr_suzume_summer) return "suzume_summer";
+            if (abbrChara == Abbr_kyaru_summer) return "kyaru_summer";
+            if (abbrChara == Abbr_tamaki_summer) return "tamaki_summer";
+            if (abbrChara == Abbr_mihuyu_summer) return "mihuyu_summer";
+            if (abbrChara == Abbr_sinobu_halloween) return "sinobu_halloween";
+            if (abbrChara == Abbr_miyako_halloween) return "miyako_halloween";
+            if (abbrChara == Abbr_misaki_halloween) return "misaki_halloween";
+            if (abbrChara == Abbr_chika_christmas) return "chika_christmas";
+            if (abbrChara == Abbr_kurumi_christmas) return "kurumi_christmas";
+            if (abbrChara == Abbr_ayane_christmas) return "ayane_christmas";
+            if (abbrChara == Abbr_hiyori_newyear) return "hiyori_newyear";
+            if (abbrChara == Abbr_yui_newyear) return "yui_newyear";
+            if (abbrChara == Abbr_rei_newyear) return "rei_newyear";
+            if (abbrChara == Abbr_eriko_valentine) return "eriko_valentine";
+            if (abbrChara == Abbr_sizuru_valentine) return "sizuru_valentine";
+            if (abbrChara == Abbr_anne) return "anne";
+            if (abbrChara == Abbr_lou) return "lou";
+            if (abbrChara == Abbr_grea) return "grea";
+            if (abbrChara == Abbr_kuuka_ooedo) return "kuuka_ooedo";
+            if (abbrChara == Abbr_ninon_ooedo) return "ninon_ooedo";
+            if (abbrChara == Abbr_rem) return "rem";
+            if (abbrChara == Abbr_ram) return "ram";
+            if (abbrChara == Abbr_emilia) return "emilia";
+            if (abbrChara == Abbr_suzuna_summer) return "suzuna_summer";
+            if (abbrChara == Abbr_io_summer) return "io_summer";
+            if (abbrChara == Abbr_saren_summer) return "saren_summer";
+            if (abbrChara == Abbr_makoto_summer) return "makoto_summer";
+            if (abbrChara == Abbr_kaori_summer) return "kaori_summer";
+            if (abbrChara == Abbr_maho_summer) return "maho_summer";
+            if (abbrChara == Abbr_aoi_nakayosi) return "aoi_nakayosi";
+            if (abbrChara == Abbr_chloe) return "chloe";
+            if (abbrChara == Abbr_chieru) return "chieru";
+            if (abbrChara == Abbr_yuni) return "yuni";
+            if (abbrChara == Abbr_kyouka_halloween) return "kyouka_halloween";
+            if (abbrChara == Abbr_misogi_halloween) return "misogi_halloween";
+            if (abbrChara == Abbr_mimi_halloween) return "mimi_halloween";
+            if (abbrChara == Abbr_runa) return "runa";
+            if (abbrChara == Abbr_kristina_christmas) return "kristina_christmas";
+            if (abbrChara == Abbr_nozomi_christmas) return "nozomi_christmas";
+            if (abbrChara == Abbr_iriya_christmas) return "iriya_christmas";
+            if (abbrChara == Abbr_pekorinnu_newyear) return "pekorinnu_newyear";
+            if (abbrChara == Abbr_kotkoro_newyear) return "kotkoro_newyear";
+            if (abbrChara == Abbr_kyaru_newyear) return "kyaru_newyear";
+            if (abbrChara == Abbr_suzume_newyear) return "suzume_newyear";
+            if (abbrChara == Abbr_kasumi_magical) return "kasumi_magical";
+            if (abbrChara == Abbr_siori_magical) return "siori_magical";
+            if (abbrChara == Abbr_uzuki_deremas) return "uzuki_deremas";
+            if (abbrChara == Abbr_rin_deremas) return "rin_deremas";
+            if (abbrChara == Abbr_mio_deremas) return "mio_deremas";
+            if (abbrChara == Abbr_rin_ranger) return "rin_ranger";
+            if (abbrChara == Abbr_mahiru_ranger) return "mahiru_ranger";
+            if (abbrChara == Abbr_rino_wonder) return "rino_wonder";
+            if (abbrChara == Abbr_ayumi_wonder) return "ayumi_wonder";
+            if (abbrChara == Abbr_ruka_summer) return "ruka_summer";
+            if (abbrChara == Abbr_anna_summer) return "anna_summer";
+            if (abbrChara == Abbr_nanaka_summer) return "nanaka_summer";
+            if (abbrChara == Abbr_hatsune_summer) return "hatsune_summer";
+            if (abbrChara == Abbr_misato_summer) return "misato_summer";
+            if (abbrChara == Abbr_zyun_summer) return "zyun_summer";
+            if (abbrChara == Abbr_akari_angel) return "akari_angel";
+            if (abbrChara == Abbr_yori_angel) return "yori_angel";
+            if (abbrChara == Abbr_tsumugi_halloween) return "tsumugi_halloween";
+            if (abbrChara == Abbr_rei_halloween) return "rei_halloween";
+            if (abbrChara == Abbr_matsuri_halloween) return "matsuri_halloween";
+            if (abbrChara == Abbr_monika_magical) return "monika_magical";
+            if (abbrChara == Abbr_tomo_magical) return "tomo_magical";
+            if (abbrChara == Abbr_akino_christmas) return "akino_christmas";
+            if (abbrChara == Abbr_saren_christmas) return "saren_christmas";
+            if (abbrChara == Abbr_yukari_christmas) return "yukari_christmas";
+            if (abbrChara == Abbr_muimi_newyear) return "muimi_newyear";
+            if (abbrChara == Abbr_neneka_newyear) return "neneka_newyear";
+            if (abbrChara == Abbr_kotkoro_maiden) return "kotkoro_maiden";
+            if (abbrChara == Abbr_yui_maiden) return "yui_maiden";
+            if (abbrChara == Abbr_kasumi_summer) return "kasumi_summer";
+            if (abbrChara == Abbr_rima_cinderella) return "rima_cinderella";
+            if (abbrChara == Abbr_makoto_cinderella) return "makoto_cinderella";
+            if (abbrChara == Abbr_maho_cinderella) return "maho_cinderella";
+            if (abbrChara == Abbr_chloe_terefes) return "chloe_terefes";
+            if (abbrChara == Abbr_chieru_terefes) return "chieru_terefes";
+            if (abbrChara == Abbr_inori_timetravel) return "inori_timetravel";
+            if (abbrChara == Abbr_kaya_timetravel) return "kaya_timetravel";
+            if (abbrChara == Abbr_aoi_worker) return "aoi_worker";
+            if (abbrChara == Abbr_tamaki_worker) return "tamaki_worker";
+            if (abbrChara == Abbr_mihuyu_worker) return "mihuyu_worker";
+            if (abbrChara == Abbr_eriko_summer) return "eriko_summer";
+            if (abbrChara == Abbr_sizuru_summer) return "sizuru_summer";
+            if (abbrChara == Abbr_nozomi_summer) return "nozomi_summer";
+            if (abbrChara == Abbr_chika_summer) return "chika_summer";
+            if (abbrChara == Abbr_tsumugi_summer) return "tsumugi_summer";
+            if (abbrChara == Abbr_hiyori_princess) return "hiyori_princess";
+            if (abbrChara == Abbr_yui_princess) return "yui_princess";
+            if (abbrChara == Abbr_rei_princess) return "rei_princess";
+            if (abbrChara == Abbr_pekorinnu_princess) return "pekorinnu_princess";
+            if (abbrChara == Abbr_kotkoro_princess) return "kotkoro_princess";
+            if (abbrChara == Abbr_kyaru_princess) return "kyaru_princess";
+            #endregion
 
 
             else return "";
@@ -10937,7 +9390,7 @@ namespace PCRD_KR_ArenaSim
                             System.IO.File.Move(fileName, fileName + ".old");
                             Debug.WriteLine("1");
                             Debug.WriteLine("Change!");
-
+                            CheckCharaList();
                             if (AutoUpdater.DownloadUpdate(args))
                             {
                                 Debug.WriteLine("다운로드 완료!");

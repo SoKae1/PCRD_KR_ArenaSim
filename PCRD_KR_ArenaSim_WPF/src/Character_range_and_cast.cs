@@ -9,16 +9,15 @@
         https://pcredivewiki.tw/Stand
 
 
-        작후유 까지
          */
-
+        #region character_range_and_cast
         public double[] hiyori = new double[6] { 1, 200, 2.295, 1.125, 1.295, 1.125 };
         public double[] yui = new double[6] { 2, 800, 2.27, 1.6, 1.46, 1.6 };
         public double[] rei = new double[6] { 1, 250, 1.965, 0.955, 1.3275, 0.955 };
         public double[] misogi = new double[6] { 1, 205, 2.17, 1.55, 1.18, 1.55 };
         public double[] matsuri = new double[6] { 1, 185, 2.125, 0.76, 1.5, 0.76 };
         public double[] akari = new double[6] { 2, 570, 2.19, 1.18, 1.25, 1.18 };
-        public double[] miyako = new double[6] { 1, 125, 1.7, 0, 0.27, 0 };
+        public double[] miyako = new double[6] { 1, 125, 1.7, 0.0, 0.27, 0.0 };
         public double[] yuki = new double[6] { 2, 805, 2.07, 1.93, 1.6, 1.93 };
         public double[] anna = new double[6] { 2, 440, 2.25, 1.58, 1.25, 1.58 };
         public double[] maho = new double[6] { 2, 795, 2.27, 1.53, 2.13, 1.53 };
@@ -28,7 +27,7 @@
         public double[] kasumi = new double[6] { 2, 730, 2.27, 1.4, 1.4, 1.4 };
         public double[] misato = new double[6] { 2, 735, 2.27, 1.17, 1.6, 1.17 };
         public double[] suzuna = new double[6] { 1, 705, 1.97, 0.71, 1.4, 0.71 };
-        public double[] kaori = new double[6] { 1, 145, 2.17, 1, 1, 1 };
+        public double[] kaori = new double[6] { 1, 145, 2.17, 1.0, 1.0, 1.0 };
         public double[] io = new double[6] { 2, 715, 2.6, 1.66, 1.33, 1.66 };
         public double[] mimi = new double[6] { 1, 360, 2.125, 0.85, 0.42, 0.85 };
         public double[] kurumi = new double[6] { 1, 240, 1.675, 1.375, 1.375, 1.375 };
@@ -58,7 +57,7 @@
         public double[] sizuru = new double[6] { 1, 285, 2.375, 1.375, 1.375, 1.375 };
         public double[] misaki = new double[6] { 2, 760, 2.07, 1.4, 0.9, 1.4 };
         public double[] mitsuki = new double[6] { 1, 565, 2.25, 1.41, 0.28, 1.41 };
-        public double[] rima = new double[6] { 1, 105, 2.215, 0, 1.375, 0 };
+        public double[] rima = new double[6] { 1, 105, 2.215, 0.0, 1.375, 0.0 };
         public double[] monika = new double[6] { 1, 410, 2.24, 1.06, 0.86, 1.06 };
         public double[] tsumugi = new double[6] { 1, 195, 2.42, 1.23, 1.23, 1.23 };
         public double[] ayumi = new double[6] { 1, 510, 2.34, 1.23, 1.23, 1.23 };
@@ -68,24 +67,21 @@
         public double[] kotkoro = new double[6] { 1, 500, 2.34, 0.66, 1.4, 0.66 };
         public double[] kyaru = new double[6] { 2, 750, 2.07, 1.27, 0.83, 1.27 };
         public double[] muimi = new double[6] { 1, 162, 1.8, 0.34, 0.34, 0.34 };
-        public double[] muimi_ub = new double[6] { 1, 162, 1.8, 0.25, 0.25, 0.25 };
-
         public double[] arisa = new double[6] { 1, 625, 1.97, 0.75, 1.35, 1.27 };
+        public double[] shepi = new double[6] { 1, 368, 1.84, 0.465, 0.465, 0.465 };
         public double[] kaya = new double[6] { 1, 168, 2.17, 0.57, 0.34, 0.57 };
         public double[] inori = new double[6] { 1, 197, 1.55, 0.59, 0.59, 0.59 };
-        public double[] labyrista = new double[6] { 1, 560, 1.55, 0.59, 0.59, 0.59 };
-        public double[] labyrista_ub = new double[6] { 1, 560, 1.55, 0, 0.59, 0 };
-
-        public double[] neneka = new double[6] { 2, 660, 2, 0.75, 1.35, 0.75 };
-        public double[] neneka_alter = new double[6] { 2, 660, 2, 0.75, 1.35, 0.75 };
-        public double[] kristina = new double[6] { 1, 290, 2, 0.75, 1.35, 0.75 };
+        public double[] homare = new double[6] { 2, 727, 2.27, 1.09, 1.09, 0 };
+        public double[] labyrista = new double[6] { 1, 560, 1.55, 0.59, 0.59, 0 };
+        public double[] neneka = new double[6] { 2, 660, 2.0, 0.75, 1.35, 0.75 };
+        public double[] kristina = new double[6] { 1, 290, 2.0, 0.75, 1.35, 0.75 };
         public double[] pekorinnu_summer = new double[6] { 1, 235, 2.125, 0.065, 1.125, 0.065 };
         public double[] kotkoro_summer = new double[6] { 1, 535, 2.34, 0.69, 0.59, 0.69 };
         public double[] suzume_summer = new double[6] { 2, 775, 2.07, 0.85, 0.92, 0.85 };
         public double[] kyaru_summer = new double[6] { 2, 780, 1.92, 0.74, 1.14, 0.74 };
-        public double[] tamaki_summer = new double[6] { 1, 225, 2, 0.5, 1.1, 0.5 };
+        public double[] tamaki_summer = new double[6] { 1, 225, 2.0, 0.5, 1.1, 0.5 };
         public double[] mihuyu_summer = new double[6] { 1, 495, 2.19, 1.05, 1.19, 1.05 };
-        public double[] sinobu_halloween = new double[6] { 1, 440.000001, 1.55, 0.75, 1.35, 0.75 };
+        public double[] sinobu_halloween = new double[6] { 1, 440, 1.55, 0.75, 1.35, 0.75 };
         public double[] miyako_halloween = new double[6] { 1, 590, 2.42, 0.75, 0.55, 0.75 };
         public double[] misaki_halloween = new double[6] { 2, 815, 2.07, 1.05, 1.19, 1.05 };
         public double[] chika_christmas = new double[6] { 2, 770, 2.27, 1.05, 1.19, 1.05 };
@@ -93,98 +89,117 @@
         public double[] ayane_christmas = new double[6] { 1, 190, 1.425, 1.05, 1.19, 1.05 };
         public double[] hiyori_newyear = new double[6] { 1, 170, 2.17, 0.8, 0.94, 0.8 };
         public double[] yui_newyear = new double[6] { 2, 745, 2.27, 1.05, 1.19, 1.05 };
-        public double[] rei_newyear = new double[6] { 1, 153, 2.215, 1.7325, 0, 1.7325 };
+        public double[] rei_newyear = new double[6] { 1, 153, 2.215, 1.7325, 0.0, 1.7325 };
         public double[] eriko_valentine = new double[6] { 1, 187, 1.9, 0.925, 1.065, 0.925 };
         public double[] sizuru_valentine = new double[6] { 1, 385, 2.125, 1.7325, 0.72, 1.7325 };
         public double[] anne = new double[6] { 2, 630, 2.27, 0.925, 1.065, 0.925 };
         public double[] lou = new double[6] { 2, 640, 2.27, 1.7325, 1.19, 1.7325 };
         public double[] grea = new double[6] { 2, 525, 2.27, 1.05, 0.92, 1.05 };
         public double[] kuuka_ooedo = new double[6] { 2, 140, 2.066, 0.675, 0.715, 0.675 };
-        public double[] ninon_ooedo = new double[6] { 1, 175, 2, 0.34, 0.34, 0.34 };
+        public double[] ninon_ooedo = new double[6] { 1, 175, 2.0, 0.34, 0.34, 0.34 };
         public double[] rem = new double[6] { 1, 540, 2.25, 0.99, 0.59, 0.99 };
         public double[] ram = new double[6] { 2, 545, 2.5, 0.465, 0.465, 0.465 };
-        public double[] emilia = new double[6] { 2, 725, 2.27, 1.77, 0.75, 1.77 };
-        public double[] suzuna_summer = new double[6] { 1, 705.000001, 1.82, 0.9, 0.1, 0.9 };
-        public double[] io_summer = new double[6] { 2, 715.000001, 2.4, 0.74, 0.74, 0.74 };
+        public double[] emilia = new double[6] { 2, 725, 2.27, 1.77, 0.75, 0.77 };
+        public double[] suzuna_summer = new double[6] { 1, 705, 1.82, 0.9, 0.1, 0.9 };
+        public double[] io_summer = new double[6] { 2, 715, 2.4, 0.74, 0.74, 0.74 };
         public double[] saren_summer = new double[6] { 1, 585, 2.24, 0.74, 0.74, 0.74 };
-        public double[] makoto_summer = new double[6] { 1, 180.000001, 2.125, 0.465, 0.765, 0.465 };
-        public double[] kaori_summer = new double[6] { 1, 425.000001, 2.42, 0.89, 0.84, 0.89 };
+        public double[] makoto_summer = new double[6] { 1, 180, 2.125, 0.465, 0.765, 0.465 };
+        public double[] kaori_summer = new double[6] { 1, 425, 2.42, 0.89, 0.84, 0.89 };
         public double[] maho_summer = new double[6] { 2, 792, 2.27, 0.74, 1.34, 0.74 };
         public double[] aoi_nakayosi = new double[6] { 1, 680, 1.82, 0.9, 1.14, 0.9 };
-        public double[] chloe = new double[6] { 1, 185.000001, 2.125, 0.73, 0.57, 0.73 };
-        public double[] chieru = new double[6] { 1, 222, 2.295, 1, 1, 1 };
+        public double[] chloe = new double[6] { 1, 185, 2.125, 0.73, 0.57, 0.73 };
+        public double[] chieru = new double[6] { 1, 222, 2.295, 1.0, 1.0, 1.0 };
         public double[] yuni = new double[6] { 2, 807, 2.27, 0.73, 0.57, 0.73 };
         public double[] kyouka_halloween = new double[6] { 2, 820, 2.07, 1.27, 0.97, 1.27 };
         public double[] misogi_halloween = new double[6] { 1, 212, 2.17, 0.465, 0.465, 0.465 };
-        public double[] mimi_halloween = new double[6] { 1, 365.000001, 2, 1.67, 2, 1.33 };
+        public double[] mimi_halloween = new double[6] { 1, 365, 2.0, 1.67, 2.0, 1.33 };
         public double[] runa = new double[6] { 2, 765, 1.87, 0.74, 0.74, 0.74 };
-        public double[] kristina_christmas = new double[6] { 1, 265, 2, 0.34, 0.58, 0.34 };
+        public double[] kristina_christmas = new double[6] { 1, 265, 2.0, 0.34, 0.58, 0.34 };
         public double[] nozomi_christmas = new double[6] { 1, 418, 2.24, 1.07, 0.77, 1.07 };
         public double[] iriya_christmas = new double[6] { 2, 255, 1.3, 1.27, 0.97, 1.27 };
+        public double[] pekorinnu_newyear = new double[6] { 1, 248, 1.965, 0.465, 0.795, 0.465 };
         public double[] kotkoro_newyear = new double[6] { 1, 159, 1.87, 0.375, 0.715, 0.375 };
         public double[] kyaru_newyear = new double[6] { 2, 690, 2.07, 0.74, 0.74, 0.74 };
         public double[] suzume_newyear = new double[6] { 2, 722, 2.27, 1.27, 0.97, 1.27 };
-        public double[] kasumi_magical = new double[6] { 2, 730.000001, 2.27, 1.27, 0.97, 1.27 };
+        public double[] kasumi_magical = new double[6] { 2, 730, 2.27, 1.27, 0.97, 1.27 };
         public double[] siori_magical = new double[6] { 1, 712, 1.97, 1.27, 0.77, 1.27 };
         public double[] uzuki_deremas = new double[6] { 1, 370, 2.24, 1.27, 0.97, 1.27 };
-        public double[] rin_deremas = new double[6] { 1, 153.000001, 2.215, 0.59, 0.59, 0.59 };
+        public double[] rin_deremas = new double[6] { 1, 153, 2.215, 0.59, 0.59, 0.59 };
         public double[] mio_deremas = new double[6] { 2, 695, 2.27, 1.27, 0.97, 1.27 };
-        public double[] rin_ranger = new double[6] { 1, 422, 2.19, 0, 0.62, 0 };
+        public double[] rin_ranger = new double[6] { 1, 422, 2.19, 0.0, 0.62, 0.0 };
         public double[] mahiru_ranger = new double[6] { 1, 390, 2.19, 0.59, 0.59, 0.59 };
-        public double[] rino_wonder = new double[6] { 1, 730.000002, 1.97, 1.27, 0.97, 1.27 };
+        public double[] rino_wonder = new double[6] { 1, 730, 1.97, 1.27, 0.97, 1.27 };
         public double[] ayumi_wonder = new double[6] { 1, 508, 2.34, 1.07, 0.83, 1.07 };
         public double[] ruka_summer = new double[6] { 1, 192, 1.3, 0.465, 0.795, 0.465 };
         public double[] anna_summer = new double[6] { 2, 256, 1.625, 0.795, 1.125, 0.795 };
         public double[] nanaka_summer = new double[6] { 2, 468, 2.07, 1.27, 0.97, 1.27 };
         public double[] hatsune_summer = new double[6] { 2, 567, 1.92, 0.59, 0.59, 0.59 };
         public double[] misato_summer = new double[6] { 2, 697, 2.07, 0.94, 0.94, 0.94 };
-        public double[] zyun_summer = new double[6] { 1, 182, 2, 0.66, 0.66, 0.66 };
+        public double[] zyun_summer = new double[6] { 1, 182, 2.0, 0.66, 0.66, 0.66 };
         public double[] akari_angel = new double[6] { 2, 530, 1.92, 0.59, 0.59, 0.59 };
         public double[] yori_angel = new double[6] { 2, 531, 2.34, 0.74, 0.74, 0.74 };
-
-        public double[] tsumugi_halloween = new double[6] { 2, 152, 2.375, 0.715, 0.715, 0.715 };
-        public double[] rei_halloween = new double[6] { 2, 375, 1.965, 0.59, 0.59, 0.59 };
-        public double[] matsuri_halloween = new double[6] { 2, 186, 2.295, 1.27, 0.97, 1.27 };
-        public double[] monika_magical = new double[6] { 2, 528, 2.24, 0.8, 0.7, 0.8 };
-        public double[] tomo_magical = new double[6] { 2, 402, 2.0, 0.59, 0.59, 0.59 };
-        public double[] akino_christmas = new double[6] { 2, 189, 2.0, 0.4, 0.4, 0.4 };
-        public double[] saren_christmas = new double[6] { 2, 150, 2.09, 0.8, 0.8, 0.8 };
-        public double[] yukari_christmas = new double[6] { 2, 408, 2.09, 0.59, 0.82, 0.59 };
-        public double[] pekorinnu_newyear = new double[6] { 2, 248, 1.965, 0.715, 0.715, 0.715 };
-        public double[] muimi_newyear = new double[6] { 2, 138, 2.0, 1.14, 1.2, 1.14 };
+        public double[] tsumugi_halloween = new double[6] { 1, 152, 2.375, 0.715, 0.715, 0.715 };
+        public double[] rei_halloween = new double[6] { 1, 375, 1.965, 0.59, 0.59, 0.59 };
+        public double[] matsuri_halloween = new double[6] { 1, 186, 2.295, 1.27, 0.97, 1.27 };
+        public double[] monika_magical = new double[6] { 1, 528, 2.24, 0.8, 0.77, 0.8 };
+        public double[] tomo_magical = new double[6] { 1, 402, 2.0, 0.59, 0.59, 0.59 };
+        public double[] akino_christmas = new double[6] { 1, 189, 2.0, 0.4, 0.4, 0.4 };
+        public double[] saren_christmas = new double[6] { 1, 150, 2.09, 0.8, 0.8, 0.8 };
+        public double[] yukari_christmas = new double[6] { 1, 408, 2.09, 0.59, 0.82, 0.59 };
+        public double[] muimi_newyear = new double[6] { 1, 138, 2.0, 1.14, 1.2, 1.14 };
         public double[] neneka_newyear = new double[6] { 2, 562, 2.07, 0.59, 0.59, 0.59 };
-        public double[] kotkoro_maiden = new double[6] { 2, 533, 2.0, 0.59, 0.9, 0.59 };
+        public double[] kotkoro_maiden = new double[6] { 1, 533, 2.0, 0.59, 0.9, 0.59 };
         public double[] yui_maiden = new double[6] { 2, 578, 1.97, 0.7, 0.5, 0.7 };
-        public double[] shepi = new double[7] { 2, 368, 1.84, 0.465, 0.465, 0.465, 0.5 };
         public double[] kasumi_summer = new double[6] { 2, 738, 2.27, 0.94, 0.94, 0.94 };
-
-        public double[] maho_cinderella = new double[6] { 2, 645, 2.27, 0.525, 0.525, 0.525 };
-        public double[] rima_cinderella_1 = new double[6] { 1, 173, 2.27, 0.865, 0.795, 0.865 };
-        public double[] rima_cinderella_2 = new double[7] { 1, 173, 2.27, 0.525, 0.625, 0.525, 0.595 };
-        public double[] rima_cinderella = new double[7] { 1, 173, 2.27, 0.525, 0.625, 0.525, 0.595 };
-        //행동패턴3: rima_cinderella
-        //행동패턴2:rima_cinderella_2
-        //행동패턴1:rima_cinderella_1
         public double[] makoto_cinderella = new double[6] { 1, 166, 2.27, 0.465, 0.465, 0.465 };
-
-        public double[] chieru_terefes = new double[6] { 1, 223, 2.295, 1.155, 1.155, 1.155 };
+        public double[] maho_cinderella = new double[6] { 2, 645, 2.27, 0.525, 0.525, 0.525 };
         public double[] chloe_terefes = new double[6] { 1, 184, 2.125, 0.465, 0.465, 0.465 };
-
+        public double[] chieru_terefes = new double[6] { 1, 223, 2.295, 1.155, 1.155, 1.155 };
         public double[] inori_timetravel = new double[6] { 1, 252, 2.295, 0.525, 0.525, 0.525 };
-
         public double[] kaya_timetravel = new double[6] { 1, 169, 2.295, 1.295, 0.625, 1.295 };
-
+        public double[] aoi_worker = new double[6] { 1, 527, 1.82, 0.465, 0.465, 0.465 };
         public double[] tamaki_worker = new double[6] { 1, 216, 2.295, 1.365, 0.495, 1.365 };
-        public double[] aoi_worker = new double[6] { 1, 738, 1.82, 0.465, 0.465, 0.465 };
         public double[] mihuyu_worker = new double[6] { 1, 275, 2.065, 0.59, 0.59, 0.59 };
-
-        //
+        public double[] eriko_summer = new double[6] { 1, 407, 1.55, 0.695, 0.125, 0.695 };
+        public double[] sizuru_summer = new double[6] { 1, 163, 2.0, 0.34, 0.34, 0.34 };
+        public double[] nozomi_summer = new double[6] { 1, 417, 2.09, 0.525, 0.525, 0 };
+        public double[] chika_summer = new double[6] { 2, 520, 2.07, 0.695, 0.465, 0 };
+        public double[] tsumugi_summer = new double[6] { 1, 355, 2.42, 0.465, 0.465, 0 };
+        public double[] mitsuki_ooedo = new double[6] { 1, 552, 2.4, 0.465, 0.465, 0 };
+        public double[] yuki_ooedo = new double[6] { 2, 798, 2.0, 0.465, 0.695, 0 };
+        public double[] kaori_halloween = new double[6] { 1, 156, 2.17, 0.34, 0.34, 0 };
+        public double[] ninon_halloween = new double[6] { 1, 518, 2.25, 0.465, 0.465, 0 };
+        public double[] suzuna_halloween = new double[6] { 1, 761, 1.97, 0.74, 0.97, 0 };
+        public double[] credita = new double[6] { 1, 751, 1.97, 0.235, 0.465, 0 };
+        public double[] ranpa = new double[6] { 2, 782, 2.07, 0.733, 0.733, 0 };
+        public double[] hatsune_princess = new double[6] { 0, 732, 0.0, 0, 0, 0 };
+        public double[] siori_princess = new double[6] { 0, 732, 0.0, 0, 0, 0 };
+        public double[] karin = new double[6] { 2, 787, 2.0, 0.59, 0.59, 0 };
+        public double[] io_noir = new double[6] { 2, 714, 2.27, 1.27, 1.0, 0 };
+        public double[] kuuka_noir = new double[6] { 2, 143, 2.545, 0.715, 0.715, 0 };
+        public double[] mahiru_christmas = new double[6] { 1, 397, 2.19, 0.525, 0.525, 0 };
+        public double[] rino_christmas = new double[6] { 1, 762, 1.97, 0.74, 0.74, 0 };
+        public double[] miyako_christmas = new double[6] { 1, 302, 2.17, 0.94, 0.6, 0 };
+        public double[] mimi_princess = new double[6] { 0, 465, 0.0, 0, 0, 0 };
+        public double[] misogi_princess = new double[6] { 0, 465, 0.0, 0, 0, 0 };
+        public double[] kyouka_princess = new double[6] { 0, 465, 0.0, 0, 0, 0 };
+        public double[] shepi_newyear = new double[6] { 1, 283, 1.84, 0.465, 0.465, 0 };
+        public double[] ruka_newyear = new double[6] { 1, 193, 1.3, 0.275, 0.425, 0 };
+        public double[] iriya_newyear = new double[6] { 2, 424, 1.425, 0.525, 0.525, 0 };
+        public double[] pekorinnu_overload = new double[6] { 1, 164, 2.25, 0.465, 0.465, 0 };
+        public double[] kyaru_overload = new double[6] { 2, 588, 2.07, 0.74, 0.74, 0 };
+        public double[] labirista_overload = new double[6] { 1, 260, 1.55, 0.525, 0.525, 0 };
+        public double[] kurumi_stage = new double[6] { 1, 731, 1.9, 1.27, 0.94, 0 };
+        public double[] hiyori_princess = new double[6] { 1, 199, 1.62, 0.6, 0.6, 0 };
         public double[] yui_princess = new double[6] { 2, 767, 1.92, 0.59, 0.59, 0.59 };
-        public double[] pekorinnu_princess = new double[6] { 1, 155.000001, 1.965, 0.92, 0.62, 0.92 };
-        public double[] kotkoro_princess = new double[6] { 1, 555, 2.14, 0.66, 0.66, 0.66 };
-        public double[] hiyori_princess = new double[6] { 1, 199, 1.62, 0.6, 0.6, 0.6 };
-        public double[] rei_princess = new double[6] { 1, 377, 1.965, 0.415, 0.915, 0.415 };
-        public double[] kyaru_princess = new double[6] { 1, 747, 1.92, 0.66, 0.66, 0.66 };
+        public double[] rei_princess = new double[6] { 1, 377, 1.965, 0.415, 0.915, 0 };
+        public double[] pekorinnu_princess = new double[6] { 1, 155, 1.965, 0.92, 0.62, 0.46 };
+        public double[] kotkoro_princess = new double[6] { 1, 555, 2.14, 0.66, 0.66, 0 };
+        public double[] kyaru_princess = new double[6] { 2, 747, 1.92, 0.66, 0.66, 0 };
+        public double[] hatsusio = new double[6] { 1, 732, 1.75, 0.59, 0.59, 0 };
+        public double[] littlelyri = new double[6] { 1, 465, 1.5, 0.14, 0.59, 0 };
+        #endregion
+
 
         public double[] skull = new double[6] { 1, 300, 2, 0, 0, 0 };
         public double[] sylph_chika_1 = new double[6] { 2, 1000, 2, 0, 0, 0 };
@@ -192,6 +207,16 @@
         public double[] sylph_chika_christmas_2 = new double[6] { 2, 750, 2, 3, 0, 3 };
         public double[] sylph_chika_christmas_3 = new double[6] { 2, 800, 2, 3, 0, 3 };
         public double[] golem = new double[6] { 1, 95, 3, 0, 0, 0 };
+        public double[] labyrista_ub = new double[6] { 1, 560, 1.55, 0, 0.59, 0 };
+        public double[] neneka_alter = new double[6] { 2, 660, 2, 0.75, 1.35, 0.75 };
+        public double[] muimi_ub = new double[6] { 1, 162, 1.8, 0.25, 0.25, 0.25 };
+
+        public double[] rima_cinderella_1 = new double[6] { 1, 173, 2.27, 0.865, 0.795, 0.865 };
+        public double[] rima_cinderella_2 = new double[7] { 1, 173, 2.27, 0.525, 0.625, 0.525, 0.595 };
+        public double[] rima_cinderella = new double[7] { 1, 173, 2.27, 0.525, 0.625, 0.525, 0.595 };
+        //행동패턴3: rima_cinderella
+        //행동패턴2:rima_cinderella_2
+        //행동패턴1:rima_cinderella_1
 
         /* 타입(물리1, 마법2), 사거리, 평타 cast time, 스킬1 cast time, 스킬2 cast time, 전용장비 스킬1 cast time ,SP 스킬1 cast time
          https://github.com/HerDataSam/redive_kr_db_diff/blob/master/unit_data.csv

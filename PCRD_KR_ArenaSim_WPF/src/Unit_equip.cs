@@ -5,9 +5,7 @@
 
         /*
          * https://github.com/esterTion/redive_master_db_diff/blob/master/unit_promotion.sql
-         * 
-         * 22랭 4템까지
-         오유키까지 */
+         *  */
         #region Unit_equip
         public double[] hiyori_01 = new double[6] { /*equip_slot_1*/101101, /*equip_slot_2*/101101, /*equip_slot_3*/101281, /*equip_slot_4*/101431, /*equip_slot_5*/101071, /*equip_slot_6*/101581 };
         public double[] hiyori_02 = new double[6] { /*equip_slot_1*/102101, /*equip_slot_2*/102071, /*equip_slot_3*/102341, /*equip_slot_4*/102431, /*equip_slot_5*/101101, /*equip_slot_6*/101581 };

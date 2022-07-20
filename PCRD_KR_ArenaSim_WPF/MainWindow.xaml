@@ -98,6 +98,10 @@
                                 Checked="tb_muimi_Checked" Unchecked="tb_muimi_UnChecked">
                                 <Image Source="res\icon_unit\106131.png"    />
                             </ToggleButton>
+                            <ToggleButton Name="tb_sizuru_summer" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="sizuru_summer" IsChecked="false" BorderThickness="0"  
+                                Checked="tb_sizuru_summer_Checked" Unchecked="tb_sizuru_summer_UnChecked">
+                                <Image Source="res\icon_unit\117131.png"    />
+                            </ToggleButton>
                             <ToggleButton Name="tb_makoto" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="makoto" IsChecked="false" BorderThickness="0"  
                                 Checked="tb_makoto_Checked" Unchecked="tb_makoto_UnChecked">
                                 <Image Source="res\icon_unit\104331.png"    />
@@ -286,6 +290,10 @@
                             </ToggleButton>
                         </WrapPanel>
                         <WrapPanel Margin="5,0,5,15">
+                            <ToggleButton Name="tb_tsumugi_summer" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="tsumugi_summer" IsChecked="false" BorderThickness="0"  
+                                  Checked="tb_tsumugi_summer_Checked" Unchecked="tb_tsumugi_summer_UnChecked">
+                                <Image Source="res\icon_unit\117431.png"    />
+                            </ToggleButton>
                             <ToggleButton Name="tb_mimi" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="mimi" IsChecked="false" BorderThickness="0"  
                                   Checked="tb_mimi_Checked" Unchecked="tb_mimi_UnChecked">
                                 <Image Source="res\icon_unit\102061.png"    />
@@ -334,6 +342,10 @@
                                   Checked="tb_yukari_Checked" Unchecked="tb_yukari_UnChecked">
                                 <Image Source="res\icon_unit\103461.png"    />
                             </ToggleButton>
+                            <ToggleButton Name="tb_eriko_summer" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="eriko_summer" IsChecked="false" BorderThickness="0"  
+                                  Checked="tb_eriko_summer_Checked" Unchecked="tb_eriko_summer_UnChecked">
+                                <Image Source="res\icon_unit\117031.png"    />
+                            </ToggleButton>
                             <ToggleButton Name="tb_yukari_christmas" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="yukari_christmas" IsChecked="false" BorderThickness="0"  
                                   Checked="tb_yukari_christmas_Checked" Unchecked="tb_yukari_christmas_UnChecked">
                                 <Image Source="res\icon_unit\114631.png"    />
@@ -345,6 +357,10 @@
                             <ToggleButton Name="tb_ninon" Style="{StaticResource OnOffToggleImageStyle}" ToolTip="ninon" IsChecked="false" BorderThickness="0"  
                                   Checked="tb_ninon_Checked" Unchecked="tb_ninon_UnChecked">
                                 <Image Source="res\icon_unit\103061.png"    />
+                            </ToggleButton>
+                            <ToggleButton Name="tb_nozomi_summer" Style="{StaticResource OnOffToggleImageStyle}" ToolTip="nozomi_summer" IsChecked="false" BorderThickness="0"  
+                                  Checked="tb_nozomi_summer_Checked" Unchecked="tb_nozomi_summer_UnChecked">
+                                <Image Source="res\icon_unit\117231.png"    />
                             </ToggleButton>
                             <ToggleButton Name="tb_nozomi_christmas" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="nozomi_christmas" IsChecked="false" BorderThickness="0"  
                                  Checked="tb_nozomi_christmas_Checked" Unchecked="tb_nozomi_christmas_UnChecked">
@@ -397,6 +413,10 @@
                             <ToggleButton Name="tb_ayumi" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="ayumi" IsChecked="false" BorderThickness="0"  
                                  Checked="tb_ayumi_Checked" Unchecked="tb_ayumi_UnChecked">
                                 <Image Source="res\icon_unit\105531.png"    />
+                            </ToggleButton>
+                            <ToggleButton Name="tb_chika_summer" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="chika_summer" IsChecked="false" BorderThickness="0"  
+                                 Checked="tb_chika_summer_Checked" Unchecked="tb_chika_summer_UnChecked">
+                                <Image Source="res\icon_unit\117331.png"    />
                             </ToggleButton>
                             <ToggleButton Name="tb_grea" Style="{StaticResource OnOffToggleImageStyle}" ToolTip="grea" IsChecked="false" BorderThickness="0"  
                                  Checked="tb_grea_Checked" Unchecked="tb_grea_UnChecked">
@@ -1489,6 +1509,10 @@
                                         Click="bt_muimi_set_Click" >
                                 <Image Source="res\icon_unit\106131.png" Stretch="Fill"     Name="img_bt_muimi"  />
                             </Button>
+                            <Button  ToolTip="sizuru_summer"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
+                                        Click="bt_sizuru_summer_set_Click" >
+                                <Image Source="res\icon_unit\117131.png" Stretch="Fill"     Name="img_bt_sizuru_summer"  />
+                            </Button>
                             <Button  ToolTip="makoto"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                         Click="bt_makoto_set_Click" >
                                 <Image Source="res\icon_unit\104331.png" Stretch="Fill"     Name="img_bt_makoto"  />
@@ -1671,6 +1695,10 @@
                             </Button>
                         </WrapPanel>
                         <WrapPanel Margin="5,0,5,25">
+                            <Button  ToolTip="tsumugi_summer"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
+                                          Click="bt_tsumugi_summer_set_Click" >
+                                <Image Source="res\icon_unit\117431.png" Stretch="Fill"     Name="img_bt_tsumugi_summer"  />
+                            </Button>
                             <Button  ToolTip="mimi"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                           Click="bt_mimi_set_Click" >
                                 <Image Source="res\icon_unit\102061.png" Stretch="Fill"     Name="img_bt_mimi"  />
@@ -1719,6 +1747,10 @@
                                           Click="bt_yukari_set_Click" >
                                 <Image Source="res\icon_unit\103461.png" Stretch="Fill"     Name="img_bt_yukari"  />
                             </Button>
+                            <Button  ToolTip="eriko_summer"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
+                                          Click="bt_eriko_summer_set_Click" >
+                                <Image Source="res\icon_unit\117031.png" Stretch="Fill"     Name="img_bt_eriko_summer"  />
+                            </Button>
                             <Button  ToolTip="yukari_christmas"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                           Click="bt_yukari_christmas_set_Click" >
                                 <Image Source="res\icon_unit\114631.png" Stretch="Fill"     Name="img_bt_yukari_christmas"  />
@@ -1730,6 +1762,10 @@
                             <Button ToolTip="ninon"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                           Click="bt_ninon_set_Click" >
                                 <Image Source="res\icon_unit\103061.png" Stretch="Fill"     Name="img_bt_ninon"  />
+                            </Button>
+                            <Button ToolTip="nozomi_summer"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
+                                          Click="bt_nozomi_summer_set_Click" >
+                                <Image Source="res\icon_unit\117231.png" Stretch="Fill"     Name="img_bt_nozomi_summer"  />
                             </Button>
                             <Button  ToolTip="nozomi_christmas"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                          Click="bt_nozomi_christmas_set_Click" >
@@ -1782,6 +1818,10 @@
                             <Button  ToolTip="ayumi"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                          Click="bt_ayumi_set_Click" >
                                 <Image Source="res\icon_unit\105531.png" Stretch="Fill"     Name="img_bt_ayumi"  />
+                            </Button>
+                            <Button  ToolTip="chika_summer"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
+                                         Click="bt_chika_summer_set_Click" >
+                                <Image Source="res\icon_unit\117331.png" Stretch="Fill"     Name="img_bt_chika_summer"  />
                             </Button>
                             <Button ToolTip="grea"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                          Click="bt_grea_set_Click" >
@@ -2214,6 +2254,10 @@
                                     <TextBox MaxLength = "1"  Text="무" Name="tb_abbr_muimi" Margin="0,2,2,0" Width="25"  BorderBrush="{x:Null}" InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native"   Height="20" />
                                 </DockPanel>
                                 <DockPanel>
+                                    <TextBlock  Text="수즈루" Margin="0,2,2,0" Width="80" Height="20" />
+                                    <TextBox MaxLength = "1"  Text="" Name="tb_abbr_sizuru_summer" Margin="0,2,2,0" Width="25"  BorderBrush="{x:Null}" InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native"   Height="20" />
+                                </DockPanel>
+                                <DockPanel>
                                     <TextBlock  Text="마코토" Margin="0,2,2,0" Width="80" Height="20" />
                                     <TextBox MaxLength = "1"  Text="" Name="tb_abbr_makoto" Margin="0,2,2,0" Width="25"  BorderBrush="{x:Null}" InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native"   Height="20" />
                                 </DockPanel>
@@ -2400,6 +2444,10 @@
                         <WrapPanel >
                             <StackPanel>
                                 <DockPanel>
+                                    <TextBlock  Text="수무기"  Margin="0,2,2,0" Width="80" Height="20" />
+                                    <TextBox MaxLength = "1"  Text="" Name="tb_abbr_tsumugi_summer"  Margin="0,2,2,0" Width="25" BorderBrush="{x:Null}" InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native"   Height="20" />
+                                </DockPanel>
+                                <DockPanel>
                                     <TextBlock  Text="미미"  Margin="0,2,2,0" Width="80" Height="20" />
                                     <TextBox MaxLength = "1"  Text="미" Name="tb_abbr_mimi"  Margin="0,2,2,0" Width="25" BorderBrush="{x:Null}" InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native"   Height="20" />
                                 </DockPanel>
@@ -2448,6 +2496,10 @@
                                     <TextBox MaxLength = "1"  Text="유" Name="tb_abbr_yukari" Margin="0,2,2,0" Width="25"  BorderBrush="{x:Null}" InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native"   Height="20" />
                                 </DockPanel>
                                 <DockPanel>
+                                    <TextBlock  Text="수리코" Margin="0,2,2,0" Width="80" Height="20" />
+                                    <TextBox MaxLength = "1"  Text="" Name="tb_abbr_eriko_summer" Margin="0,2,2,0" Width="25"  BorderBrush="{x:Null}" InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native"   Height="20" />
+                                </DockPanel>
+                                <DockPanel>
                                     <TextBlock  Text="성카리" Margin="0,2,2,0" Width="80" Height="20" />
                                     <TextBox MaxLength = "1"  Text="유" Name="tb_abbr_yukari_christmas" Margin="0,2,2,0" Width="25"  BorderBrush="{x:Null}" InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native"   Height="20" />
                                 </DockPanel>
@@ -2458,6 +2510,10 @@
                                 <DockPanel>
                                     <TextBlock  Text="니논" Margin="0,2,2,0" Width="80" Height="20" />
                                     <TextBox MaxLength = "1"  Text="니" Name="tb_abbr_ninon" Margin="0,2,2,0" Width="25"  BorderBrush="{x:Null}" InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native"   Height="20" />
+                                </DockPanel>
+                                <DockPanel>
+                                    <TextBlock  Text="수조미" Margin="0,2,2,0" Width="80" Height="20" />
+                                    <TextBox MaxLength = "1"  Text="" Name="tb_abbr_nozomi_summer" Margin="0,2,2,0" Width="25"  BorderBrush="{x:Null}" InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native"   Height="20" />
                                 </DockPanel>
                                 <DockPanel>
                                     <TextBlock  Text="성조미" Margin="0,2,2,0" Width="80" Height="20" />
@@ -2510,6 +2566,10 @@
                                 <DockPanel>
                                     <TextBlock  Text="아유미" Margin="0,2,2,0" Width="80" Height="20" />
                                     <TextBox MaxLength = "1"  Text="" Name="tb_abbr_ayumi" Margin="0,2,2,0" Width="25"  BorderBrush="{x:Null}" InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native"   Height="20" />
+                                </DockPanel>
+                                <DockPanel>
+                                    <TextBlock  Text="수치카" Margin="0,2,2,0" Width="80" Height="20" />
+                                    <TextBox MaxLength = "1"  Text="" Name="tb_abbr_chika_summer" Margin="0,2,2,0" Width="25"  BorderBrush="{x:Null}" InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Native"   Height="20" />
                                 </DockPanel>
                                 <DockPanel>
                                     <TextBlock  Text="글레어" Margin="0,2,2,0" Width="80" Height="20" />

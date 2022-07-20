@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -647,6 +648,29 @@ namespace NameConversion
 
         }
 
+        public bool ReplaceStringInFile(string filename, int position, string str)
+        {
+            // 1. Verify that file exists.
+            // Is used static function Exists().
+            if (!File.Exists(filename)) return false;
+
+            // 2. Get data from a file as an array of strings.
+            // To do this, use the ReadAllLines () method.
+            string[] arrayS = File.ReadAllLines(filename);
+
+            // 3. Check if row position value is correct
+            if ((position < 0) || (position >= arrayS.Length))
+                return false;
+
+            // 4. Replace the string
+            arrayS[position] = str;
+
+            // 5. Write the array of strings to the file
+            File.WriteAllLines(filename, arrayS);
+
+            // 6. Return the result
+            return true;
+        }
 
         public string StringArrayToCommaString(string[] temp)
         {

@@ -11,8 +11,6 @@
     https://github.com/esterTion/redive_master_db_diff/blob/master/equipment_data.sql
         https://github.com/HerDataSam/redive_kr_db_diff/blob/master/equipment_data.csv
          
-        18랭 4템까지 (한섭 db)
-        22랭 3템까지 (일섭 db)
          */
         #region Equipment
         public double[] E101011 = new double[15] { /*hp*/15.0, /*atk*/6.0, /*magic_str*/0.0, /*def*/0.0, /*magic_def*/0.0, /*physical_critical*/0.0, /*magic_critical*/0.0, /*wave_hp_recovery*/0.0, /*wave_energy_recovery*/0.0, /*dodge*/0.0, /*life_steal*/0.0, /*hp_recovery_rate*/0.0, /*energy_recovery_rate*/0.0, /*energy_reduce_rate*/0.0, /*accuracy*/0.0 };
