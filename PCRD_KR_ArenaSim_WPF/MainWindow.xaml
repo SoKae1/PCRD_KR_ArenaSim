@@ -643,7 +643,7 @@
                             </ToggleButton>
                             <ToggleButton Name="tb_aoi" Style="{StaticResource OnOffToggleImageStyle}"  ToolTip="aoi" IsChecked="false" BorderThickness="0"  
                                   Checked="tb_aoi_Checked" Unchecked="tb_aoi_UnChecked">
-                                <Image Source="res\icon_unit\104031.png"    />
+                                <Image Source="res\icon_unit\104061.png"    />
                             </ToggleButton>
                             <ToggleButton Name="tb_chika" Style="{StaticResource OnOffToggleImageStyle}" ToolTip="chika" IsChecked="false" BorderThickness="0"  
                                   Checked="tb_chika_Checked" Unchecked="tb_chika_UnChecked">
@@ -2048,7 +2048,7 @@
                             </Button>
                             <Button  ToolTip="aoi"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                           Click="bt_aoi_set_Click" >
-                                <Image Source="res\icon_unit\104031.png" Stretch="Fill"     Name="img_bt_aoi"  />
+                                <Image Source="res\icon_unit\104061.png" Stretch="Fill"     Name="img_bt_aoi"  />
                             </Button>
                             <Button ToolTip="chika"   BorderThickness="0"  Background="Transparent"   BorderBrush="{x:Null}" Width="46" Height="46"  
                                           Click="bt_chika_set_Click" >

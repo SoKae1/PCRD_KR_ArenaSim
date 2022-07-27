@@ -51,7 +51,7 @@ namespace NameConversion
             else if (CharaName == "kyouka") { ID = "103661"; }
             else if (CharaName == "tomo") { ID = "103731"; }
             else if (CharaName == "siori") { ID = "103831"; }
-            else if (CharaName == "aoi") { ID = "104031"; }
+            else if (CharaName == "aoi") { ID = "104061"; }
             else if (CharaName == "chika") { ID = "104231"; }
             else if (CharaName == "makoto") { ID = "104331"; }
             else if (CharaName == "iriya") { ID = "104431"; }

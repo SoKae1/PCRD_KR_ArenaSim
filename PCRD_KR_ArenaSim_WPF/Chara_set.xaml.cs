@@ -144,401 +144,421 @@ namespace PCRD_KR_ArenaSim
             //
 
             //캐릭터 정보 불러오기
-            StreamReader sr = new StreamReader("character_offence.txt");
-
-            while (!sr.EndOfStream)
+            if (File.Exists("character_offence.txt"))
             {
-                string s = sr.ReadLine();
-                string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
-                int pos = Array.IndexOf(temp, SelectedCharaKR);
-                if (pos > -1)
+                StreamReader sr = new StreamReader("character_offence.txt");
+                while (!sr.EndOfStream)
                 {
-                    isCharaEnabled = Convert.ToInt32(temp[pos + 1]);
-                    if (isCharaEnabled == 1)
-                        cb_enable_set.IsChecked = true;
-                    else
-                        cb_enable_set.IsChecked = false;
+                    string s = sr.ReadLine();
+                    string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
+                    int pos = Array.IndexOf(temp, SelectedCharaKR);
+                    if (pos > -1)
+                    {
+                        isCharaEnabled = Convert.ToInt32(temp[pos + 1]);
+                        if (isCharaEnabled == 1)
+                            cb_enable_set.IsChecked = true;
+                        else
+                            cb_enable_set.IsChecked = false;
 
-                    Level_variable.star_temp = Convert.ToInt32(temp[pos + 2]);
-                    Level_variable.Lv_temp = Convert.ToInt32(temp[pos + 3]);
-                    Level_variable.Rank_temp = Convert.ToInt32(temp[pos + 4]);
+                        Level_variable.star_temp = Convert.ToInt32(temp[pos + 2]);
+                        Level_variable.Lv_temp = Convert.ToInt32(temp[pos + 3]);
+                        Level_variable.Rank_temp = Convert.ToInt32(temp[pos + 4]);
 
-                    //pos + 4 : 전용장비 0~160
-                    Level_variable.equip_temp = Convert.ToBoolean(Convert.ToInt32(temp[pos + 5]));
-                    Debug.WriteLine(Level_variable.equip_temp);
-                    Level_variable.UE_Lv_temp = Convert.ToInt32(temp[pos + 5]);
+                        //pos + 4 : 전용장비 0~160
+                        Level_variable.equip_temp = Convert.ToBoolean(Convert.ToInt32(temp[pos + 5]));
+                        Debug.WriteLine(Level_variable.equip_temp);
+                        Level_variable.UE_Lv_temp = Convert.ToInt32(temp[pos + 5]);
 #if DEBUG
-                    Debug.WriteLine(Convert.ToString(temp[pos + 2]) + "," + Convert.ToString(temp[pos + 3]) + "," + Convert.ToString(temp[pos + 4])
-                        + "," + Convert.ToString(temp[pos + 5]) + "," + Convert.ToString(temp[pos + 6]) + "," + Convert.ToString(temp[pos + 7])
-                        + "," + Convert.ToString(temp[pos + 8]) + "," + Convert.ToString(temp[pos + 9]) + "," + Convert.ToString(temp[pos + 10]) + "," + Convert.ToString(temp[pos + 11]));
+                        Debug.WriteLine(Convert.ToString(temp[pos + 2]) + "," + Convert.ToString(temp[pos + 3]) + "," + Convert.ToString(temp[pos + 4])
+                            + "," + Convert.ToString(temp[pos + 5]) + "," + Convert.ToString(temp[pos + 6]) + "," + Convert.ToString(temp[pos + 7])
+                            + "," + Convert.ToString(temp[pos + 8]) + "," + Convert.ToString(temp[pos + 9]) + "," + Convert.ToString(temp[pos + 10]) + "," + Convert.ToString(temp[pos + 11]));
 #else
 #endif
-                    //pos + 5~ 10: 1~6템
-                    //원래 구현 -> 내가 한것
-                    // 1=6
-                    // 2=1
-                    // 3=5
-                    // 4=2
-                    // 5=4
-                    // 6=3
-                    //1템
+                        //pos + 5~ 10: 1~6템
+                        //원래 구현 -> 내가 한것
+                        // 1=6
+                        // 2=1
+                        // 3=5
+                        // 4=2
+                        // 5=4
+                        // 6=3
+                        //1템
 
-                    Debug.WriteLine("3545 IsItemEnabled?");
+                        Debug.WriteLine("3545 IsItemEnabled?");
 
-                    if (Convert.ToInt32(temp[pos + 6]) > 0)
-                    { Level_variable.equip2_temp = true; bt_item1.IsEnabled = true; }
-                    else
-                    {
-                        Level_variable.equip2_temp = false;
+                        if (Convert.ToInt32(temp[pos + 6]) > 0)
+                        { Level_variable.equip2_temp = true; bt_item1.IsEnabled = true; }
+                        else
+                        {
+                            Level_variable.equip2_temp = false;
+                        }
+
+                        if (Convert.ToInt32(temp[pos + 7]) > 0)
+                        { Level_variable.equip4_temp = true; bt_item2.IsEnabled = true; }
+                        else
+                        {
+                            Level_variable.equip4_temp = false;
+                        }
+                        if (Convert.ToInt32(temp[pos + 8]) > 0)
+                        { Level_variable.equip6_temp = true; bt_item3.IsEnabled = true; }
+                        else
+                        {
+                            Level_variable.equip6_temp = false;
+                        }
+                        if (Convert.ToInt32(temp[pos + 9]) > 0)
+                        { Level_variable.equip5_temp = true; bt_item4.IsEnabled = true; }
+                        else
+                        {
+                            Level_variable.equip5_temp = false;
+                        }
+                        if (Convert.ToInt32(temp[pos + 10]) > 0)
+                        {
+                            Level_variable.equip3_temp = true;
+                            bt_item5.IsEnabled = true;
+                        }
+                        else
+                        {
+                            Level_variable.equip3_temp = false;
+                        }
+                        if (Convert.ToInt32(temp[pos + 11]) > 0)
+                        { Level_variable.equip1_temp = true; bt_item6.IsEnabled = true; }
+                        else
+                        {
+                            Level_variable.equip1_temp = false;
+                        }
+
+                        //강화
+
+                        Debug.WriteLine("3545 item ");
+
+                        Level_variable.rf2_temp = Convert.ToBoolean(Convert.ToInt32(temp[pos + 6])) ? Convert.ToInt32(temp[pos + 6]) : 0;
+                        Level_variable.rf4_temp = Convert.ToBoolean(Convert.ToInt32(temp[pos + 7])) ? Convert.ToInt32(temp[pos + 7]) : 0;
+                        Level_variable.rf6_temp = Convert.ToBoolean(Convert.ToInt32(temp[pos + 8])) ? Convert.ToInt32(temp[pos + 8]) : 0;
+                        Level_variable.rf5_temp = Convert.ToBoolean(Convert.ToInt32(temp[pos + 9])) ? Convert.ToInt32(temp[pos + 9]) : 0;
+                        Level_variable.rf3_temp = Convert.ToBoolean(Convert.ToInt32(temp[pos + 10])) ? Convert.ToInt32(temp[pos + 10]) : 0;
+                        Level_variable.rf1_temp = Convert.ToBoolean(Convert.ToInt32(temp[pos + 11])) ? Convert.ToInt32(temp[pos + 11]) : 0;
+
+
+                        break;
                     }
-
-                    if (Convert.ToInt32(temp[pos + 7]) > 0)
-                    { Level_variable.equip4_temp = true; bt_item2.IsEnabled = true; }
-                    else
-                    {
-                        Level_variable.equip4_temp = false;
-                    }
-                    if (Convert.ToInt32(temp[pos + 8]) > 0)
-                    { Level_variable.equip6_temp = true; bt_item3.IsEnabled = true; }
-                    else
-                    {
-                        Level_variable.equip6_temp = false;
-                    }
-                    if (Convert.ToInt32(temp[pos + 9]) > 0)
-                    { Level_variable.equip5_temp = true; bt_item4.IsEnabled = true; }
-                    else
-                    {
-                        Level_variable.equip5_temp = false;
-                    }
-                    if (Convert.ToInt32(temp[pos + 10]) > 0)
-                    {
-                        Level_variable.equip3_temp = true;
-                        bt_item5.IsEnabled = true;
-                    }
-                    else
-                    {
-                        Level_variable.equip3_temp = false;
-                    }
-                    if (Convert.ToInt32(temp[pos + 11]) > 0)
-                    { Level_variable.equip1_temp = true; bt_item6.IsEnabled = true; }
-                    else
-                    {
-                        Level_variable.equip1_temp = false;
-                    }
-
-                    //강화
-
-                    Debug.WriteLine("3545 item ");
-
-                    Level_variable.rf2_temp = Convert.ToBoolean(Convert.ToInt32(temp[pos + 6])) ? Convert.ToInt32(temp[pos + 6]) : 0;
-                    Level_variable.rf4_temp = Convert.ToBoolean(Convert.ToInt32(temp[pos + 7])) ? Convert.ToInt32(temp[pos + 7]) : 0;
-                    Level_variable.rf6_temp = Convert.ToBoolean(Convert.ToInt32(temp[pos + 8])) ? Convert.ToInt32(temp[pos + 8]) : 0;
-                    Level_variable.rf5_temp = Convert.ToBoolean(Convert.ToInt32(temp[pos + 9])) ? Convert.ToInt32(temp[pos + 9]) : 0;
-                    Level_variable.rf3_temp = Convert.ToBoolean(Convert.ToInt32(temp[pos + 10])) ? Convert.ToInt32(temp[pos + 10]) : 0;
-                    Level_variable.rf1_temp = Convert.ToBoolean(Convert.ToInt32(temp[pos + 11])) ? Convert.ToInt32(temp[pos + 11]) : 0;
-
-
-                    break;
                 }
-            }
-            sr.Close();
-
-            #region UI_Setting
-
-            //전용장비 이미지 앨유미까지
-            Debug.WriteLine("3545 Initialize level star unique");
-
-            Initialize_chara_level(Level_variable.Lv_temp);
-            Initialize_chara_star(Level_variable.star_temp);
-            Initialize_item_unique(Level_variable.UE_Lv_temp);
-
-            Initialize_item1_rf_star(Level_variable.rf2_temp);
-            Initialize_item2_rf_star(Level_variable.rf4_temp);
-            Initialize_item3_rf_star(Level_variable.rf6_temp);
-            Initialize_item4_rf_star(Level_variable.rf5_temp);
-            Initialize_item5_rf_star(Level_variable.rf3_temp);
-            Initialize_item6_rf_star(Level_variable.rf1_temp);
-
-            if (Level_variable.Rank_temp == 11) { cB_set_rank.SelectedIndex = 0; }
-            if (Level_variable.Rank_temp == 12) { cB_set_rank.SelectedIndex = 1; }
-            if (Level_variable.Rank_temp == 13) { cB_set_rank.SelectedIndex = 2; }
-            if (Level_variable.Rank_temp == 14) { cB_set_rank.SelectedIndex = 3; }
-            if (Level_variable.Rank_temp == 15) { cB_set_rank.SelectedIndex = 4; }
-            if (Level_variable.Rank_temp == 16) { cB_set_rank.SelectedIndex = 5; }
-            if (Level_variable.Rank_temp == 17) { cB_set_rank.SelectedIndex = 6; }
-            if (Level_variable.Rank_temp == 18) { cB_set_rank.SelectedIndex = 7; }
-            if (Level_variable.Rank_temp == 19) { cB_set_rank.SelectedIndex = 8; }
-            if (Level_variable.Rank_temp == 20) { cB_set_rank.SelectedIndex = 9; }
-            if (Level_variable.Rank_temp == 21) { cB_set_rank.SelectedIndex = 10; }
-            if (Level_variable.Rank_temp == 22) { cB_set_rank.SelectedIndex = 11; }
-            if (Level_variable.Rank_temp == 23) { cB_set_rank.SelectedIndex = 12; }
-            if (Level_variable.Rank_temp == 24) { cB_set_rank.SelectedIndex = 13; }
-            if (Level_variable.Rank_temp == 25) { cB_set_rank.SelectedIndex = 14; }
-
-            string uriString = "pack://application:,,,/res/icon_equipment/";
-            string UniqueItem = "999999";
-
-            if (Level_variable.equip_temp)
-            {
-                if (rima == true) { UniqueItem = "130521"; }
-                else if (miyako == true) { UniqueItem = "130071"; }
-                else if (kuuka == true) { UniqueItem = "130451"; }
-                else if (zyun == true) { UniqueItem = "130471"; }
-                else if (kuuka_ooedo == true) { UniqueItem = "130951"; }
-                else if (kaori == true) { UniqueItem = "130171"; }
-                else if (rei_newyear == true) { UniqueItem = "130891"; }
-                else if (pekorinnu == true) { UniqueItem = "130581"; }
-                else if (pekorinnu_princess == true) { UniqueItem = "999999"; }
-                else if (ruka == true) { UniqueItem = "130561"; }
-                else if (kotkoro_newyear == true) { UniqueItem = "131191"; }
-                else if (nozomi == true) { UniqueItem = "130291"; }
-                else if (muimi == true) { UniqueItem = "130051"; }
-                else if (makoto == true) { UniqueItem = "130431"; }
-                else if (kaya == true) { UniqueItem = "130651"; }
-                else if (hiyori_newyear == true) { UniqueItem = "130871"; }
-                else if (ninon_ooedo == true) { UniqueItem = "130961"; }
-                else if (akino == true) { UniqueItem = "130321"; }
-                else if (makoto_summer == true) { UniqueItem = "131041"; }
-                else if (matsuri == true) { UniqueItem = "130021"; }
-                else if (chloe == true) { UniqueItem = "131081"; }
-                else if (chieru == true) { UniqueItem = "131091"; }
-                else if (yuni == true) { UniqueItem = "131101"; }
-                else if (eriko_valentine == true) { UniqueItem = "130901"; }
-                else if (ayane_christmas == true) { UniqueItem = "130861"; }
-                else if (tsumugi == true) { UniqueItem = "130541"; }
-                else if (hiyori == true) { UniqueItem = "130011"; }
-                else if (misogi == true) { UniqueItem = "130041"; }
-                else if (ayane == true) { UniqueItem = "130231"; }
-                else if (misogi_halloween == true) { UniqueItem = "131121"; }
-                else if (tamaki == true) { UniqueItem = "130461"; }
-                else if (tomo == true) { UniqueItem = "130371"; }
-                else if (tamaki_summer == true) { UniqueItem = "130791"; }
-                else if (eriko == true) { UniqueItem = "130271"; }
-                else if (pekorinnu_summer == true) { UniqueItem = "130751"; }
-                else if (kurumi == true) { UniqueItem = "130211"; }
-                else if (zita == true) { UniqueItem = "130571"; }
-                else if (rei == true) { UniqueItem = "130031"; }
-                else if (iriya_christmas == true) { UniqueItem = "131171"; }
-                else if (kristina_christmas == true) { UniqueItem = "131151"; }
-                else if (sizuru == true) { UniqueItem = "130711"; }
-                else if (kristina == true) { UniqueItem = "131151"; }
-                else if (kurumi_christmas == true) { UniqueItem = "130851"; }
-                else if (mimi == true) { UniqueItem = "130201"; }
-                else if (sinobu == true) { UniqueItem = "130311"; }
-                else if (mimi_halloween == true) { UniqueItem = "131131"; }
-                else if (sizuru_valentine == true) { UniqueItem = "130921"; }
-                else if (mahiru == true) { UniqueItem = "130331"; }
-                else if (yukari == true) { UniqueItem = "130341"; }
-                else if (monika == true) { UniqueItem = "130531"; }
-                else if (ninon == true) { UniqueItem = "130301"; }
-                else if (nozomi_christmas == true) { UniqueItem = "131161"; }
-                else if (mihuyu == true) { UniqueItem = "130481"; }
-                else if (iriya == true) { UniqueItem = "130441"; }
-                else if (kaori_summer == true) { UniqueItem = "131051"; }
-                else if (saren == true) { UniqueItem = "130281"; }
-                else if (anna == true) { UniqueItem = "130091"; }
-                else if (sinobu_halloween == true) { UniqueItem = "130811"; }
-                else if (mihuyu_summer == true) { UniqueItem = "130801"; }
-                else if (kotkoro == true) { UniqueItem = "130591"; }
-                else if (ayumi == true) { UniqueItem = "130551"; }
-                else if (grea == true) { UniqueItem = "130941"; }
-                else if (kotkoro_summer == true) { UniqueItem = "130761"; }
-                else if (rem == true) { UniqueItem = "130971"; }
-                else if (ram == true) { UniqueItem = "130981"; }
-                else if (rin == true) { UniqueItem = "130261"; }
-                else if (mitsuki == true) { UniqueItem = "130511"; }
-                else if (akari == true) { UniqueItem = "130061"; }
-                else if (yori == true) { UniqueItem = "130221"; }
-                else if (saren_summer == true) { UniqueItem = "131031"; }
-                else if (miyako_halloween == true) { UniqueItem = "130821"; }
-                else if (arisa == true) { UniqueItem = "130631"; }
-                else if (anne == true) { UniqueItem = "130921"; }
-                else if (lou == true) { UniqueItem = "130931"; }
-                else if (neneka == true) { UniqueItem = "999999"; }
-                else if (aoi_nakayosi == true) { UniqueItem = "131071"; }
-                else if (kyaru_newyear == true) { UniqueItem = "131201"; }
-                else if (rino == true) { UniqueItem = "130111"; }
-                else if (suzuna == true) { UniqueItem = "130161"; }
-                else if (suzuna_summer == true) { UniqueItem = "131001"; }
-                else if (siori == true) { UniqueItem = "130381"; }
-                else if (siori_magical == true) { UniqueItem = "131231"; }
-                else if (io == true) { UniqueItem = "130181"; }
-                else if (io_summer == true) { UniqueItem = "131011"; }
-                else if (suzume == true) { UniqueItem = "130251"; }
-                else if (suzume_newyear == true) { UniqueItem = "131211"; }
-                else if (emilia == true) { UniqueItem = "130991"; }
-                else if (kasumi == true) { UniqueItem = "130141"; }
-                else if (kasumi_magical == true) { UniqueItem = "131221"; }
-                else if (misato == true) { UniqueItem = "130151"; }
-                else if (nanaka == true) { UniqueItem = "130131"; }
-                else if (yui_newyear == true) { UniqueItem = "130881"; }
-                else if (kyaru == true) { UniqueItem = "130601"; }
-                else if (hatsune == true) { UniqueItem = "130121"; }
-                else if (misaki == true) { UniqueItem = "130501"; }
-                else if (runa == true) { UniqueItem = "131141"; }
-                else if (chika_christmas == true) { UniqueItem = "130841"; }
-                else if (suzume_summer == true) { UniqueItem = "130771"; }
-                else if (kyaru_summer == true) { UniqueItem = "130781"; }
-                else if (aoi == true) { UniqueItem = "130401"; }
-                else if (chika == true) { UniqueItem = "130421"; }
-                else if (maho_summer == true) { UniqueItem = "131061"; }
-                else if (maho == true) { UniqueItem = "130101"; }
-                else if (yui == true) { UniqueItem = "130021"; }
-                else if (yuki == true) { UniqueItem = "130081"; }
-                else if (kyouka == true) { UniqueItem = "130361"; }
-                else if (misaki_halloween == true) { UniqueItem = "130831"; }
-                else if (kyouka_halloween == true) { UniqueItem = "131111"; }
-                else if (uzuki_deremas == true) { UniqueItem = "131241"; }
-                else if (mio_deremas == true) { UniqueItem = "131261"; }
-                else if (rin_deremas == true) { UniqueItem = "131251"; }
-                else if (rin_ranger == true) { UniqueItem = "131271"; }
-                else if (mahiru_ranger == true) { UniqueItem = "131281"; }
-                else if (rino_wonder == true) { UniqueItem = "131291"; }
-                else if (ayumi_wonder == true) { UniqueItem = "131301"; }
-                else if (inori == true) { UniqueItem = "130661"; }
-                else if (ruka_summer == true) { UniqueItem = "131311"; }
-                else if (anna_summer == true) { UniqueItem = "131321"; }
-                else if (nanaka_summer == true) { UniqueItem = "131331"; }
-                else if (hatsune_summer == true) { UniqueItem = "131341"; }
-                else if (misato_summer == true) { UniqueItem = "131351"; }
-                else if (zyun_summer == true) { UniqueItem = "131361"; }
-                else if (akari_angel == true) { UniqueItem = "999999"; }
-                else { UniqueItem = "999999"; }
-
-                var uriSource1 = new Uri(uriString + UniqueItem + ".png", UriKind.Absolute);
-                BitmapImage bmi1 = new BitmapImage(uriSource1);
-                img_item_unique.Source = bmi1;
-
-                #endregion
+                sr.Close();
 
 
-            }
 
-            #region ApplyStat
-            //스탯 적용
+                #region UI_Setting
 
-            status_cal_temp(SelectedCharaEN, Level_variable.star_temp, Level_variable.Lv_temp, Level_variable.Rank_temp, 15);
+                //전용장비 이미지
+                Debug.WriteLine("3545 Initialize level star unique");
 
-            status_equip_temp(SelectedCharaEN, Level_variable.Rank_temp,
-                Level_variable.equip1_temp, Level_variable.equip2_temp, Level_variable.equip3_temp,
-                Level_variable.equip4_temp, Level_variable.equip5_temp, Level_variable.equip6_temp,
-                Level_variable.rf1_temp, Level_variable.rf2_temp, Level_variable.rf3_temp,
-                Level_variable.rf4_temp, Level_variable.rf5_temp, Level_variable.rf6_temp, 15);
+                Initialize_chara_level(Level_variable.Lv_temp);
+                Initialize_chara_star(Level_variable.star_temp);
+                Initialize_item_unique(Level_variable.UE_Lv_temp);
 
-            status_unique_equip_temp(SelectedCharaEN, ref Level_variable.equip_temp, Level_variable.UE_Lv_temp, 15);
-            status_destiny_temp(SelectedCharaEN, 15);
+                Initialize_item1_rf_star(Level_variable.rf2_temp);
+                Initialize_item2_rf_star(Level_variable.rf4_temp);
+                Initialize_item3_rf_star(Level_variable.rf6_temp);
+                Initialize_item4_rf_star(Level_variable.rf5_temp);
+                Initialize_item5_rf_star(Level_variable.rf3_temp);
+                Initialize_item6_rf_star(Level_variable.rf1_temp);
 
+                if (Level_variable.Rank_temp == 11) { cB_set_rank.SelectedIndex = 0; }
+                if (Level_variable.Rank_temp == 12) { cB_set_rank.SelectedIndex = 1; }
+                if (Level_variable.Rank_temp == 13) { cB_set_rank.SelectedIndex = 2; }
+                if (Level_variable.Rank_temp == 14) { cB_set_rank.SelectedIndex = 3; }
+                if (Level_variable.Rank_temp == 15) { cB_set_rank.SelectedIndex = 4; }
+                if (Level_variable.Rank_temp == 16) { cB_set_rank.SelectedIndex = 5; }
+                if (Level_variable.Rank_temp == 17) { cB_set_rank.SelectedIndex = 6; }
+                if (Level_variable.Rank_temp == 18) { cB_set_rank.SelectedIndex = 7; }
+                if (Level_variable.Rank_temp == 19) { cB_set_rank.SelectedIndex = 8; }
+                if (Level_variable.Rank_temp == 20) { cB_set_rank.SelectedIndex = 9; }
+                if (Level_variable.Rank_temp == 21) { cB_set_rank.SelectedIndex = 10; }
+                if (Level_variable.Rank_temp == 22) { cB_set_rank.SelectedIndex = 11; }
+                if (Level_variable.Rank_temp == 23) { cB_set_rank.SelectedIndex = 12; }
+                if (Level_variable.Rank_temp == 24) { cB_set_rank.SelectedIndex = 13; }
+                if (Level_variable.Rank_temp == 25) { cB_set_rank.SelectedIndex = 14; }
 
-            //전투력 적용
+                string uriString = "pack://application:,,,/res/icon_equipment/";
+                string UniqueItem = "999999";
 
-            Level_variable.power_temp = Stat_variable.HP_temp * 0.1 + Stat_variable.PA_temp * 1 + Stat_variable.MA_temp * 1
-                + Stat_variable.PD_temp * 4.5 + Stat_variable.MD_temp * 4.5
-                + Stat_variable.PC_temp * 0.5 + Stat_variable.MC_temp * 0.5 + Stat_variable.HPauto_temp * 0.1
-                + Stat_variable.TPauto_temp * 0.3 + Stat_variable.Dodge_temp * 6 + Stat_variable.HPabs_temp * 4.5 + Stat_variable.HPup_temp * 1
-                + Stat_variable.TPup_temp * 1.5 + Stat_variable.TPdec_temp * 3 + Stat_variable.acc_temp * 2;
-
-            Level_variable.power_temp += Level_variable.Lv_temp * 1 * 10;
-
-            if (Level_variable.equip_temp == true)
-            {
-                Level_variable.power_temp += Level_variable.Lv_temp * 1.2 * 10 + 100;
-            }
-            else
-            {
-                Level_variable.power_temp += Level_variable.Lv_temp * 1 * 10;
-            }
-
-            if (Level_variable.star_temp >= 6)
-            {
-                Level_variable.power_temp += Level_variable.Lv_temp * 1.5 * 10 + 2000;
-                Level_variable.power_temp += Level_variable.Lv_temp * 1 * 10 + 150;
-            }
-            else if (Level_variable.star_temp >= 5)
-            {
-                Level_variable.power_temp += Level_variable.Lv_temp * 1 * 10;
-                Level_variable.power_temp += Level_variable.Lv_temp * 1 * 10 + 150;
-            }
-            else
-            {
-                Level_variable.power_temp += Level_variable.Lv_temp * 1 * 10;
-                Level_variable.power_temp += Level_variable.Lv_temp * 1 * 10;
-            }
-
-
-#if DEBUG
-            Debug.WriteLine("3545 Stat");
-            Debug.WriteLine(String.Format("{0}", Stat_variable.HP_temp));
-            Debug.WriteLine(String.Format("{0}", Stat_variable.PA_temp));
-            Debug.WriteLine(String.Format("{0}", Stat_variable.MA_temp));
-            Debug.WriteLine(String.Format("{0}", Stat_variable.PD_temp));
-            Debug.WriteLine(String.Format("{0}", Stat_variable.MD_temp));
-            Debug.WriteLine(String.Format("{0}", Stat_variable.PC_temp));
-            Debug.WriteLine(String.Format("{0}", Stat_variable.MC_temp));
-            Debug.WriteLine(String.Format("{0}", Stat_variable.Dodge_temp));
-            Debug.WriteLine(String.Format("{0}", Stat_variable.acc_temp));
-            Debug.WriteLine(String.Format("{0}", Stat_variable.HPauto_temp));
-            Debug.WriteLine(String.Format("{0}", Stat_variable.TPauto_temp));
-            Debug.WriteLine(String.Format("{0}", Stat_variable.HPabs_temp));
-            Debug.WriteLine(String.Format("{0}", Stat_variable.HPup_temp));
-            Debug.WriteLine(String.Format("{0}", Stat_variable.TPup_temp));
-            Debug.WriteLine(String.Format("{0}", Stat_variable.TPdec_temp));
-            Debug.WriteLine(String.Format("{0:F2}", Level_variable.power_temp));
-#else
-#endif
-            tB_HP.Text = String.Format("{0}", Stat_variable.HP_temp);
-            tB_PA.Text = String.Format("{0}", Stat_variable.PA_temp);
-            tB_MA.Text = String.Format("{0}", Stat_variable.MA_temp);
-            tB_PD.Text = String.Format("{0}", Stat_variable.PD_temp);
-            tB_MD.Text = String.Format("{0}", Stat_variable.MD_temp);
-            tB_PC.Text = String.Format("{0}", Stat_variable.PC_temp);
-            tB_MC.Text = String.Format("{0}", Stat_variable.MC_temp);
-            tB_Dodge.Text = String.Format("{0}", Stat_variable.Dodge_temp);
-            tB_Acc.Text = String.Format("{0}", Stat_variable.acc_temp);
-            tB_HPauto.Text = String.Format("{0}", Stat_variable.HPauto_temp);
-            tB_TPauto.Text = String.Format("{0}", Stat_variable.TPauto_temp);
-            tB_HPabs.Text = String.Format("{0}", Stat_variable.HPabs_temp);
-            tB_HPup.Text = String.Format("{0}", Stat_variable.HPup_temp);
-            tB_TPup.Text = String.Format("{0}", Stat_variable.TPup_temp);
-            tB_TPdec.Text = String.Format("{0}", Stat_variable.TPdec_temp);
-            tB_Power.Text = String.Format("{0:F2}", Level_variable.power_temp);
-            #endregion
-        }
-        private void bt_chara_save_off_Click(object sender, RoutedEventArgs e)
-        {
-            StreamReader sr = new StreamReader("character_offence.txt");
-            int row = 0;
-
-            while (!sr.EndOfStream)
-            {
-                string s = sr.ReadLine();
-                string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
-                int pos = Array.IndexOf(temp, Chara_Selected_KR);
-                if (pos > -1)
+                if (Level_variable.equip_temp)
                 {
-                    break;
+                    if (rima == true) { UniqueItem = "130521"; }
+                    else if (miyako == true) { UniqueItem = "130071"; }
+                    else if (kuuka == true) { UniqueItem = "130451"; }
+                    else if (zyun == true) { UniqueItem = "130471"; }
+                    else if (kuuka_ooedo == true) { UniqueItem = "130951"; }
+                    else if (kaori == true) { UniqueItem = "130171"; }
+                    else if (rei_newyear == true) { UniqueItem = "130891"; }
+                    else if (pekorinnu == true) { UniqueItem = "130581"; }
+                    else if (pekorinnu_princess == true) { UniqueItem = "999999"; }
+                    else if (ruka == true) { UniqueItem = "130561"; }
+                    else if (kotkoro_newyear == true) { UniqueItem = "131191"; }
+                    else if (nozomi == true) { UniqueItem = "130291"; }
+                    else if (muimi == true) { UniqueItem = "130051"; }
+                    else if (makoto == true) { UniqueItem = "130431"; }
+                    else if (kaya == true) { UniqueItem = "130651"; }
+                    else if (hiyori_newyear == true) { UniqueItem = "130871"; }
+                    else if (ninon_ooedo == true) { UniqueItem = "130961"; }
+                    else if (akino == true) { UniqueItem = "130321"; }
+                    else if (makoto_summer == true) { UniqueItem = "131041"; }
+                    else if (matsuri == true) { UniqueItem = "130021"; }
+                    else if (chloe == true) { UniqueItem = "131081"; }
+                    else if (chieru == true) { UniqueItem = "131091"; }
+                    else if (yuni == true) { UniqueItem = "131101"; }
+                    else if (eriko_valentine == true) { UniqueItem = "130901"; }
+                    else if (ayane_christmas == true) { UniqueItem = "130861"; }
+                    else if (tsumugi == true) { UniqueItem = "130541"; }
+                    else if (hiyori == true) { UniqueItem = "130011"; }
+                    else if (misogi == true) { UniqueItem = "130041"; }
+                    else if (ayane == true) { UniqueItem = "130231"; }
+                    else if (misogi_halloween == true) { UniqueItem = "131121"; }
+                    else if (tamaki == true) { UniqueItem = "130461"; }
+                    else if (tomo == true) { UniqueItem = "130371"; }
+                    else if (tamaki_summer == true) { UniqueItem = "130791"; }
+                    else if (eriko == true) { UniqueItem = "130271"; }
+                    else if (pekorinnu_summer == true) { UniqueItem = "130751"; }
+                    else if (kurumi == true) { UniqueItem = "130211"; }
+                    else if (zita == true) { UniqueItem = "130571"; }
+                    else if (rei == true) { UniqueItem = "130031"; }
+                    else if (iriya_christmas == true) { UniqueItem = "131171"; }
+                    else if (kristina_christmas == true) { UniqueItem = "131151"; }
+                    else if (sizuru == true) { UniqueItem = "130711"; }
+                    else if (kristina == true) { UniqueItem = "131151"; }
+                    else if (kurumi_christmas == true) { UniqueItem = "130851"; }
+                    else if (mimi == true) { UniqueItem = "130201"; }
+                    else if (sinobu == true) { UniqueItem = "130311"; }
+                    else if (mimi_halloween == true) { UniqueItem = "131131"; }
+                    else if (sizuru_valentine == true) { UniqueItem = "130921"; }
+                    else if (mahiru == true) { UniqueItem = "130331"; }
+                    else if (yukari == true) { UniqueItem = "130341"; }
+                    else if (monika == true) { UniqueItem = "130531"; }
+                    else if (ninon == true) { UniqueItem = "130301"; }
+                    else if (nozomi_christmas == true) { UniqueItem = "131161"; }
+                    else if (mihuyu == true) { UniqueItem = "130481"; }
+                    else if (iriya == true) { UniqueItem = "130441"; }
+                    else if (kaori_summer == true) { UniqueItem = "131051"; }
+                    else if (saren == true) { UniqueItem = "130281"; }
+                    else if (anna == true) { UniqueItem = "130091"; }
+                    else if (sinobu_halloween == true) { UniqueItem = "130811"; }
+                    else if (mihuyu_summer == true) { UniqueItem = "130801"; }
+                    else if (kotkoro == true) { UniqueItem = "130591"; }
+                    else if (ayumi == true) { UniqueItem = "130551"; }
+                    else if (grea == true) { UniqueItem = "130941"; }
+                    else if (kotkoro_summer == true) { UniqueItem = "130761"; }
+                    else if (rem == true) { UniqueItem = "130971"; }
+                    else if (ram == true) { UniqueItem = "130981"; }
+                    else if (rin == true) { UniqueItem = "130261"; }
+                    else if (mitsuki == true) { UniqueItem = "130511"; }
+                    else if (akari == true) { UniqueItem = "130061"; }
+                    else if (yori == true) { UniqueItem = "130221"; }
+                    else if (saren_summer == true) { UniqueItem = "131031"; }
+                    else if (miyako_halloween == true) { UniqueItem = "130821"; }
+                    else if (arisa == true) { UniqueItem = "130631"; }
+                    else if (anne == true) { UniqueItem = "130921"; }
+                    else if (lou == true) { UniqueItem = "130931"; }
+                    else if (neneka == true) { UniqueItem = "999999"; }
+                    else if (aoi_nakayosi == true) { UniqueItem = "131071"; }
+                    else if (kyaru_newyear == true) { UniqueItem = "131201"; }
+                    else if (rino == true) { UniqueItem = "130111"; }
+                    else if (suzuna == true) { UniqueItem = "130161"; }
+                    else if (suzuna_summer == true) { UniqueItem = "131001"; }
+                    else if (siori == true) { UniqueItem = "130381"; }
+                    else if (siori_magical == true) { UniqueItem = "131231"; }
+                    else if (io == true) { UniqueItem = "130181"; }
+                    else if (io_summer == true) { UniqueItem = "131011"; }
+                    else if (suzume == true) { UniqueItem = "130251"; }
+                    else if (suzume_newyear == true) { UniqueItem = "131211"; }
+                    else if (emilia == true) { UniqueItem = "130991"; }
+                    else if (kasumi == true) { UniqueItem = "130141"; }
+                    else if (kasumi_magical == true) { UniqueItem = "131221"; }
+                    else if (misato == true) { UniqueItem = "130151"; }
+                    else if (nanaka == true) { UniqueItem = "130131"; }
+                    else if (yui_newyear == true) { UniqueItem = "130881"; }
+                    else if (kyaru == true) { UniqueItem = "130601"; }
+                    else if (hatsune == true) { UniqueItem = "130121"; }
+                    else if (misaki == true) { UniqueItem = "130501"; }
+                    else if (runa == true) { UniqueItem = "131141"; }
+                    else if (chika_christmas == true) { UniqueItem = "130841"; }
+                    else if (suzume_summer == true) { UniqueItem = "130771"; }
+                    else if (kyaru_summer == true) { UniqueItem = "130781"; }
+                    else if (aoi == true) { UniqueItem = "130401"; }
+                    else if (chika == true) { UniqueItem = "130421"; }
+                    else if (maho_summer == true) { UniqueItem = "131061"; }
+                    else if (maho == true) { UniqueItem = "130101"; }
+                    else if (yui == true) { UniqueItem = "130021"; }
+                    else if (yuki == true) { UniqueItem = "130081"; }
+                    else if (kyouka == true) { UniqueItem = "130361"; }
+                    else if (misaki_halloween == true) { UniqueItem = "130831"; }
+                    else if (kyouka_halloween == true) { UniqueItem = "131111"; }
+                    else if (uzuki_deremas == true) { UniqueItem = "131241"; }
+                    else if (mio_deremas == true) { UniqueItem = "131261"; }
+                    else if (rin_deremas == true) { UniqueItem = "131251"; }
+                    else if (rin_ranger == true) { UniqueItem = "131271"; }
+                    else if (mahiru_ranger == true) { UniqueItem = "131281"; }
+                    else if (rino_wonder == true) { UniqueItem = "131291"; }
+                    else if (ayumi_wonder == true) { UniqueItem = "131301"; }
+                    else if (inori == true) { UniqueItem = "130661"; }
+                    else if (ruka_summer == true) { UniqueItem = "131311"; }
+                    else if (anna_summer == true) { UniqueItem = "131321"; }
+                    else if (nanaka_summer == true) { UniqueItem = "131331"; }
+                    else if (hatsune_summer == true) { UniqueItem = "131341"; }
+                    else if (misato_summer == true) { UniqueItem = "131351"; }
+                    else if (zyun_summer == true) { UniqueItem = "131361"; }
+                    else if (akari_angel == true) { UniqueItem = "999999"; }
+                    else { UniqueItem = "999999"; }
+
+                    var uriSource1 = new Uri(uriString + UniqueItem + ".png", UriKind.Absolute);
+                    BitmapImage bmi1 = new BitmapImage(uriSource1);
+                    img_item_unique.Source = bmi1;
+
+                    #endregion
+
+
+                }
+
+                #region ApplyStat
+                //스탯 적용
+
+                status_cal_temp(SelectedCharaEN, Level_variable.star_temp, Level_variable.Lv_temp, Level_variable.Rank_temp, 15);
+
+                status_equip_temp(SelectedCharaEN, Level_variable.Rank_temp,
+                    Level_variable.equip1_temp, Level_variable.equip2_temp, Level_variable.equip3_temp,
+                    Level_variable.equip4_temp, Level_variable.equip5_temp, Level_variable.equip6_temp,
+                    Level_variable.rf1_temp, Level_variable.rf2_temp, Level_variable.rf3_temp,
+                    Level_variable.rf4_temp, Level_variable.rf5_temp, Level_variable.rf6_temp, 15);
+
+                status_unique_equip_temp(SelectedCharaEN, ref Level_variable.equip_temp, Level_variable.UE_Lv_temp, 15);
+                status_destiny_temp(SelectedCharaEN, 15);
+
+
+                //전투력 적용
+
+                Level_variable.power_temp = Stat_variable.HP_temp * 0.1 + Stat_variable.PA_temp * 1 + Stat_variable.MA_temp * 1
+                    + Stat_variable.PD_temp * 4.5 + Stat_variable.MD_temp * 4.5
+                    + Stat_variable.PC_temp * 0.5 + Stat_variable.MC_temp * 0.5 + Stat_variable.HPauto_temp * 0.1
+                    + Stat_variable.TPauto_temp * 0.3 + Stat_variable.Dodge_temp * 6 + Stat_variable.HPabs_temp * 4.5 + Stat_variable.HPup_temp * 1
+                    + Stat_variable.TPup_temp * 1.5 + Stat_variable.TPdec_temp * 3 + Stat_variable.acc_temp * 2;
+
+                Level_variable.power_temp += Level_variable.Lv_temp * 1 * 10;
+
+                if (Level_variable.equip_temp == true)
+                {
+                    Level_variable.power_temp += Level_variable.Lv_temp * 1.2 * 10 + 100;
                 }
                 else
                 {
-                    row++;
+                    Level_variable.power_temp += Level_variable.Lv_temp * 1 * 10;
                 }
+
+                if (Level_variable.star_temp >= 6)
+                {
+                    Level_variable.power_temp += Level_variable.Lv_temp * 1.5 * 10 + 2000;
+                    Level_variable.power_temp += Level_variable.Lv_temp * 1 * 10 + 150;
+                }
+                else if (Level_variable.star_temp >= 5)
+                {
+                    Level_variable.power_temp += Level_variable.Lv_temp * 1 * 10;
+                    Level_variable.power_temp += Level_variable.Lv_temp * 1 * 10 + 150;
+                }
+                else
+                {
+                    Level_variable.power_temp += Level_variable.Lv_temp * 1 * 10;
+                    Level_variable.power_temp += Level_variable.Lv_temp * 1 * 10;
+                }
+
+
+#if DEBUG
+                Debug.WriteLine("3545 Stat");
+                Debug.WriteLine(String.Format("{0}", Stat_variable.HP_temp));
+                Debug.WriteLine(String.Format("{0}", Stat_variable.PA_temp));
+                Debug.WriteLine(String.Format("{0}", Stat_variable.MA_temp));
+                Debug.WriteLine(String.Format("{0}", Stat_variable.PD_temp));
+                Debug.WriteLine(String.Format("{0}", Stat_variable.MD_temp));
+                Debug.WriteLine(String.Format("{0}", Stat_variable.PC_temp));
+                Debug.WriteLine(String.Format("{0}", Stat_variable.MC_temp));
+                Debug.WriteLine(String.Format("{0}", Stat_variable.Dodge_temp));
+                Debug.WriteLine(String.Format("{0}", Stat_variable.acc_temp));
+                Debug.WriteLine(String.Format("{0}", Stat_variable.HPauto_temp));
+                Debug.WriteLine(String.Format("{0}", Stat_variable.TPauto_temp));
+                Debug.WriteLine(String.Format("{0}", Stat_variable.HPabs_temp));
+                Debug.WriteLine(String.Format("{0}", Stat_variable.HPup_temp));
+                Debug.WriteLine(String.Format("{0}", Stat_variable.TPup_temp));
+                Debug.WriteLine(String.Format("{0}", Stat_variable.TPdec_temp));
+                Debug.WriteLine(String.Format("{0:F2}", Level_variable.power_temp));
+#else
+#endif
+                tB_HP.Text = String.Format("{0}", Stat_variable.HP_temp);
+                tB_PA.Text = String.Format("{0}", Stat_variable.PA_temp);
+                tB_MA.Text = String.Format("{0}", Stat_variable.MA_temp);
+                tB_PD.Text = String.Format("{0}", Stat_variable.PD_temp);
+                tB_MD.Text = String.Format("{0}", Stat_variable.MD_temp);
+                tB_PC.Text = String.Format("{0}", Stat_variable.PC_temp);
+                tB_MC.Text = String.Format("{0}", Stat_variable.MC_temp);
+                tB_Dodge.Text = String.Format("{0}", Stat_variable.Dodge_temp);
+                tB_Acc.Text = String.Format("{0}", Stat_variable.acc_temp);
+                tB_HPauto.Text = String.Format("{0}", Stat_variable.HPauto_temp);
+                tB_TPauto.Text = String.Format("{0}", Stat_variable.TPauto_temp);
+                tB_HPabs.Text = String.Format("{0}", Stat_variable.HPabs_temp);
+                tB_HPup.Text = String.Format("{0}", Stat_variable.HPup_temp);
+                tB_TPup.Text = String.Format("{0}", Stat_variable.TPup_temp);
+                tB_TPdec.Text = String.Format("{0}", Stat_variable.TPdec_temp);
+                tB_Power.Text = String.Format("{0:F2}", Level_variable.power_temp);
+                #endregion
             }
-            sr.Close();
 
-            string newString = Chara_Selected_KR + "," + Convert.ToString(isCharaEnabled) + "," + Level_variable.star_temp + "," + Level_variable.Lv_temp + "," + Level_variable.Rank_temp
-                + "," + Level_variable.UE_Lv_temp + "," + Level_variable.rf2_temp + "," + Level_variable.rf4_temp + "," + Level_variable.rf6_temp
-               + "," + Level_variable.rf5_temp + "," + Level_variable.rf3_temp + "," + Level_variable.rf1_temp;
-
-            if (idnc.ReplaceStringInFile("character_offence.txt", row, newString))
+            else
             {
-                LoadOffCharaSetting(Chara_Selected_KR, Chara_Selected_EN);
-                MessageBox.Show("저장했어!", "알림");
+                MessageBox.Show("Character_offence.txt 파일이 없어!", "알림");
+                return;
+            }
+               
+
+        }
+        private void bt_chara_save_off_Click(object sender, RoutedEventArgs e)
+        {
+            if(File.Exists("character_offence.txt"))
+            {
+                StreamReader sr = new StreamReader("character_offence.txt");
+                int row = 0;
+
+                while (!sr.EndOfStream)
+                {
+                    string s = sr.ReadLine();
+                    string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
+                    int pos = Array.IndexOf(temp, Chara_Selected_KR);
+                    if (pos > -1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        row++;
+                    }
+                }
+                sr.Close();
+
+                string newString = Chara_Selected_KR + "," + Convert.ToString(isCharaEnabled) + "," + Level_variable.star_temp + "," + Level_variable.Lv_temp + "," + Level_variable.Rank_temp
+                    + "," + Level_variable.UE_Lv_temp + "," + Level_variable.rf2_temp + "," + Level_variable.rf4_temp + "," + Level_variable.rf6_temp
+                   + "," + Level_variable.rf5_temp + "," + Level_variable.rf3_temp + "," + Level_variable.rf1_temp;
+
+                if (idnc.ReplaceStringInFile("character_offence.txt", row, newString))
+                {
+                    LoadOffCharaSetting(Chara_Selected_KR, Chara_Selected_EN);
+                    MessageBox.Show("저장했어!", "알림");
+                }
+                else
+                {
+                    StreamWriter sw = new StreamWriter("character_offence.txt", append: true);
+                    sw.WriteLine(newString);
+                    sw.Close();
+                    MessageBox.Show("저장했어!", "알림");
+                }
             }
             else
             {
-                StreamWriter sw = new StreamWriter("character_offence.txt", append:true);
-                sw.WriteLine(newString);
-                sw.Close();
-                MessageBox.Show("저장했어!", "알림");
+                MessageBox.Show("Character_offence.txt 파일이 없어!", "알림");
+                return;
             }
 
 
@@ -556,40 +576,48 @@ namespace PCRD_KR_ArenaSim
 
         private void bt_chara_save_def_Click(object sender, RoutedEventArgs e)
         {
-            StreamReader sr = new StreamReader("character_defence.txt");
-            int row = 0;
-
-            while (!sr.EndOfStream)
+            if(File.Exists("character_defence.txt"))
             {
-                string s = sr.ReadLine();
-                string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
-                int pos = Array.IndexOf(temp, Chara_Selected_KR);
-                if (pos > -1)
+                StreamReader sr = new StreamReader("character_defence.txt");
+                int row = 0;
+
+                while (!sr.EndOfStream)
                 {
-                    break;
+                    string s = sr.ReadLine();
+                    string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
+                    int pos = Array.IndexOf(temp, Chara_Selected_KR);
+                    if (pos > -1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        row++;
+                    }
+                }
+                sr.Close();
+
+                string newString = Chara_Selected_KR + "," + Convert.ToString(isCharaEnabled) + "," + Level_variable.star_temp + "," + Level_variable.Lv_temp + "," + Level_variable.Rank_temp
+                    + "," + Level_variable.UE_Lv_temp + "," + Level_variable.rf2_temp + "," + Level_variable.rf4_temp + "," + Level_variable.rf6_temp
+                   + "," + Level_variable.rf5_temp + "," + Level_variable.rf3_temp + "," + Level_variable.rf1_temp;
+
+                if (idnc.ReplaceStringInFile("character_defence.txt", row, newString))
+                {
+                    LoadOffCharaSetting(Chara_Selected_KR, Chara_Selected_EN);
+                    MessageBox.Show("저장했어!", "알림");
                 }
                 else
                 {
-                    row++;
+                    StreamWriter sw = new StreamWriter("character_defence.txt", append: true);
+                    sw.WriteLine(newString);
+                    sw.Close();
+                    MessageBox.Show("저장했어!", "알림");
                 }
-            }
-            sr.Close();
-
-            string newString = Chara_Selected_KR + "," + Convert.ToString(isCharaEnabled) + "," + Level_variable.star_temp + "," + Level_variable.Lv_temp + "," + Level_variable.Rank_temp
-                + "," + Level_variable.UE_Lv_temp + "," + Level_variable.rf2_temp + "," + Level_variable.rf4_temp + "," + Level_variable.rf6_temp
-               + "," + Level_variable.rf5_temp + "," + Level_variable.rf3_temp + "," + Level_variable.rf1_temp;
-
-            if (idnc.ReplaceStringInFile("character_defence.txt", row, newString))
-            {
-                LoadOffCharaSetting(Chara_Selected_KR, Chara_Selected_EN);
-                MessageBox.Show("저장했어!", "알림");
             }
             else
             {
-                StreamWriter sw = new StreamWriter("character_defence.txt", append:true);
-                sw.WriteLine(newString);
-                sw.Close();
-                MessageBox.Show("저장했어!", "알림");
+                MessageBox.Show("Character_defence.txt 파일이 없어!", "알림");
+                return;
             }
             //pos + 5~ 10: 1~6템
             //원래 구현 -> 내가 한것

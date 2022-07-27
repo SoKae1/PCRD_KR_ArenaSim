@@ -657,6 +657,11 @@ namespace PCRD_KR_ArenaSim
             tb_aoi_worker.IsChecked = false;
             tb_tamaki_worker.IsChecked = false;
             tb_mihuyu_worker.IsChecked = false;
+            tb_eriko_summer.IsChecked = false;
+            tb_sizuru_summer.IsChecked = false;
+            tb_nozomi_summer.IsChecked = false;
+            tb_chika_summer.IsChecked = false;
+            tb_tsumugi_summer.IsChecked = false;
             tb_rei_princess.IsChecked = false;
             //tb_.IsChecked = false;
             #endregion
@@ -3701,20 +3706,20 @@ namespace PCRD_KR_ArenaSim
                                     int a;
                                     if (i < 15)
                                     {
-                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3", 0, 15);
+                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_1", 0, 15);
                                     }
                                     else
                                     {
-                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3", 15, 15);
+                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_1", 15, 15);
                                     }
                                     int b;
                                     if (i < 15)
                                     {
-                                        b = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3", 0, 15);
+                                        b = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_2", 0, 15);
                                     }
                                     else
                                     {
-                                        b = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3", 15, 15);
+                                        b = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_2", 15, 15);
                                     }
                                     int c;
                                     if (i < 15)
@@ -4214,7 +4219,6 @@ namespace PCRD_KR_ArenaSim
                                     a = Array.IndexOf(Battle_variable.name_eng, "golem", 15, 15);
                                 }
 
-
                                 state[a] = "C";
 
                                 Action_seq[a] = 1;
@@ -4276,7 +4280,7 @@ namespace PCRD_KR_ArenaSim
                                 && Battle_variable.knockback[i] == false && Battle_variable.bind[i] == false && Battle_variable.freeze[i] == false && Battle_variable.timestop[i] == false
                                 && Battle_variable.delay[i] == false && Battle_variable.sleep[i] == false)
                             {
-                                if (Battle_variable.name_eng[i] != "skull" && Battle_variable.name_eng[i] != "sylph_chika_1" && Battle_variable.name_eng[i] != "sylph_chika_christmas_3" && Battle_variable.name_eng[i] != "sylph_chika_christmas_3" && Battle_variable.name_eng[i] != "sylph_chika_christmas_3" && Battle_variable.name_eng[i] != "golem" && Battle_variable.name_eng[i] != "neneka_alter" && Battle_variable.name_eng[i] != "muimi_ub" && Battle_variable.name_eng[i] != "labyrista_ub")
+                                if (Battle_variable.name_eng[i] != "skull" && Battle_variable.name_eng[i] != "sylph_chika_1" && Battle_variable.name_eng[i] != "sylph_chika_2" && Battle_variable.name_eng[i] != "sylph_chika_christmas_1" && Battle_variable.name_eng[i] != "sylph_chika_christmas_2" && Battle_variable.name_eng[i] != "sylph_chika_christmas_3" && Battle_variable.name_eng[i] != "golem" && Battle_variable.name_eng[i] != "neneka_alter" && Battle_variable.name_eng[i] != "muimi_ub" && Battle_variable.name_eng[i] != "labyrista_ub")
                                 {
                                     state[i] = "UB";
                                     UB_timing[i] = 0;
@@ -4387,7 +4391,6 @@ namespace PCRD_KR_ArenaSim
                                 MethodInfo skilldummy = Cs.GetType().GetMethod(string.Format("{0}_UB", Battle_variable.name_eng[i]), BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public | BindingFlags.Static);
                                 UB_ending[i] = (double)skilldummy.Invoke(Cs, new Object[] { i });
 
-
                                 if (Battle_variable.name_eng[i] == "muimi_ub")
                                 {
                                     Action_seq[i] = 1;
@@ -4421,7 +4424,6 @@ namespace PCRD_KR_ArenaSim
                                     }
                                 }
 
-
                                 if (Battle_variable.name_eng[i] == "chika" && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_1") != -1)
                                 {
                                     int a;
@@ -4433,7 +4435,6 @@ namespace PCRD_KR_ArenaSim
                                     {
                                         a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_1", 15, 15);
                                     }
-
 
                                     state[a] = "C";
 
@@ -4476,25 +4477,25 @@ namespace PCRD_KR_ArenaSim
                                     }
                                 }
 
-                                if (Battle_variable.name_eng[i] == "chika_christmas" && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3") != -1 && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3") != -1 && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3") != -1)
+                                if (Battle_variable.name_eng[i] == "chika_christmas" && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_1") != -1 && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_2") != -1 && Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3") != -1)
                                 {
                                     int a;
                                     if (i < 15)
                                     {
-                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3", 0, 15);
+                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_1", 0, 15);
                                     }
                                     else
                                     {
-                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3", 15, 15);
+                                        a = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_1", 15, 15);
                                     }
                                     int b;
                                     if (i < 15)
                                     {
-                                        b = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3", 0, 15);
+                                        b = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_2", 0, 15);
                                     }
                                     else
                                     {
-                                        b = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_3", 15, 15);
+                                        b = Array.IndexOf(Battle_variable.name_eng, "sylph_chika_christmas_2", 15, 15);
                                     }
                                     int c;
                                     if (i < 15)
@@ -5240,8 +5241,8 @@ namespace PCRD_KR_ArenaSim
             int CharaIndex = 1;
             int Index = 0;
 
-            //작후유까지 169
-            while (CharaIndex <= 169)
+            //
+            while (CharaIndex <= 174)
             {
                 //빈칸 제거
                 if (CharaIndex == 19 || CharaIndex == 24 || CharaIndex == 35 || CharaIndex == 39
@@ -5255,11 +5256,12 @@ namespace PCRD_KR_ArenaSim
                 else
                 {
                     //6성
-                    if (CharaIndex == 1 || CharaIndex == 2 || CharaIndex == 3 || CharaIndex == 4 || CharaIndex == 6 || CharaIndex == 10 || CharaIndex == 11
-                        || CharaIndex == 12 || CharaIndex == 16 || CharaIndex == 18 || CharaIndex == 20 || CharaIndex == 21 || CharaIndex == 22 || CharaIndex == 23
-                        || CharaIndex == 25 || CharaIndex == 28 || CharaIndex == 29
-                        || CharaIndex == 30 || CharaIndex == 32 || CharaIndex == 33 || CharaIndex == 34
-                        || CharaIndex == 36 || CharaIndex == 46 || CharaIndex == 48 || CharaIndex == 49 || CharaIndex == 52 || CharaIndex == 58 || CharaIndex == 59
+                    if (CharaIndex == 1 || CharaIndex == 2 || CharaIndex == 3 || CharaIndex == 4 || CharaIndex == 6 
+                        || CharaIndex == 10 || CharaIndex == 11 || CharaIndex == 12 || CharaIndex == 16 || CharaIndex == 18 
+                        || CharaIndex == 20 || CharaIndex == 21 || CharaIndex == 22 || CharaIndex == 23  || CharaIndex == 25 || CharaIndex == 28 || CharaIndex == 29
+                        || CharaIndex == 30 || CharaIndex == 32 || CharaIndex == 33 || CharaIndex == 34 || CharaIndex == 36 
+                        || CharaIndex == 40 || CharaIndex == 46 || CharaIndex == 48 || CharaIndex == 49 
+                        || CharaIndex == 52 || CharaIndex == 58 || CharaIndex == 59
                         || CharaIndex == 60)
                     {
                         for (StarIndex = 0; StarIndex < 3; StarIndex++)
@@ -6368,13 +6370,17 @@ namespace PCRD_KR_ArenaSim
                 int row = 1;
                 string[] stringArray1 = new string[400];
                 stringArray1[0] = sr1.ReadLine();
+                Debug.WriteLine(stringArray1[0]);
                 string[] stringArray2 = new string[400];
                 stringArray2[0] = sr2.ReadLine();
                 while (!sr1.EndOfStream || !sr2.EndOfStream)
                 {
                     string s1 = sr1.ReadLine();
                     string s2 = sr2.ReadLine();
-
+                    if(s1 == null || s2 == null)
+                        break;
+                    Debug.Write("s1 = ");
+                    Debug.WriteLine(s1);
                     string[] temp1 = s1.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
                     string[] temp2 = s2.Split(',');
 
@@ -6384,7 +6390,7 @@ namespace PCRD_KR_ArenaSim
                         || temp1[0] == "니논" || temp1[0] == "마히루" || temp1[0] == "스즈나" || temp1[0] == "아카리" || temp1[0] == "요리"
                         || temp1[0] == "쿄우카" || temp1[0] == "미소기" || temp1[0] == "미미"
                         || temp1[0] == "노조미"
-                        || temp1[0] == "스즈메" || temp1[0] == "쿠루미" || temp1[0] == "카오리")
+                        || temp1[0] == "스즈메" || temp1[0] == "쿠루미" || temp1[0] == "카오리" || temp1[0] == "아오이")
                     {
                         temp1[2] = "6";
                         temp2[2] = "6";
@@ -6454,14 +6460,15 @@ namespace PCRD_KR_ArenaSim
                     string s = sr.ReadLine();
 
                     string[] temp = s.Split(',');        // Split() 메서드를 이용하여 ',' 구분하여 잘라냄
-                    if (temp[0] == "프페코" || temp[0] == "네네카"
-                        || temp[0] == "수츠네"
-                        || temp[0] == "수쥰" || temp[0] == "엔카리" || temp[0] == "엔요리" || temp[0] == "프유이" || temp[0] == "프코로" || temp[0] == "프캬루"
-                        || temp[0] == "라비리스타" || temp[0] == "셰피" || temp[0] == "할무기" || temp[0] == "할레이" || temp[0] == "할츠리" || temp[0] == "마니카"
+                    if (temp[0] == "프페코" || temp[0] == "네네카" || temp[0] == "프유이" || temp[0] == "프코로" || temp[0] == "프캬루" || temp[0] == "라비리스타"
+                        || temp[0] == "엔카리" || temp[0] == "엔요리" 
+                        || temp[0] == "셰피" || temp[0] == "할무기" || temp[0] == "할레이" || temp[0] == "할츠리" || temp[0] == "마니카"
                         || temp[0] == "마토모" || temp[0] == "성키노" || temp[0] == "성사렌" || temp[0] == "성카리" || temp[0] == "뉴이미" || temp[0] == "뉴네카"
                         || temp[0] == "뉴페코" || temp[0] == "의코로" || temp[0] == "의유이" || temp[0] == "수스미" || temp[0] == "신리마" || temp[0] == "신마호"
-                        || temp[0] == "신코토" || temp[0] == "성로에" || temp[0] == "성에루" || temp[0] == "시노리" || temp[0] == "타노리" || temp[0] == "시카야" || temp[0] == "타카야"
-                        || temp[0] == "작오이" || temp[0] == "작마키" || temp[0] == "작후유" || temp[0] == "수치카" || temp[0] == "수리코" || temp[0] == "수즈루" || temp[0] == "수조미" || temp[0] == "수무기"
+                        || temp[0] == "신코토" || temp[0] == "성로에" || temp[0] == "성에루" 
+                        || temp[0] == "시노리" || temp[0] == "타노리" || temp[0] == "시카야" || temp[0] == "타카야"
+                        || temp[0] == "작오이" || temp[0] == "작마키" || temp[0] == "작후유" 
+                        || temp[0] == "수치카" || temp[0] == "수리코" || temp[0] == "수즈루" || temp[0] == "수조미" || temp[0] == "수무기"
                         || temp[0] == "프레이")
                     {
                         temp[5] = "0";
@@ -6635,6 +6642,7 @@ namespace PCRD_KR_ArenaSim
 
             string[] updatedCharaList = new string[5] { "수리코", "수즈루", "수조미", "수치카", "수무기" };
             StreamWriter swO = new StreamWriter("character_offence.txt", append: true);
+            swO.WriteLine("");
             for (int i = 0; i < updatedCharaList.Length; i++)
             {
                 string newString = string.Format("{0},1,5,157,11,0,5,5,5,5,5,5", updatedCharaList[i]);
@@ -6643,6 +6651,7 @@ namespace PCRD_KR_ArenaSim
             swO.Close(); 
             
             StreamWriter swD = new StreamWriter("character_defence.txt", append: true);
+            swD.WriteLine("");
             for (int i = 0; i < updatedCharaList.Length; i++)
             {
                 string newString = string.Format("{0},1,5,157,11,0,5,5,5,5,5,5", updatedCharaList[i]);
