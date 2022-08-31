@@ -6033,7 +6033,7 @@ namespace PCRD_KR_ArenaSim
             { Debug.WriteLine(e.Message); }
         }
 
-        //캐릭터 선택 작후유까지
+        //캐릭터 선택
         public void CharacterSelectCount(int isOfforDef)
         {
             //isOfforDef == 1 방덱 , 0이면 공덱
@@ -6283,9 +6283,9 @@ namespace PCRD_KR_ArenaSim
             }
         }
 
-        public static decimal maxLevel = 202;
-        public static decimal maxRank = 21;
-        public static decimal maxItemQuantity = 4;
+        public static decimal maxLevel = 208;
+        public static decimal maxRank = 22;
+        public static decimal maxItemQuantity = 3;
 
         public static decimal maxUnique = (int)((Math.Floor((maxLevel - 1) / 10)) * 10) + 10;
 
